@@ -57,6 +57,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
                     case "Stable Diffusion":
                         chrome.scripting.executeScript({target: { tabId: tabs[i].id },func:StableDiffusion,args:[request.args]},(ret)=>{
                             console.log("DOM操作完了");
+                            console.log( ret[0].result.code);
                             sendResponse({ text: ret[0].result.code });
                         });
                         break;
@@ -67,17 +68,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
                             sendResponse({ text: ret[0].result.code });
                         });
                         break;
-                    case "test.html":
-                        chrome.scripting.executeScript({target: { tabId: tabs[i].id },func:NovelAI,args:[request.args]},(ret)=>{
-                            console.log("DOM操作完了");
-                            console.log( ret[0].result.code);
-                            sendResponse({ text: ret[0].result.code });
-                        });
-                        break;
                 }
             }
         }
     });
+
     sendResponse({ text: "バックグラウンド処理の終了" });
 });
 // popUp_scriptからのメッセージ終了

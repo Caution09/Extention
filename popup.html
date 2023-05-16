@@ -61,48 +61,74 @@
     color:#FFF;
     transition: all 0.2s ease-out;
   }
+  .tab.is-alert{
+    background:#FF0;
+    color:#000;
+    transition: all 0.2s ease-out;
+  }
   .panel.is-show{
     display:block;
   }
   </style>
 
-  <body style="width: 500px;">
+  <body style="width: 540px;">
+    <h1>Prompt Generator(a版)</h1>
     <div class="tab-panel">
       <!--タブ-->
       <ul class="tab-group">
         <li class="tab tab-A is-active">検索</li>
+        <li class="tab tab-C" id="addTab">追加</li>
+        <li class="tab tab-E" id="editTab">記録</li>
         <li class="tab tab-B" id="editTab">編集</li>
-        <li class="tab tab-C">追加</li>
-        <li class="tab tab-D">その他</li>
+        <li class="tab tab-F" id="optionTab">その他</li>
+        <li class="tab tab-D" id="noticeTab">お知らせ</li>
       </ul>
       
       <input type="text" id="generate_prompt">
-      <input type="button" id="generateButton" value="Generate"><br/><br/>
-
+      <input type="button" id="copyButton" value="Copy">
+      <input type="button" id="clearButton" value="Clear">
+      <input type="button" id="saveButton" value="Save">
+      <input type="radio" name="UIType" value="SD"> StableDiffusion
+      <input type="radio" name="UIType" value="NAI"> NovelAI
+      <br/><br/>
       <!--タブを切り替えて表示するコンテンツ-->
       <div class="panel-group">
         <div class="panel is-show">
+          <br> 
           <input type="text" size=25 id="search" value="">
           <input type="button" id="searchButton" value="検索">
           <p id="isSearch" style="font-size: 100%;"></p>      
           <ul style="font-size:100%" id="promptList"></ul>
         </div>
         <div class="panel">
-          <ul style="font-size:100%" id="promptList"></ul>
+          <br> 
+          <ul style="font-size:100%">
+            <li><input value="大項目" type="text" readonly="" class="promptData" style="background-color: black; color: white;"><input value="中項目" type="text" readonly="" class="promptData" style="background-color: black; color: white;"><input value="小項目" type="text" readonly="" class="promptData" style="background-color: black; color: white;"><input value="Prompt" type="text" readonly="" class="promptData" style="background-color: black; color: white;"></li>
+            <li><input type="text" size=2 id="big" class="promptData"><input type="text" size=2 id="middle" class="promptData"><input type="text" size=2 id="small" class="promptData"><input type="text" size=2 id="prompt" class="promptData"><input type="button" id="resist" value="New">
+            </li>
+          </ul>
+          <p>ローカル辞書</p>
+          <ul style="font-size:100%" id="addPromptList"></ul>
         </div>
         <div class="panel">
-          <p>大項目:中項目:小項目:Prompt</p>
-          <input type="text" size=2 id="big" class="resist">
-          <input type="text" size=2 id="middle" class="resist">
-          <input type="text" size=2 id="small" class="resist">
-          <input type="text" size=2 id="prompt" class="resist">
-          <input type="button" id="resist" value="新規登録"><br><br>      
+          <br> 
+          <ul style="font-size:100%" id="archiveList"></ul>
         </div>
         <div class="panel">
+          <br> 
+          <ul style="font-size:100%" id="editList"></ul>
+        </div>
+        <div class="panel">
+          <p>改修中</p>
+        </div>
+        <div class="panel">
+          <p id="notice"></p>
         </div>
       </div>
     </div>
     <script src="jquery-3.4.0.min.js"></script>  
+    <script src="globalData-script.js"></script>  
+    <script src="webApi-script.js"></script>  
     <script src="popup_script.js"></script>  
   </body>
 </html>
