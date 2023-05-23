@@ -1,64 +1,54 @@
-﻿const elmResist = document.getElementById("resist");
-const elmSearch = document.getElementById("search");
-const elmSearchButton = document.getElementById("searchButton");
-const copyButton = document.getElementById("copyButton");
-const clearButton = document.getElementById("clearButton");
-const saveButton = document.getElementById("saveButton");
-
-// chrome.storage.local.clear()
+﻿// 初期化
 init()
-// 初期化
 function init(){
   loadOptionData()
   loadMessage()
-  elmSearch.focus();
-
   // イベントの登録
   const tabs = $('.tab');
-  for(let i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener('click', tabSwitch, false);
-  }
-  tabs[1].addEventListener('click', addInit, false);
-  tabs[2].addEventListener('click', archivesInit, false);
-  tabs[3].addEventListener('click', editInit, false);
+  tabs.on('click', tabSwitch);
+  tabs.eq(1).on('click', addInit);
+  tabs.eq(2).on('click', archivesInit);
+  tabs.eq(3).on('click', editInit);
 
-  copyButton.onclick = () => {
-    navigator.clipboard.writeText(generatePrompt.value)
-  }
+  $("input[name='UIType']").on('change', onChengeUIType);  
+  $("#saveButton").on('click', archivesPrompt);
+  $("#resetButton").on('click', ()=>chrome.storage.local.clear());
+  $("#localDicDownload").on('click', ()=>jsonDownload(localPromptList,"localDic"));
+  $("#PromptDownload").on('click', ()=>jsonDownload(archivesList,"Prompts"));
+  $("#copyButton").on('click', function() {
+    navigator.clipboard.writeText($("#generatePrompt").val());
+  });
 
-  clearButton.onclick = () => {
-    generatePrompt.value = ""
-    savePrompt()
-  }
-
-  saveButton.onclick = () => {
-    archivesPrompt()
-  }  
+  $("#clearButton").on('click', function() {
+    $("#generatePrompt").val("");
+    savePrompt();
+  });
   
-  elmResist.onclick = () => {
+  $("#resist").on('click', () => {
     const big = $("#big").val();
     const middle = $("#middle").val();
     const small = $("#small").val();
     const prompt = $("#prompt").val();
     Regist(big,middle,small,prompt);
-  }
+    addInit()
+  });
   
-  elmSearchButton.onclick = () => {
-    Search(elmSearch.value);
-  }
+  const elmSearch = $("#search");
+  elmSearch.focus();  
   
-  elmSearch.addEventListener('keypress', (e)=>{
-    const keyCodeReturn = 13
-    if(e.keyCode === keyCodeReturn){
-      Search();
+  $("#searchButton").on('click', () => {
+    resetPromptList("#promptList");
+    Search(elmSearch.val());
+  });
+  
+  elmSearch.on('keypress', (e) => {
+    const keyCodeReturn = 13;
+    if (e.keyCode === keyCodeReturn) {
+      resetPromptList("#promptList");
+      Search(elmSearch.val());
     }
   });
 
-    const uiTypeButtons = document.getElementsByName("UIType");
-    uiTypeButtons.forEach(function(item) {
-    item.addEventListener("change", onChengeUIType);
-  });
-  
   // 読み込み
   loadPrompt()
   loadLocalList()
@@ -67,32 +57,119 @@ function init(){
 
 function onChengeUIType(event) {
   const selectedValue = event.target.value;
-  if (selectedValue === "SD") {
-    optionData.isNovelAI = false
-  } else if (selectedValue === "NAI") {
-    optionData.isNovelAI = true
-  }
+  optionData.shaping = selectedValue
   updateEditTab()
   editInit()
   saveOptionData()
+}
+
+function getNAIPrompt(str,weight){
+  const match = getSDTypeWight(str);
+  if (match) {
+    const prompt = match[1];
+    if(weight > 0){
+      return `${"{".repeat(weight)}${prompt}${"}".repeat(weight)}`
+    }else{
+      weight *= -1
+      return `${"(".repeat(weight)}${prompt}${")".repeat(weight)}`
+    }
+  }else{
+    let prompt = str.replace(/[{}()]/g, "")
+    if(weight > 0){
+      return `${"{".repeat(weight)}${prompt}${"}".repeat(weight)}`
+    }else{
+      weight *= -1
+      return `${"(".repeat(weight)}${prompt}${")".repeat(weight)}`
+    }
+  }
+}
+
+function getSDPrompt(str,weight){
+  const match = getSDTypeWight(str);
+  if (match) {
+    return `(${match[1]}:${weight})`;
+  }else{
+    if (weight !== 1) {
+      str = str.replace(/[{}()]/g, "")
+      return `(${str}:${weight})`;
+    } else {
+      return str;
+    }
+  }
+}
+
+function getWeight(str) {
+  const match = getSDTypeWight(str);
+  if(match){
+    return parseFloat(match[2])
+  }else{
+    const naiWeight = getNAIWeight(str)
+    return parseFloat((1.05 ** naiWeight).toFixed(2));
+  }
+}
+
+function getNAIWeight(str){
+  const match = getSDTypeWight(str);
+  if(match){
+    let SDWeight = parseFloat(match[2])
+    return (Math.log(SDWeight) / Math.log(1.05)).toFixed(0);
+  }else{
+    let weight = str.split("{").length - 1
+    if(weight == 0){
+      weight = (str.split("(").length - 1) * -1
+    }
+    return weight
+  }
+}
+
+function getSDTypeWight(str){
+  return str.match(/\(([^:]+):([\d.]+)\)/);
+}
+
+// データ操作
+let editPrompts = []
+function UpdateGenaretePrompt(str){
+  generatePrompt.value = str;  // value1
+  editPrompts = str.split(',').map(item => item.trim().replace(/\s{2,}/g, ' ')).filter(item => item !== '');
+  editPrompt.init(str)
 }
 
 function updateEditTab(){
   jsonLoop(editPrompts,function(item,index){
     let weight = 0
     let prompt = ""
-    if( optionData.isNovelAI){
-      weight = getNAIWeight(item);
-      prompt = getNAIPrompt(item,weight)
-    }else{
-      weight = getSDWeight(item);
-      prompt = getSDPrompt(item,weight)
-    }
+    switch(optionData.shaping){
+      case "SD":
+        weight = getWeight(item);
+        prompt = getSDPrompt(item,weight)
+        break;
+      case "NAI":
+        weight = getNAIWeight(item);
+        prompt = getNAIPrompt(item,weight)
+        break;
+      case "None":
+        weight = 0;
+        prompt = item;
+        break;
+      }
     editingPrompt(prompt,index)  
   })
 }
 
- function editInit(){
+function editingPrompt(value,index){
+  editPrompts[index] = value
+  reGeneratePrompt()
+}
+
+function reGeneratePrompt(){
+  generatePrompt.value = ""
+  editPrompts.forEach((value,index,array)=>{
+    generatePrompt.value += value + ","
+  })
+  savePrompt()
+}
+
+function editInit(){
   resetPromptList("#editList")
   createEditList(editPrompts,"#editList")
 }
@@ -108,11 +185,7 @@ function addInit(){
 }
   
 function archivesPrompt(){
-  let tmp = {
-    title : "",
-    prompt : generatePrompt.value
-  }
-
+  let tmp = {title : "",prompt : generatePrompt.value}
   archivesList.push(tmp)
   saveArchivesList()
   archivesInit()
@@ -124,8 +197,8 @@ function createHeaderData(value){
   data.value = value;
   data.readOnly = true;
   data.className = "promptData";
-  data.style.backgroundColor = "black"; // 背景色を黒く設定
-  data.style.color = "white"; // 文字色を白く設定
+  data.style.backgroundColor = "black"; 
+  data.style.color = "white"; 
   return data;
 }
 
@@ -142,12 +215,26 @@ function createInputData(value,index,event){
   return data;
 }
 
+function createMoveElementButton(index,title,value){
+  let button = document.createElement('button');
+  button.type = "submit";
+  button.innerHTML = title;
+  button.onclick = () => {
+    const temp = editPrompts[index]
+    editPrompts[index] = editPrompts[index + value]
+    editPrompts[index + value] = temp
+    editInit()
+  };
+  return button;
+}
+
 function createRegistButton(big,middle,small,prompt){
   let button = document.createElement('button');
   button.type = "submit";
-  button.innerHTML = "New";
+  button.innerHTML = "保存";
   button.onclick = () => {
     Regist(big,middle,small,prompt);
+    addInit()
   };
   return button;
 }
@@ -194,8 +281,7 @@ function createLoadButton(value){
   button.type = "submit";
   button.innerHTML = "Load";
   button.onclick = () => {
-    generatePrompt.value = value.prompt
-    editPrompts = value.prompt.split(',').filter(item => item !== "");
+    UpdateGenaretePrompt(value.prompt)
     savePrompt()
     updateEditTab()
     editInit()
@@ -219,35 +305,98 @@ function createDeleteButton(index){
   return button;
 }
 
+function createRemovePromptButton(index){
+  let button = document.createElement('button');
+  button.type = "submit";
+  button.innerHTML = "X";
+  button.onclick = () => {
+    const result = window.confirm("本当に削除しますか？");
+    if (result) {
+      editPrompts.splice(index,1)
+      reGeneratePrompt()
+      editInit()
+    }
+    
+  };
+  return button;
+}
+
 function resetPromptList(listId){
   let targetList = $(listId).get(0);
   targetList.innerHTML = ""; 
 }
 
+function createHeaders(listId,...headers) {
+  let li = document.createElement('li');
+  for (let i = 0; i < headers.length; i++) {
+    li.appendChild(createHeaderData(headers[i]));
+  }
+  $(listId).get(0).appendChild(li);
+}
+
+let isSearch = false;
 function createSearchList(json,listId){
-  createHeaders(listId,"大項目","中項目","小項目","Prompt")
-  jsonLoop(json,function(item,index){
-    let li = document.createElement('li');
-    li.appendChild(createInputData(item.data[0]));
-    li.appendChild(createInputData(item.data[1]));
-    li.appendChild(createInputData(item.data[2]));
-    li.appendChild(createInputData(item.prompt));
-    li.appendChild(createAddButton("+",item.prompt+" "));
-    li.appendChild(createAddButton("+,",item.prompt+","));
-    li.appendChild(createCopyButton(item.prompt));
-    li.appendChild(createRegistButton(item.data[0],item.data[1],item.data[2],item.prompt));
-    $(listId).get(0).appendChild(li);
-  })
+  if(isSearch){
+    return;
+  }
+const dataNum = Object.keys(json).length
+  console.log(dataNum)
+  if(dataNum == 0){
+    isSearch = true
+    let searchKeword = $("#search").val()
+    console.log(searchKeword)
+    translate(searchKeword,(prompt)=>{
+      createHeaders(listId,"大項目","中項目","小項目","Prompt")
+      const data = ["Google翻訳","仮設定",searchKeword]
+      let li = document.createElement('li');
+      li.appendChild(createInputData(data[0]));
+      li.appendChild(createInputData(data[1]));
+      li.appendChild(createInputData(data[2]));
+      li.appendChild(createInputData(prompt));
+      li.appendChild(createAddButton("+",prompt+" "));
+      li.appendChild(createAddButton("+,",prompt+","));
+      li.appendChild(createCopyButton(prompt));
+      li.appendChild(createRegistButton(data[0],data[1],data[2],prompt));
+      $(listId).get(0).appendChild(li);
+      isSearch = false
+      $("#isSearch").html("");
+    })
+  }else{
+    createHeaders(listId,"大項目","中項目","小項目","Prompt")
+    jsonLoop(json,function(item,index){
+      let li = document.createElement('li');
+      li.appendChild(createInputData(item.data[0]));
+      li.appendChild(createInputData(item.data[1]));
+      li.appendChild(createInputData(item.data[2]));
+      li.appendChild(createInputData(item.prompt));
+      li.appendChild(createAddButton("+",item.prompt+" "));
+      li.appendChild(createAddButton("+,",item.prompt+","));
+      li.appendChild(createCopyButton(item.prompt));
+      $(listId).get(0).appendChild(li);
+    })  
+  }
 }
 
 function createAddList(json,listId){
   createHeaders(listId,"大項目","中項目","小項目","Prompt")
   jsonLoop(json,function(item,index){
     let li = document.createElement('li');
-    li.appendChild(createInputData(item.data[0]));
-    li.appendChild(createInputData(item.data[1]));
-    li.appendChild(createInputData(item.data[2]));
-    li.appendChild(createInputData(item.prompt));
+    li.appendChild(createInputData(item.data[0],index,(value,index)=>{
+      localPromptList[index].data[0] = value
+      saveLocalList()
+    }));
+    li.appendChild(createInputData(item.data[1],index,(value,index)=>{
+      localPromptList[index].data[1] = value
+      saveLocalList()
+    }));
+    li.appendChild(createInputData(item.data[2],index,(value,index)=>{
+      localPromptList[index].data[2] = value
+      saveLocalList()
+    }));
+    li.appendChild(createInputData(item.prompt,index,(value,index)=>{
+      localPromptList[index].prompt = value
+      saveLocalList()
+    }));
     li.appendChild(createAddButton("+",item.prompt+" "));
     li.appendChild(createAddButton("+,",item.prompt+","));
     li.appendChild(createCopyButton(item.prompt));
@@ -278,20 +427,27 @@ function createArchiveList(json,listId){
 }
 
 function createEditList(json,listId){
+  const isNovelAI = optionData.shaping == "NAI";
+  const isShapingNone = optionData.shaping == "None";
+  const dataNum = Object.keys(json).length
   createHeaders(listId,"Prompt","重み")
   jsonLoop(json,function(item,index){
-    if(item == "" || item ==  ''){
-      return
-    }
     let li = document.createElement('li');
     let weight = 0
     let prompt = ""
-    if( optionData.isNovelAI){
-      weight = getNAIWeight(item);
-      prompt = getNAIPrompt(item,weight)
-    }else{
-      weight = getSDWeight(item);
-      prompt = getSDPrompt(item,weight)
+    switch(optionData.shaping){
+      case "SD":
+        weight = getWeight(item);
+        prompt = getSDPrompt(item,weight)
+        break;
+      case "NAI":
+        weight = getNAIWeight(item);
+        prompt = getNAIPrompt(item,weight)
+        break;
+      case "None":
+        weight = 0;
+        prompt = item;
+        break;
     }
     editingPrompt(prompt,index)
 
@@ -299,22 +455,37 @@ function createEditList(json,listId){
     const weightInput = createInputData(weight,index,(value,index)=>{
       let weight = value.replace(/[^-0-9.]/g, '');
       if(!weight){
-        weight =  optionData.isNovelAI ? 0 : 1;
+        weight =  isNovelAI ? 0 : 1;
       }
       let prompt = ""
-      if( optionData.isNovelAI){
-        prompt = getNAIPrompt(item,weight)
-      }else{
-        prompt = getSDPrompt(item,weight)
+      switch(optionData.shaping){
+        case "SD":
+          prompt = getSDPrompt(item,weight)
+          break;
+        case "NAI":
+          prompt = getNAIPrompt(item,weight)
+          break;
+        case "None":
+          prompt = item;
+          break;
       }
+
       weightInput.value = weight
       promptInput.value = prompt
       editingPrompt(prompt,index)
     })
 
     li.appendChild(promptInput);
-    li.appendChild(weightInput);
-
+    if(!isShapingNone){
+      li.appendChild(weightInput);
+    }
+    if(index < dataNum -1){
+      li.appendChild(createMoveElementButton(index,"↓",1));
+    }
+    if(index > 0){
+      li.appendChild(createMoveElementButton(index,"↑",-1));
+    }
+    li.appendChild(createRemovePromptButton(index));
     $(listId).get(0).appendChild(li);
   })
   setColumnWidth(listId,1,"200px")
@@ -323,91 +494,6 @@ function createEditList(json,listId){
 
 function setColumnWidth(listId, inputIndex, width) {
   $(listId).find('li input:nth-of-type(' + inputIndex + ')').css('width', width);
-}
-
-function getNAIPrompt(str,weight){
-  const match = getSDTypeWight(str);
-  if (match) {
-    const prompt = match[1];
-    console.log(prompt)
-    if(weight > 0){
-      return `${"{".repeat(weight)}${prompt}${"}".repeat(weight)}`
-    }else{
-      weight *= -1
-      return `${"(".repeat(weight)}${prompt}${")".repeat(weight)}`
-    }
-  }else{
-    let prompt = str.replace(/[{}()]/g, "")
-    if(weight > 0){
-      return `${"{".repeat(weight)}${prompt}${"}".repeat(weight)}`
-    }else{
-      weight *= -1
-      return `${"(".repeat(weight)}${prompt}${")".repeat(weight)}`
-    }
-  }
-}
-
-function getSDPrompt(str,weight){
-  const match = getSDTypeWight(str);
-  if (match) {
-    return `(${match[1]}:${weight})`;
-}else{
-    if (weight !== 1) {
-      str = str.replace(/[{}()]/g, "")
-      return `(${str}:${weight})`;
-    } else {
-      return str;
-    }
-  }
-}
-
-function getNAIWeight(str){
-  const match = getSDTypeWight(str);
-  if(match){
-    let SDWeight = parseFloat(match[2])
-    return (Math.log(SDWeight) / Math.log(1.05)).toFixed(0);
-  }else{
-    let weight = str.split("{").length - 1
-    if(weight == 0){
-      weight = (str.split("(").length - 1) * -1
-    }
-    return weight
-  }
-}
-
-function getSDWeight(str) {
-  const match = getSDTypeWight(str);
-  if(match){
-    return parseFloat(match[2])
-  }else{
-    const naiWeight = getNAIWeight(str)
-    return parseFloat((1.05 ** naiWeight).toFixed(2));
-  }
-}
-
-function getSDTypeWight(str){
-  return str.match(/\(([^:]+):([\d.]+)\)/);
-}
-
-function editingPrompt(value,index){
-  editPrompts[index] = value
-  reGeneratePrompt()
-}
-
-function reGeneratePrompt(){
-  generatePrompt.value = ""
-  editPrompts.forEach((value,index,array)=>{
-    generatePrompt.value += value + ","
-  })
-  savePrompt()
-}
-
-function createHeaders(listId,...headers) {
-  let li = document.createElement('li');
-  for (let i = 0; i < headers.length; i++) {
-    li.appendChild(createHeaderData(headers[i]));
-  }
-  $(listId).get(0).appendChild(li);
 }
 
 function jsonLoop(json,callback){

@@ -77,19 +77,20 @@
       <!--タブ-->
       <ul class="tab-group">
         <li class="tab tab-A is-active">検索</li>
-        <li class="tab tab-C" id="addTab">追加</li>
+        <li class="tab tab-C" id="addTab">辞書</li>
         <li class="tab tab-E" id="editTab">記録</li>
         <li class="tab tab-B" id="editTab">編集</li>
-        <li class="tab tab-F" id="optionTab">その他</li>
-        <li class="tab tab-D" id="noticeTab">お知らせ</li>
+        <li class="tab tab-F" id="optionTab">設定</li>
+        <li class="tab tab-D" id="noticeTab">その他</li>
       </ul>
       
-      <input type="text" id="generate_prompt">
+      <input type="text" id="generatePrompt">
       <input type="button" id="copyButton" value="Copy">
       <input type="button" id="clearButton" value="Clear">
       <input type="button" id="saveButton" value="Save">
-      <input type="radio" name="UIType" value="SD"> StableDiffusion
-      <input type="radio" name="UIType" value="NAI"> NovelAI
+      <label><input type="radio" name="UIType" value="SD"> StableDiffusion</label>
+      <label><input type="radio" name="UIType" value="NAI"> NovelAI</label>
+      <label><input type="radio" name="UIType" value="None"> 自動整形無し</label>
       <br/><br/>
       <!--タブを切り替えて表示するコンテンツ-->
       <div class="panel-group">
@@ -104,7 +105,7 @@
           <br> 
           <ul style="font-size:100%">
             <li><input value="大項目" type="text" readonly="" class="promptData" style="background-color: black; color: white;"><input value="中項目" type="text" readonly="" class="promptData" style="background-color: black; color: white;"><input value="小項目" type="text" readonly="" class="promptData" style="background-color: black; color: white;"><input value="Prompt" type="text" readonly="" class="promptData" style="background-color: black; color: white;"></li>
-            <li><input type="text" size=2 id="big" class="promptData"><input type="text" size=2 id="middle" class="promptData"><input type="text" size=2 id="small" class="promptData"><input type="text" size=2 id="prompt" class="promptData"><input type="button" id="resist" value="New">
+            <li><input type="text" size=2 id="big" class="promptData"><input type="text" size=2 id="middle" class="promptData"><input type="text" size=2 id="small" class="promptData"><input type="text" size=2 id="prompt" class="promptData"><input type="button" id="resist" value="保存">
             </li>
           </ul>
           <p>ローカル辞書</p>
@@ -119,14 +120,19 @@
           <ul style="font-size:100%" id="editList"></ul>
         </div>
         <div class="panel">
-          <p>改修中</p>
+          <label><input type="checkbox" name="isDeleteCheck" value="isDeleteCheck">削除時に確認をする</label><br>
+          <label><input type="button" id="localDicDownload" value="ローカル辞書のダウンロード"></label><br>
+          <label><input type="button" id="PromptDownload" value="記録プロンプトのダウンロード"></label><br>
+          <label><input type="button" id="resetButton" value="すべてリセットし初期化する"></label><br>
         </div>
         <div class="panel">
+          <p>お知らせ</p>
           <p id="notice"></p>
         </div>
       </div>
     </div>
     <script src="jquery-3.4.0.min.js"></script>  
+    <script src="editPrompt-script.js"></script>  
     <script src="globalData-script.js"></script>  
     <script src="webApi-script.js"></script>  
     <script src="popup_script.js"></script>  
