@@ -33,6 +33,18 @@ function init(){
     addInit()
   });
   
+  $("#generatePrompt").on("input", function() {
+    editPrompt.init($("#generatePrompt").val())
+  });
+
+  $("#generatePrompt").on("change", function() {
+    editPrompt.init($("#generatePrompt").val())
+  });
+  
+  $("#generatePrompt").on("paste", function() {
+    editPrompt.init($("#generatePrompt").val())
+  });
+
   const elmSearch = $("#search");
   elmSearch.focus();  
   

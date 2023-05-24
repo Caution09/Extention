@@ -9,7 +9,6 @@
     "https://novelai.net/image"
   ],
   "permissions": [
-    "tabs",
 		"background",
     "contextMenus",
     "activeTab",
@@ -23,7 +22,9 @@
     "default_title": "PromptGenerator",
     "default_popup": "popup.html",
     "default_icon": {
-      "32": "icon.png"
+      "32": "icon.png",
+      "64": "icon64.png",
+      "128": "icon128.png"
     }
   }
 }
