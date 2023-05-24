@@ -1,5 +1,3 @@
-const generatePrompt = document.getElementById("generatePrompt");
-
 let localPromptList = []
 let archivesList = []
 let masterPrompts = []
@@ -7,7 +5,7 @@ let optionData = {}
 
 // データ保存
 function savePrompt() {
-  chrome.storage.local.set({'generatePrompt': generatePrompt.value});
+  chrome.storage.local.set({'generatePrompt': editPrompt.prompt});
 }
 
 function saveLocalList(){
@@ -24,7 +22,7 @@ function saveOptionData() {
 }function loadPrompt() {
 chrome.storage.local.get(["generatePrompt"], function(items) {
   if(items.generatePrompt != null)
-    UpdateGenaretePrompt(items.generatePrompt)
+  InitGenaretePrompt(items.generatePrompt)
   });
 }
 
@@ -76,7 +74,11 @@ function addArchivesList() {
 }
 
 function jsonDownload(json,fileName){
-  const jsonString = JSON.stringify(json);
+  let outJson = {}
+  outJson.dicType = fileName;
+  outJson.data = json;
+
+  const jsonString = JSON.stringify(outJson);
   const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonString);
   
   const link = document.createElement('a');

@@ -1,140 +1,195 @@
 ﻿<!DOCTYPE html>
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.jsdelivr.net/npm/pngjs@3.4.0/dist/png.min.js">
 <html>
-  <style type="text/css">
-  input{
+<style type="text/css">
+  .drop-area {
+    border: 3px dashed #C8C8C8 !important;
+    background-color: #F0F0F0 !important;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .drop-area label {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .drop-area label:hover {
+    cursor: pointer;
+  }
+
+  .drop-area label input {
+    display: none;
+  }
+
+  .drop-area label svg {
+    width: 50px;
+    fill: currentColor;
+    color: #909090;
+  }
+
+  .drop-area label .preview-area {
+    width: 75%;
+    margin: 15px auto;
+    height: 120px;
+  }
+
+  .drop-area label .preview-area img {
+    height: 100%;
+    max-width: 100%;
+    width: auto;
+  }
+
+  input {
     font-size: 100%;
     padding-left: 0;
     padding-right: 0;
   }
 
-  li{
-  font-size: 100%;
-  text-align: left;
+  li {
+    font-size: 100%;
+    text-align: left;
   }
 
-  ul{
-  list-style: none;
-  padding-left: 0;
-  padding-right: 0;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .promptData{
-  width: 95px;
+  .promptData {
+    width: 95px;
   }
 
-  .resist{
-  width: 90px;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
+  .resist {
+    width: 90px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  button{
-  font-size: 100%;
+  button {
+    font-size: 100%;
   }
 
-  .tab-group{
+  .tab-group {
     display: flex;
     justify-content: center;
     font-size: 100%;
   }
-  .tab{
-    flex-grow: 1;
-    padding:5px;
-    list-style:none;
-    border:solid 1px #CCC;
-    text-align:center;
-    cursor:pointer;
-  }
-  .panel-group{
-    height:auto;
-    border:solid 1px #CCC;
-    border-top:none;
-    background:#eee;
-  }
-  .panel{
-    display:none;
-  }
-  .tab.is-active{
-    background:#F00;
-    color:#FFF;
-    transition: all 0.2s ease-out;
-  }
-  .tab.is-alert{
-    background:#FF0;
-    color:#000;
-    transition: all 0.2s ease-out;
-  }
-  .panel.is-show{
-    display:block;
-  }
-  </style>
 
-  <body style="width: 540px;">
-    <h1>Prompt Generator(a版)</h1>
-    <div class="tab-panel">
-      <!--タブ-->
-      <ul class="tab-group">
-        <li class="tab tab-A is-active">検索</li>
-        <li class="tab tab-C" id="addTab">辞書</li>
-        <li class="tab tab-E" id="editTab">記録</li>
-        <li class="tab tab-B" id="editTab">編集</li>
-        <li class="tab tab-F" id="optionTab">設定</li>
-        <li class="tab tab-D" id="noticeTab">その他</li>
-      </ul>
-      
-      <input type="text" id="generatePrompt">
-      <input type="button" id="copyButton" value="Copy">
-      <input type="button" id="clearButton" value="Clear">
-      <input type="button" id="saveButton" value="Save">
-      <label><input type="radio" name="UIType" value="SD"> StableDiffusion</label>
-      <label><input type="radio" name="UIType" value="NAI"> NovelAI</label>
-      <label><input type="radio" name="UIType" value="None"> 自動整形無し</label>
-      <br/><br/>
-      <!--タブを切り替えて表示するコンテンツ-->
-      <div class="panel-group">
-        <div class="panel is-show">
-          <br> 
-          <input type="text" size=25 id="search" value="">
-          <input type="button" id="searchButton" value="検索">
-          <p id="isSearch" style="font-size: 100%;"></p>      
-          <ul style="font-size:100%" id="promptList"></ul>
-        </div>
-        <div class="panel">
-          <br> 
-          <ul style="font-size:100%">
-            <li><input value="大項目" type="text" readonly="" class="promptData" style="background-color: black; color: white;"><input value="中項目" type="text" readonly="" class="promptData" style="background-color: black; color: white;"><input value="小項目" type="text" readonly="" class="promptData" style="background-color: black; color: white;"><input value="Prompt" type="text" readonly="" class="promptData" style="background-color: black; color: white;"></li>
-            <li><input type="text" size=2 id="big" class="promptData"><input type="text" size=2 id="middle" class="promptData"><input type="text" size=2 id="small" class="promptData"><input type="text" size=2 id="prompt" class="promptData"><input type="button" id="resist" value="保存">
-            </li>
-          </ul>
-          <p>ローカル辞書</p>
-          <ul style="font-size:100%" id="addPromptList"></ul>
-        </div>
-        <div class="panel">
-          <br> 
-          <ul style="font-size:100%" id="archiveList"></ul>
-        </div>
-        <div class="panel">
-          <br> 
-          <ul style="font-size:100%" id="editList"></ul>
-        </div>
-        <div class="panel">
-          <label><input type="checkbox" name="isDeleteCheck" value="isDeleteCheck">削除時に確認をする</label><br>
-          <label><input type="button" id="localDicDownload" value="ローカル辞書のダウンロード"></label><br>
-          <label><input type="button" id="PromptDownload" value="記録プロンプトのダウンロード"></label><br>
-          <label><input type="button" id="resetButton" value="すべてリセットし初期化する"></label><br>
-        </div>
-        <div class="panel">
-          <p>お知らせ</p>
-          <p id="notice"></p>
-        </div>
+  .tab {
+    flex-grow: 1;
+    padding: 5px;
+    list-style: none;
+    border: solid 1px #CCC;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .panel-group {
+    height: auto;
+    border: solid 1px #CCC;
+    border-top: none;
+    background: #eee;
+  }
+
+  .panel {
+    display: none;
+  }
+
+  .tab.is-active {
+    background: #F00;
+    color: #FFF;
+    transition: all 0.2s ease-out;
+  }
+
+  .tab.is-alert {
+    background: #FF0;
+    color: #000;
+    transition: all 0.2s ease-out;
+  }
+
+  .panel.is-show {
+    display: block;
+  }
+</style>
+
+<body style="width: 540px;">
+  <h1>Prompt Generator(a版)</h1>
+  <div class="tab-panel">
+    <!--タブ-->
+    <ul class="tab-group">
+      <li class="tab tab-A is-active">検索</li>
+      <li class="tab tab-C" id="addTab">辞書</li>
+      <li class="tab tab-E" id="editTab">記録</li>
+      <li class="tab tab-B" id="editTab">編集</li>
+      <li class="tab tab-F" id="optionTab">設定</li>
+      <li class="tab tab-D" id="noticeTab">その他</li>
+    </ul>
+
+    <input type="text" id="generatePrompt">
+    <input type="button" id="copyButton" value="Copy">
+    <input type="button" id="clearButton" value="Clear">
+    <input type="button" id="saveButton" value="Save">
+    <label><input type="radio" name="UIType" value="SD"> StableDiffusion</label>
+    <label><input type="radio" name="UIType" value="NAI"> NovelAI</label>
+    <label><input type="radio" name="UIType" value="None"> 自動整形無し</label>
+    <br /><br />
+    <!--タブを切り替えて表示するコンテンツ-->
+    <div class="panel-group">
+      <div class="panel is-show">
+        <br>
+        <input type="text" size=25 id="search" value="">
+        <input type="button" id="searchButton" value="検索">
+        <p id="isSearch" style="font-size: 100%;"></p>
+        <ul style="font-size:100%" id="promptList"></ul>
+      </div>
+      <div class="panel">
+        <br>
+        <ul style="font-size:100%">
+          <li><input value="大項目" type="text" readonly="" class="promptData"
+              style="background-color: black; color: white;"><input value="中項目" type="text" readonly=""
+              class="promptData" style="background-color: black; color: white;"><input value="小項目" type="text"
+              readonly="" class="promptData" style="background-color: black; color: white;"><input value="Prompt"
+              type="text" readonly="" class="promptData" style="background-color: black; color: white;"></li>
+          <li><input type="text" size=2 id="big" class="promptData"><input type="text" size=2 id="middle"
+              class="promptData"><input type="text" size=2 id="small" class="promptData"><input type="text" size=2
+              id="prompt" class="promptData"><input type="button" id="resist" value="保存">
+          </li>
+        </ul>
+        <p>ローカル辞書</p>
+        <ul style="font-size:100%" id="addPromptList"></ul>
+      </div>
+      <div class="panel">
+        <br>
+        <ul style="font-size:100%" id="archiveList"></ul>
+      </div>
+      <div class="panel">
+        <br>
+        <ul style="font-size:100%" id="editList"></ul>
+      </div>
+      <div class="panel">
+        <label><input type="checkbox" name="isDeleteCheck" value="isDeleteCheck">削除時に確認をする</label><br>
+        <label><input type="button" id="localDicDownload" value="ローカル辞書のダウンロード"></label><br>
+        <label><input type="button" id="PromptDownload" value="記録プロンプトのダウンロード"></label><br>
+        <label><input type="button" id="resetButton" value="すべてリセットし初期化する"></label><br>
+        <div id="incluedDic" class="drop-area">辞書を読みこむ</div>
+        <div id="incluedImage" class="drop-area">画像を読みこむ</div>
+      </div>
+      <div class="panel">
+        <p>お知らせ</p>
+        <p id="notice"></p>
       </div>
     </div>
-    <script src="jquery-3.4.0.min.js"></script>  
-    <script src="editPrompt-script.js"></script>  
-    <script src="globalData-script.js"></script>  
-    <script src="webApi-script.js"></script>  
-    <script src="popup_script.js"></script>  
-  </body>
+  </div>
+  <script src="jquery-3.4.0.min.js"></script>
+  <script src="editPrompt-script.js"></script>
+  <script src="globalData-script.js"></script>
+  <script src="webApi-script.js"></script>
+  <script src="popup_script.js"></script>
+</body>
+
 </html>

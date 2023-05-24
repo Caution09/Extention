@@ -4,28 +4,26 @@ let editPrompt = {
   elements:[],
   isOldSD: false,
   init:function(str){
-    this.prompt = str;
     this.isOldSD = /\(\(/.test(str)
     this.elements = []
     let tempList = str.split(',').map(item => item.trim().replace(/\s{2,}/g, ' ')).filter(item => item !== '');
     tempList.forEach((prompt) => {
       this.elements.push(this.createElement(prompt))
     });
-    console.log(this.prompt)
-    console.log(this.elements)
+    this.generate()
   },
   generate:function(){
-    this.prompt = elements.map(item => item[optionData.shaping].value).join(",");
+    this.prompt = this.elements.map(item => item[optionData.shaping].value).join(",");
   },
   editingValue:function(value,index){
-    this.elements[index].element = this.createElement(value)
+    this.elements[index] = this.createElement(value)
     this.generate()
   },
-  editingWeight:function(value,weight,index){
-    this.elements[index].element = this.createElement(value,weight)
+  editingWeight:function(weight,index){
+    this.elements[index] = this.createElement(this.elements[index][optionData.shaping].value,weight)
     this.generate()
   },
-  removeElement:function(){
+  removeElement:function(index){
     this.elements.splice(index,1)
     this.generate()
   },

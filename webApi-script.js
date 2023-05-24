@@ -65,7 +65,7 @@ function Search(search){
     });
   }
   
-const translateAPI = "https://script.google.com/macros/s/AKfycbwQsFQ5auzrjXnCho51NKCbo3KNflV-AXrnpM10MHZ47c3upvyxNqzaEQYNkjcs5dSwAQ/exec"
+const translateAPI = "https://script.google.com/macros/s/AKfycbwDOhGpN40Xkg09AlH0YiB1C77h8qgCTF25YGHfbORCw-wAm7BQkBpLSrZCw28QOXCJHA/exec"
 function translate(keyword,translateEvent){
   let url = translateAPI + "?search=" + encodeURI(keyword);
   fetch(url) 
