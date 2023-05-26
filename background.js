@@ -45,12 +45,12 @@ function CreateArchiveList(){
 }
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
+    console.log(info);
     switch (info.menuItemId) {
         case "LoadPrompt":
             break
         case "PromptArchive":
             const selectedText = info.selectionText;
-            console.log(info);
             chrome.windows.create({
                 url: "prompt.html",
                 type: "popup",

@@ -1,5 +1,4 @@
 ﻿const generateInput = $("#generatePrompt");
-const PNG = require('pngjs').PNG;
 
 // 初期化
 init()
@@ -469,6 +468,7 @@ function handleDragOver(event) {
 }
 
 function handlePng(event) {
+  event.stopPropagation();
   event.preventDefault();
 
   // ドロップされたファイルを取得する
@@ -486,38 +486,142 @@ function handlePng(event) {
     return;
   }
 
+  // 画像をプレビュー表示する
+  createPngPreview(file)
+
   // FileReaderオブジェクトを作成する
   const reader = new FileReader();
-
-  // PNGファイルを読み込む
   reader.onload = function(event) {
-    const arrayBuffer = event.target.result;
-    const png = new PNG({ filterType: 4 });
-    png.parse(arrayBuffer, function(error, data) {
-      if (error) {
-        console.error(error);
-        return;
-      }
-  
-      // メタデータを取得する
-      const width = this.width;
-      const height = this.height;
-      const bitDepth = this.bitDepth;
-      const colorType = this.colorType;
-      const palette = this.palette;
-      const transparency = this.transparency;
-      const textChunks = this.text;
-  
-      // 取得したメタデータを表示する
-      console.log('Width:', width);
-      console.log('Height:', height);
-      console.log('Bit Depth:', bitDepth);
-      console.log('Color Type:', colorType);
-      console.log('Palette:', palette);
-      console.log('Transparency:', transparency);
-      console.log('Text Chunks:', textChunks);
-    });
+    const arrayBuffer = event.target.result;  
+    // PNGファイルのヘッダー情報を解析する
+    let pngInfo = getPngInfo(arrayBuffer);
+    let outPut = pngInfo.header;
+    outPut["width"] = pngInfo.width
+    outPut["height"] = pngInfo.height
+    createPngInfo(outPut);
   };
-
   reader.readAsArrayBuffer(file);
 }
+
+function createPngPreview(file) {
+  const img = new Image();
+  img.onload = function() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const fixSize = 540;
+    let width = img.width;
+    let height = img.height;
+
+    if (width >= height && width > fixSize) {
+      height *= fixSize / width;
+      width = fixSize;
+    } else if (height >= width && height > fixSize) {
+      width *= fixSize / height;
+      height = fixSize;
+    }
+
+    canvas.width = fixSize;
+    canvas.height = height;
+
+    // 画像を描画する
+    const x = (canvas.width - width) / 2; // 左右中央揃えのためのx座標
+    ctx.drawImage(img, x, 0, width, height);
+
+    $('#preview').attr('src', canvas.toDataURL());
+  };
+  img.src = URL.createObjectURL(file);
+}
+
+function getPngInfo(arrayBuffer){
+  let info = {};
+  const headerDataView = new DataView(arrayBuffer);
+  info.width = headerDataView.getUint32(16, false);
+  info.height = headerDataView.getUint32(20, false);
+  info.header = getPngHeader(arrayBuffer);
+    return info;
+}
+
+function getPngHeader(arrayBuffer){
+  let data = {};
+  let metadata = {};
+  // tEXtチャンクを検索する
+  let chunkOffset = 33; // 最初のIDATチャンクの直後から探索を開始する
+  while (chunkOffset < arrayBuffer.byteLength) {
+    const chunkLength = new DataView(arrayBuffer, chunkOffset, 4).getUint32(0, false);
+    const chunkType = new TextDecoder().decode(new Uint8Array(arrayBuffer, chunkOffset + 4, 4));
+    if (chunkType === 'tEXt') {
+      // tEXtチャンクを発見した場合は、キーワードとテキストデータを抽出する
+      let keywordEnd = new Uint8Array(arrayBuffer, chunkOffset + 8).indexOf(0);
+      const keywordArray = new Uint8Array(arrayBuffer, chunkOffset + 8, keywordEnd);
+      const keyword = new TextDecoder().decode(keywordArray);
+      const textDataArray = new Uint8Array(arrayBuffer, chunkOffset + 8 + keywordEnd + 1, chunkLength - (keywordEnd + 1));
+      const textData = new TextDecoder().decode(textDataArray);
+      if(keyword === "Comment"){
+        metadata = textData
+        data = JSON.parse(metadata);
+        data.metadata = metadata;
+      }else if(keyword ==="parameters"){
+        metadata = `prompt: ${textData}`
+        data = parseSDPng(metadata);
+        data.metadata = metadata;
+      }
+    }
+    chunkOffset += chunkLength + 12; // 次のチャンクに移動する
+  }
+  ;
+  return data;
+}
+
+function createPngInfo(data){
+      // DOM操作で要素を生成する
+      const div = $('<div>').addClass('item');
+      $.each(data, function(key, value) {
+        const label = $('<label>').text(key + ': ').css({ // スタイルを追加
+          display: 'inline-block',
+          width: '200px', // 変数名の表示幅を指定
+          margin: '5px 10px 5px 0' // 各要素のマージンを指定
+        });
+        const element = $('<input>').attr({
+          type: 'text',
+          value: value,
+          readonly: true // readonly属性を追加
+        }).css({ // スタイルを追加
+          display: 'inline-block',
+          width: '200px' // 入力フィールドの幅を指定
+        });
+        div.append(label, element, '<br>'); // <br>要素は不要になる
+      });
+      
+      // 要素をDOMに挿入する
+      $('#pngInfo').empty();
+      $('#pngInfo').append(div);
+}
+
+function parseSDPng(text) {
+  const data = {};
+  let matches = text.match(/(.*)(steps:.*)/i);
+  if (matches) {
+    matches = [...matches[0].matchAll(/([A-Za-z\s]+):\s*([^,\n]*)/g)];
+    for (const match of matches) {
+      const key = match[1].trim();
+      const value = match[2].trim();
+
+      if (key !== "prompt" && key !== "Negative prompt") {
+        data[key] = value;
+      }
+    }
+  }
+
+  matches = [...text.matchAll(/([A-Za-z\s]+):\s*((?:[^,\n]+,)*[^,\n]+)/g)];
+  for (const match of matches) {
+    const key = match[1].trim();
+    const value = match[2].trim();
+
+    if (key === "prompt" || key === "Negative prompt") {
+      data[key] = value;
+    }
+  }
+
+  return data;
+}
+
