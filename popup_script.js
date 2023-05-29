@@ -2,6 +2,7 @@
 
 // 初期化
 init()
+
 function init() {
   loadOptionData()
   loadMessage()
@@ -12,28 +13,19 @@ function init() {
   tabs.eq(2).on('click', archivesInit);
   tabs.eq(3).on('click', editInit);
 
-  var incluedDicZone = $('#incluedDic');
-  incluedDicZone.on('dragover', handleDragOver);
-  incluedDicZone.on('drop', handleEvent);
-  incluedDicZone.click(function () {
+  var incluedZone = $('#inclued');
+  incluedZone.on('dragover', handleDragOver);
+  incluedZone.on('drop', handleEvent);
+  incluedZone.click(function () {
     const input = $('<input type="file" style="display:none;">');
     $('body').append(input);
     input.click();
     input.on('change', handleEvent);
   });
 
-  var incluedImageZone = $('#incluedImage');
-  incluedImageZone.on('dragover', handleDragOver);
-  incluedImageZone.on('drop', handlePng);
-  incluedImageZone.click(function () {
-    const input = $('<input type="file" style="display:none;">');
-    $('body').append(input);
-    input.click();
-    input.on('change', handlePng);
-  });
-  
   $("input[name='UIType']").on('change', onChengeUIType);
   $("#saveButton").on('click', archivesPrompt);
+  $("#popup-image").on('click', closePopup);
   $("#resetButton").on('click', () => chrome.storage.local.clear());
   $("#localDicDownload").on('click', () => jsonDownload(localPromptList, "Elements"));
   $("#PromptDownload").on('click', () => jsonDownload(archivesList, "Prompts"));
@@ -77,18 +69,16 @@ function init() {
   });
 
   const elmSearch = $("#search");
-  elmSearch.focus();
-
   $("#searchButton").on('click', () => {
     resetPromptList("#promptList");
-    Search(elmSearch.val());
+    Search($("#search").val());
   });
 
   elmSearch.on('keypress', (e) => {
     const keyCodeReturn = 13;
     if (e.keyCode === keyCodeReturn) {
       resetPromptList("#promptList");
-      Search(elmSearch.val());
+      Search($("#search").val());
     }
   });
 
@@ -207,6 +197,49 @@ function createCopyButton(value) {
   return button;
 }
 
+function createOpenImageButton() {
+  let button = document.createElement('button');
+  button.type = "submit";
+  button.innerHTML = "s";
+  button.onclick = () => {
+    const imageUrl = "https://ul.h3z.jp/6hyEho3B.jpg";
+    fetch(imageUrl)
+      .then(response => response.blob())
+      .then(blob => {
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.onloadend = () => {
+          const arrayBuffer = reader.result;
+          var binary = atob(arrayBuffer.split(',')[1]);
+          $('#popup-image').attr({
+            src: "data:image/png;base64," +binary,
+            width: '256',
+            height: '256'
+          });
+          $('#popup').show();
+        };
+      });
+  };
+  return button;
+}
+
+function Base64Png(file) {
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    var arrayBuffer = event.target.result;// base64テキスト
+    var binary = atob(arrayBuffer.split(',')[1]);
+    var url = "data:image/png;base64," +binary;
+    createPngPreview(url)
+  };
+  reader.readAsDataURL(file);
+}
+
+
+function closePopup() {
+  console.log("閉じる")
+  $('#popup').hide();
+}
+
 function createRemoveButton(index) {
   let button = document.createElement('button');
   button.type = "submit";
@@ -315,6 +348,11 @@ function createSearchList(json, listId) {
       li.appendChild(createAddButton("+", item.prompt + " "));
       li.appendChild(createAddButton("+,", item.prompt + ","));
       li.appendChild(createCopyButton(item.prompt));
+      // if(item.url){
+      // デバッグ表示
+      if(true){
+        li.appendChild(createOpenImageButton());
+      }
       $(listId).get(0).appendChild(li);
     })
   }
@@ -430,20 +468,38 @@ function tabSwitch() {
   document.getElementsByClassName('panel')[currentTab].classList.add('is-show');
 };
 
+function handleDragOver(event) {
+  event.stopPropagation();
+  event.preventDefault();
+  event.originalEvent.dataTransfer.dropEffect = 'copy';
+}
+
 function handleEvent(event) {
   event.stopPropagation();
   event.preventDefault();
 
   var file = null;
-
   if (event.type === 'drop') {
     file = event.originalEvent.dataTransfer.files[0];
   } else if (event.type === 'change') {
     file = event.target.files[0];
   }
 
-  var reader = new FileReader();
+  switch(file.type){
+    case "application/json":
+    case "text/plain":
+      readDicFile(file);
+      break;
+    case "image/png":
+      readPngFile(file);
+      break;
+    default:
+      break;
+  }
+}
 
+function readDicFile(file){
+  var reader = new FileReader();
   reader.onload = function (event) {
     const content = JSON.parse(event.target.result); // 読み込んだファイルをJSON形式のデータとして解析する
     console.log(event.target.result); // 読み込んだJSONデータをコンソールに表示する
@@ -461,44 +517,18 @@ function handleEvent(event) {
   reader.readAsText(file);
 }
 
-function handleDragOver(event) {
-  event.stopPropagation();
-  event.preventDefault();
-  event.originalEvent.dataTransfer.dropEffect = 'copy';
-}
-
-function handlePng(event) {
-  event.stopPropagation();
-  event.preventDefault();
-
-  // ドロップされたファイルを取得する
-  var file = null;
-
-  if (event.type === 'drop') {
-    file = event.originalEvent.dataTransfer.files[0];
-  } else if (event.type === 'change') {
-    file = event.target.files[0];
-  }
-
-  // ファイルがPNGファイルかどうかを確認する
-  if (file.type !== 'image/png') {
-    console.error('This is not a PNG file.');
-    return;
-  }
-
-  // 画像をプレビュー表示する
-  createPngPreview(file)
-
+function readPngFile(file) {
+  
   // FileReaderオブジェクトを作成する
   const reader = new FileReader();
   reader.onload = function(event) {
     const arrayBuffer = event.target.result;  
-    // PNGファイルのヘッダー情報を解析する
     let pngInfo = getPngInfo(arrayBuffer);
-    let outPut = pngInfo.header;
+    let outPut = pngInfo.textChunks;
     outPut["width"] = pngInfo.width
     outPut["height"] = pngInfo.height
     createPngInfo(outPut);
+    createPngPreview(URL.createObjectURL(file))
   };
   reader.readAsArrayBuffer(file);
 }
@@ -529,19 +559,24 @@ function createPngPreview(file) {
 
     $('#preview').attr('src', canvas.toDataURL());
   };
-  img.src = URL.createObjectURL(file);
+  img.src = file;
 }
 
 function getPngInfo(arrayBuffer){
   let info = {};
-  const headerDataView = new DataView(arrayBuffer);
-  info.width = headerDataView.getUint32(16, false);
-  info.height = headerDataView.getUint32(20, false);
-  info.header = getPngHeader(arrayBuffer);
-    return info;
+  const dataView = new DataView(arrayBuffer);
+  info.width = dataView.getUint32(16, false);
+  info.height = dataView.getUint32(20, false);
+  info.bitDepth = dataView.getUint8(24);
+  info.colorType = dataView.getUint8(25);
+  info.compressionMethod = dataView.getUint8(26);
+  info.filterMethod = dataView.getUint8(27);
+  info.interlaceMethod = dataView.getUint8(28);
+  info.textChunks = getTextChunk(arrayBuffer);
+  return info;
 }
 
-function getPngHeader(arrayBuffer){
+function getTextChunk(arrayBuffer){
   let data = {};
   let metadata = {};
   // tEXtチャンクを検索する
@@ -625,3 +660,24 @@ function parseSDPng(text) {
   return data;
 }
 
+// function uploadPng(file){
+//   // XMLHttpRequestオブジェクトを作成する
+// const xhr = new XMLHttpRequest();
+
+// // フォームデータを作成する
+// const formData = new FormData();
+// formData.append('files', file);
+
+// // APIにリクエストを送信する
+// xhr.open('POST', 'https://hm-nrm.h3z.jp/uploader/work.php');
+// xhr.setRequestHeader('Accept', 'application/json');
+// xhr.onload = function() {
+//   if (xhr.status === 200) {
+//     const response = JSON.parse(xhr.responseText);
+//     console.log(response);
+//   } else {
+//     console.error('Request failed. Status code: ' + xhr.status);
+//   }
+// };
+// xhr.send(formData);
+// }

@@ -13,21 +13,21 @@ chrome.contextMenus.create({
     contexts: ["editable"]
 });
 
-chrome.contextMenus.create({
-    parentId: "LoadPrompt",
-    id: "UpdateList",
-    title: "一覧の更新",
-    contexts: ["all"],
-});
-
 CreateArchiveList();
+
+function UpdatePromptList(){
+    promptTabele.forEach(element => {
+        chrome.contextMenus.remove(element, function() {});
+    })
+    promptTabele = []
+    CreateArchiveList();
+}
 
 function CreateArchiveList(){
     chrome.storage.local.get(["archivesList"], function(items) {
         if (items.archivesList) {
             let count = 1
             items.archivesList.forEach(item=>{
-                console.log(item)
                 if(promptTabele.includes(item.prompt)){
                     return   
                 }
@@ -48,6 +48,7 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
     console.log(info);
     switch (info.menuItemId) {
         case "LoadPrompt":
+            // 読み込みプロンプトの親なだけなので特に処理はしない
             break
         case "PromptArchive":
             const selectedText = info.selectionText;
@@ -67,21 +68,15 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
                                 archivesList.push(pushData);
                             } else {
                                 archivesList = [pushData];
-                            }
+                            }                            
                             chrome.storage.local.set({archivesList: archivesList}, function() {
+                                UpdatePromptList()
                             });
                         });
                     }
                 });
             });
             break
-        case "UpdateList":
-            promptTabele.forEach(element => {
-                chrome.contextMenus.remove(element, function() {});
-            })
-            promptTabele = []
-            CreateArchiveList();
-            break;
         default:
             chrome.scripting.executeScript({
               target: { tabId: tab.id },
@@ -94,3 +89,16 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
     }
   }
 );
+
+// 拡張機能からの呼び出し
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    console.log(request.args);
+    switch(request.args[0]){
+        case "UpdatePromptList":
+            UpdatePromptList()
+            break;
+        default:
+            break;
+    }
+    sendResponse({ text: "バックグラウンド処理の終了" });
+});

@@ -13,7 +13,9 @@ function saveLocalList(){
 }
 
 function saveArchivesList() {
-  chrome.storage.local.set({'archivesList': archivesList});
+  chrome.storage.local.set({'archivesList': archivesList},()=>{
+    UpdatePromptList();
+  });
 }
 
 function saveOptionData() {
@@ -87,24 +89,11 @@ function jsonDownload(json,fileName){
   link.click();
 }
 
-  //  DOM操作
-  //  function sendBackground(execType,value){
-  //   chrome.runtime.sendMessage({ args: [execType,value] }, function (response) {
-  //     console.log(response.text); });
-  // }
-  
-  // function insertPositivePronpt(value){
-  //   sendBackground("Positive",value);
-  // }
-  
-  // function insertNegativePronpt(value){
-  //   sendBackground("Negative",value);
-  // }
-  
-  // function GetPositive(){
-  //   sendBackground("GetPositive",null);
-  // }
-  
-  // function Generate(){
-  //   sendBackground("Generate",null);
-  // }
+function UpdatePromptList(){
+  sendBackground("UpdatePromptList",null);
+}
+
+function sendBackground(execType,value){
+  chrome.runtime.sendMessage({ args: [execType,value] }, function (response) {
+    console.log(response.text); });
+}
