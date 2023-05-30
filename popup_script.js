@@ -197,12 +197,12 @@ function createCopyButton(value) {
   return button;
 }
 
-function createOpenImageButton() {
+function createOpenImageButton(value) {
   let button = document.createElement('button');
   button.type = "submit";
   button.innerHTML = "s";
   button.onclick = () => {
-    const imageUrl = "https://ul.h3z.jp/6hyEho3B.jpg";
+    const imageUrl = "https://ul.h3z.jp/"+value.url+".jpg";
     fetch(imageUrl)
       .then(response => response.blob())
       .then(blob => {
@@ -216,6 +216,9 @@ function createOpenImageButton() {
             width: '256',
             height: '256'
           });
+          $(`#preview-element`).text(`${value.data[0]}:${value.data[1]}:${value.data[2]}`);
+          $("#preview-prompt").val(value.prompt)
+          $('#popup').css({"display": "flex"}) 
           $('#popup').show();
         };
       });
@@ -236,7 +239,6 @@ function Base64Png(file) {
 
 
 function closePopup() {
-  console.log("閉じる")
   $('#popup').hide();
 }
 
@@ -348,10 +350,8 @@ function createSearchList(json, listId) {
       li.appendChild(createAddButton("+", item.prompt + " "));
       li.appendChild(createAddButton("+,", item.prompt + ","));
       li.appendChild(createCopyButton(item.prompt));
-      // if(item.url){
-      // デバッグ表示
-      if(true){
-        li.appendChild(createOpenImageButton());
+      if(item.url){
+        li.appendChild(createOpenImageButton(item));
       }
       $(listId).get(0).appendChild(li);
     })
@@ -466,6 +466,7 @@ function tabSwitch() {
   const arrayTabs = Array.prototype.slice.call($('.tab'));
   currentTab = arrayTabs.indexOf(this);
   document.getElementsByClassName('panel')[currentTab].classList.add('is-show');
+  closePopup()
 };
 
 function handleDragOver(event) {

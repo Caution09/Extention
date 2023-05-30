@@ -1,3 +1,4 @@
+const toolVersion = 1
 let localPromptList = []
 let archivesList = []
 let masterPrompts = []

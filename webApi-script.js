@@ -42,13 +42,20 @@ function Search(search){
     saveLocalList()
   }
 
-  const toolMessageAPI = "https://script.google.com/macros/s/AKfycbzZlz_wVLkZRV6WR5iQSPGnnznAsvxq_2wECPDlfQY5GwaGyU6p0uN4-eAFgk_0Qpvk/exec"
+  const toolMessageAPI = "https://script.google.com/macros/s/AKfycbxwWkdzoWzo8kvnAX84AXuLr0ApoIzrEnU_s88v5JIXBEDvLf0VIyET5Da2tZGTajhj/exec"
   function loadMessage(){
     fetch(toolMessageAPI) 
     .then( response => response.json())
     .then( json => {  
+      $("#notice").text("")
       jsonLoop(json,(item,index)=>{
         switch(item.title){
+          case "latestToolVer":
+            if(toolVersion < item.value){
+              $('#noticeTab').addClass('is-alert');
+              $("#notice").text("最新のバージョンがあります");
+            }
+            break;
           case "isAlert":
             if(item.value){
               $('#noticeTab').addClass('is-alert');
@@ -62,6 +69,9 @@ function Search(search){
             break;
         }
       })
+      console.log($("#notice").text())
+      console.log(json)
+
     });
   }
   
@@ -85,8 +95,9 @@ function masterDicDownload(jsonURL){
     if (xhr.readyState === 4 && xhr.status === 200) {
       const jsonData = JSON.parse(xhr.responseText);
       jsonLoop(jsonData,(data)=>{
-        masterPrompts.push( {"prompt" : data[3],"data":{0:data[0], 1:data[1], 2:data[2]}})
+        masterPrompts.push( {"prompt" : data[3],"data":{0:data[0], 1:data[1], 2:data[2]},"url":data[4]})
       })
+      console.log(masterPrompts)
     }
   };
   xhr.send();
