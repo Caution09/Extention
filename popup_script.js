@@ -9,9 +9,30 @@ function init() {
   // イベントの登録
   const tabs = $('.tab');
   tabs.on('click', tabSwitch);
-  tabs.eq(1).on('click', addInit);
-  tabs.eq(2).on('click', archivesInit);
-  tabs.eq(3).on('click', editInit);
+  $('#editTab').on('click', editInit);
+  $('#promptDicText').click(() => promptDicOpen());
+  $('#elementDicText').click(() => elementDicOpen());
+  $('#masterDicText').click(() => masterDicOpen());
+  $('#search-cat0').on('change', function () {
+    setChiledCategoryList("#search-cat1", 1, $(this).val())
+    elementSearch()
+  });
+
+  $('#search-cat1').on('change', function () {
+    elementSearch()
+  });
+
+  $("#search-cat-reset").click(() => {
+    for (let i = 0; i < 2; i++) {
+      $("#search-cat" + i).val("");
+      if (i > 0) {
+        $("#search-cat" + i).prop('disabled', true);
+      }
+    }
+    if (generateInput.val() !== "") {
+      elementSearch()
+    }
+  })
 
   var incluedZone = $('#inclued');
   incluedZone.on('dragover', handleDragOver);
@@ -23,12 +44,19 @@ function init() {
     input.on('change', handleEvent);
   });
 
+  $("#isDeleteCheck").on('change', function () {
+    const isChecked = $(this).prop('checked');
+    optionData.isDeleteCheck = isChecked;
+    saveOptionData()
+  });
+
   $("input[name='UIType']").on('change', onChengeUIType);
   $("#saveButton").on('click', archivesPrompt);
   $("#popup-image").on('click', closePopup);
   $("#resetButton").on('click', () => chrome.storage.local.clear());
   $("#localDicDownload").on('click', () => jsonDownload(localPromptList, "Elements"));
   $("#PromptDownload").on('click', () => jsonDownload(archivesList, "Prompts"));
+  $("#MasterDownload").on('click', () => jsonDownload(masterPrompts, "Elements"));
   $("#copyButton").on('click', function () {
     navigator.clipboard.writeText(generateInput.val());
   });
@@ -45,6 +73,18 @@ function init() {
     const prompt = $("#prompt").val();
     Regist(big, middle, small, prompt);
     addInit()
+  });
+
+  $("#addPromptList").sortable({
+    revert: true,
+    update: function (event, ui) {
+      let baseIndex = 0;
+      $('#addPromptList').sortable("toArray").forEach(function (index) {
+        localPromptList[index].sort = baseIndex
+        baseIndex++
+      });
+      saveLocalList();
+    }
   });
 
   generateInput.on("input", function () {
@@ -70,15 +110,13 @@ function init() {
 
   const elmSearch = $("#search");
   $("#searchButton").on('click', () => {
-    resetPromptList("#promptList");
-    Search($("#search").val());
+    elementSearch();
   });
 
   elmSearch.on('keypress', (e) => {
     const keyCodeReturn = 13;
     if (e.keyCode === keyCodeReturn) {
-      resetPromptList("#promptList");
-      Search($("#search").val());
+      elementSearch();
     }
   });
 
@@ -86,6 +124,64 @@ function init() {
   loadPrompt()
   loadLocalList()
   loadArchivesList()
+}
+
+function setCategoryList(id, category) {
+  $(id + " option").remove()
+  categoryData.data[category].forEach((item) => {
+    $(id).append($('<option>', {
+      value: item.value,
+      text: item.value
+    }));
+  })
+  $(id).prop('disabled', false);
+  $(id).val("")
+}
+
+function setChiledCategoryList(id, category, parent) {
+  $(id + " option").remove()
+  categoryData.data[category].forEach((item) => {
+    if (item.parent === parent) {
+      $(id).append($('<option>', {
+        value: item.value,
+        text: item.value
+      }));
+    }
+  })
+  $(id).prop('disabled', false);
+  $(id).val("")
+}
+
+let isSearch = false
+function elementSearch() {
+  if (isSearch) {
+    return
+  }
+  const keyword = $("#search").val()
+  const data = [$('#search-cat0').val(), $('#search-cat1').val()]
+
+  isSearch = true
+  resetHtmlList("#promptList");
+  const resultList = Search(keyword, data);
+  const isHit = Object.keys(resultList).length > 0
+  if (isHit) {
+    isSearch = false
+    createSearchList(resultList, "#promptList");
+  } else {
+    if (keyword === "") {
+      $("#isSearch").html("何も見つかりませんでした");
+      isSearch = false
+    } else {
+      $("#isSearch").html("辞書内に存在しないため翻訳中");
+      translate(keyword, (prompt) => {
+        const data = { "prompt": prompt, "data": { 0: "Google翻訳", 1: "仮設定", 2: keyword } }
+        resultList.push(data)
+        $("#isSearch").html("");
+        isSearch = false
+        createSearchList(resultList, "#promptList", true);
+      })
+    }
+  }
 }
 
 function onChengeUIType(event) {
@@ -108,25 +204,74 @@ function UpdateGenaretePrompt() {
 }
 
 function editInit() {
-  resetPromptList("#editList")
+  resetHtmlList("#editList")
   createEditList(editPrompt.elements, "#editList")
 }
 
 function archivesInit() {
-  resetPromptList("#archiveList")
+  resetHtmlList("#archiveList")
   createArchiveList(archivesList, "#archiveList")
 }
 
 function addInit() {
-  resetPromptList("#addPromptList")
+  resetHtmlList("#addPromptList")
   createAddList(localPromptList, "#addPromptList");
 }
 
+function elementDicOpen() {   
+  if ($('#addPromptList').children().length > 0) {
+    resetHtmlList("#addPromptList")
+    $('#elementDicText').text("▶要素辞書(ローカル)　※ここをクリックで開閉")
+  } else {
+    localPromptList = localPromptList.sort(function (a, b) {
+      return a.sort - b.sort;
+    });
+    resetHtmlList("#addPromptList")
+    createAddList(localPromptList, "#addPromptList");
+    $('#elementDicText').text("▼要素辞書(ローカル)　※ここをクリックで開閉")
+  }
+}
+
+function masterDicOpen() {
+  if ($('#masterDicList').children().length > 0) {
+    resetHtmlList("#masterDicList")
+    $('#masterDicText').text("▶要素辞書(マスタ)　※ここをクリックで開閉")
+  } else {
+    resetHtmlList("#masterDicList")
+    createAddList(masterPrompts, "#masterDicList");
+    $('#masterDicText').text("▼要素辞書(マスタ)　※ここをクリックで開閉")
+  }
+}
+
+function promptDicOpen() {
+  if ($('#archiveList').children().length > 0) {
+    resetHtmlList("#archiveList")
+    $('#promptDicText').text("▶プロンプト辞書　※ここをクリックで開閉")
+  } else {
+    resetHtmlList("#archiveList")
+    createArchiveList(archivesList, "#archiveList")
+    $('#promptDicText').text("▼プロンプト辞書　※ここをクリックで開閉")
+  }
+}
+
 function archivesPrompt() {
-  let tmp = { title: "", prompt: generateInput.val() }
-  archivesList.push(tmp)
-  saveArchivesList()
-  archivesInit()
+  const archivePrompt = generateInput.val()
+  const matchedIndex = archivesList.findIndex(obj => obj.prompt === archivePrompt);
+
+  if (matchedIndex !== -1) {
+    window.alert("既に同じプロンプトが追加されています。名前：" + archivesList[matchedIndex].title);
+  } else {
+    archivesList.push({ title: "", prompt: archivePrompt })
+    saveArchivesList()
+    archivesInit()
+  }
+}
+
+function createDragableIcon(index, value) {
+  let data = document.createTextNode(value);
+  data.value = index;
+  // data.
+  return data;
 }
 
 function createHeaderData(value) {
@@ -179,7 +324,7 @@ function createRegistButton(big, middle, small, prompt) {
 function createAddButton(name, value) {
   let button = document.createElement('button');
   button.type = "submit";
-  button.innerHTML = name;
+  button.innerHTML = "+";
   button.onclick = () => {
     generateInput.val(generateInput.val() + value);
     savePrompt();
@@ -194,15 +339,26 @@ function createCopyButton(value) {
   button.onclick = () => {
     navigator.clipboard.writeText(value)
   };
+  // button.appendChild(getIconImage("コピー.png","Copy"));
+
   return button;
+}
+
+function getIconImage(iconName,alt){
+  let img = document.createElement('img');
+  img.src = "icon/"+iconName;
+  img.alt = alt;
+  img.width = 10;
+  img.height = 10;
+  return img;
 }
 
 function createOpenImageButton(value) {
   let button = document.createElement('button');
   button.type = "submit";
-  button.innerHTML = "s";
+  button.innerHTML = "P";
   button.onclick = () => {
-    const imageUrl = "https://ul.h3z.jp/"+value.url+".jpg";
+    const imageUrl = "https://ul.h3z.jp/" + value.url + ".jpg";
     fetch(imageUrl)
       .then(response => response.blob())
       .then(blob => {
@@ -212,13 +368,15 @@ function createOpenImageButton(value) {
           const arrayBuffer = reader.result;
           var binary = atob(arrayBuffer.split(',')[1]);
           $('#popup-image').attr({
-            src: "data:image/png;base64," +binary,
+            src: "data:image/png;base64," + binary,
             width: '256',
             height: '256'
           });
           $(`#preview-element`).text(`${value.data[0]}:${value.data[1]}:${value.data[2]}`);
           $("#preview-prompt").val(value.prompt)
-          $('#popup').css({"display": "flex"}) 
+          $("#preview-positive-copy").click(() =>  navigator.clipboard.writeText(value.prompt));
+          $("#preview-negative-copy").click(() =>  navigator.clipboard.writeText("disfigured.bad anatomy disfigured,jpeg artifacts,error,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,anatomical nonsense,watermark,five fingers,worst quality,bad anatomy,ugly,cropped,simple background,normal quality,lowers,low quality,polar lowres,standard quality,poorly drawn hands,boken limb,missing limbs,malformed limbs,incorrect limb,fusion hand,bad finglegs,abnormal fingers,missing fingers,fewer digits,too many fingers,extra digit,lose finger,extra fingers,one hand with more than 5 digit,one hand with less than 5 digit,one hand with more than 5 fingers,one hand with less than 5 fingers,3d character,qr code,ui,artist name,signature,text error,text font ui,bar code,username,bad digit,liquid digit,missing digit,fewer digits,multiple digit,text,fused digit,extra digt,extra digits,extra digit,nsfw"));
+          $('#popup').css({ "display": "flex" })
           $('#popup').show();
         };
       });
@@ -228,10 +386,10 @@ function createOpenImageButton(value) {
 
 function Base64Png(file) {
   var reader = new FileReader();
-  reader.onload = function(event) {
+  reader.onload = function (event) {
     var arrayBuffer = event.target.result;// base64テキスト
     var binary = atob(arrayBuffer.split(',')[1]);
-    var url = "data:image/png;base64," +binary;
+    var url = "data:image/png;base64," + binary;
     createPngPreview(url)
   };
   reader.readAsDataURL(file);
@@ -242,18 +400,24 @@ function closePopup() {
   $('#popup').hide();
 }
 
-function createRemoveButton(index) {
+function createRemoveButton(item, li) {
   let button = document.createElement('button');
   button.type = "submit";
   button.innerHTML = "X";
   button.onclick = () => {
-    const result = window.confirm("本当に削除しますか？");
-    if (result) {
-      localPromptList.splice(index, 1)
+    if (!optionData.isDeleteCheck) {
+      localPromptList.splice(getLocalElementIndex(item), 1)
       saveLocalList()
-      addInit()
+      li.remove();
     }
-
+    else {
+      const result = window.confirm("本当に削除しますか？");
+      if (result) {
+        localPromptList.splice(getLocalElementIndex(item), 1)
+        saveLocalList()
+        li.remove();
+      }
+    }
   };
   return button;
 }
@@ -275,11 +439,17 @@ function createDeleteButton(index) {
   button.type = "submit";
   button.innerHTML = "X";
   button.onclick = () => {
-    const result = window.confirm("本当に削除しますか？");
-    if (result) {
+    if (!optionData.isDeleteCheck) {
       archivesList.splice(index, 1)
       saveArchivesList()
       archivesInit()
+    } else {
+      const result = window.confirm("本当に削除しますか？");
+      if (result) {
+        archivesList.splice(index, 1)
+        saveArchivesList()
+        archivesInit()
+      }
     }
   };
   return button;
@@ -290,17 +460,23 @@ function createRemovePromptButton(index) {
   button.type = "submit";
   button.innerHTML = "X";
   button.onclick = () => {
-    const result = window.confirm("本当に削除しますか？");
-    if (result) {
+    if (!optionData.isDeleteCheck) {
       editPrompt.removeElement(index)
       UpdateGenaretePrompt()
       editInit()
+    } else {
+      const result = window.confirm("本当に削除しますか？");
+      if (result) {
+        editPrompt.removeElement(index)
+        UpdateGenaretePrompt()
+        editInit()
+      }
     }
   };
   return button;
 }
 
-function resetPromptList(listId) {
+function resetHtmlList(listId) {
   let targetList = $(listId).get(0);
   targetList.innerHTML = "";
 }
@@ -313,55 +489,34 @@ function createHeaders(listId, ...headers) {
   $(listId).get(0).appendChild(li);
 }
 
-let isSearch = false;
-function createSearchList(json, listId) {
-  if (isSearch) {
-    return;
-  }
-  const dataNum = Object.keys(json).length
-  if (dataNum == 0) {
-    isSearch = true
-    let searchKeword = $("#search").val()
-    console.log(searchKeword)
-    translate(searchKeword, (prompt) => {
-      createHeaders(listId, "大項目", "中項目", "小項目", "Prompt")
-      const data = ["Google翻訳", "仮設定", searchKeword]
-      let li = document.createElement('li');
-      li.appendChild(createInputData(data[0]));
-      li.appendChild(createInputData(data[1]));
-      li.appendChild(createInputData(data[2]));
-      li.appendChild(createInputData(prompt));
-      li.appendChild(createAddButton("+", prompt + " "));
-      li.appendChild(createAddButton("+,", prompt + ","));
-      li.appendChild(createCopyButton(prompt));
-      li.appendChild(createRegistButton(data[0], data[1], data[2], prompt));
-      $(listId).get(0).appendChild(li);
-      isSearch = false
-      $("#isSearch").html("");
-    })
-  } else {
-    createHeaders(listId, "大項目", "中項目", "小項目", "Prompt")
-    jsonLoop(json, function (item, index) {
-      let li = document.createElement('li');
-      li.appendChild(createInputData(item.data[0]));
-      li.appendChild(createInputData(item.data[1]));
-      li.appendChild(createInputData(item.data[2]));
-      li.appendChild(createInputData(item.prompt));
-      li.appendChild(createAddButton("+", item.prompt + " "));
-      li.appendChild(createAddButton("+,", item.prompt + ","));
-      li.appendChild(createCopyButton(item.prompt));
-      if(item.url){
-        li.appendChild(createOpenImageButton(item));
-      }
-      $(listId).get(0).appendChild(li);
-    })
-  }
-}
-
-function createAddList(json, listId) {
+function createSearchList(json, listId, isSave) {
   createHeaders(listId, "大項目", "中項目", "小項目", "Prompt")
   jsonLoop(json, function (item, index) {
     let li = document.createElement('li');
+    li.appendChild(createInputData(item.data[0]));
+    li.appendChild(createInputData(item.data[1]));
+    li.appendChild(createInputData(item.data[2]));
+    li.appendChild(createInputData(item.prompt));
+    li.appendChild(createAddButton("+", item.prompt + ","));
+    li.appendChild(createCopyButton(item.prompt));
+
+    if (isSave) {
+      li.appendChild(createRegistButton(item.data[0], item.data[1], item.data[2], item.prompt));
+    }
+
+    if (item.url) {
+      li.appendChild(createOpenImageButton(item));
+    }
+    $(listId).get(0).appendChild(li);
+  })
+}
+
+function createAddList(json, listId) {
+  // createHeaders(listId, "大項目", "中項目", "小項目", "Prompt")
+  json.forEach( (item, index)=> {
+    let li = document.createElement('li');
+    if (listId === "#addPromptList") 
+      li.appendChild(createDragableIcon(index, ":::::::::"));
     li.appendChild(createInputData(item.data[0], index, (value, index) => {
       localPromptList[index].data[0] = value
       saveLocalList()
@@ -378,10 +533,17 @@ function createAddList(json, listId) {
       localPromptList[index].prompt = value
       saveLocalList()
     }));
-    li.appendChild(createAddButton("+", item.prompt + " "));
-    li.appendChild(createAddButton("+,", item.prompt + ","));
+    li.appendChild(createAddButton("+", item.prompt + ","));
     li.appendChild(createCopyButton(item.prompt));
-    li.appendChild(createRemoveButton(index));
+    if (item.url) {
+      li.appendChild(createOpenImageButton(item));
+    }
+    if (listId === "#addPromptList") {
+      li.appendChild(createRemoveButton(item, li));
+      localPromptList[index].sort = index
+      li.id = parseInt(index)
+      li.className = "ui-sortable-handle"
+    }
     $(listId).get(0).appendChild(li);
   })
 }
@@ -478,7 +640,6 @@ function handleDragOver(event) {
 function handleEvent(event) {
   event.stopPropagation();
   event.preventDefault();
-
   var file = null;
   if (event.type === 'drop') {
     file = event.originalEvent.dataTransfer.files[0];
@@ -486,7 +647,7 @@ function handleEvent(event) {
     file = event.target.files[0];
   }
 
-  switch(file.type){
+  switch (file.type) {
     case "application/json":
     case "text/plain":
       readDicFile(file);
@@ -499,31 +660,61 @@ function handleEvent(event) {
   }
 }
 
-function readDicFile(file){
+function readDicFile(file) {
+  $('#incluedText').text("読み込み中")
   var reader = new FileReader();
   reader.onload = function (event) {
     const content = JSON.parse(event.target.result); // 読み込んだファイルをJSON形式のデータとして解析する
     console.log(event.target.result); // 読み込んだJSONデータをコンソールに表示する
-    switch(content.dicType){
+    let addCount = 0
+    switch (content.dicType) {
       case "Elements":
+        content.data.forEach(item => {
+          if (RegistDic(item)) {
+            addCount++;
+          }
+        });
+        if (addCount > 0) {
+          window.alert(addCount.toString() + "件の要素辞書の読み込みが完了しました");
+        }
         break;
       case "Prompts":
+        content.data.forEach(item => {
+          if (addPromptDic(item)) {
+            addCount++;
+          }
+        });
+        if (addCount > 0) {
+          saveArchivesList()
+          archivesInit()
+          window.alert(addCount.toString() + "件のプロンプト辞書の読み込みが完了しました");
+        }
         break;
       default:
         break;
     }
     console.log(content); // 読み込んだJSONデータをコンソールに表示する
+    $('#incluedText').text("辞書か画像を読みこむ (クリックして選択かドラッグドロップ)")
   };
-
   reader.readAsText(file);
 }
 
+function addPromptDic(item) {
+  const matchedIndex = archivesList.findIndex(obj => obj.prompt === item.prompt);
+  if (matchedIndex !== -1) {
+    return false
+  } else {
+    archivesList.push(item)
+    return true
+  }
+}
+
 function readPngFile(file) {
-  
+
   // FileReaderオブジェクトを作成する
   const reader = new FileReader();
-  reader.onload = function(event) {
-    const arrayBuffer = event.target.result;  
+  reader.onload = function (event) {
+    const arrayBuffer = event.target.result;
     let pngInfo = getPngInfo(arrayBuffer);
     let outPut = pngInfo.textChunks;
     outPut["width"] = pngInfo.width
@@ -536,7 +727,7 @@ function readPngFile(file) {
 
 function createPngPreview(file) {
   const img = new Image();
-  img.onload = function() {
+  img.onload = function () {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     const fixSize = 540;
@@ -563,7 +754,7 @@ function createPngPreview(file) {
   img.src = file;
 }
 
-function getPngInfo(arrayBuffer){
+function getPngInfo(arrayBuffer) {
   let info = {};
   const dataView = new DataView(arrayBuffer);
   info.width = dataView.getUint32(16, false);
@@ -577,7 +768,7 @@ function getPngInfo(arrayBuffer){
   return info;
 }
 
-function getTextChunk(arrayBuffer){
+function getTextChunk(arrayBuffer) {
   let data = {};
   let metadata = {};
   // tEXtチャンクを検索する
@@ -592,11 +783,11 @@ function getTextChunk(arrayBuffer){
       const keyword = new TextDecoder().decode(keywordArray);
       const textDataArray = new Uint8Array(arrayBuffer, chunkOffset + 8 + keywordEnd + 1, chunkLength - (keywordEnd + 1));
       const textData = new TextDecoder().decode(textDataArray);
-      if(keyword === "Comment"){
+      if (keyword === "Comment") {
         metadata = textData
         data = JSON.parse(metadata);
         data.metadata = metadata;
-      }else if(keyword ==="parameters"){
+      } else if (keyword === "parameters") {
         metadata = `prompt: ${textData}`
         data = parseSDPng(metadata);
         data.metadata = metadata;
@@ -608,29 +799,27 @@ function getTextChunk(arrayBuffer){
   return data;
 }
 
-function createPngInfo(data){
-      // DOM操作で要素を生成する
-      const div = $('<div>').addClass('item');
-      $.each(data, function(key, value) {
-        const label = $('<label>').text(key + ': ').css({ // スタイルを追加
-          display: 'inline-block',
-          width: '200px', // 変数名の表示幅を指定
-          margin: '5px 10px 5px 0' // 各要素のマージンを指定
-        });
-        const element = $('<input>').attr({
-          type: 'text',
-          value: value,
-          readonly: true // readonly属性を追加
-        }).css({ // スタイルを追加
-          display: 'inline-block',
-          width: '200px' // 入力フィールドの幅を指定
-        });
-        div.append(label, element, '<br>'); // <br>要素は不要になる
-      });
-      
-      // 要素をDOMに挿入する
-      $('#pngInfo').empty();
-      $('#pngInfo').append(div);
+function createPngInfo(data) {
+  const div = $('<div>').addClass('item');
+  $.each(data, function (key, value) {
+    const label = $('<label>').text(key + ': ').css({
+      display: 'inline-block',
+      width: '200px',
+      margin: '5px 10px 5px 0' 
+    });
+    const element = $('<input>').attr({
+      type: 'text',
+      value: value,
+      readonly: true 
+    }).css({ 
+      display: 'inline-block',
+      width: '200px' 
+    });
+    div.append(label, element, '<br>'); 
+  });
+
+  $('#pngInfo').empty();
+  $('#pngInfo').append(div);
 }
 
 function parseSDPng(text) {

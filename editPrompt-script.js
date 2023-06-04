@@ -33,6 +33,12 @@ let editPrompt = {
     this.elements[index + value] = temp
     this.generate()
   },
+  swapElement:function(index,target){
+    const temp = this.elements[index]
+    this.elements[index] = this.elements[target]
+    this.elements[target] = temp
+    this.generate()
+  },
   createElement:function(prompt,weight){
     let element = {}
     if(weight){

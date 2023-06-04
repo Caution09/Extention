@@ -33,6 +33,7 @@ function loadLocalList(){
 chrome.storage.local.get(["localPromptList"], function(items) {
   if(items.localPromptList != null)
     localPromptList = items.localPromptList;  // value1
+    categoryData.update()
 });
 }
 
@@ -46,10 +47,11 @@ function loadOptionData() {
 chrome.storage.local.get(["optionData"], function(items) {
   if(items.optionData != null){
     optionData = items.optionData;  // value1
+    $('#isDeleteCheck').prop('checked', optionData.isDeleteCheck);
   }else{
     optionData = {
       shaping : "SD"
-      ,isDeleteCheck : false
+      ,isDeleteCheck : true
     }
   }
   const uiTypeButtons = $('[name="UIType"]');
@@ -97,4 +99,70 @@ function UpdatePromptList(){
 function sendBackground(execType,value){
   chrome.runtime.sendMessage({ args: [execType,value] }, function (response) {
     console.log(response.text); });
+}
+
+function Regist(big,middle,small,prompt,url){
+  const inputData = prompt + big + middle + small;
+  const isDuplicate = localPromptList.some(item => {
+    const itemData = item.prompt + item.data[0] + item.data[1] + item.data[2];
+    return inputData === itemData;
+  });
+  
+  if (isDuplicate) {
+    window.alert("既に同じ要素が追加されています。");
+    return
+  }
+  
+  if(url){
+    localPromptList.push( {"prompt" : prompt,"data":{0:big, 1:middle, 2:small},"url":url})
+  }else{
+    localPromptList.push( {"prompt" : prompt,"data":{0:big, 1:middle, 2:small}})
+  }
+  saveLocalList()
+  RegistAPI(big,middle,small,prompt)
+}
+
+function RegistDic(item) {
+  const inputData = item.prompt + item.data[0] + item.data[1] + item.data[2];
+  const isDuplicate = localPromptList.some(listItem => {
+    const listItemData = listItem.prompt + listItem.data[0] + listItem.data[1] + listItem.data[2];
+    return inputData === listItemData;
+  });
+  
+  if (!isDuplicate) {
+    const newItem = {"prompt": item.prompt, "data": item.data};
+    if (item.url) {
+      newItem.url = item.url;
+    }
+    localPromptList.push(newItem);
+    saveLocalList();
+    return true
+  }else{
+    return false
+  }
+}
+
+function Search(search, data) {
+  let searchResults = [];
+  let prompts = localPromptList.concat(masterPrompts);
+  if (data[0] !== "") {
+    data.filter(value => value !== null).forEach((value, index) => {
+      prompts = prompts.filter(item => item.data[index] === value)
+    })
+  }
+  searchResults = prompts.filter(item => (item.data[0] + item.data[1] + item.data[2] + item.prompt).includes(search))
+  return searchResults;
+}
+
+function getLocalElementIndex(searchItem) {
+  const searchData = searchItem.prompt + searchItem.data[0] + searchItem.data[1] + searchItem.data[2];
+  
+  for (let i = 0; i < localPromptList.length; i++) {
+    const item = localPromptList[i];
+    const eachData = item.prompt + item.data[0] + item.data[1] + item.data[2];
+    if (searchData == eachData) {
+      return i;
+    }
+  }
+  return -1;
 }
