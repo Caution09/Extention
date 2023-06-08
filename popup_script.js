@@ -87,6 +87,22 @@ function init() {
     }
   });
 
+  $("#editList").sortable({
+    revert: true,
+    update: function (event, ui) {
+      let baseIndex = 0;
+      $('#editList').sortable("toArray").forEach(function (index) {
+        if(!index){
+          return
+        }
+        editPrompt.elements[index].sort = baseIndex
+        baseIndex++
+      });
+      editPrompt.generate()
+      generateInput.val(editPrompt.prompt);  // value1
+    }
+  });
+
   generateInput.on("input", function () {
     editPrompt.init(generateInput.val())
     if (currentTab == 3) {
@@ -174,7 +190,11 @@ function elementSearch() {
     } else {
       $("#isSearch").html("辞書内に存在しないため翻訳中");
       translate(keyword, (prompt) => {
-        const data = { "prompt": prompt, "data": { 0: "Google翻訳", 1: "仮設定", 2: keyword } }
+        let data = { "prompt": prompt, "data": { 0: "Google翻訳", 1: "仮設定", 2: keyword } }
+        const isAlphanumeric = /^[a-zA-Z0-9]+$/.test(keyword);
+        if(isAlphanumeric){
+          data = { "prompt": keyword, "data": { 0: "Google翻訳", 1: "仮設定", 2: prompt } }
+        }
         resultList.push(data)
         $("#isSearch").html("");
         isSearch = false
@@ -218,7 +238,7 @@ function addInit() {
   createAddList(localPromptList, "#addPromptList");
 }
 
-function elementDicOpen() {   
+function elementDicOpen() {
   if ($('#addPromptList').children().length > 0) {
     resetHtmlList("#addPromptList")
     $('#elementDicText').text("▶要素辞書(ローカル)　※ここをクリックで開閉")
@@ -344,9 +364,9 @@ function createCopyButton(value) {
   return button;
 }
 
-function getIconImage(iconName,alt){
+function getIconImage(iconName, alt) {
   let img = document.createElement('img');
-  img.src = "icon/"+iconName;
+  img.src = "icon/" + iconName;
   img.alt = alt;
   img.width = 10;
   img.height = 10;
@@ -374,8 +394,8 @@ function createOpenImageButton(value) {
           });
           $(`#preview-element`).text(`${value.data[0]}:${value.data[1]}:${value.data[2]}`);
           $("#preview-prompt").val(value.prompt)
-          $("#preview-positive-copy").click(() =>  navigator.clipboard.writeText(value.prompt));
-          $("#preview-negative-copy").click(() =>  navigator.clipboard.writeText("disfigured.bad anatomy disfigured,jpeg artifacts,error,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,anatomical nonsense,watermark,five fingers,worst quality,bad anatomy,ugly,cropped,simple background,normal quality,lowers,low quality,polar lowres,standard quality,poorly drawn hands,boken limb,missing limbs,malformed limbs,incorrect limb,fusion hand,bad finglegs,abnormal fingers,missing fingers,fewer digits,too many fingers,extra digit,lose finger,extra fingers,one hand with more than 5 digit,one hand with less than 5 digit,one hand with more than 5 fingers,one hand with less than 5 fingers,3d character,qr code,ui,artist name,signature,text error,text font ui,bar code,username,bad digit,liquid digit,missing digit,fewer digits,multiple digit,text,fused digit,extra digt,extra digits,extra digit,nsfw"));
+          $("#preview-positive-copy").click(() => navigator.clipboard.writeText(value.prompt));
+          $("#preview-negative-copy").click(() => navigator.clipboard.writeText("disfigured.bad anatomy disfigured,jpeg artifacts,error,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,anatomical nonsense,watermark,five fingers,worst quality,bad anatomy,ugly,cropped,simple background,normal quality,lowers,low quality,polar lowres,standard quality,poorly drawn hands,boken limb,missing limbs,malformed limbs,incorrect limb,fusion hand,bad finglegs,abnormal fingers,missing fingers,fewer digits,too many fingers,extra digit,lose finger,extra fingers,one hand with more than 5 digit,one hand with less than 5 digit,one hand with more than 5 fingers,one hand with less than 5 fingers,3d character,qr code,ui,artist name,signature,text error,text font ui,bar code,username,bad digit,liquid digit,missing digit,fewer digits,multiple digit,text,fused digit,extra digt,extra digits,extra digit,nsfw"));
           $('#popup').css({ "display": "flex" })
           $('#popup').show();
         };
@@ -513,9 +533,9 @@ function createSearchList(json, listId, isSave) {
 
 function createAddList(json, listId) {
   // createHeaders(listId, "大項目", "中項目", "小項目", "Prompt")
-  json.forEach( (item, index)=> {
+  json.forEach((item, index) => {
     let li = document.createElement('li');
-    if (listId === "#addPromptList") 
+    if (listId === "#addPromptList")
       li.appendChild(createDragableIcon(index, ":::::::::"));
     li.appendChild(createInputData(item.data[0], index, (value, index) => {
       localPromptList[index].data[0] = value
@@ -574,6 +594,8 @@ function createEditList(json, listId) {
   createHeaders(listId, "Prompt", "重み")
   jsonLoop(json, function (item, index) {
     let li = document.createElement('li');
+    li.appendChild(createDragableIcon(index, ":::::::::"));
+
     let weight = item[optionData.shaping].weight
     let prompt = item[optionData.shaping].value
 
@@ -593,13 +615,10 @@ function createEditList(json, listId) {
     if (weight) {
       li.appendChild(weightInput);
     }
-    if (index < dataNum - 1) {
-      li.appendChild(createMoveElementButton(index, "↓", 1));
-    }
-    if (index > 0) {
-      li.appendChild(createMoveElementButton(index, "↑", -1));
-    }
     li.appendChild(createRemovePromptButton(index));
+    li.id = parseInt(index)
+    li.className = "ui-sortable-handle"
+
     $(listId).get(0).appendChild(li);
   })
   setColumnWidth(listId, 1, "200px")
@@ -805,17 +824,17 @@ function createPngInfo(data) {
     const label = $('<label>').text(key + ': ').css({
       display: 'inline-block',
       width: '200px',
-      margin: '5px 10px 5px 0' 
+      margin: '5px 10px 5px 0'
     });
     const element = $('<input>').attr({
       type: 'text',
       value: value,
-      readonly: true 
-    }).css({ 
+      readonly: true
+    }).css({
       display: 'inline-block',
-      width: '200px' 
+      width: '200px'
     });
-    div.append(label, element, '<br>'); 
+    div.append(label, element, '<br>');
   });
 
   $('#pngInfo').empty();

@@ -47,7 +47,7 @@ function SearchLogAPI(search){
     });
   }
   
-const translateAPI = "https://script.google.com/macros/s/AKfycbwDOhGpN40Xkg09AlH0YiB1C77h8qgCTF25YGHfbORCw-wAm7BQkBpLSrZCw28QOXCJHA/exec"
+const translateAPI = "https://script.google.com/macros/s/AKfycbxLhc0j7jQ6GwrQNEvpRNweDBjvOY4pkx8kFyhmBfc59IASjsp19TpiNuTipZsoQFyUjw/exec"
 function translate(keyword,translateEvent){
   let url = translateAPI + "?search=" + encodeURI(keyword);
   fetch(url) 
