@@ -6,120 +6,123 @@ let optionData = {}
 
 // データ保存
 function savePrompt() {
-  chrome.storage.local.set({'generatePrompt': editPrompt.prompt});
+  chrome.storage.local.set({ 'generatePrompt': editPrompt.prompt });
 }
 
-function saveLocalList(){
-  chrome.storage.local.set({'localPromptList': localPromptList});
+function saveLocalList() {
+  chrome.storage.local.set({ 'localPromptList': localPromptList });
 }
 
 function saveArchivesList() {
-  chrome.storage.local.set({'archivesList': archivesList},()=>{
+  chrome.storage.local.set({ 'archivesList': archivesList }, () => {
     UpdatePromptList();
   });
 }
 
 function saveOptionData() {
-  chrome.storage.local.set({'optionData': optionData});
+  chrome.storage.local.set({ 'optionData': optionData });
 
-}function loadPrompt() {
-chrome.storage.local.get(["generatePrompt"], function(items) {
-  if(items.generatePrompt != null)
-  InitGenaretePrompt(items.generatePrompt)
+} function loadPrompt() {
+  chrome.storage.local.get(["generatePrompt"], function (items) {
+    if (items.generatePrompt != null)
+      InitGenaretePrompt(items.generatePrompt)
   });
 }
 
-function loadLocalList(){
-chrome.storage.local.get(["localPromptList"], function(items) {
-  if(items.localPromptList != null)
-    localPromptList = items.localPromptList;  // value1
+function loadLocalList() {
+  chrome.storage.local.get(["localPromptList"], function (items) {
+    if (items.localPromptList != null)
+      localPromptList = items.localPromptList;  // value1
     categoryData.update()
-});
+  });
 }
 
 function loadArchivesList() {
-chrome.storage.local.get(["archivesList"], function(items) {
-  if(items.archivesList != null)
-  archivesList = items.archivesList;  // value1
-});
+  chrome.storage.local.get(["archivesList"], function (items) {
+    if (items.archivesList != null)
+      archivesList = items.archivesList;  // value1
+  });
 }
 function loadOptionData() {
-chrome.storage.local.get(["optionData"], function(items) {
-  if(items.optionData != null){
-    optionData = items.optionData;  // value1
-    $('#isDeleteCheck').prop('checked', optionData.isDeleteCheck);
-  }else{
-    optionData = {
-      shaping : "SD"
-      ,isDeleteCheck : true
+  chrome.storage.local.get(["optionData"], function (items) {
+    if (items.optionData != null) {
+      optionData = items.optionData;  // value1
+      $('#isDeleteCheck').prop('checked', optionData.isDeleteCheck);
+      $('#DeeplAuth').val(optionData.deeplAuthKey)
+    } else {
+      optionData = {
+        shaping: "SD"
+        , isDeleteCheck: true
+        , optionData: ""
+      }
     }
-  }
-  const uiTypeButtons = $('[name="UIType"]');
+    const uiTypeButtons = $('[name="UIType"]');
 
-  switch(optionData.shaping){
-    case "SD":
-      uiTypeButtons.eq(0).prop('checked', true);
-      break;
-    case "NAI":
-      uiTypeButtons.eq(1).prop('checked', true);
-      break;
-    case "None":
-      uiTypeButtons.eq(2).prop('checked', true);
-      break;
+    switch (optionData.shaping) {
+      case "SD":
+        uiTypeButtons.eq(0).prop('checked', true);
+        break;
+      case "NAI":
+        uiTypeButtons.eq(1).prop('checked', true);
+        break;
+      case "None":
+        uiTypeButtons.eq(2).prop('checked', true);
+        break;
     }
-});
+  });
 }
 
-function addLocalList(){
-  chrome.storage.local.set({'localPromptList': localPromptList});
+function addLocalList() {
+  chrome.storage.local.set({ 'localPromptList': localPromptList });
 }
 
 function addArchivesList() {
-  chrome.storage.local.set({'archivesList': archivesList});
+  chrome.storage.local.set({ 'archivesList': archivesList });
 }
 
-function jsonDownload(json,fileName){
+function jsonDownload(json, fileName) {
   let outJson = {}
   outJson.dicType = fileName;
   outJson.data = json;
 
   const jsonString = JSON.stringify(outJson);
   const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonString);
-  
+
   const link = document.createElement('a');
   link.href = dataUri;
-  link.download = fileName+'.json';
+  link.download = fileName + '.json';
   link.click();
 }
 
-function UpdatePromptList(){
-  sendBackground("UpdatePromptList",null);
+function UpdatePromptList() {
+  sendBackground("UpdatePromptList", null);
 }
 
-function sendBackground(execType,value){
-  chrome.runtime.sendMessage({ args: [execType,value] }, function (response) {
-    console.log(response.text); });
+function sendBackground(execType, value) {
+  chrome.runtime.sendMessage({ args: [execType, value] }, function (response) {
+    console.log(response.text);
+  });
 }
 
-function Regist(big,middle,small,prompt,url){
+function Regist(big, middle, small, prompt, url) {
   const inputData = prompt + big + middle + small;
   const isDuplicate = localPromptList.some(item => {
     const itemData = item.prompt + item.data[0] + item.data[1] + item.data[2];
     return inputData === itemData;
   });
-  
+
   if (isDuplicate) {
     window.alert("既に同じ要素が追加されています。");
     return
   }
-  
-  if(url){
-    localPromptList.push( {"prompt" : prompt,"data":{0:big, 1:middle, 2:small},"url":url})
-  }else{
-    localPromptList.push( {"prompt" : prompt,"data":{0:big, 1:middle, 2:small}})
+
+  if (url) {
+    localPromptList.push({ "prompt": prompt, "data": { 0: big, 1: middle, 2: small }, "url": url })
+  } else {
+    localPromptList.push({ "prompt": prompt, "data": { 0: big, 1: middle, 2: small } })
   }
   saveLocalList()
-  RegistAPI(big,middle,small,prompt)
+  RegistAPI(big, middle, small, prompt)
 }
 
 function RegistDic(item) {
@@ -128,16 +131,16 @@ function RegistDic(item) {
     const listItemData = listItem.prompt + listItem.data[0] + listItem.data[1] + listItem.data[2];
     return inputData === listItemData;
   });
-  
+
   if (!isDuplicate) {
-    const newItem = {"prompt": item.prompt, "data": item.data};
+    const newItem = { "prompt": item.prompt, "data": item.data };
     if (item.url) {
       newItem.url = item.url;
     }
     localPromptList.push(newItem);
     saveLocalList();
     return true
-  }else{
+  } else {
     return false
   }
 }
@@ -156,7 +159,7 @@ function Search(search, data) {
 
 function getLocalElementIndex(searchItem) {
   const searchData = searchItem.prompt + searchItem.data[0] + searchItem.data[1] + searchItem.data[2];
-  
+
   for (let i = 0; i < localPromptList.length; i++) {
     const item = localPromptList[i];
     const eachData = item.prompt + item.data[0] + item.data[1] + item.data[2];

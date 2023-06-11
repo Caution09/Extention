@@ -9,7 +9,10 @@ function init() {
   // イベントの登録
   const tabs = $('.tab');
   tabs.on('click', tabSwitch);
-  $('#editTab').on('click', editInit);
+  $('#editTab').on('click', () => {
+    InitGenaretePrompt(generateInput.val())
+    editInit()
+  });
   $('#promptDicText').click(() => promptDicOpen());
   $('#elementDicText').click(() => elementDicOpen());
   $('#masterDicText').click(() => masterDicOpen());
@@ -33,6 +36,13 @@ function init() {
       elementSearch()
     }
   })
+  
+  const showPanelButton = document.getElementById('show-panel');
+  const panel = document.getElementById('optionPanel');
+  
+  showPanelButton.addEventListener('click', () => {
+    panel.classList.toggle('active');
+  });
 
   var incluedZone = $('#inclued');
   incluedZone.on('dragover', handleDragOver);
@@ -80,6 +90,9 @@ function init() {
     update: function (event, ui) {
       let baseIndex = 0;
       $('#addPromptList').sortable("toArray").forEach(function (index) {
+        if (!index) {
+          return
+        }
         localPromptList[index].sort = baseIndex
         baseIndex++
       });
@@ -92,7 +105,7 @@ function init() {
     update: function (event, ui) {
       let baseIndex = 0;
       $('#editList').sortable("toArray").forEach(function (index) {
-        if(!index){
+        if (!index) {
           return
         }
         editPrompt.elements[index].sort = baseIndex
@@ -102,6 +115,11 @@ function init() {
       generateInput.val(editPrompt.prompt);  // value1
     }
   });
+
+$('#DeeplAuth').on('change', function () {
+  optionData.deeplAuthKey =  $(this).val();
+  saveOptionData()
+});
 
   generateInput.on("input", function () {
     editPrompt.init(generateInput.val())
@@ -169,6 +187,8 @@ function setChiledCategoryList(id, category, parent) {
 }
 
 let isSearch = false
+let isSearchGoogle = false
+let isSearchDeepl = false
 function elementSearch() {
   if (isSearch) {
     return
@@ -188,18 +208,41 @@ function elementSearch() {
       $("#isSearch").html("何も見つかりませんでした");
       isSearch = false
     } else {
+      SearchLogAPI(keyword)
       $("#isSearch").html("辞書内に存在しないため翻訳中");
+      isSearchGoogle = true
       translate(keyword, (prompt) => {
+        isSearchGoogle = false
         let data = { "prompt": prompt, "data": { 0: "Google翻訳", 1: "仮設定", 2: keyword } }
         const isAlphanumeric = /^[a-zA-Z0-9]+$/.test(keyword);
-        if(isAlphanumeric){
+        if (isAlphanumeric) {
           data = { "prompt": keyword, "data": { 0: "Google翻訳", 1: "仮設定", 2: prompt } }
         }
         resultList.push(data)
-        $("#isSearch").html("");
-        isSearch = false
-        createSearchList(resultList, "#promptList", true);
+        isSearch = isSearchGoogle || isSearchDeepl
+        if(!isSearch){
+          $("#isSearch").html("");
+          createSearchList(resultList, "#promptList", true);
+        }
       })
+
+      if(optionData.deeplAuthKey){
+        isSearchDeepl = true
+        translateDeepl(keyword,optionData.deeplAuthKey, (prompt) => {
+          isSearchDeepl = false
+          let data = { "prompt": prompt, "data": { 0: "Deepl翻訳", 1: "仮設定", 2: keyword } }
+          const isAlphanumeric = /^[a-zA-Z0-9]+$/.test(keyword);
+          if (isAlphanumeric) {
+            data = { "prompt": keyword, "data": { 0: "Deepl翻訳", 1: "仮設定", 2: prompt } }
+          }
+          resultList.push(data)
+          isSearch = isSearchGoogle || isSearchDeepl
+          if(!isSearch){
+            $("#isSearch").html("");
+            createSearchList(resultList, "#promptList", true);
+          }
+        })
+      }
     }
   }
 }
@@ -333,7 +376,7 @@ function createMoveElementButton(index, title, value) {
 function createRegistButton(big, middle, small, prompt) {
   let button = document.createElement('button');
   button.type = "submit";
-  button.innerHTML = "保存";
+  button.innerHTML = "New";
   button.onclick = () => {
     Regist(big, middle, small, prompt);
     addInit()
@@ -532,11 +575,9 @@ function createSearchList(json, listId, isSave) {
 }
 
 function createAddList(json, listId) {
-  // createHeaders(listId, "大項目", "中項目", "小項目", "Prompt")
+  createHeaders(listId, "大項目", "中項目", "小項目", "Prompt")
   json.forEach((item, index) => {
     let li = document.createElement('li');
-    if (listId === "#addPromptList")
-      li.appendChild(createDragableIcon(index, ":::::::::"));
     li.appendChild(createInputData(item.data[0], index, (value, index) => {
       localPromptList[index].data[0] = value
       saveLocalList()
@@ -563,6 +604,7 @@ function createAddList(json, listId) {
       localPromptList[index].sort = index
       li.id = parseInt(index)
       li.className = "ui-sortable-handle"
+      li.appendChild(createDragableIcon(index, ":::::::::"));
     }
     $(listId).get(0).appendChild(li);
   })
@@ -594,7 +636,6 @@ function createEditList(json, listId) {
   createHeaders(listId, "Prompt", "重み")
   jsonLoop(json, function (item, index) {
     let li = document.createElement('li');
-    li.appendChild(createDragableIcon(index, ":::::::::"));
 
     let weight = item[optionData.shaping].weight
     let prompt = item[optionData.shaping].value
@@ -618,6 +659,7 @@ function createEditList(json, listId) {
     li.appendChild(createRemovePromptButton(index));
     li.id = parseInt(index)
     li.className = "ui-sortable-handle"
+    li.appendChild(createDragableIcon(index, ":::::::::"));
 
     $(listId).get(0).appendChild(li);
   })
