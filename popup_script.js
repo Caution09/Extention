@@ -1,9 +1,13 @@
 ﻿const generateInput = $("#generatePrompt");
+let mouseCursorValue = ""
 
 // 初期化
 init()
 
 function init() {
+  var overlay = $('#overlay');
+  overlay.show();
+
   loadOptionData()
   loadMessage()
   // イベントの登録
@@ -32,14 +36,14 @@ function init() {
         $("#search-cat" + i).prop('disabled', true);
       }
     }
-    if (generateInput.val() !== "") {
+    if ($("#search").val()) {
       elementSearch()
     }
   })
-  
+
   const showPanelButton = document.getElementById('show-panel');
   const panel = document.getElementById('optionPanel');
-  
+
   showPanelButton.addEventListener('click', () => {
     panel.classList.toggle('active');
   });
@@ -116,10 +120,10 @@ function init() {
     }
   });
 
-$('#DeeplAuth').on('change', function () {
-  optionData.deeplAuthKey =  $(this).val();
-  saveOptionData()
-});
+  $('#DeeplAuth').on('change', function () {
+    optionData.deeplAuthKey = $(this).val();
+    saveOptionData()
+  });
 
   generateInput.on("input", function () {
     editPrompt.init(generateInput.val())
@@ -213,31 +217,31 @@ function elementSearch() {
       isSearchGoogle = true
       translate(keyword, (prompt) => {
         isSearchGoogle = false
-        let data = { "prompt": prompt, "data": { 0: "Google翻訳", 1: "仮設定", 2: keyword } }
-        const isAlphanumeric = /^[a-zA-Z0-9]+$/.test(keyword);
+        let data = { "prompt": prompt, "data": { 0: "", 1: "Google翻訳", 2: keyword } }
+        const isAlphanumeric = /^[a-zA-Z0-9\s:]+$/.test(keyword);
         if (isAlphanumeric) {
-          data = { "prompt": keyword, "data": { 0: "Google翻訳", 1: "仮設定", 2: prompt } }
+          data = { "prompt": keyword, "data": { 0: "", 1: "Google翻訳", 2: prompt } }
         }
         resultList.push(data)
         isSearch = isSearchGoogle || isSearchDeepl
-        if(!isSearch){
+        if (!isSearch) {
           $("#isSearch").html("");
           createSearchList(resultList, "#promptList", true);
         }
       })
 
-      if(optionData.deeplAuthKey){
+      if (optionData.deeplAuthKey) {
         isSearchDeepl = true
-        translateDeepl(keyword,optionData.deeplAuthKey, (prompt) => {
+        translateDeepl(keyword, (prompt) => {
           isSearchDeepl = false
-          let data = { "prompt": prompt, "data": { 0: "Deepl翻訳", 1: "仮設定", 2: keyword } }
-          const isAlphanumeric = /^[a-zA-Z0-9]+$/.test(keyword);
+          let data = { "prompt": prompt, "data": { 0: "", 1: "Deepl翻訳", 2: keyword } }
+          const isAlphanumeric = /^[a-zA-Z0-9\s:]+$/.test(keyword);
           if (isAlphanumeric) {
-            data = { "prompt": keyword, "data": { 0: "Deepl翻訳", 1: "仮設定", 2: prompt } }
+            data = { "prompt": keyword, "data": { 0: "", 1: "Deepl翻訳", 2: prompt } }
           }
           resultList.push(data)
           isSearch = isSearchGoogle || isSearchDeepl
-          if(!isSearch){
+          if (!isSearch) {
             $("#isSearch").html("");
             createSearchList(resultList, "#promptList", true);
           }
@@ -268,7 +272,11 @@ function UpdateGenaretePrompt() {
 
 function editInit() {
   resetHtmlList("#editList")
-  createEditList(editPrompt.elements, "#editList")
+  if (true) {
+    createEditDropdownList(editPrompt.elements, "#editList")
+  } else {
+    createEditList(editPrompt.elements, "#editList")
+  }
 }
 
 function archivesInit() {
@@ -338,26 +346,42 @@ function createDragableIcon(index, value) {
 }
 
 function createHeaderData(value) {
-  let data = document.createElement('input');
-  data.type = "text";
-  data.value = value;
-  data.readOnly = true;
-  data.className = "promptData";
-  data.style.backgroundColor = "black";
-  data.style.color = "white";
+  let data = $('<input>');
+  data.attr('type', 'text');
+  data.val(value);
+  data.prop('readonly', true);
+  data.addClass('promptData');
+  data.css({
+    backgroundColor: 'black',
+    color: 'white'
+  });
   return data;
+
 }
 
 function createInputData(value, index, event) {
-  let data = document.createElement('input');
-  data.type = "text";
-  data.value = value;
-  data.className = "promptData";
+  let data = $('<input>');
+  data.attr('type', 'text');
+  data.val(value);
+  data.addClass('promptData');
 
   if (event) {
-    data.oninput = () => event(data.value, index)
+    data.on('input', () => event(data.val(), index));
   }
 
+  return data;
+}
+
+function createCategoryInput(value, index, nextInput,isSetNext,event) {
+  let data = createInputData(value, index, event)
+  inputClear(data)
+  data.attr("list", "category")
+  data.on('change', function () {
+    if(isSetNext){
+      nextInput.attr("list", data.attr("list") + data.val())
+    }
+  });
+  nextInput.attr("list", data.attr("list") + value)
   return data;
 }
 
@@ -373,14 +397,19 @@ function createMoveElementButton(index, title, value) {
   return button;
 }
 
-function createRegistButton(big, middle, small, prompt) {
-  let button = document.createElement('button');
-  button.type = "submit";
-  button.innerHTML = "New";
-  button.onclick = () => {
-    Regist(big, middle, small, prompt);
-    addInit()
-  };
+function createRegistButton(inputData, prompt) {
+  let button = $('<button>');
+  button.attr('type', 'submit');
+  button.html('N');
+  inputData[0].attr("list", "category")
+  inputData[0].on('change', function () {
+    inputData[1].attr("list", "category" + inputData[0].val())
+  });
+  button.on('click', function () {
+    $(this).removeAttr("autocomplete");
+    Regist(inputData[0].val(), inputData[1].val(), inputData[2].val(), prompt);
+    addInit();
+  });
   return button;
 }
 
@@ -402,7 +431,6 @@ function createCopyButton(value) {
   button.onclick = () => {
     navigator.clipboard.writeText(value)
   };
-  // button.appendChild(getIconImage("コピー.png","Copy"));
 
   return button;
 }
@@ -417,34 +445,36 @@ function getIconImage(iconName, alt) {
 }
 
 function createOpenImageButton(value) {
-  let button = document.createElement('button');
-  button.type = "submit";
-  button.innerHTML = "P";
-  button.onclick = () => {
-    const imageUrl = "https://ul.h3z.jp/" + value.url + ".jpg";
-    fetch(imageUrl)
-      .then(response => response.blob())
-      .then(blob => {
-        const reader = new FileReader();
-        reader.readAsDataURL(blob);
-        reader.onloadend = () => {
-          const arrayBuffer = reader.result;
-          var binary = atob(arrayBuffer.split(',')[1]);
-          $('#popup-image').attr({
-            src: "data:image/png;base64," + binary,
-            width: '256',
-            height: '256'
-          });
-          $(`#preview-element`).text(`${value.data[0]}:${value.data[1]}:${value.data[2]}`);
-          $("#preview-prompt").val(value.prompt)
-          $("#preview-positive-copy").click(() => navigator.clipboard.writeText(value.prompt));
-          $("#preview-negative-copy").click(() => navigator.clipboard.writeText("disfigured.bad anatomy disfigured,jpeg artifacts,error,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,anatomical nonsense,watermark,five fingers,worst quality,bad anatomy,ugly,cropped,simple background,normal quality,lowers,low quality,polar lowres,standard quality,poorly drawn hands,boken limb,missing limbs,malformed limbs,incorrect limb,fusion hand,bad finglegs,abnormal fingers,missing fingers,fewer digits,too many fingers,extra digit,lose finger,extra fingers,one hand with more than 5 digit,one hand with less than 5 digit,one hand with more than 5 fingers,one hand with less than 5 fingers,3d character,qr code,ui,artist name,signature,text error,text font ui,bar code,username,bad digit,liquid digit,missing digit,fewer digits,multiple digit,text,fused digit,extra digt,extra digits,extra digit,nsfw"));
-          $('#popup').css({ "display": "flex" })
-          $('#popup').show();
-        };
-      });
-  };
+  let button = $('<button type="submit">P</button>');
+  button.on('click', function() {
+    previewPromptImage(value);
+  });
   return button;
+}
+
+function previewPromptImage(value) {
+  const imageUrl = "https://ul.h3z.jp/" + value.url + ".jpg";
+  fetch(imageUrl)
+    .then(response => response.blob())
+    .then(blob => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const arrayBuffer = reader.result;
+        var binary = atob(arrayBuffer.split(',')[1]);
+        $('#popup-image').attr({
+          src: "data:image/png;base64," + binary,
+          width: '256',
+          height: '256'
+        });
+        $(`#preview-element`).text(`${value.data[0]}:${value.data[1]}:${value.data[2]}`);
+        $("#preview-prompt").val(value.prompt)
+        $("#preview-positive-copy").click(() => navigator.clipboard.writeText(value.prompt));
+        $("#preview-negative-copy").click(() => navigator.clipboard.writeText("disfigured.bad anatomy disfigured,jpeg artifacts,error,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,anatomical nonsense,watermark,five fingers,worst quality,bad anatomy,ugly,cropped,simple background,normal quality,lowers,low quality,polar lowres,standard quality,poorly drawn hands,boken limb,missing limbs,malformed limbs,incorrect limb,fusion hand,bad finglegs,abnormal fingers,missing fingers,fewer digits,too many fingers,extra digit,lose finger,extra fingers,one hand with more than 5 digit,one hand with less than 5 digit,one hand with more than 5 fingers,one hand with less than 5 fingers,3d character,qr code,ui,artist name,signature,text error,text font ui,bar code,username,bad digit,liquid digit,missing digit,fewer digits,multiple digit,text,fused digit,extra digt,extra digits,extra digit,nsfw"));
+        $('#popup').css({ "display": "flex" })
+        $('#popup').show();
+      };
+      reader.readAsDataURL(blob);
+    });
 }
 
 function Base64Png(file) {
@@ -457,7 +487,6 @@ function Base64Png(file) {
   };
   reader.readAsDataURL(file);
 }
-
 
 function closePopup() {
   $('#popup').hide();
@@ -545,126 +574,260 @@ function resetHtmlList(listId) {
 }
 
 function createHeaders(listId, ...headers) {
-  let li = document.createElement('li');
+  let li = $('<li>');
   for (let i = 0; i < headers.length; i++) {
-    li.appendChild(createHeaderData(headers[i]));
+    li.append(createHeaderData(headers[i]));
   }
-  $(listId).get(0).appendChild(li);
+  $(listId).eq(0).append(li);
 }
 
 function createSearchList(json, listId, isSave) {
   createHeaders(listId, "大項目", "中項目", "小項目", "Prompt")
-  jsonLoop(json, function (item, index) {
-    let li = document.createElement('li');
-    li.appendChild(createInputData(item.data[0]));
-    li.appendChild(createInputData(item.data[1]));
-    li.appendChild(createInputData(item.data[2]));
-    li.appendChild(createInputData(item.prompt));
-    li.appendChild(createAddButton("+", item.prompt + ","));
-    li.appendChild(createCopyButton(item.prompt));
+  json.forEach((item, index) => {
+    let li = $('<li>');
+    let inputData = []
+    for (let i = 0; i < 3; i++) {
+      inputData.push(createInputData(item.data[i]))
+    }
+    li.append(...inputData);
+    li.append(createInputData(item.prompt));
+    li.append(createAddButton("+", item.prompt + ","));
+    li.append(createCopyButton(item.prompt));
 
     if (isSave) {
-      li.appendChild(createRegistButton(item.data[0], item.data[1], item.data[2], item.prompt));
+      li.append(createRegistButton(inputData, item.prompt));
     }
 
     if (item.url) {
-      li.appendChild(createOpenImageButton(item));
+      li.append(createOpenImageButton(item));
     }
-    $(listId).get(0).appendChild(li);
+
+    $(listId).append(li);
+
   })
 }
 
 function createAddList(json, listId) {
-  createHeaders(listId, "大項目", "中項目", "小項目", "Prompt")
-  json.forEach((item, index) => {
-    let li = document.createElement('li');
-    li.appendChild(createInputData(item.data[0], index, (value, index) => {
-      localPromptList[index].data[0] = value
-      saveLocalList()
+  createHeaders(listId, "大項目", "中項目", "小項目", "Prompt");
+  json.forEach(function (item, index) {
+    let li = $('<li>');
+    li.append(createInputData(item.data[0], index, function (value, index) {
+      localPromptList[index].data[0] = value;
+      saveLocalList();
     }));
-    li.appendChild(createInputData(item.data[1], index, (value, index) => {
-      localPromptList[index].data[1] = value
-      saveLocalList()
+    li.append(createInputData(item.data[1], index, function (value, index) {
+      localPromptList[index].data[1] = value;
+      saveLocalList();
     }));
-    li.appendChild(createInputData(item.data[2], index, (value, index) => {
-      localPromptList[index].data[2] = value
-      saveLocalList()
+    li.append(createInputData(item.data[2], index, function (value, index) {
+      localPromptList[index].data[2] = value;
+      saveLocalList();
     }));
-    li.appendChild(createInputData(item.prompt, index, (value, index) => {
-      localPromptList[index].prompt = value
-      saveLocalList()
+    li.append(createInputData(item.prompt, index, function (value, index) {
+      localPromptList[index].prompt = value;
+      saveLocalList();
     }));
-    li.appendChild(createAddButton("+", item.prompt + ","));
-    li.appendChild(createCopyButton(item.prompt));
+    li.append(createAddButton("+", item.prompt + ","));
+    li.append(createCopyButton(item.prompt));
     if (item.url) {
-      li.appendChild(createOpenImageButton(item));
+      li.append(createOpenImageButton(item));
     }
     if (listId === "#addPromptList") {
-      li.appendChild(createRemoveButton(item, li));
-      localPromptList[index].sort = index
-      li.id = parseInt(index)
-      li.className = "ui-sortable-handle"
-      li.appendChild(createDragableIcon(index, ":::::::::"));
+      li.append(createRemoveButton(item, li));
+      localPromptList[index].sort = index;
+      li.attr('id', parseInt(index));
+      li.addClass('ui-sortable-handle');
+      li.append(createDragableIcon(index, ":::::::::"));
     }
-    $(listId).get(0).appendChild(li);
-  })
+    $(listId).eq(0).append(li);
+  });
 }
 
 function createArchiveList(json, listId) {
-  createHeaders(listId, "名前", "Prompt")
+  createHeaders(listId, "名前", "Prompt");
   jsonLoop(json, function (item, index) {
-    let li = document.createElement('li');
-    li.appendChild(createInputData(item.title, index, (value, index) => {
-      archivesList[index].title = value
-      saveArchivesList()
+    let li = $('<li>');
+    li.append(createInputData(item.title, index, function (value, index) {
+      archivesList[index].title = value;
+      saveArchivesList();
     }));
-    li.appendChild(createInputData(item.prompt, index, (value, index) => {
-      archivesList[index].prompt = value
-      saveArchivesList()
+    li.append(createInputData(item.prompt, index, function (value, index) {
+      archivesList[index].prompt = value;
+      saveArchivesList();
     }));
-    li.appendChild(createCopyButton(item.prompt));
-    li.appendChild(createLoadButton(item.prompt));
-    li.appendChild(createDeleteButton(index));
+    li.append(createCopyButton(item.prompt));
+    li.append(createLoadButton(item.prompt));
+    li.append(createDeleteButton(index));
 
-    $(listId).get(0).appendChild(li);
-  })
-  setColumnWidth(listId, 1, "150px")
+    $(listId).eq(0).append(li);
+  });
+  setColumnWidth(listId, 1, "150px");
 }
 
 function createEditList(json, listId) {
-  const dataNum = Object.keys(json).length
-  createHeaders(listId, "Prompt", "重み")
+  createHeaders(listId, "Prompt", "重み");
   jsonLoop(json, function (item, index) {
-    let li = document.createElement('li');
+    let li = $('<li>');
 
-    let weight = item[optionData.shaping].weight
-    let prompt = item[optionData.shaping].value
+    let weight = item[optionData.shaping].weight;
+    let prompt = item[optionData.shaping].value;
 
-    let valueInput = createInputData(prompt, index, (value, index) => {
-      editPrompt.editingValue(value, index)
-      weightInput.value = editPrompt.elements[index][optionData.shaping].weight
-      UpdateGenaretePrompt()
-    })
-    let weightInput = createInputData(weight, index, (value, index) => {
+    let valueInput = createInputData(prompt, index, function (value, index) {
+      editPrompt.editingValue(value, index);
+      weightInput.val(editPrompt.elements[index][optionData.shaping].weight);
+      UpdateGenaretePrompt();
+    });
+    let weightInput = createInputData(weight, index, function (value, index) {
       let weight = value.replace(/[^-0-9.]/g, '');
-      editPrompt.editingWeight(weight, index)
-      valueInput.value = editPrompt.elements[index][optionData.shaping].value
-      UpdateGenaretePrompt()
-    })
+      editPrompt.editingWeight(weight, index);
+      valueInput.val(editPrompt.elements[index][optionData.shaping].value);
+      UpdateGenaretePrompt();
+    });
 
-    li.appendChild(valueInput);
+    li.append(valueInput);
     if (weight) {
-      li.appendChild(weightInput);
+      li.append(weightInput);
     }
-    li.appendChild(createRemovePromptButton(index));
-    li.id = parseInt(index)
-    li.className = "ui-sortable-handle"
-    li.appendChild(createDragableIcon(index, ":::::::::"));
+    li.append(createRemovePromptButton(index));
+    li.attr('id', parseInt(index));
+    li.addClass('ui-sortable-handle');
+    li.append(createDragableIcon(index, ":::::::::"));
 
-    $(listId).get(0).appendChild(li);
+    $(listId).eq(0).append(li);
+  });
+  setColumnWidth(listId, 1, "200px");
+  setColumnWidth(listId, 2, "30px");
+
+}
+function createEditDropdownList(json, listId) {
+  createHeaders(listId, "大項目", "中項目", "小項目", "Prompt", "重み");
+  let translateList = []
+  let inputList = []
+
+  jsonLoop(json, function (item, index) {
+    let li = $('<li>');
+    let weight = item[optionData.shaping].weight;
+    let prompt = item.Value.toLowerCase().trim();
+
+    let category = null;
+
+    const findCategory = (dataList, prompt) => {
+      return dataList.find(dicData => dicData.prompt === prompt)?.data || null;
+    };
+    category = findCategory(masterPrompts, prompt);
+    if (category == null) {
+      category = findCategory(localPromptList, prompt);
+    }
+    let inputData = []
+    for (let i = 0; i < 3; i++) {
+      inputData[i] = createInputData(category ? category[i] : "翻訳中")
+      if (!category) {
+        inputData[i].prop('disabled', true);
+      }
+      inputClear(inputData[i])
+      li.append(inputData[i]);
+    }
+
+    let valueInput = createInputData(prompt, index, function (value, index) {
+      editPrompt.editingValue(value, index);
+      weightInput.val(editPrompt.elements[index][optionData.shaping].weight);
+      UpdateGenaretePrompt();
+    });
+    let weightInput = createInputData(weight, index, function (value, index) {
+      let weight = value.replace(/[^-0-9.]/g, '');
+      editPrompt.editingWeight(weight, index);
+      UpdateGenaretePrompt();
+    });
+
+    li.append(valueInput);
+    if (weight) {
+      li.append(weightInput);
+    }
+    li.append(createRemovePromptButton(index));
+    li.attr('id', parseInt(index));
+    li.addClass('ui-sortable-handle');
+    let extraButton = null
+    if (category == null) {
+      extraButton = createRegistButton(inputData, prompt)
+      li.append(extraButton);
+      inputList.push(inputData)
+      translateList.push({
+        keyword: prompt,
+      })
+    } else {
+      let element = masterPrompts.find(value => value.prompt === prompt)
+      if (element && element.url) {
+        extraButton = createOpenImageButton(element)
+        li.append(extraButton);
+      }else{
+        extraButton = $('<button>');
+        extraButton.hide()
+      }
+    }
+
+    inputData[0].attr("list", "category")
+    inputData[0].on('change', function () {
+      inputData[1].attr("list", "category" + inputData[0].val())
+    });
+    inputData[1].attr("list", "category" + inputData[0].val())
+    inputData[1].on('change', function () {
+      if(category){
+        inputData[2].attr("list", "category" + inputData[0].val() + inputData[1].val())
+      }
+    });
+    inputData[2].attr("list", "category" + inputData[0].val() + inputData[1].val())
+    inputData[2].on('change', function () {
+      const inputValue = $(this).val();
+      const prompt = masterPrompts.find(value => value.data[2] === inputValue)?.prompt || valueInput.val();
+      let element = masterPrompts.find(value => value.prompt === prompt)
+      if (element && element.url) {
+        extraButton.off('click')
+        extraButton.get(0).onclick = () => {
+          previewPromptImage(element)
+        };
+        extraButton.show()
+      }else{
+        extraButton.hide()
+      }
+
+      valueInput.val(prompt);
+      editPrompt.editingValue(editPrompt.getValue(optionData.shaping, prompt, weightInput.val()), index);
+      UpdateGenaretePrompt();
+    });
+
+
+    li.append(createDragableIcon(index, ":::::::::"));
+
+    $(listId).eq(0).append(li);
+  });
+
+  let postData = ""
+  translateList.forEach(item => {
+    postData += item.keyword + ","
   })
-  setColumnWidth(listId, 1, "200px")
-  setColumnWidth(listId, 2, "30px")
+
+  const isDeepl = false
+  const useMethod = isDeepl ? translateDeepl : translate
+
+  console.log(inputList);
+  useMethod(postData, (translateData) => {
+    translateData.forEach((keyword, index) => {
+      inputList[index].forEach(item => {
+        item.prop('disabled', false);
+      })
+      inputList[index][0].val("")
+      inputList[index][1].val(isDeepl ? "Deepl翻訳" : "Google翻訳")
+      inputList[index][2].val(keyword)
+    })
+  })
+
+  const inputWidth = "80px"
+  setColumnWidth(listId, 1, inputWidth);
+  setColumnWidth(listId, 2, inputWidth);
+  setColumnWidth(listId, 3, inputWidth);
+  setColumnWidth(listId, 4, "130px");
+  setColumnWidth(listId, 5, "30px");
+
 }
 
 function setColumnWidth(listId, inputIndex, width) {
@@ -691,6 +854,18 @@ function tabSwitch() {
   document.getElementsByClassName('panel')[currentTab].classList.add('is-show');
   closePopup()
 };
+
+function inputClear(input){
+  input.mouseenter(function () {
+    mouseCursorValue = $(this).val()
+    $(this).val('');
+    $(this).mouseleave(function () {
+      if ($(this).val() === '') {
+        $(this).val(mouseCursorValue);
+      }
+    });
+  });
+}
 
 function handleDragOver(event) {
   event.stopPropagation();
@@ -910,25 +1085,3 @@ function parseSDPng(text) {
 
   return data;
 }
-
-// function uploadPng(file){
-//   // XMLHttpRequestオブジェクトを作成する
-// const xhr = new XMLHttpRequest();
-
-// // フォームデータを作成する
-// const formData = new FormData();
-// formData.append('files', file);
-
-// // APIにリクエストを送信する
-// xhr.open('POST', 'https://hm-nrm.h3z.jp/uploader/work.php');
-// xhr.setRequestHeader('Accept', 'application/json');
-// xhr.onload = function() {
-//   if (xhr.status === 200) {
-//     const response = JSON.parse(xhr.responseText);
-//     console.log(response);
-//   } else {
-//     console.error('Request failed. Status code: ' + xhr.status);
-//   }
-// };
-// xhr.send(formData);
-// }

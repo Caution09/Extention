@@ -33,7 +33,6 @@ function loadLocalList() {
   chrome.storage.local.get(["localPromptList"], function (items) {
     if (items.localPromptList != null)
       localPromptList = items.localPromptList;  // value1
-    categoryData.update()
   });
 }
 

@@ -1,8 +1,8 @@
 let toolInfo = {
   searchAPI:"https://script.google.com/macros/s/AKfycbw5wriSPR1rLbLPDZi4g6a42Ndtq-Nswc3CaCaWrDIGLgB01J-jdsH5WlHJpfpBmJyCQg/exec",
   registAPI:"https://script.google.com/macros/s/AKfycbwsG9RUpvBo80seZTeyHq6Kyr-dN28ua56lUHMWZ0gYwrun72NHBzwjIMeFgKV3NgM0bA/exec",
-  translateAPI:"https://script.google.com/macros/s/AKfycbxLhc0j7jQ6GwrQNEvpRNweDBjvOY4pkx8kFyhmBfc59IASjsp19TpiNuTipZsoQFyUjw/exec",
-  translateDeeplAPI:"https://script.google.com/macros/s/AKfycbwVu5_ALUyf378gTAq1UcmDVrJQbzhFBKJW828zsiRms2dGvDWJFyf0CGJ9_KhvlBWMOQ/exec",
+  translateAPI:"https://script.google.com/macros/s/AKfycbz1-3vSuAGWXEyk4KjzqCxHcDqIwWKpv9rSQ-XlRO1gj4pjmXH3U8-vRAKmJskxjWSSVA/exec",
+  translateDeeplAPI:"https://script.google.com/macros/s/AKfycbwLkaA96zgTYWCBw_JCXUkDjS-e7aurEgvjDolwqJecY_Vrkkntijl4WQ4-KsGG1Z5m1g/exec",
 }
 
 const toolMessageAPI = "https://script.google.com/macros/s/AKfycbxwWkdzoWzo8kvnAX84AXuLr0ApoIzrEnU_s88v5JIXBEDvLf0VIyET5Da2tZGTajhj/exec"
@@ -33,6 +33,7 @@ function loadMessage() {
             break;
         }
       })
+      $('#overlay').hide();
       console.log($("#notice").text())
     });
 }
@@ -62,8 +63,8 @@ function translate(keyword, translateEvent) {
     });
 }
 
-function translateDeepl(keyword, authKey, translateEvent) {
-  let url = toolInfo.translateDeeplAPI + "?search=" + encodeURI(keyword) + "&authKey=" + encodeURI(authKey);
+function translateDeepl(keyword, translateEvent) {
+  let url = toolInfo.translateDeeplAPI + "?search=" + encodeURI(keyword) + "&authKey=" + encodeURI(optionData.deeplAuthKey);
   fetch(url)
     .then(response => response.json())
     .then(json => {
@@ -84,7 +85,6 @@ function masterDicDownload(jsonURL) {
         masterPrompts.push({ "prompt": data[3], "data": { 0: data[0], 1: data[1], 2: data[2] }, "url": data[4] })
       })
       categoryData.update()
-      console.log(masterPrompts)
     }
   };
   xhr.send();
