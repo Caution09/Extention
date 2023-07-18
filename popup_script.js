@@ -5,11 +5,10 @@ let mouseCursorValue = ""
 init()
 
 function init() {
-  var overlay = $('#overlay');
-  overlay.show();
-
+  categoryData.init()
+  loadMasterPrompt()
+  loadToolInfo()
   loadOptionData()
-  loadMessage()
   // イベントの登録
   const tabs = $('.tab');
   tabs.on('click', tabSwitch);
@@ -65,6 +64,7 @@ function init() {
   });
 
   $("input[name='UIType']").on('change', onChengeUIType);
+  $("input[name='EditType']").on('change', onChengeEditType);
   $("#saveButton").on('click', archivesPrompt);
   $("#popup-image").on('click', closePopup);
   $("#resetButton").on('click', () => chrome.storage.local.clear());
@@ -76,6 +76,7 @@ function init() {
   });
 
   $("#clearButton").on('click', function () {
+    editPrompt.prompt = ""
     generateInput.val("");
     savePrompt();
   });
@@ -88,6 +89,14 @@ function init() {
     Regist(big, middle, small, prompt);
     addInit()
   });
+
+  $("#big").attr("list", "category");
+  $("#big").on('change', function () {
+    $("#middle").attr("list", "category" + $("#big").val())
+  });
+
+  inputClear($("#big"))
+  inputClear($("#middle"))
 
   $("#addPromptList").sortable({
     revert: true,
@@ -116,7 +125,7 @@ function init() {
         baseIndex++
       });
       editPrompt.generate()
-      generateInput.val(editPrompt.prompt);  // value1
+      UpdateGenaretePrompt()
     }
   });
 
@@ -162,6 +171,7 @@ function init() {
   loadPrompt()
   loadLocalList()
   loadArchivesList()
+  
 }
 
 function setCategoryList(id, category) {
@@ -215,7 +225,7 @@ function elementSearch() {
       SearchLogAPI(keyword)
       $("#isSearch").html("辞書内に存在しないため翻訳中");
       isSearchGoogle = true
-      translate(keyword, (prompt) => {
+      translateGoogle(keyword, (prompt) => {
         isSearchGoogle = false
         let data = { "prompt": prompt, "data": { 0: "", 1: "Google翻訳", 2: keyword } }
         const isAlphanumeric = /^[a-zA-Z0-9\s:]+$/.test(keyword);
@@ -259,6 +269,13 @@ function onChengeUIType(event) {
   saveOptionData()
 }
 
+function onChengeEditType(event) {
+  const selectedValue = event.target.value;
+  optionData.editType = selectedValue
+  saveOptionData()
+  editInit()
+}
+
 // データ操作
 function InitGenaretePrompt(str) {
   editPrompt.init(str)
@@ -272,7 +289,7 @@ function UpdateGenaretePrompt() {
 
 function editInit() {
   resetHtmlList("#editList")
-  if (true) {
+  if (optionData.editType == "SELECT") {
     createEditDropdownList(editPrompt.elements, "#editList")
   } else {
     createEditList(editPrompt.elements, "#editList")
@@ -359,7 +376,7 @@ function createHeaderData(value) {
 
 }
 
-function createInputData(value, index, event) {
+function createInputData(value, index, event, blurEvent) {
   let data = $('<input>');
   data.attr('type', 'text');
   data.val(value);
@@ -369,19 +386,12 @@ function createInputData(value, index, event) {
     data.on('input', () => event(data.val(), index));
   }
 
-  return data;
-}
+  if(blurEvent){
+    data.blur(function() {
+      blurEvent()
+    });
+  }
 
-function createCategoryInput(value, index, nextInput,isSetNext,event) {
-  let data = createInputData(value, index, event)
-  inputClear(data)
-  data.attr("list", "category")
-  data.on('change', function () {
-    if(isSetNext){
-      nextInput.attr("list", data.attr("list") + data.val())
-    }
-  });
-  nextInput.attr("list", data.attr("list") + value)
   return data;
 }
 
@@ -408,8 +418,11 @@ function createRegistButton(inputData, prompt) {
   button.on('click', function () {
     $(this).removeAttr("autocomplete");
     Regist(inputData[0].val(), inputData[1].val(), inputData[2].val(), prompt);
+    $(this).remove()
     addInit();
   });
+  inputClear(inputData[0])
+  inputClear(inputData[1])
   return button;
 }
 
@@ -446,7 +459,7 @@ function getIconImage(iconName, alt) {
 
 function createOpenImageButton(value) {
   let button = $('<button type="submit">P</button>');
-  button.on('click', function() {
+  button.on('click', function () {
     previewPromptImage(value);
   });
   return button;
@@ -574,7 +587,7 @@ function resetHtmlList(listId) {
 }
 
 function createHeaders(listId, ...headers) {
-  let li = $('<li>');
+  let li = $('<ui>');
   for (let i = 0; i < headers.length; i++) {
     li.append(createHeaderData(headers[i]));
   }
@@ -613,19 +626,23 @@ function createAddList(json, listId) {
     let li = $('<li>');
     li.append(createInputData(item.data[0], index, function (value, index) {
       localPromptList[index].data[0] = value;
-      saveLocalList();
+    },function(){
+      saveLocalList()
     }));
     li.append(createInputData(item.data[1], index, function (value, index) {
       localPromptList[index].data[1] = value;
-      saveLocalList();
+    },function(){
+      saveLocalList()
     }));
     li.append(createInputData(item.data[2], index, function (value, index) {
       localPromptList[index].data[2] = value;
-      saveLocalList();
+    },function(){
+      saveLocalList()
     }));
     li.append(createInputData(item.prompt, index, function (value, index) {
       localPromptList[index].prompt = value;
-      saveLocalList();
+    },function(){
+      saveLocalList()
     }));
     li.append(createAddButton("+", item.prompt + ","));
     li.append(createCopyButton(item.prompt));
@@ -695,7 +712,7 @@ function createEditList(json, listId) {
 
     $(listId).eq(0).append(li);
   });
-  setColumnWidth(listId, 1, "200px");
+  setColumnWidth(listId, 1, "400px");
   setColumnWidth(listId, 2, "30px");
 
 }
@@ -710,7 +727,6 @@ function createEditDropdownList(json, listId) {
     let prompt = item.Value.toLowerCase().trim();
 
     let category = null;
-
     const findCategory = (dataList, prompt) => {
       return dataList.find(dicData => dicData.prompt === prompt)?.data || null;
     };
@@ -723,8 +739,9 @@ function createEditDropdownList(json, listId) {
       inputData[i] = createInputData(category ? category[i] : "翻訳中")
       if (!category) {
         inputData[i].prop('disabled', true);
+      }else{
+        inputClear(inputData[i])
       }
-      inputClear(inputData[i])
       li.append(inputData[i]);
     }
 
@@ -744,8 +761,7 @@ function createEditDropdownList(json, listId) {
       li.append(weightInput);
     }
     li.append(createRemovePromptButton(index));
-    li.attr('id', parseInt(index));
-    li.addClass('ui-sortable-handle');
+    
     let extraButton = null
     if (category == null) {
       extraButton = createRegistButton(inputData, prompt)
@@ -759,34 +775,40 @@ function createEditDropdownList(json, listId) {
       if (element && element.url) {
         extraButton = createOpenImageButton(element)
         li.append(extraButton);
-      }else{
+      } else {
         extraButton = $('<button>');
         extraButton.hide()
       }
     }
 
-    inputData[0].attr("list", "category")
+    // 初期値の設定
+    let categoryValue = inputData[0].val();
+    inputData[0].attr("list", "category");
+    inputData[1].attr("list", "category" + categoryValue);
+    inputData[2].attr("list", "category" + categoryValue + inputData[1].val());
+
     inputData[0].on('change', function () {
-      inputData[1].attr("list", "category" + inputData[0].val())
+      categoryValue = $(this).val();
+      inputData[1].attr("list", "category" + categoryValue);
+      inputData[2].attr("list", "category" + categoryValue + inputData[1].val());
     });
-    inputData[1].attr("list", "category" + inputData[0].val())
+
     inputData[1].on('change', function () {
-      if(category){
-        inputData[2].attr("list", "category" + inputData[0].val() + inputData[1].val())
+      if (category) {
+        inputData[2].attr("list", "category" + categoryValue + $(this).val());
       }
     });
-    inputData[2].attr("list", "category" + inputData[0].val() + inputData[1].val())
+
     inputData[2].on('change', function () {
       const inputValue = $(this).val();
       const prompt = masterPrompts.find(value => value.data[2] === inputValue)?.prompt || valueInput.val();
       let element = masterPrompts.find(value => value.prompt === prompt)
       if (element && element.url) {
-        extraButton.off('click')
-        extraButton.get(0).onclick = () => {
+        extraButton.off('click').on('click', () => {
           previewPromptImage(element)
-        };
+        });
         extraButton.show()
-      }else{
+      } else {
         extraButton.hide()
       }
 
@@ -795,7 +817,8 @@ function createEditDropdownList(json, listId) {
       UpdateGenaretePrompt();
     });
 
-
+    li.attr('id', parseInt(index));
+    li.addClass('ui-sortable-handle');
     li.append(createDragableIcon(index, ":::::::::"));
 
     $(listId).eq(0).append(li);
@@ -807,9 +830,8 @@ function createEditDropdownList(json, listId) {
   })
 
   const isDeepl = false
-  const useMethod = isDeepl ? translateDeepl : translate
+  const useMethod = isDeepl ? translateDeepl : translateGoogle
 
-  console.log(inputList);
   useMethod(postData, (translateData) => {
     translateData.forEach((keyword, index) => {
       inputList[index].forEach(item => {
@@ -832,6 +854,7 @@ function createEditDropdownList(json, listId) {
 
 function setColumnWidth(listId, inputIndex, width) {
   $(listId).find('li input:nth-of-type(' + inputIndex + ')').css('width', width);
+  $(listId).find('ui input:nth-of-type(' + inputIndex + ')').css('width', width);
 }
 
 function jsonLoop(json, callback) {
@@ -855,9 +878,10 @@ function tabSwitch() {
   closePopup()
 };
 
-function inputClear(input){
+function inputClear(input) {
   input.mouseenter(function () {
     mouseCursorValue = $(this).val()
+    console.log(mouseCursorValue)
     $(this).val('');
     $(this).mouseleave(function () {
       if ($(this).val() === '') {

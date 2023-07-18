@@ -3,30 +3,46 @@ let localPromptList = []
 let archivesList = []
 let masterPrompts = []
 let optionData = {}
+let toolInfo = {}
 
 // データ保存
 function savePrompt() {
   chrome.storage.local.set({ 'generatePrompt': editPrompt.prompt });
 }
 
-function saveLocalList() {
-  chrome.storage.local.set({ 'localPromptList': localPromptList });
-}
-
-function saveArchivesList() {
-  chrome.storage.local.set({ 'archivesList': archivesList }, () => {
-    UpdatePromptList();
-  });
-}
-
-function saveOptionData() {
-  chrome.storage.local.set({ 'optionData': optionData });
-
-} function loadPrompt() {
+function loadPrompt() {
   chrome.storage.local.get(["generatePrompt"], function (items) {
     if (items.generatePrompt != null)
       InitGenaretePrompt(items.generatePrompt)
   });
+}
+
+function saveMasterPrompt() {
+  chrome.storage.local.set({ 'masterPrompts': masterPrompts });
+}
+
+function loadMasterPrompt() {
+  chrome.storage.local.get(["masterPrompts"], function (items) {
+    if (items.masterPrompts != null)
+      masterPrompts = items.masterPrompts
+  });
+}
+
+function saveToolInfo() {
+  chrome.storage.local.set({ 'toolInfo': toolInfo });
+}
+
+function loadToolInfo() {
+  chrome.storage.local.get(["toolInfo"], function (items) {
+    if (items.toolInfo != null)
+      toolInfo = items.toolInfo
+    loadMessage()
+  });
+}
+
+function saveLocalList() {
+  chrome.storage.local.set({ 'localPromptList': localPromptList });
+  categoryData.update()
 }
 
 function loadLocalList() {
@@ -42,19 +58,33 @@ function loadArchivesList() {
       archivesList = items.archivesList;  // value1
   });
 }
+
+function saveArchivesList() {
+  chrome.storage.local.set({ 'archivesList': archivesList }, () => {
+    UpdatePromptList();
+  });
+}
+
+function saveOptionData() {
+  chrome.storage.local.set({ 'optionData': optionData });
+}
+
 function loadOptionData() {
   chrome.storage.local.get(["optionData"], function (items) {
-    if (items.optionData != null) {
+    if (items.optionData) {
       optionData = items.optionData;  // value1
       $('#isDeleteCheck').prop('checked', optionData.isDeleteCheck);
       $('#DeeplAuth').val(optionData.deeplAuthKey)
     } else {
       optionData = {
         shaping: "SD"
+        , editType: "SELECT"
         , isDeleteCheck: true
         , optionData: ""
       }
     }
+    console.log(optionData)
+
     const uiTypeButtons = $('[name="UIType"]');
 
     switch (optionData.shaping) {
@@ -66,6 +96,16 @@ function loadOptionData() {
         break;
       case "None":
         uiTypeButtons.eq(2).prop('checked', true);
+        break;
+    }
+
+    const editTypeButtons = $('[name="EditType"]');
+    switch (optionData.editType) {
+      case "SELECT":
+        editTypeButtons.eq(0).prop('checked', true);
+        break;
+      case "TEXT":
+        editTypeButtons.eq(1).prop('checked', true);
         break;
     }
   });

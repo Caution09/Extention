@@ -1,18 +1,10 @@
-let toolInfo = {
-  searchAPI:"https://script.google.com/macros/s/AKfycbw5wriSPR1rLbLPDZi4g6a42Ndtq-Nswc3CaCaWrDIGLgB01J-jdsH5WlHJpfpBmJyCQg/exec",
-  registAPI:"https://script.google.com/macros/s/AKfycbwsG9RUpvBo80seZTeyHq6Kyr-dN28ua56lUHMWZ0gYwrun72NHBzwjIMeFgKV3NgM0bA/exec",
-  translateAPI:"https://script.google.com/macros/s/AKfycbz1-3vSuAGWXEyk4KjzqCxHcDqIwWKpv9rSQ-XlRO1gj4pjmXH3U8-vRAKmJskxjWSSVA/exec",
-  translateDeeplAPI:"https://script.google.com/macros/s/AKfycbwLkaA96zgTYWCBw_JCXUkDjS-e7aurEgvjDolwqJecY_Vrkkntijl4WQ4-KsGG1Z5m1g/exec",
-}
-
-const toolMessageAPI = "https://script.google.com/macros/s/AKfycbxwWkdzoWzo8kvnAX84AXuLr0ApoIzrEnU_s88v5JIXBEDvLf0VIyET5Da2tZGTajhj/exec"
+const toolInfoAPI = "https://script.google.com/macros/s/AKfycbz620nLVd7jBJBdpZNy-ge13tBZQR_tCq2VIqIJfH3dZFJ6fZlwvXnRmJh5jSXZkXTR/exec"
 function loadMessage() {
-  fetch(toolMessageAPI)
+  fetch(toolInfoAPI)
     .then(response => response.json())
     .then(json => {
       $("#notice").text("")
       jsonLoop(json, (item, index) => {
-        toolInfo[item.title]=item.value
         switch (item.title) {
           case "latestToolVer":
             if (toolVersion < item.value) {
@@ -32,9 +24,9 @@ function loadMessage() {
             masterDicDownload(item.value);
             break;
         }
+        toolInfo[item.title]=item.value
       })
-      $('#overlay').hide();
-      console.log($("#notice").text())
+      saveToolInfo()
     });
 }
 
@@ -52,7 +44,7 @@ function RegistAPI(big, middle, small, prompt) {
   fetch(url, { method: "Get", mode: "cors" })
 }
 
-function translate(keyword, translateEvent) {
+function translateGoogle(keyword, translateEvent) {
   let url = toolInfo.translateAPI + "?search=" + encodeURI(keyword);
   fetch(url)
     .then(response => response.json())
@@ -75,16 +67,22 @@ function translateDeepl(keyword, translateEvent) {
 }
 
 function masterDicDownload(jsonURL) {
-  masterPrompts = []
+  if(optionData.masterUrl == jsonURL){
+    return
+  }
   const xhr = new XMLHttpRequest();
   xhr.open("GET", jsonURL, true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       const jsonData = JSON.parse(xhr.responseText);
+      masterPrompts = []
       jsonLoop(jsonData, (data) => {
         masterPrompts.push({ "prompt": data[3], "data": { 0: data[0], 1: data[1], 2: data[2] }, "url": data[4] })
       })
+      saveMasterPrompt()
       categoryData.update()
+      optionData.masterUrl = jsonURL
+      saveOptionData()
     }
   };
   xhr.send();
