@@ -38,6 +38,8 @@ function init() {
     if ($("#search").val()) {
       elementSearch()
     }
+    searchCategory = [,]
+    saveCategory()
   })
 
   const showPanelButton = document.getElementById('show-panel');
@@ -171,7 +173,23 @@ function init() {
   loadPrompt()
   loadLocalList()
   loadArchivesList()
-  
+  loadCategory()
+}
+
+function setSeachCategory(){
+  let isSearch = false
+  if(searchCategory[0]){
+    $('#search-cat0').val(searchCategory[0])
+    setChiledCategoryList("#search-cat1", 1, searchCategory[0])
+    isSearch = true
+  }
+  if(searchCategory[1]){
+    $('#search-cat1').val(searchCategory[1])
+  }
+
+  if(isSearch){
+    elementSearch()
+  }
 }
 
 function setCategoryList(id, category) {
@@ -209,7 +227,8 @@ function elementSearch() {
   }
   const keyword = $("#search").val()
   const data = [$('#search-cat0').val(), $('#search-cat1').val()]
-
+  searchCategory = data
+  saveCategory()
   isSearch = true
   resetHtmlList("#promptList");
   const resultList = Search(keyword, data);
@@ -431,8 +450,9 @@ function createAddButton(name, value) {
   button.type = "submit";
   button.innerHTML = "+";
   button.onclick = () => {
-    generateInput.val(generateInput.val() + value);
-    savePrompt();
+  editPrompt.init(generateInput.val() + value)
+  generateInput.val(editPrompt.prompt);
+  savePrompt();
   };
   return button;
 }

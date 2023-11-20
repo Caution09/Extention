@@ -4,16 +4,32 @@ let archivesList = []
 let masterPrompts = []
 let optionData = {}
 let toolInfo = {}
+let searchCategory = {}
 
 // データ保存
 function savePrompt() {
-  chrome.storage.local.set({ 'generatePrompt': editPrompt.prompt });
+    console.log(editPrompt.prompt)
+    chrome.storage.local.set({ 'generatePrompt': editPrompt.prompt });
 }
 
 function loadPrompt() {
   chrome.storage.local.get(["generatePrompt"], function (items) {
     if (items.generatePrompt != null)
+      console.log(items.generatePrompt)
       InitGenaretePrompt(items.generatePrompt)
+  });
+}
+
+function saveCategory() {
+  chrome.storage.local.set({ 'searchCategory': searchCategory });
+  console.log(searchCategory)
+}
+
+function loadCategory() {
+chrome.storage.local.get(["searchCategory"], function (items) {
+  if (items.searchCategory != null)
+    searchCategory = items.searchCategory
+    setSeachCategory()
   });
 }
 
