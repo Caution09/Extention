@@ -462,7 +462,10 @@ function createCopyButton(value) {
   button.type = "submit";
   button.innerHTML = "Copy";
   button.onclick = () => {
-    navigator.clipboard.writeText(value)
+    let temp = editPrompt.prompt
+    editPrompt.init(value)
+    navigator.clipboard.writeText(editPrompt.prompt)
+    editPrompt.init(temp)
   };
 
   return button;
