@@ -553,7 +553,7 @@ function createRemoveButton(item, li) {
 function createLoadButton(value) {
   let button = document.createElement('button');
   button.type = "submit";
-  button.innerHTML = "Load";
+  button.innerHTML = "↑";
   button.onclick = () => {
     editPrompt.init(value)
     UpdateGenaretePrompt()
@@ -695,8 +695,8 @@ function createArchiveList(json, listId) {
       archivesList[index].prompt = value;
       saveArchivesList();
     }));
-    li.append(createCopyButton(item.prompt));
     li.append(createLoadButton(item.prompt));
+    li.append(createCopyButton(item.prompt));
     li.append(createDeleteButton(index));
 
     $(listId).eq(0).append(li);
