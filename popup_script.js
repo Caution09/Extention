@@ -11,6 +11,17 @@ function init() {
   loadOptionData()
   loadToolInfo()
   // イベントの登録
+  document.getElementById('openWindow').addEventListener('click', function() {
+    const displayType = document.getElementById('displayType').value;
+  
+    if (displayType === 'page') {
+      chrome.runtime.sendMessage({ type: 'openPage' });
+    } else {
+      chrome.runtime.sendMessage({ type: 'openWindow', windowType: displayType });
+    }
+  });
+  
+
   const tabs = $('.tab');
   tabs.on('click', tabSwitch);
   $('#editTab').on('click', () => {

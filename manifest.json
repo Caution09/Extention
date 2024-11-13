@@ -9,19 +9,17 @@
     "https://novelai.net/image"
   ],
   "permissions": [
-		"background",
     "contextMenus",
     "activeTab",
     "storage",
-    "fileSystem",
     "scripting"
   ],
-  "background": { 
+  "background": {
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "PromptGenerator",
     "default_popup": "popup.html",
+    "default_title": "PromptGenerator",
     "default_icon": {
       "32": "icon.png",
       "64": "icon64.png",

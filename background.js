@@ -1,10 +1,8 @@
-// background.js
-
-let promptTabele = []
+let promptTabele = [];
 chrome.contextMenus.create({
     id: "PromptArchive",
     title: "プロンプトを記録する",
-    contexts: ["selection"],
+    contexts: ["selection"]
 });
 
 chrome.contextMenus.create({
@@ -13,43 +11,12 @@ chrome.contextMenus.create({
     contexts: ["editable"]
 });
 
-CreateArchiveList();
-
-function UpdatePromptList(){
-    promptTabele.forEach(element => {
-        chrome.contextMenus.remove(element, function() {});
-    })
-    promptTabele = []
-    CreateArchiveList();
-}
-
-function CreateArchiveList(){
-    chrome.storage.local.get(["archivesList"], function(items) {
-        if (items.archivesList) {
-            let count = 1
-            items.archivesList.forEach(item=>{
-                if(promptTabele.includes(item.prompt)){
-                    return   
-                }
-                let context = chrome.contextMenus.create({
-                    parentId: "LoadPrompt",
-                    id: item.prompt,
-                    title: count.toString()+":"+item.title,
-                    contexts: ["all"],
-                });
-                promptTabele.push(context)
-                count++
-            })
-        }
-    });
-}
-
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
     console.log(info);
     switch (info.menuItemId) {
         case "LoadPrompt":
             // 読み込みプロンプトの親なだけなので特に処理はしない
-            break
+            break;
         case "PromptArchive":
             let archivesList = [];
             const selectedText = info.selectionText;
@@ -65,16 +32,16 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
                         url: "error.html",
                         type: "popup",
                         width: 300,
-                        height: 50,
+                        height: 50
                     });
-                }else{
+                } else {
                     chrome.windows.create({
                         url: "prompt.html",
                         type: "popup",
                         width: 300,
-                        height: 50,
+                        height: 50
                     }, (popupWindow) => {
-                            chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+                        chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                             if (message.type === "promptResponse" && message.text) {
                                 let pushData = {title: message.text, prompt: selectedText};
                                 if (items.archivesList) {
@@ -83,42 +50,127 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
                                     archivesList = [pushData];
                                 }                            
                                 chrome.storage.local.set({archivesList: archivesList}, function() {
-                                    UpdatePromptList()
+                                    UpdatePromptList();
                                 });
                             }
                         });
                     });
                 }
             });
-            break
+            break;
         default:
             chrome.scripting.executeScript({
               target: { tabId: tab.id },
               function: (text) => {
                 document.execCommand("insertText", false, text);
               },
-              args: [info.menuItemId],
+              args: [info.menuItemId]
             });
             break;
     }
-  }
-);
+});
 
-// DOM処理
-function StableDiffusion(arg) {
+// メッセージリスナーを一つに統合
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    console.log("Received message:", message.type); // デバッグ用メッセージ
+
+    switch (message.type) {
+        case 'openWindow':
+            chrome.windows.create({
+                url: chrome.runtime.getURL('popup.html'),
+                type: message.windowType === 'normal' ? 'popup' : message.windowType,
+                width: 400,
+                height: 800
+            });
+            break;
+        case 'openPage':
+            chrome.tabs.create({
+                url: chrome.runtime.getURL('popup.html')
+            });
+            break;
+        case "UpdatePromptList":
+            UpdatePromptList();
+            sendResponse({ text: "バックグラウンド処理の終了" });
+            break;
+        case "DOM":
+            chrome.tabs.query({}, tabs => {
+                for (let i = 0; i < tabs.length; i++) {
+                    let tab = tabs[i];
+                    if (!tab.active) {
+                        continue;
+                    }
+                    console.log(tab);
+                    switch (tab.url) {
+                        case "Stable Diffusion":
+                            console.log("StableDiffusionRequest");
+                            chrome.scripting.executeScript({
+                                target: { tabId: tab.id },
+                                func: StableDiffusion,
+                                args: [message.args]
+                            });
+                            break;
+                        case "https://novelai.net/image":
+                            console.log("NovelAIRequest");
+                            chrome.scripting.executeScript({
+                                target: { tabId: tab.id },
+                                func: NovelAI,
+                                args: [message.args]
+                            });
+                            break;
+                    }
+                }
+            });
+            break;
+        default:
+            break;
+    }
+});
+
+CreateArchiveList();
+
+function UpdatePromptList() {
+    promptTabele.forEach(element => {
+        chrome.contextMenus.remove(element, function() {});
+    });
+    promptTabele = [];
+    CreateArchiveList();
 }
 
-function NovelAI(arg) {
-    console.log("call NovelAI")
-    console.log(arg)
+function CreateArchiveList() {
+    chrome.storage.local.get(["archivesList"], function(items) {
+        if (items.archivesList) {
+            let count = 1;
+            items.archivesList.forEach(item => {
+                if(promptTabele.includes(item.prompt)){
+                    return;
+                }
+                let context = chrome.contextMenus.create({
+                    parentId: "LoadPrompt",
+                    id: item.prompt,
+                    title: count.toString() + ":" + item.title,
+                    contexts: ["all"]
+                });
+                promptTabele.push(context);
+                count++;
+            });
+        }
+    });
+}
 
-    let method = arg[1]
+// DOM処理
+function StableDiffusion(arg) {}
+
+function NovelAI(arg) {
+    console.log("call NovelAI");
+    console.log(arg);
+
+    let method = arg[1];
     let value = arg[2];
     let positivePromptText = document.querySelector(arg[3]);
     let generateButton = document.querySelector(arg[4]);
     
-    switch(method){
-        case "Generate":{
+    switch (method) {
+        case "Generate": {
             positivePromptText.value = value;
             positivePromptText.innerHTML = value;
             const event = new Event('change', { bubbles: true });
@@ -128,45 +180,3 @@ function NovelAI(arg) {
         }
     }
 }
-
-// 拡張機能からの呼び出し
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    console.log(request.args);
-    switch(request.args[0]){
-        case "UpdatePromptList":
-            UpdatePromptList()
-            sendResponse({ text: "バックグラウンド処理の終了" });
-            break;
-        case "DOM":
-            chrome.tabs.query({}, tabs => {
-                for(let i=0; i<tabs.length; i++){
-                    let tab = tabs[i]
-                    if (!tab.active){
-                        continue;
-                    }
-                    console.log(tab)
-                    switch(tab.url){
-                        case "Stable Diffusion":
-                            console.log("StableDiffusionRequest");
-                            chrome.scripting.executeScript({
-                                target: { tabId: tab.id },
-                                func:StableDiffusion,
-                                args:[request.args]}
-                            );
-                            break;
-                        case "https://novelai.net/image":
-                            console.log("NovelAIRequest");
-                            chrome.scripting.executeScript({
-                                target: { tabId: tab.id },
-                                func:NovelAI,
-                                args:[request.args]}
-                            );
-                            break;
-                    }
-            }
-            });
-            break;
-        default:
-            break;
-    }
-});
