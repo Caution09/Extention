@@ -236,10 +236,10 @@ const UIFactory = {
   /**
    * ドラッグ可能なアイコンを作成
    * @param {number} index - インデックス
-   * @param {string} [icon='◆'] - アイコン文字
+   * @param {string} [icon='☰'] - アイコン文字
    * @returns {Text}
    */
-  createDragIcon(index, icon = "◆") {
+  createDragIcon(index, icon = "☰") {
     const textNode = document.createTextNode(icon);
     textNode.value = index;
     return textNode;

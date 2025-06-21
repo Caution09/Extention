@@ -1499,14 +1499,17 @@ class PromptListManager {
 
     // 削除ボタン
     const realIndex = editPrompt.elements.findIndex((el) => el === item);
+    // 削除ボタン
     const deleteButton = UIFactory.createButtonSet({
       includeDelete: true,
       onDelete: () => {
-        editPrompt.removeElement(realIndex);
+        editPrompt.removeElement(index);
         window.app.updatePromptDisplay();
         window.app.refreshEditList();
       },
     });
+
+    $li.append(deleteButton.delete); // この行を追加
 
     // 追加ボタンまたはプレビューボタン
     if (!category) {
