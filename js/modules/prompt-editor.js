@@ -103,18 +103,30 @@ class PromptEditor {
     if (index >= 0 && index < this.elements.length) {
       const shaping = this._getShaping();
       let newWeight = parseFloat(this.elements[index][shaping].weight) + weight;
-      newWeight = Math.floor(newWeight * 100) / 100;
 
-      const oldSort = this.elements[index].sort; // 既存のsortを保持
+      // 浮動小数点の精度問題を修正
+      newWeight = Math.round(newWeight * 100) / 100;
+
+      // 形式に応じて重みの範囲を制限
+      if (shaping === "SD") {
+        newWeight = Math.max(0.1, Math.min(10, newWeight)); // 0.1～10の範囲に制限
+      } else if (shaping === "NAI") {
+        newWeight = Math.max(-10, Math.min(10, newWeight)); // -10～10の範囲に制限
+      }
+
+      const oldSort = this.elements[index].sort;
+      const oldId = this.elements[index].id;
       this.elements[index] = this.createElement(
         this.elements[index][shaping].value,
         newWeight
       );
-      this.elements[index].sort = oldSort; // sortを復元
+      this.elements[index].sort = oldSort;
+      this.elements[index].id = oldId;
       this.generate();
       this._emit("elementUpdated", { index, element: this.elements[index] });
     }
   }
+
   /**
    * 要素を削除
    * @param {number} index - 削除する要素のインデックス
@@ -227,11 +239,12 @@ class PromptEditor {
   getValue(type, str, weight) {
     switch (type) {
       case "SD":
-        return weight != 1 ? `(${str}:${weight})` : str;
+        if (weight <= 0 || weight === 1) return str;
+        return `(${str}:${weight})`;
       case "NAI":
-        if (weight === 0) return str; // 重み0の場合は括弧なし
+        if (weight === 0 || !isFinite(weight)) return str; // 無限大チェックを追加
         const brackets = weight > 0 ? "{}" : "[]";
-        const absWeight = Math.abs(weight);
+        const absWeight = Math.min(Math.abs(weight), 10); // 最大10に制限
         return (
           brackets[0].repeat(absWeight) + str + brackets[1].repeat(absWeight)
         );
@@ -282,7 +295,7 @@ class PromptEditor {
 
     const match = this.getSDTypeWeight(str);
     if (match) {
-      return match[1];
+      return match[1].trim(); // 基本値を返す（trimで余分な空白を除去）
     } else {
       return str.replace(/[{}\[\]]/g, "");
     }
@@ -304,6 +317,17 @@ class PromptEditor {
    * @returns {number} NAI形式の重み
    */
   convertNAIWeight(weight) {
+    // 重みが0または1の場合は特別処理
+    if (weight === 0 || weight === 1) {
+      return 0;
+    }
+
+    // 重みが0に非常に近い場合も0として扱う
+    if (Math.abs(weight) < 0.01) {
+      return 0;
+    }
+
+    // 通常の変換
     return Math.round(Math.log(weight) / Math.log(1.05));
   }
 
@@ -322,7 +346,13 @@ class PromptEditor {
    * @returns {Array|null} マッチ結果
    */
   getSDTypeWeight(str) {
-    return str.match(/\(([^:]+):([\d.]+)\)/);
+    // まず括弧ありの形式をチェック: (text:weight)
+    let match = str.match(/\(([^:]+):([\d.]+)\)/);
+    if (match) return match;
+
+    // 括弧なしの形式をチェック: text:weight
+    match = str.match(/^([^:]+):([\d.]+)$/);
+    return match;
   }
 
   /**
