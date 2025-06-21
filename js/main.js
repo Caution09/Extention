@@ -64,6 +64,9 @@ class PromptGeneratorApp {
       // カテゴリーデータの初期化
       categoryData.init();
 
+      // PromptEditorのイベントリスナーを設定
+      this.setupPromptEditorListeners();
+
       // UIの初期化
       this.initializeUI();
 
@@ -87,6 +90,31 @@ class PromptGeneratorApp {
       // エラーを再スローして呼び出し元でキャッチできるようにする
       throw error;
     }
+  }
+
+  /**
+   * PromptEditorのイベントリスナーを設定
+   * Phase 3: イベント駆動の実装例
+   */
+  setupPromptEditorListeners() {
+    // プロンプト変更時の処理
+    promptEditor.on("change", (data) => {
+      console.log("PromptEditor changed:", data.prompt);
+      // 将来的には、ここで自動保存やUI更新を行う
+      // 現在は既存のsavePrompt()が各所で呼ばれているので、段階的に移行
+    });
+
+    // 要素更新時の処理
+    promptEditor.on("elementUpdated", (data) => {
+      console.log("Element updated:", data.index, data.element);
+      // 将来的には、ここで特定の要素のUI更新を行う
+    });
+
+    // 要素削除時の処理
+    promptEditor.on("elementRemoved", (data) => {
+      console.log("Element removed:", data.index);
+      // 将来的には、ここでUIからの要素削除を行う
+    });
   }
 
   /**
@@ -440,9 +468,6 @@ class PromptGeneratorApp {
   setupEditHandlers() {
     $('[name="UIType"]').on("change", (e) => this.handleUITypeChange(e));
     $('[name="EditType"]').on("change", (e) => this.handleEditTypeChange(e));
-
-    // この行を削除（タブ切り替えはsetupTabsで処理される）
-    // $('#editTab').on('click', () => this.initializeEditMode());
   }
 
   handleUITypeChange(event) {
@@ -465,10 +490,9 @@ class PromptGeneratorApp {
   initializeEditMode() {
     const currentPrompt = this.generateInput.val();
 
-    // 現在のプロンプトとeditPrompt.promptが異なる場合のみ初期化
-    if (currentPrompt && currentPrompt !== editPrompt.prompt) {
+    if (currentPrompt && currentPrompt !== promptEditor.prompt) {
       console.log("Initializing edit mode with:", currentPrompt);
-      editPrompt.init(currentPrompt);
+      promptEditor.init(currentPrompt);
     }
 
     this.refreshEditList();
@@ -489,19 +513,37 @@ class PromptGeneratorApp {
       $("#editList").sortable("destroy");
     }
 
+    // sort プロパティで並び替えた要素を渡す
+    const sortedElements = [...editPrompt.elements].sort(
+      (a, b) => (a.sort || 0) - (b.sort || 0)
+    );
+
     await this.listManager.createList(
       listType,
-      editPrompt.elements,
+      sortedElements, // ソート済みの要素を渡す
       "#editList"
     );
 
     // sortableを再初期化
+    // refreshEditList メソッド内の sortable 再初期化部分
     EventHandlers.setupSortableList("#editList", (sortedIds) => {
+      // sortedIdsは表示順のインデックス（0, 1, 2...）
+      // でも実際のelementsの順番はsortプロパティでソートされている
+
+      const sortedElements = [...editPrompt.elements].sort(
+        (a, b) => (a.sort || 0) - (b.sort || 0)
+      );
+
       let baseIndex = 0;
-      sortedIds.forEach((id) => {
-        if (!id) return;
-        editPrompt.elements[id].sort = baseIndex++;
+      sortedIds.forEach((displayIndex) => {
+        if (!displayIndex) return;
+        // 表示順のインデックスから実際の要素を取得
+        const element = sortedElements[displayIndex];
+        if (element) {
+          element.sort = baseIndex++;
+        }
       });
+
       editPrompt.generate();
       this.updatePromptDisplay();
     });
@@ -538,16 +580,32 @@ class PromptGeneratorApp {
             "#archiveList"
           ),
       },
+      // toggleDictionary メソッドの element の場合
       element: {
         listId: "#addPromptList",
         textId: "#elementDicText",
         openText: "▼要素辞書(ローカル)　※ここをクリックで開閉",
         closeText: "▶要素辞書(ローカル)　※ここをクリックで開閉",
-        createFunc: () => {
+        createFunc: async () => {
           const sorted = [...AppState.data.localPromptList].sort(
             (a, b) => (a.sort || 0) - (b.sort || 0)
           );
-          return this.listManager.createList("add", sorted, "#addPromptList");
+          await this.listManager.createList("add", sorted, "#addPromptList");
+
+          // リスト作成後にsortableを初期化
+          setTimeout(() => {
+            EventHandlers.setupSortableList(
+              "#addPromptList",
+              async (sortedIds) => {
+                let baseIndex = 0;
+                sortedIds.forEach((id) => {
+                  if (!id) return;
+                  AppState.data.localPromptList[id].sort = baseIndex++;
+                });
+                await saveLocalList();
+              }
+            );
+          }, 100);
         },
       },
       master: {
@@ -868,17 +926,19 @@ class PromptGeneratorApp {
   // ============================================
   // ソート可能なリスト
   // ============================================
-
   setupSortableLists() {
     // 追加リストのソート
-    EventHandlers.setupSortableList("#addPromptList", async (sortedIds) => {
-      let baseIndex = 0;
-      sortedIds.forEach((id) => {
-        if (!id) return;
-        AppState.data.localPromptList[id].sort = baseIndex++;
+    // 初回のみ設定（refreshAddListで再設定されるため）
+    if (!$("#addPromptList").hasClass("ui-sortable")) {
+      EventHandlers.setupSortableList("#addPromptList", async (sortedIds) => {
+        let baseIndex = 0;
+        sortedIds.forEach((id) => {
+          if (!id) return;
+          AppState.data.localPromptList[id].sort = baseIndex++;
+        });
+        await saveLocalList();
       });
-      await saveLocalList();
-    });
+    }
 
     // 編集リストのソート
     EventHandlers.setupSortableList("#editList", (sortedIds) => {
@@ -1216,50 +1276,148 @@ class PromptListManager {
     $li.append(buttons.load, buttons.copy, buttons.delete);
   }
 
-  async createEditItem($li, item, index, options = {}) {
+  async createEditDropdownItem($li, item, index, options = {}) {
     const shaping = AppState.userSettings.optionData.shaping;
     const weight = item[shaping].weight;
-    const prompt = item[shaping].value;
+    const prompt = item.Value.toLowerCase().trim();
+
+    // カテゴリー検索
+    let category = null;
+    const findCategory = (dataList) => {
+      return (
+        dataList.find((dicData) => dicData.prompt === prompt)?.data || null
+      );
+    };
+
+    category =
+      findCategory(AppState.data.masterPrompts) ||
+      findCategory(AppState.data.localPromptList);
+
+    // カテゴリー入力フィールド
+    const categoryInputs = [];
+    for (let i = 0; i < 3; i++) {
+      const $input = UIFactory.createInput({
+        value: category ? category[i] : "翻訳中",
+        readonly: false,
+      });
+
+      if (!category) {
+        $input.prop("disabled", true);
+      } else {
+        EventHandlers.addInputClearBehavior($input);
+      }
+
+      categoryInputs.push($input);
+      $li.append($input);
+    }
+
+    // 要素のIDを使って実際のインデックスを見つける関数
+    const findRealIndex = () => {
+      return editPrompt.elements.findIndex((el) => el.id === item.id);
+    };
 
     // プロンプト入力
     const $valueInput = UIFactory.createInput({
       value: prompt,
       index: index,
       onInput: (value) => {
-        editPrompt.editingValue(value, index);
-        $weightInput.val(editPrompt.elements[index][shaping].weight);
-        window.app.updatePromptDisplay();
+        const realIndex = findRealIndex();
+        if (realIndex !== -1) {
+          editPrompt.editingValue(value, realIndex);
+          $weightInput.val(editPrompt.elements[realIndex][shaping].weight);
+          window.app.updatePromptDisplay();
+        }
       },
     });
 
     // 重み入力
     const $weightInput = UIFactory.createInput({
-      value: weight,
+      value: weight !== null && weight !== undefined ? weight : "0",
       index: index,
       onInput: (value) => {
         const cleanWeight = value.replace(/[^-0-9.]/g, "");
-        editPrompt.editingWeight(cleanWeight, index);
-        $valueInput.val(editPrompt.elements[index][shaping].value);
-        window.app.updatePromptDisplay();
+        const realIndex = findRealIndex();
+        if (realIndex !== -1) {
+          editPrompt.editingWeight(cleanWeight, realIndex);
+          window.app.updatePromptDisplay();
+        }
       },
     });
 
     $li.append($valueInput);
-    if (weight) {
+    if (weight !== null && weight !== undefined) {
       $li.append($weightInput);
     }
 
-    // ボタン
-    const buttons = UIFactory.createButtonSet({
+    // 重み調整ボタン
+    const weightDelta = shaping === "SD" ? 0.1 : shaping === "NAI" ? 1 : 0;
+    if (weightDelta > 0) {
+      const buttons = UIFactory.createButtonSet({
+        includeWeight: true,
+        weightDelta: weightDelta,
+        index: 0, // ダミー値
+      });
+
+      // ボタンのonClickを上書き
+      buttons.weightPlus.onclick = () => {
+        const realIndex = findRealIndex();
+        if (realIndex !== -1) {
+          editPrompt.addWeight(weightDelta, realIndex);
+          window.app.updatePromptDisplay();
+          window.app.refreshEditList();
+        }
+      };
+
+      buttons.weightMinus.onclick = () => {
+        const realIndex = findRealIndex();
+        if (realIndex !== -1) {
+          editPrompt.addWeight(-weightDelta, realIndex);
+          window.app.updatePromptDisplay();
+          window.app.refreshEditList();
+        }
+      };
+
+      $li.append(buttons.weightPlus, buttons.weightMinus);
+    }
+
+    // 削除ボタン
+    const deleteButton = UIFactory.createButtonSet({
       includeDelete: true,
       onDelete: () => {
-        editPrompt.removeElement(index);
-        window.app.updatePromptDisplay();
-        window.app.refreshEditList();
+        const realIndex = findRealIndex();
+        if (realIndex !== -1) {
+          editPrompt.removeElement(realIndex);
+          window.app.updatePromptDisplay();
+          window.app.refreshEditList();
+        }
       },
     });
+    $li.append(deleteButton.delete);
 
-    $li.append(buttons.delete);
+    // 追加ボタンまたはプレビューボタン
+    if (!category) {
+      const $registButton = this.createRegistButton(categoryInputs, prompt);
+      $li.append($registButton);
+
+      // 翻訳処理をキューに追加
+      this.queueTranslation(prompt, categoryInputs);
+    } else {
+      const element = AppState.data.masterPrompts.find(
+        (e) => e.prompt === prompt
+      );
+      if (element?.url) {
+        $li.append(UIFactory.createPreviewButton(element));
+      }
+    }
+
+    // カテゴリー連動設定
+    this.setupCategoryDropdownChain(
+      categoryInputs,
+      $valueInput,
+      $weightInput,
+      index
+    );
+
     $li.append(UIFactory.createDragIcon(index));
   }
 
@@ -1321,31 +1479,34 @@ class PromptListManager {
     });
 
     $li.append($valueInput);
-    if (weight) {
+    if (weight !== null && weight !== undefined) {
       $li.append($weightInput);
     }
 
     // 重み調整ボタン
     const weightDelta = shaping === "SD" ? 0.1 : shaping === "NAI" ? 1 : 0;
     if (weightDelta > 0) {
+      // 元の配列での実際のインデックスを見つける
+      const realIndex = editPrompt.elements.findIndex((el) => el === item);
+
       const buttons = UIFactory.createButtonSet({
         includeWeight: true,
         weightDelta: weightDelta,
-        index: index,
+        index: realIndex, // 表示順のindexではなく、実際のインデックスを使用
       });
       $li.append(buttons.weightPlus, buttons.weightMinus);
     }
 
     // 削除ボタン
+    const realIndex = editPrompt.elements.findIndex((el) => el === item);
     const deleteButton = UIFactory.createButtonSet({
       includeDelete: true,
       onDelete: () => {
-        editPrompt.removeElement(index);
+        editPrompt.removeElement(realIndex);
         window.app.updatePromptDisplay();
         window.app.refreshEditList();
       },
     });
-    $li.append(deleteButton.delete);
 
     // 追加ボタンまたはプレビューボタン
     if (!category) {

@@ -42,7 +42,6 @@ let categoryData = {
     const bigCategory = $("#category");
     const dataListContainer = $("body");
 
-    // 既存のカテゴリー関連のdatalistを削除
     $('datalist[id^="category"]:not(#category)').remove();
 
     bigCategory.empty();

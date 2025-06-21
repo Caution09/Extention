@@ -56,7 +56,9 @@ const UIFactory = {
   createInput(config) {
     const $input = $("<input>")
       .attr("type", "text")
-      .val(config.value || "")
+      .val(
+        config.value !== null && config.value !== undefined ? config.value : ""
+      )
       .addClass(config.className || "promptData");
 
     if (config.readonly) {
@@ -362,10 +364,16 @@ const EventHandlers = {
    * @param {Function} onUpdate - 更新時のコールバック
    */
   setupSortableList(listId, onUpdate) {
+    // 既にsortableが初期化されている場合は再初期化
+    if ($(listId).hasClass("ui-sortable")) {
+      $(listId).sortable("destroy");
+    }
+
     $(listId).sortable({
-      revert: 50, // 50msで戻る（デフォルトは500ms）
-      distance: 5, // 5px動いたらドラッグ開始（誤操作防止）
-      tolerance: "pointer", // ポインタ位置で判定
+      revert: 50,
+      distance: 5,
+      tolerance: "pointer",
+      cursor: "move", // カーソルを明示的に設定
       update: function (event, ui) {
         const sortedIds = $(listId).sortable("toArray");
         onUpdate(sortedIds);

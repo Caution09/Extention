@@ -70,7 +70,6 @@ const ErrorHandler = {
       const logs = JSON.parse(localStorage.getItem("errorLogs") || "[]");
       logs.push(logEntry);
 
-      // 最新の100件のみ保持
       if (logs.length > 100) {
         logs.splice(0, logs.length - 100);
       }

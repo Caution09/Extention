@@ -1,94 +1,186 @@
-﻿// Prompt編集オブジェクト
-let editPrompt = {
-  prompt: "",
-  elements: [],
-  isOldSD: false,
-  init: function (str) {
-    console.log("editPrompt.init:", str);
+﻿/**
+ * プロンプト編集クラス
+ * Phase 3: クラスベースの実装
+ */
+class PromptEditor {
+  constructor() {
+    this.prompt = "";
+    this.elements = [];
+    this.isOldSD = false;
+    this._elementIdCounter = 0; // 一意のID用カウンター
+
+    // イベントリスナー管理
+    this._listeners = {
+      change: [],
+      elementAdded: [],
+      elementRemoved: [],
+      elementUpdated: [],
+    };
+  }
+
+  /**
+   * プロンプトを初期化
+   * @param {string} str - プロンプト文字列
+   */
+  init(str) {
+    console.log("PromptEditor.init:", str);
     this.isOldSD = /\(\(/.test(str);
     this.elements = [];
+    this._elementIdCounter = 0; // カウンターをリセット
 
-    // 空文字や空要素を除外
-    let tempList = str
+    const tempList = str
       .split(",")
       .map((item) => item.trim().replace(/\s{2,}/g, " "))
       .filter((item) => item !== "");
 
-    // デバッグ用ログ
-    console.log("Parsed elements:", tempList);
-
     tempList.forEach((prompt, index) => {
-      let temp = this.createElement(prompt);
-      temp.sort = index;
-      this.elements.push(temp);
+      const element = this.createElement(prompt);
+      element.sort = index;
+      element.id = this._elementIdCounter++; // 一意のIDを付与
+      this.elements.push(element);
     });
 
-    console.log("Final elements:", this.elements);
     this.generate();
-  },
-  generate: function () {
-    const sortedElements = [];
-    this.elements.forEach((value) => {
-      sortedElements.push(value);
-    });
-    sortedElements.sort((a, b) => {
-      if (a.sort < b.sort) {
-        return -1;
-      }
-      if (a.sort > b.sort) {
-        return 1;
-      }
-      return 0;
-    });
-    let shap = "None";
-    if (optionData) {
-      shap = optionData.shaping;
-    }
+  }
+  /**
+   * プロンプトを生成
+   */
+  generate() {
+    const sortedElements = [...this.elements].sort((a, b) => a.sort - b.sort);
+
+    const shaping = this._getShaping();
     this.prompt =
-      sortedElements.map((item) => item[shap].value).join(",") + ",";
-  },
-  editingValue: function (value, index) {
-    this.elements[index] = this.createElement(value);
-    this.generate();
-  },
-  editingWeight: function (weight, index) {
-    this.elements[index] = this.createElement(
-      this.elements[index][optionData.shaping].value,
-      weight
-    );
-    this.generate();
-  },
-  addWeight: function (weight, index) {
-    weight += parseFloat(this.elements[index][optionData.shaping].weight);
-    weight = Math.floor(weight * 100) / 100;
-    this.elements[index] = this.createElement(
-      this.elements[index][optionData.shaping].value,
-      weight
-    );
-    this.generate();
-  },
-  removeElement: function (index) {
-    this.elements.splice(index, 1);
-    this.generate();
-  },
-  moveInsertElement: function (index, newIndex) {
-    const element = this.elements[index];
-    this.elements.splice(index, 1);
-    this.elements.splice(newIndex, 0, element);
-    this.generate();
-  },
-  moveElement: function (index, value) {
-    const temp = this.elements[index];
-    this.elements[index] = this.elements[index + value];
-    this.elements[index + value] = temp;
-    this.generate();
-  },
-  createElement: function (prompt, weight) {
-    let element = {};
+      sortedElements.map((item) => item[shaping].value).join(",") + ",";
+
+    // 変更イベントを発火
+    this._emit("change", { prompt: this.prompt, elements: this.elements });
+  }
+
+  /**
+   * 要素の値を編集
+   * @param {string} value - 新しい値
+   * @param {number} index - 要素のインデックス
+   */
+  editingValue(value, index) {
+    if (index >= 0 && index < this.elements.length) {
+      const oldSort = this.elements[index].sort;
+      const oldId = this.elements[index].id; // IDを保持
+      this.elements[index] = this.createElement(value);
+      this.elements[index].sort = oldSort;
+      this.elements[index].id = oldId; // IDを復元
+      this.generate();
+      this._emit("elementUpdated", { index, element: this.elements[index] });
+    }
+  }
+
+  /**
+   * 要素の重みを編集
+   * @param {string} weight - 新しい重み
+   * @param {number} index - 要素のインデックス
+   */
+  editingWeight(weight, index) {
+    if (index >= 0 && index < this.elements.length) {
+      const shaping = this._getShaping();
+      const oldSort = this.elements[index].sort;
+      const oldId = this.elements[index].id; // IDを保持
+      this.elements[index] = this.createElement(
+        this.elements[index][shaping].value,
+        weight
+      );
+      this.elements[index].sort = oldSort;
+      this.elements[index].id = oldId; // IDを復元
+      this.generate();
+      this._emit("elementUpdated", { index, element: this.elements[index] });
+    }
+  }
+
+  /**
+   * 要素に重みを追加
+   * @param {number} weight - 追加する重み
+   * @param {number} index - 要素のインデックス
+   */
+  addWeight(weight, index) {
+    if (index >= 0 && index < this.elements.length) {
+      const shaping = this._getShaping();
+      let newWeight = parseFloat(this.elements[index][shaping].weight) + weight;
+      newWeight = Math.floor(newWeight * 100) / 100;
+
+      const oldSort = this.elements[index].sort; // 既存のsortを保持
+      this.elements[index] = this.createElement(
+        this.elements[index][shaping].value,
+        newWeight
+      );
+      this.elements[index].sort = oldSort; // sortを復元
+      this.generate();
+      this._emit("elementUpdated", { index, element: this.elements[index] });
+    }
+  }
+  /**
+   * 要素を削除
+   * @param {number} index - 削除する要素のインデックス
+   */
+  removeElement(index) {
+    if (index >= 0 && index < this.elements.length) {
+      const removed = this.elements.splice(index, 1)[0];
+      this.generate();
+      this._emit("elementRemoved", { index, element: removed });
+    }
+  }
+
+  /**
+   * 要素を移動
+   * @param {number} index - 移動元のインデックス
+   * @param {number} offset - 移動量
+   */
+  moveElement(index, offset) {
+    const newIndex = index + offset;
+    if (
+      index >= 0 &&
+      index < this.elements.length &&
+      newIndex >= 0 &&
+      newIndex < this.elements.length
+    ) {
+      const temp = this.elements[index];
+      this.elements[index] = this.elements[newIndex];
+      this.elements[newIndex] = temp;
+      this.generate();
+    }
+  }
+
+  /**
+   * 要素を挿入位置に移動
+   * @param {number} index - 移動元のインデックス
+   * @param {number} newIndex - 移動先のインデックス
+   */
+  moveInsertElement(index, newIndex) {
+    if (
+      index >= 0 &&
+      index < this.elements.length &&
+      newIndex >= 0 &&
+      newIndex <= this.elements.length
+    ) {
+      const element = this.elements[index];
+      this.elements.splice(index, 1);
+      this.elements.splice(newIndex, 0, element);
+      this.generate();
+    }
+  }
+
+  /**
+   * プロンプト要素を作成
+   * @param {string} prompt - プロンプト文字列
+   * @param {number} [weight] - 重み（オプション）
+   * @returns {Object} 作成された要素
+   */
+  createElement(prompt, weight) {
+    const element = {};
+    const shaping = this._getShaping();
+
+    // 重みの設定
     if (weight === undefined) {
       element.Weight = this.getWeight(prompt);
     } else {
-      switch (optionData.shaping) {
+      switch (shaping) {
         case "SD":
         case "None":
           element.Weight = weight;
@@ -98,82 +190,260 @@ let editPrompt = {
           break;
       }
     }
+
     element.Value = this.getbaseValue(prompt);
 
-    element["SD"] = {};
-    element["SD"].weight = element.Weight;
-    element["SD"].value = this.getValue("SD", element.Value, element.Weight);
+    // 各形式用の値を設定
+    // createElement メソッド内の修正
+    element["SD"] = {
+      weight: element.Weight || 0, // 0の場合も明示的に0を設定
+      value: this.getValue("SD", element.Value, element.Weight),
+    };
 
-    element["NAI"] = {};
-    element["NAI"].weight = this.convertNAIWeight(element.Weight);
-    element["NAI"].value = this.getValue(
-      "NAI",
-      element.Value,
-      element["NAI"].weight
-    );
+    element["NAI"] = {
+      weight: this.convertNAIWeight(element.Weight),
+      value: this.getValue(
+        "NAI",
+        element.Value,
+        this.convertNAIWeight(element.Weight)
+      ),
+    };
 
-    element["None"] = {};
-    element["None"].weight = null;
-    element["None"].value = prompt;
+    element["None"] = {
+      weight: null,
+      value: prompt,
+    };
+
     return element;
-  },
-  getValue: function (type, str, weight) {
+  }
+
+  /**
+   * 形式に応じた値を取得
+   * @param {string} type - 形式（SD/NAI/None）
+   * @param {string} str - 基本文字列
+   * @param {number} weight - 重み
+   * @returns {string} フォーマットされた値
+   */
+  getValue(type, str, weight) {
     switch (type) {
       case "SD":
         return weight != 1 ? `(${str}:${weight})` : str;
       case "NAI":
+        if (weight === 0) return str; // 重み0の場合は括弧なし
         const brackets = weight > 0 ? "{}" : "[]";
         const absWeight = Math.abs(weight);
-        const result =
-          brackets[0].repeat(absWeight) + str + brackets[1].repeat(absWeight);
-        return result;
+        return (
+          brackets[0].repeat(absWeight) + str + brackets[1].repeat(absWeight)
+        );
       case "None":
         return str;
+      default:
+        return str;
     }
-  },
-  getWeight: function (str) {
-    if (this.isSpecialPropmt(str)) {
+  }
+
+  /**
+   * プロンプトから重みを取得
+   * @param {string} str - プロンプト文字列
+   * @returns {number} 重み
+   */
+  getWeight(str) {
+    if (this.isSpecialPrompt(str)) {
       return 1;
     }
-    const match = this.getSDTypeWight(str);
+
+    const match = this.getSDTypeWeight(str);
     if (match) {
       return parseFloat(match[2]);
     } else {
       const splitChar = this.isOldSD ? "(" : "{";
       const aiWeight = this.isOldSD ? 1.1 : 1.05;
       let weight = str.split(splitChar).length - 1;
-      if (weight == 0) {
+      if (weight === 0) {
         weight = (str.split("[").length - 1) * -1;
       }
       return parseFloat((aiWeight ** weight).toFixed(2));
     }
-  },
-  getbaseValue: function (str) {
-    if (this.isSpecialPropmt(str)) {
+  }
+
+  /**
+   * プロンプトから基本値を取得
+   * @param {string} str - プロンプト文字列
+   * @returns {string} 基本値
+   */
+  getbaseValue(str) {
+    if (this.isSpecialPrompt(str)) {
       return str;
     }
+
     if (this.isOldSD) {
       return str.replace(/[\(\)]/g, "");
     }
-    const match = this.getSDTypeWight(str);
+
+    const match = this.getSDTypeWeight(str);
     if (match) {
       return match[1];
     } else {
       return str.replace(/[{}\[\]]/g, "");
     }
-  },
-  isSpecialPropmt: function (str) {
+  }
+
+  /**
+   * 特殊なプロンプトかチェック
+   * @param {string} str - プロンプト文字列
+   * @returns {boolean}
+   */
+  isSpecialPrompt(str) {
     const regex = /^\[.*:.*:.*\]$/;
     return regex.test(str);
-  },
-  convertNAIWeight: function (weight) {
-    return (Math.log(weight) / Math.log(1.05)).toFixed(0);
-  },
-  convertSDWeight: function (weight) {
-    console.log(weight);
+  }
+
+  /**
+   * NAI形式の重みに変換
+   * @param {number} weight - SD形式の重み
+   * @returns {number} NAI形式の重み
+   */
+  convertNAIWeight(weight) {
+    return Math.round(Math.log(weight) / Math.log(1.05));
+  }
+
+  /**
+   * SD形式の重みに変換
+   * @param {number} weight - NAI形式の重み
+   * @returns {number} SD形式の重み
+   */
+  convertSDWeight(weight) {
     return parseFloat((1.05 ** weight).toFixed(2));
-  },
-  getSDTypeWight: function (str) {
+  }
+
+  /**
+   * SD形式の重みを取得
+   * @param {string} str - プロンプト文字列
+   * @returns {Array|null} マッチ結果
+   */
+  getSDTypeWeight(str) {
     return str.match(/\(([^:]+):([\d.]+)\)/);
+  }
+
+  /**
+   * 現在の整形タイプを取得
+   * @returns {string} 整形タイプ
+   * @private
+   */
+  _getShaping() {
+    // AppStateが利用可能な場合はそれを使用
+    if (
+      typeof AppState !== "undefined" &&
+      AppState.userSettings?.optionData?.shaping
+    ) {
+      return AppState.userSettings.optionData.shaping;
+    }
+    // レガシー互換性
+    if (typeof optionData !== "undefined" && optionData?.shaping) {
+      return optionData.shaping;
+    }
+    return "None";
+  }
+
+  // ============================================
+  // イベントシステム
+  // ============================================
+
+  /**
+   * イベントリスナーを追加
+   * @param {string} event - イベント名
+   * @param {Function} callback - コールバック関数
+   */
+  on(event, callback) {
+    if (this._listeners[event]) {
+      this._listeners[event].push(callback);
+    }
+  }
+
+  /**
+   * イベントリスナーを削除
+   * @param {string} event - イベント名
+   * @param {Function} callback - コールバック関数
+   */
+  off(event, callback) {
+    if (this._listeners[event]) {
+      this._listeners[event] = this._listeners[event].filter(
+        (cb) => cb !== callback
+      );
+    }
+  }
+
+  /**
+   * イベントを発火
+   * @param {string} event - イベント名
+   * @param {*} data - イベントデータ
+   * @private
+   */
+  _emit(event, data) {
+    if (this._listeners[event]) {
+      this._listeners[event].forEach((callback) => {
+        try {
+          callback(data);
+        } catch (error) {
+          console.error(`Error in event listener for ${event}:`, error);
+        }
+      });
+    }
+  }
+}
+
+// ============================================
+// グローバル互換性レイヤー（段階的移行用）
+// ============================================
+
+// デフォルトのインスタンスを作成
+const promptEditor = new PromptEditor();
+
+// レガシーコードとの互換性のため、editPromptとして公開
+// 段階的に promptEditor への参照に置き換えていく
+let editPrompt = {
+  get prompt() {
+    return promptEditor.prompt;
   },
+  set prompt(value) {
+    promptEditor.prompt = value;
+  },
+  get elements() {
+    return promptEditor.elements;
+  },
+  set elements(value) {
+    promptEditor.elements = value;
+  },
+  get isOldSD() {
+    return promptEditor.isOldSD;
+  },
+  set isOldSD(value) {
+    promptEditor.isOldSD = value;
+  },
+
+  // メソッドをプロキシ
+  init: (str) => promptEditor.init(str),
+  generate: () => promptEditor.generate(),
+  editingValue: (value, index) => promptEditor.editingValue(value, index),
+  editingWeight: (weight, index) => promptEditor.editingWeight(weight, index),
+  addWeight: (weight, index) => promptEditor.addWeight(weight, index),
+  removeElement: (index) => promptEditor.removeElement(index),
+  moveElement: (index, offset) => promptEditor.moveElement(index, offset),
+  moveInsertElement: (index, newIndex) =>
+    promptEditor.moveInsertElement(index, newIndex),
+  createElement: (prompt, weight) => promptEditor.createElement(prompt, weight),
+  getValue: (type, str, weight) => promptEditor.getValue(type, str, weight),
+  getWeight: (str) => promptEditor.getWeight(str),
+  getbaseValue: (str) => promptEditor.getbaseValue(str),
+  isSpecialPrompt: (str) => promptEditor.isSpecialPrompt(str),
+  convertNAIWeight: (weight) => promptEditor.convertNAIWeight(weight),
+  convertSDWeight: (weight) => promptEditor.convertSDWeight(weight),
+  getSDTypeWeight: (str) => promptEditor.getSDTypeWeight(str),
 };
+
+// グローバルに公開
+if (typeof window !== "undefined") {
+  window.PromptEditor = PromptEditor;
+  window.promptEditor = promptEditor;
+  window.editPrompt = editPrompt;
+}

@@ -170,14 +170,6 @@ async function loadLocalList() {
   }
 }
 
-/**
- * ローカルリストに追加（レガシー互換性のため残す）
- * @deprecated saveLocalList()を使用してください
- */
-async function addLocalList() {
-  return saveLocalList();
-}
-
 // ============================================
 // アーカイブリスト管理
 // ============================================
@@ -207,14 +199,6 @@ async function saveArchivesList() {
     console.error("Failed to save archives list:", error);
     throw error;
   }
-}
-
-/**
- * アーカイブリストに追加（レガシー互換性のため残す）
- * @deprecated saveArchivesList()を使用してください
- */
-async function addArchivesList() {
-  return saveArchivesList();
 }
 
 // ============================================
@@ -448,7 +432,6 @@ function RegistDic(item, skipSave = false) {
 
     AppState.data.localPromptList.push(newItem);
 
-    // skipSaveがtrueの場合は保存しない
     if (!skipSave) {
       saveLocalList();
     }
