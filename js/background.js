@@ -29,25 +29,38 @@ function createBaseMenuItems() {
 }
 
 // コンテキストメニューのクリックイベント
-chrome.contextMenus.onClicked.addListener(function(info, tab) {
-  console.log(info);
+chrome.contextMenus.onClicked.addListener(async function(info, tab) {
+  console.log('Context menu clicked:', info.menuItemId);
+  
   switch (info.menuItemId) {
     case "LoadPrompt":
-      // 読み込みプロンプトの親なだけなので特に処理はしない
-      break;
+        // 読み込みプロンプトの親なだけなので特に処理はしない
+        break;
     case "PromptArchive":
-      handlePromptArchive(info);
-      break;
+        handlePromptArchive(info);
+        break;
+    // コンテキストメニューのクリックイベント（該当部分のみ）
     default:
-      // プロンプトを挿入
-      chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        function: (text) => {
-          document.execCommand("insertText", false, text);
-        },
-        args: [info.menuItemId]
-      });
-      break;
+        // プロンプトを挿入
+        console.log('Inserting prompt:', info.menuItemId);
+        
+        // まずポップアップへの送信を試みる
+        chrome.runtime.sendMessage({
+            type: 'insertPrompt',
+            text: info.menuItemId
+        }, (response) => {
+            // ポップアップが応答しない場合は、通常のページへの挿入を試みる
+            if (!response || !response.success) {
+            chrome.scripting.executeScript({
+                target: { tabId: tab.id },
+                function: (text) => {
+                document.execCommand("insertText", false, text);
+                },
+                args: [info.menuItemId]
+            });
+            }
+        });
+    break;
   }
 });
 

@@ -1,19 +1,30 @@
-﻿// Prompt編集オブジェクト
+﻿
+// Prompt編集オブジェクト
 let editPrompt = {
   prompt: "",
   elements: [],
   isOldSD: false,
   init: function (str) {
-    console.log(str)
-    this.isOldSD = /\(\(/.test(str)
-    this.elements = []
-    let tempList = str.split(',').map(item => item.trim().replace(/\s{2,}/g, ' ')).filter(item => item !== '');
+    console.log('editPrompt.init:', str);
+    this.isOldSD = /\(\(/.test(str);
+    this.elements = [];
+    
+    // 空文字や空要素を除外
+    let tempList = str.split(',')
+      .map(item => item.trim().replace(/\s{2,}/g, ' '))
+      .filter(item => item !== '');
+    
+    // デバッグ用ログ
+    console.log('Parsed elements:', tempList);
+    
     tempList.forEach((prompt, index) => {
-      let temp = this.createElement(prompt)
-      temp.sort = index
-      this.elements.push(temp)
+      let temp = this.createElement(prompt);
+      temp.sort = index;
+      this.elements.push(temp);
     });
-    this.generate()
+    
+    console.log('Final elements:', this.elements);
+    this.generate();
   },
   generate: function () {
     const sortedElements = []

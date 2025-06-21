@@ -26,7 +26,8 @@ async function savePrompt() {
 async function loadPrompt() {
   try {
     const result = await Storage.get('generatePrompt');
-    if (result.generatePrompt) {
+    if (result.generatePrompt && result.generatePrompt !== editPrompt.prompt) {
+      console.log('Loading saved prompt:', result.generatePrompt);
       InitGenaretePrompt(result.generatePrompt);
     }
   } catch (error) {
