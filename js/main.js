@@ -4,9 +4,9 @@ let mouseCursorValue = ""
 // 初期化
 init()
 
-function init() {
-  loadMasterPrompt()
-  loadPrompt()
+async function init() {
+  await initializeDataManager();
+
   categoryData.init()
   loadOptionData()
   loadToolInfo()
@@ -191,12 +191,17 @@ function init() {
   loadCategory()
 }
 
-function sendBackground(survice,execType,value1,value2,value3){
-  chrome.runtime.sendMessage(
-    { args: [survice,execType,value1,value2,value3] },
-    function (response) {
+function sendBackground(service, execType, value1, value2, value3) {
+  const message = { 
+    type: "DOM",
+    args: [service, execType, value1, value2, value3]
+  };
+  
+  chrome.runtime.sendMessage(message, function(response) {
+    if (chrome.runtime.lastError) {
+      console.error('Runtime error:', chrome.runtime.lastError.message);
     }
-  );
+  });
 }
 
 
