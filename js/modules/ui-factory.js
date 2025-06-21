@@ -1,10 +1,10 @@
 /**
- * UI要素生成ファクトリー
- * 重複するUI生成コードを統一し、保守性を向上
+ * UI要素生成ファクトリー（最適化版）
+ * jQuery依存を最小限に削減し、パフォーマンスを向上
  */
 const UIFactory = {
   /**
-   * 汎用ボタンを作成
+   * 汎用ボタンを作成（Vanilla JS）
    * @param {Object} config - ボタン設定
    * @param {string} config.text - ボタンテキスト
    * @param {Function} config.onClick - クリックハンドラー
@@ -16,7 +16,10 @@ const UIFactory = {
     const button = document.createElement("button");
     button.type = "submit";
     button.innerHTML = config.text;
-    button.onclick = config.onClick;
+
+    if (config.onClick) {
+      button.addEventListener("click", config.onClick);
+    }
 
     if (config.className) {
       button.className = config.className;
@@ -30,58 +33,57 @@ const UIFactory = {
   },
 
   /**
-   * jQuery ボタンを作成（jQuery依存の部分用）
+   * jQuery ボタンを作成（移行期間用）
+   * @deprecated 将来的に削除予定
    * @param {Object} config - ボタン設定
    * @returns {jQuery}
    */
   createJQueryButton(config) {
-    const $button = $("<button>").attr("type", "submit").html(config.text);
-
-    if (config.onClick) {
-      $button.on("click", config.onClick);
-    }
-
-    if (config.className) {
-      $button.addClass(config.className);
-    }
-
-    return $button;
+    const button = this.createButton(config);
+    return $(button);
   },
 
   /**
-   * 入力フィールドを作成
+   * 入力フィールドを作成（Vanilla JS版）
    * @param {Object} config - 入力フィールド設定
-   * @returns {jQuery}
+   * @returns {HTMLInputElement|jQuery}
    */
   createInput(config) {
-    const $input = $("<input>")
-      .attr("type", "text")
-      .val(
-        config.value !== null && config.value !== undefined ? config.value : ""
-      )
-      .addClass(config.className || "promptData");
+    const input = document.createElement("input");
+    input.type = "text";
+    input.value =
+      config.value !== null && config.value !== undefined ? config.value : "";
+    input.className = config.className || "promptData";
 
     if (config.readonly) {
-      $input.prop("readonly", true);
+      input.readOnly = true;
     }
 
     if (config.style) {
-      $input.css(config.style);
+      Object.assign(input.style, config.style);
     }
 
     if (config.onInput) {
-      $input.on("input", () => config.onInput($input.val(), config.index));
+      input.addEventListener("input", () =>
+        config.onInput(input.value, config.index)
+      );
     }
 
     if (config.onBlur) {
-      $input.on("blur", config.onBlur);
+      input.addEventListener("blur", config.onBlur);
     }
 
     if (config.placeholder) {
-      $input.attr("placeholder", config.placeholder);
+      input.placeholder = config.placeholder;
     }
 
-    return $input;
+    // 互換性のため、必要に応じてjQueryオブジェクトとして返す
+    // 呼び出し元が段階的に移行できるように
+    if (config.returnAsJQuery !== false) {
+      return $(input);
+    }
+
+    return input;
   },
 
   /**
@@ -101,22 +103,23 @@ const UIFactory = {
   },
 
   /**
-   * リストアイテムを作成
+   * リストアイテムを作成（Vanilla JS版）
    * @param {Object} config - リストアイテム設定
    * @returns {jQuery}
    */
   createListItem(config) {
-    const $li = $("<li>");
+    const li = document.createElement("li");
 
     if (config.id !== undefined) {
-      $li.attr("id", config.id);
+      li.id = config.id;
     }
 
     if (config.sortable) {
-      $li.addClass("ui-sortable-handle");
+      li.className = "ui-sortable-handle";
     }
 
-    return $li;
+    // 現状のコードとの互換性のため、jQueryオブジェクトとして返す
+    return $(li);
   },
 
   /**
@@ -136,11 +139,11 @@ const UIFactory = {
             config.onSet(config.setValue);
           } else {
             // デフォルト動作
-            const $input = $("#generatePrompt");
-            if ($input.length > 0) {
-              const currentValue = $input.val() || "";
+            const input = document.getElementById("generatePrompt");
+            if (input) {
+              const currentValue = input.value || "";
               editPrompt.init(currentValue + config.setValue);
-              $input.val(editPrompt.prompt);
+              input.value = editPrompt.prompt;
               savePrompt();
             } else {
               console.error("generatePrompt input not found");
@@ -150,7 +153,7 @@ const UIFactory = {
       });
     }
 
-    // Copyボタンも同様に修正
+    // Copyボタン
     if (config.includeCopy) {
       buttons.copy = this.createButton({
         text: "Copy",
@@ -178,7 +181,6 @@ const UIFactory = {
             window.confirm("本当に削除しますか？");
 
           if (shouldDelete && config.onDelete) {
-            // 削除処理を実行（DOM更新は個別に行う）
             await config.onDelete();
           }
         },
@@ -227,10 +229,11 @@ const UIFactory = {
    * @returns {jQuery}
    */
   createPreviewButton(item) {
-    return this.createJQueryButton({
+    const button = this.createButton({
       text: "P",
       onClick: () => previewPromptImage(item),
     });
+    return $(button);
   },
 
   /**
@@ -247,48 +250,69 @@ const UIFactory = {
 };
 
 /**
- * リスト生成ヘルパー
+ * リスト生成ヘルパー（最適化版）
  */
 const ListBuilder = {
   /**
-   * リストをクリア
+   * リストをクリア（最適化版）
    * @param {string} listId - リストのID
    */
   clearList(listId) {
-    // イベントリスナーをクリーンアップ
-    $(listId).find("*").off();
+    const list = document.querySelector(listId);
+    if (!list) return;
+
+    // イベントリスナーをクリーンアップ（jQueryイベントも含む）
+    $(list).find("*").off();
 
     // sortableを破棄
-    if ($(listId).hasClass("ui-sortable")) {
-      $(listId).sortable("destroy");
+    if ($(list).hasClass("ui-sortable")) {
+      $(list).sortable("destroy");
     }
 
-    // リストをクリア
-    $(listId).empty();
+    // より高速な方法でリストをクリア
+    while (list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
   },
 
   /**
-   * ヘッダー行を作成
+   * ヘッダー行を作成（最適化版）
    * @param {string} listId - リストのID
    * @param {string[]} headers - ヘッダーテキストの配列
    */
   createHeaders(listId, headers) {
-    const $headerRow = $("<ui>");
+    const list = document.querySelector(listId);
+    if (!list) return;
+
+    const headerRow = document.createElement("ui");
+
     headers.forEach((header) => {
-      $headerRow.append(UIFactory.createHeaderInput(header));
+      const headerInput = UIFactory.createHeaderInput(header);
+      headerRow.appendChild(headerInput[0] || headerInput);
     });
-    $(listId).append($headerRow);
+
+    list.appendChild(headerRow);
   },
 
   /**
-   * 列幅を設定
+   * 列幅を設定（CSS変数を使用した最適化版）
    * @param {string} listId - リストのID
    * @param {number} columnIndex - 列インデックス（1から開始）
    * @param {string} width - 幅（例: '100px'）
    */
   setColumnWidth(listId, columnIndex, width) {
-    $(`${listId} li input:nth-of-type(${columnIndex})`).css("width", width);
-    $(`${listId} ui input:nth-of-type(${columnIndex})`).css("width", width);
+    // CSSカスタムプロパティを使用してパフォーマンスを向上
+    const list = document.querySelector(listId);
+    if (list) {
+      list.style.setProperty(`--column-${columnIndex}-width`, width);
+
+      // 既存の要素に適用
+      const selector = `${listId} li input:nth-of-type(${columnIndex}), ${listId} ui input:nth-of-type(${columnIndex})`;
+      const elements = document.querySelectorAll(selector);
+      elements.forEach((el) => {
+        el.style.width = width;
+      });
+    }
   },
 
   /**
@@ -297,63 +321,81 @@ const ListBuilder = {
    * @param {Object} widths - { columnIndex: width } のオブジェクト
    */
   setColumnWidths(listId, widths) {
+    // バッチ処理でDOMアクセスを最小化
+    const list = document.querySelector(listId);
+    if (!list) return;
+
+    const style = list.style;
     Object.entries(widths).forEach(([index, width]) => {
-      this.setColumnWidth(listId, parseInt(index), width);
+      style.setProperty(`--column-${index}-width`, width);
+    });
+
+    // 一度にすべての要素を更新
+    requestAnimationFrame(() => {
+      Object.entries(widths).forEach(([index, width]) => {
+        this.setColumnWidth(listId, parseInt(index), width);
+      });
     });
   },
 };
 
 /**
- * イベントハンドラーヘルパー
+ * イベントハンドラーヘルパー（最適化版）
  */
 const EventHandlers = {
   /**
-   * 入力フィールドのクリア機能を追加
-   * @param {jQuery} $input - 入力フィールド
+   * 入力フィールドのクリア機能を追加（Vanilla JS版）
+   * @param {jQuery|HTMLElement} input - 入力フィールド
    */
-  addInputClearBehavior($input) {
+  addInputClearBehavior(input) {
+    // jQueryオブジェクトの場合は、DOM要素を取得
+    const element = input.jquery ? input[0] : input;
     let originalValue = "";
 
-    $input.on("mouseenter", function () {
-      originalValue = $(this).val();
-      $(this).val("");
+    element.addEventListener("mouseenter", function () {
+      originalValue = this.value;
+      this.value = "";
     });
 
-    $input.on("mouseleave", function () {
-      if ($(this).val() === "") {
-        $(this).val(originalValue);
+    element.addEventListener("mouseleave", function () {
+      if (this.value === "") {
+        this.value = originalValue;
       }
     });
   },
 
   /**
    * 複数の入力フィールドにクリア機能を追加
-   * @param {jQuery[]} $inputs - 入力フィールドの配列
+   * @param {Array} inputs - 入力フィールドの配列
    */
-  addInputClearBehaviorToMany($inputs) {
-    $inputs.forEach(($input) => this.addInputClearBehavior($input));
+  addInputClearBehaviorToMany(inputs) {
+    inputs.forEach((input) => this.addInputClearBehavior(input));
   },
 
   /**
-   * カテゴリー連動の設定
-   * @param {jQuery[]} $inputs - [大カテゴリー, 中カテゴリー, 小カテゴリー]の入力フィールド
+   * カテゴリー連動の設定（最適化版）
+   * @param {Array} inputs - [大カテゴリー, 中カテゴリー, 小カテゴリー]の入力フィールド
    */
-  setupCategoryChain($inputs) {
-    const [$big, $middle, $small] = $inputs;
+  setupCategoryChain(inputs) {
+    const [bigInput, middleInput, smallInput] = inputs.map((input) =>
+      input.jquery ? input[0] : input
+    );
 
-    $big.attr("list", "category");
+    bigInput.setAttribute("list", "category");
 
-    $big.on("change", function () {
-      const bigValue = $(this).val();
-      $middle.attr("list", "category" + bigValue);
-      $small.attr("list", ""); // リセット
+    bigInput.addEventListener("change", function () {
+      const bigValue = this.value;
+      middleInput.setAttribute("list", "category" + bigValue);
+      if (smallInput) {
+        smallInput.setAttribute("list", "");
+      }
     });
 
-    if ($middle && $small) {
-      $middle.on("change", function () {
-        const bigValue = $big.val();
-        const middleValue = $(this).val();
-        $small.attr("list", "category" + bigValue + middleValue);
+    if (middleInput && smallInput) {
+      middleInput.addEventListener("change", function () {
+        const bigValue = bigInput.value;
+        const middleValue = this.value;
+        smallInput.setAttribute("list", "category" + bigValue + middleValue);
       });
     }
   },
@@ -364,27 +406,75 @@ const EventHandlers = {
    * @param {Function} onUpdate - 更新時のコールバック
    */
   setupSortableList(listId, onUpdate) {
-    // 既にsortableが初期化されている場合は再初期化
-    if ($(listId).hasClass("ui-sortable")) {
-      $(listId).sortable("destroy");
+    // jQuery UIのsortableは現状維持（Phase 4の後半で対応）
+    const $list = $(listId);
+
+    if ($list.hasClass("ui-sortable")) {
+      $list.sortable("destroy");
     }
 
-    $(listId).sortable({
+    $list.sortable({
       revert: 50,
       distance: 5,
       tolerance: "pointer",
-      cursor: "move", // カーソルを明示的に設定
+      cursor: "move",
+      // パフォーマンス改善：helper関数を最適化
+      helper: "clone",
       update: function (event, ui) {
-        const sortedIds = $(listId).sortable("toArray");
+        const sortedIds = $list.sortable("toArray");
         onUpdate(sortedIds);
       },
     });
   },
+
+  /**
+   * イベントデリゲーションを設定（新規追加）
+   * @param {string} parentSelector - 親要素のセレクタ
+   * @param {string} childSelector - 子要素のセレクタ
+   * @param {string} eventType - イベントタイプ
+   * @param {Function} handler - イベントハンドラ
+   */
+  delegate(parentSelector, childSelector, eventType, handler) {
+    const parent = document.querySelector(parentSelector);
+    if (!parent) return;
+
+    parent.addEventListener(eventType, (e) => {
+      const target = e.target.closest(childSelector);
+      if (target && parent.contains(target)) {
+        handler.call(target, e);
+      }
+    });
+  },
 };
 
-// グローバルに公開（ES6モジュールをサポートしない環境用）
+// パフォーマンス測定ユーティリティ（デバッグ用）
+const PerformanceMonitor = {
+  marks: new Map(),
+
+  start(label) {
+    if (typeof performance !== "undefined") {
+      performance.mark(`${label}-start`);
+      this.marks.set(label, performance.now());
+    }
+  },
+
+  end(label) {
+    if (typeof performance !== "undefined" && this.marks.has(label)) {
+      performance.mark(`${label}-end`);
+      performance.measure(label, `${label}-start`, `${label}-end`);
+
+      const duration = performance.now() - this.marks.get(label);
+      console.log(`[Performance] ${label}: ${duration.toFixed(2)}ms`);
+
+      this.marks.delete(label);
+    }
+  },
+};
+
+// グローバルに公開
 if (typeof window !== "undefined") {
   window.UIFactory = UIFactory;
   window.ListBuilder = ListBuilder;
   window.EventHandlers = EventHandlers;
+  window.PerformanceMonitor = PerformanceMonitor;
 }

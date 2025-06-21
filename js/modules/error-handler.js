@@ -1,6 +1,6 @@
 /**
- * エラーハンドリングモジュール
- * アプリケーション全体のエラー処理を統一
+ * エラーハンドリングモジュール（最適化版）
+ * jQuery依存を削除し、より洗練された通知システムを実装
  */
 const ErrorHandler = {
   /**
@@ -25,6 +25,48 @@ const ErrorHandler = {
   },
 
   /**
+   * トースト通知のコンテナ
+   */
+  toastContainer: null,
+
+  /**
+   * 初期化
+   */
+  init() {
+    // トーストコンテナを作成
+    if (!this.toastContainer) {
+      this.toastContainer = document.createElement("div");
+      this.toastContainer.id = "toast-container";
+      this.toastContainer.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 10000;
+        pointer-events: none;
+      `;
+      document.body.appendChild(this.toastContainer);
+    }
+
+    // グローバルエラーハンドラーを設定
+    this.setupGlobalHandlers();
+  },
+
+  /**
+   * グローバルエラーハンドラーの設定
+   */
+  setupGlobalHandlers() {
+    // 未処理のPromiseエラー
+    window.addEventListener("unhandledrejection", (event) => {
+      this.log("Unhandled promise rejection", event.reason, this.Level.ERROR);
+    });
+
+    // 通常のエラー
+    window.addEventListener("error", (event) => {
+      this.log("Global error", event.error, this.Level.ERROR);
+    });
+  },
+
+  /**
    * エラーをログに記録
    * @param {string} message - エラーメッセージ
    * @param {Error} [error] - エラーオブジェクト
@@ -44,20 +86,22 @@ const ErrorHandler = {
         : null,
     };
 
-    switch (level) {
-      case this.Level.INFO:
-        console.log(`[${timestamp}] INFO:`, message);
-        break;
-      case this.Level.WARNING:
-        console.warn(`[${timestamp}] WARNING:`, message);
-        break;
-      case this.Level.ERROR:
-      case this.Level.CRITICAL:
-        console.error(`[${timestamp}] ${level.toUpperCase()}:`, message, error);
-        break;
-    }
+    // コンソールへの出力（カラー付き）
+    const logStyles = {
+      [this.Level.INFO]: "color: #2196F3; font-weight: bold;",
+      [this.Level.WARNING]: "color: #FF9800; font-weight: bold;",
+      [this.Level.ERROR]: "color: #f44336; font-weight: bold;",
+      [this.Level.CRITICAL]:
+        "color: #d32f2f; font-weight: bold; font-size: 1.1em;",
+    };
 
-    // 将来的にはリモートロギングサービスに送信することも可能
+    console.log(
+      `%c[${timestamp}] ${level.toUpperCase()}: ${message}`,
+      logStyles[level] || "",
+      error
+    );
+
+    // ローカルストレージに保存
     this.saveToLocalStorage(logEntry);
   },
 
@@ -70,13 +114,14 @@ const ErrorHandler = {
       const logs = JSON.parse(localStorage.getItem("errorLogs") || "[]");
       logs.push(logEntry);
 
+      // 最新100件のみ保持
       if (logs.length > 100) {
         logs.splice(0, logs.length - 100);
       }
 
       localStorage.setItem("errorLogs", JSON.stringify(logs));
     } catch (e) {
-      // ローカルストレージが満杯の場合は古いログを削除
+      // ストレージが満杯の場合は古いログを削除
       localStorage.removeItem("errorLogs");
     }
   },
@@ -91,7 +136,8 @@ const ErrorHandler = {
       type = this.NotificationType.ALERT,
       duration = 3000,
       elementId = null,
-      messageType = "error", // 追加
+      messageType = "error",
+      position = "bottom-right",
     } = options;
 
     switch (type) {
@@ -100,7 +146,7 @@ const ErrorHandler = {
         break;
 
       case this.NotificationType.TOAST:
-        this.showToast(message, duration, messageType); // メッセージタイプを渡す
+        this.showToast(message, duration, messageType, position);
         break;
 
       case this.NotificationType.INLINE:
@@ -116,72 +162,149 @@ const ErrorHandler = {
   },
 
   /**
-   * トースト通知を表示
+   * トースト通知を表示（最適化版）
    * @param {string} message - メッセージ
    * @param {number} duration - 表示時間（ミリ秒）
-   * @param {string} [type='error'] - メッセージタイプ（'success', 'error', 'info'）
+   * @param {string} [type='error'] - メッセージタイプ
+   * @param {string} [position='bottom-right'] - 表示位置
    */
-  showToast(message, duration, type = "error") {
-    // 既存のトーストを削除
-    $(".error-toast").remove();
+  showToast(message, duration, type = "error", position = "bottom-right") {
+    // 初期化チェック
+    if (!this.toastContainer) {
+      this.init();
+    }
 
-    // 色の設定
-    const colors = {
-      success: "#4CAF50", // 緑
-      error: "#f44336", // 赤
-      info: "#2196F3", // 青
-      warning: "#FF9800", // オレンジ
+    // トースト要素を作成
+    const toast = document.createElement("div");
+    toast.className = `error-toast toast-${type}`;
+
+    // アイコンを追加
+    const icons = {
+      success: "✓",
+      error: "✕",
+      info: "ℹ",
+      warning: "⚠",
     };
 
-    const backgroundColor = colors[type] || colors.error;
+    // スタイルを設定
+    const colors = {
+      success: "#4CAF50",
+      error: "#f44336",
+      info: "#2196F3",
+      warning: "#FF9800",
+    };
 
-    const $toast = $("<div>").addClass("error-toast").text(message).css({
-      position: "fixed",
-      bottom: "20px",
-      right: "20px",
-      backgroundColor: backgroundColor,
-      color: "white",
-      padding: "16px",
-      borderRadius: "4px",
-      boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
-      zIndex: 10000,
-      maxWidth: "300px",
+    toast.style.cssText = `
+      background-color: ${colors[type] || colors.error};
+      color: white;
+      padding: 16px 20px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      display: flex;
+      align-items: center;
+      max-width: 350px;
+      pointer-events: auto;
+      cursor: pointer;
+      transform: translateX(400px);
+      transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    `;
+
+    // コンテンツを設定
+    toast.innerHTML = `
+      <span style="font-size: 20px; margin-right: 10px;">${
+        icons[type] || icons.error
+      }</span>
+      <span style="flex: 1;">${this.escapeHtml(message)}</span>
+    `;
+
+    // クリックで閉じる
+    toast.addEventListener("click", () => {
+      this.dismissToast(toast);
     });
 
-    $("body").append($toast);
+    // コンテナに追加
+    this.toastContainer.appendChild(toast);
 
-    setTimeout(() => {
-      $toast.fadeOut(300, () => $toast.remove());
+    // アニメーション開始
+    requestAnimationFrame(() => {
+      toast.style.transform = "translateX(0)";
+    });
+
+    // 自動削除タイマー
+    const timer = setTimeout(() => {
+      this.dismissToast(toast);
     }, duration);
+
+    // ホバー時はタイマーを停止
+    toast.addEventListener("mouseenter", () => clearTimeout(timer));
+    toast.addEventListener("mouseleave", () => {
+      setTimeout(() => this.dismissToast(toast), 1000);
+    });
   },
 
   /**
-   * インラインエラーを表示
+   * トーストを削除
+   * @param {HTMLElement} toast - トースト要素
+   */
+  dismissToast(toast) {
+    toast.style.transform = "translateX(400px)";
+    setTimeout(() => {
+      if (toast.parentNode) {
+        toast.parentNode.removeChild(toast);
+      }
+    }, 300);
+  },
+
+  /**
+   * インラインエラーを表示（最適化版）
    * @param {string} elementId - 要素のID
    * @param {string} message - エラーメッセージ
    */
   showInlineError(elementId, message) {
-    const $element = $(elementId);
+    const element = document.querySelector(elementId);
+    if (!element) return;
 
     // 既存のエラーメッセージを削除
-    $element.siblings(".error-message").remove();
+    const existingError = element.parentNode.querySelector(".error-message");
+    if (existingError) {
+      existingError.remove();
+    }
 
-    const $error = $("<div>").addClass("error-message").text(message).css({
-      color: "#f44336",
-      fontSize: "12px",
-      marginTop: "4px",
-    });
+    // エラーメッセージを作成
+    const errorDiv = document.createElement("div");
+    errorDiv.className = "error-message";
+    errorDiv.textContent = message;
+    errorDiv.style.cssText = `
+      color: #f44336;
+      font-size: 12px;
+      margin-top: 4px;
+      animation: fadeIn 0.3s ease-in;
+    `;
 
-    $element.after($error);
+    // 要素の後に挿入
+    element.parentNode.insertBefore(errorDiv, element.nextSibling);
 
-    // 一定時間後に自動的に削除
+    // 一定時間後に自動削除
     setTimeout(() => {
-      $error.fadeOut(300, () => $error.remove());
+      errorDiv.style.animation = "fadeOut 0.3s ease-out";
+      setTimeout(() => errorDiv.remove(), 300);
     }, 5000);
   },
 
   /**
-   * 非同期処理のエラーハンドリングラッパー
+   * HTMLエスケープ
+   * @param {string} text - エスケープするテキスト
+   * @returns {string}
+   */
+  escapeHtml(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+  },
+
+  /**
+   * 非同期処理のエラーハンドリングラッパー（最適化版）
    * @param {Function} asyncFunc - 非同期関数
    * @param {string} context - エラーコンテキスト
    * @param {Object} [options] - オプション
@@ -192,17 +315,20 @@ const ErrorHandler = {
       showLoading = false,
       notifyOnError = true,
       defaultValue = null,
+      loadingMessage = "読み込み中...",
     } = options;
+
+    let loadingElement = null;
 
     try {
       if (showLoading) {
-        this.showLoading(true);
+        loadingElement = this.showLoading(true, loadingMessage);
       }
 
       const result = await asyncFunc();
 
-      if (showLoading) {
-        this.showLoading(false);
+      if (showLoading && loadingElement) {
+        this.showLoading(false, "", loadingElement);
       }
 
       return result;
@@ -211,11 +337,14 @@ const ErrorHandler = {
 
       if (notifyOnError) {
         const userMessage = this.getUserFriendlyMessage(error, context);
-        this.notify(userMessage, { type: this.NotificationType.TOAST });
+        this.notify(userMessage, {
+          type: this.NotificationType.TOAST,
+          messageType: "error",
+        });
       }
 
-      if (showLoading) {
-        this.showLoading(false);
+      if (showLoading && loadingElement) {
+        this.showLoading(false, "", loadingElement);
       }
 
       return defaultValue;
@@ -229,23 +358,23 @@ const ErrorHandler = {
    * @returns {string}
    */
   getUserFriendlyMessage(error, context) {
-    // Chrome拡張機能特有のエラー
-    if (error.message?.includes("chrome.runtime.lastError")) {
-      return "拡張機能との通信でエラーが発生しました。ページを再読み込みしてください。";
-    }
+    // エラーメッセージのマッピング
+    const messageMap = {
+      "chrome.runtime.lastError":
+        "拡張機能との通信でエラーが発生しました。ページを再読み込みしてください。",
+      fetch:
+        "ネットワークエラーが発生しました。インターネット接続を確認してください。",
+      storage: "データの保存中にエラーが発生しました。",
+      load: "データの読み込み中にエラーが発生しました。",
+      permission: "必要な権限がありません。",
+      timeout: "処理がタイムアウトしました。",
+    };
 
-    // ネットワークエラー
-    if (error.message?.includes("fetch")) {
-      return "ネットワークエラーが発生しました。インターネット接続を確認してください。";
-    }
-
-    // ストレージエラー
-    if (context.includes("storage") || context.includes("save")) {
-      return "データの保存中にエラーが発生しました。";
-    }
-
-    if (context.includes("load")) {
-      return "データの読み込み中にエラーが発生しました。";
+    // エラーメッセージから適切なメッセージを検索
+    for (const [key, message] of Object.entries(messageMap)) {
+      if (error.message?.includes(key) || context.includes(key)) {
+        return message;
+      }
     }
 
     // デフォルトメッセージ
@@ -253,61 +382,126 @@ const ErrorHandler = {
   },
 
   /**
-   * ローディング表示の制御
+   * ローディング表示の制御（最適化版）
    * @param {boolean} show - 表示/非表示
+   * @param {string} [message] - ローディングメッセージ
+   * @param {HTMLElement} [existingElement] - 既存のローディング要素
+   * @returns {HTMLElement|null}
    */
-  showLoading(show) {
+  showLoading(show, message = "読み込み中...", existingElement = null) {
     if (show) {
-      if ($("#loading-overlay").length === 0) {
-        const $overlay = $('<div id="loading-overlay">').css({
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          zIndex: 9999,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+      // 既存の要素があれば再利用
+      let overlay =
+        existingElement || document.getElementById("loading-overlay");
+
+      if (!overlay) {
+        overlay = document.createElement("div");
+        overlay.id = "loading-overlay";
+        overlay.style.cssText = `
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+        `;
+
+        const spinner = document.createElement("div");
+        spinner.style.cssText = `
+          color: #fff;
+          font-size: 18px;
+          background: rgba(0, 0, 0, 0.8);
+          padding: 20px 30px;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        `;
+
+        // スピナーアニメーション
+        spinner.innerHTML = `
+          <div class="spinner" style="
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+          "></div>
+          <span>${this.escapeHtml(message)}</span>
+        `;
+
+        overlay.appendChild(spinner);
+        document.body.appendChild(overlay);
+
+        // CSSアニメーション
+        const style = document.createElement("style");
+        style.textContent = `
+          @keyframes spin {
+            to { transform: rotate(360deg); }
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+          }
+        `;
+        document.head.appendChild(style);
+
+        // フェードイン
+        requestAnimationFrame(() => {
+          overlay.style.opacity = "1";
         });
-
-        const $spinner = $("<div>")
-          .css({
-            color: "#fff",
-            fontSize: "24px",
-          })
-          .text("読み込み中...");
-
-        $overlay.append($spinner);
-        $("body").append($overlay);
       }
+
+      return overlay;
     } else {
-      $("#loading-overlay").fadeOut(200, function () {
-        $(this).remove();
-      });
+      const overlay =
+        existingElement || document.getElementById("loading-overlay");
+      if (overlay) {
+        overlay.style.opacity = "0";
+        setTimeout(() => {
+          if (overlay.parentNode) {
+            overlay.parentNode.removeChild(overlay);
+          }
+        }, 300);
+      }
+      return null;
     }
   },
 
   /**
-   * 入力検証エラーのハンドリング
+   * 入力検証エラーのハンドリング（最適化版）
    * @param {Object} validationResult - 検証結果
    * @param {Object} fieldMapping - フィールドとIDのマッピング
    */
   handleValidationErrors(validationResult, fieldMapping) {
     // 既存のエラーをクリア
-    $(".error-message").remove();
-    $(".error-highlight").removeClass("error-highlight");
+    document.querySelectorAll(".error-message").forEach((el) => el.remove());
+    document.querySelectorAll(".error-highlight").forEach((el) => {
+      el.classList.remove("error-highlight");
+      el.style.borderColor = "";
+    });
 
     if (!validationResult.isValid) {
       validationResult.errors.forEach((error) => {
         const elementId = fieldMapping[error.field];
         if (elementId) {
-          $(elementId)
-            .addClass("error-highlight")
-            .css("border-color", "#f44336");
-
-          this.showInlineError(elementId, error.message);
+          const element = document.querySelector(elementId);
+          if (element) {
+            element.classList.add("error-highlight");
+            element.style.borderColor = "#f44336";
+            this.showInlineError(elementId, error.message);
+          }
         }
       });
     }
@@ -320,7 +514,12 @@ const ErrorHandler = {
   setDebugMode(enabled) {
     this.debugMode = enabled;
     if (enabled) {
-      console.log("Debug mode enabled - verbose logging active");
+      console.log("%cDebug mode enabled", "color: #4CAF50; font-weight: bold;");
+      this.notify("デバッグモードが有効になりました", {
+        type: this.NotificationType.TOAST,
+        messageType: "info",
+        duration: 2000,
+      });
     }
   },
 
@@ -342,18 +541,44 @@ const ErrorHandler = {
    */
   clearLogs() {
     localStorage.removeItem("errorLogs");
-    console.log("Error logs cleared");
+    this.notify("エラーログをクリアしました", {
+      type: this.NotificationType.TOAST,
+      messageType: "success",
+      duration: 2000,
+    });
+  },
+
+  /**
+   * エラー統計を取得
+   * @returns {Object} エラー統計
+   */
+  getErrorStats() {
+    try {
+      const logs = JSON.parse(localStorage.getItem("errorLogs") || "[]");
+      const stats = {
+        total: logs.length,
+        byLevel: {},
+        recent: logs.slice(-10),
+      };
+
+      // レベル別集計
+      logs.forEach((log) => {
+        stats.byLevel[log.level] = (stats.byLevel[log.level] || 0) + 1;
+      });
+
+      return stats;
+    } catch (error) {
+      return { total: 0, byLevel: {}, recent: [] };
+    }
   },
 };
 
-// デフォルトのエラーハンドラーを設定
-window.addEventListener("unhandledrejection", (event) => {
-  ErrorHandler.log(
-    "Unhandled promise rejection",
-    event.reason,
-    ErrorHandler.Level.ERROR
-  );
-});
+// 初期化
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => ErrorHandler.init());
+} else {
+  ErrorHandler.init();
+}
 
 // グローバルに公開
 if (typeof window !== "undefined") {
