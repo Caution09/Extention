@@ -40,10 +40,15 @@ let categoryData = {
   },
   createDatatlist: function () {
     const bigCategory = $("#category");
+    const dataListContainer = $("body");
+
+    // 既存のカテゴリー関連のdatalistを削除
+    $('datalist[id^="category"]:not(#category)').remove();
+
+    bigCategory.empty();
+
     const middleCategory = {};
     const smallCategory = {};
-    const dataListContainer = $("body");
-    bigCategory.empty();
 
     this.data[0].forEach((item) => {
       const option = $("<option>", {

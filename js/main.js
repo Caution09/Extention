@@ -24,6 +24,23 @@ const CONSTANTS = {
   },
 };
 
+// カテゴリー更新のデバウンス用タイマー
+let categoryUpdateTimer = null;
+
+// デバウンス付きカテゴリー更新
+function debouncedCategoryUpdate() {
+  // 既存のタイマーをクリア
+  if (categoryUpdateTimer) {
+    clearTimeout(categoryUpdateTimer);
+  }
+
+  // 500ms後に実行
+  categoryUpdateTimer = setTimeout(() => {
+    categoryData.update();
+    categoryUpdateTimer = null;
+  }, 500);
+}
+
 // ============================================
 // アプリケーションクラス
 // ============================================
@@ -1064,32 +1081,27 @@ class PromptListManager {
       setValue: item.prompt + ",",
       copyValue: item.prompt,
       onDelete: async () => {
-        // リストから削除
         const actualIndex = getLocalElementIndex(item);
         if (actualIndex !== -1) {
           AppState.data.localPromptList.splice(actualIndex, 1);
 
-          // DOM要素を削除（リスト全体の再生成はしない）
           $li.fadeOut(200, async () => {
             $li.remove();
 
-            // インデックスを再割り当て
+            // インデックスを再割り当て（軽量化）
             $("#addPromptList li").each((newIndex, element) => {
-              $(element).attr("id", newIndex);
-              if (newIndex < AppState.data.localPromptList.length) {
-                AppState.data.localPromptList[newIndex].sort = newIndex;
+              if (element.id !== String(newIndex)) {
+                element.id = newIndex;
               }
             });
 
-            // データを保存（categoryData.updateは遅延実行）
+            // データを保存（カテゴリー更新なし）
             await Storage.set({
               localPromptList: AppState.data.localPromptList,
             });
 
-            // カテゴリー更新は非同期で実行
-            setTimeout(() => {
-              categoryData.update();
-            }, 100);
+            // デバウンス付きでカテゴリー更新
+            debouncedCategoryUpdate();
           });
         }
       },
@@ -1571,15 +1583,21 @@ class FileHandler {
 
     switch (data.dicType) {
       case "Elements":
+        // すべての要素を追加（保存はスキップ）
         for (const item of data.data) {
-          if (RegistDic(item)) {
+          if (RegistDic(item, true)) {
+            // skipSave = true
             addCount++;
           }
         }
+
+        // 最後に一度だけ保存
         if (addCount > 0) {
+          await saveLocalList(); // 一度だけ実行
+
           ErrorHandler.notify(`${addCount}件の要素辞書を読み込みました`, {
             type: ErrorHandler.NotificationType.TOAST,
-            messageType: "success", // 追加
+            messageType: "success",
           });
         }
         break;

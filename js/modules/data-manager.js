@@ -147,12 +147,8 @@ async function saveLocalList(updateCategories = true) {
   try {
     await Storage.set({ localPromptList: AppState.data.localPromptList });
 
-    // カテゴリー更新はオプショナルに
     if (updateCategories) {
-      // 非同期で実行
-      setTimeout(() => {
-        categoryData.update();
-      }, 100);
+      debouncedCategoryUpdate();
     }
   } catch (error) {
     console.error("Failed to save local list:", error);
@@ -432,7 +428,7 @@ function Regist(big, middle, small, prompt, url) {
  * @param {Object} item - 登録する要素
  * @returns {boolean} 登録成功の可否
  */
-function RegistDic(item) {
+function RegistDic(item, skipSave = false) {
   const inputData = item.prompt + item.data[0] + item.data[1] + item.data[2];
   const isDuplicate = AppState.data.localPromptList.some((listItem) => {
     const listItemData =
@@ -451,7 +447,12 @@ function RegistDic(item) {
     }
 
     AppState.data.localPromptList.push(newItem);
-    saveLocalList();
+
+    // skipSaveがtrueの場合は保存しない
+    if (!skipSave) {
+      saveLocalList();
+    }
+
     return true;
   }
 
