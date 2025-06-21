@@ -221,3 +221,13 @@ button {
     color: #fff;
     font-size: 24px;
   }
+
+  .ui-sortable-helper {
+  transition: none !important;  /* ドラッグ中のトランジションを無効化 */
+}
+
+.ui-sortable-placeholder {
+  visibility: visible !important;
+  background: #f0f0f0;
+  opacity: 0.5;
+}

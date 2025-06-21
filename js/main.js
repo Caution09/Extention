@@ -484,11 +484,10 @@ class PromptGeneratorApp {
     const listType =
       editType === CONSTANTS.EDIT_TYPES.SELECT ? "editDropdown" : "edit";
 
-    // デバッグ: リストクリア前の状態を確認
-    console.log(
-      "Before clear - list children:",
-      $("#editList").children().length
-    );
+    // sortableを破棄
+    if ($("#editList").hasClass("ui-sortable")) {
+      $("#editList").sortable("destroy");
+    }
 
     await this.listManager.createList(
       listType,
@@ -496,11 +495,16 @@ class PromptGeneratorApp {
       "#editList"
     );
 
-    // デバッグ: リスト作成後の状態を確認
-    console.log(
-      "After create - list children:",
-      $("#editList").children().length
-    );
+    // sortableを再初期化
+    EventHandlers.setupSortableList("#editList", (sortedIds) => {
+      let baseIndex = 0;
+      sortedIds.forEach((id) => {
+        if (!id) return;
+        editPrompt.elements[id].sort = baseIndex++;
+      });
+      editPrompt.generate();
+      this.updatePromptDisplay();
+    });
   }
 
   // ============================================
@@ -999,6 +1003,21 @@ class PromptListManager {
 
     if (config.columnWidths) {
       ListBuilder.setColumnWidths(listId, config.columnWidths);
+    }
+
+    // リスト作成完了後、sortableを再初期化
+    if (config.sortable && type === "edit") {
+      setTimeout(() => {
+        EventHandlers.setupSortableList(listId, (sortedIds) => {
+          let baseIndex = 0;
+          sortedIds.forEach((id) => {
+            if (!id) return;
+            editPrompt.elements[id].sort = baseIndex++;
+          });
+          editPrompt.generate();
+          window.app.updatePromptDisplay();
+        });
+      }, 100); // DOMが完全に更新されるのを待つ
     }
 
     console.log(

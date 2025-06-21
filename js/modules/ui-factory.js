@@ -363,7 +363,9 @@ const EventHandlers = {
    */
   setupSortableList(listId, onUpdate) {
     $(listId).sortable({
-      revert: true,
+      revert: 50, // 50msで戻る（デフォルトは500ms）
+      distance: 5, // 5px動いたらドラッグ開始（誤操作防止）
+      tolerance: "pointer", // ポインタ位置で判定
       update: function (event, ui) {
         const sortedIds = $(listId).sortable("toArray");
         onUpdate(sortedIds);
