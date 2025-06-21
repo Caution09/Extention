@@ -1,4 +1,4 @@
-let defalutMaster = {version : 1,
+let defaultMaster = {version : 1,
 data : [  
   {
     "0": "エフェクト",
