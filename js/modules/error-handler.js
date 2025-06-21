@@ -85,21 +85,22 @@ const ErrorHandler = {
    * @param {string} message - ユーザー向けメッセージ
    * @param {Object} [options] - 通知オプション
    */
-  notify(message, options = {}) {
+    notify(message, options = {}) {
     const {
-      type = this.NotificationType.ALERT,
-      duration = 3000,
-      elementId = null
+        type = this.NotificationType.ALERT,
+        duration = 3000,
+        elementId = null,
+        messageType = 'error'  // 追加
     } = options;
 
     switch (type) {
-      case this.NotificationType.ALERT:
+        case this.NotificationType.ALERT:
         window.alert(message);
         break;
         
-      case this.NotificationType.TOAST:
-        this.showToast(message, duration);
-        break;
+        case this.NotificationType.TOAST:
+        this.showToast(message, duration, messageType);  // メッセージタイプを渡す
+      break;
         
       case this.NotificationType.INLINE:
         if (elementId) {
@@ -113,39 +114,50 @@ const ErrorHandler = {
     }
   },
 
-  /**
-   * トースト通知を表示
-   * @param {string} message - メッセージ
-   * @param {number} duration - 表示時間（ミリ秒）
-   */
-  showToast(message, duration) {
+    /**
+     * トースト通知を表示
+     * @param {string} message - メッセージ
+     * @param {number} duration - 表示時間（ミリ秒）
+     * @param {string} [type='error'] - メッセージタイプ（'success', 'error', 'info'）
+     */
+    showToast(message, duration, type = 'error') {
     // 既存のトーストを削除
     $('.error-toast').remove();
     
+    // 色の設定
+    const colors = {
+        success: '#4CAF50', // 緑
+        error: '#f44336',   // 赤
+        info: '#2196F3',    // 青
+        warning: '#FF9800'  // オレンジ
+    };
+    
+    const backgroundColor = colors[type] || colors.error;
+    
     const $toast = $('<div>')
-      .addClass('error-toast')
-      .text(message)
-      .css({
+        .addClass('error-toast')
+        .text(message)
+        .css({
         position: 'fixed',
         bottom: '20px',
         right: '20px',
-        backgroundColor: '#f44336',
+        backgroundColor: backgroundColor,
         color: 'white',
         padding: '16px',
         borderRadius: '4px',
         boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
         zIndex: 10000,
         maxWidth: '300px'
-      });
+        });
     
     $('body').append($toast);
     
     setTimeout(() => {
-      $toast.fadeOut(300, () => $toast.remove());
+        $toast.fadeOut(300, () => $toast.remove());
     }, duration);
-  },
+    },
 
-  /**
+/**
    * インラインエラーを表示
    * @param {string} elementId - 要素のID
    * @param {string} message - エラーメッセージ

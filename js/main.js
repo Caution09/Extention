@@ -526,6 +526,15 @@ class PromptGeneratorApp {
     }
   }
 
+  /**
+   * アーカイブリストを更新
+   */
+  async refreshArchiveList() {
+    if ($('#archiveList').children().length > 0) {
+      await this.listManager.createList('archive', AppState.data.archivesList, '#archiveList');
+    }
+  }
+
   async refreshAddList() {
     if ($('#addPromptList').children().length > 0) {
       const sorted = [...AppState.data.localPromptList].sort((a, b) => (a.sort || 0) - (b.sort || 0));
@@ -630,13 +639,12 @@ class PromptGeneratorApp {
   }
 
   copyPrompt() {
-    // 現在の入力値をコピー（editPromptの現在の状態を使用）
     navigator.clipboard.writeText(editPrompt.prompt);
     
-    // 成功メッセージ（オプション）
     ErrorHandler.notify('プロンプトをコピーしました', {
       type: ErrorHandler.NotificationType.TOAST,
-      duration: 1500
+      duration: 1500,
+      messageType: 'success'  // 追加
     });
   }
 
@@ -1369,7 +1377,8 @@ class FileHandler {
         }
         if (addCount > 0) {
           ErrorHandler.notify(`${addCount}件の要素辞書を読み込みました`, {
-            type: ErrorHandler.NotificationType.TOAST
+            type: ErrorHandler.NotificationType.TOAST,
+            messageType: 'success'  // 追加
           });
         }
         break;
@@ -1386,7 +1395,8 @@ class FileHandler {
             window.app.refreshArchiveList();
           }
           ErrorHandler.notify(`${addCount}件のプロンプト辞書を読み込みました`, {
-            type: ErrorHandler.NotificationType.TOAST
+            type: ErrorHandler.NotificationType.TOAST,
+            messageType: 'success'  // 追加
           });
         }
         break;
@@ -1524,7 +1534,12 @@ function previewPromptImage(value) {
   const imageUrl = `https://ul.h3z.jp/${value.url}.jpg`;
   
   fetch(imageUrl)
-    .then(response => response.blob())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.blob();
+    })
     .then(blob => {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -1544,8 +1559,18 @@ function previewPromptImage(value) {
       reader.readAsDataURL(blob);
     })
     .catch(error => {
-      ErrorHandler.log('Failed to load preview image', error);
-      ErrorHandler.notify('プレビュー画像の読み込みに失敗しました');
+      console.log('Preview image not available:', value.url);
+      
+      // デフォルト画像を表示するか、プレビューなしで表示
+      $('#popup-image').attr({
+        src: 'assets/icon/Icon128.png', // デフォルト画像
+        width: '256',
+        height: '256'
+      });
+      
+      $('#preview-element').text(`${value.data[0]}:${value.data[1]}:${value.data[2]} (画像なし)`);
+      $('#preview-prompt').val(value.prompt);
+      $('#popup').css({ display: 'flex' }).show();
     });
 }
 
