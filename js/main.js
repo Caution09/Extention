@@ -24,23 +24,6 @@ const CONSTANTS = {
   },
 };
 
-// カテゴリー更新のデバウンス用タイマー
-let categoryUpdateTimer = null;
-
-// デバウンス付きカテゴリー更新
-function debouncedCategoryUpdate() {
-  // 既存のタイマーをクリア
-  if (categoryUpdateTimer) {
-    clearTimeout(categoryUpdateTimer);
-  }
-
-  // 500ms後に実行
-  categoryUpdateTimer = setTimeout(() => {
-    categoryData.update();
-    categoryUpdateTimer = null;
-  }, 500);
-}
-
 // ============================================
 // アプリケーションクラス
 // ============================================
