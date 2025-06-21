@@ -6,7 +6,7 @@ const AppState = {
   // アプリケーション設定
   config: {
     toolVersion: 5,
-    masterVersion: 0
+    masterVersion: 0,
   },
 
   // データ
@@ -15,25 +15,25 @@ const AppState = {
     archivesList: [],
     masterPrompts: [],
     searchCategory: {},
-    toolInfo: {}
+    toolInfo: {},
   },
 
   // ユーザー設定
   userSettings: {
-    optionData: null
+    optionData: null,
   },
 
   // UI状態
   ui: {
     currentTab: 0,
     isSearching: false,
-    mouseCursorValue: ""
+    mouseCursorValue: "",
   },
 
   // 一時的なデータ
   temp: {
     translateQueue: [],
-    searchResults: []
+    searchResults: [],
   },
 
   /**
@@ -54,13 +54,13 @@ const AppState = {
    * デバッグ用：現在の状態をコンソールに出力
    */
   debug() {
-    console.log('AppState:', {
+    console.log("AppState:", {
       config: this.config,
       data: this.data,
       userSettings: this.userSettings,
-      ui: this.ui
+      ui: this.ui,
     });
-  }
+  },
 };
 
 // グローバルスコープでアクセス可能にする（移行期間中）

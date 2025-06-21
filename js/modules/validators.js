@@ -9,11 +9,11 @@ const Validators = {
    * @param {string} [fieldName] - フィールド名
    * @returns {Object} 検証結果
    */
-  required(value, fieldName = 'フィールド') {
+  required(value, fieldName = "フィールド") {
     const isValid = value && value.trim().length > 0;
     return {
       isValid,
-      message: isValid ? '' : `${fieldName}は必須です`
+      message: isValid ? "" : `${fieldName}は必須です`,
     };
   },
 
@@ -24,11 +24,13 @@ const Validators = {
    * @param {string} [fieldName] - フィールド名
    * @returns {Object} 検証結果
    */
-  maxLength(value, maxLength, fieldName = 'フィールド') {
+  maxLength(value, maxLength, fieldName = "フィールド") {
     const isValid = !value || value.length <= maxLength;
     return {
       isValid,
-      message: isValid ? '' : `${fieldName}は${maxLength}文字以内で入力してください`
+      message: isValid
+        ? ""
+        : `${fieldName}は${maxLength}文字以内で入力してください`,
     };
   },
 
@@ -39,11 +41,11 @@ const Validators = {
    * @param {string} [message] - エラーメッセージ
    * @returns {Object} 検証結果
    */
-  pattern(value, pattern, message = '入力形式が正しくありません') {
+  pattern(value, pattern, message = "入力形式が正しくありません") {
     const isValid = !value || pattern.test(value);
     return {
       isValid,
-      message: isValid ? '' : message
+      message: isValid ? "" : message,
     };
   },
 
@@ -54,17 +56,19 @@ const Validators = {
    * @returns {Object} 検証結果
    */
   checkDuplicatePrompt(newItem, existingList) {
-    const newKey = newItem.prompt + newItem.data[0] + newItem.data[1] + newItem.data[2];
-    
-    const duplicate = existingList.find(item => {
-      const existingKey = item.prompt + item.data[0] + item.data[1] + item.data[2];
+    const newKey =
+      newItem.prompt + newItem.data[0] + newItem.data[1] + newItem.data[2];
+
+    const duplicate = existingList.find((item) => {
+      const existingKey =
+        item.prompt + item.data[0] + item.data[1] + item.data[2];
       return newKey === existingKey;
     });
-    
+
     return {
       isValid: !duplicate,
-      message: duplicate ? '既に同じ要素が追加されています' : '',
-      duplicate
+      message: duplicate ? "既に同じ要素が追加されています" : "",
+      duplicate,
     };
   },
 
@@ -75,12 +79,14 @@ const Validators = {
    * @returns {Object} 検証結果
    */
   checkDuplicateArchive(prompt, archivesList) {
-    const duplicate = archivesList.find(item => item.prompt === prompt);
-    
+    const duplicate = archivesList.find((item) => item.prompt === prompt);
+
     return {
       isValid: !duplicate,
-      message: duplicate ? `既に同じプロンプトが追加されています。名前：${duplicate.title}` : '',
-      duplicate
+      message: duplicate
+        ? `既に同じプロンプトが追加されています。名前：${duplicate.title}`
+        : "",
+      duplicate,
     };
   },
 
@@ -91,34 +97,34 @@ const Validators = {
    */
   validateCategories(categories) {
     const errors = [];
-    
+
     // 大カテゴリーは任意
     if (categories.big && categories.big.length > 50) {
       errors.push({
-        field: 'big',
-        message: '大カテゴリーは50文字以内で入力してください'
+        field: "big",
+        message: "大カテゴリーは50文字以内で入力してください",
       });
     }
-    
+
     // 中カテゴリーは任意
     if (categories.middle && categories.middle.length > 50) {
       errors.push({
-        field: 'middle',
-        message: '中カテゴリーは50文字以内で入力してください'
+        field: "middle",
+        message: "中カテゴリーは50文字以内で入力してください",
       });
     }
-    
+
     // 小カテゴリーは任意
     if (categories.small && categories.small.length > 50) {
       errors.push({
-        field: 'small',
-        message: '小カテゴリーは50文字以内で入力してください'
+        field: "small",
+        message: "小カテゴリーは50文字以内で入力してください",
       });
     }
-    
+
     return {
       isValid: errors.length === 0,
-      errors
+      errors,
     };
   },
 
@@ -129,33 +135,33 @@ const Validators = {
    */
   validatePrompt(prompt) {
     const errors = [];
-    
+
     if (!prompt || prompt.trim().length === 0) {
       errors.push({
-        field: 'prompt',
-        message: 'プロンプトは必須です'
+        field: "prompt",
+        message: "プロンプトは必須です",
       });
     }
-    
+
     if (prompt && prompt.length > 500) {
       errors.push({
-        field: 'prompt',
-        message: 'プロンプトは500文字以内で入力してください'
+        field: "prompt",
+        message: "プロンプトは500文字以内で入力してください",
       });
     }
-    
+
     // 不正な文字のチェック
     const invalidChars = /[\x00-\x1F\x7F]/;
     if (prompt && invalidChars.test(prompt)) {
       errors.push({
-        field: 'prompt',
-        message: '使用できない文字が含まれています'
+        field: "prompt",
+        message: "使用できない文字が含まれています",
       });
     }
-    
+
     return {
       isValid: errors.length === 0,
-      errors
+      errors,
     };
   },
 
@@ -168,23 +174,23 @@ const Validators = {
     if (!weight) {
       return { isValid: true };
     }
-    
+
     const numWeight = parseFloat(weight);
-    
+
     if (isNaN(numWeight)) {
       return {
         isValid: false,
-        message: '重みは数値で入力してください'
+        message: "重みは数値で入力してください",
       };
     }
-    
+
     if (numWeight < -10 || numWeight > 10) {
       return {
         isValid: false,
-        message: '重みは-10から10の範囲で入力してください'
+        message: "重みは-10から10の範囲で入力してください",
       };
     }
-    
+
     return { isValid: true };
   },
 
@@ -194,22 +200,23 @@ const Validators = {
    * @param {string} [keyType='API'] - キーの種類
    * @returns {Object} 検証結果
    */
-  validateApiKey(apiKey, keyType = 'API') {
+  validateApiKey(apiKey, keyType = "API") {
     if (!apiKey) {
       return { isValid: true }; // 任意項目
     }
-    
+
     // DeepL APIキーの形式チェック
-    if (keyType === 'DeepL') {
-      const pattern = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
+    if (keyType === "DeepL") {
+      const pattern =
+        /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
       if (!pattern.test(apiKey)) {
         return {
           isValid: false,
-          message: 'DeepL APIキーの形式が正しくありません'
+          message: "DeepL APIキーの形式が正しくありません",
         };
       }
     }
-    
+
     return { isValid: true };
   },
 
@@ -223,7 +230,11 @@ const Validators = {
     const isValid = allowedTypes.includes(file.type);
     return {
       isValid,
-      message: isValid ? '' : `対応していないファイル形式です。対応形式: ${allowedTypes.join(', ')}`
+      message: isValid
+        ? ""
+        : `対応していないファイル形式です。対応形式: ${allowedTypes.join(
+            ", "
+          )}`,
     };
   },
 
@@ -238,7 +249,9 @@ const Validators = {
     const isValid = file.size <= maxSizeBytes;
     return {
       isValid,
-      message: isValid ? '' : `ファイルサイズは${maxSizeMB}MB以下にしてください`
+      message: isValid
+        ? ""
+        : `ファイルサイズは${maxSizeMB}MB以下にしてください`,
     };
   },
 
@@ -250,44 +263,44 @@ const Validators = {
    */
   validate(data, rules) {
     const errors = [];
-    
+
     Object.entries(rules).forEach(([field, fieldRules]) => {
       const value = data[field];
-      
-      fieldRules.forEach(rule => {
+
+      fieldRules.forEach((rule) => {
         let result;
-        
+
         switch (rule.type) {
-          case 'required':
+          case "required":
             result = this.required(value, rule.fieldName || field);
             break;
-          case 'maxLength':
+          case "maxLength":
             result = this.maxLength(value, rule.max, rule.fieldName || field);
             break;
-          case 'pattern':
+          case "pattern":
             result = this.pattern(value, rule.pattern, rule.message);
             break;
-          case 'custom':
+          case "custom":
             result = rule.validator(value, data);
             break;
           default:
             result = { isValid: true };
         }
-        
+
         if (!result.isValid) {
           errors.push({
             field,
-            message: result.message
+            message: result.message,
           });
         }
       });
     });
-    
+
     return {
       isValid: errors.length === 0,
-      errors
+      errors,
     };
-  }
+  },
 };
 
 // 便利な検証ルールのプリセット
@@ -297,21 +310,17 @@ Validators.Rules = {
    */
   promptElement: {
     prompt: [
-      { type: 'required', fieldName: 'プロンプト' },
-      { type: 'maxLength', max: 500, fieldName: 'プロンプト' }
-    ]
+      { type: "required", fieldName: "プロンプト" },
+      { type: "maxLength", max: 500, fieldName: "プロンプト" },
+    ],
   },
 
   /**
    * アーカイブの検証ルール
    */
   archive: {
-    title: [
-      { type: 'maxLength', max: 100, fieldName: 'タイトル' }
-    ],
-    prompt: [
-      { type: 'required', fieldName: 'プロンプト' }
-    ]
+    title: [{ type: "maxLength", max: 100, fieldName: "タイトル" }],
+    prompt: [{ type: "required", fieldName: "プロンプト" }],
   },
 
   /**
@@ -319,15 +328,15 @@ Validators.Rules = {
    */
   settings: {
     deeplAuthKey: [
-      { 
-        type: 'custom', 
-        validator: (value) => Validators.validateApiKey(value, 'DeepL')
-      }
-    ]
-  }
+      {
+        type: "custom",
+        validator: (value) => Validators.validateApiKey(value, "DeepL"),
+      },
+    ],
+  },
 };
 
 // グローバルに公開
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   window.Validators = Validators;
 }

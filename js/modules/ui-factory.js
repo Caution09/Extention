@@ -13,19 +13,19 @@ const UIFactory = {
    * @returns {HTMLButtonElement}
    */
   createButton(config) {
-    const button = document.createElement('button');
-    button.type = 'submit';
+    const button = document.createElement("button");
+    button.type = "submit";
     button.innerHTML = config.text;
     button.onclick = config.onClick;
-    
+
     if (config.className) {
       button.className = config.className;
     }
-    
+
     if (config.title) {
       button.title = config.title;
     }
-    
+
     return button;
   },
 
@@ -35,18 +35,16 @@ const UIFactory = {
    * @returns {jQuery}
    */
   createJQueryButton(config) {
-    const $button = $('<button>')
-      .attr('type', 'submit')
-      .html(config.text);
-    
+    const $button = $("<button>").attr("type", "submit").html(config.text);
+
     if (config.onClick) {
-      $button.on('click', config.onClick);
+      $button.on("click", config.onClick);
     }
-    
+
     if (config.className) {
       $button.addClass(config.className);
     }
-    
+
     return $button;
   },
 
@@ -56,31 +54,31 @@ const UIFactory = {
    * @returns {jQuery}
    */
   createInput(config) {
-    const $input = $('<input>')
-      .attr('type', 'text')
-      .val(config.value || '')
-      .addClass(config.className || 'promptData');
-    
+    const $input = $("<input>")
+      .attr("type", "text")
+      .val(config.value || "")
+      .addClass(config.className || "promptData");
+
     if (config.readonly) {
-      $input.prop('readonly', true);
+      $input.prop("readonly", true);
     }
-    
+
     if (config.style) {
       $input.css(config.style);
     }
-    
+
     if (config.onInput) {
-      $input.on('input', () => config.onInput($input.val(), config.index));
+      $input.on("input", () => config.onInput($input.val(), config.index));
     }
-    
+
     if (config.onBlur) {
-      $input.on('blur', config.onBlur);
+      $input.on("blur", config.onBlur);
     }
-    
+
     if (config.placeholder) {
-      $input.attr('placeholder', config.placeholder);
+      $input.attr("placeholder", config.placeholder);
     }
-    
+
     return $input;
   },
 
@@ -94,9 +92,9 @@ const UIFactory = {
       value: value,
       readonly: true,
       style: {
-        backgroundColor: 'black',
-        color: 'white'
-      }
+        backgroundColor: "black",
+        color: "white",
+      },
     });
   },
 
@@ -106,16 +104,16 @@ const UIFactory = {
    * @returns {jQuery}
    */
   createListItem(config) {
-    const $li = $('<li>');
-    
+    const $li = $("<li>");
+
     if (config.id !== undefined) {
-      $li.attr('id', config.id);
+      $li.attr("id", config.id);
     }
-    
+
     if (config.sortable) {
-      $li.addClass('ui-sortable-handle');
+      $li.addClass("ui-sortable-handle");
     }
-    
+
     return $li;
   },
 
@@ -126,96 +124,98 @@ const UIFactory = {
    */
   createButtonSet(config) {
     const buttons = {};
-    
+
     // Setボタン
     if (config.includeSet) {
-    buttons.set = this.createButton({
-        text: 'Set',
+      buttons.set = this.createButton({
+        text: "Set",
         onClick: () => {
-        if (config.onSet) {
+          if (config.onSet) {
             config.onSet(config.setValue);
-        } else {
+          } else {
             // デフォルト動作
-            const $input = $('#generatePrompt');
+            const $input = $("#generatePrompt");
             if ($input.length > 0) {
-            const currentValue = $input.val() || '';
-            editPrompt.init(currentValue + config.setValue);
-            $input.val(editPrompt.prompt);
-            savePrompt();
+              const currentValue = $input.val() || "";
+              editPrompt.init(currentValue + config.setValue);
+              $input.val(editPrompt.prompt);
+              savePrompt();
             } else {
-            console.error('generatePrompt input not found');
+              console.error("generatePrompt input not found");
             }
-        }
-        }
-    });
+          }
+        },
+      });
     }
 
     // Copyボタンも同様に修正
     if (config.includeCopy) {
-    buttons.copy = this.createButton({
-        text: 'Copy',
+      buttons.copy = this.createButton({
+        text: "Copy",
         onClick: () => {
-        if (config.onCopy) {
+          if (config.onCopy) {
             config.onCopy(config.copyValue);
-        } else {
+          } else {
             // デフォルト動作
             const temp = editPrompt.prompt;
             editPrompt.init(config.copyValue);
             navigator.clipboard.writeText(editPrompt.prompt);
             editPrompt.init(temp);
-        }
-        }
-    });
-    }    
-    
+          }
+        },
+      });
+    }
+
     // Deleteボタン
     if (config.includeDelete) {
       buttons.delete = this.createButton({
-        text: 'X',
+        text: "X",
         onClick: async () => {
-          const shouldDelete = !AppState.userSettings.optionData?.isDeleteCheck || 
-                              window.confirm('本当に削除しますか？');
-          
+          const shouldDelete =
+            !AppState.userSettings.optionData?.isDeleteCheck ||
+            window.confirm("本当に削除しますか？");
+
           if (shouldDelete && config.onDelete) {
+            // 削除処理を実行（DOM更新は個別に行う）
             await config.onDelete();
           }
-        }
+        },
       });
     }
-    
+
     // Loadボタン
     if (config.includeLoad) {
       buttons.load = this.createButton({
-        text: '↑',
+        text: "↑",
         onClick: () => {
           editPrompt.init(config.loadValue);
           UpdateGenaretePrompt();
           savePrompt();
-        }
+        },
       });
     }
-    
+
     // 重み調整ボタン
     if (config.includeWeight) {
       buttons.weightPlus = this.createButton({
-        text: '+',
+        text: "+",
         onClick: () => {
           editPrompt.addWeight(config.weightDelta, config.index);
           UpdateGenaretePrompt();
           editInit();
-        }
+        },
       });
-      
+
       buttons.weightMinus = this.createButton({
-        text: '-',
+        text: "-",
         onClick: () => {
           editPrompt.addWeight(-config.weightDelta, config.index);
           UpdateGenaretePrompt();
           editInit();
-        }
+        },
       });
     }
-    
+
     return buttons;
   },
 
@@ -226,8 +226,8 @@ const UIFactory = {
    */
   createPreviewButton(item) {
     return this.createJQueryButton({
-      text: 'P',
-      onClick: () => previewPromptImage(item)
+      text: "P",
+      onClick: () => previewPromptImage(item),
     });
   },
 
@@ -237,11 +237,11 @@ const UIFactory = {
    * @param {string} [icon='◆'] - アイコン文字
    * @returns {Text}
    */
-  createDragIcon(index, icon = '◆') {
+  createDragIcon(index, icon = "◆") {
     const textNode = document.createTextNode(icon);
     textNode.value = index;
     return textNode;
-  }
+  },
 };
 
 /**
@@ -253,6 +253,15 @@ const ListBuilder = {
    * @param {string} listId - リストのID
    */
   clearList(listId) {
+    // イベントリスナーをクリーンアップ
+    $(listId).find("*").off();
+
+    // sortableを破棄
+    if ($(listId).hasClass("ui-sortable")) {
+      $(listId).sortable("destroy");
+    }
+
+    // リストをクリア
     $(listId).empty();
   },
 
@@ -262,8 +271,8 @@ const ListBuilder = {
    * @param {string[]} headers - ヘッダーテキストの配列
    */
   createHeaders(listId, headers) {
-    const $headerRow = $('<ui>');
-    headers.forEach(header => {
+    const $headerRow = $("<ui>");
+    headers.forEach((header) => {
       $headerRow.append(UIFactory.createHeaderInput(header));
     });
     $(listId).append($headerRow);
@@ -276,8 +285,8 @@ const ListBuilder = {
    * @param {string} width - 幅（例: '100px'）
    */
   setColumnWidth(listId, columnIndex, width) {
-    $(`${listId} li input:nth-of-type(${columnIndex})`).css('width', width);
-    $(`${listId} ui input:nth-of-type(${columnIndex})`).css('width', width);
+    $(`${listId} li input:nth-of-type(${columnIndex})`).css("width", width);
+    $(`${listId} ui input:nth-of-type(${columnIndex})`).css("width", width);
   },
 
   /**
@@ -289,7 +298,7 @@ const ListBuilder = {
     Object.entries(widths).forEach(([index, width]) => {
       this.setColumnWidth(listId, parseInt(index), width);
     });
-  }
+  },
 };
 
 /**
@@ -301,15 +310,15 @@ const EventHandlers = {
    * @param {jQuery} $input - 入力フィールド
    */
   addInputClearBehavior($input) {
-    let originalValue = '';
-    
-    $input.on('mouseenter', function() {
+    let originalValue = "";
+
+    $input.on("mouseenter", function () {
       originalValue = $(this).val();
-      $(this).val('');
+      $(this).val("");
     });
-    
-    $input.on('mouseleave', function() {
-      if ($(this).val() === '') {
+
+    $input.on("mouseleave", function () {
+      if ($(this).val() === "") {
         $(this).val(originalValue);
       }
     });
@@ -320,7 +329,7 @@ const EventHandlers = {
    * @param {jQuery[]} $inputs - 入力フィールドの配列
    */
   addInputClearBehaviorToMany($inputs) {
-    $inputs.forEach($input => this.addInputClearBehavior($input));
+    $inputs.forEach(($input) => this.addInputClearBehavior($input));
   },
 
   /**
@@ -329,20 +338,20 @@ const EventHandlers = {
    */
   setupCategoryChain($inputs) {
     const [$big, $middle, $small] = $inputs;
-    
-    $big.attr('list', 'category');
-    
-    $big.on('change', function() {
+
+    $big.attr("list", "category");
+
+    $big.on("change", function () {
       const bigValue = $(this).val();
-      $middle.attr('list', 'category' + bigValue);
-      $small.attr('list', ''); // リセット
+      $middle.attr("list", "category" + bigValue);
+      $small.attr("list", ""); // リセット
     });
-    
+
     if ($middle && $small) {
-      $middle.on('change', function() {
+      $middle.on("change", function () {
         const bigValue = $big.val();
         const middleValue = $(this).val();
-        $small.attr('list', 'category' + bigValue + middleValue);
+        $small.attr("list", "category" + bigValue + middleValue);
       });
     }
   },
@@ -355,16 +364,16 @@ const EventHandlers = {
   setupSortableList(listId, onUpdate) {
     $(listId).sortable({
       revert: true,
-      update: function(event, ui) {
-        const sortedIds = $(listId).sortable('toArray');
+      update: function (event, ui) {
+        const sortedIds = $(listId).sortable("toArray");
         onUpdate(sortedIds);
-      }
+      },
     });
-  }
+  },
 };
 
 // グローバルに公開（ES6モジュールをサポートしない環境用）
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   window.UIFactory = UIFactory;
   window.ListBuilder = ListBuilder;
   window.EventHandlers = EventHandlers;

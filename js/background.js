@@ -13,14 +13,14 @@ function createBaseMenuItems() {
     chrome.contextMenus.create({
       id: "PromptArchive",
       title: "プロンプトを記録する",
-      contexts: ["selection"]
+      contexts: ["selection"],
     });
 
     // 記録済みプロンプトの親メニュー
     chrome.contextMenus.create({
       id: "LoadPrompt",
       title: "記録済みプロンプト",
-      contexts: ["editable"]
+      contexts: ["editable"],
     });
 
     // 初期のアーカイブリストを作成
@@ -29,38 +29,41 @@ function createBaseMenuItems() {
 }
 
 // コンテキストメニューのクリックイベント
-chrome.contextMenus.onClicked.addListener(async function(info, tab) {
-  console.log('Context menu clicked:', info.menuItemId);
-  
+chrome.contextMenus.onClicked.addListener(async function (info, tab) {
+  console.log("Context menu clicked:", info.menuItemId);
+
   switch (info.menuItemId) {
     case "LoadPrompt":
-        // 読み込みプロンプトの親なだけなので特に処理はしない
-        break;
+      // 読み込みプロンプトの親なだけなので特に処理はしない
+      break;
     case "PromptArchive":
-        handlePromptArchive(info);
-        break;
+      handlePromptArchive(info);
+      break;
     // コンテキストメニューのクリックイベント（該当部分のみ）
     default:
-        // プロンプトを挿入
-        console.log('Inserting prompt:', info.menuItemId);
-        
-        // まずポップアップへの送信を試みる
-        chrome.runtime.sendMessage({
-            type: 'insertPrompt',
-            text: info.menuItemId
-        }, (response) => {
-            // ポップアップが応答しない場合は、通常のページへの挿入を試みる
-            if (!response || !response.success) {
+      // プロンプトを挿入
+      console.log("Inserting prompt:", info.menuItemId);
+
+      // まずポップアップへの送信を試みる
+      chrome.runtime.sendMessage(
+        {
+          type: "insertPrompt",
+          text: info.menuItemId,
+        },
+        (response) => {
+          // ポップアップが応答しない場合は、通常のページへの挿入を試みる
+          if (!response || !response.success) {
             chrome.scripting.executeScript({
-                target: { tabId: tab.id },
-                function: (text) => {
+              target: { tabId: tab.id },
+              function: (text) => {
                 document.execCommand("insertText", false, text);
-                },
-                args: [info.menuItemId]
+              },
+              args: [info.menuItemId],
             });
-            }
-        });
-    break;
+          }
+        }
+      );
+      break;
   }
 });
 
@@ -68,9 +71,11 @@ chrome.contextMenus.onClicked.addListener(async function(info, tab) {
 function handlePromptArchive(info) {
   const selectedText = info.selectionText;
 
-  chrome.storage.local.get(["archivesList"], function(items) {
+  chrome.storage.local.get(["archivesList"], function (items) {
     let archivesList = items.archivesList || [];
-    const matchedIndex = archivesList.findIndex(obj => obj.prompt === selectedText);
+    const matchedIndex = archivesList.findIndex(
+      (obj) => obj.prompt === selectedText
+    );
 
     if (matchedIndex !== -1) {
       // 既に存在する場合はエラー表示
@@ -78,7 +83,7 @@ function handlePromptArchive(info) {
         url: "error.html",
         type: "popup",
         width: 300,
-        height: 50
+        height: 50,
       });
     } else {
       // 新規追加用のポップアップを表示
@@ -86,7 +91,7 @@ function handlePromptArchive(info) {
         url: "prompt.html",
         type: "popup",
         width: 300,
-        height: 50
+        height: 50,
       });
     }
   });
@@ -99,19 +104,19 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   // 非同期処理のために即座にtrueを返す
   const handleAsync = () => {
     switch (message.type) {
-      case 'openWindow':
+      case "openWindow":
         chrome.windows.create({
-          url: chrome.runtime.getURL('popup.html'),
-          type: message.windowType === 'normal' ? 'popup' : message.windowType,
+          url: chrome.runtime.getURL("popup.html"),
+          type: message.windowType === "normal" ? "popup" : message.windowType,
           width: 400,
-          height: 800
+          height: 800,
         });
         sendResponse({ success: true });
         break;
 
-      case 'openPage':
+      case "openPage":
         chrome.tabs.create({
-          url: chrome.runtime.getURL('popup.html')
+          url: chrome.runtime.getURL("popup.html"),
         });
         sendResponse({ success: true });
         break;
@@ -141,7 +146,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
   // 非同期処理を実行
   handleAsync();
-  
+
   // 非同期レスポンスのためにtrueを返す
   return true;
 });
@@ -151,16 +156,16 @@ async function handlePromptResponse(promptName) {
   try {
     const items = await chrome.storage.local.get(["archivesList"]);
     let archivesList = items.archivesList || [];
-    
+
     // 現在選択されているテキストを取得（これは別途実装が必要）
     const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
     const results = await chrome.scripting.executeScript({
       target: { tabId: tabs[0].id },
-      function: () => window.getSelection().toString()
+      function: () => window.getSelection().toString(),
     });
-    
+
     const selectedText = results[0]?.result || "";
-    
+
     if (selectedText && promptName) {
       archivesList.push({ title: promptName, prompt: selectedText });
       await chrome.storage.local.set({ archivesList: archivesList });
@@ -175,19 +180,20 @@ async function handlePromptResponse(promptName) {
 async function UpdatePromptList() {
   try {
     // 既存のプロンプト関連メニューを削除
-    const removePromises = promptTabele.map(id => 
-      new Promise((resolve) => {
-        chrome.contextMenus.remove(id, () => {
-          // エラーを無視（アイテムが既に存在しない場合）
-          chrome.runtime.lastError;
-          resolve();
-        });
-      })
+    const removePromises = promptTabele.map(
+      (id) =>
+        new Promise((resolve) => {
+          chrome.contextMenus.remove(id, () => {
+            // エラーを無視（アイテムが既に存在しない場合）
+            chrome.runtime.lastError;
+            resolve();
+          });
+        })
     );
-    
+
     await Promise.all(removePromises);
     promptTabele = [];
-    
+
     // 新しいリストを作成
     await CreateArchiveList();
   } catch (error) {
@@ -199,40 +205,49 @@ async function UpdatePromptList() {
 async function CreateArchiveList() {
   try {
     const items = await chrome.storage.local.get(["archivesList"]);
-    
+
     if (items.archivesList && items.archivesList.length > 0) {
       let count = 1;
       const existingIds = new Set();
-      
+
       for (const item of items.archivesList) {
         // 重複チェック
         if (existingIds.has(item.prompt)) {
           console.warn(`Duplicate prompt id: ${item.prompt}`);
           continue;
         }
-        
+
         existingIds.add(item.prompt);
-        
+
         try {
           await new Promise((resolve, reject) => {
-            chrome.contextMenus.create({
-              parentId: "LoadPrompt",
-              id: item.prompt,
-              title: `${count}: ${item.title || "無題"}`,
-              contexts: ["editable"]
-            }, () => {
-              if (chrome.runtime.lastError) {
-                console.error("Menu creation error:", chrome.runtime.lastError);
-                reject(chrome.runtime.lastError);
-              } else {
-                promptTabele.push(item.prompt);
-                resolve();
+            chrome.contextMenus.create(
+              {
+                parentId: "LoadPrompt",
+                id: item.prompt,
+                title: `${count}: ${item.title || "無題"}`,
+                contexts: ["editable"],
+              },
+              () => {
+                if (chrome.runtime.lastError) {
+                  console.error(
+                    "Menu creation error:",
+                    chrome.runtime.lastError
+                  );
+                  reject(chrome.runtime.lastError);
+                } else {
+                  promptTabele.push(item.prompt);
+                  resolve();
+                }
               }
-            });
+            );
           });
           count++;
         } catch (error) {
-          console.error(`Failed to create menu item for: ${item.prompt}`, error);
+          console.error(
+            `Failed to create menu item for: ${item.prompt}`,
+            error
+          );
         }
       }
     }
@@ -243,31 +258,31 @@ async function CreateArchiveList() {
 
 // DOM操作処理
 function handleDOMOperation(args) {
-  chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     const tab = tabs[0];
     if (!tab) return;
 
     console.log("Current tab:", tab.url);
-    
+
     switch (tab.url) {
       case "http://127.0.0.1:7860/":
         console.log("StableDiffusionRequest");
         chrome.scripting.executeScript({
           target: { tabId: tab.id },
           func: StableDiffusion,
-          args: [args]
+          args: [args],
         });
         break;
-        
+
       case "https://novelai.net/image":
         console.log("NovelAIRequest");
         chrome.scripting.executeScript({
           target: { tabId: tab.id },
           func: NovelAI,
-          args: [args]
+          args: [args],
         });
         break;
-        
+
       default:
         console.log("No matching site for DOM operation");
         break;
@@ -283,18 +298,24 @@ function StableDiffusion(args) {
 
 function NovelAI(args) {
   console.log("NovelAI DOM operation", args);
-  
-  const [service, method, value, positivePromptSelector, generateButtonSelector] = args;
-  
+
+  const [
+    service,
+    method,
+    value,
+    positivePromptSelector,
+    generateButtonSelector,
+  ] = args;
+
   switch (method) {
     case "Generate":
       const positivePromptText = document.querySelector(positivePromptSelector);
       const generateButton = document.querySelector(generateButtonSelector);
-      
+
       if (positivePromptText && generateButton) {
         positivePromptText.value = value;
         positivePromptText.innerHTML = value;
-        const event = new Event('change', { bubbles: true });
+        const event = new Event("change", { bubbles: true });
         positivePromptText.dispatchEvent(event);
         generateButton.click();
       }

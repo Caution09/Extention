@@ -12,10 +12,10 @@
  */
 async function savePrompt() {
   try {
-    console.log('Saving prompt:', editPrompt.prompt);
+    console.log("Saving prompt:", editPrompt.prompt);
     await Storage.set({ generatePrompt: editPrompt.prompt });
   } catch (error) {
-    console.error('Failed to save prompt:', error);
+    console.error("Failed to save prompt:", error);
     throw error;
   }
 }
@@ -25,13 +25,13 @@ async function savePrompt() {
  */
 async function loadPrompt() {
   try {
-    const result = await Storage.get('generatePrompt');
+    const result = await Storage.get("generatePrompt");
     if (result.generatePrompt && result.generatePrompt !== editPrompt.prompt) {
-      console.log('Loading saved prompt:', result.generatePrompt);
+      console.log("Loading saved prompt:", result.generatePrompt);
       InitGenaretePrompt(result.generatePrompt);
     }
   } catch (error) {
-    console.error('Failed to load prompt:', error);
+    console.error("Failed to load prompt:", error);
   }
 }
 
@@ -45,9 +45,9 @@ async function loadPrompt() {
 async function saveCategory() {
   try {
     await Storage.set({ searchCategory: AppState.data.searchCategory });
-    console.log('Category saved:', AppState.data.searchCategory);
+    console.log("Category saved:", AppState.data.searchCategory);
   } catch (error) {
-    console.error('Failed to save category:', error);
+    console.error("Failed to save category:", error);
     throw error;
   }
 }
@@ -57,13 +57,13 @@ async function saveCategory() {
  */
 async function loadCategory() {
   try {
-    const result = await Storage.get('searchCategory');
+    const result = await Storage.get("searchCategory");
     if (result.searchCategory) {
       AppState.data.searchCategory = result.searchCategory;
       setSeachCategory();
     }
   } catch (error) {
-    console.error('Failed to load category:', error);
+    console.error("Failed to load category:", error);
   }
 }
 
@@ -78,10 +78,10 @@ async function saveMasterPrompt() {
   try {
     await Storage.set({
       masterPrompts: AppState.data.masterPrompts,
-      masterVersion: AppState.config.masterVersion
+      masterVersion: AppState.config.masterVersion,
     });
   } catch (error) {
-    console.error('Failed to save master prompts:', error);
+    console.error("Failed to save master prompts:", error);
     throw error;
   }
 }
@@ -91,17 +91,17 @@ async function saveMasterPrompt() {
  */
 async function loadMasterPrompt() {
   try {
-    const result = await Storage.get(['masterPrompts', 'masterVersion']);
-    
+    const result = await Storage.get(["masterPrompts", "masterVersion"]);
+
     if (result.masterPrompts) {
       AppState.data.masterPrompts = result.masterPrompts;
     }
-    
+
     if (result.masterVersion != null) {
       AppState.config.masterVersion = result.masterVersion;
     }
   } catch (error) {
-    console.error('Failed to load master prompts:', error);
+    console.error("Failed to load master prompts:", error);
   }
 }
 
@@ -116,7 +116,7 @@ async function saveToolInfo() {
   try {
     await Storage.set({ toolInfo: AppState.data.toolInfo });
   } catch (error) {
-    console.error('Failed to save tool info:', error);
+    console.error("Failed to save tool info:", error);
     throw error;
   }
 }
@@ -126,13 +126,13 @@ async function saveToolInfo() {
  */
 async function loadToolInfo() {
   try {
-    const result = await Storage.get('toolInfo');
+    const result = await Storage.get("toolInfo");
     if (result.toolInfo) {
       AppState.data.toolInfo = result.toolInfo;
     }
     loadMessage(); // API通信を開始
   } catch (error) {
-    console.error('Failed to load tool info:', error);
+    console.error("Failed to load tool info:", error);
   }
 }
 
@@ -143,12 +143,19 @@ async function loadToolInfo() {
 /**
  * ローカルプロンプトリストを保存し、カテゴリーを更新
  */
-async function saveLocalList() {
+async function saveLocalList(updateCategories = true) {
   try {
     await Storage.set({ localPromptList: AppState.data.localPromptList });
-    categoryData.update();
+
+    // カテゴリー更新はオプショナルに
+    if (updateCategories) {
+      // 非同期で実行
+      setTimeout(() => {
+        categoryData.update();
+      }, 100);
+    }
   } catch (error) {
-    console.error('Failed to save local list:', error);
+    console.error("Failed to save local list:", error);
     throw error;
   }
 }
@@ -158,12 +165,12 @@ async function saveLocalList() {
  */
 async function loadLocalList() {
   try {
-    const result = await Storage.get('localPromptList');
+    const result = await Storage.get("localPromptList");
     if (result.localPromptList) {
       AppState.data.localPromptList = result.localPromptList;
     }
   } catch (error) {
-    console.error('Failed to load local list:', error);
+    console.error("Failed to load local list:", error);
   }
 }
 
@@ -184,12 +191,12 @@ async function addLocalList() {
  */
 async function loadArchivesList() {
   try {
-    const result = await Storage.get('archivesList');
+    const result = await Storage.get("archivesList");
     if (result.archivesList) {
       AppState.data.archivesList = result.archivesList;
     }
   } catch (error) {
-    console.error('Failed to load archives list:', error);
+    console.error("Failed to load archives list:", error);
   }
 }
 
@@ -201,7 +208,7 @@ async function saveArchivesList() {
     await Storage.set({ archivesList: AppState.data.archivesList });
     UpdatePromptList();
   } catch (error) {
-    console.error('Failed to save archives list:', error);
+    console.error("Failed to save archives list:", error);
     throw error;
   }
 }
@@ -225,7 +232,7 @@ async function saveOptionData() {
   try {
     await Storage.set({ optionData: AppState.userSettings.optionData });
   } catch (error) {
-    console.error('Failed to save option data:', error);
+    console.error("Failed to save option data:", error);
     throw error;
   }
 }
@@ -235,29 +242,31 @@ async function saveOptionData() {
  */
 async function loadOptionData() {
   try {
-    const result = await Storage.get('optionData');
-    
+    const result = await Storage.get("optionData");
+
     if (result.optionData) {
       AppState.userSettings.optionData = result.optionData;
-      $('#isDeleteCheck').prop('checked', AppState.userSettings.optionData.isDeleteCheck);
-      $('#DeeplAuth').val(AppState.userSettings.optionData.deeplAuthKey);
+      $("#isDeleteCheck").prop(
+        "checked",
+        AppState.userSettings.optionData.isDeleteCheck
+      );
+      $("#DeeplAuth").val(AppState.userSettings.optionData.deeplAuthKey);
     } else {
       // デフォルト値を設定
       AppState.userSettings.optionData = {
         shaping: "SD",
         editType: "SELECT",
         isDeleteCheck: true,
-        deeplAuthKey: ""
+        deeplAuthKey: "",
       };
     }
-    
-    console.log('Option data loaded:', AppState.userSettings.optionData);
-    
+
+    console.log("Option data loaded:", AppState.userSettings.optionData);
+
     // UI更新ロジック
     await updateUIBasedOnCurrentTab();
-    
   } catch (error) {
-    console.error('Failed to load option data:', error);
+    console.error("Failed to load option data:", error);
   }
 }
 
@@ -267,45 +276,45 @@ async function loadOptionData() {
 async function updateUIBasedOnCurrentTab() {
   return new Promise((resolve) => {
     const uiTypeButtons = $('[name="UIType"]');
-    
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       const currentUrl = tabs[0].url;
-      
+
       // URLに基づいて整形タイプを設定
       if (currentUrl === "http://127.0.0.1:7860/") {
         AppState.userSettings.optionData.shaping = "SD";
       } else if (currentUrl === "https://novelai.net/image") {
         AppState.userSettings.optionData.shaping = "NAI";
       }
-      
+
       editPrompt.generate();
       UpdateGenaretePrompt();
-      console.log('Current URL:', currentUrl);
-      
+      console.log("Current URL:", currentUrl);
+
       // UIタイプボタンの設定
       switch (AppState.userSettings.optionData.shaping) {
         case "SD":
-          uiTypeButtons.eq(0).prop('checked', true);
+          uiTypeButtons.eq(0).prop("checked", true);
           break;
         case "NAI":
-          uiTypeButtons.eq(1).prop('checked', true);
+          uiTypeButtons.eq(1).prop("checked", true);
           break;
         case "None":
-          uiTypeButtons.eq(2).prop('checked', true);
+          uiTypeButtons.eq(2).prop("checked", true);
           break;
       }
-      
+
       // 編集タイプボタンの設定
       const editTypeButtons = $('[name="EditType"]');
       switch (AppState.userSettings.optionData.editType) {
         case "SELECT":
-          editTypeButtons.eq(0).prop('checked', true);
+          editTypeButtons.eq(0).prop("checked", true);
           break;
         case "TEXT":
-          editTypeButtons.eq(1).prop('checked', true);
+          editTypeButtons.eq(1).prop("checked", true);
           break;
       }
-      
+
       resolve();
     });
   });
@@ -323,18 +332,18 @@ async function updateUIBasedOnCurrentTab() {
 function jsonDownload(json, fileName) {
   const outJson = {
     dicType: fileName,
-    data: json
+    data: json,
   };
 
   const jsonString = JSON.stringify(outJson, null, 2);
-  const blob = new Blob([jsonString], { type: 'application/json' });
+  const blob = new Blob([jsonString], { type: "application/json" });
   const url = URL.createObjectURL(blob);
 
-  const link = document.createElement('a');
+  const link = document.createElement("a");
   link.href = url;
   link.download = `${fileName}.json`;
   link.click();
-  
+
   // メモリリークを防ぐためにURLを解放
   URL.revokeObjectURL(url);
 }
@@ -354,23 +363,23 @@ function UpdatePromptList() {
 function sendBackground(execType, value) {
   // メッセージ形式を統一
   const message = { type: execType };
-  
+
   // 必要に応じてargsを追加
   if (value !== null && value !== undefined) {
     message.args = Array.isArray(value) ? value : [value];
   }
-  
-  chrome.runtime.sendMessage(message, function(response) {
+
+  chrome.runtime.sendMessage(message, function (response) {
     if (chrome.runtime.lastError) {
       // エラーが発生してもアプリケーションは継続
-      console.error('Runtime error:', chrome.runtime.lastError.message);
+      console.error("Runtime error:", chrome.runtime.lastError.message);
     } else if (response && response.success) {
-      console.log('Background operation successful:', execType);
+      console.log("Background operation successful:", execType);
       if (response.text) {
-        console.log('Response:', response.text);
+        console.log("Response:", response.text);
       }
     } else if (response && !response.success) {
-      console.error('Background operation failed:', response.error);
+      console.error("Background operation failed:", response.error);
     }
   });
 }
@@ -390,7 +399,7 @@ function sendBackground(execType, value) {
  */
 function Regist(big, middle, small, prompt, url) {
   const inputData = prompt + big + middle + small;
-  const isDuplicate = AppState.data.localPromptList.some(item => {
+  const isDuplicate = AppState.data.localPromptList.some((item) => {
     const itemData = item.prompt + item.data[0] + item.data[1] + item.data[2];
     return inputData === itemData;
   });
@@ -402,19 +411,19 @@ function Regist(big, middle, small, prompt, url) {
 
   const newItem = {
     prompt: prompt,
-    data: { 0: big, 1: middle, 2: small }
+    data: { 0: big, 1: middle, 2: small },
   };
-  
+
   if (url) {
     newItem.url = url;
   }
 
   AppState.data.localPromptList.push(newItem);
   saveLocalList();
-  
+
   // APIに登録を通知
   RegistAPI(big, middle, small, prompt);
-  
+
   return true;
 }
 
@@ -425,26 +434,27 @@ function Regist(big, middle, small, prompt, url) {
  */
 function RegistDic(item) {
   const inputData = item.prompt + item.data[0] + item.data[1] + item.data[2];
-  const isDuplicate = AppState.data.localPromptList.some(listItem => {
-    const listItemData = listItem.prompt + listItem.data[0] + listItem.data[1] + listItem.data[2];
+  const isDuplicate = AppState.data.localPromptList.some((listItem) => {
+    const listItemData =
+      listItem.prompt + listItem.data[0] + listItem.data[1] + listItem.data[2];
     return inputData === listItemData;
   });
 
   if (!isDuplicate) {
     const newItem = {
       prompt: item.prompt,
-      data: item.data
+      data: item.data,
     };
-    
+
     if (item.url) {
       newItem.url = item.url;
     }
-    
+
     AppState.data.localPromptList.push(newItem);
     saveLocalList();
     return true;
   }
-  
+
   return false;
 }
 
@@ -460,19 +470,29 @@ function RegistDic(item) {
  */
 function Search(search, data) {
   // ローカルとマスターのプロンプトを結合
-  const prompts = [...AppState.data.localPromptList, ...AppState.data.masterPrompts];
+  const prompts = [
+    ...AppState.data.localPromptList,
+    ...AppState.data.masterPrompts,
+  ];
   let filtered = prompts;
 
   // カテゴリーでフィルタリング
   if (data[0] !== "") {
-    data.filter(value => value !== null).forEach((value, index) => {
-      filtered = filtered.filter(item => item.data[index] === value);
-    });
+    data
+      .filter((value) => value !== null)
+      .forEach((value, index) => {
+        filtered = filtered.filter((item) => item.data[index] === value);
+      });
   }
 
   // キーワード検索
-  const searchResults = filtered.filter(item => {
-    const searchTarget = (item.data[0] + item.data[1] + item.data[2] + item.prompt).toLowerCase();
+  const searchResults = filtered.filter((item) => {
+    const searchTarget = (
+      item.data[0] +
+      item.data[1] +
+      item.data[2] +
+      item.prompt
+    ).toLowerCase();
     return searchTarget.includes(search.toLowerCase());
   });
 
@@ -485,9 +505,13 @@ function Search(search, data) {
  * @returns {number} インデックス（見つからない場合は-1）
  */
 function getLocalElementIndex(searchItem) {
-  const searchData = searchItem.prompt + searchItem.data[0] + searchItem.data[1] + searchItem.data[2];
+  const searchData =
+    searchItem.prompt +
+    searchItem.data[0] +
+    searchItem.data[1] +
+    searchItem.data[2];
 
-  return AppState.data.localPromptList.findIndex(item => {
+  return AppState.data.localPromptList.findIndex((item) => {
     const itemData = item.prompt + item.data[0] + item.data[1] + item.data[2];
     return searchData === itemData;
   });
@@ -502,8 +526,8 @@ function getLocalElementIndex(searchItem) {
  * @returns {Promise<void>}
  */
 async function initializeDataManager() {
-  console.log('Initializing data manager...');
-  
+  console.log("Initializing data manager...");
+
   try {
     // 並列で読み込みを実行
     const loadPromises = [
@@ -513,24 +537,23 @@ async function initializeDataManager() {
       loadArchivesList(),
       loadOptionData(),
       loadToolInfo(),
-      loadCategory()
+      loadCategory(),
     ];
-    
+
     await Promise.all(loadPromises);
-    
-    console.log('Data manager initialized successfully');
-    console.log('AppState:', AppState);
-    
+
+    console.log("Data manager initialized successfully");
+    console.log("AppState:", AppState);
   } catch (error) {
-    console.error('Failed to initialize data manager:', error);
-    
+    console.error("Failed to initialize data manager:", error);
+
     // 部分的な初期化失敗でも続行できるようにする
     if (!AppState.userSettings.optionData) {
       AppState.userSettings.optionData = {
         shaping: "SD",
         editType: "SELECT",
         isDeleteCheck: true,
-        deeplAuthKey: ""
+        deeplAuthKey: "",
       };
     }
   }
@@ -541,42 +564,74 @@ async function initializeDataManager() {
 // ============================================
 
 // Getter/Setterでグローバル変数へのアクセスをAppStateにリダイレクト
-Object.defineProperty(window, 'localPromptList', {
-  get() { return AppState.data.localPromptList; },
-  set(value) { AppState.data.localPromptList = value; }
+Object.defineProperty(window, "localPromptList", {
+  get() {
+    return AppState.data.localPromptList;
+  },
+  set(value) {
+    AppState.data.localPromptList = value;
+  },
 });
 
-Object.defineProperty(window, 'archivesList', {
-  get() { return AppState.data.archivesList; },
-  set(value) { AppState.data.archivesList = value; }
+Object.defineProperty(window, "archivesList", {
+  get() {
+    return AppState.data.archivesList;
+  },
+  set(value) {
+    AppState.data.archivesList = value;
+  },
 });
 
-Object.defineProperty(window, 'masterPrompts', {
-  get() { return AppState.data.masterPrompts; },
-  set(value) { AppState.data.masterPrompts = value; }
+Object.defineProperty(window, "masterPrompts", {
+  get() {
+    return AppState.data.masterPrompts;
+  },
+  set(value) {
+    AppState.data.masterPrompts = value;
+  },
 });
 
-Object.defineProperty(window, 'optionData', {
-  get() { return AppState.userSettings.optionData; },
-  set(value) { AppState.userSettings.optionData = value; }
+Object.defineProperty(window, "optionData", {
+  get() {
+    return AppState.userSettings.optionData;
+  },
+  set(value) {
+    AppState.userSettings.optionData = value;
+  },
 });
 
-Object.defineProperty(window, 'toolInfo', {
-  get() { return AppState.data.toolInfo; },
-  set(value) { AppState.data.toolInfo = value; }
+Object.defineProperty(window, "toolInfo", {
+  get() {
+    return AppState.data.toolInfo;
+  },
+  set(value) {
+    AppState.data.toolInfo = value;
+  },
 });
 
-Object.defineProperty(window, 'searchCategory', {
-  get() { return AppState.data.searchCategory; },
-  set(value) { AppState.data.searchCategory = value; }
+Object.defineProperty(window, "searchCategory", {
+  get() {
+    return AppState.data.searchCategory;
+  },
+  set(value) {
+    AppState.data.searchCategory = value;
+  },
 });
 
-Object.defineProperty(window, 'masterVersion', {
-  get() { return AppState.config.masterVersion; },
-  set(value) { AppState.config.masterVersion = value; }
+Object.defineProperty(window, "masterVersion", {
+  get() {
+    return AppState.config.masterVersion;
+  },
+  set(value) {
+    AppState.config.masterVersion = value;
+  },
 });
 
-Object.defineProperty(window, 'toolVersion', {
-  get() { return AppState.config.toolVersion; },
-  set(value) { AppState.config.toolVersion = value; }
+Object.defineProperty(window, "toolVersion", {
+  get() {
+    return AppState.config.toolVersion;
+  },
+  set(value) {
+    AppState.config.toolVersion = value;
+  },
 });

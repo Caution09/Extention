@@ -94,10 +94,10 @@ const Storage = {
         }
       });
     });
-  }
+  },
 };
 
 // エクスポート（ES6モジュールをサポートしない環境用）
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== "undefined" && module.exports) {
   module.exports = Storage;
 }
