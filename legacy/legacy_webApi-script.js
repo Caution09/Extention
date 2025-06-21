@@ -82,10 +82,10 @@ function translateDeepl(keyword, translateEvent) {
 }
 
 function masterDicDownload(jsonURL) {
-  if(masterVersion != defalutMaster.version){
-    masterVersion = defalutMaster.version
+  if(masterVersion != defaultMaster.version){
+    masterVersion = defaultMaster.version
     masterPrompts = []
-    jsonLoop(defalutMaster.data, (data) => {
+    jsonLoop(defaultMaster.data, (data) => {
       masterPrompts.push({ "prompt": data[3], "data": { 0: data[0], 1: data[1], 2: data[2] }, "url": data[4] })
     })
     saveMasterPrompt()
