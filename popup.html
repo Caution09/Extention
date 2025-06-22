@@ -14,14 +14,20 @@
     </select>
     <button id="openWindow">開く</button>
     <div class="tab-panel">
-      <!--タブ-->
       <ul class="tab-group">
         <li class="tab tab-A is-active">検索</li>
         <li class="tab tab-C" id="addTab">辞書</li>
         <li class="tab tab-B" id="editTab">編集</li>
+        <li class="tab tab-E" id="slotTab">スロット</li>
         <li class="tab tab-D" id="noticeTab">その他</li>
       </ul>
-      <input type="text" id="generatePrompt" />
+      <select
+        id="prompt-slot-selector"
+        style="width: 150px; margin-right: 5px; font-size: 100%"
+      >
+        <option value="0">1</option>
+      </select>
+
       <input type="button" id="copyButton" value="Copy" />
       <input type="button" id="clearButton" value="Clear" />
       <input type="button" id="saveButton" value="Save" />
@@ -33,6 +39,7 @@
         ><input type="radio" name="UIType" value="None" /> 自動整形無し</label
       >
       <br />
+      <input type="text" id="generatePrompt" style="width: calc(100%)" />
       <br />
       <!--タブを切り替えて表示するコンテンツ-->
       <div class="panel-group">
@@ -140,6 +147,25 @@
           >
           <ul style="font-size: 100%" id="editList"></ul>
         </div>
+        <div class="panel" id="slotTabBody">
+          <h2>プロンプトスロット管理</h2>
+          <div id="slot-info" style="margin-bottom: 10px">
+            使用中: <span id="used-slots-count">0</span>/10
+            <button id="combine-preview" style="float: right">
+              結合プレビュー
+            </button>
+          </div>
+
+          <div id="slot-container">
+            <!-- 動的に生成 -->
+          </div>
+
+          <div style="margin-top: 20px">
+            <button id="clear-all-slots-tab">すべてクリア</button>
+            <button id="export-slots">エクスポート</button>
+            <button id="import-slots">インポート</button>
+          </div>
+        </div>
         <div class="panel" id="noticeBody">
           <p>お知らせ</p>
           <p id="notice"></p>
@@ -204,14 +230,20 @@
         ><input
           type="button"
           id="PromptDownload"
-          value="プロンプト辞書ダウンロード"
-      /></label>
+          value="プロンプト辞書ダウンロード" /></label
+      ><br />
       <label
         ><input
           type="button"
           id="localDicDownload"
-          value="要素辞書(ローカル)ダウンロード"
-      /></label>
+          value="要素辞書(ローカル)ダウンロード" /></label
+      ><br />
+      <label
+        ><input
+          type="button"
+          id="csvExport"
+          value="ローカル辞書CSVダウンロード" /></label
+      ><br />
       <label
         ><input
           type="button"
@@ -275,6 +307,7 @@
     <script src="js/modules/ui-utilities.js"></script>
     <script src="js/modules/global-utilities.js"></script>
     <script src="js/modules/shortcut-manager.js"></script>
+    <script src="js/modules/prompt-slots.js"></script>
     <script src="js/modules/content-script.js"></script>
     <script src="js/modules/csv-handler.js"></script>
     <script src="js/modules/auto-generate-handler.js"></script>

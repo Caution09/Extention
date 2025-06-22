@@ -11,8 +11,10 @@ const CONSTANTS = {
     SEARCH: 0,
     DICTIONARY: 1,
     EDIT: 2,
-    OTHER: 3,
+    SLOT: 3,
+    OTHER: 4,
   },
+
   UI_TYPES: {
     SD: "SD",
     NAI: "NAI",
@@ -94,9 +96,40 @@ class PromptGeneratorApp {
       // コンテキストメニューからのメッセージを受信
       this.setupContextMenuListener();
 
+      // スロットタブUIの初期化
+      this.setupSlotTabUI();
+
+      // 終了時の処理を設定
+      this.setupCloseHandlers();
+
       // ショートカットキーの初期化
       this.shortcutManager.setupEventListeners();
 
+      // プロンプトスロットの初期化（改善版）
+      console.log("Initializing prompt slots...");
+      const loaded = await promptSlotManager.loadFromStorage();
+
+      if (loaded) {
+        // 保存されているスロットから復元
+        const currentSlot =
+          promptSlotManager.slots[promptSlotManager.currentSlot];
+        if (currentSlot && currentSlot.isUsed) {
+          // 保存されているスロットのプロンプトを設定
+          promptEditor.init(currentSlot.prompt);
+          this.generateInput.val(currentSlot.prompt);
+        }
+      } else {
+        // 初回起動時：現在のプロンプトをスロット0に保存
+        const currentPrompt = this.generateInput.val();
+        if (currentPrompt) {
+          promptEditor.init(currentPrompt);
+          await promptSlotManager.saveCurrentSlot();
+        }
+      }
+
+      promptSlotManager.updateUI();
+
+      // 自動Generate機能の初期化（既存のコード）
       setTimeout(() => {
         if (
           window.autoGenerateHandler &&
@@ -266,6 +299,9 @@ class PromptGeneratorApp {
 
     // ボタン操作
     this.setupButtonHandlers();
+
+    // プロンプトスロット機能を追加
+    this.setupPromptSlotHandlers();
   }
 
   // ============================================
@@ -310,11 +346,24 @@ class PromptGeneratorApp {
 
     console.log("Tab switched from", previousTab, "to", tabIndex);
 
+    // 編集タブの処理
     if (
       tabIndex === CONSTANTS.TABS.EDIT &&
       previousTab !== CONSTANTS.TABS.EDIT
     ) {
       this.editHandler.initializeEditMode();
+    }
+
+    // スロットタブの処理（追加）
+    if (
+      tabIndex === CONSTANTS.TABS.SLOT &&
+      previousTab !== CONSTANTS.TABS.SLOT
+    ) {
+      console.log("Switching to slot tab, updating display...");
+      // 現在のスロットを保存してから表示を更新
+      promptSlotManager.saveCurrentSlot().then(() => {
+        this.updateSlotTabDisplay();
+      });
     }
 
     // ポップアップを閉じる
@@ -507,29 +556,57 @@ class PromptGeneratorApp {
   // ============================================
 
   setupPromptInputHandlers() {
-    // デバウンス処理を追加して、連続した呼び出しを防ぐ
     let debounceTimer;
 
     const handlePromptChange = () => {
       clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(() => {
-        const value = this.generateInput.val(); // これはまだjQueryオブジェクト
+      debounceTimer = setTimeout(async () => {
+        const value = this.generateInput.val();
         console.log("Prompt changed:", value);
 
         editPrompt.init(value);
         this.updatePromptDisplay();
 
+        // 現在のスロットに自動保存
+        await promptSlotManager.saveCurrentSlot();
+
+        // スロット管理UIも更新（追加）
+        if (document.getElementById("slot-management")) {
+        }
+
+        // ドロップダウンも更新（追加）
+        promptSlotManager.updateUI();
+
         if (AppState.ui.currentTab === CONSTANTS.TABS.EDIT) {
           this.editHandler.refreshEditList();
         }
-      }, 100); // 100ms のデバウンス
+      }, 100);
     };
 
-    // this.generateInputはjQueryオブジェクトなので、ネイティブ要素を取得
     const promptInput = document.getElementById("generatePrompt");
     if (promptInput) {
       promptInput.addEventListener("input", handlePromptChange);
     }
+  }
+
+  setupPromptSlotHandlers() {
+    // スロットセレクター
+    const slotSelector = document.getElementById("prompt-slot-selector");
+    if (slotSelector) {
+      slotSelector.addEventListener("change", async (e) => {
+        const slotId = parseInt(e.target.value);
+        await promptSlotManager.switchSlot(slotId);
+      });
+    }
+
+    // ショートカットキー（Ctrl+1〜9）
+    document.addEventListener("keydown", async (e) => {
+      if (e.ctrlKey && e.key >= "1" && e.key <= "9") {
+        e.preventDefault();
+        const slotId = parseInt(e.key) - 1;
+        await promptSlotManager.switchSlot(slotId);
+      }
+    });
   }
 
   updatePromptDisplay() {
@@ -571,6 +648,22 @@ class PromptGeneratorApp {
     // Generate ボタン
     const generateButton = document.getElementById("GeneratoButton");
     if (generateButton) {
+      // マウスオーバーで結合プレビューを表示
+      generateButton.addEventListener("mouseenter", () => {
+        const combined = promptSlotManager.getCombinedPrompt();
+        const usedSlots = promptSlotManager.getUsedSlots();
+
+        if (usedSlots.length > 1) {
+          generateButton.title = `結合プロンプト (${
+            usedSlots.length
+          }個):\n${combined.substring(0, 100)}...`;
+        } else if (usedSlots.length === 1) {
+          generateButton.title = "現在のプロンプトで生成";
+        } else {
+          generateButton.title = "使用中のプロンプトがありません";
+        }
+      });
+
       generateButton.addEventListener("click", () => this.generatePrompt());
     }
 
@@ -711,16 +804,36 @@ class PromptGeneratorApp {
   }
 
   generatePrompt() {
-    const generatePrompt = document.getElementById("generatePrompt");
-    if (generatePrompt) {
-      sendBackground(
-        "DOM",
-        "Generate",
-        generatePrompt.value,
-        PositivePromptTextSelector,
-        GenerateButtonSelector
-      );
+    // 使用中のスロットを結合
+    const combinedPrompt = promptSlotManager.getCombinedPrompt();
+
+    if (!combinedPrompt) {
+      ErrorHandler.notify("使用中のプロンプトがありません", {
+        type: ErrorHandler.NotificationType.TOAST,
+        messageType: "warning",
+      });
+      return;
     }
+
+    // 使用中のスロット情報を表示（デバッグ用）
+    const usedSlots = promptSlotManager.getUsedSlots();
+    console.log("Generating with combined prompt from slots:", usedSlots);
+
+    // 結合されたプロンプトで生成
+    sendBackground(
+      "DOM",
+      "Generate",
+      combinedPrompt,
+      PositivePromptTextSelector,
+      GenerateButtonSelector
+    );
+
+    // 通知（オプション）
+    ErrorHandler.notify(`${usedSlots.length}個のスロットを結合して生成します`, {
+      type: ErrorHandler.NotificationType.TOAST,
+      messageType: "info",
+      duration: 2000,
+    });
   }
 
   // ============================================
@@ -860,6 +973,32 @@ class PromptGeneratorApp {
   }
 
   // ============================================
+  // プロンプトスロット管理
+  // ============================================
+
+  setupPromptSlotHandlers() {
+    // スロットセレクター
+    const slotSelector = document.getElementById("prompt-slot-selector");
+    if (slotSelector) {
+      slotSelector.addEventListener("change", async (e) => {
+        const slotId = parseInt(e.target.value);
+        console.log("Switching to slot:", slotId);
+        await promptSlotManager.switchSlot(slotId);
+      });
+    }
+
+    // ショートカットキー（Ctrl+1〜9）
+    document.addEventListener("keydown", async (e) => {
+      if (e.ctrlKey && e.key >= "1" && e.key <= "9") {
+        e.preventDefault();
+        const slotId = parseInt(e.key) - 1;
+        console.log("Shortcut switching to slot:", slotId);
+        await promptSlotManager.switchSlot(slotId);
+      }
+    });
+  }
+
+  // ============================================
   // UI状態の更新（jQuery削除版）
   // ============================================
 
@@ -894,6 +1033,330 @@ class PromptGeneratorApp {
       if (generateButton) {
         generateButton.style.display = "block";
       }
+    }
+  }
+
+  // ============================================
+  // ドロップダウンの表示を改善
+  // ============================================
+
+  improveSlotDropdown() {
+    const selector = document.getElementById("prompt-slot-selector");
+    if (!selector) return;
+
+    // CSSを追加
+    const style = document.createElement("style");
+    style.textContent = `
+        #prompt-slot-selector {
+            font-weight: bold;
+            background-color: #f5f5f5;
+        }
+        #prompt-slot-selector option {
+            padding: 2px 5px;
+            font-weight: normal;
+        }
+        #prompt-slot-selector option:disabled {
+            color: #999;
+            font-style: italic;
+        }
+        #prompt-slot-selector option[value="${promptSlotManager.currentSlot}"] {
+            background-color: #e3f2fd;
+            font-weight: bold;
+        }
+    `;
+    document.head.appendChild(style);
+  }
+
+  // setupEventHandlers() に追加
+  setupCloseHandlers() {
+    // ページを閉じる/リロードする前に現在のスロットを保存
+    window.addEventListener("beforeunload", async () => {
+      console.log("Saving current slot before close...");
+      await promptSlotManager.saveCurrentSlot();
+    });
+
+    // 拡張機能のポップアップが閉じられる時
+    window.addEventListener("unload", async () => {
+      console.log("Extension closing, saving state...");
+      await promptSlotManager.saveCurrentSlot();
+    });
+
+    // visibility change でも保存（念のため）
+    document.addEventListener("visibilitychange", async () => {
+      if (document.hidden) {
+        console.log("Page hidden, saving current slot...");
+        await promptSlotManager.saveCurrentSlot();
+      }
+    });
+  }
+
+  // ============================================
+  // スロットタブの初期化と管理
+  // ============================================
+
+  setupSlotTabUI() {
+    // 初回読み込み時にもスロット情報を確実に取得
+    if (!promptSlotManager.slots || promptSlotManager.slots.length === 0) {
+      console.log("Slots not loaded, loading from storage...");
+      promptSlotManager.loadFromStorage().then(() => {
+        this.updateSlotTabDisplay();
+        this.attachSlotTabEvents();
+      });
+    } else {
+      this.updateSlotTabDisplay();
+      this.attachSlotTabEvents();
+    }
+  }
+
+  /**
+   * スロットタブの表示を更新
+   */
+  updateSlotTabDisplay() {
+    const container = document.getElementById("slot-container");
+    if (!container) return;
+
+    // 現在のスロット情報をログ出力（デバッグ用）
+    console.log("Updating slot tab display:", {
+      currentSlot: promptSlotManager.currentSlot,
+      slots: promptSlotManager.slots.map((s) => ({
+        id: s.id,
+        isUsed: s.isUsed,
+        prompt: s.prompt?.substring(0, 20) + "...",
+      })),
+    });
+
+    container.innerHTML = "";
+
+    // 使用中のスロット数を更新
+    const usedCount = promptSlotManager.getUsedSlotsCount();
+    const countSpan = document.getElementById("used-slots-count");
+    if (countSpan) {
+      countSpan.textContent = usedCount;
+    }
+
+    // 各スロットのカードを作成
+    promptSlotManager.getAllSlotInfo().forEach((info) => {
+      const slotCard = this.createSlotCard(info);
+      container.appendChild(slotCard);
+    });
+  }
+
+  /**
+   * スロットカードを作成
+   */
+  createSlotCard(info) {
+    const card = document.createElement("div");
+    card.className = "slot-card";
+    card.dataset.slotId = info.id;
+
+    // カードのスタイル
+    card.style.cssText = `
+        border: 2px solid ${info.isCurrent ? "#2196F3" : "#ddd"};
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 10px;
+        background: ${info.isUsed ? "#fff" : "#f5f5f5"};
+        ${info.isCurrent ? "box-shadow: 0 2px 8px rgba(33,150,243,0.3);" : ""}
+        transition: all 0.3s ease;
+    `;
+
+    card.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <div style="display: flex; align-items: center;">
+                <span style="font-size: 18px; font-weight: bold; margin-right: 10px; color: ${
+                  info.isCurrent ? "#2196F3" : "#666"
+                };">
+                    ${info.id + 1}
+                </span>
+                <input type="text"
+                       class="slot-name-edit"
+                       data-slot-id="${info.id}"
+                       value="${info.name || ""}"
+                       placeholder="スロット名を入力"
+                       style="border: none; background: transparent; font-size: 16px; font-weight: ${
+                         info.isUsed ? "bold" : "normal"
+                       }; color: ${info.isUsed ? "#333" : "#999"};"
+                       ${!info.isUsed ? "disabled" : ""}>
+            </div>
+            <div>
+                <button class="slot-select-btn" data-slot-id="${
+                  info.id
+                }">選択</button>
+                <button class="slot-clear-btn" data-slot-id="${info.id}" ${
+      !info.isUsed ? "disabled" : ""
+    }>クリア</button>
+            </div>
+        </div>
+
+        <div style="position: relative;">
+        <textarea class="slot-prompt-edit"
+          data-slot-id="${info.id}"
+          placeholder="${
+            info.isUsed ? "プロンプト内容" : "このスロットは空です"
+          }"
+          style="width: 95%; min-height: 30px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; resize: vertical; font-family: monospace; font-size: 12px;"
+          ${!info.isUsed ? "disabled" : ""}>${
+      info.isUsed && promptSlotManager.slots[info.id]
+        ? promptSlotManager.slots[info.id].prompt
+        : ""
+    }</textarea>
+
+            ${
+              info.isUsed
+                ? `
+                <div style="position: absolute; bottom: 5px; right: 5px; font-size: 11px; color: #999;">
+                    ${promptSlotManager.slots[info.id].prompt.length} 文字
+                </div>
+            `
+                : ""
+            }
+        </div>
+
+        ${
+          info.isCurrent
+            ? '<div style="margin-top: 5px; color: #2196F3; font-size: 12px;">現在選択中</div>'
+            : ""
+        }
+    `;
+
+    // ホバー効果
+    if (!info.isCurrent) {
+      card.addEventListener("mouseenter", () => {
+        card.style.borderColor = "#90CAF9";
+        card.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.borderColor = "#ddd";
+        card.style.boxShadow = "none";
+      });
+    }
+
+    return card;
+  }
+
+  /**
+   * スロットタブのイベントを設定
+   */
+  attachSlotTabEvents() {
+    const container = document.getElementById("slot-container");
+    if (!container) return;
+
+    // イベントデリゲーション
+    container.addEventListener("click", async (e) => {
+      const slotId = parseInt(e.target.dataset.slotId);
+
+      if (e.target.classList.contains("slot-select-btn")) {
+        // スロット選択
+        await promptSlotManager.switchSlot(slotId);
+        this.updateSlotTabDisplay();
+      } else if (e.target.classList.contains("slot-clear-btn")) {
+        // クリア
+        const shouldConfirm =
+          AppState.userSettings.optionData?.isDeleteCheck !== false;
+
+        if (
+          !shouldConfirm ||
+          confirm(`スロット${slotId + 1}をクリアしますか？`)
+        ) {
+          if (slotId === promptSlotManager.currentSlot) {
+            await promptSlotManager.clearCurrentSlot();
+          } else {
+            await promptSlotManager.clearSlot(slotId);
+          }
+          this.updateSlotTabDisplay();
+        }
+      }
+    });
+
+    // 名前の編集
+    container.addEventListener("change", async (e) => {
+      if (e.target.classList.contains("slot-name-edit")) {
+        const slotId = parseInt(e.target.dataset.slotId);
+        await promptSlotManager.setSlotName(slotId, e.target.value);
+        promptSlotManager.updateUI();
+      }
+    });
+
+    // プロンプトの編集（リアルタイム保存）
+    let saveTimer;
+    container.addEventListener("input", async (e) => {
+      if (e.target.classList.contains("slot-prompt-edit")) {
+        const slotId = parseInt(e.target.dataset.slotId);
+        const newPrompt = e.target.value;
+
+        // デバウンス処理
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(async () => {
+          // 直接スロットを更新
+          if (slotId === promptSlotManager.currentSlot) {
+            // 現在のスロットの場合
+            promptEditor.init(newPrompt);
+            const generatePrompt = document.getElementById("generatePrompt");
+            if (generatePrompt) {
+              generatePrompt.value = newPrompt;
+            }
+            await promptSlotManager.saveCurrentSlot();
+          } else {
+            // 他のスロットの場合
+            promptSlotManager.slots[slotId].prompt = newPrompt;
+            promptSlotManager.slots[slotId].isUsed = newPrompt.length > 0;
+            promptSlotManager.slots[slotId].lastModified =
+              newPrompt.length > 0 ? Date.now() : null;
+            await promptSlotManager.saveToStorage();
+          }
+
+          // UI更新
+          promptSlotManager.updateUI();
+          this.updateSlotTabDisplay();
+        }, 500);
+      }
+    });
+
+    // 結合プレビューボタン
+    const previewBtn = document.getElementById("combine-preview");
+    if (previewBtn) {
+      previewBtn.addEventListener("click", () => {
+        const combined = promptSlotManager.getCombinedPrompt();
+        const usedSlots = promptSlotManager.getUsedSlots();
+
+        if (usedSlots.length === 0) {
+          alert("使用中のスロットがありません");
+          return;
+        }
+
+        const preview =
+          `【結合プレビュー】\n\n` +
+          `使用スロット: ${usedSlots.map((s) => s.name).join(", ")}\n\n` +
+          `結合結果:\n${combined}\n\n` +
+          `文字数: ${combined.length}`;
+
+        alert(preview);
+      });
+    }
+
+    // すべてクリアボタン
+    const clearAllBtn = document.getElementById("clear-all-slots-tab");
+    if (clearAllBtn) {
+      clearAllBtn.addEventListener("click", async () => {
+        const shouldConfirm =
+          AppState.userSettings.optionData?.isDeleteCheck !== false;
+
+        if (!shouldConfirm || confirm("すべてのスロットをクリアしますか？")) {
+          await promptSlotManager.clearAllSlots();
+          this.updateSlotTabDisplay();
+        }
+      });
+    }
+  }
+
+  /**
+   * タブ切り替え時の処理（handleTabSwitchに追加）
+   */
+  handleSlotTabSwitch() {
+    // スロットタブに切り替わったときの処理
+    if (AppState.ui.currentTab === CONSTANTS.TABS.SLOT) {
+      this.updateSlotTabDisplay();
     }
   }
 }

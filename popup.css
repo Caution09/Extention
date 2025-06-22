@@ -337,3 +337,23 @@ button {
   width: 50px;
   padding: 2px 5px;
 }
+/* スロットカードのスタイル */
+.slot-card:hover {
+  transform: translateY(-2px);
+}
+
+.slot-card textarea:focus {
+  outline: none;
+  border-color: #2196f3 !important;
+}
+
+.slot-name-edit:focus {
+  outline: none;
+  border-bottom: 2px solid #2196f3;
+}
+
+#slot-container {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 5px;
+}

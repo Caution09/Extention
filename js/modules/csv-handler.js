@@ -148,30 +148,19 @@ class CSVHandler {
 window.CSVHandler = CSVHandler;
 window.csvHandler = new CSVHandler();
 
-// CSVエクスポートボタンの追加
-function setupCSVExportButton() {
-  // CSVエクスポートボタン
-  const csvExportBtn = document.createElement("input");
-  csvExportBtn.type = "button";
-  csvExportBtn.id = "csvExport";
-  csvExportBtn.value = "ローカル辞書CSVダウンロード";
-  csvExportBtn.addEventListener("click", async () => {
-    await csvHandler.exportToCSV(AppState.data.localPromptList);
-  });
-
-  // 既存のボタンの後に追加
-  const localDicDownload = document.getElementById("localDicDownload");
-  if (localDicDownload && localDicDownload.parentNode) {
-    // 改行を追加
-    const br = document.createElement("br");
-    localDicDownload.parentNode.insertBefore(br, localDicDownload.nextSibling);
-    localDicDownload.parentNode.insertBefore(csvExportBtn, br.nextSibling);
+// CSVエクスポートボタンのイベントリスナーを設定
+function setupCSVExportListener() {
+  const csvExportBtn = document.getElementById("csvExport");
+  if (csvExportBtn) {
+    csvExportBtn.addEventListener("click", async () => {
+      await csvHandler.exportToCSV(AppState.data.localPromptList);
+    });
   }
 }
 
 // DOMContentLoadedで実行
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", setupCSVExportButton);
+  document.addEventListener("DOMContentLoaded", setupCSVExportListener);
 } else {
-  setupCSVExportButton();
+  setupCSVExportListener();
 }
