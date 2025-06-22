@@ -64,6 +64,7 @@ class PromptGeneratorApp {
     this.fileHandler = new FileHandler();
     this.searchHandler = new SearchHandler(this);
     this.editHandler = new EditHandler(this);
+    this.dictionaryHandler = new DictionaryHandler(this);
 
     this.initialized = false;
     this.lastFocusedInput = null; // 最後にフォーカスされた入力フィールドを記憶
@@ -432,7 +433,7 @@ class PromptGeneratorApp {
   }
 
   // ============================================
-  // 辞書機能（jQuery削除版）
+  // 辞書機能（DictionaryHandlerに委譲）
   // ============================================
 
   setupDictionaryHandlers() {
@@ -440,21 +441,21 @@ class PromptGeneratorApp {
     const promptDicText = document.getElementById("promptDicText");
     if (promptDicText) {
       promptDicText.addEventListener("click", () =>
-        this.toggleDictionary("prompt")
+        this.dictionaryHandler.toggleDictionary("prompt")
       );
     }
 
     const elementDicText = document.getElementById("elementDicText");
     if (elementDicText) {
       elementDicText.addEventListener("click", () =>
-        this.toggleDictionary("element")
+        this.dictionaryHandler.toggleDictionary("element")
       );
     }
 
     const masterDicText = document.getElementById("masterDicText");
     if (masterDicText) {
       masterDicText.addEventListener("click", () =>
-        this.toggleDictionary("master")
+        this.dictionaryHandler.toggleDictionary("master")
       );
     }
 
@@ -462,189 +463,22 @@ class PromptGeneratorApp {
     const resistButton = document.getElementById("resist");
     if (resistButton) {
       resistButton.addEventListener("click", () =>
-        this.handleElementRegistration()
+        this.dictionaryHandler.handleElementRegistration()
       );
     }
 
     // カテゴリー連動
-    this.setupCategoryInputs();
+    this.dictionaryHandler.setupCategoryInputs();
   }
 
-  toggleDictionary(type) {
-    const configs = {
-      prompt: {
-        listId: "#archiveList",
-        textId: "#promptDicText",
-        openText: "▼プロンプト辞書　※ここをクリックで開閉",
-        closeText: "▶プロンプト辞書　※ここをクリックで開閉",
-        createFunc: () =>
-          this.listManager.createList(
-            "archive",
-            AppState.data.archivesList,
-            "#archiveList"
-          ),
-      },
-      // toggleDictionary メソッドの element の場合
-      element: {
-        listId: "#addPromptList",
-        textId: "#elementDicText",
-        openText: "▼要素辞書(ローカル)　※ここをクリックで開閉",
-        closeText: "▶要素辞書(ローカル)　※ここをクリックで開閉",
-        createFunc: async () => {
-          const sorted = [...AppState.data.localPromptList].sort(
-            (a, b) => (a.sort || 0) - (b.sort || 0)
-          );
-          await this.listManager.createList("add", sorted, "#addPromptList");
-
-          // リスト作成後にsortableを初期化
-          setTimeout(() => {
-            // ここで大項目・中項目のIDを持つ要素への参照をクリア
-            const bigInput = document.getElementById("big");
-            const middleInput = document.getElementById("middle");
-
-            if (bigInput && middleInput) {
-              // カテゴリー連動を再設定
-              bigInput.setAttribute("list", "category");
-              const currentBigValue = bigInput.value;
-              if (currentBigValue) {
-                middleInput.setAttribute("list", "category" + currentBigValue);
-              }
-            }
-
-            EventHandlers.setupSortableList(
-              "#addPromptList",
-              async (sortedIds) => {
-                let baseIndex = 0;
-                sortedIds.forEach((id) => {
-                  if (!id) return;
-                  AppState.data.localPromptList[id].sort = baseIndex++;
-                });
-                await saveLocalList();
-              }
-            );
-          }, 100);
-        },
-      },
-      master: {
-        listId: "#masterDicList",
-        textId: "#masterDicText",
-        openText: "▼要素辞書(マスタ)　※ここをクリックで開閉",
-        closeText: "▶要素辞書(マスタ)　※ここをクリックで開閉",
-        createFunc: () =>
-          this.listManager.createList(
-            "master",
-            AppState.data.masterPrompts,
-            "#masterDicList"
-          ),
-      },
-    };
-
-    const config = configs[type];
-    const $list = $(config.listId);
-    const $text = $(config.textId);
-
-    if ($list.children().length > 0) {
-      ListBuilder.clearList(config.listId);
-      $text.text(config.closeText);
-    } else {
-      config.createFunc();
-      $text.text(config.openText);
-    }
-  }
-
-  async handleElementRegistration() {
-    const bigInput = document.getElementById("big");
-    const middleInput = document.getElementById("middle");
-    const smallInput = document.getElementById("small");
-    const promptInput = document.getElementById("prompt");
-
-    const data = {
-      big: bigInput ? bigInput.value : "",
-      middle: middleInput ? middleInput.value : "",
-      small: smallInput ? smallInput.value : "",
-      prompt: promptInput ? promptInput.value : "",
-    };
-
-    // バリデーション
-    const promptValidation = Validators.validatePrompt(data.prompt);
-    if (!promptValidation.isValid) {
-      ErrorHandler.notify(promptValidation.errors[0].message);
-      return;
-    }
-
-    const categoryValidation = Validators.validateCategories(data);
-    if (!categoryValidation.isValid) {
-      ErrorHandler.notify(categoryValidation.errors[0].message);
-      return;
-    }
-
-    // 登録
-    const success = Regist(data.big, data.middle, data.small, data.prompt);
-    if (success) {
-      // 入力フィールドをクリア
-      if (bigInput) bigInput.value = "";
-      if (middleInput) middleInput.value = "";
-      if (smallInput) smallInput.value = "";
-      if (promptInput) promptInput.value = "";
-      this.refreshAddList();
-    }
-  }
-
-  /**
-   * アーカイブリストを更新
-   */
+  // アーカイブリストの更新（DictionaryHandlerのメソッドを呼び出し）
   async refreshArchiveList() {
-    if ($("#archiveList").children().length > 0) {
-      await this.listManager.createList(
-        "archive",
-        AppState.data.archivesList,
-        "#archiveList"
-      );
-    }
+    return this.dictionaryHandler.refreshArchiveList();
   }
 
+  // 追加リストの更新（DictionaryHandlerのメソッドを呼び出し）
   async refreshAddList() {
-    if ($("#addPromptList").children().length > 0) {
-      // sortableを破棄
-      if ($("#addPromptList").hasClass("ui-sortable")) {
-        $("#addPromptList").sortable("destroy");
-      }
-
-      const sorted = [...AppState.data.localPromptList].sort(
-        (a, b) => (a.sort || 0) - (b.sort || 0)
-      );
-      await this.listManager.createList("add", sorted, "#addPromptList");
-
-      // sortableを再初期化
-      EventHandlers.setupSortableList("#addPromptList", async (sortedIds) => {
-        let baseIndex = 0;
-        sortedIds.forEach((id) => {
-          if (!id) return;
-          AppState.data.localPromptList[id].sort = baseIndex++;
-        });
-        await saveLocalList();
-      });
-    }
-  }
-
-  setupCategoryInputs() {
-    const bigInput = document.getElementById("big");
-    const middleInput = document.getElementById("middle");
-    const smallInput = document.getElementById("small");
-
-    if (bigInput && middleInput) {
-      // 大項目と中項目のみ連動
-      EventHandlers.setupCategoryChain([bigInput, middleInput]);
-
-      // クリア動作を追加
-      EventHandlers.addInputClearBehavior(bigInput);
-      EventHandlers.addInputClearBehavior(middleInput);
-
-      // 小項目は単純な入力フィールドとして扱う
-      if (smallInput) {
-        EventHandlers.addInputClearBehavior(smallInput);
-      }
-    }
+    return this.dictionaryHandler.refreshAddList();
   }
 
   // ============================================
