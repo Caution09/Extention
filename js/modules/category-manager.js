@@ -128,9 +128,6 @@ const categoryData = {
       PerformanceMonitor.start("createDatalist");
     }
 
-    // 古いdatalistの参照をクリア（メモリリーク対策）
-    this.cleanupDatalistRefs();
-
     // メインのdatalist要素を取得
     const bigCategory = document.getElementById("category");
     if (!bigCategory) {
@@ -153,8 +150,8 @@ const categoryData = {
     bigCategory.innerHTML = "";
     bigCategory.appendChild(fragment);
 
-    // 中・小カテゴリーのdatalistを作成
-    this.createSubDatalistsBatch();
+    // 中・小カテゴリーのdatalistを作成（既存のものを再利用）
+    this.updateSubDatalistsBatch();
 
     // 検索カテゴリーの初期化
     setCategoryList("#search-cat0", 0);
@@ -162,6 +159,69 @@ const categoryData = {
     if (window.PerformanceMonitor) {
       PerformanceMonitor.end("createDatalist");
     }
+  },
+
+  updateSubDatalistsBatch: function () {
+    // 中カテゴリーのdatalistを更新
+    this.data[0].forEach((item) => {
+      const datalistId = "category" + item.value;
+      let datalist = document.getElementById(datalistId);
+
+      if (!datalist) {
+        datalist = document.createElement("datalist");
+        datalist.id = datalistId;
+        document.body.appendChild(datalist);
+      } else {
+        // 既存のdatalistをクリア
+        datalist.innerHTML = "";
+      }
+
+      this._datalistRefs.set(datalistId, datalist);
+    });
+
+    // 中カテゴリーのオプションを追加
+    this.data[1].forEach((item) => {
+      const datalistId = "category" + item.parent;
+      const datalist =
+        this._datalistRefs.get(datalistId) ||
+        document.getElementById(datalistId);
+
+      if (datalist) {
+        const option = document.createElement("option");
+        option.value = item.value;
+        option.textContent = item.value;
+        datalist.appendChild(option);
+
+        // 小カテゴリーのdatalistも作成
+        const smallDatalistId = "category" + item.parent + item.value;
+        let smallDatalist = document.getElementById(smallDatalistId);
+
+        if (!smallDatalist) {
+          smallDatalist = document.createElement("datalist");
+          smallDatalist.id = smallDatalistId;
+          document.body.appendChild(smallDatalist);
+        } else {
+          smallDatalist.innerHTML = "";
+        }
+
+        this._datalistRefs.set(smallDatalistId, smallDatalist);
+      }
+    });
+
+    // 小カテゴリーのオプションを追加
+    this.data[2].forEach((item) => {
+      const datalistId = "category" + item.parent;
+      const datalist =
+        this._datalistRefs.get(datalistId) ||
+        document.getElementById(datalistId);
+
+      if (datalist) {
+        const option = document.createElement("option");
+        option.value = item.value;
+        option.textContent = item.value;
+        datalist.appendChild(option);
+      }
+    });
   },
 
   /**

@@ -739,6 +739,19 @@ class PromptGeneratorApp {
 
           // リスト作成後にsortableを初期化
           setTimeout(() => {
+            // ここで大項目・中項目のIDを持つ要素への参照をクリア
+            const bigInput = document.getElementById("big");
+            const middleInput = document.getElementById("middle");
+
+            if (bigInput && middleInput) {
+              // カテゴリー連動を再設定
+              bigInput.setAttribute("list", "category");
+              const currentBigValue = bigInput.value;
+              if (currentBigValue) {
+                middleInput.setAttribute("list", "category" + currentBigValue);
+              }
+            }
+
             EventHandlers.setupSortableList(
               "#addPromptList",
               async (sortedIds) => {
@@ -1796,8 +1809,9 @@ class PromptListManager {
       },
     });
 
-    EventHandlers.setupCategoryChain(inputFields);
-    EventHandlers.addInputClearBehaviorToMany(inputFields);
+    // 新しく作成された入力フィールドに対してのみカテゴリー連動を設定
+    const updatedFields = EventHandlers.setupCategoryChain(inputFields);
+    EventHandlers.addInputClearBehaviorToMany(updatedFields);
 
     return $button;
   }

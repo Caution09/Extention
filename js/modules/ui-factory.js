@@ -385,7 +385,9 @@ const EventHandlers = {
 
     bigInput.addEventListener("change", function () {
       const bigValue = this.value;
-      middleInput.setAttribute("list", "category" + bigValue);
+      if (middleInput) {
+        middleInput.setAttribute("list", "category" + bigValue);
+      }
       if (smallInput) {
         smallInput.setAttribute("list", "");
       }
