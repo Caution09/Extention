@@ -279,6 +279,7 @@
     <button id="show-panel">Option</button>
     <button id="show-shortcuts" title="ショートカットキー一覧">?</button>
     <datalist id="category"> </datalist>
+
     <!-- 外部ライブラリ -->
     <script src="lib/jquery-3.5.1.js"></script>
     <script src="lib/jquery-ui.js"></script>
@@ -288,29 +289,46 @@
     <!-- リソース -->
     <script src="assets/master/default-master.js"></script>
 
-    <!-- モジュール（Phase 1 + Phase 2 + Phase 5） -->
-    <script src="js/modules/storage.js"></script>
-    <script src="js/modules/app-state.js"></script>
-    <script src="js/modules/ui-factory.js"></script>
-    <script src="js/modules/error-handler.js"></script>
-    <script src="js/modules/validators.js"></script>
-    <script src="js/modules/category-manager.js"></script>
-    <script src="js/modules/prompt-editor.js"></script>
-    <script src="js/modules/data-manager.js"></script>
-    <script src="js/modules/api-client.js"></script>
-    <script src="js/modules/settings-manager.js"></script>
-    <script src="js/modules/list-manager.js"></script>
-    <script src="js/modules/file-handler.js"></script>
-    <script src="js/modules/search-handler.js"></script>
-    <script src="js/modules/edit-handler.js"></script>
-    <script src="js/modules/dictionary-handler.js"></script>
-    <script src="js/modules/ui-utilities.js"></script>
-    <script src="js/modules/global-utilities.js"></script>
-    <script src="js/modules/shortcut-manager.js"></script>
-    <script src="js/modules/prompt-slots.js"></script>
-    <script src="js/modules/content-script.js"></script>
-    <script src="js/modules/csv-handler.js"></script>
-    <script src="js/modules/auto-generate-handler.js"></script>
+    <!-- コア機能 -->
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/app-state.js"></script>
+    <script src="js/core/error-handler.js"></script>
+    <script src="js/core/validators.js"></script>
+
+    <!-- データ管理 -->
+    <script src="js/data/category-manager.js"></script>
+    <script src="js/data/prompt-editor.js"></script>
+    <script src="js/data/data-manager.js"></script>
+    <script src="js/data/prompt-slots.js"></script>
+
+    <!-- UI基本コンポーネント -->
+    <script src="js/ui/components/ui-factory.js"></script>
+    <script src="js/ui/components/ui-utilities.js"></script>
+    <script src="js/ui/components/list-manager.js"></script>
+
+    <!-- 外部連携 -->
+    <script src="js/external/api-client.js"></script>
+    <script src="js/external/global-utilities.js"></script>
+    <script src="js/external/content-script.js"></script>
+
+    <!-- 個別機能 -->
+    <script src="js/features/settings-manager.js"></script>
+    <script src="js/features/file-handler.js"></script>
+    <script src="js/features/csv-handler.js"></script>
+    <script src="js/features/shortcut-manager.js"></script>
+    <script src="js/features/auto-generate-handler.js"></script>
+
+    <!-- タブモジュール（Phase 8.5で追加予定） -->
+    <!-- <script src="js/ui/tabs/search-tab.js"></script> -->
+    <!-- <script src="js/ui/tabs/dictionary-tab.js"></script> -->
+    <!-- <script src="js/ui/tabs/edit-tab.js"></script> -->
+    <!-- <script src="js/ui/tabs/slot-tab.js"></script> -->
+    <!-- <script src="js/ui/tabs/other-tab.js"></script> -->
+
+    <!-- 一時的ハンドラー（Phase 8.5でタブモジュールに統合予定） -->
+    <script src="js/features/search-handler.js"></script>
+    <script src="js/features/edit-handler.js"></script>
+    <script src="js/features/dictionary-handler.js"></script>
 
     <!-- メインスクリプト -->
     <script src="js/main.js"></script>
