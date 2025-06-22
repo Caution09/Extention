@@ -1259,6 +1259,84 @@ class PromptListManager {
     $li.append(buttons.load, buttons.copy, buttons.delete);
   }
 
+  // PromptListManager クラスに追加するメソッド
+  // createEditDropdownItem メソッドの前に追加してください
+
+  async createEditItem($li, item, index, options = {}) {
+    const shaping = AppState.userSettings.optionData.shaping;
+    const weight = item[shaping].weight;
+    const value = item.Value;
+
+    // プロンプト入力（テキスト編集用）
+    const $valueInput = UIFactory.createInput({
+      value: value,
+      index: index,
+      style: { width: "400px" },
+      onInput: (newValue) => {
+        editPrompt.editingValue(newValue, index);
+        window.app.updatePromptDisplay();
+      },
+    });
+
+    // 重み入力
+    const $weightInput = UIFactory.createInput({
+      value: weight !== null && weight !== undefined ? weight : "0",
+      index: index,
+      style: { width: "50px" },
+      onInput: (newWeight) => {
+        const cleanWeight = newWeight.replace(/[^-0-9.]/g, "");
+        editPrompt.editingWeight(cleanWeight, index);
+        window.app.updatePromptDisplay();
+      },
+    });
+
+    $li.append($valueInput);
+
+    // 重みがある場合のみ表示
+    if (weight !== null && weight !== undefined) {
+      $li.append($weightInput);
+    }
+
+    // 重み調整ボタン
+    const weightDelta = shaping === "SD" ? 0.1 : shaping === "NAI" ? 1 : 0;
+    if (weightDelta > 0) {
+      const buttons = UIFactory.createButtonSet({
+        includeWeight: true,
+        weightDelta: weightDelta,
+        index: index,
+      });
+
+      // ボタンのクリックハンドラーを上書き
+      buttons.weightPlus.onclick = () => {
+        editPrompt.addWeight(weightDelta, index);
+        window.app.updatePromptDisplay();
+        window.app.refreshEditList();
+      };
+
+      buttons.weightMinus.onclick = () => {
+        editPrompt.addWeight(-weightDelta, index);
+        window.app.updatePromptDisplay();
+        window.app.refreshEditList();
+      };
+
+      $li.append(buttons.weightPlus, buttons.weightMinus);
+    }
+
+    // 削除ボタン
+    const deleteButton = UIFactory.createButtonSet({
+      includeDelete: true,
+      onDelete: () => {
+        editPrompt.removeElement(index);
+        window.app.updatePromptDisplay();
+        window.app.refreshEditList();
+      },
+    });
+    $li.append(deleteButton.delete);
+
+    // ドラッグアイコン
+    $li.append(UIFactory.createDragIcon(index));
+  }
+
   async createEditDropdownItem($li, item, index, options = {}) {
     const shaping = AppState.userSettings.optionData.shaping;
     const weight = item[shaping].weight;
