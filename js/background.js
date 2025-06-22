@@ -1,4 +1,5 @@
 let promptTabele = [];
+let selectedTextForArchive = ""; // 選択されたテキストを一時保存
 
 // 初期化時にコンテキストメニューを作成
 chrome.runtime.onInstalled.addListener(() => {
@@ -70,6 +71,7 @@ chrome.contextMenus.onClicked.addListener(async function (info, tab) {
 // プロンプトアーカイブ処理
 function handlePromptArchive(info) {
   const selectedText = info.selectionText;
+  selectedTextForArchive = selectedText; // 選択テキストを保存
 
   chrome.storage.local.get(["archivesList"], function (items) {
     let archivesList = items.archivesList || [];
@@ -101,75 +103,81 @@ function handlePromptArchive(info) {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   console.log("Received message:", message.type);
 
-  // 非同期処理のために即座にtrueを返す
-  const handleAsync = () => {
-    switch (message.type) {
-      case "openWindow":
-        chrome.windows.create({
-          url: chrome.runtime.getURL("popup.html"),
-          type: message.windowType === "normal" ? "popup" : message.windowType,
-          width: 400,
-          height: 800,
-        });
+  // promptResponse の処理を async/await で修正
+  if (message.type === "promptResponse") {
+    handlePromptResponse(message.text)
+      .then(() => {
+        console.log("Prompt response handled successfully");
         sendResponse({ success: true });
-        break;
+      })
+      .catch((error) => {
+        console.error("Error in promptResponse:", error);
+        sendResponse({ success: false, error: error.message });
+      });
 
-      case "openPage":
-        chrome.tabs.create({
-          url: chrome.runtime.getURL("popup.html"),
-        });
-        sendResponse({ success: true });
-        break;
+    // 非同期レスポンスのためにtrueを返す
+    return true;
+  }
 
-      case "UpdatePromptList":
-        UpdatePromptList().then(() => {
-          sendResponse({ text: "バックグラウンド処理の終了", success: true });
-        });
-        break;
+  // 他のメッセージタイプの処理
+  switch (message.type) {
+    case "openWindow":
+      chrome.windows.create({
+        url: chrome.runtime.getURL("popup.html"),
+        type: message.windowType === "normal" ? "popup" : message.windowType,
+        width: 400,
+        height: 800,
+      });
+      sendResponse({ success: true });
+      break;
 
-      case "promptResponse":
-        handlePromptResponse(message.text).then(() => {
-          sendResponse({ success: true });
-        });
-        break;
+    case "openPage":
+      chrome.tabs.create({
+        url: chrome.runtime.getURL("popup.html"),
+      });
+      sendResponse({ success: true });
+      break;
 
-      case "DOM":
-        handleDOMOperation(message.args);
-        sendResponse({ success: true });
-        break;
+    case "UpdatePromptList":
+      UpdatePromptList().then(() => {
+        sendResponse({ text: "バックグラウンド処理の終了", success: true });
+      });
+      return true; // 非同期レスポンス
 
-      default:
-        sendResponse({ success: false, error: "Unknown message type" });
-        break;
-    }
-  };
+    case "DOM":
+      handleDOMOperation(message.args);
+      sendResponse({ success: true });
+      break;
 
-  // 非同期処理を実行
-  handleAsync();
-
-  // 非同期レスポンスのためにtrueを返す
-  return true;
+    default:
+      sendResponse({ success: false, error: "Unknown message type" });
+      break;
+  }
 });
 
 // プロンプトレスポンス処理
 async function handlePromptResponse(promptName) {
   try {
+    console.log("handlePromptResponse called with:", promptName);
+    console.log("Saved selected text:", selectedTextForArchive);
+
     const items = await chrome.storage.local.get(["archivesList"]);
     let archivesList = items.archivesList || [];
 
-    // 現在選択されているテキストを取得（これは別途実装が必要）
-    const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-    const results = await chrome.scripting.executeScript({
-      target: { tabId: tabs[0].id },
-      function: () => window.getSelection().toString(),
-    });
-
-    const selectedText = results[0]?.result || "";
+    // 保存された選択テキストを使用
+    const selectedText = selectedTextForArchive;
 
     if (selectedText && promptName) {
       archivesList.push({ title: promptName, prompt: selectedText });
       await chrome.storage.local.set({ archivesList: archivesList });
+
+      // テキストをクリア
+      selectedTextForArchive = "";
+
+      // プロンプトリストを更新
       await UpdatePromptList();
+
+      console.log("Archive saved successfully");
     }
   } catch (error) {
     console.error("Error handling prompt response:", error);
@@ -179,6 +187,8 @@ async function handlePromptResponse(promptName) {
 // プロンプトリストの更新
 async function UpdatePromptList() {
   try {
+    console.log("UpdatePromptList called");
+
     // 既存のプロンプト関連メニューを削除
     const removePromises = promptTabele.map(
       (id) =>
@@ -194,8 +204,11 @@ async function UpdatePromptList() {
     await Promise.all(removePromises);
     promptTabele = [];
 
-    // 新しいリストを作成
-    await CreateArchiveList();
+    // 少し待機してから新しいリストを作成（ストレージの読み込みを確実にするため）
+    setTimeout(async () => {
+      await CreateArchiveList();
+      console.log("Archive list recreated with", promptTabele.length, "items");
+    }, 100);
   } catch (error) {
     console.error("Error updating prompt list:", error);
   }

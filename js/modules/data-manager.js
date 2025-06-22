@@ -341,7 +341,32 @@ function jsonDownload(json, fileName) {
  * バックグラウンドスクリプトにプロンプトリスト更新を通知
  */
 function UpdatePromptList() {
-  sendBackground("UpdatePromptList", null);
+  // メッセージを送信してコールバックで結果を確認
+  chrome.runtime.sendMessage({ type: "UpdatePromptList" }, function (response) {
+    if (chrome.runtime.lastError) {
+      console.error(
+        "Failed to update prompt list:",
+        chrome.runtime.lastError.message
+      );
+    } else if (response && response.success) {
+      console.log("Prompt list updated successfully");
+    }
+  });
+}
+
+// また、saveArchivesList関数も確認
+async function saveArchivesList() {
+  try {
+    await Storage.set({ archivesList: AppState.data.archivesList });
+
+    // 少し遅延を入れてから通知（ストレージの書き込みが完了するのを待つ）
+    setTimeout(() => {
+      UpdatePromptList();
+    }, 100);
+  } catch (error) {
+    console.error("Failed to save archives list:", error);
+    throw error;
+  }
 }
 
 /**
@@ -472,7 +497,7 @@ function Search(search, data) {
   // カテゴリーでフィルタリング
   if (data[0] !== "") {
     data
-      .filter((value) => value !== null)
+      .filter((value) => value !== null && value !== "") // 空文字も除外
       .forEach((value, index) => {
         filtered = filtered.filter((item) => item.data[index] === value);
       });

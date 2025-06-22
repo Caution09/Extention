@@ -1,6 +1,6 @@
 ﻿/**
  * main.js - Prompt Generator メインスクリプト
- * Phase 2: コード品質改善版
+ * Phase 2: コード品質改善版 + Phase 4: jQuery削除版
  */
 
 // ============================================
@@ -29,7 +29,36 @@ const CONSTANTS = {
 // ============================================
 class PromptGeneratorApp {
   constructor() {
-    this.generateInput = $("#generatePrompt");
+    // jQuery削除: this.generateInput = $("#generatePrompt");
+    this.generateInput = {
+      val: function (value) {
+        const element = document.getElementById("generatePrompt");
+        if (element) {
+          if (arguments.length === 0) {
+            return element.value;
+          } else {
+            element.value = value;
+            return this;
+          }
+        }
+        return arguments.length === 0 ? "" : this;
+      },
+      trigger: function (eventName) {
+        const element = document.getElementById("generatePrompt");
+        if (element) {
+          element.dispatchEvent(new Event(eventName));
+        }
+        return this;
+      },
+      focus: function () {
+        const element = document.getElementById("generatePrompt");
+        if (element) {
+          element.focus();
+        }
+        return this;
+      },
+    };
+
     this.listManager = new PromptListManager();
     this.fileHandler = new FileHandler();
     this.initialized = false;
@@ -101,13 +130,22 @@ class PromptGeneratorApp {
   }
 
   /**
-   * コンテキストメニューからのメッセージリスナーを設定
+   * コンテキストメニューからのメッセージリスナーを設定（jQuery削除版）
    */
   setupContextMenuListener() {
     // フォーカストラッキングを追加
-    $(document).on("focus", 'input[type="text"], textarea', (e) => {
-      this.lastFocusedInput = e.target;
-    });
+    document.addEventListener(
+      "focus",
+      (e) => {
+        if (
+          e.target &&
+          (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA")
+        ) {
+          this.lastFocusedInput = e.target;
+        }
+      },
+      true
+    ); // useCapture: true でキャプチャフェーズで処理
 
     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       if (message.type === "insertPrompt") {
@@ -143,15 +181,20 @@ class PromptGeneratorApp {
           targetElement.focus();
 
           // イベントを発火
-          $(targetElement).trigger("input").trigger("change");
+          targetElement.dispatchEvent(new Event("input"));
+          targetElement.dispatchEvent(new Event("change"));
 
           sendResponse({ success: true });
         } else {
           // メインのプロンプト入力フィールドに挿入
-          const currentValue = this.generateInput.val() || "";
-          this.generateInput.val(currentValue + message.text);
-          this.generateInput.trigger("input").trigger("change");
-          this.generateInput.focus();
+          const generatePrompt = document.getElementById("generatePrompt");
+          if (generatePrompt) {
+            const currentValue = generatePrompt.value || "";
+            generatePrompt.value = currentValue + message.text;
+            generatePrompt.dispatchEvent(new Event("input"));
+            generatePrompt.dispatchEvent(new Event("change"));
+            generatePrompt.focus();
+          }
 
           sendResponse({ success: true });
         }
@@ -208,30 +251,40 @@ class PromptGeneratorApp {
   }
 
   // ============================================
-  // タブ管理
+  // タブ管理（jQuery削除版）
   // ============================================
 
   setupTabs() {
-    const tabs = $(".tab");
-    tabs.on("click", (e) => this.handleTabSwitch(e));
+    const tabs = document.querySelectorAll(".tab");
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", (e) => this.handleTabSwitch(e));
+    });
   }
 
   handleTabSwitch(event) {
-    const $clickedTab = $(event.currentTarget);
+    const clickedTab = event.currentTarget;
 
     // すでにアクティブなタブをクリックした場合は何もしない
-    if ($clickedTab.hasClass("is-active")) {
+    if (clickedTab.classList.contains("is-active")) {
       return;
     }
 
     // アクティブタブの切り替え
-    $(".tab.is-active").removeClass("is-active");
-    $clickedTab.addClass("is-active");
+    const activeTabs = document.querySelectorAll(".tab.is-active");
+    activeTabs.forEach((tab) => tab.classList.remove("is-active"));
+    clickedTab.classList.add("is-active");
 
     // パネルの切り替え
-    $(".panel.is-show").removeClass("is-show");
-    const tabIndex = $(".tab").index($clickedTab);
-    $(".panel").eq(tabIndex).addClass("is-show");
+    const activePanels = document.querySelectorAll(".panel.is-show");
+    activePanels.forEach((panel) => panel.classList.remove("is-show"));
+
+    const tabs = Array.from(document.querySelectorAll(".tab"));
+    const tabIndex = tabs.indexOf(clickedTab);
+
+    const panels = document.querySelectorAll(".panel");
+    if (panels[tabIndex]) {
+      panels[tabIndex].classList.add("is-show");
+    }
 
     // タブ別の処理
     const previousTab = AppState.ui.currentTab;
@@ -251,73 +304,109 @@ class PromptGeneratorApp {
   }
 
   // ============================================
-  // ウィンドウ操作
+  // ウィンドウ操作（jQuery削除版）
   // ============================================
 
   setupWindowHandlers() {
-    $("#openWindow").on("click", () => {
-      const displayType = $("#displayType").val();
-      const message =
-        displayType === "page"
-          ? { type: "openPage" }
-          : { type: "openWindow", windowType: displayType };
+    // jQuery削除: $("#openWindow").on("click", ...)
+    const openWindowBtn = document.getElementById("openWindow");
+    if (openWindowBtn) {
+      openWindowBtn.addEventListener("click", () => {
+        const displayType = document.getElementById("displayType").value;
+        const message =
+          displayType === "page"
+            ? { type: "openPage" }
+            : { type: "openWindow", windowType: displayType };
 
-      chrome.runtime.sendMessage(message);
-    });
+        chrome.runtime.sendMessage(message);
+      });
+    }
 
-    $("#show-panel").on("click", () => {
-      $("#optionPanel").toggleClass("active");
-    });
+    // jQuery削除: $("#show-panel").on("click", ...)
+    const showPanelBtn = document.getElementById("show-panel");
+    if (showPanelBtn) {
+      showPanelBtn.addEventListener("click", () => {
+        const optionPanel = document.getElementById("optionPanel");
+        if (optionPanel) {
+          optionPanel.classList.toggle("active");
+        }
+      });
+    }
 
-    $("#popup-image").on("click", () => this.closePopup());
+    // jQuery削除: $("#popup-image").on("click", ...)
+    const popupImage = document.getElementById("popup-image");
+    if (popupImage) {
+      popupImage.addEventListener("click", () => this.closePopup());
+    }
   }
 
   closePopup() {
-    $("#popup").hide();
+    // jQuery削除: $("#popup").hide()
+    const popup = document.getElementById("popup");
+    if (popup) {
+      popup.style.display = "none";
+    }
   }
 
   // ============================================
-  // 検索機能
+  // 検索機能（jQuery削除版）
   // ============================================
 
   setupSearchHandlers() {
     // カテゴリー検索
-    $("#search-cat0").on("change", (e) => {
-      const value = $(e.target).val();
-      this.updateCategoryDropdown("#search-cat1", 1, value);
-      // ドロップダウン変更時はローディングを表示しない
-      this.performSearch({ showLoading: false });
-    });
+    const searchCat0 = document.getElementById("search-cat0");
+    if (searchCat0) {
+      searchCat0.addEventListener("change", (e) => {
+        const value = e.target.value;
+        this.updateCategoryDropdown("#search-cat1", 1, value);
+        // ドロップダウン変更時はローディングを表示しない
+        this.performSearch({ showLoading: false });
+      });
+    }
 
-    $("#search-cat1").on("change", () => {
-      // ドロップダウン変更時はローディングを表示しない
-      this.performSearch({ showLoading: false });
-    });
+    const searchCat1 = document.getElementById("search-cat1");
+    if (searchCat1) {
+      searchCat1.addEventListener("change", () => {
+        // ドロップダウン変更時はローディングを表示しない
+        this.performSearch({ showLoading: false });
+      });
+    }
 
-    $("#search-cat-reset").on("click", () => {
-      this.resetCategorySearch();
-    });
+    const searchCatReset = document.getElementById("search-cat-reset");
+    if (searchCatReset) {
+      searchCatReset.addEventListener("click", () => {
+        this.resetCategorySearch();
+      });
+    }
 
     // キーワード検索
-    $("#searchButton").on("click", () => {
-      // ボタンクリック時はローディングを表示
-      this.performSearch({ showLoading: true });
-    });
-
-    $("#search").on("keypress", (e) => {
-      if (e.keyCode === 13) {
-        // Enter key
-        // Enterキー押下時はローディングを表示
+    const searchButton = document.getElementById("searchButton");
+    if (searchButton) {
+      searchButton.addEventListener("click", () => {
+        // ボタンクリック時はローディングを表示
         this.performSearch({ showLoading: true });
-      }
-    });
+      });
+    }
+
+    const searchInput = document.getElementById("search");
+    if (searchInput) {
+      searchInput.addEventListener("keypress", (e) => {
+        if (e.keyCode === 13) {
+          // Enter key
+          // Enterキー押下時はローディングを表示
+          this.performSearch({ showLoading: true });
+        }
+      });
+    }
   }
 
   async performSearch(options = {}) {
     if (AppState.ui.isSearching) return;
 
-    const keyword = $("#search").val();
-    const categories = [$("#search-cat0").val(), $("#search-cat1").val()];
+    const keyword = document.getElementById("search").value;
+    const searchCat0 = document.getElementById("search-cat0").value;
+    const searchCat1 = document.getElementById("search-cat1").value;
+    const categories = [searchCat0, searchCat1];
 
     AppState.data.searchCategory = categories;
     await saveCategory();
@@ -355,17 +444,27 @@ class PromptGeneratorApp {
       await this.listManager.createList("search", results, "#promptList", {
         isSave: false,
       });
-      $("#isSearch").html("");
+      const isSearchElement = document.getElementById("isSearch");
+      if (isSearchElement) {
+        isSearchElement.innerHTML = "";
+      }
     } else if (keyword) {
       await this.handleNoSearchResults(keyword);
     } else {
-      $("#isSearch").html("何も見つかりませんでした");
+      const isSearchElement = document.getElementById("isSearch");
+      if (isSearchElement) {
+        isSearchElement.innerHTML = "何も見つかりませんでした";
+      }
     }
   }
 
   async handleNoSearchResults(keyword) {
     SearchLogAPI(keyword);
-    $("#isSearch").html("辞書内に存在しないため翻訳中");
+
+    const isSearchElement = document.getElementById("isSearch");
+    if (isSearchElement) {
+      isSearchElement.innerHTML = "辞書内に存在しないため翻訳中";
+    }
 
     const translationPromises = [];
     const results = [];
@@ -388,7 +487,10 @@ class PromptGeneratorApp {
 
     await Promise.all(translationPromises);
 
-    $("#isSearch").html("");
+    if (isSearchElement) {
+      isSearchElement.innerHTML = "";
+    }
+
     await this.listManager.createList("search", results, "#promptList", {
       isSave: true,
     });
@@ -413,51 +515,83 @@ class PromptGeneratorApp {
   }
 
   resetCategorySearch() {
-    $("#search-cat0").val("").trigger("change");
-    $("#search-cat1").val("").prop("disabled", true);
+    const searchCat0 = document.getElementById("search-cat0");
+    const searchCat1 = document.getElementById("search-cat1");
+
+    if (searchCat0) {
+      searchCat0.value = "";
+      // changeイベントを手動で発火
+      searchCat0.dispatchEvent(new Event("change"));
+    }
+
+    if (searchCat1) {
+      searchCat1.value = "";
+      searchCat1.disabled = true;
+    }
 
     AppState.data.searchCategory = [,];
     saveCategory();
 
-    if ($("#search").val()) {
+    const searchInput = document.getElementById("search");
+    if (searchInput && searchInput.value) {
       // リセット時はローディングを表示しない
       this.performSearch({ showLoading: false });
     }
   }
 
   updateCategoryDropdown(targetId, categoryLevel, parentValue) {
-    $(targetId).empty();
+    // targetIdがセレクタ形式（#で始まる）の場合は、IDのみを抽出
+    const elementId = targetId.startsWith("#")
+      ? targetId.substring(1)
+      : targetId;
+    const selectElement = document.getElementById(elementId);
+
+    if (!selectElement) return;
+
+    // 既存のオプションをクリア
+    selectElement.innerHTML = "";
 
     const categoryItems = categoryData.data[categoryLevel].filter(
       (item) => item.parent === parentValue
     );
 
     categoryItems.forEach((item) => {
-      $(targetId).append(
-        $("<option>", {
-          value: item.value,
-          text: item.value,
-        })
-      );
+      const option = document.createElement("option");
+      option.value = item.value;
+      option.textContent = item.value;
+      selectElement.appendChild(option);
     });
 
-    $(targetId).prop("disabled", false).val("");
+    selectElement.disabled = false;
+    selectElement.value = "";
   }
 
   // ============================================
-  // 編集機能
+  // 編集機能（jQuery削除版）
   // ============================================
 
   setupEditHandlers() {
-    $('[name="UIType"]').on("change", (e) => this.handleUITypeChange(e));
-    $('[name="EditType"]').on("change", (e) => this.handleEditTypeChange(e));
+    // UIタイプ変更
+    const uiTypeRadios = document.querySelectorAll('[name="UIType"]');
+    uiTypeRadios.forEach((radio) => {
+      radio.addEventListener("change", (e) => this.handleUITypeChange(e));
+    });
+
+    // 編集タイプ変更
+    const editTypeRadios = document.querySelectorAll('[name="EditType"]');
+    editTypeRadios.forEach((radio) => {
+      radio.addEventListener("change", (e) => this.handleEditTypeChange(e));
+    });
   }
 
   handleUITypeChange(event) {
     const selectedValue = event.target.value;
     AppState.userSettings.optionData.shaping = selectedValue;
 
+    // プロンプトを再生成
+    editPrompt.generate();
     this.updatePromptDisplay();
+
     this.initializeEditMode();
     saveOptionData();
   }
@@ -467,11 +601,17 @@ class PromptGeneratorApp {
     AppState.userSettings.optionData.editType = selectedValue;
 
     saveOptionData();
+
+    // プロンプトを再生成して記法を更新
+    editPrompt.generate();
+    this.updatePromptDisplay();
+
     this.initializeEditMode();
   }
 
   initializeEditMode() {
-    const currentPrompt = this.generateInput.val();
+    const generatePrompt = document.getElementById("generatePrompt");
+    const currentPrompt = generatePrompt ? generatePrompt.value : "";
 
     if (currentPrompt && currentPrompt !== promptEditor.prompt) {
       console.log("Initializing edit mode with:", currentPrompt);
@@ -533,17 +673,39 @@ class PromptGeneratorApp {
   }
 
   // ============================================
-  // 辞書機能
+  // 辞書機能（jQuery削除版）
   // ============================================
 
   setupDictionaryHandlers() {
     // 辞書の開閉
-    $("#promptDicText").on("click", () => this.toggleDictionary("prompt"));
-    $("#elementDicText").on("click", () => this.toggleDictionary("element"));
-    $("#masterDicText").on("click", () => this.toggleDictionary("master"));
+    const promptDicText = document.getElementById("promptDicText");
+    if (promptDicText) {
+      promptDicText.addEventListener("click", () =>
+        this.toggleDictionary("prompt")
+      );
+    }
+
+    const elementDicText = document.getElementById("elementDicText");
+    if (elementDicText) {
+      elementDicText.addEventListener("click", () =>
+        this.toggleDictionary("element")
+      );
+    }
+
+    const masterDicText = document.getElementById("masterDicText");
+    if (masterDicText) {
+      masterDicText.addEventListener("click", () =>
+        this.toggleDictionary("master")
+      );
+    }
 
     // 要素の追加
-    $("#resist").on("click", () => this.handleElementRegistration());
+    const resistButton = document.getElementById("resist");
+    if (resistButton) {
+      resistButton.addEventListener("click", () =>
+        this.handleElementRegistration()
+      );
+    }
 
     // カテゴリー連動
     this.setupCategoryInputs();
@@ -619,11 +781,16 @@ class PromptGeneratorApp {
   }
 
   async handleElementRegistration() {
+    const bigInput = document.getElementById("big");
+    const middleInput = document.getElementById("middle");
+    const smallInput = document.getElementById("small");
+    const promptInput = document.getElementById("prompt");
+
     const data = {
-      big: $("#big").val(),
-      middle: $("#middle").val(),
-      small: $("#small").val(),
-      prompt: $("#prompt").val(),
+      big: bigInput ? bigInput.value : "",
+      middle: middleInput ? middleInput.value : "",
+      small: smallInput ? smallInput.value : "",
+      prompt: promptInput ? promptInput.value : "",
     };
 
     // バリデーション
@@ -643,7 +810,10 @@ class PromptGeneratorApp {
     const success = Regist(data.big, data.middle, data.small, data.prompt);
     if (success) {
       // 入力フィールドをクリア
-      $("#big, #middle, #small, #prompt").val("");
+      if (bigInput) bigInput.value = "";
+      if (middleInput) middleInput.value = "";
+      if (smallInput) smallInput.value = "";
+      if (promptInput) promptInput.value = "";
       this.refreshAddList();
     }
   }
@@ -686,20 +856,27 @@ class PromptGeneratorApp {
   }
 
   setupCategoryInputs() {
-    const $big = $("#big");
-    const $middle = $("#middle");
+    const bigInput = document.getElementById("big");
+    const middleInput = document.getElementById("middle");
+    const smallInput = document.getElementById("small");
 
-    $big.attr("list", "category");
-    $big.on("change", function () {
-      $middle.attr("list", "category" + $(this).val());
-    });
+    if (bigInput && middleInput) {
+      // 大項目と中項目のみ連動
+      EventHandlers.setupCategoryChain([bigInput, middleInput]);
 
-    EventHandlers.addInputClearBehavior($big);
-    EventHandlers.addInputClearBehavior($middle);
+      // クリア動作を追加
+      EventHandlers.addInputClearBehavior(bigInput);
+      EventHandlers.addInputClearBehavior(middleInput);
+
+      // 小項目は単純な入力フィールドとして扱う
+      if (smallInput) {
+        EventHandlers.addInputClearBehavior(smallInput);
+      }
+    }
   }
 
   // ============================================
-  // プロンプト入力
+  // プロンプト入力（jQuery削除版）
   // ============================================
 
   setupPromptInputHandlers() {
@@ -709,7 +886,7 @@ class PromptGeneratorApp {
     const handlePromptChange = () => {
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(() => {
-        const value = this.generateInput.val();
+        const value = this.generateInput.val(); // これはまだjQueryオブジェクト
         console.log("Prompt changed:", value);
 
         editPrompt.init(value);
@@ -721,66 +898,117 @@ class PromptGeneratorApp {
       }, 100); // 100ms のデバウンス
     };
 
-    // inputイベントのみ使用（changeイベントは削除）
-    this.generateInput.on("input", handlePromptChange);
+    // this.generateInputはjQueryオブジェクトなので、ネイティブ要素を取得
+    const promptInput = document.getElementById("generatePrompt");
+    if (promptInput) {
+      promptInput.addEventListener("input", handlePromptChange);
+    }
   }
 
   updatePromptDisplay() {
     const newPrompt = editPrompt.prompt;
-    const currentValue = this.generateInput.val();
+    const generatePrompt = document.getElementById("generatePrompt");
 
-    // 値が変わった場合のみ更新
-    if (newPrompt !== currentValue) {
-      this.generateInput.val(newPrompt);
-      savePrompt();
+    if (generatePrompt) {
+      const currentValue = generatePrompt.value;
+
+      // 値が変わった場合のみ更新
+      if (newPrompt !== currentValue) {
+        generatePrompt.value = newPrompt;
+        savePrompt();
+      }
     }
   }
 
   // ============================================
-  // ボタン操作
+  // ボタン操作（jQuery削除版）
   // ============================================
 
   setupButtonHandlers() {
     // プロンプト操作
-    $("#copyButton").on("click", () => this.copyPrompt());
-    $("#clearButton").on("click", () => this.clearPrompt());
-    $("#saveButton").on("click", () => this.archivePrompt());
+    const copyButton = document.getElementById("copyButton");
+    if (copyButton) {
+      copyButton.addEventListener("click", () => this.copyPrompt());
+    }
+
+    const clearButton = document.getElementById("clearButton");
+    if (clearButton) {
+      clearButton.addEventListener("click", () => this.clearPrompt());
+    }
+
+    const saveButton = document.getElementById("saveButton");
+    if (saveButton) {
+      saveButton.addEventListener("click", () => this.archivePrompt());
+    }
 
     // Generate ボタン
-    $("#GeneratoButton").on("click", () => this.generatePrompt());
+    const generateButton = document.getElementById("GeneratoButton");
+    if (generateButton) {
+      generateButton.addEventListener("click", () => this.generatePrompt());
+    }
 
     // プレビューコピー
-    $("#preview-positive-copy").on("click", () => {
-      navigator.clipboard.writeText($("#preview-prompt").val());
-    });
+    const previewPositiveCopy = document.getElementById(
+      "preview-positive-copy"
+    );
+    if (previewPositiveCopy) {
+      previewPositiveCopy.addEventListener("click", () => {
+        const previewPrompt = document.getElementById("preview-prompt");
+        if (previewPrompt) {
+          navigator.clipboard.writeText(previewPrompt.value);
+        }
+      });
+    }
 
-    $("#preview-negative-copy").on("click", () => {
-      navigator.clipboard.writeText($("#negative-prompt").val());
-    });
+    const previewNegativeCopy = document.getElementById(
+      "preview-negative-copy"
+    );
+    if (previewNegativeCopy) {
+      previewNegativeCopy.addEventListener("click", () => {
+        const negativePrompt = document.getElementById("negative-prompt");
+        if (negativePrompt) {
+          navigator.clipboard.writeText(negativePrompt.value);
+        }
+      });
+    }
 
     // ダウンロード
-    $("#localDicDownload").on("click", () => {
-      jsonDownload(AppState.data.localPromptList, "Elements");
-    });
+    const localDicDownload = document.getElementById("localDicDownload");
+    if (localDicDownload) {
+      localDicDownload.addEventListener("click", () => {
+        jsonDownload(AppState.data.localPromptList, "Elements");
+      });
+    }
 
-    $("#PromptDownload").on("click", () => {
-      jsonDownload(AppState.data.archivesList, "Prompts");
-    });
+    const promptDownload = document.getElementById("PromptDownload");
+    if (promptDownload) {
+      promptDownload.addEventListener("click", () => {
+        jsonDownload(AppState.data.archivesList, "Prompts");
+      });
+    }
 
-    $("#MasterDownload").on("click", () => {
-      jsonDownload(AppState.data.masterPrompts, "Elements");
-    });
+    const masterDownload = document.getElementById("MasterDownload");
+    if (masterDownload) {
+      masterDownload.addEventListener("click", () => {
+        jsonDownload(AppState.data.masterPrompts, "Elements");
+      });
+    }
 
     // リセット
-    $("#resetButton").on("click", () => {
-      if (
-        confirm("すべてのデータをリセットしますか？この操作は取り消せません。")
-      ) {
-        chrome.storage.local.clear(() => {
-          location.reload();
-        });
-      }
-    });
+    const resetButton = document.getElementById("resetButton");
+    if (resetButton) {
+      resetButton.addEventListener("click", () => {
+        if (
+          confirm(
+            "すべてのデータをリセットしますか？この操作は取り消せません。"
+          )
+        ) {
+          chrome.storage.local.clear(() => {
+            location.reload();
+          });
+        }
+      });
+    }
   }
 
   copyPrompt() {
@@ -795,12 +1023,17 @@ class PromptGeneratorApp {
 
   clearPrompt() {
     editPrompt.prompt = "";
-    this.generateInput.val("");
+    const generatePrompt = document.getElementById("generatePrompt");
+    if (generatePrompt) {
+      generatePrompt.value = "";
+    }
     savePrompt();
   }
 
   async archivePrompt() {
-    const prompt = this.generateInput.val();
+    const generatePrompt = document.getElementById("generatePrompt");
+    const prompt = generatePrompt ? generatePrompt.value : "";
+
     if (!prompt) {
       ErrorHandler.notify("プロンプトが入力されていません");
       return;
@@ -819,80 +1052,120 @@ class PromptGeneratorApp {
     await saveArchivesList();
 
     // リストが開いている場合は更新
-    if ($("#archiveList").children().length > 0) {
+    const archiveList = document.getElementById("archiveList");
+    if (archiveList && archiveList.children.length > 0) {
       await this.listManager.createList(
         "archive",
         AppState.data.archivesList,
         "#archiveList"
       );
     }
+
+    // 明示的にバックグラウンドに通知（念のため）
+    setTimeout(() => {
+      chrome.runtime.sendMessage({ type: "UpdatePromptList" }, (response) => {
+        if (chrome.runtime.lastError) {
+          console.error(
+            "Failed to notify background:",
+            chrome.runtime.lastError
+          );
+        } else {
+          console.log("Background notified of archive update");
+        }
+      });
+    }, 200); // ストレージ書き込みが確実に完了するよう遅延
+
+    // 成功通知
+    ErrorHandler.notify("プロンプトを辞書に追加しました", {
+      type: ErrorHandler.NotificationType.TOAST,
+      duration: 1500,
+      messageType: "success",
+    });
   }
 
   generatePrompt() {
-    sendBackground(
-      "DOM",
-      "Generate",
-      this.generateInput.val(),
-      PositivePromptTextSelector,
-      GenerateButtonSelector
-    );
+    const generatePrompt = document.getElementById("generatePrompt");
+    if (generatePrompt) {
+      sendBackground(
+        "DOM",
+        "Generate",
+        generatePrompt.value,
+        PositivePromptTextSelector,
+        GenerateButtonSelector
+      );
+    }
   }
 
   // ============================================
-  // オプション設定
+  // オプション設定（jQuery削除版）
   // ============================================
 
   setupOptionHandlers() {
-    $("#isDeleteCheck").on("change", (e) => {
-      AppState.userSettings.optionData.isDeleteCheck = $(e.target).prop(
-        "checked"
-      );
-      saveOptionData();
-    });
+    // jQuery削除: $("#isDeleteCheck").on("change", ...)
+    const isDeleteCheck = document.getElementById("isDeleteCheck");
+    if (isDeleteCheck) {
+      isDeleteCheck.addEventListener("change", (e) => {
+        AppState.userSettings.optionData.isDeleteCheck = e.target.checked;
+        saveOptionData();
+      });
+    }
 
-    $("#DeeplAuth").on("change", (e) => {
-      const apiKey = $(e.target).val();
-      const validation = Validators.validateApiKey(apiKey, "DeepL");
+    // jQuery削除: $("#DeeplAuth").on("change", ...)
+    const deeplAuth = document.getElementById("DeeplAuth");
+    if (deeplAuth) {
+      deeplAuth.addEventListener("change", (e) => {
+        const apiKey = e.target.value;
+        const validation = Validators.validateApiKey(apiKey, "DeepL");
 
-      if (!validation.isValid) {
-        ErrorHandler.showInlineError("#DeeplAuth", validation.message);
-        return;
-      }
+        if (!validation.isValid) {
+          ErrorHandler.showInlineError("#DeeplAuth", validation.message);
+          return;
+        }
 
-      AppState.userSettings.optionData.deeplAuthKey = apiKey;
-      saveOptionData();
-    });
+        AppState.userSettings.optionData.deeplAuthKey = apiKey;
+        saveOptionData();
+      });
+    }
   }
 
   // ============================================
-  // ドラッグ&ドロップ
+  // ドラッグ&ドロップ（jQuery削除版）
   // ============================================
 
   setupDragDrop() {
-    const $dropZone = $("#inclued");
+    const dropZone = document.getElementById("inclued");
+    if (!dropZone) return;
 
-    $dropZone.on("dragover", (e) => this.handleDragOver(e));
-    $dropZone.on("drop", (e) => this.handleFileDrop(e));
+    dropZone.addEventListener("dragover", (e) => this.handleDragOver(e));
+    dropZone.addEventListener("drop", (e) => this.handleFileDrop(e));
 
-    $dropZone.on("click", () => {
-      const $input = $('<input type="file" style="display:none;">');
-      $("body").append($input);
-      $input.on("change", (e) => this.handleFileSelect(e));
-      $input.click();
+    dropZone.addEventListener("click", () => {
+      const input = document.createElement("input");
+      input.type = "file";
+      input.style.display = "none";
+
+      document.body.appendChild(input);
+
+      input.addEventListener("change", (e) => {
+        this.handleFileSelect(e);
+        document.body.removeChild(input);
+      });
+
+      input.click();
     });
   }
 
   handleDragOver(event) {
     event.preventDefault();
     event.stopPropagation();
-    event.originalEvent.dataTransfer.dropEffect = "copy";
+    event.dataTransfer.dropEffect = "copy";
   }
 
   handleFileDrop(event) {
     event.preventDefault();
     event.stopPropagation();
 
-    const file = event.originalEvent.dataTransfer.files[0];
+    const file = event.dataTransfer.files[0];
     if (file) {
       this.fileHandler.handleFile(file);
     }
@@ -903,7 +1176,6 @@ class PromptGeneratorApp {
     if (file) {
       this.fileHandler.handleFile(file);
     }
-    $(event.target).remove();
   }
 
   // ============================================
@@ -936,21 +1208,27 @@ class PromptGeneratorApp {
   }
 
   // ============================================
-  // UI状態の更新
+  // UI状態の更新（jQuery削除版）
   // ============================================
 
   updateUIState() {
     // 検索カテゴリーの復元
     if (AppState.data.searchCategory?.[0]) {
-      $("#search-cat0").val(AppState.data.searchCategory[0]);
-      this.updateCategoryDropdown(
-        "#search-cat1",
-        1,
-        AppState.data.searchCategory[0]
-      );
+      const searchCat0 = document.getElementById("search-cat0");
+      if (searchCat0) {
+        searchCat0.value = AppState.data.searchCategory[0];
+        this.updateCategoryDropdown(
+          "#search-cat1",
+          1,
+          AppState.data.searchCategory[0]
+        );
 
-      if (AppState.data.searchCategory[1]) {
-        $("#search-cat1").val(AppState.data.searchCategory[1]);
+        if (AppState.data.searchCategory[1]) {
+          const searchCat1 = document.getElementById("search-cat1");
+          if (searchCat1) {
+            searchCat1.value = AppState.data.searchCategory[1];
+          }
+        }
       }
     }
 
@@ -960,7 +1238,10 @@ class PromptGeneratorApp {
       PositivePromptTextSelector &&
       GenerateButtonSelector
     ) {
-      $("#GeneratoButton").show();
+      const generateButton = document.getElementById("GeneratoButton");
+      if (generateButton) {
+        generateButton.style.display = "block";
+      }
     }
   }
 }
@@ -1259,9 +1540,6 @@ class PromptListManager {
     $li.append(buttons.load, buttons.copy, buttons.delete);
   }
 
-  // PromptListManager クラスに追加するメソッド
-  // createEditDropdownItem メソッドの前に追加してください
-
   async createEditItem($li, item, index, options = {}) {
     const shaping = AppState.userSettings.optionData.shaping;
     const weight = item[shaping].weight;
@@ -1300,26 +1578,32 @@ class PromptListManager {
     // 重み調整ボタン
     const weightDelta = shaping === "SD" ? 0.1 : shaping === "NAI" ? 1 : 0;
     if (weightDelta > 0) {
-      const buttons = UIFactory.createButtonSet({
-        includeWeight: true,
-        weightDelta: weightDelta,
-        index: index,
-      });
-
-      // ボタンのクリックハンドラーを上書き
-      buttons.weightPlus.onclick = () => {
+      // UIFactoryを使わずに直接ボタンを作成
+      const weightPlusBtn = document.createElement("button");
+      weightPlusBtn.textContent = "+";
+      weightPlusBtn.type = "submit";
+      weightPlusBtn.addEventListener("click", () => {
         editPrompt.addWeight(weightDelta, index);
         window.app.updatePromptDisplay();
-        window.app.refreshEditList();
-      };
 
-      buttons.weightMinus.onclick = () => {
+        // 重み入力フィールドの値を更新
+        const newWeight = editPrompt.elements[index][shaping].weight;
+        $weightInput.val(newWeight);
+      });
+
+      const weightMinusBtn = document.createElement("button");
+      weightMinusBtn.textContent = "-";
+      weightMinusBtn.type = "submit";
+      weightMinusBtn.addEventListener("click", () => {
         editPrompt.addWeight(-weightDelta, index);
         window.app.updatePromptDisplay();
-        window.app.refreshEditList();
-      };
 
-      $li.append(buttons.weightPlus, buttons.weightMinus);
+        // 重み入力フィールドの値を更新
+        const newWeight = editPrompt.elements[index][shaping].weight;
+        $weightInput.val(newWeight);
+      });
+
+      $li.append(weightPlusBtn, weightMinusBtn);
     }
 
     // 削除ボタン
@@ -1413,32 +1697,38 @@ class PromptListManager {
     // 重み調整ボタン
     const weightDelta = shaping === "SD" ? 0.1 : shaping === "NAI" ? 1 : 0;
     if (weightDelta > 0) {
-      const buttons = UIFactory.createButtonSet({
-        includeWeight: true,
-        weightDelta: weightDelta,
-        index: 0, // ダミー値
-      });
-
-      // ボタンのonClickを上書き
-      buttons.weightPlus.onclick = () => {
+      // UIFactoryを使わずに直接ボタンを作成
+      const weightPlusBtn = document.createElement("button");
+      weightPlusBtn.textContent = "+";
+      weightPlusBtn.type = "submit";
+      weightPlusBtn.addEventListener("click", () => {
         const realIndex = findRealIndex();
         if (realIndex !== -1) {
           editPrompt.addWeight(weightDelta, realIndex);
           window.app.updatePromptDisplay();
-          window.app.refreshEditList();
-        }
-      };
 
-      buttons.weightMinus.onclick = () => {
+          // 重み入力フィールドの値を更新
+          const newWeight = editPrompt.elements[realIndex][shaping].weight;
+          $weightInput.val(newWeight);
+        }
+      });
+
+      const weightMinusBtn = document.createElement("button");
+      weightMinusBtn.textContent = "-";
+      weightMinusBtn.type = "submit";
+      weightMinusBtn.addEventListener("click", () => {
         const realIndex = findRealIndex();
         if (realIndex !== -1) {
           editPrompt.addWeight(-weightDelta, realIndex);
           window.app.updatePromptDisplay();
-          window.app.refreshEditList();
-        }
-      };
 
-      $li.append(buttons.weightPlus, buttons.weightMinus);
+          // 重み入力フィールドの値を更新
+          const newWeight = editPrompt.elements[realIndex][shaping].weight;
+          $weightInput.val(newWeight);
+        }
+      });
+
+      $li.append(weightPlusBtn, weightMinusBtn);
     }
 
     // 削除ボタン
@@ -1463,7 +1753,7 @@ class PromptListManager {
       // 翻訳処理をキューに追加
       this.queueTranslation(prompt, categoryInputs);
     } else {
-      // マスターとローカル両方から検索（修正ポイント）
+      // マスターとローカル両方から検索（修正済み）
       const masterElement = AppState.data.masterPrompts.find(
         (e) => e.prompt === prompt
       );
@@ -1474,123 +1764,6 @@ class PromptListManager {
       // ローカルを優先
       const element = localElement || masterElement;
 
-      if (element?.url) {
-        $li.append(UIFactory.createPreviewButton(element));
-      }
-    }
-
-    // カテゴリー連動設定
-    this.setupCategoryDropdownChain(
-      categoryInputs,
-      $valueInput,
-      $weightInput,
-      index
-    );
-
-    $li.append(UIFactory.createDragIcon(index));
-  }
-
-  async createEditDropdownItem($li, item, index, options = {}) {
-    const shaping = AppState.userSettings.optionData.shaping;
-    const weight = item[shaping].weight;
-    const prompt = item.Value.toLowerCase().trim();
-
-    // カテゴリー検索
-    let category = null;
-    const findCategory = (dataList) => {
-      return (
-        dataList.find((dicData) => dicData.prompt === prompt)?.data || null
-      );
-    };
-
-    category =
-      findCategory(AppState.data.masterPrompts) ||
-      findCategory(AppState.data.localPromptList);
-
-    // カテゴリー入力フィールド
-    const categoryInputs = [];
-    for (let i = 0; i < 3; i++) {
-      const $input = UIFactory.createInput({
-        value: category ? category[i] : "翻訳中",
-        readonly: false,
-      });
-
-      if (!category) {
-        $input.prop("disabled", true);
-      } else {
-        EventHandlers.addInputClearBehavior($input);
-      }
-
-      categoryInputs.push($input);
-      $li.append($input);
-    }
-
-    // プロンプト入力
-    const $valueInput = UIFactory.createInput({
-      value: prompt,
-      index: index,
-      onInput: (value) => {
-        editPrompt.editingValue(value, index);
-        $weightInput.val(editPrompt.elements[index][shaping].weight);
-        window.app.updatePromptDisplay();
-      },
-    });
-
-    // 重み入力
-    const $weightInput = UIFactory.createInput({
-      value: weight,
-      index: index,
-      onInput: (value) => {
-        const cleanWeight = value.replace(/[^-0-9.]/g, "");
-        editPrompt.editingWeight(cleanWeight, index);
-        window.app.updatePromptDisplay();
-      },
-    });
-
-    $li.append($valueInput);
-    if (weight !== null && weight !== undefined) {
-      $li.append($weightInput);
-    }
-
-    // 重み調整ボタン
-    const weightDelta = shaping === "SD" ? 0.1 : shaping === "NAI" ? 1 : 0;
-    if (weightDelta > 0) {
-      // 元の配列での実際のインデックスを見つける
-      const realIndex = editPrompt.elements.findIndex((el) => el === item);
-
-      const buttons = UIFactory.createButtonSet({
-        includeWeight: true,
-        weightDelta: weightDelta,
-        index: realIndex, // 表示順のindexではなく、実際のインデックスを使用
-      });
-      $li.append(buttons.weightPlus, buttons.weightMinus);
-    }
-
-    // 削除ボタン
-    const realIndex = editPrompt.elements.findIndex((el) => el === item);
-    // 削除ボタン
-    const deleteButton = UIFactory.createButtonSet({
-      includeDelete: true,
-      onDelete: () => {
-        editPrompt.removeElement(index);
-        window.app.updatePromptDisplay();
-        window.app.refreshEditList();
-      },
-    });
-
-    $li.append(deleteButton.delete); // この行を追加
-
-    // 追加ボタンまたはプレビューボタン
-    if (!category) {
-      const $registButton = this.createRegistButton(categoryInputs, prompt);
-      $li.append($registButton);
-
-      // 翻訳処理をキューに追加
-      this.queueTranslation(prompt, categoryInputs);
-    } else {
-      const element = AppState.data.masterPrompts.find(
-        (e) => e.prompt === prompt
-      );
       if (element?.url) {
         $li.append(UIFactory.createPreviewButton(element));
       }
@@ -1658,7 +1831,7 @@ class PromptListManager {
     categoryInputs[2].on("change", function () {
       const inputValue = $(this).val();
 
-      // マスターとローカル両方から検索（修正ポイント）
+      // マスターとローカル両方から検索（修正済み）
       const masterPrompt = AppState.data.masterPrompts.find(
         (p) => p.data[2] === inputValue
       );
@@ -2230,19 +2403,37 @@ function Generate() {
 }
 
 // ============================================
-// アプリケーション初期化
+// アプリケーション初期化（jQuery削除版）
 // ============================================
-$(document).ready(async () => {
-  try {
-    // グローバルアプリケーションインスタンス
-    window.app = new PromptGeneratorApp();
-    await window.app.init();
 
-    console.log("Prompt Generator initialized successfully");
-  } catch (error) {
-    console.error("Failed to initialize application:", error);
-    alert(
-      "アプリケーションの初期化に失敗しました。ページを再読み込みしてください。"
-    );
-  }
-});
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      // グローバルアプリケーションインスタンス
+      window.app = new PromptGeneratorApp();
+      await window.app.init();
+
+      console.log("Prompt Generator initialized successfully");
+    } catch (error) {
+      console.error("Failed to initialize application:", error);
+      alert(
+        "アプリケーションの初期化に失敗しました。ページを再読み込みしてください。"
+      );
+    }
+  });
+} else {
+  // 既にDOMが読み込まれている場合
+  (async () => {
+    try {
+      window.app = new PromptGeneratorApp();
+      await window.app.init();
+
+      console.log("Prompt Generator initialized successfully");
+    } catch (error) {
+      console.error("Failed to initialize application:", error);
+      alert(
+        "アプリケーションの初期化に失敗しました。ページを再読み込みしてください。"
+      );
+    }
+  })();
+}
