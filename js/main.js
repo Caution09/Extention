@@ -97,6 +97,16 @@ class PromptGeneratorApp {
       // ショートカットキーの初期化
       this.shortcutManager.setupEventListeners();
 
+      setTimeout(() => {
+        if (
+          window.autoGenerateHandler &&
+          AppState.userSettings.optionData?.shaping === "NAI"
+        ) {
+          console.log("Initializing Auto Generate feature...");
+          autoGenerateHandler.init();
+        }
+      }, 1000);
+
       this.initialized = true;
       console.log("Application initialized successfully");
     } catch (error) {
@@ -108,7 +118,6 @@ class PromptGeneratorApp {
       ErrorHandler.notify(
         "アプリケーションの初期化に失敗しました。ページを再読み込みしてください。"
       );
-      // エラーを再スローして呼び出し元でキャッチできるようにする
       throw error;
     }
   }

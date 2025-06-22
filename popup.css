@@ -271,3 +271,69 @@ button {
     width: 80px;
   }
 }
+
+#autoGenerateContainer {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
+
+#generateProgress {
+  font-size: 12px;
+  color: #666;
+}
+
+#stopGenerate {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#stopGenerate:hover {
+  background: #d32f2f;
+}
+
+/* 自動Generate機能のスタイル */
+#autoGenerateContainer {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
+
+#generateProgress {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+#generateStatus {
+  font-size: 11px;
+  color: #888;
+}
+
+#stopGenerate {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#stopGenerate:hover {
+  background: #d32f2f;
+}
+
+#generateCount {
+  width: 50px;
+  padding: 2px 5px;
+}

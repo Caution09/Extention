@@ -145,7 +145,8 @@
           <p id="notice"></p>
           <div id="inclued" class="drop-area">
             <p id="incluedText">
-              辞書か画像を読みこむ (クリックして選択かドラッグドロップ)
+              辞書（JSON）、画像（PNG）、CSVファイルを読み込む
+              (クリックして選択かドラッグドロップ)
             </p>
           </div>
           <img id="preview" />
@@ -249,6 +250,8 @@
     <!-- 外部ライブラリ -->
     <script src="lib/jquery-3.5.1.js"></script>
     <script src="lib/jquery-ui.js"></script>
+    <script src="lib/papaparse.js"></script>
+    <script src="lib/papaparse.min.js"></script>
 
     <!-- リソース -->
     <script src="assets/master/default-master.js"></script>
@@ -273,7 +276,8 @@
     <script src="js/modules/global-utilities.js"></script>
     <script src="js/modules/shortcut-manager.js"></script>
     <script src="js/modules/content-script.js"></script>
-    <!-- 追加 -->
+    <script src="js/modules/csv-handler.js"></script>
+    <script src="js/modules/auto-generate-handler.js"></script>
 
     <!-- メインスクリプト -->
     <script src="js/main.js"></script>

@@ -25,6 +25,15 @@ class EditHandler {
 
     this.initializeEditMode();
     saveOptionData();
+
+    // 自動Generate機能の再初期化（追加）
+    if (
+      selectedValue === "NAI" &&
+      PositivePromptTextSelector &&
+      GenerateButtonSelector
+    ) {
+      autoGenerateHandler.init();
+    }
   }
 
   /**
