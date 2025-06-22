@@ -62,6 +62,8 @@ class PromptGeneratorApp {
     // Phase 5: 外部モジュールのインスタンス化
     this.listManager = new PromptListManager();
     this.fileHandler = new FileHandler();
+    this.searchHandler = new SearchHandler(this);
+    this.editHandler = new EditHandler(this);
 
     this.initialized = false;
     this.lastFocusedInput = null; // 最後にフォーカスされた入力フィールドを記憶
@@ -298,7 +300,7 @@ class PromptGeneratorApp {
       tabIndex === CONSTANTS.TABS.EDIT &&
       previousTab !== CONSTANTS.TABS.EDIT
     ) {
-      this.initializeEditMode();
+      this.editHandler.initializeEditMode();
     }
 
     // ポップアップを閉じる
@@ -351,7 +353,7 @@ class PromptGeneratorApp {
   }
 
   // ============================================
-  // 検索機能（jQuery削除版）
+  // 検索機能（SearchHandlerに委譲）
   // ============================================
 
   setupSearchHandlers() {
@@ -360,9 +362,9 @@ class PromptGeneratorApp {
     if (searchCat0) {
       searchCat0.addEventListener("change", (e) => {
         const value = e.target.value;
-        this.updateCategoryDropdown("#search-cat1", 1, value);
+        this.searchHandler.updateCategoryDropdown("#search-cat1", 1, value);
         // ドロップダウン変更時はローディングを表示しない
-        this.performSearch({ showLoading: false });
+        this.searchHandler.performSearch({ showLoading: false });
       });
     }
 
@@ -370,14 +372,14 @@ class PromptGeneratorApp {
     if (searchCat1) {
       searchCat1.addEventListener("change", () => {
         // ドロップダウン変更時はローディングを表示しない
-        this.performSearch({ showLoading: false });
+        this.searchHandler.performSearch({ showLoading: false });
       });
     }
 
     const searchCatReset = document.getElementById("search-cat-reset");
     if (searchCatReset) {
       searchCatReset.addEventListener("click", () => {
-        this.resetCategorySearch();
+        this.searchHandler.resetCategorySearch();
       });
     }
 
@@ -386,7 +388,7 @@ class PromptGeneratorApp {
     if (searchButton) {
       searchButton.addEventListener("click", () => {
         // ボタンクリック時はローディングを表示
-        this.performSearch({ showLoading: true });
+        this.searchHandler.performSearch({ showLoading: true });
       });
     }
 
@@ -396,282 +398,37 @@ class PromptGeneratorApp {
         if (e.keyCode === 13) {
           // Enter key
           // Enterキー押下時はローディングを表示
-          this.performSearch({ showLoading: true });
+          this.searchHandler.performSearch({ showLoading: true });
         }
       });
     }
   }
 
-  async performSearch(options = {}) {
-    if (AppState.ui.isSearching) return;
-
-    const keyword = document.getElementById("search").value;
-    const searchCat0 = document.getElementById("search-cat0").value;
-    const searchCat1 = document.getElementById("search-cat1").value;
-    const categories = [searchCat0, searchCat1];
-
-    AppState.data.searchCategory = categories;
-    await saveCategory();
-
-    // ローディング表示の制御（翻訳が必要な場合のみ表示）
-    const needsTranslation =
-      keyword && Search(keyword, categories).length === 0;
-    const showLoading = options.showLoading !== false && needsTranslation;
-
-    if (showLoading) {
-      // ローディングが必要な場合のみErrorHandler.handleAsyncを使用
-      await ErrorHandler.handleAsync(
-        async () => {
-          AppState.ui.isSearching = true;
-          await this.doSearch(keyword, categories);
-          AppState.ui.isSearching = false;
-        },
-        "検索処理",
-        { showLoading: true }
-      );
-    } else {
-      // ローディング不要な場合は直接実行
-      AppState.ui.isSearching = true;
-      await this.doSearch(keyword, categories);
-      AppState.ui.isSearching = false;
-    }
-  }
-
-  async doSearch(keyword, categories) {
-    ListBuilder.clearList("#promptList");
-
-    const results = Search(keyword, categories);
-
-    if (results.length > 0) {
-      await this.listManager.createList("search", results, "#promptList", {
-        isSave: false,
-      });
-      const isSearchElement = document.getElementById("isSearch");
-      if (isSearchElement) {
-        isSearchElement.innerHTML = "";
-      }
-    } else if (keyword) {
-      await this.handleNoSearchResults(keyword);
-    } else {
-      const isSearchElement = document.getElementById("isSearch");
-      if (isSearchElement) {
-        isSearchElement.innerHTML = "何も見つかりませんでした";
-      }
-    }
-  }
-
-  async handleNoSearchResults(keyword) {
-    SearchLogAPI(keyword);
-
-    const isSearchElement = document.getElementById("isSearch");
-    if (isSearchElement) {
-      isSearchElement.innerHTML = "辞書内に存在しないため翻訳中";
-    }
-
-    const translationPromises = [];
-    const results = [];
-
-    // Google翻訳
-    translationPromises.push(
-      this.translateWithService(keyword, "Google", translateGoogle).then(
-        (data) => results.push(data)
-      )
-    );
-
-    // DeepL翻訳（APIキーがある場合）
-    if (AppState.userSettings.optionData?.deeplAuthKey) {
-      translationPromises.push(
-        this.translateWithService(keyword, "DeepL", translateDeepl).then(
-          (data) => results.push(data)
-        )
-      );
-    }
-
-    await Promise.all(translationPromises);
-
-    if (isSearchElement) {
-      isSearchElement.innerHTML = "";
-    }
-
-    await this.listManager.createList("search", results, "#promptList", {
-      isSave: true,
-    });
-  }
-
-  async translateWithService(keyword, serviceName, translateFunc) {
-    return new Promise((resolve) => {
-      translateFunc(keyword, (translatedText) => {
-        const isAlphanumeric = /^[a-zA-Z0-9\s:]+$/.test(keyword);
-        const data = isAlphanumeric
-          ? {
-              prompt: keyword,
-              data: { 0: "", 1: `${serviceName}翻訳`, 2: translatedText },
-            }
-          : {
-              prompt: translatedText,
-              data: { 0: "", 1: `${serviceName}翻訳`, 2: keyword },
-            };
-        resolve(data);
-      });
-    });
-  }
-
-  resetCategorySearch() {
-    const searchCat0 = document.getElementById("search-cat0");
-    const searchCat1 = document.getElementById("search-cat1");
-
-    if (searchCat0) {
-      searchCat0.value = "";
-      // changeイベントを手動で発火
-      searchCat0.dispatchEvent(new Event("change"));
-    }
-
-    if (searchCat1) {
-      searchCat1.value = "";
-      searchCat1.disabled = true;
-    }
-
-    AppState.data.searchCategory = [,];
-    saveCategory();
-
-    const searchInput = document.getElementById("search");
-    if (searchInput && searchInput.value) {
-      // リセット時はローディングを表示しない
-      this.performSearch({ showLoading: false });
-    }
-  }
-
-  updateCategoryDropdown(targetId, categoryLevel, parentValue) {
-    // targetIdがセレクタ形式（#で始まる）の場合は、IDのみを抽出
-    const elementId = targetId.startsWith("#")
-      ? targetId.substring(1)
-      : targetId;
-    const selectElement = document.getElementById(elementId);
-
-    if (!selectElement) return;
-
-    // 既存のオプションをクリア
-    selectElement.innerHTML = "";
-
-    const categoryItems = categoryData.data[categoryLevel].filter(
-      (item) => item.parent === parentValue
-    );
-
-    categoryItems.forEach((item) => {
-      const option = document.createElement("option");
-      option.value = item.value;
-      option.textContent = item.value;
-      selectElement.appendChild(option);
-    });
-
-    selectElement.disabled = false;
-    selectElement.value = "";
-  }
-
   // ============================================
-  // 編集機能（jQuery削除版）
+  // 編集機能（EditHandlerに委譲）
   // ============================================
 
   setupEditHandlers() {
     // UIタイプ変更
     const uiTypeRadios = document.querySelectorAll('[name="UIType"]');
     uiTypeRadios.forEach((radio) => {
-      radio.addEventListener("change", (e) => this.handleUITypeChange(e));
+      radio.addEventListener("change", (e) =>
+        this.editHandler.handleUITypeChange(e)
+      );
     });
 
     // 編集タイプ変更
     const editTypeRadios = document.querySelectorAll('[name="EditType"]');
     editTypeRadios.forEach((radio) => {
-      radio.addEventListener("change", (e) => this.handleEditTypeChange(e));
-    });
-  }
-
-  handleUITypeChange(event) {
-    const selectedValue = event.target.value;
-    AppState.userSettings.optionData.shaping = selectedValue;
-
-    // プロンプトを再生成
-    editPrompt.generate();
-    this.updatePromptDisplay();
-
-    this.initializeEditMode();
-    saveOptionData();
-  }
-
-  handleEditTypeChange(event) {
-    const selectedValue = event.target.value;
-    AppState.userSettings.optionData.editType = selectedValue;
-
-    saveOptionData();
-
-    // プロンプトを再生成して記法を更新
-    editPrompt.generate();
-    this.updatePromptDisplay();
-
-    this.initializeEditMode();
-  }
-
-  initializeEditMode() {
-    const generatePrompt = document.getElementById("generatePrompt");
-    const currentPrompt = generatePrompt ? generatePrompt.value : "";
-
-    if (currentPrompt && currentPrompt !== promptEditor.prompt) {
-      console.log("Initializing edit mode with:", currentPrompt);
-      promptEditor.init(currentPrompt);
-    }
-
-    this.refreshEditList();
-  }
-
-  async refreshEditList() {
-    console.log(
-      "refreshEditList called, elements count:",
-      editPrompt.elements.length
-    );
-
-    const editType = AppState.userSettings.optionData.editType;
-    const listType =
-      editType === CONSTANTS.EDIT_TYPES.SELECT ? "editDropdown" : "edit";
-
-    // sortableを破棄
-    if ($("#editList").hasClass("ui-sortable")) {
-      $("#editList").sortable("destroy");
-    }
-
-    // sort プロパティで並び替えた要素を渡す
-    const sortedElements = [...editPrompt.elements].sort(
-      (a, b) => (a.sort || 0) - (b.sort || 0)
-    );
-
-    await this.listManager.createList(
-      listType,
-      sortedElements, // ソート済みの要素を渡す
-      "#editList"
-    );
-
-    // sortableを再初期化
-    // refreshEditList メソッド内の sortable 再初期化部分
-    EventHandlers.setupSortableList("#editList", (sortedIds) => {
-      // sortedIdsは表示順のインデックス（0, 1, 2...）
-      // でも実際のelementsの順番はsortプロパティでソートされている
-
-      const sortedElements = [...editPrompt.elements].sort(
-        (a, b) => (a.sort || 0) - (b.sort || 0)
+      radio.addEventListener("change", (e) =>
+        this.editHandler.handleEditTypeChange(e)
       );
-
-      let baseIndex = 0;
-      sortedIds.forEach((displayIndex) => {
-        if (!displayIndex) return;
-        // 表示順のインデックスから実際の要素を取得
-        const element = sortedElements[displayIndex];
-        if (element) {
-          element.sort = baseIndex++;
-        }
-      });
-
-      editPrompt.generate();
-      this.updatePromptDisplay();
     });
+  }
+
+  // 編集リストの更新（EditHandlerのメソッドを呼び出し）
+  async refreshEditList() {
+    return this.editHandler.refreshEditList();
   }
 
   // ============================================
@@ -908,7 +665,7 @@ class PromptGeneratorApp {
         this.updatePromptDisplay();
 
         if (AppState.ui.currentTab === CONSTANTS.TABS.EDIT) {
-          this.refreshEditList();
+          this.editHandler.refreshEditList();
         }
       }, 100); // 100ms のデバウンス
     };
@@ -1232,7 +989,7 @@ class PromptGeneratorApp {
       const searchCat0 = document.getElementById("search-cat0");
       if (searchCat0) {
         searchCat0.value = AppState.data.searchCategory[0];
-        this.updateCategoryDropdown(
+        this.searchHandler.updateCategoryDropdown(
           "#search-cat1",
           1,
           AppState.data.searchCategory[0]
@@ -1334,7 +1091,7 @@ function setSeachCategory() {
     window.app.updateUIState();
     if (AppState.data.searchCategory?.[0]) {
       // 初期表示時はローディングを表示しない
-      window.app.performSearch({ showLoading: false });
+      window.app.searchHandler.performSearch({ showLoading: false });
     }
   }
 }
