@@ -30,6 +30,7 @@ function createBaseMenuItems() {
 }
 
 // コンテキストメニューのクリックイベント
+// コンテキストメニューのクリックイベント
 chrome.contextMenus.onClicked.addListener(async function (info, tab) {
   console.log("Context menu clicked:", info.menuItemId);
 
@@ -40,16 +41,19 @@ chrome.contextMenus.onClicked.addListener(async function (info, tab) {
     case "PromptArchive":
       handlePromptArchive(info);
       break;
-    // コンテキストメニューのクリックイベント（該当部分のみ）
     default:
       // プロンプトを挿入
       console.log("Inserting prompt:", info.menuItemId);
+
+      // IDからプロンプトテキストを取得
+      const menuItem = promptTabele.find((item) => item.id === info.menuItemId);
+      const promptText = menuItem ? menuItem.prompt : info.menuItemId;
 
       // まずポップアップへの送信を試みる
       chrome.runtime.sendMessage(
         {
           type: "insertPrompt",
-          text: info.menuItemId,
+          text: promptText,
         },
         (response) => {
           // ポップアップが応答しない場合は、通常のページへの挿入を試みる
@@ -59,7 +63,7 @@ chrome.contextMenus.onClicked.addListener(async function (info, tab) {
               function: (text) => {
                 document.execCommand("insertText", false, text);
               },
-              args: [info.menuItemId],
+              args: [promptText],
             });
           }
         }
@@ -67,7 +71,6 @@ chrome.contextMenus.onClicked.addListener(async function (info, tab) {
       break;
   }
 });
-
 // プロンプトアーカイブ処理
 function handlePromptArchive(info) {
   const selectedText = info.selectionText;
@@ -191,9 +194,10 @@ async function UpdatePromptList() {
 
     // 既存のプロンプト関連メニューを削除
     const removePromises = promptTabele.map(
-      (id) =>
+      (item) =>
         new Promise((resolve) => {
-          chrome.contextMenus.remove(id, () => {
+          chrome.contextMenus.remove(item.id, () => {
+            // item.idを使用
             // エラーを無視（アイテムが既に存在しない場合）
             chrome.runtime.lastError;
             resolve();
@@ -215,29 +219,26 @@ async function UpdatePromptList() {
 }
 
 // アーカイブリストからコンテキストメニューを作成
+// アーカイブリストからコンテキストメニューを作成
 async function CreateArchiveList() {
   try {
     const items = await chrome.storage.local.get(["archivesList"]);
 
     if (items.archivesList && items.archivesList.length > 0) {
       let count = 1;
-      const existingIds = new Set();
 
-      for (const item of items.archivesList) {
-        // 重複チェック
-        if (existingIds.has(item.prompt)) {
-          console.warn(`Duplicate prompt id: ${item.prompt}`);
-          continue;
-        }
-
-        existingIds.add(item.prompt);
+      for (let index = 0; index < items.archivesList.length; index++) {
+        const item = items.archivesList[index];
 
         try {
+          // インデックスベースの一意なIDを使用
+          const menuId = `archive_${index}_${Date.now()}`;
+
           await new Promise((resolve, reject) => {
             chrome.contextMenus.create(
               {
                 parentId: "LoadPrompt",
-                id: item.prompt,
+                id: menuId, // 一意なIDを使用
                 title: `${count}: ${item.title || "無題"}`,
                 contexts: ["editable"],
               },
@@ -249,7 +250,11 @@ async function CreateArchiveList() {
                   );
                   reject(chrome.runtime.lastError);
                 } else {
-                  promptTabele.push(item.prompt);
+                  // プロンプトテキストとIDの対応を保存
+                  promptTabele.push({
+                    id: menuId,
+                    prompt: item.prompt,
+                  });
                   resolve();
                 }
               }
@@ -258,7 +263,7 @@ async function CreateArchiveList() {
           count++;
         } catch (error) {
           console.error(
-            `Failed to create menu item for: ${item.prompt}`,
+            `Failed to create menu item for index ${index}:`,
             error
           );
         }

@@ -341,31 +341,36 @@ function jsonDownload(json, fileName) {
  * バックグラウンドスクリプトにプロンプトリスト更新を通知
  */
 function UpdatePromptList() {
+  // コンテキストが無効な場合はスキップ
+  if (!chrome.runtime || !chrome.runtime.id) {
+    console.warn("Extension context is invalid. Skipping UpdatePromptList.");
+    return;
+  }
+
   // メッセージを送信してコールバックで結果を確認
-  chrome.runtime.sendMessage({ type: "UpdatePromptList" }, function (response) {
-    if (chrome.runtime.lastError) {
-      console.error(
-        "Failed to update prompt list:",
-        chrome.runtime.lastError.message
-      );
-    } else if (response && response.success) {
-      console.log("Prompt list updated successfully");
-    }
-  });
-}
-
-// また、saveArchivesList関数も確認
-async function saveArchivesList() {
   try {
-    await Storage.set({ archivesList: AppState.data.archivesList });
-
-    // 少し遅延を入れてから通知（ストレージの書き込みが完了するのを待つ）
-    setTimeout(() => {
-      UpdatePromptList();
-    }, 100);
+    chrome.runtime.sendMessage(
+      { type: "UpdatePromptList" },
+      function (response) {
+        if (chrome.runtime.lastError) {
+          // コンテキスト無効化エラーは警告のみ
+          if (
+            chrome.runtime.lastError.message.includes("context invalidated")
+          ) {
+            console.warn("Context invalidated during UpdatePromptList");
+          } else {
+            console.error(
+              "Failed to update prompt list:",
+              chrome.runtime.lastError.message
+            );
+          }
+        } else if (response && response.success) {
+          console.log("Prompt list updated successfully");
+        }
+      }
+    );
   } catch (error) {
-    console.error("Failed to save archives list:", error);
-    throw error;
+    console.warn("UpdatePromptList failed:", error);
   }
 }
 
