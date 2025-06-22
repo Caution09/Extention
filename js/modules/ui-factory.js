@@ -387,9 +387,13 @@ const EventHandlers = {
       const bigValue = this.value;
       if (middleInput) {
         middleInput.setAttribute("list", "category" + bigValue);
+        // 中項目の値をクリア（検索タブと同じ動作）
+        middleInput.value = "";
       }
       if (smallInput) {
         smallInput.setAttribute("list", "");
+        // 小項目の値もクリア
+        smallInput.value = "";
       }
     });
 
@@ -398,10 +402,11 @@ const EventHandlers = {
         const bigValue = bigInput.value;
         const middleValue = this.value;
         smallInput.setAttribute("list", "category" + bigValue + middleValue);
+        // 小項目の値をクリア
+        smallInput.value = "";
       });
     }
   },
-
   /**
    * 並び替え可能なリストを設定
    * @param {string} listId - リストのID
