@@ -732,6 +732,31 @@ class PromptGeneratorApp {
         saveOptionData();
       });
     }
+
+    // 設定エクスポート
+    const exportSettingsBtn = document.getElementById("exportSettings");
+    if (exportSettingsBtn) {
+      exportSettingsBtn.addEventListener("click", () => {
+        settingsManager.downloadExport();
+      });
+    }
+
+    // 設定インポート
+    const importSettingsBtn = document.getElementById("importSettings");
+    if (importSettingsBtn) {
+      importSettingsBtn.addEventListener("click", () => {
+        const mergeMode = document.getElementById("importMergeMode").checked;
+
+        settingsManager.selectAndImport({
+          includeSettings: true,
+          includeLocalDict: true,
+          includeArchives: true,
+          includeCategories: true,
+          includeMaster: false, // マスターデータは通常除外
+          merge: mergeMode,
+        });
+      });
+    }
   }
 
   // ============================================
