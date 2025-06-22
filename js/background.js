@@ -313,11 +313,23 @@ function NovelAI(args) {
       const generateButton = document.querySelector(generateButtonSelector);
 
       if (positivePromptText && generateButton) {
+        // デバッグ情報
+        console.log("Setting prompt to:", value);
+        console.log("Element type:", positivePromptText.tagName);
+
+        // 元のコードを維持
         positivePromptText.value = value;
         positivePromptText.innerHTML = value;
         const event = new Event("change", { bubbles: true });
         positivePromptText.dispatchEvent(event);
-        generateButton.click();
+
+        // 100～200msのランダムな遅延
+        const randomDelay = Math.floor(Math.random() * 101) + 100; // 100-200の範囲
+        console.log(`Waiting ${randomDelay}ms before clicking generate...`);
+
+        setTimeout(() => {
+          generateButton.click();
+        }, randomDelay);
       }
       break;
   }

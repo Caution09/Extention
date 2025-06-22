@@ -1385,9 +1385,17 @@ class PromptListManager {
       // 翻訳処理をキューに追加
       this.queueTranslation(prompt, categoryInputs);
     } else {
-      const element = AppState.data.masterPrompts.find(
+      // マスターとローカル両方から検索（修正ポイント）
+      const masterElement = AppState.data.masterPrompts.find(
         (e) => e.prompt === prompt
       );
+      const localElement = AppState.data.localPromptList.find(
+        (e) => e.prompt === prompt
+      );
+
+      // ローカルを優先
+      const element = localElement || masterElement;
+
       if (element?.url) {
         $li.append(UIFactory.createPreviewButton(element));
       }
@@ -1571,10 +1579,18 @@ class PromptListManager {
 
     categoryInputs[2].on("change", function () {
       const inputValue = $(this).val();
+
+      // マスターとローカル両方から検索（修正ポイント）
       const masterPrompt = AppState.data.masterPrompts.find(
         (p) => p.data[2] === inputValue
       );
-      const newPrompt = masterPrompt?.prompt || $valueInput.val();
+      const localPrompt = AppState.data.localPromptList.find(
+        (p) => p.data[2] === inputValue
+      );
+
+      // ローカルを優先、なければマスター、それでもなければ現在の値
+      const foundPrompt = localPrompt || masterPrompt;
+      const newPrompt = foundPrompt?.prompt || $valueInput.val();
 
       $valueInput.val(newPrompt);
       editPrompt.editingValue(
