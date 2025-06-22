@@ -65,6 +65,7 @@ class PromptGeneratorApp {
     this.searchHandler = new SearchHandler(this);
     this.editHandler = new EditHandler(this);
     this.dictionaryHandler = new DictionaryHandler(this);
+    this.shortcutManager = new ShortcutManager();
 
     this.initialized = false;
     this.lastFocusedInput = null; // 最後にフォーカスされた入力フィールドを記憶
@@ -92,6 +93,9 @@ class PromptGeneratorApp {
 
       // コンテキストメニューからのメッセージを受信
       this.setupContextMenuListener();
+
+      // ショートカットキーの初期化
+      this.shortcutManager.setupEventListeners();
 
       this.initialized = true;
       console.log("Application initialized successfully");
@@ -342,6 +346,14 @@ class PromptGeneratorApp {
     const popupImage = document.getElementById("popup-image");
     if (popupImage) {
       popupImage.addEventListener("click", () => this.closePopup());
+    }
+
+    // ショートカットヘルプボタン
+    const showShortcutsBtn = document.getElementById("show-shortcuts");
+    if (showShortcutsBtn) {
+      showShortcutsBtn.addEventListener("click", () => {
+        this.shortcutManager.showHelp();
+      });
     }
   }
 

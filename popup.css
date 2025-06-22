@@ -178,7 +178,7 @@ button {
 #show-panel {
   position: fixed;
   top: 0;
-  right: 0;
+  right: 50px;
   margin: 20px;
   padding: 10px 20px;
   background-color: #4caf50;
@@ -192,7 +192,7 @@ button {
 #GeneratoButton {
   position: fixed;
   top: 0;
-  right: 90px;
+  right: 150px;
   margin: 20px;
   padding: 10px 20px;
   background-color: #4caf50;
@@ -230,4 +230,44 @@ button {
   visibility: visible !important;
   background: #f0f0f0;
   opacity: 0.5;
+}
+
+#show-shortcuts {
+  position: fixed;
+  top: 0;
+  right: 0px; /* 180px → 20px に変更（一番右へ） */
+  margin: 20px;
+  padding: 10px 15px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+}
+
+/* ホバー効果も追加 */
+#show-shortcuts:hover {
+  background-color: #1976d2;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+/* サイドパネルでの表示調整 */
+@media (max-width: 300px) {
+  body {
+    width: 100%;
+    min-width: unset;
+  }
+
+  input[type="text"] {
+    width: calc(100% - 10px);
+  }
+
+  .promptData {
+    width: 80px;
+  }
 }

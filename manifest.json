@@ -1,6 +1,6 @@
 ﻿{
   "name": "PromptGenerator",
-  "version": "1.0",
+  "version": "1.1.0",
   "manifest_version": 3,
   "description": "PromptGenerator",
   "host_permissions": [
@@ -12,13 +12,32 @@
     "contextMenus",
     "activeTab",
     "storage",
-    "scripting"
+    "scripting",
+    "sidePanel"
   ],
+  "side_panel": {
+    "default_path": "popup.html"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+G",
+        "mac": "Alt+G"
+      },
+      "description": "サイドパネルを開く"
+    },
+    "save-prompt": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "選択テキストを辞書に保存"
+    }
+  },
   "background": {
     "service_worker": "js/background.js"
   },
   "action": {
-    "default_popup": "popup.html",
     "default_title": "PromptGenerator",
     "default_icon": {
       "32": "assets/icon/Icon.png",

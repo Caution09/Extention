@@ -1,5 +1,4 @@
 let promptTabele = [];
-let selectedTextForArchive = ""; // 選択されたテキストを一時保存
 
 // 初期化時にコンテキストメニューを作成
 chrome.runtime.onInstalled.addListener(() => {
@@ -71,10 +70,10 @@ chrome.contextMenus.onClicked.addListener(async function (info, tab) {
       break;
   }
 });
+
 // プロンプトアーカイブ処理
 function handlePromptArchive(info) {
   const selectedText = info.selectionText;
-  selectedTextForArchive = selectedText; // 選択テキストを保存
 
   chrome.storage.local.get(["archivesList"], function (items) {
     let archivesList = items.archivesList || [];
@@ -83,20 +82,33 @@ function handlePromptArchive(info) {
     );
 
     if (matchedIndex !== -1) {
-      // 既に存在する場合はエラー表示
-      chrome.windows.create({
-        url: "error.html",
-        type: "popup",
-        width: 300,
-        height: 50,
+      // 既に存在する場合は通知を表示
+      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        sendNotificationToTab(
+          tabs[0].id,
+          "このプロンプトは既に保存されています",
+          "warning"
+        );
       });
     } else {
-      // 新規追加用のポップアップを表示
-      chrome.windows.create({
-        url: "prompt.html",
-        type: "popup",
-        width: 300,
-        height: 50,
+      // 新規追加（ポップアップなしで即座に保存）
+      archivesList.push({
+        title: "", // タイトルは後で編集可能
+        prompt: selectedText,
+      });
+
+      chrome.storage.local.set({ archivesList: archivesList }, () => {
+        // プロンプトリストを更新
+        UpdatePromptList();
+
+        // 成功通知
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+          sendNotificationToTab(
+            tabs[0].id,
+            "プロンプトを辞書に保存しました",
+            "success"
+          );
+        });
       });
     }
   });
@@ -158,35 +170,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 });
 
-// プロンプトレスポンス処理
-async function handlePromptResponse(promptName) {
-  try {
-    console.log("handlePromptResponse called with:", promptName);
-    console.log("Saved selected text:", selectedTextForArchive);
-
-    const items = await chrome.storage.local.get(["archivesList"]);
-    let archivesList = items.archivesList || [];
-
-    // 保存された選択テキストを使用
-    const selectedText = selectedTextForArchive;
-
-    if (selectedText && promptName) {
-      archivesList.push({ title: promptName, prompt: selectedText });
-      await chrome.storage.local.set({ archivesList: archivesList });
-
-      // テキストをクリア
-      selectedTextForArchive = "";
-
-      // プロンプトリストを更新
-      await UpdatePromptList();
-
-      console.log("Archive saved successfully");
-    }
-  } catch (error) {
-    console.error("Error handling prompt response:", error);
-  }
-}
-
 // プロンプトリストの更新
 async function UpdatePromptList() {
   try {
@@ -218,7 +201,6 @@ async function UpdatePromptList() {
   }
 }
 
-// アーカイブリストからコンテキストメニューを作成
 // アーカイブリストからコンテキストメニューを作成
 async function CreateArchiveList() {
   try {
@@ -352,3 +334,128 @@ function NovelAI(args) {
       break;
   }
 }
+
+// ショートカットキーのリスナーを修正
+chrome.commands.onCommand.addListener(async (command) => {
+  console.log("Command received:", command);
+
+  switch (command) {
+    case "_execute_action": // Alt+G でこれが呼ばれる
+      // サイドパネルを開く
+      chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
+        await chrome.sidePanel.open({ tabId: tabs[0].id });
+      });
+      break;
+    case "save-prompt":
+      // アクティブタブから選択テキストを取得
+      chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
+        try {
+          // コンテンツスクリプトを実行して選択テキストを取得
+          const [result] = await chrome.scripting.executeScript({
+            target: { tabId: tabs[0].id },
+            func: () => window.getSelection().toString().trim(),
+          });
+
+          const selectedText = result.result;
+
+          if (!selectedText) {
+            // 選択テキストがない場合は、従来の動作（ストレージから取得）
+            const { generatePrompt } = await chrome.storage.local.get(
+              "generatePrompt"
+            );
+            if (generatePrompt) {
+              await saveToArchive(generatePrompt, tabs[0].id);
+            } else {
+              sendNotificationToTab(
+                tabs[0].id,
+                "保存するテキストを選択してください",
+                "warning"
+              );
+            }
+          } else {
+            // 選択テキストを辞書に保存
+            await saveToArchive(selectedText, tabs[0].id);
+          }
+        } catch (error) {
+          console.error("Failed to get selection:", error);
+          sendNotificationToTab(
+            tabs[0].id,
+            "このページでは使用できません",
+            "error"
+          );
+        }
+      });
+      break;
+  }
+});
+
+// アーカイブに保存する関数
+async function saveToArchive(text, tabId) {
+  const { archivesList } = await chrome.storage.local.get("archivesList");
+  const archives = archivesList || [];
+
+  // 重複チェック
+  const isDuplicate = archives.some((item) => item.prompt === text);
+
+  if (isDuplicate) {
+    sendNotificationToTab(
+      tabId,
+      "このテキストは既に保存されています",
+      "warning"
+    );
+  } else {
+    // 新規保存
+    archives.push({
+      title: "", // タイトルは後で編集可能
+      prompt: text,
+    });
+
+    await chrome.storage.local.set({ archivesList: archives });
+
+    // プロンプトリストを更新
+    UpdatePromptList();
+
+    sendNotificationToTab(tabId, "選択テキストを辞書に保存しました", "success");
+  }
+}
+
+// タブに通知を送信する関数
+function sendNotificationToTab(tabId, message, type) {
+  chrome.tabs
+    .sendMessage(tabId, {
+      type: "showNotification",
+      message: message,
+      messageType: type,
+    })
+    .catch((error) => {
+      // content-scriptが注入されていない場合は、簡易的なアラート
+      chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        func: (msg) => alert(msg),
+        args: [message],
+      });
+    });
+}
+
+// コンテンツスクリプトを注入する関数
+async function injectContentScript(tabId) {
+  try {
+    await chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      files: ["js/content-script.js"],
+    });
+  } catch (error) {
+    console.log("Content script already injected or not injectable");
+  }
+}
+
+// タブがアクティブになったときにコンテンツスクリプトを注入
+chrome.tabs.onActivated.addListener(async (activeInfo) => {
+  await injectContentScript(activeInfo.tabId);
+});
+
+// 拡張機能アイコンクリック時の動作も変更可能
+chrome.action.onClicked.addListener(async (tab) => {
+  // サイドパネルを開く
+  await chrome.sidePanel.open({ tabId: tab.id });
+});
