@@ -116,6 +116,19 @@ class AutoGenerateHandler {
         this.saveSettings();
       });
     }
+
+    // 自動生成チェックボックス
+    const autoGenerateCheckbox = document.getElementById("autoGenerate");
+    if (autoGenerateCheckbox) {
+      autoGenerateCheckbox.addEventListener("change", async (e) => {
+        console.log("Auto generate checkbox changed:", e.target.checked);
+        if (e.target.checked) {
+          await this.start();
+        } else {
+          this.stop();
+        }
+      });
+    }
   }
 
   /**
@@ -383,19 +396,19 @@ class AutoGenerateHandler {
   /**
    * 設定を保存
    */
-  saveSettings() {
+  async saveSettings() {
     try {
       const settings = {
         generateCount: this.targetCount,
         generateInterval: Math.floor(this.generateInterval / 1000),
       };
 
-      console.log("=== SAVING Auto Generate Settings ===");
-      console.log("targetCount:", this.targetCount);
-      console.log("generateInterval (ms):", this.generateInterval);
-      console.log("settings object:", settings);
+      // chrome.storage.localを使用
+      await new Promise((resolve) => {
+        chrome.storage.local.set({ autoGenerateSettings: settings }, resolve);
+      });
 
-      Storage.set({ autoGenerateSettings: settings });
+      console.log("Auto generate settings saved:", settings);
     } catch (error) {
       console.error("Failed to save auto generate settings:", error);
     }
@@ -404,18 +417,23 @@ class AutoGenerateHandler {
   /**
    * 設定を読み込み
    */
+  // auto-generate-handler.js の loadSettings() メソッドを修正
+
   async loadSettings() {
     try {
-      const result = await Storage.get("autoGenerateSettings");
-      if (result.autoGenerateSettings) {
-        const settings = result.autoGenerateSettings;
+      // localStorageではなくchrome.storage.localを使用
+      const result = await new Promise((resolve) => {
+        chrome.storage.local.get(["autoGenerateSettings"], resolve);
+      });
 
-        // インスタンス変数に設定
+      const settings = result.autoGenerateSettings;
+
+      if (settings) {
         this.targetCount = settings.generateCount ?? 10;
         this.isInfiniteMode = this.targetCount === 0;
         this.generateInterval = (settings.generateInterval || 5) * 1000;
 
-        // DOM要素に反映（最初から存在するので直接設定可能）
+        // DOM要素に反映
         const countInput = document.getElementById("generateCount");
         if (countInput) {
           countInput.value = this.targetCount;
