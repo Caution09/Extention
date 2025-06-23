@@ -1,14 +1,3 @@
-/**
- * API通信モジュール（Phase 4 最適化版）
- * 互換性を最優先に段階的なリファクタリングを実施
- */
-
-// ============================================
-// グローバル変数（互換性のため維持）
-// ============================================
-let PositivePromptTextSelector = null;
-let GenerateButtonSelector = null;
-
 // ============================================
 // API設定
 // ============================================
@@ -189,45 +178,24 @@ function processToolInfoItem(item) {
       break;
 
     case "novelAIpositivePromptText":
-      PositivePromptTextSelector = item.value;
-      if (optionData?.shaping === "NAI" && GenerateButtonSelector != null) {
-        const generateButton = document.getElementById("GeneratoButton");
-        if (generateButton) {
-          generateButton.style.display = "block";
-        }
+      AppState.selector.positivePromptText = item.value;
+      if (
+        optionData?.shaping === "NAI" &&
+        AppState.selector.positivePromptText != null
+      ) {
+        // セレクター検証を実行（修正）
+        validateAndActivateGenerateButton();
       }
       break;
 
     case "novelAIgenerateButton":
-      GenerateButtonSelector = item.value;
-      if (optionData?.shaping === "NAI" && PositivePromptTextSelector != null) {
-        const generateButton = document.getElementById("GeneratoButton");
-        if (generateButton) {
-          generateButton.style.display = "block";
-        }
-      }
-      break;
-
-    // タイポも含めて互換性維持（両方対応）
-    case "noverAIpositivePromptText":
-      console.warn("Typo detected: 'noverAI' should be 'novelAI'");
-      PositivePromptTextSelector = item.value;
-      if (optionData?.shaping === "NAI" && GenerateButtonSelector != null) {
-        const generateButton = document.getElementById("GeneratoButton");
-        if (generateButton) {
-          generateButton.style.display = "block";
-        }
-      }
-      break;
-
-    case "noverAIgenerateButton":
-      console.warn("Typo detected: 'noverAI' should be 'novelAI'");
-      GenerateButtonSelector = item.value;
-      if (optionData?.shaping === "NAI" && PositivePromptTextSelector != null) {
-        const generateButton = document.getElementById("GeneratoButton");
-        if (generateButton) {
-          generateButton.style.display = "block";
-        }
+      AppState.selector.generateButton = item.value;
+      if (
+        optionData?.shaping === "NAI" &&
+        AppState.selector.generateButton != null
+      ) {
+        // セレクター検証を実行（修正）
+        validateAndActivateGenerateButton();
       }
       break;
   }
@@ -459,10 +427,6 @@ const APIDebug = {
     console.group("API Configuration");
     console.log("Tool Info:", AppState.data.toolInfo || window.toolInfo);
     console.log("API Config:", APIConfig);
-    console.log("Selectors:", {
-      PositivePromptTextSelector,
-      GenerateButtonSelector,
-    });
     console.groupEnd();
   },
 
@@ -509,8 +473,4 @@ if (typeof window !== "undefined") {
   window.masterDicDownload = masterDicDownload;
   window.batchTranslate = batchTranslate;
   window.APIDebug = APIDebug;
-
-  // 変数も公開
-  window.PositivePromptTextSelector = PositivePromptTextSelector;
-  window.GenerateButtonSelector = GenerateButtonSelector;
 }

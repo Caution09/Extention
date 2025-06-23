@@ -36,6 +36,11 @@ const AppState = {
     searchResults: [],
   },
 
+  selector: {
+    positivePromptText: null,
+    generateButton: null,
+  },
+
   /**
    * 状態を初期化
    */
@@ -48,6 +53,8 @@ const AppState = {
     this.userSettings.optionData = null;
     this.ui.currentTab = 0;
     this.ui.isSearching = false;
+    this.selector.positivePromptText = false;
+    this.selector.generateButton = false;
   },
 
   /**

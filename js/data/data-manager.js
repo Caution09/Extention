@@ -302,6 +302,202 @@ async function updateUIBasedOnCurrentTab() {
     });
   });
 }
+
+// ============================================
+// セレクター管理
+// ============================================
+async function loadPromptSelector() {
+  try {
+    const result = await Storage.get("positivePromptText");
+    if (result.positivePromptText) {
+      const selector = result.positivePromptText;
+
+      const [tab] = await chrome.tabs.query({
+        active: true,
+        currentWindow: true,
+      });
+      console.log(`positivePromptText：`, selector);
+
+      setTimeout(() => {
+        chrome.tabs.sendMessage(
+          tab.id,
+          { action: "checkSelector", selector },
+          (response) => {
+            if (chrome.runtime.lastError) {
+              console.error("通信エラー:", chrome.runtime.lastError.message);
+              return;
+            }
+            console.log("応答：", response);
+            // 存在が確認できたら保存したい、だめなら空にする
+            // AppState.data.positivePromptText = result.positivePromptText;
+          }
+        );
+      }, 100);
+    }
+  } catch (error) {
+    console.error("Failed to load tool info:", error);
+  }
+}
+
+async function loadgenerateButtonSelector() {
+  try {
+    const result = await Storage.get("generateButton");
+    if (result.generateButton) {
+      const selector = result.generateButton;
+
+      const [tab] = await chrome.tabs.query({
+        active: true,
+        currentWindow: true,
+      });
+      console.log(`generateButton`, selector);
+
+      setTimeout(() => {
+        chrome.tabs.sendMessage(
+          tab.id,
+          { action: "checkSelector", selector },
+          (response) => {
+            if (chrome.runtime.lastError) {
+              console.error("通信エラー:", chrome.runtime.lastError.message);
+              return;
+            }
+            console.log("応答：", response);
+            // 存在が確認できたら保存したい、だめなら空にする
+            // AppState.data.generateButton = result.generateButton;
+          }
+        );
+      }, 100);
+    }
+  } catch (error) {
+    console.error("Failed to load tool info:", error);
+  }
+}
+
+// セレクター検証とGenerateボタン活性化の統合処理
+async function validateAndActivateGenerateButton() {
+  try {
+    const [tab] = await chrome.tabs.query({
+      active: true,
+      currentWindow: true,
+    });
+
+    // NovelAIページでない場合は処理しない
+    if (!tab.url.includes("novelai.net/image")) {
+      return;
+    }
+
+    // 保存済みセレクターを取得
+    const stored = await Storage.get(["positivePromptText", "generateButton"]);
+
+    let promptSelectorValid = false;
+    let buttonSelectorValid = false;
+
+    // 1. 保存済みセレクターで検証
+    if (stored.positivePromptText && stored.generateButton) {
+      const promptCheck = await checkSelectorOnPage(
+        tab.id,
+        stored.positivePromptText
+      );
+      const buttonCheck = await checkSelectorOnPage(
+        tab.id,
+        stored.generateButton
+      );
+
+      promptSelectorValid = promptCheck.exists;
+      buttonSelectorValid = buttonCheck.exists;
+
+      if (promptSelectorValid && buttonSelectorValid) {
+        // 保存済みセレクターが有効な場合
+        AppState.selector.positivePromptText = stored.positivePromptText;
+        AppState.selector.generateButton = stored.generateButton;
+        activateGenerateButton();
+        return;
+      }
+    }
+
+    // 2. toolInfoAPIから新しいセレクターを取得
+    if (!promptSelectorValid || !buttonSelectorValid) {
+      const toolInfo = AppState.data.toolInfo;
+
+      if (
+        toolInfo.novelAIpositivePromptText &&
+        toolInfo.novelAIgenerateButton
+      ) {
+        // 新しいセレクターで検証
+        const newPromptCheck = await checkSelectorOnPage(
+          tab.id,
+          toolInfo.novelAIpositivePromptText
+        );
+        const newButtonCheck = await checkSelectorOnPage(
+          tab.id,
+          toolInfo.novelAIgenerateButton
+        );
+
+        if (newPromptCheck.exists && newButtonCheck.exists) {
+          // 新しいセレクターが有効な場合、保存して活性化
+          AppState.selector.positivePromptText =
+            toolInfo.novelAIpositivePromptText;
+          AppState.selector.generateButton = toolInfo.novelAIgenerateButton;
+
+          await Storage.set({
+            positivePromptText: toolInfo.novelAIpositivePromptText,
+            generateButton: toolInfo.novelAIgenerateButton,
+          });
+
+          activateGenerateButton();
+        } else {
+          // 3. 新しいセレクターも無効な場合、クリア
+          clearSelectors();
+        }
+      }
+    }
+  } catch (error) {
+    console.error("セレクター検証エラー:", error);
+    clearSelectors();
+  }
+}
+
+// セレクターをページで検証
+function checkSelectorOnPage(tabId, selector) {
+  return new Promise((resolve) => {
+    chrome.tabs.sendMessage(
+      tabId,
+      { action: "checkSelector", selector: selector },
+      (response) => {
+        if (chrome.runtime.lastError) {
+          console.error("セレクター検証エラー:", chrome.runtime.lastError);
+          resolve({ exists: false, error: chrome.runtime.lastError.message });
+        } else {
+          resolve(response || { exists: false });
+        }
+      }
+    );
+  });
+}
+
+// Generateボタンを活性化
+function activateGenerateButton() {
+  const generateButton = document.getElementById("GeneratoButton");
+  if (generateButton && AppState.userSettings.optionData?.shaping === "NAI") {
+    generateButton.style.display = "block";
+    console.log("Generateボタンを活性化しました");
+  }
+}
+
+// セレクター情報をクリア
+function clearSelectors() {
+  AppState.selector.positivePromptText = null;
+  AppState.selector.generateButton = null;
+
+  Storage.remove(["positivePromptText", "generateButton"]);
+
+  const generateButton = document.getElementById("GeneratoButton");
+  if (generateButton) {
+    generateButton.style.display = "none";
+  }
+
+  console.warn("有効なセレクターが見つかりません");
+}
+
 // ============================================
 // ユーティリティ関数
 // ============================================
@@ -554,6 +750,8 @@ async function initializeDataManager() {
       loadOptionData(),
       loadToolInfo(),
       loadCategory(),
+      loadPromptSelector(),
+      loadgenerateButtonSelector(),
     ];
 
     await Promise.all(loadPromises);
@@ -649,5 +847,23 @@ Object.defineProperty(window, "toolVersion", {
   },
   set(value) {
     AppState.config.toolVersion = value;
+  },
+});
+
+Object.defineProperty(window, "positivePromptText", {
+  get() {
+    return AppState.selector.positivePromptText;
+  },
+  set(value) {
+    AppState.selector.positivePromptText = value;
+  },
+});
+
+Object.defineProperty(window, "generateButton", {
+  get() {
+    return AppState.selector.generateButton;
+  },
+  set(value) {
+    AppState.selector.generateButton = value;
   },
 });

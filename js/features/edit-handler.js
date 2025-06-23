@@ -24,8 +24,8 @@ class EditHandler {
     // 自動Generate機能の再初期化（追加）
     if (
       selectedValue === "NAI" &&
-      PositivePromptTextSelector &&
-      GenerateButtonSelector
+      AppState.selector.positivePromptText &&
+      AppState.selector.generateButton
     ) {
       autoGenerateHandler.init();
     }

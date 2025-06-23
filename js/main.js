@@ -176,6 +176,14 @@ class PromptGeneratorApp {
         }
       }, 1000);
 
+      // NovelAIページの場合、セレクター検証を実行（追加）
+      chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
+        if (tabs[0].url.includes("novelai.net/image")) {
+          // セレクター検証とGenerateボタン活性化
+          await validateAndActivateGenerateButton();
+        }
+      });
+
       this.initialized = true;
       console.log("Application initialized successfully");
     } catch (error) {
@@ -737,8 +745,8 @@ class PromptGeneratorApp {
       "DOM",
       "Generate",
       combinedPrompt,
-      PositivePromptTextSelector,
-      GenerateButtonSelector
+      AppState.selector.positivePromptText,
+      AppState.selector.generateButton
     );
 
     // 通知（オプション）
@@ -836,8 +844,8 @@ class PromptGeneratorApp {
     // GenerateボタンON表示の更新
     if (
       AppState.userSettings.optionData?.shaping === "NAI" &&
-      PositivePromptTextSelector &&
-      GenerateButtonSelector
+      AppState.selector.positivePromptText != null &&
+      AppState.selector.generateButton != null
     ) {
       const generateButton = document.getElementById("GeneratoButton");
       if (generateButton) {
