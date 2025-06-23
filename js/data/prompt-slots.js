@@ -14,21 +14,19 @@ class PromptSlotManager {
     this.maxSlots = 100;
     this.currentSlot = 0;
     this.slots = [];
-    this._nextId = 0; // スロットIDカウンター
+    this._nextId = 0;
 
     // 初期化（最初は3個のスロットから開始）
     this.initializeSlots(3);
   }
 
   /**
-   * スロットを初期化（通知なし）
-   * @param {number} count - 初期スロット数
+   * スロットを初期化（拡張版）
    */
   initializeSlots(count = 3) {
     this.slots = [];
     this._nextId = 0;
 
-    // 指定数のスロットを作成（通知なしで）
     for (let i = 0; i < count; i++) {
       const newSlot = {
         id: this._nextId++,
@@ -37,14 +35,18 @@ class PromptSlotManager {
         elements: [],
         isUsed: false,
         lastModified: null,
+        // 新規追加フィールド
+        mode: "normal", // 'normal' | 'random' | 'sequential'
+        extractionCategory: { big: "", middle: "" },
+        extractionIndex: 0,
+        currentExtraction: null,
       };
       this.slots.push(newSlot);
     }
   }
 
   /**
-   * 新しいスロットを追加
-   * @returns {Object|null} 追加されたスロット
+   * 新しいスロットを追加（拡張版）
    */
   addNewSlot() {
     if (this.slots.length >= this.maxSlots) {
@@ -62,6 +64,11 @@ class PromptSlotManager {
       elements: [],
       isUsed: false,
       lastModified: null,
+      // 新規追加フィールド
+      mode: "normal",
+      extractionCategory: { big: "", middle: "" },
+      extractionIndex: 0,
+      currentExtraction: null,
     };
 
     this.slots.push(newSlot);
@@ -130,13 +137,24 @@ class PromptSlotManager {
   }
 
   /**
-   * スロットを切り替え
-   * @param {number} slotId - 切り替え先のスロットID
+   * スロットを切り替え（拡張版 - 抽出モードは選択不可）
    */
   async switchSlot(slotId) {
     const slotIndex = this.slots.findIndex((slot) => slot.id === slotId);
     if (slotIndex === -1) {
       console.error("Invalid slot ID:", slotId);
+      return false;
+    }
+
+    const targetSlot = this.slots[slotIndex];
+
+    // 抽出モードのスロットは選択できない
+    if (targetSlot.mode === "random" || targetSlot.mode === "sequential") {
+      ErrorHandler.notify("抽出モードのスロットは選択できません", {
+        type: ErrorHandler.NotificationType.TOAST,
+        messageType: "warning",
+        duration: 2000,
+      });
       return false;
     }
 
@@ -170,14 +188,70 @@ class PromptSlotManager {
 
     // UIを更新
     this.updateUI();
-
-    // イベントを発火
     this.onSlotChanged(slotIndex);
-
-    // 切り替え後に再度保存
     await this.saveToStorage();
 
     return true;
+  }
+
+  /**
+   * 要素を抽出
+   * @param {Object} slot - 対象スロット
+   * @returns {string} 抽出された要素のプロンプト
+   */
+  extractElement(slot) {
+    if (slot.mode !== "random" && slot.mode !== "sequential") {
+      return slot.prompt || "";
+    }
+
+    // カテゴリーに該当する要素を検索
+    const allPrompts = [
+      ...AppState.data.localPromptList,
+      ...AppState.data.masterPrompts,
+    ];
+
+    let filtered = allPrompts;
+
+    // カテゴリーフィルター
+    if (slot.extractionCategory.big) {
+      filtered = filtered.filter(
+        (item) => item.data[0] === slot.extractionCategory.big
+      );
+
+      if (slot.extractionCategory.middle) {
+        filtered = filtered.filter(
+          (item) => item.data[1] === slot.extractionCategory.middle
+        );
+      }
+    }
+
+    if (filtered.length === 0) {
+      console.log("No elements found for extraction");
+      slot.currentExtraction = null;
+      return "";
+    }
+
+    let selectedElement;
+
+    if (slot.mode === "random") {
+      // ランダム抽出
+      const randomIndex = Math.floor(Math.random() * filtered.length);
+      selectedElement = filtered[randomIndex];
+    } else {
+      // 連続抽出
+      slot.extractionIndex = (slot.extractionIndex || 0) % filtered.length;
+      selectedElement = filtered[slot.extractionIndex];
+      slot.extractionIndex++;
+    }
+
+    // 現在の抽出を記録
+    slot.currentExtraction = selectedElement.prompt;
+
+    // UIに反映するため保存
+    this.saveToStorage();
+
+    console.log(`Extracted element: ${selectedElement.prompt}`);
+    return selectedElement.prompt;
   }
 
   /**
@@ -219,7 +293,7 @@ class PromptSlotManager {
   }
 
   /**
-   * スロット情報を取得
+   * スロット情報を取得（拡張版）
    */
   getSlotInfo(slotId) {
     const slot = this.slots.find((s) => s.id === slotId);
@@ -228,15 +302,28 @@ class PromptSlotManager {
     const slotIndex = this.slots.findIndex((s) => s.id === slotId);
     const displayNumber = slotIndex + 1;
 
-    return {
+    const info = {
       id: slot.id,
       displayNumber: displayNumber,
       name: slot.name || `プロンプト${displayNumber}`,
-      isUsed: slot.isUsed,
+      isUsed: slot.isUsed || slot.mode !== "normal",
       isCurrent: slotIndex === this.currentSlot,
       preview: slot.prompt ? slot.prompt.substring(0, 20) + "..." : "(空)",
       lastModified: slot.lastModified,
+      mode: slot.mode,
     };
+
+    if (slot.mode === "random" || slot.mode === "sequential") {
+      info.preview = `[${slot.mode === "random" ? "ランダム" : "連続"}抽出]`;
+      if (slot.extractionCategory.big) {
+        info.preview += ` ${slot.extractionCategory.big}`;
+        if (slot.extractionCategory.middle) {
+          info.preview += ` > ${slot.extractionCategory.middle}`;
+        }
+      }
+    }
+
+    return info;
   }
 
   /**
@@ -264,7 +351,7 @@ class PromptSlotManager {
   }
 
   /**
-   * ストレージから読み込み
+   * ストレージから読み込み（修正版）
    */
   async loadFromStorage() {
     try {
@@ -273,6 +360,18 @@ class PromptSlotManager {
         this.currentSlot = result.promptSlots.currentSlot || 0;
         this.slots = result.promptSlots.slots || [];
         this._nextId = result.promptSlots.nextId || this.slots.length;
+
+        // 既存のスロットにデフォルト値を設定
+        this.slots = this.slots.map((slot) => ({
+          ...slot,
+          mode: slot.mode || "normal",
+          extractionCategory: slot.extractionCategory || {
+            big: "",
+            middle: "",
+          },
+          extractionIndex: slot.extractionIndex || 0,
+          currentExtraction: slot.currentExtraction || null,
+        }));
 
         // スロットが空の場合は初期化
         if (this.slots.length === 0) {
@@ -287,7 +386,9 @@ class PromptSlotManager {
         console.log("Loaded slots from storage:", {
           currentSlot: this.currentSlot,
           slotCount: this.slots.length,
-          usedSlots: this.slots.filter((s) => s.isUsed).map((s) => s.id),
+          usedSlots: this.slots
+            .filter((s) => s.isUsed || s.mode !== "normal")
+            .map((s) => s.id),
         });
 
         return true;
@@ -297,9 +398,8 @@ class PromptSlotManager {
     }
     return false;
   }
-
   /**
-   * UIを更新
+   * UIを更新（拡張版）
    */
   updateUI() {
     const selector = document.getElementById("prompt-slot-selector");
@@ -311,6 +411,13 @@ class PromptSlotManager {
     this.getAllSlotInfo().forEach((info, index) => {
       const option = document.createElement("option");
       option.value = info.id;
+
+      // 抽出モードのスロットは選択不可を明示
+      if (this.slots[index].mode !== "normal") {
+        option.disabled = true;
+        option.style.color = "#999";
+      }
+
       option.textContent = info.isUsed
         ? `${info.displayNumber}: ${info.name || info.preview}`
         : `${info.displayNumber}: (空)`;
@@ -384,57 +491,83 @@ class PromptSlotManager {
   }
 
   /**
-   * すべての使用中スロットのプロンプトを結合
-   * @returns {string} 結合されたプロンプト
+   * すべての使用中スロットのプロンプトを結合（修正版）
    */
   getCombinedPrompt() {
-    const usedSlots = this.slots
-      .filter((slot) => slot.isUsed && slot.prompt)
-      .sort((a, b) => {
-        // スロットの順番（配列内の位置）でソート
-        const indexA = this.slots.indexOf(a);
-        const indexB = this.slots.indexOf(b);
-        return indexA - indexB;
-      });
+    const usedSlots = this.slots.filter((slot) => {
+      // modeがない場合は'normal'として扱う
+      const slotMode = slot.mode || "normal";
+
+      // 通常モードは従来通り
+      if (slotMode === "normal") {
+        return slot.isUsed && slot.prompt;
+      }
+      // 抽出モードは常に含める
+      return slotMode === "random" || slotMode === "sequential";
+    });
 
     if (usedSlots.length === 0) {
       return "";
     }
 
+    // Generate時に抽出を実行
+    const prompts = usedSlots.map((slot) => {
+      const slotMode = slot.mode || "normal";
+
+      if (slotMode === "random" || slotMode === "sequential") {
+        return this.extractElement(slot);
+      }
+      // 通常モードのスロット
+      return slot.prompt ? slot.prompt.trim() : "";
+    });
+
+    // 空の要素を除外
+    const validPrompts = prompts.filter(
+      (prompt) => prompt && prompt.length > 0
+    );
+
+    if (validPrompts.length === 0) {
+      return "";
+    }
+
     // プロンプトを結合
-    const combined = usedSlots
-      .map((slot) => slot.prompt.trim())
-      .filter((prompt) => prompt.length > 0)
-      .join(",");
+    const combined = validPrompts.join(",");
 
     // 連続するカンマを1つに正規化
     const normalized = combined
       .replace(/,\s*,+/g, ",")
-      .replace(/^\s*,\s*/, "")
-      .replace(/\s*,\s*$/, "")
+      .replace(/^\s*,\s*$/, "")
       .replace(/\s*,\s*/g, ", ");
 
-    console.log(
-      `Combining ${usedSlots.length} slots:`,
-      usedSlots.map((s, i) => `Slot ${i + 1}: ${s.prompt.substring(0, 20)}...`)
-    );
+    console.log(`Combined ${validPrompts.length} prompts:`, validPrompts);
 
     return normalized;
   }
 
   /**
-   * 使用中のスロット情報を取得
-   * @returns {Array} 使用中スロットの情報
+   * 使用中のスロット情報を取得（拡張版）
    */
   getUsedSlots() {
     return this.slots
       .map((slot, currentIndex) => {
-        if (slot.isUsed) {
-          return {
-            id: currentIndex + 1, // 現在の配列内での位置 + 1
+        if (
+          slot.isUsed ||
+          slot.mode === "random" ||
+          slot.mode === "sequential"
+        ) {
+          const info = {
+            id: currentIndex + 1,
             name: slot.name || `スロット${currentIndex + 1}`,
             prompt: slot.prompt,
           };
+
+          if (slot.mode === "random" || slot.mode === "sequential") {
+            info.mode = slot.mode;
+            info.category = slot.extractionCategory;
+            info.currentExtraction = slot.currentExtraction;
+          }
+
+          return info;
         }
         return null;
       })

@@ -393,18 +393,32 @@
 
         // スロット情報のHTML生成
         const slotListHTML = usedSlots
-          .map(
-            (slot) => `
-            <tr>
-              <td style="padding: 5px 15px 5px 5px; font-weight: bold;">スロット${
-                slot.id
-              }:</td>
-              <td style="padding: 5px;">${slot.name || "(名前なし)"}</td>
-            </tr>
-          `
-          )
-          .join("");
+          .map((slot) => {
+            let description = slot.name || "(名前なし)";
 
+            if (slot.mode === "random" || slot.mode === "sequential") {
+              description += ` <span style="color: #FF9800;">[${
+                slot.mode === "random" ? "ランダム" : "連続"
+              }抽出]</span>`;
+              if (slot.category?.big) {
+                description += ` ${slot.category.big}`;
+                if (slot.category.middle) {
+                  description += ` > ${slot.category.middle}`;
+                }
+              }
+              if (slot.currentExtraction) {
+                description += `<br><small style="color: #666;">現在: ${slot.currentExtraction}</small>`;
+              }
+            }
+
+            return `
+        <tr>
+          <td style="padding: 5px 15px 5px 5px; font-weight: bold;">スロット${slot.id}:</td>
+          <td style="padding: 5px;">${description}</td>
+        </tr>
+      `;
+          })
+          .join("");
         // 結合結果を見やすく表示（長い場合は折り返し）
         const formattedPrompt = combined
           .split(",")
@@ -572,24 +586,32 @@
       }
 
       /**
-       * スロットカードを作成
+       * スロットカードを作成（拡張版）
        */
       createSlotCard(info) {
         const card = document.createElement("div");
         card.className = "slot-card";
         card.dataset.slotId = info.id;
 
+        // 現在のスロットの設定を取得
+        const slot = this.slotManager.slots.find((s) => s.id === info.id);
+        const isExtractionMode =
+          slot?.mode === "random" || slot?.mode === "sequential";
+        slot?.mode === "random" || slot?.mode === "sequential";
+
         // カードのスタイル
         card.style.cssText = `
-          border: 2px solid ${info.isCurrent ? "#2196F3" : "#ddd"};
-          border-radius: 8px;
-          padding: 15px;
-          margin-bottom: 10px;
-          background: ${info.isUsed ? "#fff" : "#f5f5f5"};
-          ${info.isCurrent ? "box-shadow: 0 2px 8px rgba(33,150,243,0.3);" : ""}
-          transition: all 0.3s ease;
-          position: relative;
-        `;
+    border: 2px solid ${info.isCurrent ? "#2196F3" : "#ddd"};
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: ${
+      isExtractionMode ? "#fffbf0" : info.isUsed ? "#fff" : "#f5f5f5"
+    };
+    ${info.isCurrent ? "box-shadow: 0 2px 8px rgba(33,150,243,0.3);" : ""}
+    transition: all 0.3s ease;
+    position: relative;
+  `;
 
         // 削除ボタンの無効化判定
         const canDelete =
@@ -597,112 +619,352 @@
           !info.isCurrent;
 
         card.innerHTML = `
-          <div class="slot-drag-handle" style="
-            position: absolute;
-            left: -5px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: move;
-            padding: 10px 5px;
-            color: #999;
-            font-size: 20px;
-            user-select: none;
-          " title="ドラッグして並び替え">☰</div>
+    <div class="slot-drag-handle" style="...">☰</div>
 
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; margin-left: 25px;">
-            <div style="display: flex; align-items: center;">
-              <span style="font-size: 18px; font-weight: bold; margin-right: 10px; color: ${
-                info.isCurrent ? "#2196F3" : "#666"
-              };">
-                ${info.displayNumber}
-              </span>
-              <input type="text"
-                     class="slot-name-edit"
-                     data-slot-id="${info.id}"
-                     value="${info.name || ""}"
-                     placeholder="スロット名を入力"
-                     style="border: none; background: transparent; font-size: 16px; font-weight: ${
-                       info.isUsed ? "bold" : "normal"
-                     }; color: ${info.isUsed ? "#333" : "#999"};"
-                     ${!info.isUsed ? "disabled" : ""}>
-            </div>
-            <div>
-              <button class="slot-select-btn" data-slot-id="${
-                info.id
-              }">選択</button>
-              <button class="slot-clear-btn" data-slot-id="${info.id}" ${
-          !info.isUsed ? "disabled" : ""
-        }>クリア</button>
-              <button class="slot-delete-btn" data-slot-id="${info.id}" ${
-          !canDelete ? "disabled" : ""
-        } style="${
-          !canDelete ? "opacity: 0.5; cursor: not-allowed;" : ""
-        }">削除</button>
-            </div>
-          </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; margin-left: 25px;">
+      <div style="display: flex; align-items: center;">
+        <span style="font-size: 18px; font-weight: bold; margin-right: 10px; color: ${
+          info.isCurrent ? "#2196F3" : "#666"
+        };">
+          ${info.displayNumber}
+        </span>
+        <input type="text"
+               class="slot-name-edit"
+               data-slot-id="${info.id}"
+               value="${info.name || ""}"
+               placeholder="スロット名を入力"
+               style="...">
+      </div>
+      <div>
+        <button class="slot-select-btn" data-slot-id="${info.id}"
+                ${isExtractionMode ? "disabled" : ""}>選択</button>
+        <button class="slot-clear-btn" data-slot-id="${info.id}">クリア</button>
+        <button class="slot-delete-btn" data-slot-id="${info.id}"
+                ${!canDelete ? "disabled" : ""}>削除</button>
+      </div>
+    </div>
 
-          <div style="position: relative; margin-left: 25px;">
-            <textarea class="slot-prompt-edit"
-                      data-slot-id="${info.id}"
-                      placeholder="${
-                        info.isUsed ? "プロンプト内容" : "このスロットは空です"
-                      }"
-                      style="width: 93%; min-height: 30px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; resize: vertical; font-family: monospace; font-size: 12px;"
-                      ${!info.isUsed ? "disabled" : ""}>${
+    <!-- モード選択ラジオボタン -->
+    <div style="margin: 10px 0 10px 25px; display: flex; gap: 20px;">
+      <label style="font-size: 12px;">
+        <input type="radio" name="slot-mode-${info.id}" value="normal"
+               class="slot-mode-radio" data-slot-id="${info.id}"
+               ${!slot?.mode || slot.mode === "normal" ? "checked" : ""}>
+        通常
+      </label>
+      <label style="font-size: 12px;">
+        <input type="radio" name="slot-mode-${info.id}" value="random"
+               class="slot-mode-radio" data-slot-id="${info.id}"
+               ${slot?.mode === "random" ? "checked" : ""}>
+        ランダム抽出
+      </label>
+      <label style="font-size: 12px;">
+        <input type="radio" name="slot-mode-${info.id}" value="sequential"
+               class="slot-mode-radio" data-slot-id="${info.id}"
+               ${slot?.mode === "sequential" ? "checked" : ""}>
+        連続抽出
+      </label>
+    </div>
+
+    <!-- 通常モード用テキストエリア -->
+    <div class="normal-mode-content" style="display: ${
+      !isExtractionMode ? "block" : "none"
+    }; position: relative; margin-left: 25px;">
+      <textarea class="slot-prompt-edit"
+                data-slot-id="${info.id}"
+                placeholder="${
+                  info.isUsed ? "プロンプト内容" : "このスロットは空です"
+                }"
+                style="width: 93%; min-height: 30px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; resize: vertical; font-family: monospace; font-size: 12px;"
+                ${!info.isUsed ? "disabled" : ""}>${
           info.isUsed
             ? this.slotManager.slots.find((s) => s.id === info.id)?.prompt || ""
             : ""
         }</textarea>
+      ${
+        info.isUsed
+          ? `<div style="position: absolute; bottom: 5px; right: 5px; font-size: 11px; color: #999;">${
+              this.slotManager.slots.find((s) => s.id === info.id)?.prompt
+                ?.length || 0
+            } 文字</div>`
+          : ""
+      }
+    </div>
 
-            ${
-              info.isUsed
-                ? `
-              <div style="position: absolute; bottom: 5px; right: 5px; font-size: 11px; color: #999;">
-                ${
-                  this.slotManager.slots.find((s) => s.id === info.id)?.prompt
-                    ?.length || 0
-                } 文字
-              </div>
-            `
-                : ""
-            }
-          </div>
+    <!-- 抽出モード用カテゴリー選択 -->
+    <div class="extraction-mode-content" style="display: ${
+      isExtractionMode ? "block" : "none"
+    }; margin-left: 25px;">
+      <div style="margin-bottom: 10px;">
+        <label style="font-size: 12px; display: block; margin-bottom: 5px;">大項目:</label>
+        <select class="extraction-category-big" data-slot-id="${
+          info.id
+        }" style="width: 200px;">
+          <option value="">すべて</option>
+        </select>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <label style="font-size: 12px; display: block; margin-bottom: 5px;">中項目:</label>
+        <select class="extraction-category-middle" data-slot-id="${
+          info.id
+        }" style="width: 200px;" ${
+          !slot?.extractionCategory?.big ? "disabled" : ""
+        }>
+          <option value="">すべて</option>
+        </select>
+      </div>
+      ${
+        slot?.currentExtraction
+          ? `
+        <div style="padding: 10px; background: #f5f5f5; border-radius: 4px; font-size: 12px;">
+          <strong>現在:</strong> ${slot.currentExtraction}
+        </div>      `
+          : ""
+      }
+    </div>
 
-          ${
-            info.isCurrent
-              ? '<div style="margin-top: 5px; color: #2196F3; font-size: 12px; margin-left: 25px;">現在選択中</div>'
-              : ""
-          }
-        `;
+    ${
+      info.isCurrent
+        ? '<div style="margin-top: 5px; color: #2196F3; font-size: 12px; margin-left: 25px;">現在選択中</div>'
+        : ""
+    }
+  `;
 
-        // ホバー効果（ドラッグハンドル以外）
-        if (!info.isCurrent) {
-          card.addEventListener("mouseenter", (e) => {
-            if (!e.target.classList.contains("slot-drag-handle")) {
-              card.style.borderColor = "#90CAF9";
-              card.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
-            }
-          });
+        // モード切り替えのイベントハンドラーを設定
+        this.setupSlotModeHandlers(card, info.id);
 
-          card.addEventListener("mouseleave", () => {
-            card.style.borderColor = "#ddd";
-            card.style.boxShadow = "none";
-          });
-        }
-
-        // ドラッグハンドルのホバー効果
-        const dragHandle = card.querySelector(".slot-drag-handle");
-        if (dragHandle) {
-          dragHandle.addEventListener("mouseenter", () => {
-            dragHandle.style.color = "#2196F3";
-          });
-
-          dragHandle.addEventListener("mouseleave", () => {
-            dragHandle.style.color = "#999";
-          });
+        // 保存されているカテゴリー設定を復元
+        if (isExtractionMode && slot?.extractionCategory) {
+          this.restoreExtractionCategories(card, slot);
         }
 
         return card;
+      }
+
+      /**
+       * 保存されているカテゴリー設定を復元
+       */
+      restoreExtractionCategories(card, slot) {
+        const bigSelect = card.querySelector(".extraction-category-big");
+        const middleSelect = card.querySelector(".extraction-category-middle");
+
+        if (!bigSelect) return;
+
+        // 大項目のオプションを設定
+        this.populateCategorySelect(bigSelect, 0);
+
+        // 保存されている大項目を選択
+        if (slot.extractionCategory.big) {
+          bigSelect.value = slot.extractionCategory.big;
+
+          // 中項目のオプションを設定
+          if (middleSelect) {
+            this.populateCategorySelect(
+              middleSelect,
+              1,
+              slot.extractionCategory.big
+            );
+            middleSelect.disabled = false;
+
+            // 保存されている中項目を選択
+            if (slot.extractionCategory.middle) {
+              middleSelect.value = slot.extractionCategory.middle;
+            }
+          }
+        }
+      }
+
+      /**
+       * スロットモードのイベントハンドラーを設定
+       */
+      setupSlotModeHandlers(card, slotId) {
+        // モード切り替えラジオボタン
+        const modeRadios = card.querySelectorAll(".slot-mode-radio");
+        modeRadios.forEach((radio) => {
+          radio.addEventListener("change", async (e) => {
+            await this.handleModeChange(slotId, e.target.value);
+          });
+        });
+
+        // カテゴリー選択
+        const bigSelect = card.querySelector(".extraction-category-big");
+        const middleSelect = card.querySelector(".extraction-category-middle");
+
+        if (bigSelect) {
+          bigSelect.addEventListener("change", async (e) => {
+            const slot = this.slotManager.slots.find((s) => s.id === slotId);
+            if (slot) {
+              // カテゴリーを更新
+              if (!slot.extractionCategory) {
+                slot.extractionCategory = { big: "", middle: "" };
+              }
+              slot.extractionCategory.big = e.target.value;
+              slot.extractionCategory.middle = ""; // 大項目が変わったら中項目をリセット
+
+              await this.slotManager.saveToStorage();
+
+              // 中項目を更新
+              if (e.target.value) {
+                this.populateCategorySelect(middleSelect, 1, e.target.value);
+                middleSelect.disabled = false;
+              } else {
+                middleSelect.innerHTML = '<option value="">すべて</option>';
+                middleSelect.disabled = true;
+              }
+            }
+          });
+        }
+
+        if (middleSelect) {
+          middleSelect.addEventListener("change", async (e) => {
+            const slot = this.slotManager.slots.find((s) => s.id === slotId);
+            if (slot) {
+              if (!slot.extractionCategory) {
+                slot.extractionCategory = { big: "", middle: "" };
+              }
+              slot.extractionCategory.middle = e.target.value;
+              await this.slotManager.saveToStorage();
+            }
+          });
+        }
+      }
+
+      /**
+       * カテゴリー選択肢を設定
+       */
+      populateCategorySelect(selectElement, level, parentValue = null) {
+        selectElement.innerHTML = '<option value="">すべて</option>';
+
+        const categories = parentValue
+          ? categoryData.getCategoriesByParent(level, parentValue)
+          : categoryData.data[level].map((item) => item.value);
+
+        const uniqueCategories = [...new Set(categories)];
+        uniqueCategories.sort().forEach((category) => {
+          const option = document.createElement("option");
+          option.value = category;
+          option.textContent = category;
+          selectElement.appendChild(option);
+        });
+      }
+
+      /**
+       * モード変更処理
+       */
+      async handleModeChange(slotId, newMode) {
+        const slot = this.slotManager.slots.find((s) => s.id === slotId);
+        if (!slot) return;
+
+        slot.mode = newMode;
+
+        // 抽出モードの場合は初期化
+        if (newMode === "random" || newMode === "sequential") {
+          slot.prompt = "";
+          slot.elements = [];
+          slot.isUsed = true;
+          slot.extractionCategory = { big: "", middle: "" };
+          slot.extractionIndex = 0;
+          slot.currentExtraction = null;
+        }
+
+        await this.slotManager.saveToStorage();
+        this.updateDisplay();
+
+        // ドロップダウンも更新
+        this.slotManager.updateUI();
+      }
+      /**
+       * スロットモードのイベントハンドラーを設定
+       */
+      setupSlotModeHandlers(card, slotId) {
+        // モード切り替えラジオボタン
+        const modeRadios = card.querySelectorAll(".slot-mode-radio");
+        modeRadios.forEach((radio) => {
+          radio.addEventListener("change", async (e) => {
+            await this.handleModeChange(slotId, e.target.value);
+          });
+        });
+
+        // カテゴリー選択
+        const bigSelect = card.querySelector(".extraction-category-big");
+        const middleSelect = card.querySelector(".extraction-category-middle");
+
+        if (bigSelect) {
+          // 大項目のオプションを設定
+          this.populateCategorySelect(bigSelect, 0);
+
+          bigSelect.addEventListener("change", async (e) => {
+            const slot = this.slotManager.slots.find((s) => s.id === slotId);
+            if (slot) {
+              slot.extractionCategory = { big: e.target.value, middle: "" };
+              await this.slotManager.saveToStorage();
+
+              // 中項目を更新
+              if (e.target.value) {
+                this.populateCategorySelect(middleSelect, 1, e.target.value);
+                middleSelect.disabled = false;
+              } else {
+                middleSelect.innerHTML = '<option value="">すべて</option>';
+                middleSelect.disabled = true;
+              }
+            }
+          });
+        }
+
+        if (middleSelect) {
+          middleSelect.addEventListener("change", async (e) => {
+            const slot = this.slotManager.slots.find((s) => s.id === slotId);
+            if (slot && slot.extractionCategory) {
+              slot.extractionCategory.middle = e.target.value;
+              await this.slotManager.saveToStorage();
+            }
+          });
+        }
+      }
+
+      /**
+       * カテゴリー選択肢を設定
+       */
+      populateCategorySelect(selectElement, level, parentValue = null) {
+        selectElement.innerHTML = '<option value="">すべて</option>';
+
+        const categories = parentValue
+          ? categoryData.getCategoriesByParent(level, parentValue)
+          : categoryData.data[level].map((item) => item.value);
+
+        const uniqueCategories = [...new Set(categories)];
+        uniqueCategories.sort().forEach((category) => {
+          const option = document.createElement("option");
+          option.value = category;
+          option.textContent = category;
+          selectElement.appendChild(option);
+        });
+      }
+
+      /**
+       * モード変更処理
+       */
+      async handleModeChange(slotId, newMode) {
+        const slot = this.slotManager.slots.find((s) => s.id === slotId);
+        if (!slot) return;
+
+        slot.mode = newMode;
+
+        // 抽出モードの場合は初期化
+        if (newMode === "random" || newMode === "sequential") {
+          slot.prompt = "";
+          slot.elements = [];
+          slot.isUsed = true;
+          slot.extractionCategory = { big: "", middle: "" };
+          slot.extractionIndex = 0;
+          slot.currentExtraction = null;
+        }
+
+        await this.slotManager.saveToStorage();
+        this.updateDisplay();
+
+        // ドロップダウンも更新
+        this.slotManager.updateUI();
       }
 
       /**
