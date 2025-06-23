@@ -666,7 +666,7 @@
       }
 
       /**
-       * スロットカードを作成（拡張版）
+       * スロットカードを作成
        */
       createSlotCard(info) {
         const card = document.createElement("div");

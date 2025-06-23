@@ -37,7 +37,6 @@ if (typeof window !== "undefined") {
 // ============================================
 class PromptGeneratorApp {
   constructor() {
-    // jQuery削除: this.generateInput = $("#generatePrompt");
     this.generateInput = {
       val: function (value) {
         const element = document.getElementById("generatePrompt");
@@ -67,7 +66,6 @@ class PromptGeneratorApp {
       },
     };
 
-    // Phase 5: 外部モジュールのインスタンス化
     this.listManager = new PromptListManager();
     this.fileHandler = new FileHandler();
     this.searchHandler = new SearchHandler(this);
@@ -331,7 +329,7 @@ class PromptGeneratorApp {
   }
 
   // ============================================
-  // タブ管理（jQuery削除版）
+
   // ============================================
 
   setupTabs() {
@@ -432,11 +430,10 @@ class PromptGeneratorApp {
   }
 
   // ============================================
-  // ウィンドウ操作（jQuery削除版）
+
   // ============================================
 
   setupWindowHandlers() {
-    // jQuery削除: $("#openWindow").on("click", ...)
     const openWindowBtn = document.getElementById("openWindow");
     if (openWindowBtn) {
       openWindowBtn.addEventListener("click", () => {
@@ -450,7 +447,6 @@ class PromptGeneratorApp {
       });
     }
 
-    // jQuery削除: $("#show-panel").on("click", ...)
     const showPanelBtn = document.getElementById("show-panel");
     if (showPanelBtn) {
       showPanelBtn.addEventListener("click", () => {
@@ -461,7 +457,6 @@ class PromptGeneratorApp {
       });
     }
 
-    // jQuery削除: $("#popup-image").on("click", ...)
     const popupImage = document.getElementById("popup-image");
     if (popupImage) {
       popupImage.addEventListener("click", () => this.closePopup());
@@ -477,7 +472,6 @@ class PromptGeneratorApp {
   }
 
   closePopup() {
-    // jQuery削除: $("#popup").hide()
     const popup = document.getElementById("popup");
     if (popup) {
       popup.style.display = "none";
@@ -485,7 +479,7 @@ class PromptGeneratorApp {
   }
 
   // ============================================
-  // プロンプト入力（jQuery削除版）
+
   // ============================================
 
   setupPromptInputHandlers() {
@@ -544,7 +538,7 @@ class PromptGeneratorApp {
   }
 
   // ============================================
-  // ボタン操作（jQuery削除版）
+
   // ============================================
 
   setupButtonHandlers() {
@@ -764,11 +758,10 @@ class PromptGeneratorApp {
   }
 
   // ============================================
-  // オプション設定（jQuery削除版）
+
   // ============================================
 
   setupOptionHandlers() {
-    // jQuery削除: $("#isDeleteCheck").on("change", ...)
     const isDeleteCheck = document.getElementById("isDeleteCheck");
     if (isDeleteCheck) {
       isDeleteCheck.addEventListener("change", (e) => {
@@ -777,7 +770,6 @@ class PromptGeneratorApp {
       });
     }
 
-    // jQuery削除: $("#DeeplAuth").on("change", ...)
     const deeplAuth = document.getElementById("DeeplAuth");
     if (deeplAuth) {
       deeplAuth.addEventListener("change", (e) => {
@@ -837,7 +829,7 @@ class PromptGeneratorApp {
   }
 
   // ============================================
-  // UI状態の更新（jQuery削除版）
+
   // ============================================
 
   updateUIState() {
@@ -881,7 +873,7 @@ class PromptGeneratorApp {
 }
 
 // ============================================
-// アプリケーション初期化（jQuery削除版）
+
 // ============================================
 
 if (document.readyState === "loading") {

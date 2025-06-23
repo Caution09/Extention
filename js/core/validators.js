@@ -1,5 +1,5 @@
 /**
- * バリデーションモジュール（最適化版）
+ * バリデーションモジュール
  * 高性能で拡張可能なバリデーションシステム
  */
 const Validators = {
@@ -92,7 +92,7 @@ const Validators = {
   },
 
   /**
-   * パターンマッチング（最適化版）
+   * パターンマッチング
    * @param {string} value - 検証する値
    * @param {RegExp|string} pattern - 正規表現パターン
    * @param {string} [message] - エラーメッセージ
@@ -128,7 +128,7 @@ const Validators = {
   },
 
   /**
-   * プロンプトの重複チェック（最適化版）
+   * プロンプトの重複チェック
    * @param {Object} newItem - 新しいアイテム
    * @param {Array} existingList - 既存のリスト
    * @returns {Object} 検証結果
@@ -190,7 +190,7 @@ const Validators = {
   },
 
   /**
-   * カテゴリー入力の検証（拡張版）
+   * カテゴリー入力の検証
    * @param {Object} categories - { big, middle, small }
    * @returns {Object} 検証結果
    */
@@ -231,7 +231,7 @@ const Validators = {
   },
 
   /**
-   * プロンプト文字列の検証（拡張版）
+   * プロンプト文字列の検証
    * @param {string} prompt - プロンプト
    * @returns {Object} 検証結果
    */
@@ -343,7 +343,7 @@ const Validators = {
   },
 
   /**
-   * 重み値の検証（拡張版）
+   * 重み値の検証
    * @param {string} weight - 重み値
    * @param {string} [mode='SD'] - モード（SD/NAI）
    * @returns {Object} 検証結果
@@ -385,7 +385,7 @@ const Validators = {
   },
 
   /**
-   * APIキーの検証（拡張版）
+   * APIキーの検証
    * @param {string} apiKey - APIキー
    * @param {string} [keyType='API'] - キーの種類
    * @returns {Object} 検証結果
@@ -455,7 +455,7 @@ const Validators = {
   },
 
   /**
-   * 複合検証の実行（最適化版）
+   * 複合検証の実行
    * @param {Object} data - 検証データ
    * @param {Object} rules - 検証ルール
    * @returns {Object} 検証結果
@@ -570,7 +570,7 @@ const Validators = {
   },
 };
 
-// 便利な検証ルールのプリセット（拡張版）
+// 便利な検証ルールのプリセット
 Validators.Rules = {
   /**
    * プロンプト要素の検証ルール

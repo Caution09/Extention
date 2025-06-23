@@ -37,7 +37,7 @@ const APIConfig = {
 // ============================================
 
 /**
- * タイムアウト付きfetch（最適化版）
+ * タイムアウト付きfetch
  * @param {string} url - リクエストURL
  * @param {Object} options - fetchオプション
  * @param {number} timeout - タイムアウト時間（ミリ秒）

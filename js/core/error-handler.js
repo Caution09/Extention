@@ -1,5 +1,5 @@
 /**
- * エラーハンドリングモジュール（最適化版）
+ * エラーハンドリングモジュール
  * jQuery依存を削除し、より洗練された通知システムを実装
  */
 const ErrorHandler = {
@@ -162,7 +162,7 @@ const ErrorHandler = {
   },
 
   /**
-   * トースト通知を表示（最適化版）
+   * トースト通知を表示
    * @param {string} message - メッセージ
    * @param {number} duration - 表示時間（ミリ秒）
    * @param {string} [type='error'] - メッセージタイプ
@@ -257,7 +257,7 @@ const ErrorHandler = {
   },
 
   /**
-   * インラインエラーを表示（最適化版）
+   * インラインエラーを表示
    * @param {string} elementId - 要素のID
    * @param {string} message - エラーメッセージ
    */
@@ -304,7 +304,7 @@ const ErrorHandler = {
   },
 
   /**
-   * 非同期処理のエラーハンドリングラッパー（最適化版）
+   * 非同期処理のエラーハンドリングラッパー
    * @param {Function} asyncFunc - 非同期関数
    * @param {string} context - エラーコンテキスト
    * @param {Object} [options] - オプション
@@ -382,7 +382,7 @@ const ErrorHandler = {
   },
 
   /**
-   * ローディング表示の制御（最適化版）
+   * ローディング表示の制御
    * @param {boolean} show - 表示/非表示
    * @param {string} [message] - ローディングメッセージ
    * @param {HTMLElement} [existingElement] - 既存のローディング要素
@@ -480,7 +480,7 @@ const ErrorHandler = {
   },
 
   /**
-   * 入力検証エラーのハンドリング（最適化版）
+   * 入力検証エラーのハンドリング
    * @param {Object} validationResult - 検証結果
    * @param {Object} fieldMapping - フィールドとIDのマッピング
    */
@@ -514,7 +514,6 @@ const ErrorHandler = {
   setDebugMode(enabled) {
     this.debugMode = enabled;
     if (enabled) {
-      console.log("%cDebug mode enabled", "color: #4CAF50; font-weight: bold;");
       this.notify("デバッグモードが有効になりました", {
         type: this.NotificationType.TOAST,
         messageType: "info",

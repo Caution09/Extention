@@ -1,8 +1,3 @@
-/**
- * auto-generate-handler.js - 自動Generate機能モジュール
- * Phase 7: NovelAI専用の自動生成機能（改良版）
- */
-
 class AutoGenerateHandler {
   constructor() {
     this.isRunning = false;

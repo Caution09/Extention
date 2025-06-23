@@ -21,7 +21,7 @@ class PromptSlotManager {
   }
 
   /**
-   * スロットを初期化（拡張版）
+   * スロットを初期化
    */
   initializeSlots(count = 3) {
     this.slots = [];
@@ -46,7 +46,7 @@ class PromptSlotManager {
   }
 
   /**
-   * 新しいスロットを追加（拡張版）
+   * 新しいスロットを追加
    */
   addNewSlot() {
     if (this.slots.length >= this.maxSlots) {
@@ -306,7 +306,7 @@ class PromptSlotManager {
   }
 
   /**
-   * スロット情報を取得（拡張版）
+   * スロット情報を取得
    */
   getSlotInfo(slotId) {
     const slot = this.slots.find((s) => s.id === slotId);
@@ -412,7 +412,7 @@ class PromptSlotManager {
     return false;
   }
   /**
-   * UIを更新（拡張版）
+   * UIを更新
    */
   updateUI() {
     const selector = document.getElementById("prompt-slot-selector");
@@ -561,7 +561,7 @@ class PromptSlotManager {
   }
 
   /**
-   * 使用中のスロット情報を取得（拡張版）
+   * 使用中のスロット情報を取得
    */
   getUsedSlots() {
     return this.slots

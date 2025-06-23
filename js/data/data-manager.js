@@ -227,13 +227,11 @@ async function loadOptionData() {
     if (result.optionData) {
       AppState.userSettings.optionData = result.optionData;
 
-      // jQuery削除: $("#isDeleteCheck").prop("checked", ...)
       const deleteCheck = document.getElementById("isDeleteCheck");
       if (deleteCheck) {
         deleteCheck.checked = AppState.userSettings.optionData.isDeleteCheck;
       }
 
-      // jQuery削除: $("#DeeplAuth").val(...)
       const deeplAuth = document.getElementById("DeeplAuth");
       if (deeplAuth) {
         deeplAuth.value = AppState.userSettings.optionData.deeplAuthKey || "";
@@ -262,7 +260,6 @@ async function loadOptionData() {
  */
 async function updateUIBasedOnCurrentTab() {
   return new Promise((resolve) => {
-    // jQuery削除: $('[name="UIType"]')
     const uiTypeButtons = document.querySelectorAll('[name="UIType"]');
     const editTypeButtons = document.querySelectorAll('[name="EditType"]');
 
@@ -280,8 +277,6 @@ async function updateUIBasedOnCurrentTab() {
       UpdateGenaretePrompt();
       console.log("Current URL:", currentUrl);
 
-      // UIタイプボタンの設定（jQuery削除版）
-      // jQuery削除: uiTypeButtons.eq(0).prop("checked", true)
       switch (AppState.userSettings.optionData.shaping) {
         case "SD":
           if (uiTypeButtons[0]) uiTypeButtons[0].checked = true;
@@ -294,8 +289,6 @@ async function updateUIBasedOnCurrentTab() {
           break;
       }
 
-      // 編集タイプボタンの設定（jQuery削除版）
-      // jQuery削除: editTypeButtons.eq(0).prop("checked", true)
       switch (AppState.userSettings.optionData.editType) {
         case "SELECT":
           if (editTypeButtons[0]) editTypeButtons[0].checked = true;

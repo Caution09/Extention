@@ -171,17 +171,7 @@ function Generate() {
  */
 function showGlobalUtilitiesInfo() {
   console.group("Global Utilities Module");
-  console.log("Deprecated functions that will be removed in future versions:");
-  console.log("- UpdateGenaretePrompt() → app.updatePromptDisplay()");
-  console.log("- InitGenaretePrompt() → promptEditor.init()");
-  console.log("- editInit() → app.refreshEditList()");
-  console.log("- archivesInit() → app.refreshArchiveList()");
-  console.log("- addInit() → app.refreshAddList()");
-  console.log("- sendBackground() → chrome.runtime.sendMessage()");
-  console.log("- setCategoryList() → categoryData methods");
-  console.log("- setSeachCategory() → app.updateUIState()");
-  console.log("- jsonLoop() → standard loops");
-  console.log("- Generate() → app.generatePrompt()");
+
   console.groupEnd();
 }
 

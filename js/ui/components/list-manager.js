@@ -1,8 +1,3 @@
-/**
- * list-manager.js - リスト管理モジュール
- * Phase 5: main.jsから分離
- */
-
 // ============================================
 // リスト管理クラス
 // ============================================
@@ -144,22 +139,61 @@ class PromptListManager {
     }
   }
 
+  // list-manager.js - createAddItem メソッドの修正（見た目は一切変えない）
+  // createAddItem メソッドの修正
   async createAddItem($li, item, index, options = {}) {
     // カテゴリー入力
+    const categoryInputs = [];
+
     for (let i = 0; i < 3; i++) {
-      $li.append(
-        UIFactory.createInput({
-          value: item.data[i],
-          index: index,
-          onInput: (value) => {
-            AppState.data.localPromptList[index].data[i] = value;
-          },
-          onBlur: () => saveLocalList(),
-        })
-      );
+      const $input = UIFactory.createInput({
+        value: item.data[i],
+        index: index,
+        onInput: (value) => {
+          AppState.data.localPromptList[index].data[i] = value;
+        },
+        onBlur: () => saveLocalList(),
+      });
+
+      // datalist属性を追加（見た目は変えない）
+      if (i === 0) {
+        $input.attr("list", "category");
+      } else if (i === 1 && item.data[0]) {
+        $input.attr("list", "category" + item.data[0]);
+      } else if (i === 2 && item.data[0] && item.data[1]) {
+        $input.attr("list", "category" + item.data[0] + item.data[1]);
+      }
+
+      // マウスオーバーでクリアする機能を追加
+      EventHandlers.addInputClearBehavior($input);
+
+      categoryInputs.push($input);
+      $li.append($input);
     }
 
-    // プロンプト入力
+    // 大項目変更時に中項目・小項目のdatalistを更新
+    categoryInputs[0].on("change", function () {
+      const newValue = $(this).val();
+      if (newValue) {
+        categoryInputs[1].attr("list", "category" + newValue);
+      } else {
+        categoryInputs[1].removeAttr("list");
+      }
+      categoryInputs[2].removeAttr("list");
+    });
+
+    // 中項目変更時に小項目のdatalistを更新
+    categoryInputs[1].on("change", function () {
+      const bigValue = categoryInputs[0].val();
+      const middleValue = $(this).val();
+      if (bigValue && middleValue) {
+        categoryInputs[2].attr("list", "category" + bigValue + middleValue);
+      } else {
+        categoryInputs[2].removeAttr("list");
+      }
+    });
+
+    // プロンプト入力（既存のコードそのまま）
     $li.append(
       UIFactory.createInput({
         value: item.prompt,
@@ -171,7 +205,7 @@ class PromptListManager {
       })
     );
 
-    // ボタン - ローカル辞書（type='add'）の場合のみ削除ボタンを表示
+    // 以下、既存のボタン処理はそのまま...
     const isLocalDictionary = options.type === "add";
 
     const buttons = UIFactory.createButtonSet({
@@ -188,19 +222,16 @@ class PromptListManager {
           $li.fadeOut(200, async () => {
             $li.remove();
 
-            // インデックスを再割り当て（軽量化）
             $("#addPromptList li").each((newIndex, element) => {
               if (element.id !== String(newIndex)) {
                 element.id = newIndex;
               }
             });
 
-            // データを保存（カテゴリー更新なし）
             await Storage.set({
               localPromptList: AppState.data.localPromptList,
             });
 
-            // デバウンス付きでカテゴリー更新
             debouncedCategoryUpdate();
           });
         }
@@ -217,6 +248,34 @@ class PromptListManager {
       $li.append(buttons.delete);
       AppState.data.localPromptList[index].sort = index;
       $li.append(UIFactory.createDragIcon(index));
+    }
+  }
+
+  // 新規メソッド：中項目のdatalistを更新
+  updateMiddleCategoryDatalist($li, bigValue) {
+    const middleInput = $li.find("input").eq(1);
+    const smallInput = $li.find("input").eq(2);
+
+    if (bigValue) {
+      middleInput.attr("list", "category" + bigValue);
+      // 大項目が変わったら中項目・小項目をクリア
+      middleInput.val("");
+      smallInput.val("");
+      smallInput.attr("list", "");
+    } else {
+      middleInput.attr("list", "");
+      smallInput.attr("list", "");
+    }
+  }
+
+  // 新規メソッド：小項目のdatalistを更新
+  updateSmallCategoryDatalist($li, bigValue, middleValue) {
+    const smallInput = $li.find("input").eq(2);
+
+    if (bigValue && middleValue) {
+      smallInput.attr("list", "category" + bigValue + middleValue);
+    } else {
+      smallInput.attr("list", "");
     }
   }
 
@@ -704,6 +763,17 @@ class PromptListManager {
     } else {
       this.translationTimer = null;
     }
+  }
+
+  showCategoryHint($input, level) {
+    const hints = [
+      "既存のカテゴリーから選択するか、新規入力できます",
+      "大項目に応じた中項目が候補に表示されます",
+      "大項目と中項目に応じた小項目が候補に表示されます",
+    ];
+
+    $input.attr("placeholder", hints[level]);
+    $input.attr("title", hints[level]);
   }
 }
 

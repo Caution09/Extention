@@ -1,5 +1,5 @@
 /**
- * カテゴリー管理モジュール（最適化版）
+ * カテゴリー管理モジュール
  * メモリ効率とパフォーマンスを重視した実装
  */
 const categoryData = {
@@ -86,7 +86,7 @@ const categoryData = {
   },
 
   /**
-   * カテゴリーアイテムを追加（最適化版）
+   * カテゴリーアイテムを追加
    * @param {Object} item - 追加するアイテム
    * @param {Map[]} uniqueKeys - 重複チェック用のMap配列
    */
@@ -303,7 +303,7 @@ const categoryData = {
   },
 
   /**
-   * カテゴリーを検索（最適化版）
+   * カテゴリーを検索
    * @param {number} level - カテゴリーレベル（0-2）
    * @param {string} parentValue - 親カテゴリーの値
    * @returns {Array} マッチするカテゴリーの配列
@@ -388,7 +388,7 @@ const categoryData = {
 };
 
 /**
- * カテゴリー選択ヘルパー関数（最適化版）
+ * カテゴリー選択ヘルパー関数
  */
 function setCategoryList(selectorId, categoryLevel) {
   const selectElement = document.querySelector(selectorId);

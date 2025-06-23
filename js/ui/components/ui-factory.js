@@ -1,5 +1,5 @@
 /**
- * UI要素生成ファクトリー（最適化版）
+ * UI要素生成ファクトリー
  * jQuery依存を最小限に削減し、パフォーマンスを向上
  */
 const UIFactory = {
@@ -250,11 +250,11 @@ const UIFactory = {
 };
 
 /**
- * リスト生成ヘルパー（最適化版）
+ * リスト生成ヘルパー
  */
 const ListBuilder = {
   /**
-   * リストをクリア（最適化版）
+   * リストをクリア
    * @param {string} listId - リストのID
    */
   clearList(listId) {
@@ -276,7 +276,7 @@ const ListBuilder = {
   },
 
   /**
-   * ヘッダー行を作成（最適化版）
+   * ヘッダー行を作成
    * @param {string} listId - リストのID
    * @param {string[]} headers - ヘッダーテキストの配列
    */
@@ -340,7 +340,7 @@ const ListBuilder = {
 };
 
 /**
- * イベントハンドラーヘルパー（最適化版）
+ * イベントハンドラーヘルパー
  */
 const EventHandlers = {
   /**
@@ -373,7 +373,7 @@ const EventHandlers = {
   },
 
   /**
-   * カテゴリー連動の設定（最適化版）
+   * カテゴリー連動の設定
    * @param {Array} inputs - [大カテゴリー, 中カテゴリー, 小カテゴリー]の入力フィールド
    */
   setupCategoryChain(inputs) {

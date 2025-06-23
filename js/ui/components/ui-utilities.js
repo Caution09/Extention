@@ -1,8 +1,3 @@
-/**
- * ui-utilities.js - UI関連ユーティリティモジュール
- * Phase 5: main.jsから分離
- */
-
 // ============================================
 // UIユーティリティ
 // ============================================
@@ -231,6 +226,38 @@ const UIUtilities = {
     }
 
     return data;
+  },
+};
+
+// ui-utilities.js に追加
+const CategoryAutocomplete = {
+  // 入力補完の改善
+  enhanceInput(inputElement, categoryLevel) {
+    let currentFocus = -1;
+
+    inputElement.addEventListener("input", function (e) {
+      const value = this.value;
+      if (!value) return;
+
+      // カスタムドロップダウンの実装（将来的に）
+      // 現在はブラウザのdatalist機能を使用
+    });
+
+    // 矢印キーでの選択サポート
+    inputElement.addEventListener("keydown", function (e) {
+      if (e.keyCode === 40) {
+        // 下矢印
+        currentFocus++;
+        // datalistの候補を選択
+      } else if (e.keyCode === 38) {
+        // 上矢印
+        currentFocus--;
+      } else if (e.keyCode === 13) {
+        // Enter
+        e.preventDefault();
+        // 選択を確定
+      }
+    });
   },
 };
 
