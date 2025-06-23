@@ -428,16 +428,17 @@ class PromptSlotManager {
    */
   getUsedSlots() {
     return this.slots
-      .map((slot, index) => ({
-        slot: slot,
-        index: index,
-      }))
-      .filter((item) => item.slot.isUsed)
-      .map((item) => ({
-        id: item.index + 1,
-        name: item.slot.name || `スロット${item.index + 1}`,
-        prompt: item.slot.prompt,
-      }));
+      .map((slot, currentIndex) => {
+        if (slot.isUsed) {
+          return {
+            id: currentIndex + 1, // 現在の配列内での位置 + 1
+            name: slot.name || `スロット${currentIndex + 1}`,
+            prompt: slot.prompt,
+          };
+        }
+        return null;
+      })
+      .filter((item) => item !== null);
   }
 
   /**

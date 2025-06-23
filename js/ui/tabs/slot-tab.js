@@ -1,6 +1,6 @@
 /**
  * slot-tab.js - スロットタブモジュール
- * Phase 8.5: 動的スロット管理UI対応版
+ * Phase 8.5: 動的スロット管理UI対応版 + ドラッグソート機能
  */
 
 // TabManagerが利用可能になるまで待つ
@@ -25,6 +25,7 @@
 
         // スロット管理への参照は後で取得
         this.slotManager = null;
+        this.isSorting = false; // ソート中フラグ
       }
 
       /**
@@ -148,9 +149,122 @@
       }
 
       /**
+       * ドラッグ&ドロップによるソート機能を設定
+       */
+      setupSortable() {
+        const container = $("#slot-container");
+
+        // 既存のsortableを破棄
+        if (container.hasClass("ui-sortable")) {
+          container.sortable("destroy");
+        }
+
+        // sortableを設定
+        container.sortable({
+          handle: ".slot-drag-handle", // ドラッグハンドルを指定
+          placeholder: "slot-placeholder",
+          tolerance: "pointer",
+          cursor: "move",
+          revert: 150,
+
+          // ソート開始時
+          start: (event, ui) => {
+            this.isSorting = true;
+
+            // プレースホルダーのスタイル設定
+            ui.placeholder.css({
+              height: ui.item.outerHeight(),
+              opacity: 0.5,
+              background: "#e3f2fd",
+              border: "2px dashed #2196F3",
+              borderRadius: "8px",
+              marginBottom: "10px",
+            });
+
+            // ドラッグ中のアイテムのスタイル
+            ui.helper.css({
+              opacity: 0.8,
+              boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
+            });
+          },
+
+          // ソート中
+          sort: (event, ui) => {
+            // 必要に応じて処理を追加
+          },
+
+          // ソート終了時
+          stop: async (event, ui) => {
+            this.isSorting = false;
+
+            // 新しい順序を取得
+            const sortedElements = container.children(".slot-card").toArray();
+            const newOrder = sortedElements.map((el) =>
+              parseInt(el.dataset.slotId)
+            );
+
+            // 並び替えを実行
+            await this.reorderSlots(newOrder);
+          },
+        });
+      }
+
+      /**
+       * スロットの順序を更新
+       * @param {Array<number>} newOrder - 新しい順序のスロットID配列
+       */
+      async reorderSlots(newOrder) {
+        // 現在のスロット配列を新しい順序で並び替え
+        const oldSlots = [...this.slotManager.slots];
+        const newSlots = [];
+
+        // 現在選択中のスロットのIDを保持
+        const currentSlotId =
+          this.slotManager.slots[this.slotManager.currentSlot]?.id;
+
+        // 新しい順序でスロットを配置
+        newOrder.forEach((slotId, index) => {
+          const slot = oldSlots.find((s) => s.id === slotId);
+          if (slot) {
+            newSlots.push(slot);
+          }
+        });
+
+        // スロット配列を更新
+        this.slotManager.slots = newSlots;
+
+        // 現在のスロットインデックスを更新
+        if (currentSlotId !== undefined) {
+          const newIndex = newSlots.findIndex((s) => s.id === currentSlotId);
+          if (newIndex !== -1) {
+            this.slotManager.currentSlot = newIndex;
+          }
+        }
+
+        // ストレージに保存
+        await this.slotManager.saveToStorage();
+
+        // ドロップダウンを更新
+        this.slotManager.updateUI();
+
+        // スロットカードの表示を更新（番号を再割り当て）
+        this.updateDisplay();
+
+        // 通知
+        ErrorHandler.notify("スロットの順序を変更しました", {
+          type: ErrorHandler.NotificationType.TOAST,
+          messageType: "success",
+          duration: 1500,
+        });
+      }
+
+      /**
        * コンテナ内のクリックイベント処理
        */
       async handleContainerClick(e) {
+        // ソート中はクリックイベントを無視
+        if (this.isSorting) return;
+
         const slotId = parseInt(e.target.dataset.slotId);
 
         if (e.target.classList.contains("slot-select-btn")) {
@@ -444,11 +558,17 @@
           });
         }
 
-        // 各スロットのカードを作成
-        this.slotManager.getAllSlotInfo().forEach((info) => {
+        // 各スロットのカードを作成（現在の順序でインデックスを付与）
+        this.slotManager.slots.forEach((slot, index) => {
+          const info = this.slotManager.getSlotInfo(slot.id);
+          // 表示番号を現在の順序に基づいて上書き
+          info.displayNumber = index + 1;
           const slotCard = this.createSlotCard(info);
           container.appendChild(slotCard);
         });
+
+        // ソート機能を設定
+        this.setupSortable();
       }
 
       /**
@@ -468,6 +588,7 @@
           background: ${info.isUsed ? "#fff" : "#f5f5f5"};
           ${info.isCurrent ? "box-shadow: 0 2px 8px rgba(33,150,243,0.3);" : ""}
           transition: all 0.3s ease;
+          position: relative;
         `;
 
         // 削除ボタンの無効化判定
@@ -476,7 +597,19 @@
           !info.isCurrent;
 
         card.innerHTML = `
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <div class="slot-drag-handle" style="
+            position: absolute;
+            left: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: move;
+            padding: 10px 5px;
+            color: #999;
+            font-size: 20px;
+            user-select: none;
+          " title="ドラッグして並び替え">☰</div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; margin-left: 25px;">
             <div style="display: flex; align-items: center;">
               <span style="font-size: 18px; font-weight: bold; margin-right: 10px; color: ${
                 info.isCurrent ? "#2196F3" : "#666"
@@ -508,13 +641,13 @@
             </div>
           </div>
 
-          <div style="position: relative;">
+          <div style="position: relative; margin-left: 25px;">
             <textarea class="slot-prompt-edit"
                       data-slot-id="${info.id}"
                       placeholder="${
                         info.isUsed ? "プロンプト内容" : "このスロットは空です"
                       }"
-                      style="width: 95%; min-height: 30px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; resize: vertical; font-family: monospace; font-size: 12px;"
+                      style="width: 93%; min-height: 30px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; resize: vertical; font-family: monospace; font-size: 12px;"
                       ${!info.isUsed ? "disabled" : ""}>${
           info.isUsed
             ? this.slotManager.slots.find((s) => s.id === info.id)?.prompt || ""
@@ -537,21 +670,35 @@
 
           ${
             info.isCurrent
-              ? '<div style="margin-top: 5px; color: #2196F3; font-size: 12px;">現在選択中</div>'
+              ? '<div style="margin-top: 5px; color: #2196F3; font-size: 12px; margin-left: 25px;">現在選択中</div>'
               : ""
           }
         `;
 
-        // ホバー効果
+        // ホバー効果（ドラッグハンドル以外）
         if (!info.isCurrent) {
-          card.addEventListener("mouseenter", () => {
-            card.style.borderColor = "#90CAF9";
-            card.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+          card.addEventListener("mouseenter", (e) => {
+            if (!e.target.classList.contains("slot-drag-handle")) {
+              card.style.borderColor = "#90CAF9";
+              card.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+            }
           });
 
           card.addEventListener("mouseleave", () => {
             card.style.borderColor = "#ddd";
             card.style.boxShadow = "none";
+          });
+        }
+
+        // ドラッグハンドルのホバー効果
+        const dragHandle = card.querySelector(".slot-drag-handle");
+        if (dragHandle) {
+          dragHandle.addEventListener("mouseenter", () => {
+            dragHandle.style.color = "#2196F3";
+          });
+
+          dragHandle.addEventListener("mouseleave", () => {
+            dragHandle.style.color = "#999";
           });
         }
 
