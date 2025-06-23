@@ -380,49 +380,57 @@ async function validateAndActivateGenerateButton() {
       currentWindow: true,
     });
 
-    // NovelAIページでない場合は処理しない
-    if (!tab.url.includes("novelai.net/image")) {
-      return;
-    }
+    console.log("Validating selectors on:", tab.url);
+
+    // 現在のサービスを検出
+    const currentService = detectService(tab.url);
 
     // 保存済みセレクターを取得
-    const stored = await Storage.get(["positivePromptText", "generateButton"]);
+    const stored = await Storage.get([
+      "selectorSets",
+      "positivePromptText",
+      "generateButton",
+    ]);
 
-    let promptSelectorValid = false;
-    let buttonSelectorValid = false;
+    // サービス固有のセレクターがある場合
+    if (
+      stored.selectorSets &&
+      currentService &&
+      stored.selectorSets[currentService]
+    ) {
+      const serviceSelectors = stored.selectorSets[currentService];
+      if (
+        serviceSelectors.positivePromptText &&
+        serviceSelectors.generateButton
+      ) {
+        const promptCheck = await checkSelectorOnPage(
+          tab.id,
+          serviceSelectors.positivePromptText
+        );
+        const buttonCheck = await checkSelectorOnPage(
+          tab.id,
+          serviceSelectors.generateButton
+        );
 
-    // 1. 保存済みセレクターで検証
-    if (stored.positivePromptText && stored.generateButton) {
-      const promptCheck = await checkSelectorOnPage(
-        tab.id,
-        stored.positivePromptText
-      );
-      const buttonCheck = await checkSelectorOnPage(
-        tab.id,
-        stored.generateButton
-      );
-
-      promptSelectorValid = promptCheck.exists;
-      buttonSelectorValid = buttonCheck.exists;
-
-      if (promptSelectorValid && buttonSelectorValid) {
-        // 保存済みセレクターが有効な場合
-        AppState.selector.positivePromptText = stored.positivePromptText;
-        AppState.selector.generateButton = stored.generateButton;
-        activateGenerateButton();
-        return;
+        if (promptCheck.exists && buttonCheck.exists) {
+          AppState.selector.positivePromptText =
+            serviceSelectors.positivePromptText;
+          AppState.selector.generateButton = serviceSelectors.generateButton;
+          AppState.selector.currentService = currentService;
+          activateGenerateButton();
+          return;
+        }
       }
     }
 
-    // 2. toolInfoAPIから新しいセレクターを取得
-    if (!promptSelectorValid || !buttonSelectorValid) {
+    // NovelAIサイトの場合、toolInfoから取得して自動登録
+    if (currentService === "novelai") {
       const toolInfo = AppState.data.toolInfo;
 
       if (
         toolInfo.novelAIpositivePromptText &&
         toolInfo.novelAIgenerateButton
       ) {
-        // 新しいセレクターで検証
         const newPromptCheck = await checkSelectorOnPage(
           tab.id,
           toolInfo.novelAIpositivePromptText
@@ -433,26 +441,58 @@ async function validateAndActivateGenerateButton() {
         );
 
         if (newPromptCheck.exists && newButtonCheck.exists) {
-          // 新しいセレクターが有効な場合、保存して活性化
+          console.log("Auto-registering NovelAI selectors from toolInfo");
+
+          // NovelAI用のセレクターとして登録
+          if (!stored.selectorSets) {
+            stored.selectorSets = {};
+          }
+
+          stored.selectorSets.novelai = {
+            positivePromptText: toolInfo.novelAIpositivePromptText,
+            generateButton: toolInfo.novelAIgenerateButton,
+          };
+
+          // AppStateとStorageを更新
+          AppState.selector.serviceSets.novelai = stored.selectorSets.novelai;
           AppState.selector.positivePromptText =
             toolInfo.novelAIpositivePromptText;
           AppState.selector.generateButton = toolInfo.novelAIgenerateButton;
+          AppState.selector.currentService = "novelai";
 
           await Storage.set({
-            positivePromptText: toolInfo.novelAIpositivePromptText,
-            generateButton: toolInfo.novelAIgenerateButton,
+            selectorSets: stored.selectorSets,
           });
 
           activateGenerateButton();
-        } else {
-          // 3. 新しいセレクターも無効な場合、クリア
-          clearSelectors();
+          console.log("NovelAI selectors registered successfully");
         }
       }
     }
   } catch (error) {
     console.error("セレクター検証エラー:", error);
-    clearSelectors();
+  }
+}
+
+// サービス検出用の関数も追加
+function detectService(url) {
+  if (!url) return null;
+
+  if (url.includes("novelai.net")) return "novelai";
+  if (url.includes("127.0.0.1:7860") || url.includes("localhost:7860"))
+    return "stable_diffusion";
+  if (url.includes("comfyui")) return "comfyui";
+
+  return "custom";
+}
+
+// activateGenerateButton() も修正
+function activateGenerateButton() {
+  const generateButton = document.getElementById("GeneratoButton");
+  // UIタイプの制限を完全に削除
+  if (generateButton && AppState.selector.generateButton) {
+    generateButton.style.display = "block";
+    console.log("Generateボタンを活性化しました");
   }
 }
 
@@ -496,6 +536,34 @@ function clearSelectors() {
   }
 
   console.warn("有効なセレクターが見つかりません");
+}
+
+// セレクター読み込み関数を追加
+async function loadSelectors() {
+  try {
+    const result = await Storage.get([
+      "selectorSets",
+      "positivePromptText",
+      "generateButton",
+    ]);
+
+    // サービスごとのセレクターセットを読み込み
+    if (result.selectorSets) {
+      Object.assign(AppState.selector.serviceSets, result.selectorSets);
+      console.log("Loaded selector sets:", result.selectorSets);
+    }
+
+    // 後方互換性のため、従来の形式も読み込み
+    if (result.positivePromptText) {
+      AppState.selector.positivePromptText = result.positivePromptText;
+    }
+
+    if (result.generateButton) {
+      AppState.selector.generateButton = result.generateButton;
+    }
+  } catch (error) {
+    console.error("Failed to load selectors:", error);
+  }
 }
 
 // ============================================
@@ -751,6 +819,7 @@ async function initializeDataManager() {
       loadToolInfo(),
       loadCategory(),
       loadPromptSelector(),
+      loadSelectors(),
       loadgenerateButtonSelector(),
     ];
 

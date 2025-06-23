@@ -258,46 +258,38 @@ async function CreateArchiveList() {
 
 // DOM操作処理
 function handleDOMOperation(args) {
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+  chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
     const tab = tabs[0];
     if (!tab) return;
 
-    console.log("Current tab:", tab.url);
+    console.log("DOM operation on:", tab.url);
 
-    switch (tab.url) {
-      case "http://127.0.0.1:7860/":
-        console.log("StableDiffusionRequest");
-        chrome.scripting.executeScript({
-          target: { tabId: tab.id },
-          func: StableDiffusion,
-          args: [args],
-        });
-        break;
+    // セレクターベースの汎用的な処理
+    const [
+      service,
+      method,
+      value,
+      positivePromptSelector,
+      generateButtonSelector,
+    ] = args;
 
-      case "https://novelai.net/image":
-        console.log("NovelAIRequest");
-        chrome.scripting.executeScript({
-          target: { tabId: tab.id },
-          func: NovelAI,
-          args: [args],
-        });
-        break;
-
-      default:
-        console.log("No matching site for DOM operation");
-        break;
+    // セレクターが設定されているか確認
+    if (!positivePromptSelector || !generateButtonSelector) {
+      console.error("Selectors not configured");
+      return;
     }
+
+    // 汎用的なDOM操作関数
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      func: genericDOMOperation,
+      args: [args],
+    });
   });
 }
 
-// DOM処理関数
-function StableDiffusion(args) {
-  // StableDiffusion用の処理
-  console.log("StableDiffusion DOM operation", args);
-}
-
-function NovelAI(args) {
-  console.log("NovelAI DOM operation", args);
+function genericDOMOperation(args) {
+  console.log("Generic DOM operation", args);
 
   const [
     service,
@@ -313,28 +305,60 @@ function NovelAI(args) {
       const generateButton = document.querySelector(generateButtonSelector);
 
       if (positivePromptText && generateButton) {
-        // デバッグ情報
         console.log("Setting prompt to:", value);
         console.log("Element type:", positivePromptText.tagName);
 
-        // 元のコードを維持
-        positivePromptText.value = value;
-        positivePromptText.innerHTML = value;
-        const event = new Event("change", { bubbles: true });
-        positivePromptText.dispatchEvent(event);
+        // Stable Diffusion WebUI用の改善された値設定
+        if (positivePromptText.tagName === "TEXTAREA") {
+          // 1. フォーカスを当てる
+          positivePromptText.focus();
+
+          // 2. 値を設定
+          positivePromptText.value = value;
+
+          // 3. 複数のイベントを発火
+          positivePromptText.dispatchEvent(
+            new Event("input", { bubbles: true })
+          );
+          positivePromptText.dispatchEvent(
+            new Event("change", { bubbles: true })
+          );
+
+          // 4. React/Svelteアプリケーション用の追加処理
+          const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+            window.HTMLTextAreaElement.prototype,
+            "value"
+          ).set;
+          nativeInputValueSetter.call(positivePromptText, value);
+
+          const inputEvent = new Event("input", { bubbles: true });
+          positivePromptText.dispatchEvent(inputEvent);
+        } else {
+          // その他の要素の場合
+          positivePromptText.value = value;
+          positivePromptText.innerHTML = value;
+          const event = new Event("change", { bubbles: true });
+          positivePromptText.dispatchEvent(event);
+        }
 
         // 100～200msのランダムな遅延
-        const randomDelay = Math.floor(Math.random() * 101) + 100; // 100-200の範囲
+        const randomDelay = Math.floor(Math.random() * 101) + 100;
         console.log(`Waiting ${randomDelay}ms before clicking generate...`);
 
         setTimeout(() => {
           generateButton.click();
         }, randomDelay);
+      } else {
+        console.error("Elements not found:", {
+          prompt: !!positivePromptText,
+          button: !!generateButton,
+          promptSelector: positivePromptSelector,
+          buttonSelector: generateButtonSelector,
+        });
       }
       break;
   }
 }
-
 // ショートカットキーのリスナーを修正
 chrome.commands.onCommand.addListener(async (command) => {
   console.log("Command received:", command);

@@ -179,7 +179,7 @@
           <img id="preview" />
           <div id="pngInfo"></div>
 
-          <!-- ★★★ セレクター管理セクションを追加 ★★★ -->
+          <!-- セレクター管理セクション内の最初に追加 -->
           <div
             id="selectorManagement"
             style="
@@ -188,7 +188,22 @@
               padding-top: 20px;
             "
           >
-            <h3>NovelAI セレクター設定</h3>
+            <h3>セレクター設定</h3>
+
+            <!-- プリセット選択を追加 -->
+            <div style="margin-bottom: 15px">
+              <label>プリセット:</label>
+              <select
+                id="selectorPreset"
+                style="width: 200px; margin-left: 5px"
+              >
+                <option value="">選択してください</option>
+                <option value="novelai">NovelAI</option>
+                <option value="automatic1111">Stable Diffusion WebUI</option>
+                <option value="comfyui">ComfyUI</option>
+                <option value="custom">カスタム</option>
+              </select>
+            </div>
             <div style="margin-bottom: 15px">
               <label>プロンプト入力欄のセレクター:</label><br />
               <input

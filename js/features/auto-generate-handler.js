@@ -14,19 +14,23 @@ class AutoGenerateHandler {
    * 初期化
    */
   async init() {
-    // NovelAIモードの場合のみ表示
-    const isNovelAI = AppState.userSettings.optionData?.shaping === "NAI";
+    // セレクターが設定されているかチェック（NAIモードチェックを削除）
+    const hasSelectors =
+      AppState.selector.positivePromptText && AppState.selector.generateButton;
     const generateButton = document.getElementById("GeneratoButton");
 
     // オプションの表示/非表示
     const optionDiv = document.getElementById("autoGenerateOption");
     if (optionDiv) {
-      optionDiv.style.display = isNovelAI && generateButton ? "block" : "none";
+      // セレクターとGenerateボタンがある場合のみ表示
+      optionDiv.style.display =
+        hasSelectors && generateButton ? "block" : "none";
     }
 
-    if (!isNovelAI || !generateButton) {
+    // セレクターまたはGenerateボタンがない場合は終了
+    if (!hasSelectors || !generateButton) {
       console.log(
-        "Auto Generate: Not in NovelAI mode or Generate button not found"
+        "Auto Generate: Selectors not configured or Generate button not found"
       );
       return;
     }
@@ -34,7 +38,7 @@ class AutoGenerateHandler {
     // 設定を読み込み
     await this.loadSettings();
 
-    // 進行状況UIを設定（これは動的でOK）
+    // 進行状況UIを設定
     this.setupProgressUI();
 
     // イベントリスナーを設定
@@ -137,13 +141,13 @@ class AutoGenerateHandler {
   async start() {
     if (this.isRunning) return;
 
-    // NovelAIモードとGenerateボタンの確認
+    // セレクターとGenerateボタンの確認
     const generateButton = document.getElementById("GeneratoButton");
-    if (
-      AppState.userSettings.optionData?.shaping !== "NAI" ||
-      !generateButton
-    ) {
-      ErrorHandler.notify("NovelAIモードでのみ使用できます", {
+    const hasSelectors =
+      AppState.selector.positivePromptText && AppState.selector.generateButton;
+
+    if (!hasSelectors || !generateButton) {
+      ErrorHandler.notify("セレクターが設定されていません", {
         type: ErrorHandler.NotificationType.TOAST,
         messageType: "warning",
       });

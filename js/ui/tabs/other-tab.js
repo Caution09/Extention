@@ -57,8 +57,16 @@
           tabButton.classList.remove("is-alert");
         }
 
-        // セレクターの現在の状態を更新
+        // 現在のサービスに応じたセレクターを読み込み
         await this.loadSelectors();
+
+        // サービス名を表示
+        const [tab] = await chrome.tabs.query({
+          active: true,
+          currentWindow: true,
+        });
+        const currentService = this.detectService(tab.url) || "custom";
+        this.showMessage(`現在のサービス: ${currentService}`, "info");
       }
 
       /**
@@ -116,30 +124,82 @@
        */
       async loadSelectors() {
         try {
+          // 現在のタブURLからサービスを判定
+          const [tab] = await chrome.tabs.query({
+            active: true,
+            currentWindow: true,
+          });
+          const currentService = this.detectService(tab.url);
+
+          // サービスごとのセレクターを読み込み
           const stored = await Storage.get([
+            "selectorSets",
             "positivePromptText",
             "generateButton",
           ]);
 
-          const promptInput = document.getElementById("promptSelector");
-          const generateInput = document.getElementById("generateSelector");
-
-          if (promptInput && stored.positivePromptText) {
-            promptInput.value = stored.positivePromptText;
+          // 保存されたセレクターセットがあれば適用
+          if (stored.selectorSets) {
+            Object.assign(AppState.selector.serviceSets, stored.selectorSets);
           }
 
-          if (generateInput && stored.generateButton) {
-            generateInput.value = stored.generateButton;
-          }
+          // 現在のサービスに応じてセレクターを設定
+          if (currentService && AppState.selector.serviceSets[currentService]) {
+            const serviceSelectors =
+              AppState.selector.serviceSets[currentService];
 
-          // AppStateの値も表示（デバッグ用）
-          console.log("Current selectors in AppState:", {
-            prompt: AppState.selector.positivePromptText,
-            button: AppState.selector.generateButton,
-          });
+            AppState.selector.positivePromptText =
+              serviceSelectors.positivePromptText;
+            AppState.selector.generateButton = serviceSelectors.generateButton;
+            AppState.selector.currentService = currentService;
+
+            // UIに反映
+            const promptInput = document.getElementById("promptSelector");
+            const generateInput = document.getElementById("generateSelector");
+            const presetSelect = document.getElementById("selectorPreset");
+
+            if (promptInput)
+              promptInput.value = serviceSelectors.positivePromptText || "";
+            if (generateInput)
+              generateInput.value = serviceSelectors.generateButton || "";
+            if (presetSelect)
+              presetSelect.value =
+                currentService === "stable_diffusion"
+                  ? "automatic1111"
+                  : currentService;
+
+            console.log(
+              `Loaded selectors for ${currentService}:`,
+              serviceSelectors
+            );
+          } else {
+            // 後方互換性のため、従来の単一セレクターも読み込み
+            if (stored.positivePromptText) {
+              document.getElementById("promptSelector").value =
+                stored.positivePromptText;
+            }
+            if (stored.generateButton) {
+              document.getElementById("generateSelector").value =
+                stored.generateButton;
+            }
+          }
         } catch (error) {
           console.error("Failed to load selectors:", error);
         }
+      }
+
+      /**
+       * URLからサービスを検出
+       */
+      detectService(url) {
+        if (!url) return null;
+
+        if (url.includes("novelai.net")) return "novelai";
+        if (url.includes("127.0.0.1:7860") || url.includes("localhost:7860"))
+          return "stable_diffusion";
+        if (url.includes("comfyui")) return "comfyui";
+
+        return "custom";
       }
 
       /**
@@ -280,6 +340,17 @@
        */
       async clearSelectors() {
         try {
+          const [tab] = await chrome.tabs.query({
+            active: true,
+            currentWindow: true,
+          });
+          const currentService = this.detectService(tab.url) || "custom";
+
+          // 確認ダイアログ
+          if (!confirm(`${currentService}のセレクター設定をクリアしますか？`)) {
+            return;
+          }
+
           // 入力フィールドをクリア
           document.getElementById("promptSelector").value = "";
           document.getElementById("generateSelector").value = "";
@@ -288,12 +359,20 @@
           this.clearSelectorStatus("promptSelectorStatus");
           this.clearSelectorStatus("generateSelectorStatus");
 
-          // AppStateをクリア
+          // 現在のサービスのセレクターをクリア
+          AppState.selector.serviceSets[currentService] = {
+            positivePromptText: null,
+            generateButton: null,
+          };
+
+          // 現在のセレクターもクリア
           AppState.selector.positivePromptText = null;
           AppState.selector.generateButton = null;
 
-          // Storageからも削除
-          await Storage.remove(["positivePromptText", "generateButton"]);
+          // Storageを更新
+          await Storage.set({
+            selectorSets: AppState.selector.serviceSets,
+          });
 
           // Generateボタンを非表示
           const generateButton = document.getElementById("GeneratoButton");
@@ -301,7 +380,10 @@
             generateButton.style.display = "none";
           }
 
-          this.showMessage("セレクターをクリアしました", "info");
+          this.showMessage(
+            `${currentService}のセレクターをクリアしました`,
+            "info"
+          );
         } catch (error) {
           console.error("Clear error:", error);
           this.showMessage("クリア中にエラーが発生しました", "error");
@@ -499,10 +581,12 @@
         super.debug();
         console.log("FileHandler:", this.fileHandler);
         console.log("Drop area exists:", !!this.getElement("#inclued"));
+        console.log("Current service:", AppState.selector.currentService);
         console.log("Current selectors:", {
           prompt: AppState.selector.positivePromptText,
           button: AppState.selector.generateButton,
         });
+        console.log("Service sets:", AppState.selector.serviceSets);
       }
     }
 

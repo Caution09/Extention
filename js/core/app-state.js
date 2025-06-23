@@ -39,6 +39,25 @@ const AppState = {
   selector: {
     positivePromptText: null,
     generateButton: null,
+
+    // サービスごとのセレクターセット
+    serviceSets: {
+      novelai: {
+        positivePromptText: "textarea[placeholder='Prompt']",
+        generateButton: "button.bg-generation",
+      },
+      stable_diffusion: {
+        positivePromptText: "textarea[data-testid='textbox']",
+        generateButton: "#txt2img_generate",
+      },
+      custom: {
+        positivePromptText: null,
+        generateButton: null,
+      },
+    },
+
+    // 現在のサービス
+    currentService: null,
   },
 
   /**

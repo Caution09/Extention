@@ -165,22 +165,50 @@ class PromptGeneratorApp {
 
       promptSlotManager.updateUI();
 
-      // 自動Generate機能の初期化（既存のコード）
+      // 自動Generate機能の初期化（NAIチェックを削除）
       setTimeout(() => {
-        if (
-          window.autoGenerateHandler &&
-          AppState.userSettings.optionData?.shaping === "NAI"
-        ) {
+        if (window.autoGenerateHandler) {
           console.log("Initializing Auto Generate feature...");
           autoGenerateHandler.init();
         }
       }, 1000);
 
-      // NovelAIページの場合、セレクター検証を実行（追加）
+      // 現在のタブのサービスを検出してセレクターを設定（統合版）
       chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
-        if (tabs[0].url.includes("novelai.net/image")) {
-          // セレクター検証とGenerateボタン活性化
-          await validateAndActivateGenerateButton();
+        if (tabs[0]) {
+          const service = this.detectService(tabs[0].url);
+
+          // サービス固有のセレクターがある場合
+          if (service && AppState.selector.serviceSets[service]) {
+            const serviceSelectors = AppState.selector.serviceSets[service];
+            if (
+              serviceSelectors.positivePromptText &&
+              serviceSelectors.generateButton
+            ) {
+              AppState.selector.positivePromptText =
+                serviceSelectors.positivePromptText;
+              AppState.selector.generateButton =
+                serviceSelectors.generateButton;
+              AppState.selector.currentService = service;
+
+              const generateButton = document.getElementById("GeneratoButton");
+              if (generateButton) {
+                generateButton.style.display = "block";
+                console.log(`Activated selectors for ${service}`);
+              }
+            }
+          }
+          // サービス固有のセレクターがない場合、汎用的なセレクターをチェック
+          else if (
+            AppState.selector.positivePromptText &&
+            AppState.selector.generateButton
+          ) {
+            const generateButton = document.getElementById("GeneratoButton");
+            if (generateButton) {
+              generateButton.style.display = "block";
+              console.log("Using saved selectors (no service match)");
+            }
+          }
         }
       });
 
@@ -197,6 +225,18 @@ class PromptGeneratorApp {
       );
       throw error;
     }
+  }
+
+  // サービス検出メソッドを追加
+  detectService(url) {
+    if (!url) return null;
+
+    if (url.includes("novelai.net")) return "novelai";
+    if (url.includes("127.0.0.1:7860") || url.includes("localhost:7860"))
+      return "stable_diffusion";
+    if (url.includes("comfyui")) return "comfyui";
+
+    return "custom";
   }
 
   /**
@@ -841,9 +881,8 @@ class PromptGeneratorApp {
   // ============================================
 
   updateUIState() {
-    // GenerateボタンON表示の更新
+    // GenerateボタンON表示の更新（UIタイプ制限を削除）
     if (
-      AppState.userSettings.optionData?.shaping === "NAI" &&
       AppState.selector.positivePromptText != null &&
       AppState.selector.generateButton != null
     ) {
