@@ -166,6 +166,7 @@
             <button id="import-slots">インポート</button>
           </div>
         </div>
+        <!-- "noticeBody" div内の最後（</div>の前）に追加 -->
         <div class="panel" id="noticeBody">
           <p>お知らせ</p>
           <p id="notice"></p>
@@ -177,6 +178,53 @@
           </div>
           <img id="preview" />
           <div id="pngInfo"></div>
+
+          <!-- ★★★ セレクター管理セクションを追加 ★★★ -->
+          <div
+            id="selectorManagement"
+            style="
+              margin-top: 20px;
+              border-top: 1px solid #ddd;
+              padding-top: 20px;
+            "
+          >
+            <h3>NovelAI セレクター設定</h3>
+            <div style="margin-bottom: 15px">
+              <label>プロンプト入力欄のセレクター:</label><br />
+              <input
+                type="text"
+                id="promptSelector"
+                style="width: 90%; margin-top: 5px"
+                placeholder="例: textarea[placeholder='Prompt']"
+              />
+              <div
+                id="promptSelectorStatus"
+                style="font-size: 12px; margin-top: 3px"
+              ></div>
+            </div>
+            <div style="margin-bottom: 15px">
+              <label>Generateボタンのセレクター:</label><br />
+              <input
+                type="text"
+                id="generateSelector"
+                style="width: 90%; margin-top: 5px"
+                placeholder="例: button.generate-button"
+              />
+              <div
+                id="generateSelectorStatus"
+                style="font-size: 12px; margin-top: 3px"
+              ></div>
+            </div>
+            <div>
+              <button id="validateSelectors">検証</button>
+              <button id="saveSelectors">保存</button>
+              <button id="clearSelectors">クリア</button>
+              <span
+                id="selectorMessage"
+                style="margin-left: 10px; font-size: 12px"
+              ></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

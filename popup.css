@@ -384,3 +384,42 @@ button {
   color: #999;
   margin-left: 10px;
 }
+
+/* セレクター管理セクション */
+#selectorManagement {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+#selectorManagement h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+#selectorManagement input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+#selectorManagement button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: white;
+  cursor: pointer;
+}
+
+#selectorManagement button:hover {
+  background: #f0f0f0;
+}
+
+#promptSelectorStatus,
+#generateSelectorStatus {
+  min-height: 16px;
+}
