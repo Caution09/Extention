@@ -753,6 +753,14 @@ class PromptGeneratorApp {
       messageType: "info",
       duration: 2000,
     });
+
+    // 追加：スロットタブが開いている場合、表示を更新
+    if (AppState.ui.currentTab === CONSTANTS.TABS.SLOT && this.tabs.slot) {
+      // 少し遅延を入れて、抽出処理が完了してから更新
+      setTimeout(() => {
+        this.tabs.slot.refreshExtractionDisplays();
+      }, 100);
+    }
   }
 
   // ============================================

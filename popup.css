@@ -357,3 +357,30 @@ button {
   overflow-y: auto;
   padding-right: 5px;
 }
+
+/* 抽出表示のアニメーション */
+.current-extraction-display {
+  transition: all 0.3s ease;
+}
+
+.current-extraction-display > div {
+  animation: highlightFade 1s ease-out;
+}
+
+@keyframes highlightFade {
+  0% {
+    background-color: #fffacd;
+    transform: scale(1.02);
+  }
+  100% {
+    background-color: #f5f5f5;
+    transform: scale(1);
+  }
+}
+
+/* タイムスタンプのスタイル */
+.extraction-timestamp {
+  font-size: 10px;
+  color: #999;
+  margin-left: 10px;
+}

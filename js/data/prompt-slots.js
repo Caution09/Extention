@@ -247,11 +247,24 @@ class PromptSlotManager {
     // 現在の抽出を記録
     slot.currentExtraction = selectedElement.prompt;
 
-    // UIに反映するため保存
+    // 追加：抽出イベントを発火
+    this.onExtractionComplete(slot);
+
+    // UIに反映するため保存（既存のコード）
     this.saveToStorage();
 
     console.log(`Extracted element: ${selectedElement.prompt}`);
     return selectedElement.prompt;
+  }
+
+  // 新規：抽出完了時のコールバック
+  onExtractionComplete(slot) {
+    // カスタムイベントを発火
+    window.dispatchEvent(
+      new CustomEvent("slotExtractionComplete", {
+        detail: { slotId: slot.id, extraction: slot.currentExtraction },
+      })
+    );
   }
 
   /**
@@ -540,6 +553,9 @@ class PromptSlotManager {
       .replace(/\s*,\s*/g, ", ");
 
     console.log(`Combined ${validPrompts.length} prompts:`, validPrompts);
+
+    // 追加：全体の抽出完了イベント
+    window.dispatchEvent(new CustomEvent("allExtractionsComplete"));
 
     return normalized;
   }

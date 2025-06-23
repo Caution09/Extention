@@ -49,6 +49,86 @@
 
         // 初期表示を更新
         this.updateDisplay();
+        // 抽出完了イベントのリスナーを設定
+        this.setupExtractionListeners();
+      }
+
+      // 新規：抽出イベントのリスナー設定
+      setupExtractionListeners() {
+        // 個別のスロット抽出完了
+        window.addEventListener("slotExtractionComplete", (event) => {
+          this.updateSlotExtraction(
+            event.detail.slotId,
+            event.detail.extraction
+          );
+        });
+
+        // 全体の抽出完了（Generate後）
+        window.addEventListener("allExtractionsComplete", () => {
+          if (this.isCurrentTab()) {
+            // 現在スロットタブが表示されている場合のみ更新
+            this.refreshExtractionDisplays();
+          }
+        });
+      }
+
+      // 新規：特定のスロットの抽出表示を更新
+      updateSlotExtraction(slotId, extraction) {
+        const slotCard = document.querySelector(`[data-slot-id="${slotId}"]`);
+        if (!slotCard) return;
+
+        // 更新中インジケーターを表示
+        const indicator =
+          slotCard.querySelector(".update-indicator") ||
+          this.createUpdateIndicator(slotCard);
+
+        indicator.style.display = "inline-block";
+
+        // 抽出表示を更新
+        const extractionDisplay = slotCard.querySelector(
+          ".current-extraction-display"
+        );
+        if (extractionDisplay) {
+          extractionDisplay.innerHTML = `
+      <div style="padding: 10px; background: #f5f5f5; border-radius: 4px; font-size: 12px;">
+        <strong>現在:</strong> ${extraction}
+        <span class="extraction-timestamp">${new Date().toLocaleTimeString()}</span>
+      </div>
+    `;
+        }
+
+        // インジケーターを隠す
+        setTimeout(() => {
+          indicator.style.display = "none";
+        }, 500);
+      }
+
+      createUpdateIndicator(slotCard) {
+        const indicator = document.createElement("span");
+        indicator.className = "update-indicator";
+        indicator.innerHTML = "🔄";
+        indicator.style.cssText = `
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: none;
+    animation: spin 1s linear infinite;
+  `;
+        slotCard.style.position = "relative";
+        slotCard.appendChild(indicator);
+        return indicator;
+      }
+
+      // 新規：すべての抽出表示を更新
+      refreshExtractionDisplays() {
+        this.slotManager.slots.forEach((slot) => {
+          if (
+            slot.currentExtraction &&
+            (slot.mode === "random" || slot.mode === "sequential")
+          ) {
+            this.updateSlotExtraction(slot.id, slot.currentExtraction);
+          }
+        });
       }
 
       /**
@@ -713,14 +793,17 @@
           <option value="">すべて</option>
         </select>
       </div>
-      ${
-        slot?.currentExtraction
-          ? `
-        <div style="padding: 10px; background: #f5f5f5; border-radius: 4px; font-size: 12px;">
-          <strong>現在:</strong> ${slot.currentExtraction}
-        </div>      `
-          : ""
-      }
+      <div class="current-extraction-display">
+        ${
+          slot?.currentExtraction
+            ? `
+          <div style="padding: 10px; background: #f5f5f5; border-radius: 4px; font-size: 12px;">
+            <strong>現在:</strong> ${slot.currentExtraction}
+          </div>
+        `
+            : ""
+        }
+      </div>
     </div>
 
     ${
