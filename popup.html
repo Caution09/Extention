@@ -273,6 +273,38 @@
           id="resetButton"
           value="すべてリセットし初期化する" /></label
       ><br />
+      <div id="autoGenerateOption" style="display: none">
+        <h3>自動Generate設定（NovelAI専用）</h3>
+        <label>
+          <input type="checkbox" id="autoGenerate" />
+          自動Generateを有効にする </label
+        ><br />
+        <label>
+          生成回数:
+          <input
+            type="number"
+            id="generateCount"
+            value="10"
+            min="0"
+            max="1000"
+            style="width: 60px"
+          />
+          <span style="font-size: 12px; color: #666">（0で無限）</span> </label
+        ><br />
+        <label>
+          生成間隔:
+          <input
+            type="number"
+            id="generateInterval"
+            value="5"
+            min="3"
+            max="60"
+            style="width: 50px"
+          />
+          <span>秒</span> </label
+        ><br />
+        <br />
+      </div>
       <br />
     </div>
     <button id="GeneratoButton" hidden>Generate</button>

@@ -13,69 +13,32 @@ class AutoGenerateHandler {
   /**
    * 初期化
    */
-  init() {
-    // NovelAIモードでGenerateボタンが表示されている場合のみ初期化
+  async init() {
+    // NovelAIモードの場合のみ表示
+    const isNovelAI = AppState.userSettings.optionData?.shaping === "NAI";
     const generateButton = document.getElementById("GeneratoButton");
-    if (
-      AppState.userSettings.optionData?.shaping !== "NAI" ||
-      !generateButton
-    ) {
+
+    // オプションの表示/非表示
+    const optionDiv = document.getElementById("autoGenerateOption");
+    if (optionDiv) {
+      optionDiv.style.display = isNovelAI && generateButton ? "block" : "none";
+    }
+
+    if (!isNovelAI || !generateButton) {
       console.log(
         "Auto Generate: Not in NovelAI mode or Generate button not found"
       );
       return;
     }
 
-    this.setupOptionUI();
+    // 設定を読み込み
+    await this.loadSettings();
+
+    // 進行状況UIを設定（これは動的でOK）
     this.setupProgressUI();
-    this.loadSettings();
+
+    // イベントリスナーを設定
     this.attachEventListeners();
-  }
-
-  /**
-   * オプションパネルにUIを設定
-   */
-  setupOptionUI() {
-    // 既に追加済みの場合はスキップ
-    if (document.getElementById("autoGenerateOption")) {
-      return;
-    }
-
-    // オプションパネルを探す
-    const optionPanel = document.getElementById("optionPanel");
-    if (!optionPanel) {
-      console.error("Option panel not found");
-      return;
-    }
-
-    // 自動Generate設定のセクションを作成
-    const section = document.createElement("div");
-    section.id = "autoGenerateOption";
-    section.innerHTML = `
-      <h3>自動Generate設定（NovelAI専用）</h3>
-      <label>
-        <input type="checkbox" id="autoGenerate"> 自動Generateを有効にする
-      </label><br>
-      <label>
-        生成回数:
-        <input type="number" id="generateCount" value="10" min="0" max="1000" style="width: 60px;">
-        <span style="font-size: 12px; color: #666;">（0で無限）</span>
-      </label><br>
-      <label>
-        生成間隔:
-        <input type="number" id="generateInterval" value="5" min="3" max="60" style="width: 50px;">
-        <span>秒</span>
-      </label><br>
-      <br>
-    `;
-
-    // リセットボタンの前に挿入
-    const resetButton = document.getElementById("resetButton");
-    if (resetButton && resetButton.parentNode) {
-      resetButton.parentNode.insertBefore(section, resetButton);
-    } else {
-      optionPanel.appendChild(section);
-    }
   }
 
   /**
@@ -112,25 +75,20 @@ class AutoGenerateHandler {
    * イベントリスナーを設定
    */
   attachEventListeners() {
-    // 自動Generate チェックボックス
-    const autoGenerateCheckbox = document.getElementById("autoGenerate");
-    if (autoGenerateCheckbox) {
-      autoGenerateCheckbox.addEventListener("change", (e) => {
-        if (e.target.checked) {
-          this.start();
-        } else {
-          this.stop();
-        }
-      });
-    }
-
     // 回数入力
     const generateCountInput = document.getElementById("generateCount");
     if (generateCountInput) {
       generateCountInput.addEventListener("change", (e) => {
         const value = parseInt(e.target.value) || 0;
+        console.log("=== COUNT CHANGED ===");
+        console.log("New value:", value);
+        console.log("Old targetCount:", this.targetCount);
+
         this.targetCount = value;
         this.isInfiniteMode = value === 0;
+
+        console.log("New targetCount:", this.targetCount);
+        console.log("Calling saveSettings...");
         this.saveSettings();
 
         // 実行中なら表示を更新
@@ -138,6 +96,8 @@ class AutoGenerateHandler {
           this.updateProgress();
         }
       });
+    } else {
+      console.log("generateCount input not found in attachEventListeners!");
     }
 
     // 生成間隔
@@ -145,7 +105,14 @@ class AutoGenerateHandler {
     if (intervalInput) {
       intervalInput.addEventListener("change", (e) => {
         const value = parseInt(e.target.value) || 5;
+        console.log("=== INTERVAL CHANGED ===");
+        console.log("New value:", value);
+        console.log("Old generateInterval (ms):", this.generateInterval);
+
         this.generateInterval = Math.max(3, value) * 1000; // 最低3秒
+
+        console.log("New generateInterval (ms):", this.generateInterval);
+        console.log("Calling saveSettings...");
         this.saveSettings();
       });
     }
@@ -417,13 +384,21 @@ class AutoGenerateHandler {
    * 設定を保存
    */
   saveSettings() {
-    const settings = {
-      generateCount: this.targetCount,
-      generateInterval: this.generateInterval / 1000, // 秒単位で保存
-      autoGenerate: document.getElementById("autoGenerate")?.checked || false,
-    };
+    try {
+      const settings = {
+        generateCount: this.targetCount,
+        generateInterval: Math.floor(this.generateInterval / 1000),
+      };
 
-    Storage.set({ autoGenerateSettings: settings });
+      console.log("=== SAVING Auto Generate Settings ===");
+      console.log("targetCount:", this.targetCount);
+      console.log("generateInterval (ms):", this.generateInterval);
+      console.log("settings object:", settings);
+
+      Storage.set({ autoGenerateSettings: settings });
+    } catch (error) {
+      console.error("Failed to save auto generate settings:", error);
+    }
   }
 
   /**
@@ -435,33 +410,24 @@ class AutoGenerateHandler {
       if (result.autoGenerateSettings) {
         const settings = result.autoGenerateSettings;
 
-        // 回数
+        // インスタンス変数に設定
+        this.targetCount = settings.generateCount ?? 10;
+        this.isInfiniteMode = this.targetCount === 0;
+        this.generateInterval = (settings.generateInterval || 5) * 1000;
+
+        // DOM要素に反映（最初から存在するので直接設定可能）
         const countInput = document.getElementById("generateCount");
         if (countInput) {
-          countInput.value = settings.generateCount || 10;
-          this.targetCount = settings.generateCount || 10;
-          this.isInfiniteMode = this.targetCount === 0;
+          countInput.value = this.targetCount;
         }
 
-        // 間隔
         const intervalInput = document.getElementById("generateInterval");
         if (intervalInput) {
-          intervalInput.value = settings.generateInterval || 5;
-          this.generateInterval = (settings.generateInterval || 5) * 1000;
-        }
-
-        // 自動開始（保存されていた場合）
-        const autoCheckbox = document.getElementById("autoGenerate");
-        if (autoCheckbox && settings.autoGenerate) {
-          // 少し遅延してから開始
-          setTimeout(() => {
-            autoCheckbox.checked = true;
-            this.start();
-          }, 2000);
+          intervalInput.value = Math.floor(this.generateInterval / 1000);
         }
       }
     } catch (error) {
-      console.log("Failed to load auto generate settings:", error);
+      console.error("Failed to load auto generate settings:", error);
     }
   }
 
