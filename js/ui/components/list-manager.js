@@ -3,6 +3,8 @@
 // ============================================
 class PromptListManager {
   constructor() {
+    this.saveTimer = null; // デバウンス用タイマーを追加
+
     this.listConfigs = {
       search: {
         headers: ["大項目", "中項目", "小項目", "Prompt"],
@@ -139,7 +141,23 @@ class PromptListManager {
     }
   }
 
-  // list-manager.js - createAddItem メソッドの修正（見た目は一切変えない）
+  /**
+   * デバウンス付きでローカルリストを保存
+   */
+  debouncedSaveLocalList() {
+    // 既存のタイマーをクリア
+    if (this.saveTimer) {
+      clearTimeout(this.saveTimer);
+    }
+
+    // 1秒後に保存を実行
+    this.saveTimer = setTimeout(() => {
+      console.log("Auto-saving local list after 1 second of inactivity");
+      saveLocalList();
+      this.saveTimer = null;
+    }, 1000);
+  }
+
   // createAddItem メソッドの修正
   async createAddItem($li, item, index, options = {}) {
     // カテゴリー入力
@@ -151,8 +169,9 @@ class PromptListManager {
         index: index,
         onInput: (value) => {
           AppState.data.localPromptList[index].data[i] = value;
+          this.debouncedSaveLocalList(); // デバウンス保存を呼び出し
         },
-        onBlur: () => saveLocalList(),
+        // onBlur: () => saveLocalList(), // 削除
       });
 
       // datalist属性を追加（見た目は変えない）
@@ -193,15 +212,16 @@ class PromptListManager {
       }
     });
 
-    // プロンプト入力（既存のコードそのまま）
+    // プロンプト入力
     $li.append(
       UIFactory.createInput({
         value: item.prompt,
         index: index,
         onInput: (value) => {
           AppState.data.localPromptList[index].prompt = value;
+          this.debouncedSaveLocalList(); // デバウンス保存を呼び出し
         },
-        onBlur: () => saveLocalList(),
+        // onBlur: () => saveLocalList(), // 削除
       })
     );
 
@@ -215,6 +235,11 @@ class PromptListManager {
       setValue: item.prompt + ",",
       copyValue: item.prompt,
       onDelete: async () => {
+        // 保留中の自動保存をキャンセル
+        if (this.saveTimer) {
+          clearTimeout(this.saveTimer);
+        }
+
         const actualIndex = getLocalElementIndex(item);
         if (actualIndex !== -1) {
           AppState.data.localPromptList.splice(actualIndex, 1);
