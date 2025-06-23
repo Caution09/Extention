@@ -310,6 +310,7 @@ class PromptListManager {
       onInput: (newValue) => {
         editPrompt.editingValue(newValue, index);
         window.app.updatePromptDisplay();
+        promptSlotManager.saveCurrentSlot();
       },
     });
 

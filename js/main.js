@@ -149,12 +149,18 @@ class PromptGeneratorApp {
           // 保存されているスロットのプロンプトを設定
           promptEditor.init(currentSlot.prompt);
           this.generateInput.val(currentSlot.prompt);
+        } else {
+          // 現在のスロットが空の場合
+          promptEditor.init("");
+          this.generateInput.val("");
         }
       } else {
         // 初回起動時：現在のプロンプトをスロット0に保存
-        const currentPrompt = this.generateInput.val();
+        const currentPrompt = this.generateInput.val() || "";
+        promptEditor.init(currentPrompt);
         if (currentPrompt) {
-          promptEditor.init(currentPrompt);
+          promptSlotManager.slots[0].prompt = currentPrompt;
+          promptSlotManager.slots[0].isUsed = true;
           await promptSlotManager.saveCurrentSlot();
         }
       }
@@ -517,15 +523,6 @@ class PromptGeneratorApp {
         await promptSlotManager.switchSlot(slotId);
       });
     }
-
-    // ショートカットキー（Ctrl+1〜9）
-    document.addEventListener("keydown", async (e) => {
-      if (e.ctrlKey && e.key >= "1" && e.key <= "9") {
-        e.preventDefault();
-        const slotId = parseInt(e.key) - 1;
-        await promptSlotManager.switchSlot(slotId);
-      }
-    });
   }
 
   updatePromptDisplay() {
@@ -539,6 +536,9 @@ class PromptGeneratorApp {
       if (newPrompt !== currentValue) {
         generatePrompt.value = newPrompt;
         savePrompt();
+
+        // スロットにも保存（追加）
+        promptSlotManager.saveCurrentSlot();
       }
     }
   }

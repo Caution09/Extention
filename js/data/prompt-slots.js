@@ -1,41 +1,132 @@
 /**
- * prompt-slots.js - 複数プロンプト管理モジュール
- * Phase 8: 最大10個のプロンプトを切り替え可能にする
+ * prompt-slots.js - 動的プロンプト管理モジュール
+ * Phase 8: 可変スロット数対応版
  *
  * 使用方法:
- * 1. js/modules/prompt-slots.js として保存
- * 2. popup.htmlでshortcut-manager.jsの後に読み込み
- * 3. プロンプト入力欄の左にドロップダウンを配置
+ * 1. スロットの追加・削除が可能
+ * 2. 最小1個、最大20個まで
+ * 3. ショートカットキー機能は削除
  */
 
 class PromptSlotManager {
   constructor() {
-    this.maxSlots = 10;
+    this.minSlots = 1;
+    this.maxSlots = 100;
     this.currentSlot = 0;
     this.slots = [];
+    this._nextId = 0; // スロットIDカウンター
 
-    // 初期化
-    this.initializeSlots();
+    // 初期化（最初は3個のスロットから開始）
+    this.initializeSlots(3);
   }
 
   /**
-   * スロットを初期化
+   * スロットを初期化（通知なし）
+   * @param {number} count - 初期スロット数
    */
-  initializeSlots() {
-    // 配列を空にしてから初期化
+  initializeSlots(count = 3) {
     this.slots = [];
+    this._nextId = 0;
 
-    // 空のスロットを作成
-    for (let i = 0; i < this.maxSlots; i++) {
-      this.slots.push({
-        id: i,
+    // 指定数のスロットを作成（通知なしで）
+    for (let i = 0; i < count; i++) {
+      const newSlot = {
+        id: this._nextId++,
         name: "",
         prompt: "",
         elements: [],
         isUsed: false,
         lastModified: null,
-      });
+      };
+      this.slots.push(newSlot);
     }
+  }
+
+  /**
+   * 新しいスロットを追加
+   * @returns {Object|null} 追加されたスロット
+   */
+  addNewSlot() {
+    if (this.slots.length >= this.maxSlots) {
+      ErrorHandler.notify(`スロットは最大${this.maxSlots}個までです`, {
+        type: ErrorHandler.NotificationType.TOAST,
+        messageType: "warning",
+      });
+      return null;
+    }
+
+    const newSlot = {
+      id: this._nextId++,
+      name: "",
+      prompt: "",
+      elements: [],
+      isUsed: false,
+      lastModified: null,
+    };
+
+    this.slots.push(newSlot);
+    this.updateUI();
+    this.saveToStorage();
+
+    ErrorHandler.notify(`スロット${this.slots.length}を追加しました`, {
+      type: ErrorHandler.NotificationType.TOAST,
+      messageType: "success",
+      duration: 1500,
+    });
+
+    return newSlot;
+  }
+
+  /**
+   * スロットを削除
+   * @param {number} slotId - 削除するスロットID
+   * @returns {boolean} 削除成功の可否
+   */
+  deleteSlot(slotId) {
+    // 最小スロット数チェック
+    if (this.slots.length <= this.minSlots) {
+      ErrorHandler.notify(`スロットは最低${this.minSlots}個必要です`, {
+        type: ErrorHandler.NotificationType.TOAST,
+        messageType: "warning",
+      });
+      return false;
+    }
+
+    // 現在選択中のスロットは削除不可
+    if (slotId === this.currentSlot) {
+      ErrorHandler.notify("選択中のスロットは削除できません", {
+        type: ErrorHandler.NotificationType.TOAST,
+        messageType: "warning",
+      });
+      return false;
+    }
+
+    // スロットのインデックスを検索
+    const slotIndex = this.slots.findIndex((slot) => slot.id === slotId);
+    if (slotIndex === -1) {
+      console.error("Slot not found:", slotId);
+      return false;
+    }
+
+    // スロットを削除
+    this.slots.splice(slotIndex, 1);
+
+    // 現在のスロットインデックスを調整
+    if (this.currentSlot > slotIndex) {
+      this.currentSlot--;
+    }
+
+    // UIを更新
+    this.updateUI();
+    this.saveToStorage();
+
+    ErrorHandler.notify("スロットを削除しました", {
+      type: ErrorHandler.NotificationType.TOAST,
+      messageType: "success",
+      duration: 1500,
+    });
+
+    return true;
   }
 
   /**
@@ -43,36 +134,37 @@ class PromptSlotManager {
    * @param {number} slotId - 切り替え先のスロットID
    */
   async switchSlot(slotId) {
-    if (slotId < 0 || slotId >= this.maxSlots) {
+    const slotIndex = this.slots.findIndex((slot) => slot.id === slotId);
+    if (slotIndex === -1) {
       console.error("Invalid slot ID:", slotId);
       return false;
     }
 
     // 同じスロットへの切り替えは無視
-    if (slotId === this.currentSlot) {
+    if (slotIndex === this.currentSlot) {
       console.log("Already on slot:", slotId);
       return false;
     }
 
-    console.log(`Switching from slot ${this.currentSlot} to slot ${slotId}`);
+    console.log(
+      `Switching from slot index ${this.currentSlot} to ${slotIndex}`
+    );
 
-    // 現在のスロットを保存（重要：切り替え前に実行）
+    // 現在のスロットを保存
     await this.saveCurrentSlot();
 
     // 新しいスロットに切り替え
-    this.currentSlot = slotId;
-    const slot = this.slots[slotId];
+    this.currentSlot = slotIndex;
+    const slot = this.slots[slotIndex];
 
     // プロンプトエディタに反映
     if (slot.isUsed) {
       promptEditor.init(slot.prompt);
-      // 要素も復元（必要に応じて）
       if (slot.elements && slot.elements.length > 0) {
         promptEditor.elements = [...slot.elements];
         promptEditor.generate();
       }
     } else {
-      // 空のスロットの場合
       promptEditor.init("");
     }
 
@@ -80,9 +172,9 @@ class PromptSlotManager {
     this.updateUI();
 
     // イベントを発火
-    this.onSlotChanged(slotId);
+    this.onSlotChanged(slotIndex);
 
-    // 切り替え後に再度保存（念のため）
+    // 切り替え後に再度保存
     await this.saveToStorage();
 
     return true;
@@ -93,6 +185,7 @@ class PromptSlotManager {
    */
   async saveCurrentSlot() {
     const currentSlot = this.slots[this.currentSlot];
+    if (!currentSlot) return;
 
     // 現在の状態を保存
     currentSlot.prompt = promptEditor.prompt || "";
@@ -110,8 +203,9 @@ class PromptSlotManager {
    * @param {string} name - スロット名
    */
   async setSlotName(slotId, name) {
-    if (slotId >= 0 && slotId < this.maxSlots) {
-      this.slots[slotId].name = name;
+    const slot = this.slots.find((s) => s.id === slotId);
+    if (slot) {
+      slot.name = name;
       await this.saveToStorage();
       this.updateUI();
     }
@@ -128,14 +222,18 @@ class PromptSlotManager {
    * スロット情報を取得
    */
   getSlotInfo(slotId) {
-    const slot = this.slots[slotId];
+    const slot = this.slots.find((s) => s.id === slotId);
     if (!slot) return null;
+
+    const slotIndex = this.slots.findIndex((s) => s.id === slotId);
+    const displayNumber = slotIndex + 1;
 
     return {
       id: slot.id,
-      name: slot.name || `プロンプト${slotId + 1}`,
+      displayNumber: displayNumber,
+      name: slot.name || `プロンプト${displayNumber}`,
       isUsed: slot.isUsed,
-      isCurrent: slotId === this.currentSlot,
+      isCurrent: slotIndex === this.currentSlot,
       preview: slot.prompt ? slot.prompt.substring(0, 20) + "..." : "(空)",
       lastModified: slot.lastModified,
     };
@@ -145,7 +243,7 @@ class PromptSlotManager {
    * すべてのスロット情報を取得
    */
   getAllSlotInfo() {
-    return this.slots.map((_, index) => this.getSlotInfo(index));
+    return this.slots.map((slot) => this.getSlotInfo(slot.id));
   }
 
   /**
@@ -157,6 +255,7 @@ class PromptSlotManager {
         promptSlots: {
           currentSlot: this.currentSlot,
           slots: this.slots,
+          nextId: this._nextId,
         },
       });
     } catch (error) {
@@ -173,31 +272,21 @@ class PromptSlotManager {
       if (result.promptSlots) {
         this.currentSlot = result.promptSlots.currentSlot || 0;
         this.slots = result.promptSlots.slots || [];
+        this._nextId = result.promptSlots.nextId || this.slots.length;
 
-        // スロット数が足りない場合は追加
-        while (this.slots.length < this.maxSlots) {
-          this.slots.push({
-            id: this.slots.length,
-            name: "",
-            prompt: "",
-            elements: [],
-            isUsed: false,
-            lastModified: null,
-          });
+        // スロットが空の場合は初期化
+        if (this.slots.length === 0) {
+          this.initializeSlots(3);
         }
 
-        // スロット数が多すぎる場合は切り詰め
-        if (this.slots.length > this.maxSlots) {
-          this.slots = this.slots.slice(0, this.maxSlots);
+        // currentSlotが範囲外の場合は調整
+        if (this.currentSlot >= this.slots.length) {
+          this.currentSlot = 0;
         }
-
-        // IDの整合性チェック（念のため）
-        this.slots.forEach((slot, index) => {
-          slot.id = index;
-        });
 
         console.log("Loaded slots from storage:", {
           currentSlot: this.currentSlot,
+          slotCount: this.slots.length,
           usedSlots: this.slots.filter((s) => s.isUsed).map((s) => s.id),
         });
 
@@ -219,12 +308,12 @@ class PromptSlotManager {
     // オプションを再作成
     selector.innerHTML = "";
 
-    this.getAllSlotInfo().forEach((info) => {
+    this.getAllSlotInfo().forEach((info, index) => {
       const option = document.createElement("option");
       option.value = info.id;
       option.textContent = info.isUsed
-        ? `${info.id + 1}: ${info.name || info.preview}`
-        : `${info.id + 1}: (空)`;
+        ? `${info.displayNumber}: ${info.name || info.preview}`
+        : `${info.displayNumber}: (空)`;
 
       if (info.isCurrent) {
         option.style.fontWeight = "bold";
@@ -233,21 +322,23 @@ class PromptSlotManager {
       selector.appendChild(option);
     });
 
-    // オプションを作成した後に選択値を設定
-    selector.value = this.currentSlot;
+    // 現在のスロットを選択
+    const currentSlotId = this.slots[this.currentSlot]?.id;
+    if (currentSlotId !== undefined) {
+      selector.value = currentSlotId;
+    }
   }
 
   /**
    * スロット変更時のコールバック
    */
-  onSlotChanged(slotId) {
-    // 必要に応じて外部に通知
-    console.log("Switched to slot:", slotId);
+  onSlotChanged(slotIndex) {
+    console.log("Switched to slot index:", slotIndex);
 
     // プロンプト入力欄を更新
     const promptInput = document.getElementById("generatePrompt");
-    if (promptInput) {
-      promptInput.value = this.slots[slotId].prompt || "";
+    if (promptInput && this.slots[slotIndex]) {
+      promptInput.value = this.slots[slotIndex].prompt || "";
       promptInput.dispatchEvent(new Event("input"));
     }
   }
@@ -275,19 +366,17 @@ class PromptSlotManager {
    * @param {number} slotId - クリアするスロットID
    */
   async clearSlot(slotId) {
-    if (slotId < 0 || slotId >= this.maxSlots) {
-      console.error("Invalid slot ID:", slotId);
+    const slot = this.slots.find((s) => s.id === slotId);
+    if (!slot) {
+      console.error("Slot not found:", slotId);
       return false;
     }
 
-    this.slots[slotId] = {
-      id: slotId,
-      name: "",
-      prompt: "",
-      elements: [],
-      isUsed: false,
-      lastModified: null,
-    };
+    slot.prompt = "";
+    slot.elements = [];
+    slot.isUsed = false;
+    slot.lastModified = null;
+    slot.name = "";
 
     await this.saveToStorage();
     this.updateUI();
@@ -301,13 +390,18 @@ class PromptSlotManager {
   getCombinedPrompt() {
     const usedSlots = this.slots
       .filter((slot) => slot.isUsed && slot.prompt)
-      .sort((a, b) => a.id - b.id); // ID順（1番から順番に）
+      .sort((a, b) => {
+        // スロットの順番（配列内の位置）でソート
+        const indexA = this.slots.indexOf(a);
+        const indexB = this.slots.indexOf(b);
+        return indexA - indexB;
+      });
 
     if (usedSlots.length === 0) {
       return "";
     }
 
-    // プロンプトを結合（カンマ区切り）
+    // プロンプトを結合
     const combined = usedSlots
       .map((slot) => slot.prompt.trim())
       .filter((prompt) => prompt.length > 0)
@@ -315,14 +409,14 @@ class PromptSlotManager {
 
     // 連続するカンマを1つに正規化
     const normalized = combined
-      .replace(/,\s*,+/g, ",") // ,, や , , を , に
-      .replace(/^\s*,\s*/, "") // 先頭のカンマを削除
-      .replace(/\s*,\s*$/, "") // 末尾のカンマを削除
-      .replace(/\s*,\s*/g, ", "); // カンマの後にスペースを統一
+      .replace(/,\s*,+/g, ",")
+      .replace(/^\s*,\s*/, "")
+      .replace(/\s*,\s*$/, "")
+      .replace(/\s*,\s*/g, ", ");
 
     console.log(
       `Combining ${usedSlots.length} slots:`,
-      usedSlots.map((s) => `Slot ${s.id + 1}: ${s.prompt.substring(0, 20)}...`)
+      usedSlots.map((s, i) => `Slot ${i + 1}: ${s.prompt.substring(0, 20)}...`)
     );
 
     return normalized;
@@ -334,12 +428,15 @@ class PromptSlotManager {
    */
   getUsedSlots() {
     return this.slots
-      .filter((slot) => slot.isUsed)
-      .sort((a, b) => a.id - b.id)
-      .map((slot) => ({
-        id: slot.id + 1,
-        name: slot.name || `スロット${slot.id + 1}`,
-        prompt: slot.prompt,
+      .map((slot, index) => ({
+        slot: slot,
+        index: index,
+      }))
+      .filter((item) => item.slot.isUsed)
+      .map((item) => ({
+        id: item.index + 1,
+        name: item.slot.name || `スロット${item.index + 1}`,
+        prompt: item.slot.prompt,
       }));
   }
 
@@ -347,9 +444,15 @@ class PromptSlotManager {
    * すべてのスロットをクリア
    */
   async clearAllSlots() {
-    this.initializeSlots();
+    // 3個の空スロットで初期化（通知なし）
+    this.initializeSlots(3);
     this.currentSlot = 0;
     promptEditor.init("");
+
+    const promptInput = document.getElementById("generatePrompt");
+    if (promptInput) {
+      promptInput.value = "";
+    }
 
     await this.saveToStorage();
     this.updateUI();

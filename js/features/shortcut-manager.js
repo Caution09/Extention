@@ -52,14 +52,13 @@ class ShortcutManager {
       document.getElementById("addTab")?.click();
     });
 
-    // Ctrl+1～9: プロンプト切り替え（将来の実装用）
-    for (let i = 1; i <= 9; i++) {
-      this.register(String(i), { ctrl: true }, (e) => {
-        e.preventDefault();
-        console.log(`Switch to prompt ${i}`);
-        // TODO: 複数プロンプト実装時に有効化
-      });
-    }
+    // Escape: ポップアップを閉じる
+    this.register("Escape", {}, () => {
+      const popup = document.getElementById("popup");
+      if (popup && popup.style.display !== "none") {
+        popup.style.display = "none";
+      }
+    });
 
     // Escape: ポップアップを閉じる
     this.register("Escape", {}, () => {
