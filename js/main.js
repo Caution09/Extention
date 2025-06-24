@@ -212,6 +212,44 @@ class PromptGeneratorApp {
         }
       });
 
+      const uiTypeRadios = document.querySelectorAll('[name="UIType"]');
+      uiTypeRadios.forEach((radio) => {
+        radio.addEventListener("change", (event) => {
+          console.log("UIType changed to:", event.target.value);
+
+          // EditHandlerに処理を委譲
+          if (this.editHandler) {
+            this.editHandler.handleUITypeChange(event);
+          }
+
+          // 編集タブがアクティブな場合、タブにも通知
+          if (
+            AppState.ui.currentTab === CONSTANTS.TABS.EDIT &&
+            this.tabs.edit
+          ) {
+            this.tabs.edit.currentShapingMode = event.target.value;
+          }
+        });
+      });
+
+      const editTypeRadios = document.querySelectorAll('[name="EditType"]');
+      editTypeRadios.forEach((radio) => {
+        radio.addEventListener("change", (event) => {
+          console.log("EditType changed to:", event.target.value);
+
+          if (this.editHandler) {
+            this.editHandler.handleEditTypeChange(event);
+          }
+
+          if (
+            AppState.ui.currentTab === CONSTANTS.TABS.EDIT &&
+            this.tabs.edit
+          ) {
+            this.tabs.edit.currentEditMode = event.target.value;
+          }
+        });
+      });
+
       this.initialized = true;
       console.log("Application initialized successfully");
     } catch (error) {

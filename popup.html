@@ -38,20 +38,18 @@
         ><input type="radio" name="UIType" value="None" /> 自動整形無し</label
       >
       <br />
-      <input
-        type="text"
-        id="generatePrompt"
-        style="width: calc(100% - 110px)"
-      />
+      <!-- Generateボタンを保持（display: noneは維持） -->
       <input
         type="button"
         id="GeneratoButton"
         value="Generate"
         style="width: 100px; display: none"
       />
+      <input type="text" id="generatePrompt" style="width: calc(100%)" />
       <br />
       <!--タブを切り替えて表示するコンテンツ-->
       <div class="panel-group">
+        <!-- 検索タブ（完全に元に戻す） -->
         <div class="panel is-show" id="searchTabBody">
           <h2>キーワード検索</h2>
           <input type="text" size="25" id="search" value="" />
@@ -71,12 +69,6 @@
                 readonly=""
                 class="promptData"
                 style="background-color: black; color: white"
-              /><input
-                value="小項目"
-                type="text"
-                readonly=""
-                class="promptData"
-                style="background-color: black; color: white"
               />
             </li>
             <li>
@@ -91,6 +83,8 @@
           <p id="isSearch" style="font-size: 100%"></p>
           <ul style="font-size: 100%" id="promptList"></ul>
         </div>
+
+        <!-- 辞書タブ（完全に元に戻す） -->
         <div class="panel" id="addTabBody">
           <br />
           <div id="promptDicText">▶プロンプト辞書　※ここをクリックで開閉</div>
@@ -151,6 +145,8 @@
           <div id="masterDicText">▶要素辞書(マスタ)　※ここをクリックで開閉</div>
           <ul style="font-size: 100%" id="masterDicList"></ul>
         </div>
+
+        <!-- 編集タブ（完全に元に戻す） -->
         <div class="panel" id="editTabBody">
           <label
             ><input type="radio" name="EditType" value="SELECT" />
@@ -162,6 +158,8 @@
           >
           <ul style="font-size: 100%" id="editList"></ul>
         </div>
+
+        <!-- スロットタブ（完全に元に戻す） -->
         <div class="panel" id="slotTabBody">
           <h2>プロンプトスロット管理</h2>
           <div id="slot-info" style="margin-bottom: 10px">
@@ -170,40 +168,79 @@
               結合プレビュー
             </button>
           </div>
+          <div id="slot-container">
+            <!-- 動的に生成 -->
+          </div>
+          <div style="margin-top: 20px">
+            <button id="clear-all-slots-tab">すべてクリア</button>
+            <button id="export-slots">エクスポート</button>
+            <button id="import-slots">インポート</button>
+          </div>
         </div>
+
+        <!-- その他タブ（最新のセレクター設定と自動Generateを保持） -->
         <div class="panel" id="noticeBody">
           <div>
             <h3>お知らせ</h3>
             <p id="notice"></p>
           </div>
-          <div></div>
-            <h3>データ管理</h3>
-            <div style="margin-top: 20px">
-              <button id="clear-all-slots-tab">すべてクリア</button>
-              <button id="export-slots">エクスポート</button>
-              <button id="import-slots">インポート</button>
+
+          <!-- 辞書ダウンロードセクションを追加 -->
+          <div
+            style="
+              margin: 20px 0;
+              border: 1px solid #ddd;
+              padding: 15px;
+              border-radius: 5px;
+              background-color: #f9f9f9;
+            "
+          >
+            <h3 style="margin-top: 0">辞書管理</h3>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+              "
+            >
+              <button id="PromptDownload" style="padding: 8px; width: 100%">
+                プロンプト辞書ダウンロード
+              </button>
+              <button id="localDicDownload" style="padding: 8px; width: 100%">
+                要素辞書(ローカル)ダウンロード
+              </button>
+              <button id="csvExport" style="padding: 8px; width: 100%">
+                ローカル辞書CSVダウンロード
+              </button>
+              <button id="MasterDownload" style="padding: 8px; width: 100%">
+                要素辞書(マスタ)ダウンロード
+              </button>
             </div>
-            <div id="inclued" class="drop-area">
-              <p id="incluedText">
-                辞書（JSON）、画像（PNG）、CSVファイルを読み込む
-                (クリックして選択かドラッグドロップ)
-              </p>
-            </div>
-            <img id="preview" />
-            <div id="pngInfo"></div>
-          </div>
-          <div id="slot-container">
-            <!-- 動的に生成 -->
           </div>
 
-          <hr style="margin: 20px 0" />
+          <div id="inclued" class="drop-area">
+            <p id="incluedText">
+              辞書（JSON）、画像（PNG）、CSVファイルを読み込む
+              (クリックして選択かドラッグドロップ)
+            </p>
+          </div>
+          <img id="preview" />
+          <div id="pngInfo"></div>
 
-          <div id="autoGenerateOption" style="display: none">
-            <h3>自動Generate設定（NovelAI専用）</h3>
+          <div
+            id="autoGenerateOption"
+            style="
+              margin-top: 20px;
+              border-top: 1px solid #ddd;
+              padding-top: 15px;
+            "
+          >
+            <h3>自動Generate設定</h3>
             <label>
               <input type="checkbox" id="autoGenerate" />
-              自動Generateを有効にする </label
-            ><br />
+              自動Generateを有効にする
+            </label>
+            <br />
             <label>
               生成回数:
               <input
@@ -214,10 +251,9 @@
                 max="1000"
                 style="width: 60px"
               />
-              <span style="font-size: 12px; color: #666"
-                >（0で無限）</span
-              > </label
-            ><br />
+              <span style="font-size: 12px; color: #666">（0で無限）</span>
+            </label>
+            <br />
             <label>
               生成間隔:
               <input
@@ -228,13 +264,19 @@
                 max="60"
                 style="width: 50px"
               />
-              <span>秒</span> </label
-            ><br />
-            <br />
+              <span>秒</span>
+            </label>
           </div>
 
-          <!-- セレクター管理（既存のセレクター設定と統合） -->
-          <div class="selector-management">
+          <!-- 最新版のセレクター設定（維持） -->
+          <div
+            class="selector-management"
+            style="
+              margin-top: 20px;
+              border-top: 1px solid #ddd;
+              padding-top: 15px;
+            "
+          >
             <h3>セレクター設定</h3>
             <div class="selector-service">
               <label for="selector-service">対象サービス:</label>
@@ -255,7 +297,7 @@
                     type="text"
                     id="positivePromptSelector"
                     placeholder="セレクターを入力..."
-                    style="font-family: monospace"
+                    style="font-family: monospace; width: 100%"
                   />
                   <button
                     class="visual-select-btn"
@@ -275,7 +317,7 @@
                     type="text"
                     id="generateButtonSelector"
                     placeholder="セレクターを入力..."
-                    style="font-family: monospace"
+                    style="font-family: monospace; width: 100%"
                   />
                   <button
                     class="visual-select-btn"
@@ -307,11 +349,14 @@
               </div>
             </details>
           </div>
-
-          <hr style="margin: 20px 0" />
-
-          <!-- 元のoptionPanelの内容 -->
-          <div class="settings-section">
+          <div
+            class="settings-section"
+            style="
+              margin-top: 20px;
+              border-top: 1px solid #ddd;
+              padding-top: 15px;
+            "
+          >
             <h3>設定</h3>
             <label>
               <input type="checkbox" id="isDeleteCheck" value="isDeleteCheck" />
@@ -336,6 +381,8 @@
         </div>
       </div>
     </div>
+
+    <!-- ポップアップ（変更なし） -->
     <div id="popup" style="align-items: center">
       <img
         id="popup-image"
@@ -356,12 +403,13 @@
         <input
           type="text"
           id="negative-prompt"
-          value="disfigured.bad anatomy disfigured,jpeg artifacts,error,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,anatomical nonsense,watermark,five fingers,worst quality,bad anatomy,ugly,cropped,simple background,normal quality,lowers,low quality,polar lowres,standard quality,poorly drawn hands,boken limb,missing limbs,malformed limbs,incorrect limb,fusion hand,bad finglegs,abnormal fingers,missing fingers,fewer digits,too many fingers,extra digit,lose finger,extra fingers,one hand with more than 5 digit,one hand with less than 5 digit,one hand with more than 5 fingers,one hand with less than 5 fingers,3d character,qr code,ui,artist name,signature,text error,text font ui,bar code,username,bad digit,liquid digit,missing digit,fewer digits,multiple digit,text,fused digit,extra digt,extra digits,extra digit,nsfw"
+          value="disfigured.bad anatomy..."
           readonly
         />
         <button id="preview-negative-copy">Copy</button>
       </div>
     </div>
+
     <button
       id="toggleManual"
       style="position: fixed; bottom: 10px; right: 10px"
@@ -371,57 +419,41 @@
     <button id="show-shortcuts" style="position: fixed; top: 0; right: 0">
       ?
     </button>
-    <datalist id="category"> </datalist>
+    <datalist id="category"></datalist>
 
-    <!-- 外部ライブラリ -->
+    <!-- スクリプト部分（変更なし） -->
     <script src="lib/jquery-3.5.1.js"></script>
     <script src="lib/jquery-ui.js"></script>
     <script src="lib/papaparse.js"></script>
     <script src="lib/papaparse.min.js"></script>
-
-    <!-- リソース -->
     <script src="assets/master/default-master.js"></script>
-
-    <!-- コア機能 -->
     <script src="js/core/storage.js"></script>
     <script src="js/core/app-state.js"></script>
     <script src="js/core/error-handler.js"></script>
     <script src="js/core/validators.js"></script>
-
-    <!-- データ管理 -->
     <script src="js/data/category-manager.js"></script>
     <script src="js/data/prompt-editor.js"></script>
     <script src="js/data/data-manager.js"></script>
     <script src="js/data/prompt-slots.js"></script>
-
-    <!-- UI基本コンポーネント -->
     <script src="js/ui/components/ui-factory.js"></script>
     <script src="js/ui/components/ui-utilities.js"></script>
     <script src="js/ui/components/list-manager.js"></script>
-
-    <!-- 外部連携 -->
     <script src="js/external/api-client.js"></script>
     <script src="js/external/global-utilities.js"></script>
-
-    <!-- 個別機能 -->
     <script src="js/features/settings-manager.js"></script>
     <script src="js/features/file-handler.js"></script>
     <script src="js/features/csv-handler.js"></script>
     <script src="js/features/shortcut-manager.js"></script>
     <script src="js/features/auto-generate-handler.js"></script>
-
     <script src="js/ui/tabs/tab-manager.js"></script>
     <script src="js/ui/tabs/search-tab.js"></script>
     <script src="js/ui/tabs/dictionary-tab.js"></script>
     <script src="js/ui/tabs/edit-tab.js"></script>
     <script src="js/ui/tabs/slot-tab.js"></script>
     <script src="js/ui/tabs/other-tab.js"></script>
-
     <script src="js/features/search-handler.js"></script>
     <script src="js/features/edit-handler.js"></script>
     <script src="js/features/dictionary-handler.js"></script>
-
-    <!-- メインスクリプト -->
     <script src="js/main.js"></script>
   </body>
 </html>

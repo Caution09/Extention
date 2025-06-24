@@ -81,9 +81,13 @@
        * UIタイプ（整形モード）のハンドラー設定
        */
       setupUITypeHandlers() {
-        const uiTypeRadios = this.getElements('[name="UIType"]');
+        const uiTypeRadios = document.querySelectorAll('[name="UIType"]');
+
+        console.log("Found UIType radios:", uiTypeRadios.length); // デバッグログ
+
         uiTypeRadios.forEach((radio) => {
           this.addEventListener(radio, "change", async (e) => {
+            console.log("UIType changed via EditTab:", e.target.value); // デバッグログ
             await this.handleUITypeChange(e);
           });
         });

@@ -173,6 +173,9 @@
             service.generateButton
           );
         }
+
+        AppState.selector.positivePromptText = service.positivePromptText;
+        AppState.selector.generateButton = service.generateButton;
       }
 
       // 現在のセレクター情報を表示
