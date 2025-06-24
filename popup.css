@@ -192,7 +192,7 @@ button {
 #GeneratoButton {
   position: fixed;
   top: 0;
-  right: 150px;
+  right: 50px;
   margin: 20px;
   padding: 10px 20px;
   background-color: #4caf50;
@@ -570,16 +570,6 @@ button {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#testSelectors {
-  border-color: #17a2b8;
-  color: #17a2b8;
-}
-
-#testSelectors:hover {
-  background: #17a2b8;
-  color: white;
-}
-
 #saveSelectors {
   border-color: #28a745;
   color: #28a745;
@@ -686,24 +676,6 @@ button {
   padding-bottom: 8px;
 }
 
-#GeneratoButton {
-  margin-top: 10px;
-  padding: 12px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: all 0.3s;
-}
-
-#GeneratoButton:hover {
-  background: #0056b3;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
 /* セレクター管理のスタイル */
 .selector-management {
   margin-bottom: 20px;
@@ -812,16 +784,6 @@ button {
   background: #f8f9fa;
 }
 
-#testSelectors {
-  border-color: #17a2b8;
-  color: #17a2b8;
-}
-
-#testSelectors:hover {
-  background: #17a2b8;
-  color: white;
-}
-
 #saveSelectors {
   border-color: #28a745;
   color: #28a745;
@@ -866,26 +828,6 @@ button {
 
 .settings-section input[type="checkbox"] {
   margin-right: 5px;
-}
-
-/* GenerateボタンのスタイルをメインUIに合わせる */
-#GeneratoButton {
-  background: #007bff;
-  color: white;
-  border: 1px solid #0056b3;
-  padding: 5px 15px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  transition: all 0.2s;
-}
-
-#GeneratoButton:hover {
-  background: #0056b3;
-}
-
-#GeneratoButton:active {
-  transform: scale(0.98);
 }
 
 /* その他タブ全体のレイアウト調整 */

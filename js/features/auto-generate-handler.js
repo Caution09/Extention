@@ -14,7 +14,6 @@ class AutoGenerateHandler {
    * 初期化
    */
   async init() {
-    // セレクターが設定されているかチェック（NAIモードチェックを削除）
     const hasSelectors =
       AppState.selector.positivePromptText && AppState.selector.generateButton;
     const generateButton = document.getElementById("GeneratoButton");
@@ -421,8 +420,6 @@ class AutoGenerateHandler {
   /**
    * 設定を読み込み
    */
-  // auto-generate-handler.js の loadSettings() メソッドを修正
-
   async loadSettings() {
     try {
       // localStorageではなくchrome.storage.localを使用

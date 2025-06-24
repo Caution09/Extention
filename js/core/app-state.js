@@ -43,14 +43,28 @@ const AppState = {
     // サービスごとのセレクターセット
     serviceSets: {
       novelai: {
-        positivePromptText: "textarea[placeholder='Prompt']",
-        generateButton: "button.bg-generation",
+        name: "NovelAI",
+        url: "https://novelai.net/image",
+        positivePromptText:
+          "#__next > div.sc-5de027f2-0.IhKLm.image-gen-page > div.image-gen-body > div.image-gen-main > div:nth-child(1) > div.sc-bfaa0c12-0.llxfFb.settings-panel > div:nth-child(3) > div:nth-child(2) > div > div.prompt-input-box-プロンプト > div.relative > div > div",
+        generateButton:
+          "#__next > div.sc-5de027f2-0.IhKLm.image-gen-page > div.image-gen-body > div.image-gen-main > div:nth-child(1) > div.sc-bfaa0c12-0.llxfFb.settings-panel > div:nth-child(5) > button",
       },
       stable_diffusion: {
-        positivePromptText: "textarea[data-testid='textbox']",
+        name: "Stable Diffusion WebUI",
+        url: "http://127.0.0.1:7860/",
+        positivePromptText: "#txt2img_prompt textarea",
         generateButton: "#txt2img_generate",
       },
+      comfyui: {
+        name: "ComfyUI",
+        url: "http://127.0.0.1:8188/",
+        positivePromptText: "textarea.comfy-multiline-input",
+        generateButton: "#button.execute-button",
+      },
       custom: {
+        name: "custom",
+        url: "",
         positivePromptText: null,
         generateButton: null,
       },

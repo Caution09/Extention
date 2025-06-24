@@ -482,19 +482,6 @@ class PromptGeneratorApp {
   // ============================================
 
   setupWindowHandlers() {
-    const openWindowBtn = document.getElementById("openWindow");
-    if (openWindowBtn) {
-      openWindowBtn.addEventListener("click", () => {
-        const displayType = document.getElementById("displayType").value;
-        const message =
-          displayType === "page"
-            ? { type: "openPage" }
-            : { type: "openWindow", windowType: displayType };
-
-        chrome.runtime.sendMessage(message);
-      });
-    }
-
     const showPanelBtn = document.getElementById("show-panel");
     if (showPanelBtn) {
       showPanelBtn.addEventListener("click", () => {

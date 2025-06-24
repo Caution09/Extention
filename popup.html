@@ -12,7 +12,6 @@
       <option value="popup">ポップアップ表示</option>
       <option value="page">ページ表示</option>
     </select>
-    <button id="openWindow">開く</button>
     <div class="tab-panel">
       <ul class="tab-group">
         <li class="tab tab-A is-active">検索</li>
@@ -171,28 +170,78 @@
               結合プレビュー
             </button>
           </div>
-
+        </div>
+        <div class="panel" id="noticeBody">
+          <div>
+            <h3>お知らせ</h3>
+            <p id="notice"></p>
+          </div>
+          <div></div>
+            <h3>データ管理</h3>
+            <div style="margin-top: 20px">
+              <button id="clear-all-slots-tab">すべてクリア</button>
+              <button id="export-slots">エクスポート</button>
+              <button id="import-slots">インポート</button>
+            </div>
+            <div id="inclued" class="drop-area">
+              <p id="incluedText">
+                辞書（JSON）、画像（PNG）、CSVファイルを読み込む
+                (クリックして選択かドラッグドロップ)
+              </p>
+            </div>
+            <img id="preview" />
+            <div id="pngInfo"></div>
+          </div>
           <div id="slot-container">
             <!-- 動的に生成 -->
           </div>
 
-          <div style="margin-top: 20px">
-            <button id="clear-all-slots-tab">すべてクリア</button>
-            <button id="export-slots">エクスポート</button>
-            <button id="import-slots">インポート</button>
+          <hr style="margin: 20px 0" />
+
+          <div id="autoGenerateOption" style="display: none">
+            <h3>自動Generate設定（NovelAI専用）</h3>
+            <label>
+              <input type="checkbox" id="autoGenerate" />
+              自動Generateを有効にする </label
+            ><br />
+            <label>
+              生成回数:
+              <input
+                type="number"
+                id="generateCount"
+                value="10"
+                min="0"
+                max="1000"
+                style="width: 60px"
+              />
+              <span style="font-size: 12px; color: #666"
+                >（0で無限）</span
+              > </label
+            ><br />
+            <label>
+              生成間隔:
+              <input
+                type="number"
+                id="generateInterval"
+                value="5"
+                min="3"
+                max="60"
+                style="width: 50px"
+              />
+              <span>秒</span> </label
+            ><br />
+            <br />
           </div>
-        </div>
-        <div class="panel" id="noticeBody">
+
           <!-- セレクター管理（既存のセレクター設定と統合） -->
           <div class="selector-management">
             <h3>セレクター設定</h3>
-
             <div class="selector-service">
               <label for="selector-service">対象サービス:</label>
               <select id="selector-service" style="width: 200px">
                 <option value="">-- 選択してください --</option>
                 <option value="novelai">NovelAI</option>
-                <option value="sdwebui">Stable Diffusion WebUI</option>
+                <option value="stable_diffusion">Stable Diffusion WebUI</option>
                 <option value="comfyui">ComfyUI</option>
                 <option value="custom">カスタム</option>
               </select>
@@ -241,7 +290,6 @@
             </div>
 
             <div class="selector-actions" style="margin-top: 15px">
-              <button id="testSelectors">テスト</button>
               <button id="saveSelectors">保存</button>
               <button id="clearSelectors">クリア</button>
             </div>
@@ -284,33 +332,7 @@
               プロンプトの重複時に警告をする
             </label>
             <br />
-            <label>
-              Google Apps Script URL<br />
-              <input type="text" size="25" id="GASURL" value="" />
-            </label>
-            <br />
-            <label>
-              <input
-                type="checkbox"
-                id="NoButtonGenerat"
-                value="NoButtonGenerat"
-              />
-              実行ボタンを表示しない
-            </label>
           </div>
-
-          <hr style="margin: 20px 0" />
-
-          <p>お知らせ</p>
-          <p id="notice"></p>
-          <div id="inclued" class="drop-area">
-            <p id="incluedText">
-              辞書（JSON）、画像（PNG）、CSVファイルを読み込む
-              (クリックして選択かドラッグドロップ)
-            </p>
-          </div>
-          <img id="preview" />
-          <div id="pngInfo"></div>
         </div>
       </div>
     </div>
@@ -346,7 +368,7 @@
     >
       一覧
     </button>
-    <button id="show-shortcuts" style="position: fixed; top: 20px; right: 20px">
+    <button id="show-shortcuts" style="position: fixed; top: 0; right: 0">
       ?
     </button>
     <datalist id="category"> </datalist>

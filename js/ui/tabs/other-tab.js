@@ -25,28 +25,6 @@
           mode: "inactive",
           targetInputId: null,
         };
-
-        // サービス定義
-        this.services = {
-          novelai: {
-            name: "NovelAI",
-            url: "https://novelai.net/image",
-            positivePromptText: "textarea[placeholder='Prompt']",
-            generateButton: "button.bg-generation",
-          },
-          sdwebui: {
-            name: "Stable Diffusion WebUI",
-            url: "http://127.0.0.1:7860/",
-            positivePromptText: "#txt2img_prompt textarea",
-            generateButton: "#txt2img_generate",
-          },
-          comfyui: {
-            name: "ComfyUI",
-            url: "http://127.0.0.1:8188/",
-            positivePromptText: "textarea.comfy-multiline-input",
-            generateButton: "button.execute-button",
-          },
-        };
       }
 
       async onInit() {
@@ -98,11 +76,6 @@
         });
 
         // アクションボタン
-        const testBtn = document.getElementById("testSelectors");
-        if (testBtn) {
-          this.addEventListener(testBtn, "click", () => this.testSelectors());
-        }
-
         const saveBtn = document.getElementById("saveSelectors");
         if (saveBtn) {
           this.addEventListener(saveBtn, "click", () => this.saveSelectors());
@@ -149,7 +122,9 @@
             currentWindow: true,
           });
           if (tab && tab.url) {
-            for (const [key, service] of Object.entries(this.services)) {
+            for (const [key, service] of Object.entries(
+              AppState.selector.serviceSets
+            )) {
               if (tab.url.includes(service.url)) {
                 const serviceSelect =
                   document.getElementById("selector-service");
@@ -176,7 +151,7 @@
           return;
         }
 
-        const service = this.services[serviceKey];
+        const service = AppState.selector.serviceSets[serviceKey];
         if (!service) return;
 
         // セレクターフィールドに値を設定
@@ -361,59 +336,6 @@
         }
       }
 
-      // セレクターをテスト
-      async testSelectors() {
-        const positiveSelector = document.getElementById(
-          "positivePromptSelector"
-        )?.value;
-        const generateSelector = document.getElementById(
-          "generateButtonSelector"
-        )?.value;
-
-        if (!positiveSelector || !generateSelector) {
-          ErrorHandler.notify("セレクターを入力してください", {
-            type: ErrorHandler.NotificationType.TOAST,
-            messageType: "error",
-          });
-          return;
-        }
-
-        try {
-          const [tab] = await chrome.tabs.query({
-            active: true,
-            currentWindow: true,
-          });
-          if (!tab) return;
-
-          const response = await chrome.tabs.sendMessage(tab.id, {
-            action: "testSelectors",
-            selectors: {
-              positive: positiveSelector,
-              generate: generateSelector,
-            },
-            testPrompt: "Test prompt from Prompt Generator",
-          });
-
-          if (response && response.success) {
-            ErrorHandler.notify("テスト成功！プロンプトが入力されました", {
-              type: ErrorHandler.NotificationType.TOAST,
-              messageType: "success",
-            });
-          } else {
-            ErrorHandler.notify("テスト失敗：要素が見つかりません", {
-              type: ErrorHandler.NotificationType.TOAST,
-              messageType: "error",
-            });
-          }
-        } catch (error) {
-          console.error("Test error:", error);
-          ErrorHandler.notify("テスト失敗：ページにアクセスできません", {
-            type: ErrorHandler.NotificationType.TOAST,
-            messageType: "error",
-          });
-        }
-      }
-
       // セレクターを保存（AppState.selectorに保存）
       async saveSelectors() {
         const positiveSelector = document.getElementById(
@@ -496,14 +418,13 @@
       // Generateボタンの表示/非表示を更新
       updateGenerateButtonVisibility() {
         const genBtn = document.getElementById("GeneratoButton");
-        const noButtonCheck = document.getElementById("NoButtonGenerat");
 
         if (genBtn) {
           const hasSelectors =
             AppState.selector.positivePromptText &&
             AppState.selector.generateButton;
           const isNAI = AppState.userSettings.optionData?.shaping === "NAI";
-          const showButton = hasSelectors && isNAI && !noButtonCheck?.checked;
+          const showButton = hasSelectors;
 
           genBtn.style.display = showButton ? "block" : "none";
 
