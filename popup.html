@@ -39,7 +39,17 @@
         ><input type="radio" name="UIType" value="None" /> 自動整形無し</label
       >
       <br />
-      <input type="text" id="generatePrompt" style="width: calc(100%)" />
+      <input
+        type="text"
+        id="generatePrompt"
+        style="width: calc(100% - 110px)"
+      />
+      <input
+        type="button"
+        id="GeneratoButton"
+        value="Generate"
+        style="width: 100px; display: none"
+      />
       <br />
       <!--タブを切り替えて表示するコンテンツ-->
       <div class="panel-group">
@@ -58,6 +68,12 @@
                 style="background-color: black; color: white"
               /><input
                 value="中項目"
+                type="text"
+                readonly=""
+                class="promptData"
+                style="background-color: black; color: white"
+              /><input
+                value="小項目"
                 type="text"
                 readonly=""
                 class="promptData"
@@ -166,8 +182,125 @@
             <button id="import-slots">インポート</button>
           </div>
         </div>
-        <!-- "noticeBody" div内の最後（</div>の前）に追加 -->
         <div class="panel" id="noticeBody">
+          <!-- セレクター管理（既存のセレクター設定と統合） -->
+          <div class="selector-management">
+            <h3>セレクター設定</h3>
+
+            <div class="selector-service">
+              <label for="selector-service">対象サービス:</label>
+              <select id="selector-service" style="width: 200px">
+                <option value="">-- 選択してください --</option>
+                <option value="novelai">NovelAI</option>
+                <option value="sdwebui">Stable Diffusion WebUI</option>
+                <option value="comfyui">ComfyUI</option>
+                <option value="custom">カスタム</option>
+              </select>
+            </div>
+
+            <div class="current-selectors" style="margin-top: 15px">
+              <div class="selector-item">
+                <label>プロンプト入力欄のセレクター:</label>
+                <div class="selector-control">
+                  <input
+                    type="text"
+                    id="positivePromptSelector"
+                    placeholder="セレクターを入力..."
+                    style="font-family: monospace"
+                  />
+                  <button
+                    class="visual-select-btn"
+                    data-target="positivePromptSelector"
+                    title="ビジュアル選択"
+                  >
+                    🎯
+                  </button>
+                </div>
+                <div class="selector-status" id="positivePromptStatus"></div>
+              </div>
+
+              <div class="selector-item" style="margin-top: 10px">
+                <label>生成ボタンのセレクター:</label>
+                <div class="selector-control">
+                  <input
+                    type="text"
+                    id="generateButtonSelector"
+                    placeholder="セレクターを入力..."
+                    style="font-family: monospace"
+                  />
+                  <button
+                    class="visual-select-btn"
+                    data-target="generateButtonSelector"
+                    title="ビジュアル選択"
+                  >
+                    🎯
+                  </button>
+                </div>
+                <div class="selector-status" id="generateButtonStatus"></div>
+              </div>
+            </div>
+
+            <div class="selector-actions" style="margin-top: 15px">
+              <button id="testSelectors">テスト</button>
+              <button id="saveSelectors">保存</button>
+              <button id="clearSelectors">クリア</button>
+            </div>
+
+            <details style="margin-top: 15px">
+              <summary style="cursor: pointer">セレクターの調べ方</summary>
+              <div
+                style="margin-top: 10px; padding-left: 20px; font-size: 12px"
+              >
+                <p>1. 対象ページで右クリック → 「検証」を選択</p>
+                <p>2. 要素選択ツール（矢印アイコン）をクリック</p>
+                <p>3. 目的の要素をクリック</p>
+                <p>4. DevToolsで要素を右クリック → Copy → Copy selector</p>
+                <p>または、「🎯」ボタンでビジュアル選択が可能です！</p>
+              </div>
+            </details>
+          </div>
+
+          <hr style="margin: 20px 0" />
+
+          <!-- 元のoptionPanelの内容 -->
+          <div class="settings-section">
+            <h3>設定</h3>
+            <label>
+              <input type="checkbox" id="isDeleteCheck" value="isDeleteCheck" />
+              項目の削除時に確認をする
+            </label>
+            <br />
+            <label>
+              DeepL APIキー<br />
+              <input type="password" size="25" id="DeeplAuth" value="" />
+            </label>
+            <br />
+            <label>
+              <input
+                type="checkbox"
+                id="checkPromptConflict"
+                value="checkPromptConflict"
+              />
+              プロンプトの重複時に警告をする
+            </label>
+            <br />
+            <label>
+              Google Apps Script URL<br />
+              <input type="text" size="25" id="GASURL" value="" />
+            </label>
+            <br />
+            <label>
+              <input
+                type="checkbox"
+                id="NoButtonGenerat"
+                value="NoButtonGenerat"
+              />
+              実行ボタンを表示しない
+            </label>
+          </div>
+
+          <hr style="margin: 20px 0" />
+
           <p>お知らせ</p>
           <p id="notice"></p>
           <div id="inclued" class="drop-area">
@@ -178,73 +311,10 @@
           </div>
           <img id="preview" />
           <div id="pngInfo"></div>
-
-          <!-- セレクター管理セクション内の最初に追加 -->
-          <div
-            id="selectorManagement"
-            style="
-              margin-top: 20px;
-              border-top: 1px solid #ddd;
-              padding-top: 20px;
-            "
-          >
-            <h3>セレクター設定</h3>
-
-            <!-- プリセット選択を追加 -->
-            <div style="margin-bottom: 15px">
-              <label>プリセット:</label>
-              <select
-                id="selectorPreset"
-                style="width: 200px; margin-left: 5px"
-              >
-                <option value="">選択してください</option>
-                <option value="novelai">NovelAI</option>
-                <option value="automatic1111">Stable Diffusion WebUI</option>
-                <option value="comfyui">ComfyUI</option>
-                <option value="custom">カスタム</option>
-              </select>
-            </div>
-            <div style="margin-bottom: 15px">
-              <label>プロンプト入力欄のセレクター:</label><br />
-              <input
-                type="text"
-                id="promptSelector"
-                style="width: 90%; margin-top: 5px"
-                placeholder="例: textarea[placeholder='Prompt']"
-              />
-              <div
-                id="promptSelectorStatus"
-                style="font-size: 12px; margin-top: 3px"
-              ></div>
-            </div>
-            <div style="margin-bottom: 15px">
-              <label>Generateボタンのセレクター:</label><br />
-              <input
-                type="text"
-                id="generateSelector"
-                style="width: 90%; margin-top: 5px"
-                placeholder="例: button.generate-button"
-              />
-              <div
-                id="generateSelectorStatus"
-                style="font-size: 12px; margin-top: 3px"
-              ></div>
-            </div>
-            <div>
-              <button id="validateSelectors">検証</button>
-              <button id="saveSelectors">保存</button>
-              <button id="clearSelectors">クリア</button>
-              <span
-                id="selectorMessage"
-                style="margin-left: 10px; font-size: 12px"
-              ></span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
     <div id="popup" style="align-items: center">
-      <!-- 将来的に復帰　<img id="popup-image" src="https://ul.h3z.jp/bfuGQIw4.png" style="flex-grow: 1; padding: 10px;"> -->
       <img
         id="popup-image"
         src="assets/icon/Icon128.png"
@@ -270,109 +340,15 @@
         <button id="preview-negative-copy">Copy</button>
       </div>
     </div>
-    <div id="optionPanel">
-      <br />
-      <br />
-      <br />
-      <br />
-      <label
-        ><input
-          type="checkbox"
-          id="isDeleteCheck"
-          value="isDeleteCheck"
-        />項目の削除時に確認をする</label
-      ><br />
-      <label
-        >DeepLAPIキー<br /><input
-          type="password"
-          size="25"
-          id="DeeplAuth"
-          value="" /></label
-      ><br />
-      <label
-        ><input
-          type="button"
-          id="PromptDownload"
-          value="プロンプト辞書ダウンロード" /></label
-      ><br />
-      <label
-        ><input
-          type="button"
-          id="localDicDownload"
-          value="要素辞書(ローカル)ダウンロード" /></label
-      ><br />
-      <label
-        ><input
-          type="button"
-          id="csvExport"
-          value="ローカル辞書CSVダウンロード" /></label
-      ><br />
-      <label
-        ><input
-          type="button"
-          id="MasterDownload"
-          value="要素辞書(マスタ)ダウンロード" /></label
-      ><br />
-      <h3>設定の管理</h3>
-      <label
-        ><input type="checkbox" id="importMergeMode" />
-        インポート時にマージする</label
-      ><br />
-      <label
-        ><input
-          type="button"
-          id="exportSettings"
-          value="すべてをエクスポート" /></label
-      ><br />
-      <label
-        ><input
-          type="button"
-          id="importSettings"
-          value="すべてをインポート" /></label
-      ><br />
-      <label
-        ><input
-          type="button"
-          id="resetButton"
-          value="すべてリセットし初期化する" /></label
-      ><br />
-      <div id="autoGenerateOption" style="display: none">
-        <h3>自動Generate設定（NovelAI専用）</h3>
-        <label>
-          <input type="checkbox" id="autoGenerate" />
-          自動Generateを有効にする </label
-        ><br />
-        <label>
-          生成回数:
-          <input
-            type="number"
-            id="generateCount"
-            value="10"
-            min="0"
-            max="1000"
-            style="width: 60px"
-          />
-          <span style="font-size: 12px; color: #666">（0で無限）</span> </label
-        ><br />
-        <label>
-          生成間隔:
-          <input
-            type="number"
-            id="generateInterval"
-            value="5"
-            min="3"
-            max="60"
-            style="width: 50px"
-          />
-          <span>秒</span> </label
-        ><br />
-        <br />
-      </div>
-      <br />
-    </div>
-    <button id="GeneratoButton" hidden>Generate</button>
-    <button id="show-panel">Option</button>
-    <button id="show-shortcuts" title="ショートカットキー一覧">?</button>
+    <button
+      id="toggleManual"
+      style="position: fixed; bottom: 10px; right: 10px"
+    >
+      一覧
+    </button>
+    <button id="show-shortcuts" style="position: fixed; top: 20px; right: 20px">
+      ?
+    </button>
     <datalist id="category"> </datalist>
 
     <!-- 外部ライブラリ -->
@@ -404,7 +380,6 @@
     <!-- 外部連携 -->
     <script src="js/external/api-client.js"></script>
     <script src="js/external/global-utilities.js"></script>
-    <script src="js/external/content-script.js"></script>
 
     <!-- 個別機能 -->
     <script src="js/features/settings-manager.js"></script>

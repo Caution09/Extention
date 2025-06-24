@@ -606,6 +606,14 @@ class PromptGeneratorApp {
       saveButton.addEventListener("click", () => this.archivePrompt());
     }
 
+    // ヘルプボタン
+    const helpButton = document.getElementById("helpButton");
+    if (helpButton) {
+      helpButton.addEventListener("click", () =>
+        this.shortcutManager.showHelp()
+      );
+    }
+
     // Generate ボタン
     const generateButton = document.getElementById("GeneratoButton");
     if (generateButton) {

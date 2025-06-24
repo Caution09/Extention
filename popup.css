@@ -423,3 +423,478 @@ button {
 #generateSelectorStatus {
   min-height: 16px;
 }
+
+/* セレクター管理のスタイル */
+.selector-management {
+  margin-bottom: 20px;
+}
+
+.selector-management h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 16px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
+}
+
+.selector-management h4 {
+  margin: 15px 0 10px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.preset-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.preset-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 100%;
+}
+
+.preset-btn:hover {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.selector-item {
+  margin-bottom: 15px;
+}
+
+.selector-item label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #666;
+  font-size: 13px;
+}
+
+.selector-control {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.selector-control input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.visual-select-btn {
+  padding: 8px 16px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  background: white;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 100%;
+}
+
+.visual-select-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+.visual-select-btn.active {
+  background: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+
+.visual-select-btn.active::after {
+  content: " (ESCで終了)";
+  font-size: 11px;
+}
+
+.selector-status {
+  font-size: 12px;
+  margin-top: 5px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  display: none;
+}
+
+.selector-status.valid {
+  display: block;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.selector-status.invalid {
+  display: block;
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.selector-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.action-btn {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 100%;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#testSelectors {
+  border-color: #17a2b8;
+  color: #17a2b8;
+}
+
+#testSelectors:hover {
+  background: #17a2b8;
+  color: white;
+}
+
+#saveSelectors {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+#saveSelectors:hover {
+  background: #28a745;
+  color: white;
+}
+
+#clearSelectors {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+#clearSelectors:hover {
+  background: #dc3545;
+  color: white;
+}
+
+.selector-help {
+  margin-top: 20px;
+}
+
+.selector-help details {
+  background: white;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.selector-help summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #666;
+  font-size: 13px;
+}
+
+.help-content {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.help-content p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 12px;
+}
+
+/* 設定セクション */
+.settings-section h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 16px;
+  border-bottom: 2px solid #666;
+  padding-bottom: 8px;
+}
+
+.setting-item {
+  margin-bottom: 15px;
+}
+
+.setting-item label {
+  display: block;
+  color: #555;
+  font-size: 14px;
+}
+
+.setting-item input[type="text"],
+.setting-item input[type="password"] {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.setting-item input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* お知らせセクション */
+.notice-section h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 16px;
+  border-bottom: 2px solid #17a2b8;
+  padding-bottom: 8px;
+}
+
+#notice {
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  min-height: 50px;
+}
+
+/* ファイルセクション */
+.file-section h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 16px;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 8px;
+}
+
+#GeneratoButton {
+  margin-top: 10px;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+#GeneratoButton:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* セレクター管理のスタイル */
+.selector-management {
+  margin-bottom: 20px;
+}
+
+.selector-management h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.selector-service {
+  margin-bottom: 15px;
+}
+
+.selector-service label {
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.selector-item {
+  margin-bottom: 10px;
+}
+
+.selector-item label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.selector-control {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.selector-control input {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.visual-select-btn {
+  padding: 5px 10px;
+  border: 1px solid #007bff;
+  border-radius: 3px;
+  background: white;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.visual-select-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+.visual-select-btn.active {
+  background: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+
+.selector-status {
+  font-size: 12px;
+  margin-top: 3px;
+  padding: 3px 6px;
+  border-radius: 3px;
+  display: none;
+}
+
+.selector-status.valid {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.selector-status.invalid {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.selector-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.selector-actions button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.selector-actions button:hover {
+  background: #f8f9fa;
+}
+
+#testSelectors {
+  border-color: #17a2b8;
+  color: #17a2b8;
+}
+
+#testSelectors:hover {
+  background: #17a2b8;
+  color: white;
+}
+
+#saveSelectors {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+#saveSelectors:hover {
+  background: #28a745;
+  color: white;
+}
+
+#clearSelectors {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+#clearSelectors:hover {
+  background: #dc3545;
+  color: white;
+}
+
+/* 設定セクション */
+.settings-section h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.settings-section label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.settings-section input[type="text"],
+.settings-section input[type="password"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 5px 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.settings-section input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* GenerateボタンのスタイルをメインUIに合わせる */
+#GeneratoButton {
+  background: #007bff;
+  color: white;
+  border: 1px solid #0056b3;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+#GeneratoButton:hover {
+  background: #0056b3;
+}
+
+#GeneratoButton:active {
+  transform: scale(0.98);
+}
+
+/* その他タブ全体のレイアウト調整 */
+#noticeBody {
+  padding: 10px;
+}
+
+#noticeBody hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
