@@ -15,9 +15,6 @@ class PromptSlotManager {
     this.currentSlot = 0;
     this.slots = [];
     this._nextId = 0;
-
-    // 初期化（最初は3個のスロットから開始）
-    this.initializeSlots(3);
   }
 
   /**
@@ -351,13 +348,21 @@ class PromptSlotManager {
    */
   async saveToStorage() {
     try {
-      await Storage.set({
+      const dataToSave = {
         promptSlots: {
           currentSlot: this.currentSlot,
           slots: this.slots,
           nextId: this._nextId,
         },
+      };
+
+      console.log("Saving slots to storage:", {
+        slotCount: this.slots.length,
+        slots: this.slots.map((s) => ({ id: s.id, isUsed: s.isUsed })),
       });
+
+      await Storage.set(dataToSave);
+      console.log("Slots saved successfully");
     } catch (error) {
       ErrorHandler.log("Failed to save prompt slots", error);
     }
@@ -369,7 +374,10 @@ class PromptSlotManager {
   async loadFromStorage() {
     try {
       const result = await Storage.get("promptSlots");
-      if (result.promptSlots) {
+      console.log("Loading from storage:", result);
+
+      if (result.promptSlots && result.promptSlots.slots) {
+        // 保存されているデータを復元
         this.currentSlot = result.promptSlots.currentSlot || 0;
         this.slots = result.promptSlots.slots || [];
         this._nextId = result.promptSlots.nextId || this.slots.length;
@@ -386,11 +394,6 @@ class PromptSlotManager {
           currentExtraction: slot.currentExtraction || null,
         }));
 
-        // スロットが空の場合は初期化
-        if (this.slots.length === 0) {
-          this.initializeSlots(3);
-        }
-
         // currentSlotが範囲外の場合は調整
         if (this.currentSlot >= this.slots.length) {
           this.currentSlot = 0;
@@ -399,18 +402,25 @@ class PromptSlotManager {
         console.log("Loaded slots from storage:", {
           currentSlot: this.currentSlot,
           slotCount: this.slots.length,
-          usedSlots: this.slots
-            .filter((s) => s.isUsed || s.mode !== "normal")
-            .map((s) => s.id),
+          nextId: this._nextId,
         });
 
         return true;
+      } else {
+        // データがない場合のみ初期化
+        console.log("No saved data, initializing with 3 slots");
+        this.initializeSlots(3);
+        return false;
       }
     } catch (error) {
+      console.error("Failed to load prompt slots:", error);
       ErrorHandler.log("Failed to load prompt slots", error);
+      // エラー時のみ初期化
+      this.initializeSlots(3);
+      return false;
     }
-    return false;
   }
+
   /**
    * UIを更新
    */
@@ -594,8 +604,9 @@ class PromptSlotManager {
    * すべてのスロットをクリア
    */
   async clearAllSlots() {
-    // 3個の空スロットで初期化（通知なし）
-    this.initializeSlots(3);
+    // 現在のスロット数を維持してクリア
+    const currentSlotCount = Math.max(this.slots.length, 3);
+    this.initializeSlots(currentSlotCount);
     this.currentSlot = 0;
     promptEditor.init("");
 
