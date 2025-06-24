@@ -1,7 +1,28 @@
 /**
- * データ管理モジュール（完全リファクタリング版）
- * Storage APIラッパーとAppStateを使用した非同期処理の統一
+ * data-manager.js - データ管理モジュール
+ * Chrome Storageを使用したデータの永続化と管理
  */
+
+// ============================================
+// content script注入関数
+// ============================================
+
+/**
+ * content scriptを注入する関数
+ */
+async function injectContentScript(tabId) {
+  try {
+    await chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      files: ["js/content.js"],
+    });
+    console.log("Content script injected successfully");
+    return true;
+  } catch (error) {
+    console.log("Content script injection failed:", error.message);
+    return false;
+  }
+}
 
 // ============================================
 // プロンプト管理
@@ -12,8 +33,9 @@
  */
 async function savePrompt() {
   try {
-    console.log("Saving prompt:", editPrompt.prompt);
-    await Storage.set({ generatePrompt: editPrompt.prompt });
+    const prompt = editPrompt.prompt;
+    await Storage.set({ generatePrompt: prompt });
+    await promptSlotManager.saveCurrentSlot();
   } catch (error) {
     console.error("Failed to save prompt:", error);
     throw error;
@@ -21,14 +43,14 @@ async function savePrompt() {
 }
 
 /**
- * 保存されたプロンプトを読み込み
+ * プロンプトを読み込み
  */
 async function loadPrompt() {
   try {
     const result = await Storage.get("generatePrompt");
-    if (result.generatePrompt && result.generatePrompt !== editPrompt.prompt) {
-      console.log("Loading saved prompt:", result.generatePrompt);
-      InitGenaretePrompt(result.generatePrompt);
+    if (result.generatePrompt != null) {
+      editPrompt.init(result.generatePrompt);
+      UpdateGenaretePrompt();
     }
   } catch (error) {
     console.error("Failed to load prompt:", error);
@@ -40,12 +62,11 @@ async function loadPrompt() {
 // ============================================
 
 /**
- * 検索カテゴリーを保存
+ * カテゴリーデータを保存
  */
 async function saveCategory() {
   try {
     await Storage.set({ searchCategory: AppState.data.searchCategory });
-    console.log("Category saved:", AppState.data.searchCategory);
   } catch (error) {
     console.error("Failed to save category:", error);
     throw error;
@@ -53,12 +74,12 @@ async function saveCategory() {
 }
 
 /**
- * 検索カテゴリーを読み込み
+ * カテゴリーデータを読み込み
  */
 async function loadCategory() {
   try {
     const result = await Storage.get("searchCategory");
-    if (result.searchCategory) {
+    if (result.searchCategory != null) {
       AppState.data.searchCategory = result.searchCategory;
       setSeachCategory();
     }
@@ -68,11 +89,194 @@ async function loadCategory() {
 }
 
 // ============================================
+// セレクター管理
+// ============================================
+
+/**
+ * セレクター情報を保存
+ */
+async function saveSelectors() {
+  try {
+    await Storage.set({
+      positivePromptText: AppState.selector.positivePromptText,
+      generateButton: AppState.selector.generateButton,
+    });
+  } catch (error) {
+    console.error("Failed to save selectors:", error);
+    throw error;
+  }
+}
+
+/**
+ * セレクター情報を読み込み
+ */
+async function loadSelectors() {
+  try {
+    const result = await Storage.get(["positivePromptText", "generateButton"]);
+
+    if (result.positivePromptText) {
+      AppState.selector.positivePromptText = result.positivePromptText;
+    }
+    if (result.generateButton) {
+      AppState.selector.generateButton = result.generateButton;
+    }
+
+    // 読み込み後の検証
+    if (AppState.userSettings.optionData?.shaping === "NAI") {
+      validateAndActivateGenerateButton();
+    }
+  } catch (error) {
+    console.error("Failed to load selectors:", error);
+  }
+}
+
+/**
+ * プロンプトセレクターを読み込み（content script注入機能付き）
+ */
+async function loadPromptSelector() {
+  try {
+    const result = await Storage.get("positivePromptText");
+    if (result.positivePromptText) {
+      const selector = result.positivePromptText;
+
+      const [tab] = await chrome.tabs.query({
+        active: true,
+        currentWindow: true,
+      });
+
+      if (!tab) return;
+
+      console.log(`positivePromptText：`, selector);
+
+      // content scriptを注入してから通信
+      await injectContentScript(tab.id);
+
+      setTimeout(async () => {
+        try {
+          const response = await chrome.tabs.sendMessage(tab.id, {
+            action: "checkSelector",
+            selector,
+          });
+          console.log("応答：", response);
+        } catch (error) {
+          console.log("Selector check failed:", error.message);
+          // エラーでも値は保持
+          AppState.selector.positivePromptText = result.positivePromptText;
+        }
+      }, 100);
+    }
+  } catch (error) {
+    console.error("Failed to load prompt selector:", error);
+  }
+}
+
+/**
+ * Generateボタンセレクターを読み込み（content script注入機能付き）
+ */
+async function loadgenerateButtonSelector() {
+  try {
+    const result = await Storage.get("generateButton");
+    if (result.generateButton) {
+      const selector = result.generateButton;
+
+      const [tab] = await chrome.tabs.query({
+        active: true,
+        currentWindow: true,
+      });
+
+      if (!tab) return;
+
+      console.log(`generateButton:`, selector);
+
+      // content scriptを注入してから通信
+      await injectContentScript(tab.id);
+
+      setTimeout(async () => {
+        try {
+          const response = await chrome.tabs.sendMessage(tab.id, {
+            action: "checkSelector",
+            selector,
+          });
+          console.log("応答：", response);
+        } catch (error) {
+          console.log("Selector check failed:", error.message);
+          AppState.selector.generateButton = result.generateButton;
+        }
+      }, 100);
+    }
+  } catch (error) {
+    console.error("Failed to load generate button selector:", error);
+  }
+}
+
+/**
+ * セレクターを検証してGenerateボタンを有効化（content script注入機能付き）
+ */
+async function validateAndActivateGenerateButton() {
+  console.log("Validating selectors on:", window.location.href);
+
+  const validateSelector = async (selector, selectorType) => {
+    try {
+      const [tab] = await chrome.tabs.query({
+        active: true,
+        currentWindow: true,
+      });
+
+      if (!tab) return false;
+
+      // content scriptを注入
+      await injectContentScript(tab.id);
+
+      try {
+        const response = await chrome.tabs.sendMessage(tab.id, {
+          action: "checkSelector",
+          selector: selector,
+        });
+
+        if (response && response.exists) {
+          console.log(`✓ ${selectorType} セレクター有効`);
+          return true;
+        } else {
+          console.log(`✗ ${selectorType} セレクター無効`);
+          return false;
+        }
+      } catch (error) {
+        console.log(`セレクター検証エラー:`, error);
+        return false;
+      }
+    } catch (error) {
+      console.log(`セレクター検証スキップ (${selectorType}):`, error.message);
+      return false;
+    }
+  };
+
+  // 両方のセレクターを並列で検証
+  const [isPositiveValid, isGenerateValid] = await Promise.all([
+    validateSelector(AppState.selector.positivePromptText, "プロンプト"),
+    validateSelector(AppState.selector.generateButton, "Generate"),
+  ]);
+
+  // 結果に基づいてGenerateボタンを表示/非表示
+  const generateButton = document.getElementById("GeneratoButton");
+  if (generateButton) {
+    if (isPositiveValid && isGenerateValid) {
+      generateButton.style.display = "block";
+      console.log("✅ Generateボタンを有効化しました");
+    } else {
+      generateButton.style.display = "none";
+      console.log(
+        "❌ セレクターが無効なため、Generateボタンを非表示にしました"
+      );
+    }
+  }
+}
+
+// ============================================
 // マスタープロンプト管理
 // ============================================
 
 /**
- * マスタープロンプトとバージョンを保存
+ * マスタープロンプトを保存
  */
 async function saveMasterPrompt() {
   try {
@@ -87,7 +291,7 @@ async function saveMasterPrompt() {
 }
 
 /**
- * マスタープロンプトとバージョンを読み込み
+ * マスタープロンプトを読み込み
  */
 async function loadMasterPrompt() {
   try {
@@ -218,7 +422,7 @@ async function saveOptionData() {
 }
 
 /**
- * オプションデータを読み込みし、UIを更新（jQuery削除版）
+ * オプションデータを読み込みし、UIを更新
  */
 async function loadOptionData() {
   try {
@@ -256,7 +460,7 @@ async function loadOptionData() {
 }
 
 /**
- * 現在のタブに基づいてUIを更新（jQuery削除版）
+ * 現在のタブに基づいてUIを更新
  */
 async function updateUIBasedOnCurrentTab() {
   return new Promise((resolve) => {
@@ -304,411 +508,32 @@ async function updateUIBasedOnCurrentTab() {
 }
 
 // ============================================
-// セレクター管理
-// ============================================
-async function loadPromptSelector() {
-  try {
-    const result = await Storage.get("positivePromptText");
-    if (result.positivePromptText) {
-      const selector = result.positivePromptText;
-
-      const [tab] = await chrome.tabs.query({
-        active: true,
-        currentWindow: true,
-      });
-      console.log(`positivePromptText：`, selector);
-
-      setTimeout(() => {
-        chrome.tabs.sendMessage(
-          tab.id,
-          { action: "checkSelector", selector },
-          (response) => {
-            if (chrome.runtime.lastError) {
-              console.error("通信エラー:", chrome.runtime.lastError.message);
-              return;
-            }
-            console.log("応答：", response);
-            // 存在が確認できたら保存したい、だめなら空にする
-            // AppState.data.positivePromptText = result.positivePromptText;
-          }
-        );
-      }, 100);
-    }
-  } catch (error) {
-    console.error("Failed to load tool info:", error);
-  }
-}
-
-async function loadgenerateButtonSelector() {
-  try {
-    const result = await Storage.get("generateButton");
-    if (result.generateButton) {
-      const selector = result.generateButton;
-
-      const [tab] = await chrome.tabs.query({
-        active: true,
-        currentWindow: true,
-      });
-      console.log(`generateButton`, selector);
-
-      setTimeout(() => {
-        chrome.tabs.sendMessage(
-          tab.id,
-          { action: "checkSelector", selector },
-          (response) => {
-            if (chrome.runtime.lastError) {
-              console.error("通信エラー:", chrome.runtime.lastError.message);
-              return;
-            }
-            console.log("応答：", response);
-            // 存在が確認できたら保存したい、だめなら空にする
-            // AppState.data.generateButton = result.generateButton;
-          }
-        );
-      }, 100);
-    }
-  } catch (error) {
-    console.error("Failed to load tool info:", error);
-  }
-}
-
-// セレクター検証とGenerateボタン活性化の統合処理
-async function validateAndActivateGenerateButton() {
-  try {
-    const [tab] = await chrome.tabs.query({
-      active: true,
-      currentWindow: true,
-    });
-
-    console.log("Validating selectors on:", tab.url);
-
-    // 現在のサービスを検出
-    const currentService = detectService(tab.url);
-
-    // 保存済みセレクターを取得
-    const stored = await Storage.get([
-      "selectorSets",
-      "positivePromptText",
-      "generateButton",
-    ]);
-
-    // サービス固有のセレクターがある場合
-    if (
-      stored.selectorSets &&
-      currentService &&
-      stored.selectorSets[currentService]
-    ) {
-      const serviceSelectors = stored.selectorSets[currentService];
-      if (
-        serviceSelectors.positivePromptText &&
-        serviceSelectors.generateButton
-      ) {
-        const promptCheck = await checkSelectorOnPage(
-          tab.id,
-          serviceSelectors.positivePromptText
-        );
-        const buttonCheck = await checkSelectorOnPage(
-          tab.id,
-          serviceSelectors.generateButton
-        );
-
-        if (promptCheck.exists && buttonCheck.exists) {
-          AppState.selector.positivePromptText =
-            serviceSelectors.positivePromptText;
-          AppState.selector.generateButton = serviceSelectors.generateButton;
-          AppState.selector.currentService = currentService;
-          activateGenerateButton();
-          return;
-        }
-      }
-    }
-
-    // NovelAIサイトの場合、toolInfoから取得して自動登録
-    if (currentService === "novelai") {
-      const toolInfo = AppState.data.toolInfo;
-
-      if (
-        toolInfo.novelAIpositivePromptText &&
-        toolInfo.novelAIgenerateButton
-      ) {
-        const newPromptCheck = await checkSelectorOnPage(
-          tab.id,
-          toolInfo.novelAIpositivePromptText
-        );
-        const newButtonCheck = await checkSelectorOnPage(
-          tab.id,
-          toolInfo.novelAIgenerateButton
-        );
-
-        if (newPromptCheck.exists && newButtonCheck.exists) {
-          console.log("Auto-registering NovelAI selectors from toolInfo");
-
-          // NovelAI用のセレクターとして登録
-          if (!stored.selectorSets) {
-            stored.selectorSets = {};
-          }
-
-          stored.selectorSets.novelai = {
-            positivePromptText: toolInfo.novelAIpositivePromptText,
-            generateButton: toolInfo.novelAIgenerateButton,
-          };
-
-          // AppStateとStorageを更新
-          AppState.selector.serviceSets.novelai = stored.selectorSets.novelai;
-          AppState.selector.positivePromptText =
-            toolInfo.novelAIpositivePromptText;
-          AppState.selector.generateButton = toolInfo.novelAIgenerateButton;
-          AppState.selector.currentService = "novelai";
-
-          await Storage.set({
-            selectorSets: stored.selectorSets,
-          });
-
-          activateGenerateButton();
-          console.log("NovelAI selectors registered successfully");
-        }
-      }
-    }
-  } catch (error) {
-    console.error("セレクター検証エラー:", error);
-  }
-}
-
-// サービス検出用の関数も追加
-function detectService(url) {
-  if (!url) return null;
-
-  if (url.includes("novelai.net")) return "novelai";
-  if (url.includes("127.0.0.1:7860") || url.includes("localhost:7860"))
-    return "stable_diffusion";
-  if (url.includes("comfyui")) return "comfyui";
-
-  return "custom";
-}
-
-// activateGenerateButton() も修正
-function activateGenerateButton() {
-  const generateButton = document.getElementById("GeneratoButton");
-  // UIタイプの制限を完全に削除
-  if (generateButton && AppState.selector.generateButton) {
-    generateButton.style.display = "block";
-    console.log("Generateボタンを活性化しました");
-  }
-}
-
-// セレクターをページで検証
-function checkSelectorOnPage(tabId, selector) {
-  return new Promise((resolve) => {
-    chrome.tabs.sendMessage(
-      tabId,
-      { action: "checkSelector", selector: selector },
-      (response) => {
-        if (chrome.runtime.lastError) {
-          console.error("セレクター検証エラー:", chrome.runtime.lastError);
-          resolve({ exists: false, error: chrome.runtime.lastError.message });
-        } else {
-          resolve(response || { exists: false });
-        }
-      }
-    );
-  });
-}
-
-// Generateボタンを活性化
-function activateGenerateButton() {
-  const generateButton = document.getElementById("GeneratoButton");
-  if (generateButton && AppState.userSettings.optionData?.shaping === "NAI") {
-    generateButton.style.display = "block";
-    console.log("Generateボタンを活性化しました");
-  }
-}
-
-// セレクター情報をクリア
-function clearSelectors() {
-  AppState.selector.positivePromptText = null;
-  AppState.selector.generateButton = null;
-
-  Storage.remove(["positivePromptText", "generateButton"]);
-
-  const generateButton = document.getElementById("GeneratoButton");
-  if (generateButton) {
-    generateButton.style.display = "none";
-  }
-
-  console.warn("有効なセレクターが見つかりません");
-}
-
-// セレクター読み込み関数を追加
-async function loadSelectors() {
-  try {
-    const result = await Storage.get([
-      "selectorSets",
-      "positivePromptText",
-      "generateButton",
-    ]);
-
-    // サービスごとのセレクターセットを読み込み
-    if (result.selectorSets) {
-      Object.assign(AppState.selector.serviceSets, result.selectorSets);
-      console.log("Loaded selector sets:", result.selectorSets);
-    }
-
-    // 後方互換性のため、従来の形式も読み込み
-    if (result.positivePromptText) {
-      AppState.selector.positivePromptText = result.positivePromptText;
-    }
-
-    if (result.generateButton) {
-      AppState.selector.generateButton = result.generateButton;
-    }
-  } catch (error) {
-    console.error("Failed to load selectors:", error);
-  }
-}
-
-// ============================================
-// ユーティリティ関数
+// 要素登録
 // ============================================
 
 /**
- * JSONファイルをダウンロード
- * @param {Object} json - ダウンロードするデータ
- * @param {string} fileName - ファイル名（拡張子なし）
- */
-function jsonDownload(json, fileName) {
-  const outJson = {
-    dicType: fileName,
-    data: json,
-  };
-
-  const jsonString = JSON.stringify(outJson, null, 2);
-  const blob = new Blob([jsonString], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `${fileName}.json`;
-  link.click();
-
-  // メモリリークを防ぐためにURLを解放
-  URL.revokeObjectURL(url);
-}
-
-/**
- * バックグラウンドスクリプトにプロンプトリスト更新を通知
- */
-function UpdatePromptList() {
-  // コンテキストが無効な場合はスキップ
-  if (!chrome.runtime || !chrome.runtime.id) {
-    console.warn("Extension context is invalid. Skipping UpdatePromptList.");
-    return;
-  }
-
-  // メッセージを送信してコールバックで結果を確認
-  try {
-    chrome.runtime.sendMessage(
-      { type: "UpdatePromptList" },
-      function (response) {
-        if (chrome.runtime.lastError) {
-          // コンテキスト無効化エラーは警告のみ
-          if (
-            chrome.runtime.lastError.message.includes("context invalidated")
-          ) {
-            console.warn("Context invalidated during UpdatePromptList");
-          } else {
-            console.error(
-              "Failed to update prompt list:",
-              chrome.runtime.lastError.message
-            );
-          }
-        } else if (response && response.success) {
-          console.log("Prompt list updated successfully");
-        }
-      }
-    );
-  } catch (error) {
-    console.warn("UpdatePromptList failed:", error);
-  }
-}
-
-/**
- * バックグラウンドスクリプトにメッセージを送信
- * @param {string} execType - 実行タイプ
- * @param {*} value - 送信する値
- */
-function sendBackground(execType, value) {
-  // メッセージ形式を統一
-  const message = { type: execType };
-
-  // 必要に応じてargsを追加
-  if (value !== null && value !== undefined) {
-    message.args = Array.isArray(value) ? value : [value];
-  }
-
-  chrome.runtime.sendMessage(message, function (response) {
-    if (chrome.runtime.lastError) {
-      // エラーが発生してもアプリケーションは継続
-      console.error("Runtime error:", chrome.runtime.lastError.message);
-    } else if (response && response.success) {
-      console.log("Background operation successful:", execType);
-      if (response.text) {
-        console.log("Response:", response.text);
-      }
-    } else if (response && !response.success) {
-      console.error("Background operation failed:", response.error);
-    }
-  });
-}
-
-// ============================================
-// 要素の登録・管理
-// ============================================
-
-/**
- * 新しいプロンプト要素を登録
+ * 要素を登録
  * @param {string} big - 大カテゴリー
  * @param {string} middle - 中カテゴリー
  * @param {string} small - 小カテゴリー
- * @param {string} prompt - プロンプト文字列
- * @param {string} [url] - 画像URL（オプション）
- * @returns {boolean} 登録成功の可否
+ * @param {string} prompt - プロンプト
+ * @returns {boolean} 成功/失敗
  */
-function Regist(big, middle, small, prompt, url) {
-  const inputData = prompt + big + middle + small;
-  const isDuplicate = AppState.data.localPromptList.some((item) => {
-    const itemData = item.prompt + item.data[0] + item.data[1] + item.data[2];
-    return inputData === itemData;
-  });
-
-  if (isDuplicate) {
-    window.alert("既に同じ要素が追加されています。");
-    return false;
-  }
-
-  const newItem = {
+function Regist(big, middle, small, prompt) {
+  const item = {
     prompt: prompt,
-    data: { 0: big, 1: middle, 2: small },
+    data: [big, middle, small],
   };
-
-  if (url) {
-    newItem.url = url;
-  }
-
-  AppState.data.localPromptList.push(newItem);
-  saveLocalList();
-
-  // APIに登録を通知
-  RegistAPI(big, middle, small, prompt);
-
-  return true;
+  return RegistItem(item);
 }
 
 /**
- * 辞書から要素を登録
- * @param {Object} item - 登録する要素
- * @returns {boolean} 登録成功の可否
+ * アイテムを登録
+ * @param {Object} item - 登録するアイテム
+ * @param {boolean} skipSave - 保存をスキップするか
+ * @returns {boolean} 成功/失敗
  */
-function RegistDic(item, skipSave = false) {
+function RegistItem(item, skipSave = false) {
   const inputData = item.prompt + item.data[0] + item.data[1] + item.data[2];
   const isDuplicate = AppState.data.localPromptList.some((listItem) => {
     const listItemData =
