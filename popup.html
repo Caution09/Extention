@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="popup.css" />
   </head>
 
-  <body style="width: 540px">
+  <body>
     <h1>Prompt Generator</h1>
     <label for="displayType">表示タイプ:</label>
     <select id="displayType">
@@ -20,32 +20,22 @@
         <li class="tab tab-E" id="slotTab">スロット</li>
         <li class="tab tab-D" id="noticeTab">その他</li>
       </ul>
-      <select
-        id="prompt-slot-selector"
-        style="width: 150px; margin-right: 5px; font-size: 100%"
-      >
+      <select id="prompt-slot-selector">
         <option value="0">1</option>
       </select>
 
       <input type="button" id="copyButton" value="Copy" />
       <input type="button" id="clearButton" value="Clear" />
       <input type="button" id="saveButton" value="Save" />
-      <label
-        ><input type="radio" name="UIType" value="SD" /> StableDiffusion</label
-      >
-      <label><input type="radio" name="UIType" value="NAI" /> NovelAI</label>
+      <label><input type="radio" name="UIType" value="SD" /> SD記法</label>
+      <label><input type="radio" name="UIType" value="NAI" /> NAI記法</label>
       <label
         ><input type="radio" name="UIType" value="None" /> 自動整形無し</label
       >
       <br />
-      <!-- Generateボタンを保持（display: noneは維持） -->
-      <input
-        type="button"
-        id="GeneratoButton"
-        value="Generate"
-        style="width: 100px; display: none"
-      />
-      <input type="text" id="generatePrompt" style="width: calc(100%)" />
+      <!-- Generateボタン -->
+      <input type="button" id="GeneratoButton" value="Generate" />
+      <input type="text" id="generatePrompt" />
       <br />
       <!--タブを切り替えて表示するコンテンツ-->
       <div class="panel-group">
@@ -55,26 +45,23 @@
           <input type="text" size="25" id="search" value="" />
           <input type="button" id="searchButton" value="検索" />
           <h2>ドロップダウン検索</h2>
-          <ul style="font-size: 100%">
+          <ul class="full-size">
             <li>
               <input
                 value="大項目"
                 type="text"
                 readonly=""
-                class="promptData"
-                style="background-color: black; color: white"
+                class="promptData header-input"
               /><input
                 value="中項目"
                 type="text"
                 readonly=""
-                class="promptData"
-                style="background-color: black; color: white"
+                class="promptData header-input"
               /><input
                 value="小項目"
                 type="text"
                 readonly=""
-                class="promptData"
-                style="background-color: black; color: white"
+                class="promptData header-input"
               />
             </li>
             <li>
@@ -86,43 +73,39 @@
             </li>
           </ul>
           <hr />
-          <p id="isSearch" style="font-size: 100%"></p>
-          <ul style="font-size: 100%" id="promptList"></ul>
+          <p id="isSearch" class="full-size"></p>
+          <ul class="full-size" id="promptList"></ul>
         </div>
 
         <!-- 辞書タブ -->
         <div class="panel" id="addTabBody">
           <br />
           <div id="promptDicText">▶プロンプト辞書　※ここをクリックで開閉</div>
-          <ul style="font-size: 100%" id="archiveList"></ul>
+          <ul class="full-size" id="archiveList"></ul>
           <hr />
           <h2>要素の追加</h2>
-          <ul style="font-size: 100%">
+          <ul class="full-size">
             <li>
               <input
                 value="大項目"
                 type="text"
                 readonly=""
-                class="promptData"
-                style="background-color: black; color: white"
+                class="promptData header-input"
               /><input
                 value="中項目"
                 type="text"
                 readonly=""
-                class="promptData"
-                style="background-color: black; color: white"
+                class="promptData header-input"
               /><input
                 value="小項目"
                 type="text"
                 readonly=""
-                class="promptData"
-                style="background-color: black; color: white"
+                class="promptData header-input"
               /><input
                 value="Prompt"
                 type="text"
                 readonly=""
-                class="promptData"
-                style="background-color: black; color: white"
+                class="promptData header-input"
               />
             </li>
             <li>
@@ -147,9 +130,9 @@
           <div id="elementDicText">
             ▶要素辞書(ローカル)　※ここをクリックで開閉
           </div>
-          <ul style="font-size: 100%" id="addPromptList"></ul>
+          <ul class="full-size" id="addPromptList"></ul>
           <div id="masterDicText">▶要素辞書(マスタ)　※ここをクリックで開閉</div>
-          <ul style="font-size: 100%" id="masterDicList"></ul>
+          <ul class="full-size" id="masterDicList"></ul>
         </div>
 
         <!-- 編集タブ -->
@@ -162,10 +145,10 @@
             ><input type="radio" name="EditType" value="TEXT" />
             テキスト編集モード</label
           >
-          <ul style="font-size: 100%" id="editList"></ul>
+          <ul class="full-size" id="editList"></ul>
         </div>
 
-        <!-- スロットタブ（更新版） -->
+        <!-- スロットタブ -->
         <div class="panel" id="slotTabBody">
           <h2>プロンプトスロット管理</h2>
           <div id="slot-info" class="slot-info-bar">
@@ -216,6 +199,25 @@
           <img id="preview" />
           <div id="pngInfo"></div>
 
+          <!-- 設定管理セクション（追加） -->
+          <div class="settings-management-section">
+            <h3>設定管理</h3>
+            <div class="settings-button-grid">
+              <button id="exportSettings">
+                <span>💾</span> 設定をエクスポート
+              </button>
+              <button id="importSettings">
+                <span>📂</span> 設定をインポート
+              </button>
+              <button id="resetButton" class="danger-button">
+                <span>⚠️</span> 設定をリセット
+              </button>
+            </div>
+            <p class="settings-help-text">
+              すべての設定（辞書、スロット、カスタマイズ）をバックアップ・復元できます
+            </p>
+          </div>
+
           <div id="autoGenerateOption" class="auto-generate-section">
             <h3>自動Generate設定</h3>
             <label>
@@ -232,7 +234,7 @@
                 min="0"
                 max="1000"
               />
-              <span style="font-size: 12px; color: #666">（0で無限）</span>
+              <span class="help-text">（0で無限）</span>
             </label>
             <br />
             <label>
@@ -253,7 +255,7 @@
             <h3>セレクター設定</h3>
             <div class="selector-service">
               <label for="selector-service">対象サービス:</label>
-              <select id="selector-service" style="width: 200px">
+              <select id="selector-service" class="service-selector">
                 <option value="">-- 選択してください --</option>
                 <option value="novelai">NovelAI</option>
                 <option value="sd-webui">Stable Diffusion WebUI</option>
@@ -340,13 +342,9 @@
     </div>
 
     <!-- ポップアップ -->
-    <div id="popup" style="align-items: center">
-      <img
-        id="popup-image"
-        src="assets/icon/Icon128.png"
-        style="flex-grow: 1; padding: 10px"
-      />
-      <div style="flex-grow: 1; padding: 10px">
+    <div id="popup">
+      <img id="popup-image" src="assets/icon/Icon128.png" />
+      <div>
         <p>
           イメージとなります。数が膨大なため精査しておらず、正確なものでは有りません。
         </p>

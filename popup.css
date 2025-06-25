@@ -1327,3 +1327,59 @@ button {
 .border-bottom {
   border-bottom: 1px solid #ddd;
 }
+
+/* popup.cssに追加 */
+
+/* body */
+body {
+  width: 540px;
+}
+
+/* プロンプトスロットセレクター */
+#prompt-slot-selector {
+  width: 150px;
+  margin-right: 5px;
+  font-size: 100%;
+}
+
+/* Generateボタン */
+#GeneratoButton {
+  width: 100px;
+  display: none;
+}
+
+/* プロンプト入力 */
+#generatePrompt {
+  width: calc(100%);
+}
+
+/* リスト */
+ul.full-size {
+  font-size: 100%;
+}
+
+/* ポップアップ */
+#popup {
+  align-items: center;
+}
+
+#popup > img,
+#popup > div {
+  flex-grow: 1;
+  padding: 10px;
+}
+
+/* 固定ボタン位置のクラス化 */
+.fixed-button {
+  position: fixed;
+}
+
+.fixed-button.bottom-right {
+  bottom: 10px;
+  right: 10px;
+}
+
+.fixed-button.top-right {
+  top: 0;
+  right: 0;
+}
