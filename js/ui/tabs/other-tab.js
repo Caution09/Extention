@@ -178,6 +178,9 @@
       // 現在のセレクター情報を表示
       async refreshSelectorDisplay() {
         try {
+          // まずストレージから読み込む
+          await loadSelectors(); // ← この行を追加
+
           const positiveSelector = AppState.selector.positiveSelector;
           const generateSelector = AppState.selector.generateSelector;
 
@@ -357,6 +360,7 @@
       }
 
       // セレクターを保存（AppState.selectorに保存）
+      // other-tab.js の修正（saveSelectorsメソッド）
       async saveSelectors() {
         const positiveSelector =
           document.getElementById("selector-positive")?.value;
@@ -368,6 +372,7 @@
             type: ErrorHandler.NotificationType.TOAST,
             messageType: "error",
           });
+          return;
         }
 
         try {
@@ -381,6 +386,9 @@
             positiveSelector;
           AppState.selector.serviceSets[serviceKey].generateSelector =
             generateSelector;
+
+          // Chrome Storageに保存（グローバル関数を呼び出す）
+          await window.saveSelectors(); // ← data-manager.jsの関数を明示的に呼び出す
 
           ErrorHandler.notify("セレクターを保存しました", {
             type: ErrorHandler.NotificationType.TOAST,
@@ -397,7 +405,6 @@
           });
         }
       }
-
       // セレクターをクリア
       async clearSelectors() {
         if (!confirm("セレクターをクリアしますか？")) return;

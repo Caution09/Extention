@@ -98,8 +98,8 @@ async function loadCategory() {
 async function saveSelectors() {
   try {
     await Storage.set({
-      positivePromptText: AppState.selector.positiveSelector,
-      generateButton: AppState.selector.generateSelector,
+      positiveSelector: AppState.selector.positiveSelector, // ← 修正
+      generateSelector: AppState.selector.generateSelector, // ← 修正
     });
   } catch (error) {
     console.error("Failed to save selectors:", error);
@@ -110,25 +110,46 @@ async function saveSelectors() {
 /**
  * セレクター情報を読み込み
  */
-async function loadSelectors() {
-  try {
-    const result = await Storage.get(["positiveSelector", "generateSelector"]);
+// main.js の修正（init()メソッド内、145行目付近）
+// 現在のタブのサービスを検出してセレクターを設定（統合版）
+chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
+  if (tabs[0]) {
+    const service = this.detectService(tabs[0].url);
 
-    if (result.positiveSelector) {
-      AppState.selector.positiveSelector = result.positiveSelector;
-    }
-    if (result.generateButton) {
-      AppState.selector.generateSelector = result.generateSelector;
-    }
+    // まずストレージから読み込み
+    await loadSelectors();
 
-    // 読み込み後の検証
-    if (AppState.userSettings.optionData?.shaping === "NAI") {
-      validateAndActivateGenerateButton();
+    // ストレージに保存された値がある場合はそれを優先
+    if (
+      AppState.selector.positiveSelector &&
+      AppState.selector.generateSelector
+    ) {
+      const generateButton = document.getElementById("GeneratoButton");
+      if (generateButton) {
+        generateButton.style.display = "block";
+        console.log("Using saved selectors from storage");
+      }
     }
-  } catch (error) {
-    console.error("Failed to load selectors:", error);
+    // ストレージに値がない場合のみ、サービス固有のセレクターを使用
+    else if (service && AppState.selector.serviceSets[service]) {
+      const serviceSelectors = AppState.selector.serviceSets[service];
+      if (
+        serviceSelectors.positiveSelector &&
+        serviceSelectors.generateSelector
+      ) {
+        AppState.selector.positiveSelector = serviceSelectors.positiveSelector;
+        AppState.selector.generateSelector = serviceSelectors.generateSelector;
+        AppState.selector.currentService = service;
+
+        const generateButton = document.getElementById("GeneratoButton");
+        if (generateButton) {
+          generateButton.style.display = "block";
+          console.log(`Using default selectors for ${service}`);
+        }
+      }
+    }
   }
-}
+});
 
 /**
  * プロンプトセレクターを読み込み（content script注入機能付き）
@@ -634,13 +655,13 @@ async function initializeDataManager() {
     const loadPromises = [
       loadMasterPrompt(),
       loadPrompt(),
+      loadSelectors(),
       loadLocalList(),
       loadArchivesList(),
       loadOptionData(),
       loadToolInfo(),
       loadCategory(),
       loadPromptSelector(),
-      loadSelectors(),
       loadgenerateButtonSelector(),
     ];
 
