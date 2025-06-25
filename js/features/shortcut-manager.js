@@ -155,62 +155,30 @@ class ShortcutManager {
    * ショートカットヘルプを表示
    */
   showHelp() {
-    // 既存のヘルプダイアログがあれば削除
-    const existingHelp = document.getElementById("shortcut-help-modal");
-    if (existingHelp) {
-      existingHelp.remove();
-      return;
-    }
+    const modal = document.getElementById("shortcut-help-modal");
+    if (!modal) return;
 
-    const modal = document.createElement("div");
-    modal.id = "shortcut-help-modal";
-    modal.innerHTML = `
-    <div style="
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      z-index: 10001;
-      max-width: 400px;
-    ">
-      <h3 style="margin-top: 0;">ショートカットキー一覧</h3>
-      <table style="width: 100%; border-collapse: collapse;">
-        <tr><td style="padding: 5px;"><kbd>Ctrl+S</kbd></td><td>プロンプトを保存</td></tr>
-        <tr><td style="padding: 5px;"><kbd>Ctrl+C</kbd></td><td>プロンプトをコピー</td></tr>
-        <tr><td style="padding: 5px;"><kbd>Ctrl+K</kbd></td><td>検索ボックスにフォーカス</td></tr>
-        <tr><td style="padding: 5px;"><kbd>Ctrl+E</kbd></td><td>編集タブへ移動</td></tr>
-        <tr><td style="padding: 5px;"><kbd>Ctrl+D</kbd></td><td>辞書タブへ移動</td></tr>
-        <tr><td style="padding: 5px;"><kbd>Tab</kbd></td><td>次のタブへ移動</td></tr>
-        <tr><td style="padding: 5px;"><kbd>Esc</kbd></td><td>ポップアップを閉じる</td></tr>
-      </table>
-    <h4>グローバルショートカット</h4>
-    <table style="width: 100%; border-collapse: collapse;">
-        <tr><td style="padding: 5px;"><kbd>Alt+G</kbd></td><td>サイドパネルを開く</td></tr>
-        <tr><td style="padding: 5px;"><kbd>Ctrl+Shift+S</kbd></td><td>選択テキストを辞書に保存</td></tr>
-    </table>
-      <button id="close-help" style="margin-top: 15px; width: 100%;">閉じる</button>
-    </div>
-  `;
+    // モーダルの表示/非表示を切り替え
+    if (modal.style.display === "none" || !modal.style.display) {
+      modal.style.display = "flex";
 
-    // 背景をクリックで閉じる
-    modal.className = "shortcut-help-modal";
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.remove();
+      // 閉じるボタンのイベントリスナー
+      const closeBtn = document.getElementById("close-help");
+      if (closeBtn) {
+        closeBtn.onclick = () => {
+          modal.style.display = "none";
+        };
       }
-    });
 
-    document.body.appendChild(modal);
-
-    // 閉じるボタン
-    document.getElementById("close-help").addEventListener("click", () => {
-      modal.remove();
-    });
+      // 背景クリックで閉じる
+      modal.onclick = (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+    } else {
+      modal.style.display = "none";
+    }
   }
 }
 

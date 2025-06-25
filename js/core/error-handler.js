@@ -33,16 +33,43 @@ const ErrorHandler = {
    * 初期化
    */
   init() {
-    // トーストコンテナを作成
-    if (!this.toastContainer) {
-      this.toastContainer = document.createElement("div");
-      this.toastContainer.id = "toast-container";
-      this.container.className = "error-toast-container";
-      document.body.appendChild(this.toastContainer);
-    }
+    try {
+      // 既存のコンテナを使用
+      this.toastContainer = document.getElementById("error-toast-container");
 
-    // グローバルエラーハンドラーを設定
-    this.setupGlobalHandlers();
+      if (!this.toastContainer) {
+        // フォールバック：コンテナが見つからない場合は作成
+        console.warn("Error toast container not found in HTML, creating one");
+        this.toastContainer = document.createElement("div");
+        this.toastContainer.id = "error-toast-container";
+        this.toastContainer.className = "error-toast-container";
+        document.body.appendChild(this.toastContainer);
+      }
+
+      // エラーハンドラーを設定
+      window.addEventListener("error", (event) => {
+        this.handle(event.error || event.message, "JavaScript Error", {
+          file: event.filename,
+          line: event.lineno,
+          column: event.colno,
+        });
+      });
+
+      window.addEventListener("unhandledrejection", (event) => {
+        this.handle(event.reason, "Unhandled Promise Rejection");
+      });
+
+      // Chrome拡張機能のエラーハンドラー
+      if (chrome?.runtime?.onError) {
+        chrome.runtime.onError.addListener((error) => {
+          this.handle(error, "Extension Error");
+        });
+      }
+
+      console.log("ErrorHandler initialized successfully");
+    } catch (error) {
+      console.error("Failed to initialize ErrorHandler:", error);
+    }
   },
 
   /**

@@ -45,16 +45,101 @@
           throw new Error("PromptSlotManager not found");
         }
 
+        // 初回読み込み時にスロット情報を確実に取得
+        if (!this.slotManager.slots || this.slotManager.slots.length === 0) {
+          console.log("Slots not loaded, loading from storage...");
+          await this.slotManager.loadFromStorage();
+        }
+
         // DOM要素をキャッシュ
         this.cacheElements();
 
         // イベントリスナーを設定
         this.setupEventListeners();
 
+        // 固定ボタンのイベントリスナーを設定（追加）
+        this.setupFixedButtonListeners();
+
         // 初期表示を更新
         this.updateDisplay();
 
-        console.log("SlotTab initialized");
+        // 抽出完了イベントのリスナーを設定
+        this.setupExtractionListeners();
+      }
+
+      /**
+       * 固定ボタンのイベントリスナーを設定
+       */
+      setupFixedButtonListeners() {
+        // スロット追加ボタン
+        const addBtn = document.getElementById("add-slot-btn");
+        if (addBtn) {
+          addBtn.addEventListener("click", () => {
+            this.slotManager.addNewSlot();
+            this.updateDisplay();
+          });
+        }
+
+        // 結合プレビューボタン（IDを修正）
+        const previewBtn = document.getElementById("combine-preview-btn");
+        if (previewBtn) {
+          previewBtn.addEventListener("click", () => {
+            this.showCombinePreview();
+          });
+        }
+
+        // すべてクリアボタン
+        const clearAllBtn = document.getElementById("clear-all-slots-tab");
+        if (clearAllBtn) {
+          clearAllBtn.addEventListener("click", () => {
+            this.handleClearAll();
+          });
+        }
+
+        // エクスポートボタン
+        const exportBtn = document.getElementById("export-slots");
+        if (exportBtn) {
+          exportBtn.addEventListener("click", () => {
+            this.handleExport();
+          });
+        }
+
+        // インポートボタン
+        const importBtn = document.getElementById("import-slots");
+        if (importBtn) {
+          importBtn.addEventListener("click", () => {
+            this.handleImport();
+          });
+        }
+      }
+
+      /**
+       * 抽出イベントのリスナー設定
+       */
+      setupExtractionListeners() {
+        // 個別のスロット抽出完了
+        window.addEventListener("slotExtractionComplete", (event) => {
+          this.updateSlotExtraction(
+            event.detail.slotId,
+            event.detail.extraction
+          );
+        });
+
+        // 全体の抽出完了（Generate後）
+        window.addEventListener("allExtractionsComplete", () => {
+          if (this.isCurrentTab()) {
+            // 現在スロットタブが表示されている場合のみ更新
+            this.refreshExtractionDisplays();
+          }
+        });
+      }
+
+      /**
+       * 現在のタブかどうかを確認
+       */
+      isCurrentTab() {
+        const slotTab = document.getElementById("slotTab");
+        return slotTab && slotTab.classList.contains("is-active");
       }
 
       /**
@@ -79,29 +164,9 @@
         // 使用中のスロット数を更新
         const usedCount = this.slotManager.getUsedSlotsCount();
         const totalCount = this.slotManager.slots.length;
-        const infoSpan = document.getElementById("slot-info");
-        if (infoSpan) {
-          infoSpan.innerHTML = `
-            使用中: <span id="used-slots-count">${usedCount}</span>/${totalCount}
-            <button id="add-slot-btn" class="add-slot-btn">+ スロット追加</button>
-            <button id="combine-preview" class="combine-preview-btn">結合プレビュー</button>
-          `;
-        }
-
-        // 追加ボタンのイベントリスナーを再設定
-        const addBtn = document.getElementById("add-slot-btn");
-        if (addBtn) {
-          addBtn.addEventListener("click", () => {
-            this.slotManager.addNewSlot();
-            this.updateDisplay();
-          });
-        }
-
-        const previewBtn = document.getElementById("combine-preview");
-        if (previewBtn) {
-          previewBtn.addEventListener("click", () => {
-            this.showCombinePreview();
-          });
+        const countSpan = document.getElementById("used-slots-count");
+        if (countSpan) {
+          countSpan.textContent = `${usedCount}/${totalCount}`;
         }
 
         // 各スロットのカードを作成（現在の順序でインデックスを付与）
@@ -417,6 +482,9 @@
        * 結合プレビューを表示（モーダルダイアログ版）
        */
       showCombinePreview() {
+        const modal = document.getElementById("combine-preview-modal");
+        if (!modal) return;
+
         const combined = this.slotManager.getCombinedPrompt();
         const usedSlots = this.slotManager.getUsedSlots();
 
@@ -429,24 +497,13 @@
           return;
         }
 
-        // 既存のモーダルがあれば削除
-        const existingModal = document.getElementById("combine-preview-modal");
-        if (existingModal) {
-          existingModal.remove();
-          return;
-        }
+        // スロット数を更新
+        document.getElementById("used-slots-count-preview").textContent =
+          usedSlots.length;
 
-        // モーダルを作成
-        const modal = document.createElement("div");
-        modal.id = "combine-preview-modal";
-        modal.className = "combine-preview-modal";
-
-        // コンテンツ部分
-        const content = document.createElement("div");
-        content.className = "combine-preview-content";
-
-        // スロット情報のHTML生成
-        const slotListHTML = usedSlots
+        // スロット情報のテーブルを更新
+        const slotTable = document.getElementById("slot-info-table");
+        slotTable.innerHTML = usedSlots
           .map((slot) => {
             let description = slot.name || "(名前なし)";
 
@@ -474,57 +531,44 @@
           })
           .join("");
 
-        // 結合結果を見やすく表示（長い場合は折り返し）
+        // 結合結果を更新
+        const resultDiv = document.getElementById("combine-preview-result");
         const formattedPrompt = combined
           .split(",")
           .map((part) => part.trim())
           .filter((part) => part.length > 0)
           .join(",<br>");
+        resultDiv.innerHTML = formattedPrompt;
 
-        content.innerHTML = `
-          <h3>結合プレビュー</h3>
+        // 文字数を更新
+        document.getElementById("combined-char-count").textContent =
+          combined.length;
 
-          <div class="preview-section">
-            <h4>使用中のスロット (${usedSlots.length}個)</h4>
-            <table class="slot-info-table">
-              ${slotListHTML}
-            </table>
-          </div>
+        // モーダルを表示
+        modal.style.display = "flex";
 
-          <div class="preview-section">
-            <h4>結合結果</h4>
-            <div class="combine-preview-result">
-              ${formattedPrompt}
-            </div>
-          </div>
+        // イベントリスナー設定（既存のリスナーを削除してから追加）
+        const oldModal = modal.cloneNode(true);
+        modal.parentNode.replaceChild(oldModal, modal);
 
-          <div class="combine-preview-actions">
-            <div class="char-count">
-              文字数: <strong>${combined.length}</strong>
-            </div>
-            <div>
-              <button id="copy-combined">コピー</button>
-              <button id="close-preview">閉じる</button>
-            </div>
-          </div>
-        `;
+        // 新しい参照を取得
+        const newModal = document.getElementById("combine-preview-modal");
 
-        modal.appendChild(content);
-        document.body.appendChild(modal);
-
-        // イベントリスナー設定
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) {
-            modal.remove();
+        // 背景クリックで閉じる
+        newModal.addEventListener("click", (e) => {
+          if (e.target === newModal) {
+            newModal.style.display = "none";
           }
         });
 
+        // 閉じるボタン
         document
           .getElementById("close-preview")
           .addEventListener("click", () => {
-            modal.remove();
+            newModal.style.display = "none";
           });
 
+        // コピーボタン
         document
           .getElementById("copy-combined")
           .addEventListener("click", () => {
@@ -540,7 +584,7 @@
         // ESCキーで閉じる
         const handleEsc = (e) => {
           if (e.key === "Escape") {
-            modal.remove();
+            newModal.style.display = "none";
             document.removeEventListener("keydown", handleEsc);
           }
         };
@@ -564,17 +608,23 @@
        * コンテナ内のクリックイベントを処理
        */
       async handleContainerClick(e) {
+        // ソート中はクリックイベントを無視
+        if (this.isSorting) return;
+
         const target = e.target;
 
         // 選択ボタン
         if (target.classList.contains("slot-select-btn")) {
           const slotId = parseInt(target.dataset.slotId);
-          await this.slotManager.selectSlot(slotId);
+          console.log("Selecting slot:", slotId); // デバッグ用
+
+          // switchSlotメソッドを使用（selectSlotではない）
+          await this.slotManager.switchSlot(slotId);
           this.updateDisplay();
         }
 
         // クリアボタン
-        if (target.classList.contains("slot-clear-btn")) {
+        else if (target.classList.contains("slot-clear-btn")) {
           const slotId = parseInt(target.dataset.slotId);
           const shouldConfirm =
             AppState.userSettings.optionData?.isDeleteCheck !== false;
@@ -589,7 +639,7 @@
         }
 
         // 削除ボタン
-        if (target.classList.contains("slot-delete-btn")) {
+        else if (target.classList.contains("slot-delete-btn")) {
           const slotId = parseInt(target.dataset.slotId);
           const shouldConfirm =
             AppState.userSettings.optionData?.isDeleteCheck !== false;
