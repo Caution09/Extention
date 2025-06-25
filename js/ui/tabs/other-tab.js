@@ -270,29 +270,22 @@
           );
           if (input) {
             input.value = message.selector;
-            this.validateSelector(
-              this.visualSelectorState.targetInputId,
-              message.selector
-            );
-
             // AppStateに値を保存
-            if (this.visualSelectorState.targetInputId === "positiveSelector") {
+            if (
+              this.visualSelectorState.targetInputId === "selector-positive"
+            ) {
               AppState.selector.positiveSelector = message.selector;
             } else if (
-              this.visualSelectorState.targetInputId === "generateSelector"
+              this.visualSelectorState.targetInputId === "selector-generate"
             ) {
               AppState.selector.generateSelector = message.selector;
             }
           }
           this.endVisualSelection();
-          ErrorHandler.notify("セレクターを設定しました", {
-            type: ErrorHandler.NotificationType.TOAST,
-            messageType: "success",
-          });
+          this.saveSelectors();
         } else if (message.action === "visualSelectionCanceled") {
           this.endVisualSelection();
         }
-        this.saveSelectors();
       }
 
       // ビジュアル選択モードを終了

@@ -1295,7 +1295,7 @@ input[type="text"].promptData {
   display: flex;
   gap: var(--spacing-md);
   align-items: center;
-  margin-left: auto; /* 右寄せ */
+  margin-right: auto; /* 左寄せ */
 }
 
 .ui-type-group label {
@@ -1310,6 +1310,7 @@ input[type="text"].promptData {
 #copyButton,
 #clearButton,
 #saveButton {
+  padding: 8px;
   min-width: 20px;
 }
 
@@ -1374,8 +1375,8 @@ input[type="text"].promptData {
 .generate-container {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
-  padding: var(--spacing-md);
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
   background-color: var(--bg-secondary);
   border-bottom: 1px solid var(--border-default);
   margin-bottom: 10px;
@@ -1423,7 +1424,7 @@ input[type="text"].promptData {
 }
 
 .auto-generate-inline .small-input {
-  width: 60px;
+  width: 30px;
   height: var(--input-height-sm);
   padding: var(--spacing-xs);
 }
@@ -1442,6 +1443,7 @@ input[type="text"].promptData {
 #GeneratoButton.auto-generating {
   background-color: var(--accent-warning) !important;
   color: var(--bg-primary) !important;
+  padding: var(--spacing-xs);
   position: relative;
   overflow: hidden;
 }
