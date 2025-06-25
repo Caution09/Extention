@@ -29,14 +29,6 @@
     moveTimeout: null,
   };
 
-  const styles = {
-    overlay: "prompt-generator-visual-selector-overlay",
-    excludedOverlay:
-      "prompt-generator-visual-selector-overlay prompt-generator-visual-selector-overlay-excluded",
-    tooltip: "prompt-generator-visual-selector-tooltip",
-    candidatePanel: "", // IDで管理されているのでクラス不要
-  };
-
   // ビジュアルセレクターを初期化
   function initializeVisualSelector() {
     // 既存のビジュアルセレクター要素を全て削除
@@ -74,27 +66,70 @@
 
     // ハイライトオーバーレイ
     VisualSelector.highlightOverlay = document.createElement("div");
-    VisualSelector.highlightOverlay.className = VisualSelector.styles.overlay;
+    VisualSelector.highlightOverlay.className =
+      "prompt-generator-visual-selector-overlay";
+    VisualSelector.highlightOverlay.style.cssText = `
+      position: fixed;
+      background: rgba(88, 166, 255, 0.2);
+      border: 2px solid #58a6ff;
+      pointer-events: none;
+      z-index: 99999;
+      transition: all 0.1s ease;
+      box-shadow: 0 0 0 4px rgba(88, 166, 255, 0.1);
+    `;
     VisualSelector.highlightOverlay.style.display = "none";
     document.body.appendChild(VisualSelector.highlightOverlay);
 
     // ツールチップ
     VisualSelector.tooltip = document.createElement("div");
-    VisualSelector.tooltip.className = VisualSelector.styles.tooltip;
+    VisualSelector.tooltip.className =
+      "prompt-generator-visual-selector-tooltip";
+    VisualSelector.tooltip.style.cssText = `
+      position: fixed;
+      background: #0d1117;
+      color: #c9d1d9;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: monospace;
+      pointer-events: none;
+      z-index: 100001;
+      max-width: 300px;
+      word-break: break-all;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+      border: 1px solid #30363d;
+    `;
     VisualSelector.tooltip.style.display = "none";
     document.body.appendChild(VisualSelector.tooltip);
 
     // 候補パネル
     VisualSelector.candidatePanel = document.createElement("div");
-    VisualSelector.candidatePanel.id = "prompt-generator-visual-selector-panel"; // 一意のIDを追加
+    VisualSelector.candidatePanel.id = "prompt-generator-visual-selector-panel";
+    VisualSelector.candidatePanel.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 350px;
+      max-height: 400px;
+      background: #0d1117;
+      border: 2px solid #58a6ff;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      z-index: 100000;
+      overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      transition: all 0.3s ease;
+      color: #c9d1d9;
+    `;
     VisualSelector.candidatePanel.innerHTML = `
-      <div style="margin-bottom: 10px; font-weight: bold; border-bottom: 1px solid #ddd; padding-bottom: 8px;">
+      <div style="margin-bottom: 10px; font-weight: bold; border-bottom: 1px solid #30363d; padding-bottom: 8px; color: #58a6ff;">
         <span>🎯 ビジュアルセレクター</span>
       </div>
-      <div style="margin-bottom: 10px; color: #666; font-size: 13px;">
+      <div style="margin-bottom: 10px; color: #8b949e; font-size: 13px;">
         要素をクリックして選択 (ESCで終了)
       </div>
-      <div style="margin-bottom: 5px; color: #999; font-size: 11px;">
+      <div style="margin-bottom: 5px; color: #6e7681; font-size: 11px;">
         💡 パネルにマウスを乗せると自動で移動します
       </div>
       <div id="selector-candidates" style="margin-top: 15px;"></div>
@@ -319,9 +354,26 @@
   function updateHighlight(element, isExcluded = false) {
     const rect = element.getBoundingClientRect();
 
-    VisualSelector.highlightOverlay.style.cssText = isExcluded
-      ? VisualSelector.styles.excludedOverlay
-      : VisualSelector.styles.overlay;
+    if (isExcluded) {
+      VisualSelector.highlightOverlay.style.cssText = `
+        position: fixed;
+        background: rgba(248, 81, 73, 0.2);
+        border: 2px solid #f85149;
+        pointer-events: none;
+        z-index: 99999;
+        box-shadow: 0 0 0 4px rgba(248, 81, 73, 0.1);
+      `;
+    } else {
+      VisualSelector.highlightOverlay.style.cssText = `
+        position: fixed;
+        background: rgba(88, 166, 255, 0.2);
+        border: 2px solid #58a6ff;
+        pointer-events: none;
+        z-index: 99999;
+        transition: all 0.1s ease;
+        box-shadow: 0 0 0 4px rgba(88, 166, 255, 0.1);
+      `;
+    }
 
     VisualSelector.highlightOverlay.style.top = `${rect.top}px`;
     VisualSelector.highlightOverlay.style.left = `${rect.left}px`;
@@ -368,7 +420,7 @@
     const candidatesContainer = document.getElementById("selector-candidates");
 
     candidatesContainer.innerHTML = `
-      <div style="margin-bottom: 10px; font-weight: bold; color: #555;">
+      <div style="margin-bottom: 10px; font-weight: bold; color: #8b949e;">
         セレクター候補:
       </div>
       ${selectors
@@ -377,17 +429,14 @@
         <div class="selector-candidate" data-selector="${escapeHtml(
           item.selector
         )}"
-             style="margin-bottom: 8px; padding: 8px; border: 1px solid #ddd;
+             style="margin-bottom: 8px; padding: 8px; border: 1px solid #30363d;
                     border-radius: 4px; cursor: pointer; transition: all 0.2s;
-                    ${
-                      index === 0
-                        ? "background: #e3f2fd; border-color: #2196f3;"
-                        : ""
-                    }">
-          <div style="font-family: monospace; font-size: 12px; word-break: break-all;">
+                    background: ${index === 0 ? "#21262d" : "#161b22"};
+                    ${index === 0 ? "border-color: #58a6ff;" : ""}">
+          <div style="font-family: monospace; font-size: 12px; word-break: break-all; color: #c9d1d9;">
             ${escapeHtml(item.selector)}
           </div>
-          <div style="margin-top: 4px; font-size: 11px; color: #666;">
+          <div style="margin-top: 4px; font-size: 11px; color: #6e7681;">
             ${item.type} | スコア: ${item.score} | 要素数: ${item.count}
           </div>
         </div>
@@ -401,15 +450,15 @@
       .querySelectorAll(".selector-candidate")
       .forEach((el) => {
         el.addEventListener("mouseenter", function () {
-          this.style.background = "#f5f5f5";
-          this.style.borderColor = "#666";
+          this.style.background = "#30363d";
+          this.style.borderColor = "#8b949e";
         });
 
         el.addEventListener("mouseleave", function () {
           const isFirst =
             this === candidatesContainer.querySelector(".selector-candidate");
-          this.style.background = isFirst ? "#e3f2fd" : "white";
-          this.style.borderColor = isFirst ? "#2196f3" : "#ddd";
+          this.style.background = isFirst ? "#21262d" : "#161b22";
+          this.style.borderColor = isFirst ? "#58a6ff" : "#30363d";
         });
       });
   }
@@ -790,13 +839,30 @@
   function showInstructions() {
     const overlay = document.createElement("div");
     overlay.className = "visual-selector-instructions";
+    overlay.style.cssText = `
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #0d1117;
+      color: #c9d1d9;
+      padding: 30px;
+      border-radius: 10px;
+      font-size: 16px;
+      z-index: 100002;
+      text-align: center;
+      max-width: 400px;
+      animation: fadeIn 0.3s ease;
+      border: 1px solid #30363d;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    `;
 
     overlay.innerHTML = `
-      <h3 style="margin: 0 0 15px 0;">ビジュアルセレクター</h3>
+      <h3 style="margin: 0 0 15px 0; color: #58a6ff;">ビジュアルセレクター</h3>
       <p>要素にカーソルを合わせてクリックで選択</p>
       <p style="margin: 10px 0;">右上のパネルで候補を確認できます</p>
-      <p style="margin: 10px 0; font-size: 14px; color: #aaa;">パネルが邪魔な場合はマウスを乗せると自動で移動します</p>
-      <p><kbd>ESC</kbd> キーで終了</p>
+      <p style="margin: 10px 0; font-size: 14px; color: #8b949e;">パネルが邪魔な場合はマウスを乗せると自動で移動します</p>
+      <p><kbd style="background: #21262d; padding: 2px 6px; border-radius: 3px;">ESC</kbd> キーで終了</p>
     `;
 
     // CSSアニメーションを追加
@@ -825,15 +891,28 @@
   // 警告表示
   function showWarning(message) {
     const warning = document.createElement("div");
-    warning.className = "visual-selector-warning";
+    warning.style.cssText = `
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f85149;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-size: 14px;
+      z-index: 100002;
+      box-shadow: 0 2px 8px rgba(248,81,73,0.3);
+      animation: shake 0.5s ease;
+    `;
     warning.textContent = message;
 
     const style = document.createElement("style");
     style.textContent = `
       @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        25% { transform: translateX(-10px); }
-        75% { transform: translateX(10px); }
+        0%, 100% { transform: translateX(-50%); }
+        25% { transform: translateX(calc(-50% - 10px)); }
+        75% { transform: translateX(calc(-50% + 10px)); }
       }
     `;
     document.head.appendChild(style);
@@ -849,8 +928,20 @@
   // コピー完了トースト
   function showCopyToast(message) {
     const toast = document.createElement("div");
-    toast.textContent = message;
     toast.className = "copy-toast";
+    toast.textContent = message;
+    toast.style.cssText = `
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #3fb950;
+      color: #0d1117;
+      padding: 12px 24px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 10000;
+      animation: slideIn 0.3s ease-out;
+    `;
 
     // アニメーション用のスタイル
     const style = document.createElement("style");
@@ -877,15 +968,27 @@
   // 通知トースト
   function showNotificationToast(message, type = "info") {
     const colors = {
-      success: "#4CAF50",
-      error: "#dc3545",
-      warning: "#ffc107",
-      info: "#17a2b8",
+      success: "#3fb950",
+      error: "#f85149",
+      warning: "#d29922",
+      info: "#58a6ff",
     };
 
     const toast = document.createElement("div");
+    toast.className = "notification-toast";
     toast.textContent = message;
-    toast.className = `notification-toast ${type}`;
+    toast.style.cssText = `
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: ${colors[type] || colors.info};
+      color: ${type === "warning" ? "#0d1117" : "white"};
+      padding: 12px 24px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 10000;
+      animation: slideIn 0.3s ease-out;
+    `;
 
     // アニメーション用のスタイル（既に存在しない場合のみ追加）
     if (!document.querySelector("style[data-toast-animation]")) {
