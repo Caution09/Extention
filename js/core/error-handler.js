@@ -37,13 +37,7 @@ const ErrorHandler = {
     if (!this.toastContainer) {
       this.toastContainer = document.createElement("div");
       this.toastContainer.id = "toast-container";
-      this.toastContainer.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 10000;
-        pointer-events: none;
-      `;
+      this.container.className = "error-toast-container";
       document.body.appendChild(this.toastContainer);
     }
 
@@ -194,21 +188,7 @@ const ErrorHandler = {
       warning: "#FF9800",
     };
 
-    toast.style.cssText = `
-      background-color: ${colors[type] || colors.error};
-      color: white;
-      padding: 16px 20px;
-      margin-bottom: 10px;
-      border-radius: 4px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-      display: flex;
-      align-items: center;
-      max-width: 350px;
-      pointer-events: auto;
-      cursor: pointer;
-      transform: translateX(400px);
-      transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    `;
+    toast.className = `error-toast toast-${type}`;
 
     // コンテンツを設定
     toast.innerHTML = `

@@ -62,22 +62,11 @@ const UIUtilities = {
     const $div = $("<div>").addClass("item");
 
     Object.entries(data).forEach(([key, value]) => {
-      const $label = $("<label>").text(`${key}: `).css({
-        display: "inline-block",
-        width: "200px",
-        margin: "5px 10px 5px 0",
-      });
-
+      const $label = $("<label>").text(`${key}: `).addClass("png-info-label");
       const $input = $("<input>")
-        .attr({
-          type: "text",
-          value: value,
-          readonly: true,
-        })
-        .css({
-          display: "inline-block",
-          width: "200px",
-        });
+        .attr("type", "text")
+        .val(value)
+        .addClass("png-info-input");
 
       $div.append($label, $input, "<br>");
     });

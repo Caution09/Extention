@@ -95,10 +95,7 @@ const UIFactory = {
     return this.createInput({
       value: value,
       readonly: true,
-      style: {
-        backgroundColor: "black",
-        color: "white",
-      },
+      className: "promptData header-input",
     });
   },
 

@@ -1,3 +1,4 @@
+/* 基本スタイル */
 .ui-sortable-handle {
   cursor: grab;
 }
@@ -22,6 +23,17 @@
   right: 0;
   z-index: 9999;
   background-color: #ccc;
+  align-items: center;
+}
+
+#popup img {
+  flex-grow: 1;
+  padding: 10px;
+}
+
+#popup > div {
+  flex-grow: 1;
+  padding: 10px;
 }
 
 select[disabled] {
@@ -161,18 +173,14 @@ button {
   position: fixed;
   top: 0;
   right: -50%;
-  /* パネルを非表示にする */
   width: 40%;
   height: 100vh;
-  /* 画面の高さいっぱいにする */
   background-color: #fff;
   transition: right 0.3s ease-in-out;
-  /* アニメーションを追加する */
 }
 
 #optionPanel.active {
   right: 0;
-  /* パネルを表示する */
 }
 
 #show-panel {
@@ -223,7 +231,7 @@ button {
 }
 
 .ui-sortable-helper {
-  transition: none !important; /* ドラッグ中のトランジションを無効化 */
+  transition: none !important;
 }
 
 .ui-sortable-placeholder {
@@ -235,7 +243,7 @@ button {
 #show-shortcuts {
   position: fixed;
   top: 0;
-  right: 0px; /* 180px → 20px に変更（一番右へ） */
+  right: 0px;
   margin: 20px;
   padding: 10px 15px;
   background-color: #2196f3;
@@ -249,7 +257,6 @@ button {
   font-weight: bold;
 }
 
-/* ホバー効果も追加 */
 #show-shortcuts:hover {
   background-color: #1976d2;
   transform: scale(1.1);
@@ -270,33 +277,6 @@ button {
   .promptData {
     width: 80px;
   }
-}
-
-#autoGenerateContainer {
-  display: inline-block;
-  margin-left: 10px;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: #f9f9f9;
-}
-
-#generateProgress {
-  font-size: 12px;
-  color: #666;
-}
-
-#stopGenerate {
-  background: #f44336;
-  color: white;
-  border: none;
-  padding: 4px 12px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-#stopGenerate:hover {
-  background: #d32f2f;
 }
 
 /* 自動Generate機能のスタイル */
@@ -337,7 +317,32 @@ button {
   width: 50px;
   padding: 2px 5px;
 }
+
 /* スロットカードのスタイル */
+.slot-card {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #f5f5f5;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.slot-card-current {
+  border-color: #2196f3;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+.slot-card-extraction {
+  background: #fffbf0;
+}
+
+.slot-card-used {
+  background: #fff;
+}
+
 .slot-card:hover {
   transform: translateY(-2px);
 }
@@ -347,9 +352,99 @@ button {
   border-color: #2196f3 !important;
 }
 
+.slot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 25px;
+}
+
+.slot-number {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: #666;
+}
+
+.slot-number-current {
+  color: #2196f3;
+}
+
+.slot-name-edit {
+  flex: 1;
+  border: none;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  font-size: 14px;
+  padding: 2px 5px;
+  max-width: 150px;
+}
+
 .slot-name-edit:focus {
   outline: none;
   border-bottom: 2px solid #2196f3;
+}
+
+.slot-actions button {
+  margin-left: 5px;
+  padding: 4px 8px;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: white;
+  cursor: pointer;
+}
+
+.slot-actions button:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.slot-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.slot-mode-container {
+  margin: 10px 0 10px 25px;
+  display: flex;
+  gap: 20px;
+}
+
+.slot-mode-container label {
+  font-size: 12px;
+}
+
+.slot-prompt-edit {
+  width: 93%;
+  min-height: 30px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.slot-char-count {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 11px;
+  color: #999;
+}
+
+.slot-drag-handle {
+  position: absolute;
+  left: 5px;
+  top: 15px;
+  cursor: grab;
+  color: #999;
+  font-size: 18px;
+}
+
+.slot-drag-handle:active {
+  cursor: grabbing;
 }
 
 #slot-container {
@@ -358,12 +453,21 @@ button {
   padding-right: 5px;
 }
 
-/* 抽出表示のアニメーション */
+.category-filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 .current-extraction-display {
   transition: all 0.3s ease;
 }
 
 .current-extraction-display > div {
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 12px;
   animation: highlightFade 1s ease-out;
 }
 
@@ -378,50 +482,107 @@ button {
   }
 }
 
-/* タイムスタンプのスタイル */
 .extraction-timestamp {
   font-size: 10px;
   color: #999;
   margin-left: 10px;
 }
 
-/* セレクター管理セクション */
-#selectorManagement {
-  background-color: #f9f9f9;
-  border-radius: 4px;
-  padding: 15px;
+.update-indicator {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: none;
+  animation: spin 1s linear infinite;
 }
 
-#selectorManagement h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 16px;
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-#selectorManagement input[type="text"] {
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  font-family: monospace;
-  font-size: 12px;
+/* 結合プレビューモーダル */
+.combine-preview-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#selectorManagement button {
-  margin-right: 5px;
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
+.combine-preview-content {
   background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.combine-preview-content h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.combine-preview-content h4 {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.combine-preview-result {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  max-height: 300px;
+  overflow-y: auto;
+  word-break: break-word;
+}
+
+.combine-preview-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.combine-preview-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-#selectorManagement button:hover {
-  background: #f0f0f0;
+#copy-combined {
+  margin-right: 10px;
+  background: #2196f3;
+  color: white;
 }
 
-#promptSelectorStatus,
-#generateSelectorStatus {
-  min-height: 16px;
+#copy-combined:hover {
+  background: #1976d2;
+}
+
+#close-preview {
+  background: #666;
+  color: white;
+}
+
+#close-preview:hover {
+  background: #555;
 }
 
 /* セレクター管理のスタイル */
@@ -620,6 +781,12 @@ button {
 }
 
 /* 設定セクション */
+.settings-section {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
 .settings-section h3 {
   margin: 0 0 15px 0;
   color: #333;
@@ -641,14 +808,15 @@ button {
 .setting-item input[type="text"],
 .setting-item input[type="password"] {
   width: 100%;
+  max-width: 300px;
+  padding: 5px 8px;
   margin-top: 5px;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 .setting-item input[type="checkbox"] {
-  margin-right: 8px;
+  margin-right: 5px;
 }
 
 /* お知らせセクション */
@@ -676,160 +844,6 @@ button {
   padding-bottom: 8px;
 }
 
-/* セレクター管理のスタイル */
-.selector-management {
-  margin-bottom: 20px;
-}
-
-.selector-management h3 {
-  margin: 0 0 15px 0;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.selector-service {
-  margin-bottom: 15px;
-}
-
-.selector-service label {
-  display: inline-block;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.selector-item {
-  margin-bottom: 10px;
-}
-
-.selector-item label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.selector-control {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
-
-.selector-control input {
-  flex: 1;
-  padding: 5px 8px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  font-size: 13px;
-}
-
-.visual-select-btn {
-  padding: 5px 10px;
-  border: 1px solid #007bff;
-  border-radius: 3px;
-  background: white;
-  color: #007bff;
-  cursor: pointer;
-  font-size: 16px;
-  transition: all 0.2s;
-}
-
-.visual-select-btn:hover {
-  background: #007bff;
-  color: white;
-}
-
-.visual-select-btn.active {
-  background: #dc3545;
-  border-color: #dc3545;
-  color: white;
-}
-
-.selector-status {
-  font-size: 12px;
-  margin-top: 3px;
-  padding: 3px 6px;
-  border-radius: 3px;
-  display: none;
-}
-
-.selector-status.valid {
-  background: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-}
-
-.selector-status.invalid {
-  background: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-}
-
-.selector-actions {
-  margin-top: 15px;
-  display: flex;
-  gap: 10px;
-}
-
-.selector-actions button {
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  background: white;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.2s;
-}
-
-.selector-actions button:hover {
-  background: #f8f9fa;
-}
-
-#saveSelectors {
-  border-color: #28a745;
-  color: #28a745;
-}
-
-#saveSelectors:hover {
-  background: #28a745;
-  color: white;
-}
-
-#clearSelectors {
-  border-color: #dc3545;
-  color: #dc3545;
-}
-
-#clearSelectors:hover {
-  background: #dc3545;
-  color: white;
-}
-
-/* 設定セクション */
-.settings-section h3 {
-  margin: 0 0 15px 0;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.settings-section label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-.settings-section input[type="text"],
-.settings-section input[type="password"] {
-  width: 100%;
-  max-width: 300px;
-  padding: 5px 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-.settings-section input[type="checkbox"] {
-  margin-right: 5px;
-}
-
 /* その他タブ全体のレイアウト調整 */
 #noticeBody {
   padding: 10px;
@@ -839,4 +853,477 @@ button {
   border: none;
   border-top: 1px solid #ddd;
   margin: 20px 0;
+}
+
+/* セレクター管理セクション */
+#selectorManagement {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+#selectorManagement h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+#selectorManagement input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+#selectorManagement button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: white;
+  cursor: pointer;
+}
+
+#selectorManagement button:hover {
+  background: #f0f0f0;
+}
+
+#promptSelectorStatus,
+#generateSelectorStatus {
+  min-height: 16px;
+}
+
+#toggleManual {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* ビジュアルセレクター関連のスタイル (content.js用) */
+.prompt-generator-visual-selector-overlay {
+  position: fixed;
+  pointer-events: none;
+  border: 2px solid #2196f3;
+  background: rgba(33, 150, 243, 0.2);
+  transition: all 0.1s ease;
+  z-index: 99999;
+  box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.1);
+}
+
+.prompt-generator-visual-selector-overlay-excluded {
+  border: 2px solid #dc3545;
+  background: rgba(220, 53, 69, 0.2);
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.1);
+}
+
+.prompt-generator-visual-selector-tooltip {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: monospace;
+  z-index: 100001;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  max-width: 300px;
+  word-break: break-all;
+}
+
+#prompt-generator-visual-selector-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: 300px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 100000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+#prompt-generator-visual-selector-panel h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.visual-selector-instructions {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  z-index: 100002;
+  text-align: center;
+  max-width: 400px;
+  animation: fadeIn 0.3s ease;
+}
+
+.visual-selector-instructions h3 {
+  margin: 0 0 15px 0;
+}
+
+.visual-selector-instructions p {
+  margin: 10px 0;
+}
+
+.visual-selector-instructions kbd {
+  background: #333;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.visual-selector-warning {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #dc3545;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 100002;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(-50%);
+  }
+  25% {
+    transform: translateX(calc(-50% - 10px));
+  }
+  75% {
+    transform: translateX(calc(-50% + 10px));
+  }
+}
+
+.selector-candidate {
+  margin: 8px 0;
+  padding: 10px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.selector-candidate:hover {
+  background: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.selector-candidate:first-child {
+  background: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.selector-candidate code {
+  background: #e9ecef;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.candidate-actions {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.candidate-actions button {
+  margin: 0 5px;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.candidate-actions button:hover {
+  background: #f8f9fa;
+}
+
+/* トースト通知のスタイル (error-handler.js, content.js用) */
+.error-toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10001;
+  pointer-events: none;
+}
+
+.error-toast {
+  background-color: #f44336;
+  color: white;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  align-items: center;
+  max-width: 350px;
+  pointer-events: auto;
+  cursor: pointer;
+  transform: translateX(400px);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.error-toast.toast-success {
+  background-color: #4caf50;
+}
+
+.error-toast.toast-info {
+  background-color: #2196f3;
+}
+
+.error-toast.toast-warning {
+  background-color: #ff9800;
+}
+
+.error-toast.show {
+  transform: translateX(0);
+}
+
+.error-toast-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.error-toast-message {
+  flex: 1;
+}
+
+.copy-toast,
+.notification-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  animation: slideIn 0.3s ease-out;
+}
+
+.copy-toast {
+  background: #4caf50;
+  color: white;
+}
+
+.notification-toast {
+  color: white;
+}
+
+.notification-toast.success {
+  background: #4caf50;
+}
+
+.notification-toast.error {
+  background: #dc3545;
+}
+
+.notification-toast.warning {
+  background: #ffc107;
+}
+
+.notification-toast.info {
+  background: #17a2b8;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ショートカットヘルプモーダル (shortcut-manager.js用) */
+.shortcut-help-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+}
+
+.shortcut-help-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.shortcut-help-content h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.shortcut-help-content h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.shortcut-help-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.shortcut-help-content td {
+  padding: 5px;
+}
+
+.shortcut-help-content kbd {
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+#close-help {
+  margin-top: 15px;
+  width: 100%;
+}
+
+/* PNGプレビュー用スタイル (ui-utilities.js用) */
+.png-info-item {
+  margin: 10px 0;
+}
+
+.png-info-item label {
+  display: inline-block;
+  width: 200px;
+  margin: 5px 10px 5px 0;
+}
+
+.png-info-item input {
+  width: 300px;
+  margin: 5px 10px 5px 0;
+}
+
+/* ヘッダー入力フィールド */
+.header-input {
+  background-color: black;
+  color: white;
+}
+
+/* 辞書管理セクション */
+.dictionary-download-section {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.dictionary-download-section h3 {
+  margin-top: 0;
+}
+
+.dictionary-button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.dictionary-button-grid button {
+  padding: 8px;
+  width: 100%;
+}
+
+/* ローディングスピナー */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* その他のユーティリティクラス */
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.border-top {
+  border-top: 1px solid #ddd;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #ddd;
 }
