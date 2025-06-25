@@ -1,3 +1,13 @@
+// ============================================
+// 自動Generate機能
+// ============================================
+
+/**
+ * NovelAI専用の自動生成機能を管理するクラス
+ * - 指定回数の自動生成
+ * - 生成間隔の制御
+ * - 進行状況の表示
+ */
 class AutoGenerateHandler {
   constructor() {
     this.isRunning = false;
@@ -21,9 +31,8 @@ class AutoGenerateHandler {
     // オプションの表示/非表示
     const optionDiv = document.getElementById("autoGenerateOption");
     if (optionDiv) {
-      // セレクターとGenerateボタンがある場合のみ表示
-      optionDiv.style.display =
-        hasSelectors && generateButton ? "block" : "none";
+      // セレクターが設定されている場合のみ表示
+      optionDiv.style.display = hasSelectors ? "flex" : "none";
     }
 
     // セレクターまたはGenerateボタンがない場合は終了
@@ -45,7 +54,7 @@ class AutoGenerateHandler {
   }
 
   /**
-   * 進行状況UIを設定（タイトル横）
+   * 進行状況UIを設定（Generateボタンの隣）
    */
   setupProgressUI() {
     // 既に追加済みの場合はスキップ
@@ -53,10 +62,10 @@ class AutoGenerateHandler {
       return;
     }
 
-    // タイトル要素を探す
-    const h1 = document.querySelector("h1");
-    if (!h1) {
-      console.error("Title element not found");
+    // Generateボタンを探す
+    const generateButton = document.getElementById("GeneratoButton");
+    if (!generateButton) {
+      console.error("Generate button not found");
       return;
     }
 
@@ -65,13 +74,18 @@ class AutoGenerateHandler {
     progress.id = "autoGenerateProgress";
     progress.style.cssText = `
       display: none;
-      margin-left: 20px;
+      margin-left: 10px;
       font-size: 14px;
-      color: #666;
+      color: var(--text-secondary);
       font-weight: normal;
+      vertical-align: middle;
     `;
 
-    h1.appendChild(progress);
+    // Generateボタンの直後に挿入
+    generateButton.parentNode.insertBefore(
+      progress,
+      generateButton.nextSibling
+    );
   }
 
   /**
@@ -142,6 +156,10 @@ class AutoGenerateHandler {
 
     // セレクターとGenerateボタンの確認
     const generateButton = document.getElementById("GeneratoButton");
+    if (generateButton) {
+      generateButton.classList.add("auto-generating");
+    }
+
     const hasSelectors =
       AppState.selector.positivePromptText && AppState.selector.generateButton;
 
@@ -209,6 +227,11 @@ class AutoGenerateHandler {
       messageType: "info",
       duration: 3000,
     });
+
+    const generateButton = document.getElementById("GeneratoButton");
+    if (generateButton) {
+      generateButton.classList.remove("auto-generating");
+    }
   }
 
   /**

@@ -4,7 +4,6 @@
 class EditHandler {
   constructor(app) {
     this.app = app; // PromptGeneratorAppインスタンスへの参照
-    this.isRefreshing = false; // 再入防止フラグを追加
   }
 
   /**
@@ -25,8 +24,8 @@ class EditHandler {
     // 自動Generate機能の再初期化（追加）
     if (
       selectedValue === "NAI" &&
-      AppState.selector.positivePromptText &&
-      AppState.selector.generateButton
+      PositivePromptTextSelector &&
+      GenerateButtonSelector
     ) {
       autoGenerateHandler.init();
     }
@@ -65,71 +64,56 @@ class EditHandler {
   }
 
   /**
-   * 編集リストを更新（再入防止機能付き）
+   * 編集リストを更新
    */
   async refreshEditList() {
-    // 既に更新中の場合はスキップ
-    if (this.isRefreshing) {
-      console.log("refreshEditList: Already refreshing, skipping...");
-      return;
+    console.log(
+      "refreshEditList called, elements count:",
+      editPrompt.elements.length
+    );
+
+    const editType = AppState.userSettings.optionData.editType;
+    const listType =
+      editType === CONSTANTS.EDIT_TYPES.SELECT ? "editDropdown" : "edit";
+
+    // sortableを破棄
+    if ($("#editList").hasClass("ui-sortable")) {
+      $("#editList").sortable("destroy");
     }
 
-    try {
-      this.isRefreshing = true;
+    // sort プロパティで並び替えた要素を渡す
+    const sortedElements = [...editPrompt.elements].sort(
+      (a, b) => (a.sort || 0) - (b.sort || 0)
+    );
 
-      console.log(
-        "refreshEditList called, elements count:",
-        editPrompt.elements.length
-      );
+    await this.app.listManager.createList(
+      listType,
+      sortedElements, // ソート済みの要素を渡す
+      "#editList"
+    );
 
-      const editType = AppState.userSettings.optionData.editType;
-      const listType =
-        editType === CONSTANTS.EDIT_TYPES.SELECT ? "editDropdown" : "edit";
+    // sortableを再初期化
+    EventHandlers.setupSortableList("#editList", (sortedIds) => {
+      // sortedIdsは表示順のインデックス（0, 1, 2...）
+      // でも実際のelementsの順番はsortプロパティでソートされている
 
-      // sortableを破棄
-      if ($("#editList").hasClass("ui-sortable")) {
-        $("#editList").sortable("destroy");
-      }
-
-      // sort プロパティで並び替えた要素を渡す
       const sortedElements = [...editPrompt.elements].sort(
         (a, b) => (a.sort || 0) - (b.sort || 0)
       );
 
-      await this.app.listManager.createList(
-        listType,
-        sortedElements, // ソート済みの要素を渡す
-        "#editList"
-      );
-
-      // sortableを再初期化
-      EventHandlers.setupSortableList("#editList", (sortedIds) => {
-        // sortedIdsは表示順のインデックス（0, 1, 2...）
-        // でも実際のelementsの順番はsortプロパティでソートされている
-
-        const sortedElements = [...editPrompt.elements].sort(
-          (a, b) => (a.sort || 0) - (b.sort || 0)
-        );
-
-        let baseIndex = 0;
-        sortedIds.forEach((displayIndex) => {
-          if (!displayIndex) return;
-          // 表示順のインデックスから実際の要素を取得
-          const element = sortedElements[displayIndex];
-          if (element) {
-            element.sort = baseIndex++;
-          }
-        });
-
-        editPrompt.generate();
-        this.app.updatePromptDisplay();
+      let baseIndex = 0;
+      sortedIds.forEach((displayIndex) => {
+        if (!displayIndex) return;
+        // 表示順のインデックスから実際の要素を取得
+        const element = sortedElements[displayIndex];
+        if (element) {
+          element.sort = baseIndex++;
+        }
       });
-    } finally {
-      // 処理完了後、少し遅延を入れてからフラグをリセット
-      setTimeout(() => {
-        this.isRefreshing = false;
-      }, 100);
-    }
+
+      editPrompt.generate();
+      this.app.updatePromptDisplay();
+    });
   }
 }
 

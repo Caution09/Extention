@@ -53,11 +53,17 @@
       /**
        * タブ表示時の処理
        */
+      /**
+       * タブ表示時の処理
+       */
       async onShow() {
-        console.log("Showing edit tab, initializing edit mode...");
+        console.log("Showing edit tab...");
 
-        // 編集モードを初期化
-        this.editHandler.initializeEditMode();
+        // 初回表示時、またはリストが空の場合のみ初期化
+        const editList = document.getElementById("editList");
+        if (!editList || editList.children.length === 0) {
+          this.editHandler.initializeEditMode();
+        }
 
         // 現在のモードを更新
         this.updateCurrentModes();

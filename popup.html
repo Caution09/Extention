@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" href="popup.css" />
   </head>
 
-  <body>
+  <body style="width: 540px">
     <h1>Prompt Generator</h1>
     <label for="displayType">表示タイプ:</label>
     <select id="displayType">
@@ -20,48 +20,55 @@
         <li class="tab tab-E" id="slotTab">スロット</li>
         <li class="tab tab-D" id="noticeTab">その他</li>
       </ul>
-      <select id="prompt-slot-selector">
+      <select
+        id="prompt-slot-selector"
+        style="width: 150px; margin-right: 5px; font-size: 100%"
+      >
         <option value="0">1</option>
       </select>
 
       <input type="button" id="copyButton" value="Copy" />
       <input type="button" id="clearButton" value="Clear" />
       <input type="button" id="saveButton" value="Save" />
-      <label><input type="radio" name="UIType" value="SD" /> SD記法</label>
-      <label><input type="radio" name="UIType" value="NAI" /> NAI記法</label>
+      <label
+        ><input type="radio" name="UIType" value="SD" /> StableDiffusion</label
+      >
+      <label><input type="radio" name="UIType" value="NAI" /> NovelAI</label>
       <label
         ><input type="radio" name="UIType" value="None" /> 自動整形無し</label
       >
       <br />
-      <!-- Generateボタン -->
-      <input type="button" id="GeneratoButton" value="Generate" />
-      <input type="text" id="generatePrompt" />
+      <!-- Generateボタンを保持（display: noneは維持） -->
+      <input
+        type="button"
+        id="GeneratoButton"
+        value="Generate"
+        style="width: 100px; display: none"
+      />
+      <input type="text" id="generatePrompt" style="width: calc(100%)" />
       <br />
       <!--タブを切り替えて表示するコンテンツ-->
       <div class="panel-group">
-        <!-- 検索タブ -->
+        <!-- 検索タブ（完全に元に戻す） -->
         <div class="panel is-show" id="searchTabBody">
           <h2>キーワード検索</h2>
           <input type="text" size="25" id="search" value="" />
           <input type="button" id="searchButton" value="検索" />
           <h2>ドロップダウン検索</h2>
-          <ul class="full-size">
+          <ul style="font-size: 100%">
             <li>
               <input
                 value="大項目"
                 type="text"
                 readonly=""
-                class="promptData header-input"
+                class="promptData"
+                style="background-color: black; color: white"
               /><input
                 value="中項目"
                 type="text"
                 readonly=""
-                class="promptData header-input"
-              /><input
-                value="小項目"
-                type="text"
-                readonly=""
-                class="promptData header-input"
+                class="promptData"
+                style="background-color: black; color: white"
               />
             </li>
             <li>
@@ -73,39 +80,43 @@
             </li>
           </ul>
           <hr />
-          <p id="isSearch" class="full-size"></p>
-          <ul class="full-size" id="promptList"></ul>
+          <p id="isSearch" style="font-size: 100%"></p>
+          <ul style="font-size: 100%" id="promptList"></ul>
         </div>
 
-        <!-- 辞書タブ -->
+        <!-- 辞書タブ（完全に元に戻す） -->
         <div class="panel" id="addTabBody">
           <br />
           <div id="promptDicText">▶プロンプト辞書　※ここをクリックで開閉</div>
-          <ul class="full-size" id="archiveList"></ul>
+          <ul style="font-size: 100%" id="archiveList"></ul>
           <hr />
           <h2>要素の追加</h2>
-          <ul class="full-size">
+          <ul style="font-size: 100%">
             <li>
               <input
                 value="大項目"
                 type="text"
                 readonly=""
-                class="promptData header-input"
+                class="promptData"
+                style="background-color: black; color: white"
               /><input
                 value="中項目"
                 type="text"
                 readonly=""
-                class="promptData header-input"
+                class="promptData"
+                style="background-color: black; color: white"
               /><input
                 value="小項目"
                 type="text"
                 readonly=""
-                class="promptData header-input"
+                class="promptData"
+                style="background-color: black; color: white"
               /><input
                 value="Prompt"
                 type="text"
                 readonly=""
-                class="promptData header-input"
+                class="promptData"
+                style="background-color: black; color: white"
               />
             </li>
             <li>
@@ -130,12 +141,12 @@
           <div id="elementDicText">
             ▶要素辞書(ローカル)　※ここをクリックで開閉
           </div>
-          <ul class="full-size" id="addPromptList"></ul>
+          <ul style="font-size: 100%" id="addPromptList"></ul>
           <div id="masterDicText">▶要素辞書(マスタ)　※ここをクリックで開閉</div>
-          <ul class="full-size" id="masterDicList"></ul>
+          <ul style="font-size: 100%" id="masterDicList"></ul>
         </div>
 
-        <!-- 編集タブ -->
+        <!-- 編集タブ（完全に元に戻す） -->
         <div class="panel" id="editTabBody">
           <label
             ><input type="radio" name="EditType" value="SELECT" />
@@ -145,48 +156,65 @@
             ><input type="radio" name="EditType" value="TEXT" />
             テキスト編集モード</label
           >
-          <ul class="full-size" id="editList"></ul>
+          <ul style="font-size: 100%" id="editList"></ul>
         </div>
 
-        <!-- スロットタブ -->
+        <!-- スロットタブ（完全に元に戻す） -->
         <div class="panel" id="slotTabBody">
           <h2>プロンプトスロット管理</h2>
-          <div id="slot-info" class="slot-info-bar">
+          <div id="slot-info" style="margin-bottom: 10px">
             使用中: <span id="used-slots-count">0/0</span>
-            <button id="add-slot-btn" class="add-slot-btn">
-              + スロット追加
-            </button>
-            <button id="combine-preview-btn" class="combine-preview-btn">
+            <button id="combine-preview" style="float: right">
               結合プレビュー
             </button>
           </div>
           <div id="slot-container">
-            <!-- スロットカードは動的生成 -->
+            <!-- 動的に生成 -->
           </div>
-          <div class="slot-actions-bottom">
+          <div style="margin-top: 20px">
             <button id="clear-all-slots-tab">すべてクリア</button>
             <button id="export-slots">エクスポート</button>
             <button id="import-slots">インポート</button>
           </div>
         </div>
 
-        <!-- その他タブ -->
+        <!-- その他タブ（最新のセレクター設定と自動Generateを保持） -->
         <div class="panel" id="noticeBody">
           <div>
             <h3>お知らせ</h3>
             <p id="notice"></p>
           </div>
 
-          <!-- 辞書ダウンロードセクション -->
-          <div class="dictionary-download-section">
-            <h3>辞書管理</h3>
-            <div class="dictionary-button-grid">
-              <button id="PromptDownload">プロンプト辞書ダウンロード</button>
-              <button id="localDicDownload">
+          <!-- 辞書ダウンロードセクションを追加 -->
+          <div
+            style="
+              margin: 20px 0;
+              border: 1px solid #ddd;
+              padding: 15px;
+              border-radius: 5px;
+              background-color: #f9f9f9;
+            "
+          >
+            <h3 style="margin-top: 0">辞書管理</h3>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+              "
+            >
+              <button id="PromptDownload" style="padding: 8px; width: 100%">
+                プロンプト辞書ダウンロード
+              </button>
+              <button id="localDicDownload" style="padding: 8px; width: 100%">
                 要素辞書(ローカル)ダウンロード
               </button>
-              <button id="csvExport">ローカル辞書CSVダウンロード</button>
-              <button id="MasterDownload">要素辞書(マスタ)ダウンロード</button>
+              <button id="csvExport" style="padding: 8px; width: 100%">
+                ローカル辞書CSVダウンロード
+              </button>
+              <button id="MasterDownload" style="padding: 8px; width: 100%">
+                要素辞書(マスタ)ダウンロード
+              </button>
             </div>
           </div>
 
@@ -199,26 +227,14 @@
           <img id="preview" />
           <div id="pngInfo"></div>
 
-          <!-- 設定管理セクション（追加） -->
-          <div class="settings-management-section">
-            <h3>設定管理</h3>
-            <div class="settings-button-grid">
-              <button id="exportSettings">
-                <span>💾</span> 設定をエクスポート
-              </button>
-              <button id="importSettings">
-                <span>📂</span> 設定をインポート
-              </button>
-              <button id="resetButton" class="danger-button">
-                <span>⚠️</span> 設定をリセット
-              </button>
-            </div>
-            <p class="settings-help-text">
-              すべての設定（辞書、スロット、カスタマイズ）をバックアップ・復元できます
-            </p>
-          </div>
-
-          <div id="autoGenerateOption" class="auto-generate-section">
+          <div
+            id="autoGenerateOption"
+            style="
+              margin-top: 20px;
+              border-top: 1px solid #ddd;
+              padding-top: 15px;
+            "
+          >
             <h3>自動Generate設定</h3>
             <label>
               <input type="checkbox" id="autoGenerate" />
@@ -233,8 +249,9 @@
                 value="10"
                 min="0"
                 max="1000"
+                style="width: 60px"
               />
-              <span class="help-text">（0で無限）</span>
+              <span style="font-size: 12px; color: #666">（0で無限）</span>
             </label>
             <br />
             <label>
@@ -245,77 +262,101 @@
                 value="5"
                 min="3"
                 max="60"
+                style="width: 50px"
               />
               <span>秒</span>
             </label>
           </div>
 
-          <!-- セレクター設定 -->
-          <div class="selector-management">
+          <!-- 最新版のセレクター設定（維持） -->
+          <div
+            class="selector-management"
+            style="
+              margin-top: 20px;
+              border-top: 1px solid #ddd;
+              padding-top: 15px;
+            "
+          >
             <h3>セレクター設定</h3>
             <div class="selector-service">
               <label for="selector-service">対象サービス:</label>
-              <select id="selector-service" class="service-selector">
+              <select id="selector-service" style="width: 200px">
                 <option value="">-- 選択してください --</option>
                 <option value="novelai">NovelAI</option>
-                <option value="sd-webui">Stable Diffusion WebUI</option>
+                <option value="stable_diffusion">Stable Diffusion WebUI</option>
                 <option value="comfyui">ComfyUI</option>
-                <option value="custom">カスタム設定</option>
+                <option value="custom">カスタム</option>
               </select>
             </div>
-            <h4>プリセット選択</h4>
-            <div class="preset-buttons">
-              <button class="preset-btn" data-preset="novelai">NovelAI</button>
-              <button class="preset-btn" data-preset="sd-webui">
-                SD WebUI
-              </button>
-              <button class="preset-btn" data-preset="comfyui">ComfyUI</button>
-            </div>
-            <div class="selector-item">
-              <label for="promptSelector">プロンプト入力欄:</label>
-              <div class="selector-control">
-                <input type="text" id="promptSelector" value="" />
-                <button class="visual-select-btn" data-target="promptSelector">
-                  👁
-                </button>
-              </div>
-              <div id="promptSelectorStatus" class="selector-status"></div>
-            </div>
-            <div class="selector-item">
-              <label for="generateSelector">生成ボタン:</label>
-              <div class="selector-control">
-                <input type="text" id="generateSelector" value="" />
-                <button
-                  class="visual-select-btn"
-                  data-target="generateSelector"
-                >
-                  👁
-                </button>
-              </div>
-              <div id="generateSelectorStatus" class="selector-status"></div>
-            </div>
-            <div class="selector-actions">
-              <button id="saveSelectors" class="action-btn">
-                <span>💾</span> 保存
-              </button>
-              <button id="clearSelectors" class="action-btn">
-                <span>🗑️</span> クリア
-              </button>
-            </div>
-            <div class="selector-help">
-              <details>
-                <summary>セレクターの取得方法</summary>
-                <div class="help-content">
-                  <p>1. 対象ページで右クリック → 「検証」を選択</p>
-                  <p>2. 要素選択ツール（矢印アイコン）をクリック</p>
-                  <p>3. 目的の要素をクリック</p>
-                  <p>4. DevToolsで要素を右クリック → Copy → Copy selector</p>
-                  <p>または、「👁」ボタンでビジュアル選択が可能です！</p>
+
+            <div class="current-selectors" style="margin-top: 15px">
+              <div class="selector-item">
+                <label>プロンプト入力欄のセレクター:</label>
+                <div class="selector-control">
+                  <input
+                    type="text"
+                    id="positivePromptSelector"
+                    placeholder="セレクターを入力..."
+                    style="font-family: monospace; width: 100%"
+                  />
+                  <button
+                    class="visual-select-btn"
+                    data-target="positivePromptSelector"
+                    title="ビジュアル選択"
+                  >
+                    🎯
+                  </button>
                 </div>
-              </details>
+                <div class="selector-status" id="positivePromptStatus"></div>
+              </div>
+
+              <div class="selector-item" style="margin-top: 10px">
+                <label>生成ボタンのセレクター:</label>
+                <div class="selector-control">
+                  <input
+                    type="text"
+                    id="generateButtonSelector"
+                    placeholder="セレクターを入力..."
+                    style="font-family: monospace; width: 100%"
+                  />
+                  <button
+                    class="visual-select-btn"
+                    data-target="generateButtonSelector"
+                    title="ビジュアル選択"
+                  >
+                    🎯
+                  </button>
+                </div>
+                <div class="selector-status" id="generateButtonStatus"></div>
+              </div>
             </div>
+
+            <div class="selector-actions" style="margin-top: 15px">
+              <button id="saveSelectors">保存</button>
+              <button id="clearSelectors">クリア</button>
+            </div>
+
+            <details style="margin-top: 15px">
+              <summary style="cursor: pointer">セレクターの調べ方</summary>
+              <div
+                style="margin-top: 10px; padding-left: 20px; font-size: 12px"
+              >
+                <p>1. 対象ページで右クリック → 「検証」を選択</p>
+                <p>2. 要素選択ツール（矢印アイコン）をクリック</p>
+                <p>3. 目的の要素をクリック</p>
+                <p>4. DevToolsで要素を右クリック → Copy → Copy selector</p>
+                <p>または、「🎯」ボタンでビジュアル選択が可能です！</p>
+              </div>
+            </details>
           </div>
-          <div class="settings-section">
+          <div
+            class="settings-section"
+            style="
+              margin-top: 20px;
+              border-top: 1px solid #ddd;
+              padding-top: 15px;
+            "
+          >
             <h3>設定</h3>
             <label>
               <input type="checkbox" id="isDeleteCheck" value="isDeleteCheck" />
@@ -341,10 +382,14 @@
       </div>
     </div>
 
-    <!-- ポップアップ -->
-    <div id="popup">
-      <img id="popup-image" src="assets/icon/Icon128.png" />
-      <div>
+    <!-- ポップアップ（変更なし） -->
+    <div id="popup" style="align-items: center">
+      <img
+        id="popup-image"
+        src="assets/icon/Icon128.png"
+        style="flex-grow: 1; padding: 10px"
+      />
+      <div style="flex-grow: 1; padding: 10px">
         <p>
           イメージとなります。数が膨大なため精査しておらず、正確なものでは有りません。
         </p>
@@ -365,104 +410,18 @@
       </div>
     </div>
 
-    <button id="toggleManual" class="fixed-button bottom-right">一覧</button>
-    <button id="show-shortcuts" class="fixed-button top-right">?</button>
+    <button
+      id="toggleManual"
+      style="position: fixed; bottom: 10px; right: 10px"
+    >
+      一覧
+    </button>
+    <button id="show-shortcuts" style="position: fixed; top: 0; right: 0">
+      ?
+    </button>
     <datalist id="category"></datalist>
 
-    <!-- 固定モーダル要素 -->
-
-    <!-- エラートーストコンテナ -->
-    <div id="error-toast-container" class="error-toast-container"></div>
-
-    <!-- ショートカットヘルプモーダル -->
-    <div
-      id="shortcut-help-modal"
-      class="shortcut-help-modal"
-      style="display: none"
-    >
-      <div class="shortcut-help-content">
-        <h3>ショートカットキー一覧</h3>
-        <h4>ポップアップ内</h4>
-        <table>
-          <tr>
-            <td><kbd>Ctrl+S</kbd></td>
-            <td>プロンプトを保存</td>
-          </tr>
-          <tr>
-            <td><kbd>Ctrl+C</kbd></td>
-            <td>プロンプトをコピー</td>
-          </tr>
-          <tr>
-            <td><kbd>Ctrl+K</kbd></td>
-            <td>検索ボックスにフォーカス</td>
-          </tr>
-          <tr>
-            <td><kbd>Ctrl+E</kbd></td>
-            <td>編集タブへ移動</td>
-          </tr>
-          <tr>
-            <td><kbd>Ctrl+D</kbd></td>
-            <td>辞書タブへ移動</td>
-          </tr>
-          <tr>
-            <td><kbd>Tab</kbd></td>
-            <td>次のタブへ移動</td>
-          </tr>
-          <tr>
-            <td><kbd>Esc</kbd></td>
-            <td>ポップアップを閉じる</td>
-          </tr>
-        </table>
-        <h4>グローバルショートカット</h4>
-        <table>
-          <tr>
-            <td><kbd>Alt+G</kbd></td>
-            <td>サイドパネルを開く</td>
-          </tr>
-          <tr>
-            <td><kbd>Ctrl+Shift+S</kbd></td>
-            <td>選択テキストを辞書に保存</td>
-          </tr>
-        </table>
-        <button id="close-help">閉じる</button>
-      </div>
-    </div>
-
-    <!-- 結合プレビューモーダル -->
-    <div
-      id="combine-preview-modal"
-      class="combine-preview-modal"
-      style="display: none"
-    >
-      <div class="combine-preview-content">
-        <h3>結合プレビュー</h3>
-        <div class="preview-section">
-          <h4>
-            使用中のスロット (<span id="used-slots-count-preview">0</span>個)
-          </h4>
-          <table class="slot-info-table" id="slot-info-table">
-            <!-- 動的に生成 -->
-          </table>
-        </div>
-        <div class="preview-section">
-          <h4>結合結果</h4>
-          <div class="combine-preview-result" id="combine-preview-result">
-            <!-- 動的に生成 -->
-          </div>
-        </div>
-        <div class="combine-preview-actions">
-          <div class="char-count">
-            文字数: <strong id="combined-char-count">0</strong>
-          </div>
-          <div>
-            <button id="copy-combined">コピー</button>
-            <button id="close-preview">閉じる</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- スクリプト部分 -->
+    <!-- スクリプト部分（変更なし） -->
     <script src="lib/jquery-3.5.1.js"></script>
     <script src="lib/jquery-ui.js"></script>
     <script src="lib/papaparse.js"></script>
