@@ -25,6 +25,9 @@
           mode: "inactive",
           targetInputId: null,
         };
+
+        // メッセージハンドラーを保存（重複登録を防ぐため）
+        this.boundSelectorMessageHandler = null;
       }
 
       async onInit() {
@@ -87,7 +90,7 @@
         }
 
         // セレクター入力フィールドの変更監視
-        ["positivePromptSelector", "generateButtonSelector"].forEach((id) => {
+        ["selector-positive", "selector-generate"].forEach((id) => {
           const input = document.getElementById(id);
           if (input) {
             this.addEventListener(input, "input", () => {
@@ -155,23 +158,20 @@
         if (!service) return;
 
         // セレクターフィールドに値を設定
-        const positiveInput = document.getElementById("positivePromptSelector");
-        const generateInput = document.getElementById("generateButtonSelector");
+        const positiveInput = document.getElementById("selector-positive");
+        const generateInput = document.getElementById("selector-generate");
 
         if (positiveInput) {
           positiveInput.value = service.positivePromptText;
           this.validateSelector(
-            "positivePromptSelector",
+            "selector-positive",
             service.positivePromptText
           );
         }
 
         if (generateInput) {
           generateInput.value = service.generateButton;
-          this.validateSelector(
-            "generateButtonSelector",
-            service.generateButton
-          );
+          this.validateSelector("selector-generate", service.generateButton);
         }
 
         AppState.selector.positivePromptText = service.positivePromptText;
@@ -186,18 +186,18 @@
           const generateSelector = AppState.selector.generateButton;
 
           if (positiveSelector) {
-            const input = document.getElementById("positivePromptSelector");
+            const input = document.getElementById("selector-positive");
             if (input) {
               input.value = positiveSelector;
-              this.validateSelector("positivePromptSelector", positiveSelector);
+              this.validateSelector("selector-positive", positiveSelector);
             }
           }
 
           if (generateSelector) {
-            const input = document.getElementById("generateButtonSelector");
+            const input = document.getElementById("selector-generate");
             if (input) {
               input.value = generateSelector;
-              this.validateSelector("generateButtonSelector", generateSelector);
+              this.validateSelector("selector-generate", generateSelector);
             }
           }
         } catch (error) {
@@ -230,15 +230,24 @@
         if (!tab) return;
 
         try {
+          // 既存のリスナーがあれば削除
+          if (this.boundSelectorMessageHandler) {
+            chrome.runtime.onMessage.removeListener(
+              this.boundSelectorMessageHandler
+            );
+          }
+
+          // 新しいリスナーを作成して保存
+          this.boundSelectorMessageHandler =
+            this.handleSelectorMessage.bind(this);
+          chrome.runtime.onMessage.addListener(
+            this.boundSelectorMessageHandler
+          );
+
           // content.jsのビジュアルセレクターを起動
           await chrome.tabs.sendMessage(tab.id, {
             action: "startVisualSelection",
           });
-
-          // 選択結果を待つ
-          chrome.runtime.onMessage.addListener(
-            this.handleSelectorMessage.bind(this)
-          );
 
           ErrorHandler.notify(
             "要素をクリックして選択してください（ESCで終了）",
@@ -282,6 +291,14 @@
       // ビジュアル選択モードを終了
       endVisualSelection() {
         this.visualSelectorState.mode = "inactive";
+
+        // リスナーを削除
+        if (this.boundSelectorMessageHandler) {
+          chrome.runtime.onMessage.removeListener(
+            this.boundSelectorMessageHandler
+          );
+          this.boundSelectorMessageHandler = null;
+        }
 
         // ボタンの状態をリセット
         document.querySelectorAll(".visual-select-btn").forEach((btn) => {
@@ -341,12 +358,10 @@
 
       // セレクターを保存（AppState.selectorに保存）
       async saveSelectors() {
-        const positiveSelector = document.getElementById(
-          "positivePromptSelector"
-        )?.value;
-        const generateSelector = document.getElementById(
-          "generateButtonSelector"
-        )?.value;
+        const positiveSelector =
+          document.getElementById("selector-positive")?.value;
+        const generateSelector =
+          document.getElementById("selector-generate")?.value;
 
         if (!positiveSelector || !generateSelector) {
           ErrorHandler.notify("両方のセレクターを入力してください", {
@@ -387,8 +402,8 @@
       async clearSelectors() {
         if (!confirm("セレクターをクリアしますか？")) return;
 
-        const positiveInput = document.getElementById("positivePromptSelector");
-        const generateInput = document.getElementById("generateButtonSelector");
+        const positiveInput = document.getElementById("selector-positive");
+        const generateInput = document.getElementById("selector-generate");
 
         if (positiveInput) positiveInput.value = "";
         if (generateInput) generateInput.value = "";
