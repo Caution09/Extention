@@ -182,13 +182,13 @@ class PromptGeneratorApp {
           if (service && AppState.selector.serviceSets[service]) {
             const serviceSelectors = AppState.selector.serviceSets[service];
             if (
-              serviceSelectors.positivePromptText &&
-              serviceSelectors.generateButton
+              serviceSelectors.positiveSelector &&
+              serviceSelectors.generateSelector
             ) {
-              AppState.selector.positivePromptText =
-                serviceSelectors.positivePromptText;
-              AppState.selector.generateButton =
-                serviceSelectors.generateButton;
+              AppState.selector.positiveSelector =
+                serviceSelectors.positiveSelector;
+              AppState.selector.generateSelector =
+                serviceSelectors.generateSelector;
               AppState.selector.currentService = service;
 
               const generateButton = document.getElementById("GeneratoButton");
@@ -200,8 +200,8 @@ class PromptGeneratorApp {
           }
           // サービス固有のセレクターがない場合、汎用的なセレクターをチェック
           else if (
-            AppState.selector.positivePromptText &&
-            AppState.selector.generateButton
+            AppState.selector.positiveSelector &&
+            AppState.selector.generateSelector
           ) {
             const generateButton = document.getElementById("GeneratoButton");
             if (generateButton) {
@@ -818,8 +818,8 @@ class PromptGeneratorApp {
       "DOM",
       "Generate",
       combinedPrompt,
-      AppState.selector.positivePromptText,
-      AppState.selector.generateButton
+      AppState.selector.positiveSelector,
+      AppState.selector.generateSelector
     );
 
     // 通知（オプション）
@@ -916,8 +916,8 @@ class PromptGeneratorApp {
   updateUIState() {
     // GenerateボタンON表示の更新（UIタイプ制限を削除）
     if (
-      AppState.selector.positivePromptText != null &&
-      AppState.selector.generateButton != null
+      AppState.selector.positiveSelector != null &&
+      AppState.selector.generateSelector != null
     ) {
       const generateButton = document.getElementById("GeneratoButton");
       if (generateButton) {

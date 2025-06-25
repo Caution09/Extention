@@ -25,7 +25,7 @@ class AutoGenerateHandler {
    */
   async init() {
     const hasSelectors =
-      AppState.selector.positivePromptText && AppState.selector.generateButton;
+      AppState.selector.positiveSelector && AppState.selector.generateSelector;
     const generateButton = document.getElementById("GeneratoButton");
 
     // オプションの表示/非表示
@@ -161,7 +161,7 @@ class AutoGenerateHandler {
     }
 
     const hasSelectors =
-      AppState.selector.positivePromptText && AppState.selector.generateButton;
+      AppState.selector.positiveSelector && AppState.selector.generateSelector;
 
     if (!hasSelectors || !generateButton) {
       ErrorHandler.notify("セレクターが設定されていません", {

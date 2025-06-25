@@ -98,8 +98,8 @@ async function loadCategory() {
 async function saveSelectors() {
   try {
     await Storage.set({
-      positivePromptText: AppState.selector.positivePromptText,
-      generateButton: AppState.selector.generateButton,
+      positivePromptText: AppState.selector.positiveSelector,
+      generateButton: AppState.selector.generateSelector,
     });
   } catch (error) {
     console.error("Failed to save selectors:", error);
@@ -112,13 +112,13 @@ async function saveSelectors() {
  */
 async function loadSelectors() {
   try {
-    const result = await Storage.get(["positivePromptText", "generateButton"]);
+    const result = await Storage.get(["positiveSelector", "generateSelector"]);
 
-    if (result.positivePromptText) {
-      AppState.selector.positivePromptText = result.positivePromptText;
+    if (result.positiveSelector) {
+      AppState.selector.positiveSelector = result.positiveSelector;
     }
     if (result.generateButton) {
-      AppState.selector.generateButton = result.generateButton;
+      AppState.selector.generateSelector = result.generateSelector;
     }
 
     // 読み込み後の検証
@@ -146,8 +146,6 @@ async function loadPromptSelector() {
 
       if (!tab) return;
 
-      console.log(`positivePromptText：`, selector);
-
       // content scriptを注入してから通信
       await injectContentScript(tab.id);
 
@@ -161,7 +159,7 @@ async function loadPromptSelector() {
         } catch (error) {
           console.log("Selector check failed:", error.message);
           // エラーでも値は保持
-          AppState.selector.positivePromptText = result.positivePromptText;
+          AppState.selector.positiveSelector = result.positiveSelector;
         }
       }, 100);
     }
@@ -186,8 +184,6 @@ async function loadgenerateButtonSelector() {
 
       if (!tab) return;
 
-      console.log(`generateButton:`, selector);
-
       // content scriptを注入してから通信
       await injectContentScript(tab.id);
 
@@ -200,7 +196,7 @@ async function loadgenerateButtonSelector() {
           console.log("応答：", response);
         } catch (error) {
           console.log("Selector check failed:", error.message);
-          AppState.selector.generateButton = result.generateButton;
+          AppState.selector.generateSelector = result.generateSelector;
         }
       }, 100);
     }
@@ -252,8 +248,8 @@ async function validateAndActivateGenerateButton() {
 
   // 両方のセレクターを並列で検証
   const [isPositiveValid, isGenerateValid] = await Promise.all([
-    validateSelector(AppState.selector.positivePromptText, "プロンプト"),
-    validateSelector(AppState.selector.generateButton, "Generate"),
+    validateSelector(AppState.selector.positiveSelector, "プロンプト"),
+    validateSelector(AppState.selector.generateSelector, "Generate"),
   ]);
 
   // 結果に基づいてGenerateボタンを表示/非表示
@@ -744,20 +740,20 @@ Object.defineProperty(window, "toolVersion", {
   },
 });
 
-Object.defineProperty(window, "positivePromptText", {
+Object.defineProperty(window, "positiveSelector", {
   get() {
-    return AppState.selector.positivePromptText;
+    return AppState.selector.positiveSelector;
   },
   set(value) {
-    AppState.selector.positivePromptText = value;
+    AppState.selector.positiveSelector = value;
   },
 });
 
-Object.defineProperty(window, "generateButton", {
+Object.defineProperty(window, "generateSelector", {
   get() {
-    return AppState.selector.generateButton;
+    return AppState.selector.generateSelector;
   },
   set(value) {
-    AppState.selector.generateButton = value;
+    AppState.selector.generateSelector = value;
   },
 });

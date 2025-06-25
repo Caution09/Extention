@@ -178,10 +178,10 @@ function processToolInfoItem(item) {
       break;
 
     case "novelAIpositivePromptText":
-      AppState.selector.positivePromptText = item.value;
+      AppState.selector.positiveSelector = item.value;
       if (
         optionData?.shaping === "NAI" &&
-        AppState.selector.positivePromptText != null
+        AppState.selector.positiveSelector != null
       ) {
         // セレクター検証を実行（修正）
         validateAndActivateGenerateButton();
@@ -189,10 +189,10 @@ function processToolInfoItem(item) {
       break;
 
     case "novelAIgenerateButton":
-      AppState.selector.generateButton = item.value;
+      AppState.selector.generateSelector = item.value;
       if (
         optionData?.shaping === "NAI" &&
-        AppState.selector.generateButton != null
+        AppState.selector.generateSelector != null
       ) {
         // セレクター検証を実行（修正）
         validateAndActivateGenerateButton();

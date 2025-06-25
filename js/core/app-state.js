@@ -37,36 +37,36 @@ const AppState = {
   },
 
   selector: {
-    positivePromptText: null,
-    generateButton: null,
+    positiveSelector: null,
+    generateSelector: null,
 
     // サービスごとのセレクターセット
     serviceSets: {
       novelai: {
         name: "NovelAI",
         url: "https://novelai.net/image",
-        positivePromptText:
+        positiveSelector:
           "#__next > div.sc-5de027f2-0.IhKLm.image-gen-page > div.image-gen-body > div.image-gen-main > div:nth-child(1) > div.sc-bfaa0c12-0.llxfFb.settings-panel > div:nth-child(3) > div:nth-child(2) > div > div.prompt-input-box-プロンプト > div.relative > div > div",
-        generateButton:
+        generateSelector:
           "#__next > div.sc-5de027f2-0.IhKLm.image-gen-page > div.image-gen-body > div.image-gen-main > div:nth-child(1) > div.sc-bfaa0c12-0.llxfFb.settings-panel > div:nth-child(5) > button",
       },
       stable_diffusion: {
         name: "Stable Diffusion WebUI",
         url: "http://127.0.0.1:7860/",
-        positivePromptText: "#txt2img_prompt textarea",
-        generateButton: "#txt2img_generate",
+        positiveSelector: "#txt2img_prompt textarea",
+        generateSelector: "#txt2img_generate",
       },
       comfyui: {
         name: "ComfyUI",
         url: "http://127.0.0.1:8188/",
-        positivePromptText: "textarea.comfy-multiline-input",
-        generateButton: "#button.execute-button",
+        positiveSelector: "textarea.comfy-multiline-input",
+        generateSelector: "#button.execute-button",
       },
       custom: {
         name: "custom",
         url: "",
-        positivePromptText: null,
-        generateButton: null,
+        positiveSelector: null,
+        generateSelector: null,
       },
     },
 
@@ -86,8 +86,8 @@ const AppState = {
     this.userSettings.optionData = null;
     this.ui.currentTab = 0;
     this.ui.isSearching = false;
-    this.selector.positivePromptText = false;
-    this.selector.generateButton = false;
+    this.selector.positiveSelector = "";
+    this.selector.generateSelector = "";
   },
 
   /**

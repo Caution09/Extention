@@ -162,28 +162,24 @@
         const generateInput = document.getElementById("selector-generate");
 
         if (positiveInput) {
-          positiveInput.value = service.positivePromptText;
-          this.validateSelector(
-            "selector-positive",
-            service.positivePromptText
-          );
+          positiveInput.value = service.positiveSelector;
+          this.validateSelector("selector-positive", service.positiveSelector);
         }
 
         if (generateInput) {
-          generateInput.value = service.generateButton;
-          this.validateSelector("selector-generate", service.generateButton);
+          generateInput.value = service.generateSelector;
+          this.validateSelector("selector-generate", service.generateSelector);
         }
 
-        AppState.selector.positivePromptText = service.positivePromptText;
-        AppState.selector.generateButton = service.generateButton;
+        AppState.selector.positiveSelector = service.positiveSelector;
+        AppState.selector.generateSelector = service.generateSelector;
       }
 
       // 現在のセレクター情報を表示
       async refreshSelectorDisplay() {
         try {
-          // AppState.selectorから現在の値を取得
-          const positiveSelector = AppState.selector.positivePromptText;
-          const generateSelector = AppState.selector.generateButton;
+          const positiveSelector = AppState.selector.positiveSelector;
+          const generateSelector = AppState.selector.generateSelector;
 
           if (positiveSelector) {
             const input = document.getElementById("selector-positive");
@@ -253,6 +249,7 @@
             "要素をクリックして選択してください（ESCで終了）",
             {
               type: ErrorHandler.NotificationType.TOAST,
+              messageType: "success",
             }
           );
         } catch (error) {
@@ -277,15 +274,25 @@
               this.visualSelectorState.targetInputId,
               message.selector
             );
+
+            // AppStateに値を保存
+            if (this.visualSelectorState.targetInputId === "positiveSelector") {
+              AppState.selector.positiveSelector = message.selector;
+            } else if (
+              this.visualSelectorState.targetInputId === "generateSelector"
+            ) {
+              AppState.selector.generateSelector = message.selector;
+            }
           }
           this.endVisualSelection();
-          ErrorHandler.notify("セレクターを取得しました", {
+          ErrorHandler.notify("セレクターを設定しました", {
             type: ErrorHandler.NotificationType.TOAST,
             messageType: "success",
           });
         } else if (message.action === "visualSelectionCanceled") {
           this.endVisualSelection();
         }
+        this.saveSelectors();
       }
 
       // ビジュアル選択モードを終了
@@ -368,19 +375,19 @@
             type: ErrorHandler.NotificationType.TOAST,
             messageType: "error",
           });
-          return;
         }
 
         try {
           // AppState.selectorを更新
-          AppState.selector.positivePromptText = positiveSelector;
-          AppState.selector.generateButton = generateSelector;
+          const serviceSelect = document.getElementById("selector-service");
+          const serviceKey = serviceSelect.value;
 
-          // ストレージに保存
-          await Storage.set({
-            positivePromptText: positiveSelector,
-            generateButton: generateSelector,
-          });
+          AppState.selector.positiveSelector = positiveSelector;
+          AppState.selector.generateSelector = generateSelector;
+          AppState.selector.serviceSets[serviceKey].positiveSelector =
+            positiveSelector;
+          AppState.selector.serviceSets[serviceKey].generateSelector =
+            generateSelector;
 
           ErrorHandler.notify("セレクターを保存しました", {
             type: ErrorHandler.NotificationType.TOAST,
@@ -416,11 +423,8 @@
 
         try {
           // AppState.selectorをクリア
-          AppState.selector.positivePromptText = null;
-          AppState.selector.generateButton = null;
-
-          // ストレージからも削除
-          await Storage.remove(["positivePromptText", "generateButton"]);
+          AppState.selector.positiveSelector = null;
+          AppState.selector.generateSelector = null;
 
           ErrorHandler.notify("セレクターをクリアしました", {
             type: ErrorHandler.NotificationType.TOAST,
@@ -439,9 +443,8 @@
 
         if (genBtn) {
           const hasSelectors =
-            AppState.selector.positivePromptText &&
-            AppState.selector.generateButton;
-          const isNAI = AppState.userSettings.optionData?.shaping === "NAI";
+            AppState.selector.positiveSelector &&
+            AppState.selector.generateSelector;
           const showButton = hasSelectors;
 
           genBtn.style.display = showButton ? "block" : "none";
@@ -577,8 +580,8 @@
         console.log("FileHandler:", this.fileHandler);
         console.log("Visual Selector State:", this.visualSelectorState);
         console.log("Current selectors:", {
-          positive: AppState.selector.positivePromptText,
-          generate: AppState.selector.generateButton,
+          positive: AppState.selector.positiveSelector,
+          generate: AppState.selector.generateSelector,
         });
       }
     }
