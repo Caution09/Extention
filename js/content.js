@@ -577,8 +577,54 @@
       });
     }
 
+    // 7. フルパス現状ID以外は確実なこれでとる。なのでスコアも第２位
+    const fullpathSelector = getFullPath(element);
+    if (fullpathSelector) {
+      selectors.push({
+        selector: fullpathSelector,
+        type: "fullPath Selector",
+        score: 99,
+        count: 1,
+      });
+    }
+
     // スコアでソート（高い順）
     return selectors.sort((a, b) => b.score - a.score);
+  }
+
+  // フルパスを生成する関数
+  function getFullPath(element) {
+    const path = [];
+    let current = element;
+
+    while (current && current !== document.body) {
+      let selector = current.tagName.toLowerCase();
+
+      // IDがあれば使用
+      if (current.id) {
+        selector = `#${CSS.escape(current.id)}`;
+        path.unshift(selector);
+        break;
+      }
+
+      // 同じタグの兄弟要素の中での位置を特定
+      if (current.parentElement) {
+        const siblings = Array.from(current.parentElement.children);
+        const sameTagSiblings = siblings.filter(
+          (s) => s.tagName === current.tagName
+        );
+
+        if (sameTagSiblings.length > 1) {
+          const index = sameTagSiblings.indexOf(current) + 1;
+          selector += `:nth-of-type(${index})`;
+        }
+      }
+
+      path.unshift(selector);
+      current = current.parentElement;
+    }
+
+    return path.join(" > ");
   }
 
   // CSS Path を生成
