@@ -361,6 +361,7 @@
 
       // セレクターを保存（AppState.selectorに保存）
       // other-tab.js の修正（saveSelectorsメソッド）
+      // other-tab.js の修正（saveSelectorsメソッド）
       async saveSelectors() {
         const positiveSelector =
           document.getElementById("selector-positive")?.value;

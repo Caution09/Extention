@@ -178,8 +178,22 @@ class PromptGeneratorApp {
         if (tabs[0]) {
           const service = this.detectService(tabs[0].url);
 
-          // サービス固有のセレクターがある場合
-          if (service && AppState.selector.serviceSets[service]) {
+          // まずストレージから読み込み（これは既にinitializeDataManagerで実行済みのはず）
+          // 念のため再確認
+          const hasStoredSelectors =
+            AppState.selector.positiveSelector &&
+            AppState.selector.generateSelector;
+
+          // ストレージに保存された値がある場合はそれを優先
+          if (hasStoredSelectors) {
+            const generateButton = document.getElementById("GeneratoButton");
+            if (generateButton) {
+              generateButton.style.display = "block";
+              console.log("Using saved selectors from storage");
+            }
+          }
+          // ストレージに値がない場合のみ、サービス固有のセレクターを使用
+          else if (service && AppState.selector.serviceSets[service]) {
             const serviceSelectors = AppState.selector.serviceSets[service];
             if (
               serviceSelectors.positiveSelector &&
@@ -194,19 +208,8 @@ class PromptGeneratorApp {
               const generateButton = document.getElementById("GeneratoButton");
               if (generateButton) {
                 generateButton.style.display = "block";
-                console.log(`Activated selectors for ${service}`);
+                console.log(`Using default selectors for ${service}`);
               }
-            }
-          }
-          // サービス固有のセレクターがない場合、汎用的なセレクターをチェック
-          else if (
-            AppState.selector.positiveSelector &&
-            AppState.selector.generateSelector
-          ) {
-            const generateButton = document.getElementById("GeneratoButton");
-            if (generateButton) {
-              generateButton.style.display = "block";
-              console.log("Using saved selectors (no service match)");
             }
           }
         }

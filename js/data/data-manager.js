@@ -110,46 +110,26 @@ async function saveSelectors() {
 /**
  * セレクター情報を読み込み
  */
-// main.js の修正（init()メソッド内、145行目付近）
-// 現在のタブのサービスを検出してセレクターを設定（統合版）
-chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
-  if (tabs[0]) {
-    const service = this.detectService(tabs[0].url);
+async function loadSelectors() {
+  try {
+    const result = await Storage.get(["positiveSelector", "generateSelector"]);
 
-    // まずストレージから読み込み
-    await loadSelectors();
-
-    // ストレージに保存された値がある場合はそれを優先
-    if (
-      AppState.selector.positiveSelector &&
-      AppState.selector.generateSelector
-    ) {
-      const generateButton = document.getElementById("GeneratoButton");
-      if (generateButton) {
-        generateButton.style.display = "block";
-        console.log("Using saved selectors from storage");
-      }
+    if (result.positiveSelector) {
+      AppState.selector.positiveSelector = result.positiveSelector;
     }
-    // ストレージに値がない場合のみ、サービス固有のセレクターを使用
-    else if (service && AppState.selector.serviceSets[service]) {
-      const serviceSelectors = AppState.selector.serviceSets[service];
-      if (
-        serviceSelectors.positiveSelector &&
-        serviceSelectors.generateSelector
-      ) {
-        AppState.selector.positiveSelector = serviceSelectors.positiveSelector;
-        AppState.selector.generateSelector = serviceSelectors.generateSelector;
-        AppState.selector.currentService = service;
-
-        const generateButton = document.getElementById("GeneratoButton");
-        if (generateButton) {
-          generateButton.style.display = "block";
-          console.log(`Using default selectors for ${service}`);
-        }
-      }
+    if (result.generateSelector) {
+      // ← ここを修正（generateButton → generateSelector）
+      AppState.selector.generateSelector = result.generateSelector;
     }
+
+    // 読み込み後の検証
+    if (AppState.userSettings.optionData?.shaping === "NAI") {
+      validateAndActivateGenerateButton();
+    }
+  } catch (error) {
+    console.error("Failed to load selectors:", error);
   }
-});
+}
 
 /**
  * プロンプトセレクターを読み込み（content script注入機能付き）
