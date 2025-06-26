@@ -4,8 +4,6 @@
  *
  * 使用方法:
  * 1. スロットの追加・削除が可能
- * 2. 最小1個、最大20個まで
- * 3. ショートカットキー機能は削除
  */
 
 class PromptSlotManager {
@@ -34,9 +32,10 @@ class PromptSlotManager {
         lastModified: null,
         // 新規追加フィールド
         mode: "normal", // 'normal' | 'random' | 'sequential'
-        extractionCategory: { big: "", middle: "" },
-        extractionIndex: 0,
+        category: { big: "", middle: "" },
+        sequentialIndex: 0,
         currentExtraction: null,
+        lastExtractionTime: null,
       };
       this.slots.push(newSlot);
     }
@@ -63,9 +62,10 @@ class PromptSlotManager {
       lastModified: null,
       // 新規追加フィールド
       mode: "normal",
-      extractionCategory: { big: "", middle: "" },
-      extractionIndex: 0,
+      category: { big: "", middle: "" },
+      sequentialIndex: 0,
       currentExtraction: null,
+      lastExtractionTime: null,
     };
 
     this.slots.push(newSlot);
@@ -97,7 +97,8 @@ class PromptSlotManager {
     }
 
     // 現在選択中のスロットは削除不可
-    if (slotId === this.currentSlot) {
+    const slotIndex = this.slots.findIndex((slot) => slot.id === slotId);
+    if (slotIndex === this.currentSlot) {
       ErrorHandler.notify("選択中のスロットは削除できません", {
         type: ErrorHandler.NotificationType.TOAST,
         messageType: "warning",
@@ -105,8 +106,6 @@ class PromptSlotManager {
       return false;
     }
 
-    // スロットのインデックスを検索
-    const slotIndex = this.slots.findIndex((slot) => slot.id === slotId);
     if (slotIndex === -1) {
       console.error("Slot not found:", slotId);
       return false;
@@ -210,14 +209,12 @@ class PromptSlotManager {
     let filtered = allPrompts;
 
     // カテゴリーフィルター
-    if (slot.extractionCategory.big) {
-      filtered = filtered.filter(
-        (item) => item.data[0] === slot.extractionCategory.big
-      );
+    if (slot.category && slot.category.big) {
+      filtered = filtered.filter((item) => item.data[0] === slot.category.big);
 
-      if (slot.extractionCategory.middle) {
+      if (slot.category.middle) {
         filtered = filtered.filter(
-          (item) => item.data[1] === slot.extractionCategory.middle
+          (item) => item.data[1] === slot.category.middle
         );
       }
     }
@@ -236,13 +233,14 @@ class PromptSlotManager {
       selectedElement = filtered[randomIndex];
     } else {
       // 連続抽出
-      slot.extractionIndex = (slot.extractionIndex || 0) % filtered.length;
-      selectedElement = filtered[slot.extractionIndex];
-      slot.extractionIndex++;
+      slot.sequentialIndex = (slot.sequentialIndex || 0) % filtered.length;
+      selectedElement = filtered[slot.sequentialIndex];
+      slot.sequentialIndex++;
     }
 
     // 現在の抽出を記録
     slot.currentExtraction = selectedElement.prompt;
+    slot.lastExtractionTime = Date.now();
 
     // 追加：抽出イベントを発火
     this.onExtractionComplete(slot);
@@ -325,10 +323,10 @@ class PromptSlotManager {
 
     if (slot.mode === "random" || slot.mode === "sequential") {
       info.preview = `[${slot.mode === "random" ? "ランダム" : "連続"}抽出]`;
-      if (slot.extractionCategory.big) {
-        info.preview += ` ${slot.extractionCategory.big}`;
-        if (slot.extractionCategory.middle) {
-          info.preview += ` > ${slot.extractionCategory.middle}`;
+      if (slot.category && slot.category.big) {
+        info.preview += ` ${slot.category.big}`;
+        if (slot.category.middle) {
+          info.preview += ` > ${slot.category.middle}`;
         }
       }
     }
@@ -369,7 +367,7 @@ class PromptSlotManager {
   }
 
   /**
-   * ストレージから読み込み（修正版）
+   * ストレージから読み込み
    */
   async loadFromStorage() {
     try {
@@ -386,12 +384,10 @@ class PromptSlotManager {
         this.slots = this.slots.map((slot) => ({
           ...slot,
           mode: slot.mode || "normal",
-          extractionCategory: slot.extractionCategory || {
-            big: "",
-            middle: "",
-          },
-          extractionIndex: slot.extractionIndex || 0,
+          category: slot.category || { big: "", middle: "" },
+          sequentialIndex: slot.sequentialIndex || 0,
           currentExtraction: slot.currentExtraction || null,
+          lastExtractionTime: slot.lastExtractionTime || null,
         }));
 
         // currentSlotが範囲外の場合は調整
@@ -483,6 +479,11 @@ class PromptSlotManager {
     currentSlot.isUsed = false;
     currentSlot.lastModified = null;
     currentSlot.name = "";
+    currentSlot.mode = "normal";
+    currentSlot.category = { big: "", middle: "" };
+    currentSlot.sequentialIndex = 0;
+    currentSlot.currentExtraction = null;
+    currentSlot.lastExtractionTime = null;
 
     // エディタもクリア
     promptEditor.init("");
@@ -507,6 +508,11 @@ class PromptSlotManager {
     slot.isUsed = false;
     slot.lastModified = null;
     slot.name = "";
+    slot.mode = "normal";
+    slot.category = { big: "", middle: "" };
+    slot.sequentialIndex = 0;
+    slot.currentExtraction = null;
+    slot.lastExtractionTime = null;
 
     await this.saveToStorage();
     this.updateUI();
@@ -589,7 +595,7 @@ class PromptSlotManager {
 
           if (slot.mode === "random" || slot.mode === "sequential") {
             info.mode = slot.mode;
-            info.category = slot.extractionCategory;
+            info.category = slot.category;
             info.currentExtraction = slot.currentExtraction;
           }
 
@@ -617,6 +623,59 @@ class PromptSlotManager {
 
     await this.saveToStorage();
     this.updateUI();
+  }
+
+  /**
+   * スロットデータをエクスポート
+   */
+  exportSlots() {
+    return {
+      version: "1.0",
+      currentSlot: this.currentSlot,
+      slots: this.slots.map((slot) => ({
+        ...slot,
+        // IDは除外（インポート時に再割り当て）
+        id: undefined,
+      })),
+      exportDate: new Date().toISOString(),
+    };
+  }
+
+  /**
+   * スロットデータをインポート
+   */
+  async importSlots(data) {
+    try {
+      if (!data.slots || !Array.isArray(data.slots)) {
+        throw new Error("Invalid import data");
+      }
+
+      // 新しいIDで再構築
+      this.slots = [];
+      this._nextId = 0;
+
+      data.slots.forEach((slot) => {
+        this.slots.push({
+          ...slot,
+          id: this._nextId++,
+          // デフォルト値を確保
+          mode: slot.mode || "normal",
+          category: slot.category || { big: "", middle: "" },
+          sequentialIndex: slot.sequentialIndex || 0,
+          currentExtraction: slot.currentExtraction || null,
+          lastExtractionTime: slot.lastExtractionTime || null,
+        });
+      });
+
+      this.currentSlot = 0;
+      await this.saveToStorage();
+      this.updateUI();
+
+      return true;
+    } catch (error) {
+      console.error("Import failed:", error);
+      return false;
+    }
   }
 }
 

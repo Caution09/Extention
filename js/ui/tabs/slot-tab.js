@@ -159,6 +159,11 @@
         const container = this.elements.container;
         if (!container) return;
 
+        console.log(
+          "Updating slot display with slots:",
+          this.slotManager.slots
+        );
+
         container.innerHTML = "";
 
         // 使用中のスロット数を更新
@@ -169,8 +174,13 @@
           countSpan.textContent = `${usedCount}/${totalCount}`;
         }
 
-        // 各スロットのカードを作成（現在の順序でインデックスを付与）
+        // 各スロットのカードを作成
         this.slotManager.slots.forEach((slot, index) => {
+          console.log(`Creating card for slot ${slot.id}:`, {
+            mode: slot.mode,
+            category: slot.category,
+          });
+
           const info = this.slotManager.getSlotInfo(slot.id);
           // 表示番号を現在の順序に基づいて上書き
           info.displayNumber = index + 1;
@@ -341,49 +351,35 @@
 
         if (!bigSelect) return;
 
-        // 大項目の選択肢を設定
+        // オプションを追加
+        bigSelect.innerHTML = '<option value="">すべて</option>';
         const bigCategories = this.getCategoryOptions("big");
         bigCategories.forEach((cat) => {
           const option = document.createElement("option");
           option.value = cat;
           option.textContent = cat;
-          option.selected = cat === slot.category?.big;
           bigSelect.appendChild(option);
         });
 
-        // 中項目の選択肢を更新
-        if (slot.category?.big) {
-          this.updateMiddleCategories(middleSelect, slot.category.big);
-          if (slot.category.middle) {
-            middleSelect.value = slot.category.middle;
-          }
-        }
+        // DOMが更新された後に値を設定
+        requestAnimationFrame(() => {
+          if (slot.category && slot.category.big) {
+            bigSelect.value = slot.category.big;
+            this.updateMiddleCategories(middleSelect, slot.category.big);
+            middleSelect.disabled = false;
 
-        // イベントリスナー
-        bigSelect.addEventListener("change", async (e) => {
-          const newBig = e.target.value;
-          slot.category = { big: newBig, middle: "" };
-          middleSelect.disabled = !newBig;
-
-          if (newBig) {
-            this.updateMiddleCategories(middleSelect, newBig);
-          } else {
-            middleSelect.innerHTML = '<option value="">すべて</option>';
-          }
-
-          // 連続抽出モードの場合はインデックスをリセット
-          if (slot.mode === "sequential") {
-            slot.sequentialIndex = 0;
-            const indexSpan = card.querySelector(".sequential-index");
-            if (indexSpan) {
-              indexSpan.textContent = "0";
+            if (slot.category.middle) {
+              requestAnimationFrame(() => {
+                middleSelect.value = slot.category.middle;
+              });
             }
           }
-
-          await this.slotManager.saveToStorage();
         });
 
         middleSelect.addEventListener("change", async (e) => {
+          if (!slot.category) {
+            slot.category = {};
+          }
           slot.category.middle = e.target.value;
 
           // 連続抽出モードの場合はインデックスをリセット
@@ -438,7 +434,9 @@
           }
         });
 
+        // まずクリアしてから追加
         select.innerHTML = '<option value="">すべて</option>';
+
         Array.from(categories)
           .sort()
           .forEach((cat) => {
@@ -718,100 +716,53 @@
       async handleContainerChange(e) {
         const target = e.target;
 
-        // 名前の編集
-        if (target.classList.contains("slot-name-edit")) {
-          const slotId = parseInt(target.dataset.slotId);
-          const slot = this.slotManager.slots.find((s) => s.id === slotId);
-          if (slot) {
-            slot.name = target.value;
-            await this.slotManager.saveToStorage();
-          }
-        }
-
-        // プロンプトの編集
-        if (target.classList.contains("slot-prompt-edit")) {
-          const slotId = parseInt(target.dataset.slotId);
-          const slot = this.slotManager.slots.find((s) => s.id === slotId);
-          if (slot) {
-            slot.prompt = target.value;
-            slot.isUsed = target.value.length > 0;
-
-            // 文字数を更新
-            const card = target.closest(".slot-card");
-            const charCount = card.querySelector(".slot-char-count");
-            if (charCount) {
-              charCount.textContent = `${target.value.length} 文字`;
-            }
-
-            // 使用中のスロット数を更新
-            const usedCount = this.slotManager.getUsedSlotsCount();
-            const countSpan = document.getElementById("used-slots-count");
-            if (countSpan) {
-              countSpan.textContent = usedCount;
-            }
-
-            await this.slotManager.saveToStorage();
-          }
-        }
-
         // モード変更
         if (target.classList.contains("slot-mode-radio")) {
           const slotId = parseInt(target.dataset.slotId);
           const newMode = target.value;
           const slot = this.slotManager.slots.find((s) => s.id === slotId);
 
-          if (slot && slot.mode !== newMode) {
+          if (slot) {
             slot.mode = newMode;
 
-            // モード切り替え時の処理
-            const card = target.closest(".slot-card");
-            const normalContent = card.querySelector(".normal-mode-content");
-            const extractionContent = card.querySelector(
-              ".extraction-mode-content"
-            );
-
-            if (newMode === "normal") {
-              normalContent.style.display = "block";
-              extractionContent.style.display = "none";
-              slot.category = null;
-              slot.sequentialIndex = 0;
-              slot.currentExtraction = null;
-            } else {
-              normalContent.style.display = "none";
-              extractionContent.style.display = "block";
+            // カテゴリー情報を初期化（まだ存在しない場合）
+            if (!slot.category) {
               slot.category = { big: "", middle: "" };
+            }
+
+            // 連続抽出の場合はインデックスを初期化
+            if (newMode === "sequential") {
               slot.sequentialIndex = 0;
-              slot.currentExtraction = null;
-              slot.lastExtractionTime = null;
             }
 
-            // 抽出関連の要素をリセット
-            if (newMode === "normal") {
-              slot.isUsed = slot.prompt && slot.prompt.length > 0;
-            } else {
-              slot.isUsed = true; // 抽出モードは常に使用中扱い
-            }
-
-            // 文字数カウントを更新
-            const usedCount = this.slotManager.getUsedSlotsCount();
-            const countSpan = document.getElementById("used-slots-count");
-            if (countSpan) {
-              countSpan.textContent = usedCount;
-            }
-
-            // タイムスタンプを更新
-            if (newMode !== "normal") {
-              slot.lastExtractionTime = Date.now();
-            } else {
-              slot.lastExtractionTime = null;
-            }
             await this.slotManager.saveToStorage();
+
+            // カードを再描画して表示を更新
+            const card = target.closest(".slot-card");
+            if (card) {
+              const updatedInfo = this.slotManager.getSlotInfo(slotId);
+              const slotIndex = this.slotManager.slots.findIndex(
+                (s) => s.id === slotId
+              );
+              updatedInfo.displayNumber = slotIndex + 1;
+
+              const newCard = this.createSlotCard(updatedInfo);
+              card.replaceWith(newCard);
+            }
           }
         }
 
-        // UI更新
-        this.slotManager.updateUI();
-        this.updateDisplay();
+        // 名前の変更
+        else if (target.classList.contains("slot-name-edit")) {
+          const slotId = parseInt(target.dataset.slotId);
+          const newName = target.value;
+          await this.slotManager.setSlotName(slotId, newName);
+        }
+
+        // プロンプトの変更
+        else if (target.classList.contains("slot-prompt-edit")) {
+          await this.handlePromptEdit(target);
+        }
       }
 
       // 新規：スロットの抽出表示を更新
@@ -874,8 +825,13 @@
       async onShow() {
         console.log("Switching to slot tab, updating display...");
 
-        // 現在のスロットを保存してから表示を更新
+        // 現在のスロットを保存
         await this.slotManager.saveCurrentSlot();
+
+        // ストレージから最新データを再読み込み
+        await this.slotManager.loadFromStorage();
+
+        // 表示を更新
         this.updateDisplay();
       }
 
