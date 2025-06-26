@@ -1,18 +1,28 @@
 大項目	中項目	小項目	Prompt
 エフェクト	エフェクト	エフェクト	effect
+エフェクト	エフェクト	メタルスクラッチ	metal scratch
+エフェクト	オブジェクト	吊り下げられた	suspended crystal
+エフェクト	オブジェクト	吊り下げられた無色の	suspended colorless crystal
+エフェクト	グロテスク	ブラッドミスト	blood mist
+エフェクト	グロテスク	血の霧	blood fog
 エフェクト	グロテスク	血まみれの水	bloodwater
 エフェクト	グロテスク	血液をはねかける	splashing blood
 エフェクト	グロテスク	血液雨	blood rain
 エフェクト	グロテスク	血液滴	blood drop
 エフェクト	グロテスク	血痕	bloodstain
+エフェクト	グロテスク	絶妙な血	exquisite blood
 エフェクト	シンボル	バラ	bara
 エフェクト	シンボル	バラ2	not rose
 エフェクト	シンボル	音符	musical note
+エフェクト	シンボル	空中に浮かぶ羽	feathers floating in the air
+エフェクト	シンボル	五gram星	pentagram
 エフェクト	シンボル	紙吹雪	confetti
 エフェクト	シンボル	宙に舞う羽	feathers
 エフェクト	シンボル	宙に舞う羽	floating feathers
 エフェクト	シンボル	錨マーク	anchor symbol
 エフェクト	シンボル	薔薇	rose
+エフェクト	デザイン	古典的な装飾境界線	classic decorative border
+エフェクト	液体	すべてが流れて溶けます	everything flowing melt
 エフェクト	液体	液体	liquid body
 エフェクト	液体	汗	sweat
 エフェクト	液体	汗のしずく	sweatdrop
@@ -22,8 +32,10 @@
 エフェクト	液体	飛び散る汗	flying sweatdrops
 エフェクト	液体	飛沫	splash
 エフェクト	液体	飛沫2	splashing
+エフェクト	液体	油	oil
 エフェクト	炎	いい感じの炎	flame painter
 エフェクト	炎	ハナビ	hanabi
+エフェクト	炎	ファイアバタフライ	fire butterflys
 エフェクト	炎	渦巻く炎	flame whirlpool
 エフェクト	炎	炎	flames
 エフェクト	炎	煙がメイン火薬の煙	smoke of gunpowder
@@ -35,27 +47,69 @@
 エフェクト	炎	火花	spark
 エフェクト	炎	花火	fireworks
 エフェクト	炎	周りに炎	flames around
+エフェクト	炎	絶妙な炎	exquisite flame
 エフェクト	炎	爆発	explosion
+エフェクト	炎	飛び火	flying sparks
+エフェクト	煙	かすんだ霧	hazy fog
 エフェクト	煙	煙	smoke
 エフェクト	煙	湿気	humid
 エフェクト	煙	蒸気	steam
+エフェクト	金属	チェーンストーム	chain storm
+エフェクト	金属	銀と金を溶かす	melting and
+エフェクト	金属	溶融鉄のスパッタ	sputtemoltiron
+エフェクト	金属	流れる鉄	flowing iron
+エフェクト	光	ティンダル効果	tyndall effect
+エフェクト	光	ブルーム効果	bloom effect
 エフェクト	光	フレア	flare
+エフェクト	光	ライトシャフト	light shafts
 エフェクト	光	華麗な光	brilliant light
+エフェクト	光	貴重な屈折	precious refraction
+エフェクト	光	輝きを深める輪郭	contour deepening glow
+エフェクト	光	屈折	refraction
+エフェクト	光	蛍光	fluorescence
+エフェクト	光	蛍光紫	fluorescent purple
 エフェクト	光	光の粒子	light particles
+エフェクト	光	光学現象	optical phenomena
+エフェクト	光	波の輝く光	glistening light of waves
+エフェクト	光	発光	luminescence
+エフェクト	光	反射的	reflective
 エフェクト	光	粒子	particle
+エフェクト	光	輪郭の深化	contour deepening
+エフェクト	自然	花が疲れます	flowers tire
 エフェクト	自然	花びらが舞う	falling petals
+エフェクト	自然	飛ぶ花びら	flying petals
+エフェクト	状態	溶けた	melt
+エフェクト	状態	流れる透明な黒	flowing transparent black
+エフェクト	状態	流れる透明な白	flowing transparent white
 エフェクト	水系	バブル	bubble
+エフェクト	水系	花の泡	flowery bubbles
+エフェクト	水系	小さな渦	small whirlpool
 エフェクト	水系	水	water
 エフェクト	水系	水スプレー	water spray
 エフェクト	水系	水ブルーム	water bloom
 エフェクト	水系	水をはねかける	splashing water
+エフェクト	水系	飛ぶスプラッシュ	flying splashes
+エフェクト	天体	アレイスター	array stars
 エフェクト	天体	ゴッドレイ	god ray
+エフェクト	天体	スターリバー	star river
 エフェクト	天体	ブラックホール	blackhole behind the girl
+エフェクト	天体	より透明な星	more transparent stars
 エフェクト	電気	稲妻チェーン	lightning chain
 エフェクト	電気	稲妻効果	lightning effect
+エフェクト	電気	手からの稲妻の閃光	flashes of lightning from the hands
+エフェクト	電気	手に稲妻	lightning in hand
 エフェクト	電気	電気	electric
+エフェクト	電気	内に稲妻があります	with lightning inside the crystal
+エフェクト	凍結	凍った羽	frozfeathers
+エフェクト	凍結	氷	ice
 エフェクト	氷	雪の結晶	snowflake
 エフェクト	魔法	マジックサークル	magic circle
+エフェクト	魔法	衣服の結晶化	crystallization of clothes
+エフェクト	魔法	渦巻き	swirl
+エフェクト	流れ	フローフロー	floating flow
+エフェクト	粒子	ほこり	dust
+エフェクト	粒子	軽い粒子	light particle
+エフェクト	粒子	発光粒子	luminous particles
 オブジェクト	オブジェクト	オーナメント	ornament
 オブジェクト	オブジェクト	おしっこの水たまり	pee puddle
 オブジェクト	オブジェクト	ダンボール箱	cardboard box
@@ -78,17 +132,33 @@
 オブジェクト	家具	布団	futon
 オブジェクト	家具	壁掛時計	wall clock
 オブジェクト	家具	冷蔵庫	refrigerator
+オブジェクト	花	ポピー	poppies
+オブジェクト	花	花	flower
+オブジェクト	花	花の花	flowery flowers
+オブジェクト	花	花弁	petal
+オブジェクト	花	血の桜	blood cherry blossom
 オブジェクト	楽器	スピーカーアンプ	speaker amplifier
 オブジェクト	楽器	ドラム	drums
 オブジェクト	楽器	マイク	mic
 オブジェクト	楽器	楽器全般	instrument
 オブジェクト	楽器	楽器全般演奏	playing instrument
+オブジェクト	機械	バネ	spring
+オブジェクト	機械	時計	clock
+オブジェクト	機械	上記の巨大なクロックコア	huge clock core above
+オブジェクト	芸術品	金属製の彫刻	metal carving
 オブジェクト	建造物	ピラミッド	pyramid
+オブジェクト	公共物	フェンス	fence
 オブジェクト	公共物	街灯	lamppost
 オブジェクト	公共物	自販機	vending machine
 オブジェクト	公共物	電線,電柱	power lines
 オブジェクト	公共物	電線,電柱2	utility pole
 オブジェクト	公共物	電線,電柱3	telephone pole
+オブジェクト	自然物	とげ	thorns
+オブジェクト	自然物	ブドウ	vines
+オブジェクト	自然物	ブランチ	branch
+オブジェクト	自然物	海藻	seaweed
+オブジェクト	自然物	貝殻	seashell
+オブジェクト	自然物	巻き貝	conch
 オブジェクト	自然物	逆さまの山	inverted mountain
 オブジェクト	自然物	桜	cherry blossoms
 オブジェクト	自然物	桜の下	under cherry blossoms
@@ -96,16 +166,20 @@
 オブジェクト	自然物	山	mountains
 オブジェクト	自然物	草	grass
 オブジェクト	自然物	太陽	sun
+オブジェクト	自然物	葉	leaves
 オブジェクト	小物	VRゴーグル	VR Goggles
 オブジェクト	小物	カーテン	curtains
+オブジェクト	小物	ケージ	cage
 オブジェクト	小物	サッカーボール	soccer ball
 オブジェクト	小物	ストロー	straw
 オブジェクト	小物	スマホ	smartphones
 オブジェクト	小物	タバコ	cigarettes
 オブジェクト	小物	タンブラー	tumbler
+オブジェクト	小物	チェーン	chains
 オブジェクト	小物	パソコン	personal computer
 オブジェクト	小物	ランドセル	randoseru
 オブジェクト	小物	リュックサック	rucksack
+オブジェクト	小物	ロープ	rope
 オブジェクト	小物	花瓶	vase
 オブジェクト	小物	懐中時計	pocket watch
 オブジェクト	小物	掛け布団	quilt
@@ -132,8 +206,15 @@
 オブジェクト	乗り物	豪華客船	luxury liner
 オブジェクト	乗り物	自転車	bicycles
 オブジェクト	乗り物	車	car
+オブジェクト	乗り物	車	cars
 オブジェクト	乗り物	戦艦	battle ship
 オブジェクト	乗り物	電車	train
+オブジェクト	電子機器	壊れた画面	brokscreen
+オブジェクト	日用品	長い糸	long yarn
+オブジェクト	日用品	鳥かご	birdcage
+オブジェクト	宝石	ダイヤモンド	diamonds
+オブジェクト	宝石	パール	pearl
+オプション	オプション	キャラクター	character
 オプション	オプション	ジッパー	zipper
 オプション	オプション	ホイップクリーム	whipped cream
 オプション	オプション	まゆ毛が前髪で隠れている	eyebrows hidden by hair
@@ -165,6 +246,7 @@
 オプション	汚物	排泄物	excrement
 オプション	汚物	糞便	faeces
 お気に	お気に	むき出しの白シャツ	bare white shirt
+カメラワーク	アングル	全身	whole body
 カメラワーク	その他	焦点がはっきりする	sharp focus
 カメラワーク	フォーカス	バストアップ	upper body
 カメラワーク	フォーカス	ももから上	cowboy shot
@@ -181,15 +263,24 @@
 カメラワーク	画角	上半身のみ	only upper body
 カメラワーク	画角	全身撮影	full body
 カメラワーク	画角	頭をフレーム外へ	head out of frame
+カメラワーク	角度	女の子の正面	girls' front
+カメラワーク	角度	前面から斜めに	diagonally from front
 カメラワーク	距離	カメラとはほど遠い	far from viewer
 カメラワーク	距離	カメラに近い	very close to viewers
 カメラワーク	距離	カメラの近く	close to viewers
+カメラワーク	距離	ロングショット	long shot
+カメラワーク	距離	人々のクローズアップ	close up of people
+カメラワーク	効果	ソフトフォーカス	soft focus
+カメラワーク	効果	ロングフォーカス	long focus
+カメラワーク	効果	過剰抽出	overexplosure
+カメラワーク	効果	露出曝露	overexposure
 カメラワーク	構図	アクションシーン	action shot
 カメラワーク	構図	イラストのキャラ割合が減る	wide shot
 カメラワーク	構図	おしりにフォーカス	anal focus
 カメラワーク	構図	ダイナミックな画角	dynamic angle
 カメラワーク	構図	ドラマチックな画角	dramatic angle
 カメラワーク	構図	パースの強い画角	perspective
+カメラワーク	構図	フレーム	frame
 カメラワーク	構図	ローアングル	low angle
 カメラワーク	構図	映画的なショット	cinematic shot
 カメラワーク	構図	映画的な画角	cinematic angle
@@ -201,6 +292,7 @@
 カメラワーク	構図	手すりがある構図	railing
 カメラワーク	構図	手を後ろに回す構図	arm behind back
 カメラワーク	構図	少し低い位置から	from right under
+カメラワーク	構図	動的な構成	dynamic composition
 カメラワーク	構図	髪が肩にかかる構図	hair over shoulder
 カメラワーク	視点	キャラの横顔	profile
 カメラワーク	視点	キャラの後ろからの視点	from behind
@@ -421,6 +513,7 @@
 キャラクター	アサルトリリィ	一柳梨璃	{{{{hitotsuyanagi riri (assault lily)}}}}
 キャラクター	アズールレーン	meowfficer	{{{{meowfficer_(azur_lane)}}}}
 キャラクター	アズールレーン	Z23	{{{{z23_(azur_lane)}}}}
+キャラクター	アズールレーン	アズールレーン	azur lane
 キャラクター	アズールレーン	アルジェリー	{{{{algerie_(azur_lane)}}}}
 キャラクター	アズールレーン	イラストリアス	{{{{illustrious_(azur_lane)}}}}
 キャラクター	アズールレーン	エンタープライズ	{{{{enterprise_(azur_lane)}}}}
@@ -437,8 +530,8 @@
 キャラクター	アズールレーン	ベルファスト	belfast_(azur_lane)
 キャラクター	アズールレーン	ユニコーン	unicorn (azur lane)
 キャラクター	アズールレーン	ラフィー	{{{{laffey_(azur_lane)}}}}
-キャラクター	アズールレーン	ル・マラン	{{{{le_malin_(listless_lapin)_(azur_lane)}}}}
 キャラクター	アズールレーン	ル・マラン	{{{{le_malin_(azur_lane)}}}}
+キャラクター	アズールレーン	ル・マラン	{{{{le_malin_(listless_lapin)_(azur_lane)}}}}
 キャラクター	アズールレーン	綾波	{{{{ayanami_(azur_lane)}}}}
 キャラクター	アズールレーン	樫野	{{{{kashino_(azur_lane)}}}}
 キャラクター	アズールレーン	高尾	{{{{takao_(azur_lane)}}}}
@@ -1354,6 +1447,7 @@
 シチュエーション	イベント	デート	hang out
 シチュエーション	イベント	バレンタイン	valentine
 シチュエーション	イベント	ハロウィン	halloween
+シチュエーション	グロテスク	血まみれのシーン	bloody scenes
 シチュエーション	シチュ	カード遊び	playing card
 シチュエーション	シチュ	カップル	couple
 シチュエーション	シチュ	キス	kiss
@@ -1402,20 +1496,35 @@
 シチュエーション	シチュ	背中合わせ	back to back
 シチュエーション	シチュ	壁ドン	pov hands,wall
 シチュエーション	シチュ	隣に座ってる	side view,sitting
+シチュエーション	バトル	戦争	war
+シチュエーション	バトル	戦闘	battleing
+シチュエーション	隠れ	花に隠されています	hiddin the light flowers
+シチュエーション	終末	終末のシーン	doomsday scenes
 その他	その他	〇〇に入っている	in container
 その他	その他	SNS	sns
+その他	その他	イスキー	isky
 その他	その他	インスタグラム(IDと組み合わせる)	instagram
+その他	その他	ステート	steet
 その他	その他	ツイッター	twitter
+その他	その他	バナ	bana
+その他	その他	ヒテン1	hit1
+その他	その他	ルン	loong
+その他	その他	一人の女の子	one girl
 その他	その他	注入	injection
 その他	その他	粘着性	sticky
 その他	その他	不健全	morbid
 その他	その他	複製	duplicate
 その他	その他	薬物	drugs
+その他	メタ	オリジナル	original
+その他	化学的	苛性	caustic
+その他	技術的	音量	volume
+その他	技術的	角度	angle
 テイスト	テイスト	４コマ	4koma
 テイスト	テイスト	SCIFI	scifi
 テイスト	テイスト	アウトラインの強調	thick outline
 テイスト	テイスト	クトゥルフ	cthulhu
 テイスト	テイスト	ゲームCG	game cg
+テイスト	テイスト	メタルスタイル	metal style
 テイスト	テイスト	モザイク	mosaic
 テイスト	テイスト	概要	outline
 テイスト	テイスト	光沢	caustics
@@ -1444,6 +1553,7 @@
 テイスト	テーマ	東方Projectテーマ	touhou theme
 テイスト	テーマ	日本テーマ	japanese theme
 テイスト	テーマ	白テーマ	white theme
+テイスト	テーマ	魔法のスタイル	magic style
 テイスト	テーマ	魔法少女テーマ	magical girl theme
 テイスト	テーマ	料理テーマ	cooking theme
 テイスト	テーマ	緑テーマ	green theme
@@ -1591,6 +1701,7 @@
 テイスト	画風	アナログっぽい感じ	traditional media
 テイスト	画風	アニメ	anime
 テイスト	画風	アニメのスクショ風	anime screencap
+テイスト	画風	イラスト	illustration
 テイスト	画風	コンセプトアート	concept art
 テイスト	画風	スケッチ	sketch
 テイスト	画風	セルシェーダー	cel shading
@@ -1604,6 +1715,16 @@
 テイスト	画風	抽象画	abstract
 テイスト	画風	日本画	nihonga
 テイスト	画風	浮世絵	ukiyo e
+テイスト	画風	漫画	comic
+テイスト	画風	漫画とアニメ	manganime
+テイスト	技法	インパスト	impasto
+テイスト	技法	ペインティング	painting
+テイスト	技法	水彩媒体	watercolor medium
+テイスト	技法	壁紙	wallpaper
+テイスト	技法	壁紙8k cg	wallpaper 8k cg
+テイスト	技法	油絵	oil painting
+テイスト	効果	ダイナミックファジネス	dynamic fuzziness
+テイスト	効果	レイシー・ミスティ	lacy misty
 テイスト	作画資料	キャラ一覧	character chart
 テイスト	作画資料	キャラ設定	reference sheet
 テイスト	作画資料	ポーズ集	to many pose
@@ -1700,6 +1821,9 @@
 テイスト	作品	矢吹 健太郎風	Yabuki kentaro
 テイスト	作品	幼女戦記風	{{{youjo senki}}}
 テイスト	作品	涼宮ハルヒの憂鬱	suzumiya haruhi no yuuutsu
+テイスト	質感	ゼラチン状のテクスチャー	gelatinous texture
+テイスト	質感	金属のテクスチャー	metal texture
+テイスト	質感	金属欠陥	metal defects
 テイスト	世界観	SF	science fiction
 テイスト	世界観	サイバーパンク	cyberpunk
 テイスト	世界観	ファンタジー	fantasy girl illust
@@ -1716,553 +1840,6 @@
 テイスト	未分類	アニメのスクショ	anime screeshot
 テイスト	未分類	アニメの顔	anime face
 テイスト	未分類	アニメの顔と目	anime face eyes
-キャラクター	アズールレーン	アズールレーン	azur lane
-エフェクト	天体	アレイスター	array stars
-服装	ドレス	アングルセイラードレス	anglesailor dress
-照明	環境光	アンビエントライト	ambient light
-その他	その他	イスキー	isky
-テイスト	画風	イラスト	illustration
-照明	装飾光	イルミネーション	illumination
-テイスト	技法	インパスト	impasto
-場所	自然	ウォーターエッジの近く	near the water edge
-服装	スカート	エッジのロイヤルブルースカート	royal skirt with edge
-修飾語	形容詞	エレガント	elegant
-装飾	アクセサリー	エンジェルハロー	angel halo
-服装	和装	オープンハカマ	ophakama
-身体	体型	オパイロリ	oppai loli
-その他	メタ	オリジナル	original
-エフェクト	煙	かすんだ霧	hazy fog
-服装	宗教服	カソック	cassock
-状態	劣化	カビ	mouldy
-オプション	オプション	キャラクター	character
-属性	属性	キャラクターガール	charactergirl
-文章	未分類	キャラクターはフレームの中央にあります	the character is in the center of the frame
-文章	未分類	きらめくアニメの目	sparkling anime eyes
-修飾語	修飾語	クラシック	classic
-修飾語	修飾語	グランド	grand
-装飾	首	クロスネックレス	cross necklace
-オブジェクト	小物	ケージ	cage
-場所	屋内	コーナー	corner
-色	色	コーラル	coral
-文章	未分類	サイドブラント前髪	side blunt bangs
-文章	未分類	サファイアフリル	sapphire frills
-文章	未分類	さまざまな金属の背景	various metals background
-場所	屋内	シーリング	ceiling
-照明	光	シティライト	citylight
-文章	未分類	ジュリエットスリーブ	juliet sleeve
-服装	高級服	シルクショール	silk shawl
-エフェクト	天体	スターリバー	star river
-属性	属性	スタイルガール	style girl
-その他	その他	ステート	steet
-修飾語	動作	ストリップ	strips
-動作	ポーズ	ストレッチ	stretch
-修飾語	形容詞	すばらしい	amazing
-エフェクト	液体	すべてが流れて溶けます	everything flowing melt
-修飾語	形容詞	スムーズ	smooth
-テイスト	質感	ゼラチン状のテクスチャー	gelatinous texture
-身体	脚	ソール	sole
-カメラワーク	効果	ソフトフォーカス	soft focus
-身体	翼	ダーゴンウィングス	dargon wings
-髪	動き	ダイナミックな髪	dynamic hair
-テイスト	効果	ダイナミックファジネス	dynamic fuzziness
-オブジェクト	宝石	ダイヤモンド	diamonds
-顔	目	ダイヤモンドとまぶしい目	glaring eyes
-動作	衣服	タックを開けます	optuck
-オブジェクト	小物	チェーン	chains
-エフェクト	金属	チェーンストーム	chain storm
-装飾	手	チェーンリング	chain ring
-文章	未分類	チュールスカート	tulle skirt
-文章	未分類	チュールレースのスカートの花と草の牧草地	tulle lace skirt flowers grass meadow
-文章	未分類	ツイストブレード	twist braid
-文章	未分類	ツートーンヘア：青と白	two tone hair:white
-装飾	帽子	ティアラ	tiara
-エフェクト	光	ティンダル効果	tyndall effect
-身体	しっぽ	テールフィン	tailfin
-文章	未分類	テクスチャースキン	texture skin
-文章	未分類	テクスチャウィング(材質指定とセット)	texture wings
-文章	未分類	テクスチャの花	texture flowers
-文章	未分類	テクスチャヘア	texture hair
-文章	未分類	テクスチャボディを結晶化します	crystallize texture body
-修飾語	修飾語	て美的	aesthetic
-オブジェクト	自然物	とげ	thorns
-文章	未分類	どこにでも長い髪が浮かんでいます	long hair floating everywhere
-服装	袖	トップスリーブ	top sleeves
-身体	しっぽ	ドラゴンウィング	dragonwings
-文章	未分類	ドラゴンが少女の後ろに立っています	dragon stands behind the girl
-背景	幻想	ドラゴンの背景	dragon background
-顔	目	ドラゴンの目	dragon eyes
-身体	角	ドラゴンホーン	dragon horn
-文章	未分類	トリプルクラウンが黒曜石を象徴しています	triple crown inlaid with obsidian
-服装	装飾付き	ドレスの頭蓋骨	skull on dress
-服装	露出度	ドレスを明らかにします	revealing dress
-身体	状態	と壊れた体	brokbody
-動作	一般	な動き	movement
-修飾語	形容詞	ノーブル	noble
-オブジェクト	宝石	パール	pearl
-背景	都市	バックグラウンドアーバンルーフトップ	background urban rooftop
-その他	その他	バナ	bana
-オブジェクト	機械	バネ	spring
-顔	目	バラの目	rose eyes
-背景	自然	パンパスグラスフィールド	pampas grass field
-顔	目	ピーチピンクの生徒	peach pink pupils
-顔	目	ビキニリデンスと虹の目	bikiniiridescence rainbow eyes
-修飾語	形状	ひだのついた	corrugated
-その他	その他	ヒテン1	hit1
-生物	動物	ヒトデ	starfish
-背景	背景	ひび割れた床	cracked floor
-顔	目の色	ピンクの生徒	pink pupils
-エフェクト	炎	ファイアバタフライ	fire butterflys
-動作	動作	ファインティング	fighting
-身体	しっぽ	フィッシュテール	highly fishtail
-文章	未分類	フィリグリー	filigree
-服装	一式	フード付きケープ	hooded cape
-場所	屋外	フェアリーランド	fairyland
-属性	種族	フェニックスガール	phoenix girl
-オブジェクト	公共物	フェンス	fence
-オブジェクト	自然物	ブドウ	vines
-エフェクト	グロテスク	ブラッドミスト	blood mist
-オブジェクト	自然物	ブランチ	branch
-服装	特徴	フリル	frills
-服装	特徴	フリンジ	fringes
-エフェクト	光	ブルーム効果	bloom effect
-カメラワーク	構図	フレーム	frame
-修飾語	修飾語	フロー	flow
-エフェクト	シンボル	フローイング羽	floaing feathers
-エフェクト	煙	フローティングクラウド	floating cloud
-髪	色	フローティングとレインボーの髪	floating rainbow hair
-エフェクト	破片	フローティングフラグメント	floating fragments
-エフェクト	布	フローティングホワイトシルク	floating silk
-エフェクト	光	フローティングライトスポット	floating light spot
-エフェクト	流れ	フローフロー	floating flow
-髪	質感	ふわふわした髪	fluffy hair
-髪	スタイル	ヘアカット	haircut
-装飾	ヘアアクセサリー	ヘアフープ	hair hoop
-装飾	ヘアアクセサリー	ヘアボウ	hair bow
-装飾	ヘアアクセサリー	ヘアリボン	hair ribbon
-テイスト	技法	ペインティング	painting
-装飾	ヘアアクセサリー	ベール	veil
-動作	ポーズ	ポーズ	posing
-表情	表情	ぽかんとした顔	blank stare
-エフェクト	粒子	ほこり	dust
-服装	スーツ	ボディスーツ	bodysuit
-オブジェクト	花	ポピー	poppies
-服装	ドレス	ホルタードレス	halter dress
-文章	未分類	ぼんやりと見つめています	staring blankly
-動作	目線	まっすぐに	straight on
-服装	下着	まとまったブルマー	wholebloomer
-服装	一式	マント	cloak
-身体	胸	ミディアムバスト	medium bust
-文章	未分類	ミディアムフリルスカート	medium frilled skirt
-身体	下半身	むき出しの胃	bare stomach
-身体	しっぽ	メカウィング	mechwing
-文章	未分類	メカニカルアーマーヘッドドレス	mechanical armor headdress
-属性	種族	メカニカルガール	mechanical girl
-文章	未分類	メカのカバレッジ	mechcoverage
-文章	未分類	メカの服	mechclothes
-エフェクト	エフェクト	メタルスクラッチ	metal scratch
-テイスト	テイスト	メタルスタイル	metal style
-文章	未分類	めちゃくちゃフリル	insanely frills
-動作	動作	モーション	motion
-髪	髪質	ゆるい長い髪	loose long hair
-文章	未分類	ように澄んだ手	hands as clear as jewels
-文章	未分類	より少ない星は円を形成します	less stars form circle
-エフェクト	天体	より透明な星	more transparent stars
-エフェクト	光	ライトシャフト	light shafts
-文章	未分類	ラテンクロスは出芽しました	latin cross budded
-顔	目	ラベンダーの目	lavender eyes
-背景	雲	ランダムに分散した雲	randomly distributed clouds
-その他	その他	ルン	loong
-テイスト	効果	レイシー・ミスティ	lacy misty
-品質	技術	レイトレーシング	ray tracing
-エフェクト	布	レースが流れて溶けます	lace flowing melt
-服装	ドレス	レース付きの半透明の羽ばたきドレス	translucent fluttering dress with lace
-オブジェクト	小物	ロープ	rope
-服装	レイヤード	ローブの下のシャツ	shirt under robe
-身体	腕	ロボットアーム	robot arm
-属性	種族	ロボットガール	robot girl
-カメラワーク	距離	ロングショット	long shot
-服装	ドレス	ロングドレス	long dress
-カメラワーク	効果	ロングフォーカス	long focus
-文章	未分類	ワインのひょうたんを持っています	holding wine gourd
-動作	手	握りしめられた自分の手	own hands clasped
-修飾語	形容詞	暗い	dark
-服装	色	暗いドレス	dark dress
-照明	陰影	暗い激しい影	dark intense shadows
-属性	性質	暗い魂	dark soul
-背景	天体	暗い真夜中の空	dark midnight sky
-背景	背景	暗闇	darkness
-文章	文章	暗闇の表情は落ち込んでいます	gloom expression depressed
-背景	天体	暗雲	dark clouds
-属性	性質	暗黒面	darkside
-属性	性質	闇落ち	dark persona
-文章	文章	衣服の下での劇核	ejacuculation under clothes
-エフェクト	魔法	衣服の結晶化	crystallization of clothes
-その他	その他	一人の女の子	one girl
-動作	手	隠された手	hiddhands
-顔	目の形	右目	right eye
-エフェクト	魔法	渦巻き	swirl
-文章	文章	影はありません	no shadow
-背景	天体	円の中の星空	starry sky in circle
-修飾語	修飾語	円柱状の	columnar crystal
-髪	髪型	横編組	lateral braid
-属性	属性	王女	princess
-動作	ポーズ	黄ケージに横たまり	yokozuwari in the cage
-その他	技術的	音量	volume
-身体	特殊	下半身は魚類の人間の太ももです	the lower body is fishandno human thigh
-身体	状態	下半身は裸です	the lower body is bare
-服装	スカート	夏の長いスカート	summer long skirt
-オブジェクト	花	花	flower
-エフェクト	自然	花が疲れます	flowers tire
-シチュエーション	隠れ	花に隠されています	hiddin the light flowers
-オブジェクト	花	花の花	flowery flowers
-エフェクト	水系	花の泡	flowery bubbles
-背景	自然	花の牧草地	flowers meadow
-背景	自然	花びらのある草原	grasslwith petal
-オブジェクト	花	花弁	petal
-その他	化学的	苛性	caustic
-装飾	クラウン	華やかな縞模様のある金属クラウン	metal crown with ornate stripes
-カメラワーク	効果	過剰抽出	overexplosure
-背景	天体	回転星の空	rotating star sky
-属性	状態	壊れたロボット	brokrobot
-オブジェクト	電子機器	壊れた画面	brokscreen
-オブジェクト	自然物	海藻	seaweed
-生物	鳥	海鳥	seabirds
-髪	髪色	灰色の長い髪	light grey very long hair
-髪	髪色	灰色の髪の毛	grey hair
-オブジェクト	自然物	貝殻	seashell
-その他	技術的	角度	angle
-修飾語	修飾語	割れた	brokglass
-顔	肤	滑らかで輝く顔	smooth radiant face
-顔	肤	滑らかで輝く肌	smooth radiant skin
-顔	肤	滑らかな肌	smooth skin
-オブジェクト	自然物	巻き貝	conch
-修飾語	修飾語	完璧で手足	perfect limbs
-修飾語	修飾語	完璧な	perfect details
-顔	目の形	感情のない目	emotionless eyes
-装飾	帽子	丸い帽子	round hat
-文章	文章	顔に焦点を合わせます	focus on face
-文章	文章	顔の特徴はありません	no facial features
-装飾	手	機械式アームアーマー	mechanical arm armor
-服装	防具	機械的なボディアーマー	mechanical body armor
-装飾	装飾	機械的補綴物	mechanical prosthesis
-身体	特殊	機械翼	mechanical wing
-エフェクト	光	貴重な屈折	precious refraction
-エフェクト	光	輝きを深める輪郭	contour deepening glow
-表情	表情	泣いている	crying
-表情	表情	泣く	cry
-生物	魚	魚	fish
-生物	魚	魚類	fishes
-表情	表情	狂気	insanity
-テイスト	技法	驚くべき素晴らしいとブラシストローク	amazing details brush strokes
-動作	座る	玉座に座ってください	sit on the throne
-服装	色	金色のレース付きの服	clothes with lace
-修飾語	材質	金属の	metal details
-テイスト	質感	金属のテクスチャー	metal texture
-テイスト	質感	金属欠陥	metal defects
-オブジェクト	芸術品	金属製の彫刻	metal carving
-身体	翼	金属翼	metal wings
-エフェクト	金属	銀と金を溶かす	melting and
-背景	天体	銀河	galaxy
-動作	移動	空から落ちる	falling from the sky
-動作	視線	空に向かって顔	face towards the sky
-背景	軍事	空の空軍艦隊	air force fleet in the sky
-背景	天体	空の虹	rainbow in the sky
-エフェクト	シンボル	空中に浮かぶ羽	feathers floating in the air
-動作	移動	空飛ぶ	flying
-エフェクト	光	屈折	refraction
-身体	手	型のテクスチャハンド	shaped texture hand
-服装	形状	型の服	shaped clothes
-修飾語	形容詞	恵み	grace
-エフェクト	光	蛍光	fluorescence
-エフェクト	光	蛍光紫	fluorescent purple
-表情	表情	軽い笑顔	light smile
-表情	表情	軽い赤面	light blush
-エフェクト	粒子	軽い粒子	light particle
-服装	材質	結晶化服	crystallized clothing
-装飾	グローブ	結晶紫色の宝石手袋	crystalline purple gemstone gloves
-状態	血	血で覆われています	covein blood
-オブジェクト	花	血の桜	blood cherry blossom
-エフェクト	グロテスク	血の霧	blood fog
-シチュエーション	グロテスク	血まみれのシーン	bloody scenes
-背景	天体	月	moon
-動作	武器	剣で	with sword
-動作	武器	剣を持ってください	hold sword
-背景	背景	建物	buildings
-動作	手	拳	fist
-修飾語	材質	絹	silk
-髪	髪質	絹のような髪	silky hair
-動作	目線	見詰める	stare
-未分類	未分類	見込み	prospect
-エフェクト	デザイン	古典的な装飾境界線	classic decorative border
-動作	ポーズ	湖に横たわっています	lying on the lake
-エフェクト	シンボル	五gram星	pentagram
-文章	文章	光のある夜,雲が豊かに重ねられた雲と雲のある月がに空になっています	night with lights whith richly layeclouds clouded moon in the sky
-エフェクト	光	光学現象	optical phenomena
-顔	目の色	勾配の目	gradient eyes
-修飾語	修飾語	厚いコーティング	thick coating
-文章	文章	洪水の足	flooding feet
-動作	手	絞る	squeeze
-背景	天体	荒れ果てた星	blighting stars
-未分類	未分類	行き止まりのマシン	dead end machine
-服装	アウター	高い襟のコート	high collar coat
-背景	自然	高原	plateau
-装飾	手	黒曜石のブレスレット	obsidian bracelet
-身体	身体	骨	bone
-背景	背景	混乱したテーブルと椅子	tables chairs in disarray
-顔	目の形	左目	left eye
-修飾語	修飾語	最高品質;	quality;highly
-身体	胴	細い腰	slender waist
-修飾語	修飾語	細かく	finely
-動作	動作	咲く	bloom
-服装	材質	作られた服	clothes made of silver
-文章	文章	散在する光沢のある花びらがたくさんあります	there are many scatteluminous petals
-未分類	未分類	残留軒のドゥアンビ	the residual eaves duanbi
-服装	袖	指を通り過ぎる袖	sleeves past fingers
-背景	自然	枝が水に落ちる柳	willows with branches falling into the water
-オブジェクト	機械	時計	clock
-背景	自然	自然	nature
-動作	手	自分の胸をつかむ	grabbing own breast
-修飾語	修飾語	湿性	drenched
-背景	自然	芝生	lawn
-文章	文章	写真はキャンバスを埋めます	the picture fills the canvas
-オブジェクト	乗り物	車	cars
-属性	年齢	若い女の子	young girls
-修飾語	形容詞	主要	principal
-エフェクト	電気	手からの稲妻の閃光	flashes of lightning from the hands
-エフェクト	電気	手に稲妻	lightning in hand
-文章	未分類	手はふくらんでいる袖に隠れています	hands hide in puffy sleeves
-動作	手	手を隠す	hide hands
-シチュエーション	終末	終末のシーン	doomsday scenes
-動作	ポーズ	女の子がフェンスに手を寄せた	girl leaned her hands against the fence
-カメラワーク	角度	女の子の正面	girls' front
-文章	未分類	女の子は銀色のテクスチャーの服を着ています	girl wears clothes with texture
-文章	未分類	女の子は黒と白の道教のローブを着ています	girl wears clothes taoist robes
-属性	属性	女神	goddess
-性別	女性	女性の女の子	female girl
-エフェクト	水系	小さな渦	small whirlpool
-身体	胸	小さな胸	small breast
-顔	口	少し開いた口	slightly opmouth
-照明	一般	照明	lighting
-照明	粒子	照明粒子	lighting particle
-表情	表情	笑顔をからかう	teasing smile
-オブジェクト	機械	上記の巨大なクロックコア	huge clock core above
-身体	状態	上半身が露出しています	upper body exposed
-動作	乗り物	乗馬モーター	riding motor
-背景	建物	城は空に目立っています	the castle stands out against the sky
-修飾語	色	色	tint
-修飾語	色	色付きの	colocrystal
-髪	色	色付きの内なる髪	coloinner hair
-修飾語	形容詞	深い暗い	deep dark
-顔	目	深い目	deep eyes
-カメラワーク	距離	人々のクローズアップ	close up of people
-身体	手	人間の手	human hands
-身体	鰱	人魚のスケール	scales on mermaid
-顔	目	垂直瞳	vertical pupil
-テイスト	技法	水彩媒体	watercolor medium
-修飾語	色	水色	water color
-背景	自然	水中の森	underwater forest
-背景	水	水面	water surface
-品質	品質	世界の傑作	world masterpiece
-品質	品質	世界の傑作劇場	world masterpiece theater
-修飾語	形容詞	成熟	mature
-年齢	女性	成熟した女性	mature female
-シチュエーション	特殊	星が崩壊するように,私たちは日の目を吸収します	just like stars imploding we absorb the light of day
-動作	座る	星に座っています	sitting on star
-髪	装飾	星空は髪を飾ります	starry sky adorns hair
-顔	目	生徒	pupils
-修飾語	形容詞	精神	spirit
-修飾語	形容詞	聖なる	holy
-照明	神聖	聖なる光	holy light
-照明	神聖	聖なる照明	holy lighting
-照明	色光	青と赤とオレンジとピンクの硬い光を変える	vary orange pink hard light
-文章	未分類	石に寄りかかっています	leaning on stone
-髪	色	赤毛の赤毛	mediumhair
-身体	胸	切断の露出	exposing cleavage
-エフェクト	炎	絶妙な炎	exquisite flame
-エフェクト	グロテスク	絶妙な血	exquisite blood
-服装	材質	絶妙な布	exquisite cloth
-服装	靴	尖ったブーツ	pointed boots
-背景	自然	川	river
-シチュエーション	バトル	戦争	war
-シチュエーション	バトル	戦闘	battleing
-動作	動作	潜水	submerge
-属性	性質	繊細で女の子	girls
-髪	髪型	繊細で複雑な髪	intricate hair
-顔	顔	繊細な顔	detail face
-背景	天体	繊細な星空の空	starry sky in detail
-カメラワーク	角度	前面から斜めに	diagonally from front
-カメラワーク	アングル	全身	whole body
-身体	足	素足	bare foot
-顔	目の形	素敵な目	lovely eyes
-背景	背景	窓	window pane
-背景	天体	総腫瘍	altocumulus
-文章	文章	草。目	the finest grass. eyes
-文章	文章	草は風に揺れます	the grass sways in the wind
-背景	自然	草原	grassland
-背景	自然	草原の広大な広がり	vast expanse of grassland
-装飾	装飾	装飾	jewelry decoration
-服装	ドレス	装飾が施されたドレス	dress with decoration
-服装	ドレス	装飾が施されたバイオレットドレス	violet dress with decoration
-服装	ドレス	装飾のピンクのレースのドレス	dress with pink lace with decoration
-装飾	装飾	装備	gear
-未分類	未分類	他の港アクア	other minato aqua
-修飾語	修飾語	多くの	details
-エフェクト	粒子	多くの輝く粒子	glowing particles
-エフェクト	水系	多くの空飛ぶ水滴	many flying drops of water
-エフェクト	自然	多くの散らばった葉	many scatteleaves
-髪	髪色	多色の髪	multicolohair
-未分類	未分類	多数の環境	number of environments
-文章	文章	太陽は木々を通り抜けます	the sun shines through the trees
-身体	身体	体	body
-装飾	装飾	体の宝石	gemstone of body
-属性	性質	態度	attitude
-背景	歴史	第一次世界大戦	world war
-属性	年齢	短い女の子	short little girl
-顔	目の形	断固とした目	resolute eyes
-性別	男性	男	man
-文章	文章	男との性交	intercourse with man
-顔	目の形	中空の目	hollow eyes
-背景	背景	中空の夜	hollow night
-属性	属性	中空騎士	hollow knight
-背景	背景	中世の町	medieval town
-身体	胸	中程度の胸	medium breast
-身体	胸	中程度の胸部周囲	medium chest circumference
-エフェクト	自然	中程度の風	medium wind
-修飾語	修飾語	丁寧	formal
-修飾語	修飾語	超素晴らしいイラスト	super illustration
-服装	ドレス	長いドレスカバーフィート	very long dress cover feet
-髪	髪色	長い暗いブロンドの髪	long dark blond hair
-服装	袖	長い指の長い袖	long top sleeves past fingers
-オブジェクト	日用品	長い糸	long yarn
-髪	髪色	長い虹の髪	very long rainbow hair
-髪	髪型	長い波状の巻き毛	long wavy curly hair
-髪	髪型	長い波状の髪	long wavy hair
-髪	髪型	長い髪が吹き飛ばされました	long hair blown up
-生物	鳥	鳥	birds
-オブジェクト	日用品	鳥かご	birdcage
-文章	文章	鳥が見えます	bird see
-背景	建物	鳥居	torii
-身体	手	通常の手	normal hands
-エフェクト	オブジェクト	吊り下げられた	suspended crystal
-エフェクト	オブジェクト	吊り下げられた無色の	suspended colorless crystal
-背景	自然	庭	garden
-背景	背景	天蓋	canopy
-身体	翼	天使の翼	angel wings
-修飾語	修飾語	塗装されています	beautifully painted
-表情	表情	怒った顔	angry face
-表情	表情	怒り	anger
-エフェクト	凍結	凍った羽	frozfeathers
-修飾語	修飾語	透明な	transparent glass
-カメラワーク	構図	動的な構成	dynamic composition
-属性	種族	動物の顔	animal face
-顔	顔	童顔	baby face
-属性	性質	独身の人間の女の子	single human girl
-髪	髪型	豚の尾	pig tails
-エフェクト	電気	内に稲妻があります	with lightning inside the crystal
-文章	文章	内側から外側に壊れたをスパッタにしました	sputtebrokfrom inside to outside
-身体	足	二足	two legs
-服装	ドレス	虹色とレインボーセーラードレス	iridescence rainbow sailor dress
-服装	ドレス	虹色と虹のドレス	iridescence rainbow dress
-髪	髪色	虹色と虹の髪	iridescence rainbow hair
-顔	目の色	虹色と虹の目	iridescence rainbow eyes
-装飾	帽子	虹色の宝石帽子	iridescent headwear
-背景	天体	日の出	sunrise
-背景	天体	日光	sunlight
-文章	文章	乳房の精液	cum in breasts
-髪	髪質	濃い髪	thick hair
-エフェクト	光	波の輝く光	glistening light of waves
-背景	背景	破損した教室	damaged classroom
-背景	背景	背景	background
-文章	文章	背景が残っています	loong background
-エフェクト	光	発光	luminescence
-顔	目の形	発光する目	luminous eyes
-エフェクト	粒子	発光粒子	luminous particles
-性別	男性	髪が短い男	man with has short hair
-装飾	髪飾	髪のスティック	hair stick
-装飾	髪飾	髪の飾り	hair decoration
-髪	髪色	髪の濃い紫色	emerging dark purple across with hair
-文章	文章	髪の髪を摘み,染色します	pick dye hair in hair
-髪	髪型	髪の毛	fluttering hair
-髪	髪型	髪の毛を下ろします	lowing hair
-髪	髪型	髪の毛を奪いました	disreveled hair
-髪	髪型	髪は上向きに流れます	hair flows upwards
-服装	スカート	半透明のフラッタースカート	translucent fluttering skirt
-エフェクト	光	反射的	reflective
-文章	文章	彼女は欲求不満で頭を下げた	she bowed her head in frustration
-エフェクト	炎	飛び火	flying sparks
-エフェクト	水系	飛ぶスプラッシュ	flying splashes
-エフェクト	自然	飛ぶ花びら	flying petals
-顔	目の形	美しさの目	beauty eye
-属性	性質	美少女	bishoujo
-顔	顔	鼻の赤面	nose blush
-身体	足	膝	kneehighs
-服装	靴下	膝の高さ	knee highs
-エフェクト	凍結	氷	ice
-装飾	髪飾	氷が髪を飾ります	ice adorns hair
-エフェクト	凍結	氷で作られた羽	feathers made of ice
-エフェクト	凍結	氷と火が溶けます	ice fire melt
-エフェクト	凍結	氷の結晶	ice crystal
-表情	表情	表現	expression
-修飾語	修飾語	品質	the quality
-動作	動作	浮く	float
-エフェクト	自然	浮遊砂の流れ	floating sflow
-髪	髪型	風で流れる長い髪	long hair flowing with the wind
-髪	髪型	風の中でひらひらと髪	hair fluttering in the wind
-背景	背景	風景	landscape
-服装	服装	服	clothes
-文章	文章	服の下のペイズリ	paizuri under clothes
-修飾語	修飾語	複雑なディテール	intricate detail
-エフェクト	デザイン	複雑なパターン	complex pattern
-エフェクト	光	複雑な光	intricate light
-身体	翼	複数の翼	multiple wings
-身体	胸	覆われた胸	covebreasts
-身体	胸	平らな胸	flat breasts
-生物	鳥	平和の鳩	dove of peace
-テイスト	技法	壁紙	wallpaper
-テイスト	技法	壁紙8k cg	wallpaper 8k cg
-修飾語	修飾語	変	strange
-装飾	帽子	帽子の先端にペンダント	pendant on tip of hat
-修飾語	修飾語	本物の顔	authentic face
-修飾語	修飾語	本物の肌の質感	authentic skin texture
-属性	性質	魔法の	magical
-テイスト	テーマ	魔法のスタイル	magic style
-テイスト	画風	漫画	comic
-テイスト	画風	漫画とアニメ	manganime
-表情	表情	無関心	indifference
-背景	天体	霧	fog
-顔	顔	目と顔	eyes face
-顔	目の形	目に火	fire in eyes
-髪	前髪	目の間の長い前髪	long bangs betweeyes
-顔	目の形	目の星	stars in the eyes
-顔	目の形	目を輝かせます	shine eyes
-修飾語	修飾語	役に立たない	unhelpless
-エフェクト	液体	油	oil
-テイスト	技法	油絵	oil painting
-エフェクト	状態	溶けた	melt
-髪	髪質	溶けた金属のような髪	hair like melted metal
-エフェクト	金属	溶融鉄のスパッタ	sputtemoltiron
-オブジェクト	自然物	葉	leaves
-服装	ドレス	葉のドレス	leaves dress
-身体	胴	裸のへそ	bare navel
-身体	肩	裸の肩	bare shoulders
-身体	腕	裸の腕	bare arms
-髪	髪型	乱れた髪	dishevelled hair
-髪	髪型	乱雑なヘアスタイル	messy hair style
-髪	髪型	乱雑な長い髪	messy long hair
-髪	髪型	乱雑な浮遊髪	messy floating hair
-修飾語	修飾語	流れる	flowing
-服装	装飾	流れるレース	flowing lace
-背景	背景	流れる黒と白の背景	flowing background
-文章	文章	流れる水の感覚	the sensation of water flowing
-エフェクト	金属	流れる鉄	flowing iron
-エフェクト	状態	流れる透明な黒	flowing transparent black
-エフェクト	状態	流れる透明な白	flowing transparent white
-髪	髪型	流れる髪	flowing hair
-背景	天体	流星	meteor
-エフェクト	光	輪郭の深化	contour deepening
-背景	天体	累積	cumulus
-カメラワーク	効果	露出曝露	overexposure
-身体	特殊	湾曲した細い魚の尾	curved slender fish tail
 画面効果	ふきだし	・・・	spoken elipsis
 画面効果	ふきだし	？	spoken question mark
 画面効果	ふきだし	♪	spoken musical note
@@ -2301,12 +1878,17 @@
 画面効果	枠	額縁	framed
 画面効果	枠	枠	border
 顔	ひげ	ひげ	beard
+顔	顔	繊細な顔	detail face
+顔	顔	童顔	baby face
+顔	顔	鼻の赤面	nose blush
+顔	顔	目と顔	eyes face
 顔	口	おしゃぶりをくわえた口	pacifier mouth
 顔	口	カラフルな舌	colorful tongue
 顔	口	キス待ち1	puckered lips
 顔	口	キス待ち2	thick lips,
 顔	口	液体舌	liquid tongue
 顔	口	口の中の舌	tongue within mouth
+顔	口	少し開いた口	slightly opmouth
 顔	口	舌	tongue
 顔	口	大きい口	big mouth
 顔	口	複数の牙	fangs
@@ -2332,6 +1914,15 @@
 顔	眉	太眉	thick eyebrows
 顔	眉	短い眉毛	short eyebrows
 顔	髭	髭	facial hair
+顔	目	ダイヤモンドとまぶしい目	glaring eyes
+顔	目	ドラゴンの目	dragon eyes
+顔	目	バラの目	rose eyes
+顔	目	ピーチピンクの生徒	peach pink pupils
+顔	目	ビキニリデンスと虹の目	bikiniiridescence rainbow eyes
+顔	目	ラベンダーの目	lavender eyes
+顔	目	深い目	deep eyes
+顔	目	垂直瞳	vertical pupil
+顔	目	生徒	pupils
 顔	目の形	アイシャドウ	eye shadow
 顔	目の形	うんざりした目	disgusted eyes
 顔	目の形	オッドアイ	heterochromia
@@ -2344,22 +1935,33 @@
 顔	目の形	なだらかな目	rolling eyes
 顔	目の形	ハート目	heart shaped pupils
 顔	目の形	レイプ目	rape face
+顔	目の形	右目	right eye
+顔	目の形	感情のない目	emotionless eyes
 顔	目の形	輝く目	glow eyes
 顔	目の形	輝く目2	glowing eyes
+顔	目の形	虚空の目	hollow eyes
+顔	目の形	左目	left eye
 顔	目の形	三白眼	sanpaku eyes
 顔	目の形	斜めの目	slanted eyes
 顔	目の形	上目遣い	upturned eyes
 顔	目の形	水の目	water eyes
+顔	目の形	素敵な目	lovely eyes
+顔	目の形	断固とした目	resolute eyes
 顔	目の形	挑発的な目	provocative eyes
 顔	目の形	瞳が何かの形になっている	symbol shaped pupils
 顔	目の形	猫目	slit pupils
+顔	目の形	発光する目	luminous eyes
 顔	目の形	半分閉じた目	halfclosedeyes
 顔	目の形	閉じた目	closed eyes
 顔	目の形	片まゆを上げる	raised eyebrow
 顔	目の形	目にダイヤ	diamond into eyes
+顔	目の形	目に火	fire in eyes
 顔	目の形	目に涙を浮かべる	tearing up
+顔	目の形	目の星	stars in the eyes
+顔	目の形	目を輝かせます	shine eyes
 顔	目の色	オレンジ色の目	orange eyes
 顔	目の色	ゴールデンアイ	golden eye
+顔	目の色	ピンクの生徒	pink pupils
 顔	目の色	ピンク色の目	pink eyes
 顔	目の色	ブロンドの色の目	blonde eyes
 顔	目の色	黄色の目	yellow eyes
@@ -2367,6 +1969,7 @@
 顔	目の色	金色の目	brond eyes
 顔	目の色	銀色の目	silver eyes
 顔	目の色	空色の目	sky blue eyes
+顔	目の色	勾配の目	gradient eyes
 顔	目の色	黒色の目	black eyes
 顔	目の色	紺色の目	navy eyes
 顔	目の色	紫色の目	purple eyes
@@ -2384,15 +1987,60 @@
 顔	目の色	緑の目	green eyes
 顔	輪郭	大きな顔	big face
 顔	輪郭	萌コンテンツ系の可愛い顔	kawaii face
+顔	肤	滑らかで輝く顔	smooth radiant face
+顔	肤	滑らかで輝く肌	smooth radiant skin
+顔	肤	滑らかな肌	smooth skin
+修飾語	形状	ひだのついた	corrugated
+修飾語	形容詞	エレガント	elegant
+修飾語	形容詞	すばらしい	amazing
+修飾語	形容詞	スムーズ	smooth
+修飾語	形容詞	ノーブル	noble
+修飾語	形容詞	暗い	dark
+修飾語	形容詞	恵み	grace
+修飾語	形容詞	主要	principal
+修飾語	形容詞	深い暗い	deep dark
+修飾語	形容詞	成熟	mature
+修飾語	形容詞	精神	spirit
+修飾語	形容詞	聖なる	holy
+修飾語	材質	金属の	metal details
+修飾語	材質	絹	silk
+修飾語	修飾語	クラシック	classic
+修飾語	修飾語	グランド	grand
+修飾語	修飾語	て美的	aesthetic
+修飾語	修飾語	フロー	flow
 修飾語	修飾語	フローティング	floating
+修飾語	修飾語	円柱状の	columnar crystal
 修飾語	修飾語	屋内の	indoor
 修飾語	修飾語	外側の	exterior
+修飾語	修飾語	割れた	brokglass
+修飾語	修飾語	完璧で手足	perfect limbs
+修飾語	修飾語	完璧な	perfect details
+修飾語	修飾語	厚いコーティング	thick coating
+修飾語	修飾語	最高品質;	quality;highly
+修飾語	修飾語	細かく	finely
+修飾語	修飾語	湿性	drenched
+修飾語	修飾語	多くの	details
+修飾語	修飾語	丁寧	formal
+修飾語	修飾語	超素晴らしいイラスト	super illustration
+修飾語	修飾語	塗装されています	beautifully painted
+修飾語	修飾語	透明な	transparent glass
 修飾語	修飾語	内側の	interior
 修飾語	修飾語	濡れている	wetting
 修飾語	修飾語	廃墟になった	ruined
 修飾語	修飾語	美しい	beautiful
+修飾語	修飾語	品質	the quality
+修飾語	修飾語	複雑なディテール	intricate detail
+修飾語	修飾語	変	strange
+修飾語	修飾語	本物の顔	authentic face
+修飾語	修飾語	本物の肌の質感	authentic skin texture
 修飾語	修飾語	野外の	outdoor
 修飾語	修飾語	野生の	wild
+修飾語	修飾語	役に立たない	unhelpless
+修飾語	修飾語	流れる	flowing
+修飾語	色	色	tint
+修飾語	色	色付きの	colocrystal
+修飾語	色	水色	water color
+修飾語	動作	ストリップ	strips
 獣体	肌質	ケモノの体毛 メスケモ単体指定では人の肌が残ってしまいがちなので強化に使用	body fur
 獣体	毛皮	あお毛皮	blue fur
 獣体	毛皮	あか毛皮	red fur
@@ -2418,11 +2066,15 @@
 獣体	毛皮	無毛皮	colorless fur
 獣体	毛皮	明るい紫髪毛皮	light purple fur
 獣体	毛皮	藍毛皮	indigo fur
+照明	一般	照明	lighting
+照明	陰影	暗い激しい影	dark intense shadows
 照明	陰影	影の多い	shadow
 照明	陰影	映画的な影	cinematic shadows
 照明	陰影	劇的な影	dramatic shadows
 照明	陰影	深い影	deep shadows
+照明	環境光	アンビエントライト	ambient light
 照明	光	ゴールデンアワー照明	golden hour lighting
+照明	光	シティライト	citylight
 照明	光	スポットライト	spot light
 照明	光	ダイナミックライティング	dynamic lighting
 照明	光	バチバチ輝く	sparkle
@@ -2445,6 +2097,10 @@
 照明	光	木漏れ日	dappled sunlight
 照明	光	木漏れ日2	light leaks
 照明	光	綺麗に照らされた	beautifully lit
+照明	神聖	聖なる光	holy light
+照明	神聖	聖なる照明	holy lighting
+照明	装飾光	イルミネーション	illumination
+照明	粒子	照明粒子	lighting particle
 詳細	形状	ドクロ	skull
 詳細	形状	ドラゴン	dragon
 詳細	形状	ハート	heart
@@ -2537,6 +2193,7 @@
 場所	屋外	デスガーデン	death garden
 場所	屋外	プール	swimming pool
 場所	屋外	プールサイド	pool side
+場所	屋外	フェアリーランド	fairyland
 場所	屋外	ホテル(屋外)	hotel outside
 場所	屋外	ライブ会場1	concert venue
 場所	屋外	ライブ会場2	live concert
@@ -2607,7 +2264,9 @@
 場所	屋内	ウエスタンスタイルの部屋	western style room
 場所	屋内	カジノ	casino
 場所	屋内	きちんとした教室	tidy classroom
+場所	屋内	コーナー	corner
 場所	屋内	コンサートホール	concert hall
+場所	屋内	シーリング	ceiling
 場所	屋内	ジム	gym
 場所	屋内	スケルトン教会	skeleton church
 場所	屋内	トイレ	toilet room
@@ -2649,6 +2308,7 @@
 場所	屋内	風呂場	bathroom
 場所	屋内	本屋	bookstore
 場所	屋内	和式の部屋	japanese room
+場所	自然	ウォーターエッジの近く	near the water edge
 場所	実在する場所	パリ	paris outdoor
 場所	実在する場所	ピサの斜塔	leaning tower of pisa outdoor
 場所	実在する場所	ピラミッド	pyramid outdoor
@@ -2685,6 +2345,7 @@
 場所	実在する場所（日本）	日本の高速道路	japanese highway outdoor
 場所	実在する場所（日本）	姫路城	{{{himeji Castle outdoor}}}
 場所	実在する場所（日本）	富士山	fujisan outdoor
+状態	血	血で覆われています	covein blood
 状態	状態	イライラ	annoyed
 状態	状態	けいれん	spasm
 状態	状態	たくさんの湯気とたくさんの汗	many steam and many sweat
@@ -2697,6 +2358,8 @@
 状態	状態	睡眠	sleep
 状態	状態	髪がなびく	floating hair
 状態	状態	絡み合っています	entangle
+状態	劣化	カビ	mouldy
+色	色	コーラル	coral
 食べ物	お菓子	アイスキャンディ	ice candy
 食べ物	カレー	カレー	curry
 食べ物	カレー	グリーンカレー	green curry
@@ -2730,6 +2393,10 @@
 食べ物	麺類	ラーメン	ramen
 食べ物	野菜	サラダ	salad
 食べ物	揚げ物	たこ焼き	takoyaki
+身体	しっぽ	テールフィン	tailfin
+身体	しっぽ	ドラゴンウィング	dragonwings
+身体	しっぽ	フィッシュテール	highly fishtail
+身体	しっぽ	メカウィング	mechwing
 身体	しっぽ	猫の尾	cat tail
 身体	しっぽ	馬のしっぽ	horse tail
 身体	ほくろ	艶ぼくろ	mole under mouth
@@ -2737,6 +2404,7 @@
 身体	ほくろ	涙ボクロ	mole under eye
 身体	下半身	スリムな脚	slim legs
 身体	下半身	ヒップ	hips
+身体	下半身	むき出しの胃	bare stomach
 身体	下半身	陰毛	pubic hair
 身体	下半身	足	foot
 身体	下半身	足の裏	foot focus
@@ -2748,18 +2416,23 @@
 身体	角	ただの角	horns
 身体	角	デーモンの角	demon horns
 身体	角	ドラゴンの角	dragon horns
+身体	角	ドラゴンホーン	dragon horn
 身体	角	ヤギの角	goat horns
 身体	角	鬼の角	oni horns
 身体	角	牛の角	cow horns
 身体	角	曲がった角	curled horns
 身体	角	羊の角	sheep horns
+身体	脚	ソール	sole
+身体	胸	ミディアムバスト	medium bust
 身体	胸	液体の胸	liquid breasts
 身体	胸	横乳	sideboob
 身体	胸	下乳	underboob
 身体	胸	巨乳	huge breasts
 身体	胸	重い胸	heavy breasts
+身体	胸	小さな胸	small breast
 身体	胸	小さな胸,貧乳	small breasts
 身体	胸	垂れ胸	sagging breasts
+身体	胸	切断の露出	exposing cleavage
 身体	胸	大きなおっぱい	big tits
 身体	胸	大きな胸	large breasts
 身体	胸	大きな胸2	big breasts
@@ -2773,14 +2446,26 @@
 身体	筋肉	筋肉が引き締まった	toned
 身体	筋肉	筋肉が隆々とした	ripped
 身体	筋肉	腹筋が発達した	abs
+身体	肩	裸の肩	bare shoulders
 身体	手	ネイル	nail polish
+身体	手	人間の手	human hands
 身体	手	長い爪	long nails
+身体	手	通常の手	normal hands
 身体	上半身	翼	wings
+身体	状態	と壊れた体	brokbody
+身体	状態	下半身は裸です	the lower body is bare
+身体	状態	上半身が露出しています	upper body exposed
 身体	尻	小さなおしり	mini hip
 身体	尻	小さな尻	small hip
 身体	身体	光沢のある肌	shiny skin
+身体	身体	骨	bone
+身体	身体	体	body
 身体	身体	大きな筋肉	big muscles
+身体	足	素足	bare foot
 身体	足	足のネイル	toenail polish
+身体	足	二足	two legs
+身体	足	膝	kneehighs
+身体	体型	オパイロリ	oppai loli
 身体	体型	グラマーな	glamorous
 身体	体型	スリム	slim
 身体	体型	ずんぐりとした	heavyset
@@ -2808,6 +2493,10 @@
 身体	体形	低身長	minigirl
 身体	体形	豊満ボディ	ample figure
 身体	頭部	額にマーク	forehead mark
+身体	胴	細い腰	slender waist
+身体	胴	裸のへそ	bare navel
+身体	特殊	機械翼	mechanical wing
+身体	特殊	湾曲した細い魚の尾	curved slender fish tail
 身体	肌	人じゃない肌色	colored skin
 身体	肌	日焼け肌	dark skin
 身体	部位	お腹	stomach
@@ -2833,7 +2522,13 @@
 身体	部位	腹筋	abs
 身体	部位	目	eyes
 身体	部位	肋骨	ribs
+身体	翼	ダーゴンウィングス	dargon wings
+身体	翼	金属翼	metal wings
+身体	翼	天使の翼	angel wings
 身体	裸	ヌード	nude
+身体	腕	ロボットアーム	robot arm
+身体	腕	裸の腕	bare arms
+身体	鰱	人魚のスケール	scales on mermaid
 人数	女性	1人の女	1girl
 人数	女性	2人の女	2girls
 人数	女性	3人の女	3girls
@@ -2862,6 +2557,7 @@
 性別	女性	メスケモ	furry female
 性別	女性	更に幼い少女	baby girl
 性別	女性	更に幼い少女	female child
+性別	女性	女性の女の子	female girl
 性別	女性	少女	girl
 性別	女性	美人	beauty girl
 性別	女性	婦人	women
@@ -2872,8 +2568,10 @@
 性別	男性	黒人男性	bbc
 性別	男性	少年	boy
 性別	男性	太った男	fat man
+性別	男性	男	man
 性別	男性	男性	male
 性別	男性	中年男性	middle aged man
+性別	男性	髪が短い男	man with has short hair
 性別	男性	毛深いおじさん	hairy man
 性別	男性	幼い少年	shota
 成人向け	！必須	nsfw + girl	nwg
@@ -3133,7 +2831,12 @@
 成人向け	体位	背面騎乗位	reverse cowgirl position
 成人向け	体位	背面座位	reverse upright straddle
 成人向け	体位	膝立ち後背位	kneeling doggystyle
+生物	魚	魚	fish
+生物	魚	魚類	fishes
 生物	恐竜	恐竜	dinosaur
+生物	鳥	海鳥	seabirds
+生物	鳥	鳥	birds
+生物	鳥	平和の鳩	dove of peace
 生物	鳥類	カラス	crow
 生物	動物	アナグマ	badger furry
 生物	動物	いぬ	dog furry
@@ -3148,6 +2851,7 @@
 生物	動物	ねこ	cat furry
 生物	動物	パンダ	panda furry
 生物	動物	ヒツジ	sheep furry
+生物	動物	ヒトデ	starfish
 生物	動物	ヒョウ	leopard furry
 生物	動物	ヤギ	goat furry
 生物	動物	ライオン	lion furry
@@ -3155,7 +2859,12 @@
 生物	動物	子馬	pony
 生物	動物	兎,うさぎ	rabit
 生物	動物	猫	cat
+装飾	アクセサリー	エンジェルハロー	angel halo
 装飾	その他	浮き輪	innertube
+装飾	ヘアアクセサリー	ヘアフープ	hair hoop
+装飾	ヘアアクセサリー	ヘアボウ	hair bow
+装飾	ヘアアクセサリー	ヘアリボン	hair ribbon
+装飾	ヘアアクセサリー	ベール	veil
 装飾	メイク	タトゥー	tattoo
 装飾	メイク	タトゥー2	pubic tattoo
 装飾	メイク	チーク	cheek
@@ -3195,8 +2904,11 @@
 装飾	手	アームリング	arm ring
 装飾	手	アンクレット	anklet
 装飾	手	シュシュ	scrunchie
+装飾	手	チェーンリング	chain ring
 装飾	手	ビーズブレスレット	bead bracelet
 装飾	手	ブレスレット	bracelet
+装飾	手	機械式アームアーマー	mechanical arm armor
+装飾	手	黒曜石のブレスレット	obsidian bracelet
 装飾	手	手首にカフスだけ付いてるやつ	wrist cuffs
 装飾	手	手枷,足枷	shackles
 装飾	手	腕時計	wristwatch
@@ -3204,6 +2916,7 @@
 装飾	首	IDカード（社員証）	id card
 装飾	首	O型のリング	o ring
 装飾	首	アスコットタイ	blue ascot
+装飾	首	クロスネックレス	cross necklace
 装飾	首	チョーカー,首輪	choker
 装飾	首	ドッグタグ	dog tags
 装飾	首	ネクタイ	necktie
@@ -3231,7 +2944,11 @@
 装飾	装飾	ジュエリー	jewelry
 装飾	装飾	タオル	towel
 装飾	装飾	ピアス	piercing
+装飾	装飾	機械的補綴物	mechanical prosthesis
 装飾	装飾	人形	doll
+装飾	装飾	装飾	jewelry decoration
+装飾	装飾	装備	gear
+装飾	装飾	体の宝石	gemstone of body
 装飾	装飾	包帯	bandages
 装飾	装飾	宝飾品	gemological ornaments
 装飾	頭部	SCIFI系髪の装飾品	scifi hair ornaments
@@ -3253,6 +2970,9 @@
 装飾	頭部	編み込みが一つ	single braid
 装飾	頭部	目隠し	blindfold
 装飾	頭部	鈴飾り	hair bell
+装飾	髪飾	髪のスティック	hair stick
+装飾	髪飾	髪の飾り	hair decoration
+装飾	髪飾	氷が髪を飾ります	ice adorns hair
 装飾	武器	ブーケ	bouquet
 装飾	武器	ムチ	whip
 装飾	武器	剣	sword
@@ -3266,6 +2986,7 @@
 装飾	帽子	サンバイザー	visor cap
 装飾	帽子	シルクハット	top hat
 装飾	帽子	セーラー帽	sailor hat
+装飾	帽子	ティアラ	tiara
 装飾	帽子	ナースカップ	nurse cap
 装飾	帽子	ニット帽	beanie
 装飾	帽子	ニット帽2	knitted hat
@@ -3279,6 +3000,7 @@
 装飾	帽子	花冠	head wreath
 装飾	帽子	花飾り	floral decoration
 装飾	帽子	官帽	peaked cap
+装飾	帽子	丸い帽子	round hat
 装飾	帽子	軍帽	military hat
 装飾	帽子	軍帽2	cap
 装飾	帽子	頭飾り	headpiece
@@ -3287,6 +3009,7 @@
 装飾	帽子	鉢巻	headband
 装飾	帽子	髪飾り	hair ornament
 装飾	帽子	帽子	hat
+装飾	帽子	帽子の先端にペンダント	pendant on tip of hat
 装飾	帽子	魔女の帽子	witch hat
 属性	国	アメリカ	american
 属性	国	中国	chinese
@@ -3309,11 +3032,14 @@
 属性	種族	ドラフ族（グラブル）	draph
 属性	種族	ニンフ	nymph
 属性	種族	ハーピィ	harpy
+属性	種族	フェニックスガール	phoenix girl
 属性	種族	メカ	mecha
+属性	種族	メカニカルガール	mechanical girl
 属性	種族	メカ娘	mecha musume
 属性	種族	モンスター娘	monster girl
 属性	種族	ラミア	lamia
 属性	種族	ロボ	robot
+属性	種族	ロボットガール	robot girl
 属性	種族	悪魔	devil
 属性	種族	悪魔(女)	devil girl
 属性	種族	悪魔(男)	devil boy
@@ -3324,9 +3050,11 @@
 属性	種族	天使	angel
 属性	種族	天使(女)	angel girl
 属性	種族	天使(男)	angel boy
+属性	種族	動物の顔	animal face
 属性	種族	幽霊	ghost
 属性	種族	幼児２(loliよりもさらに年齢低め)	toddler, child,
 属性	種族	妖精	fairy
+属性	状態	壊れたロボット	brokrobot
 属性	性質	アルビノ	albino
 属性	性質	ギャル	gyaru
 属性	性質	サディスト	sadist
@@ -3336,23 +3064,37 @@
 属性	性質	ビッチ	bitch
 属性	性質	マゾヒスト	masochism
 属性	性質	ヤンデレ	yandere
+属性	性質	暗い魂	dark soul
+属性	性質	暗黒面	darkside
+属性	性質	闇落ち	dark persona
 属性	性質	可愛い	kawaii
 属性	性質	可愛い女の子	cute and kawaii girl
 属性	性質	筋肉質	muscular
 属性	性質	筋肉質	muscular
 属性	性質	雌雄同体	hermaphrodite
 属性	性質	女性	women
+属性	性質	繊細で女の子	girls
+属性	性質	態度	attitude
 属性	性質	男の娘	otoko no ko
+属性	性質	美少女	bishoujo
 属性	性質	百合	shoujo ai
 属性	性質	百合	yuri
 属性	性質	母性	motherly
+属性	性質	魔法の	magical
 属性	属性	かっこいい	cool
+属性	属性	キャラクターガール	charactergirl
 属性	属性	スケルトンガール	skeleton girl
+属性	属性	スタイルガール	style girl
 属性	属性	トランスジェンダー2	tranny
 属性	属性	ふたなり２	futa
 属性	属性	メスガキ	mesugaki
 属性	属性	ヤオイ	yaoi
+属性	属性	王女	princess
+属性	属性	虚空の騎士	hollow knight
 属性	属性	強い女の子	strong girl
+属性	属性	女神	goddess
+属性	年齢	若い女の子	young girls
+属性	年齢	短い女の子	short little girl
 天候と時間帯	時間帯	星の星雲	starry nebula
 天候と時間帯	時間帯	星の竜巻	starry tornado
 天候と時間帯	時間帯	星雲の宇宙背景	cosmic background of nebula
@@ -3417,22 +3159,27 @@
 動作	ポーズ	ガニ股	bowlegged
 動作	ポーズ	しゃがみ込む	squat down
 動作	ポーズ	しゃがむ	squatting
+動作	ポーズ	ストレッチ	stretch
 動作	ポーズ	ストレッチポーズ	stretching
 動作	ポーズ	ダイナミックなポーズ	dynamic pose
 動作	ポーズ	ファイティングポーズ	fighting stance
+動作	ポーズ	ポーズ	posing
 動作	ポーズ	ポッケに手を突っ込む	hand in pocket
 動作	ポーズ	椅子に持たれて座る,リクライニング	reclining
 動作	ポーズ	横たわっている	on side
 動作	ポーズ	横たわる	lying
+動作	ポーズ	黄ケージに横たまり	yokozuwari in the cage
 動作	ポーズ	開脚	open your legs wide
 動作	ポーズ	逆さま	upside down
 動作	ポーズ	敬礼	salute
+動作	ポーズ	湖に横たわっています	lying on the lake
 動作	ポーズ	後ろに手を持っていく	hands behind one's back
 動作	ポーズ	後ろ手に組まされる	hands tied behind back reference
 動作	ポーズ	腰に手を当てる	hand on hip
 動作	ポーズ	四つん這い	all fours
 動作	ポーズ	指をさす	pointing
 動作	ポーズ	手をパーにする	open hand
+動作	ポーズ	女の子がフェンスに手を寄せた	girl leaned her hands against the fence
 動作	ポーズ	人差し指を立てる	index finger raised
 動作	ポーズ	前かがみ,前屈み	leaning forward
 動作	ポーズ	前かがみで	bent over
@@ -3442,6 +3189,10 @@
 動作	ポーズ	猫のポーズ	paw pose
 動作	ポーズ	片足立ち	standing on one leg
 動作	ポーズ	立っている	standing
+動作	移動	空から落ちる	falling from the sky
+動作	移動	空飛ぶ	flying
+動作	衣服	タックを開けます	optuck
+動作	一般	な動き	movement
 動作	脚の動作	あぐら	indian style
 動作	脚の動作	横座り	yokozuwari
 動作	脚の動作	階段に座る	sitting on stairs
@@ -3460,6 +3211,8 @@
 動作	脚の動作	片膝立ち	one knee
 動作	脚の動作	両足一緒に	legs together
 動作	脚の動作	蹲踞,ヤンキー座り	crouching
+動作	座る	玉座に座ってください	sit on the throne
+動作	座る	星に座っています	sitting on star
 動作	指さし	指差し	pointing at viewer
 動作	指さし	指差し横	pointing to the side
 動作	指さし	指差し下	pointing down
@@ -3469,14 +3222,24 @@
 動作	指さし	指差し上	pointing up
 動作	指さし	指差し前	pointing forward
 動作	指さし	指差し武器	pointing weapon
+動作	視線	空に向かって顔	face towards the sky
+動作	手	握りしめられた自分の手	own hands clasped
+動作	手	隠された手	hiddhands
+動作	手	拳	fist
+動作	手	絞る	squeeze
+動作	手	自分の胸をつかむ	grabbing own breast
+動作	手	手を隠す	hide hands
+動作	乗り物	乗馬モーター	riding motor
 動作	動作	キスの瞬間	incoming kiss
 動作	動作	ジャンプ	jumping
 動作	動作	スカート持ち上げ	skirt lift
 動作	動作	つかむ	grabbing
 動作	動作	トレイを保持します	hold a tray
 動作	動作	ハグ	hug
+動作	動作	ファインティング	fighting
 動作	動作	ベンチ座り	sitting on bench
 動作	動作	マイクを持つ	with a microphone
+動作	動作	モーション	motion
 動作	動作	もたれかかる	leaning back
 動作	動作	椅子の上	on chair
 動作	動作	椅子座り	sitting on chair
@@ -3486,10 +3249,12 @@
 動作	動作	逆立ち	handstand
 動作	動作	叫ぶ	shouting
 動作	動作	結いている,髪をいじっている	tying hair
+動作	動作	咲く	bloom
 動作	動作	蹴る	kicking
 動作	動作	食べてる	eating
 動作	動作	寝る	sleepy
 動作	動作	潜める,身を潜める	hiding
+動作	動作	潜水	submerge
 動作	動作	走る	running
 動作	動作	足を水に浸す	soaking feet
 動作	動作	脱衣	undressing
@@ -3497,13 +3262,18 @@
 動作	動作	髪をいじっている	adjusting hair
 動作	動作	髪をかきあげる？	hand on own face
 動作	動作	髪を結んでいる	tied hair
+動作	動作	浮く	float
 動作	動作	歩く	walking motion
 動作	動作	帽子を触る	adjusting headwear
 動作	動作	枕を抱く	pillow hug
 動作	動作	踊っている	dancing
 動作	動作	落下	falling
 動作	動作	腕を前に出す	thrust arm forward
+動作	武器	剣で	with sword
+動作	武器	剣を持ってください	hold sword
 動作	目線	カメラ目線	looking at viewer
+動作	目線	まっすぐに	straight on
+動作	目線	見詰める	stare
 動作	腕の動作	（胸の前で）両手を握る	own hands together
 動作	腕の動作	いいね	thumbs up
 動作	腕の動作	ダブルピース	double peace,peace sign on both hands
@@ -3535,6 +3305,7 @@
 年齢	女性	女の子	girl
 年齢	女性	女子高校生	high school girl
 年齢	女性	少女	little girl
+年齢	女性	成熟した女性	mature female
 年齢	男女共通	あかちゃん	baby
 年齢	男女共通	あかちゃん	infant
 年齢	男女共通	あかちゃん	toddler
@@ -3576,13 +3347,57 @@
 年齢	年齢指定	70歳	70years old
 年齢	年齢指定	80歳	80years old
 年齢	年齢指定	90歳	90years old
+背景	軍事	空の空軍艦隊	air force fleet in the sky
+背景	建物	城は空に目立っています	the castle stands out against the sky
+背景	建物	鳥居	torii
+背景	幻想	ドラゴンの背景	dragon background
+背景	自然	パンパスグラスフィールド	pampas grass field
+背景	自然	花の牧草地	flowers meadow
+背景	自然	花びらのある草原	grasslwith petal
+背景	自然	高原	plateau
+背景	自然	枝が水に落ちる柳	willows with branches falling into the water
+背景	自然	自然	nature
+背景	自然	芝生	lawn
+背景	自然	水中の森	underwater forest
+背景	自然	川	river
+背景	自然	草原	grassland
+背景	自然	草原の広大な広がり	vast expanse of grassland
+背景	自然	庭	garden
+背景	水	水面	water surface
+背景	天体	暗い真夜中の空	dark midnight sky
+背景	天体	暗雲	dark clouds
+背景	天体	円の中の星空	starry sky in circle
+背景	天体	回転星の空	rotating star sky
+背景	天体	銀河	galaxy
+背景	天体	空の虹	rainbow in the sky
+背景	天体	月	moon
+背景	天体	荒れ果てた星	blighting stars
+背景	天体	繊細な星空の空	starry sky in detail
+背景	天体	総腫瘍	altocumulus
+背景	天体	日の出	sunrise
+背景	天体	日光	sunlight
+背景	天体	霧	fog
+背景	天体	流星	meteor
+背景	天体	累積	cumulus
+背景	都市	バックグラウンドアーバンルーフトップ	background urban rooftop
+背景	背景	ひび割れた床	cracked floor
+背景	背景	暗闇	darkness
+背景	背景	虚空の夜	hollow night
+背景	背景	建物	buildings
+背景	背景	混乱したテーブルと椅子	tables chairs in disarray
+背景	背景	窓	window pane
 背景	背景	地平線,水平線	horizon
+背景	背景	中世の町	medieval town
+背景	背景	天蓋	canopy
+背景	背景	破損した教室	damaged classroom
+背景	背景	背景	background
 背景	背景	白背景	white background
-文章	未分類	浮かぶさくらに囲まれています	surrounded by floating sakura
 背景	背景	浮かぶ灰	floating ashes
 背景	背景	浮かぶ宮殿	floating palace
 背景	背景	浮かぶ泡	floating bubbles
+背景	背景	風景	landscape
 背景	背景	落書き	graffiti
+背景	背景	流れる黒と白の背景	flowing background
 背景	柄	アーガイル柄	argyle pattern background
 背景	柄	イカット柄	ikat pattern background
 背景	柄	オンブレ	ombre background
@@ -3615,6 +3430,8 @@
 背景	柄	猫柄	cat pattern background
 背景	柄	菱形敷き詰め	argyle background
 背景	柄	無地	plain background
+背景	歴史	第一次世界大戦	world war
+髪	スタイル	ヘアカット	haircut
 髪	横髪	1房下ろす横髪	hair flaps
 髪	横髪	くるくるカール	ringlets hair
 髪	横髪	クルッとした1房下ろす横髪	hair intakes
@@ -3651,6 +3468,9 @@
 髪	後髪	編み込みの入った髪	knotless braid hair
 髪	後髪	編み込みの入った髪（後ろ）	bridal hair back view
 髪	後髪	編み込みの入った姫カット	long hime cut hair
+髪	質感	ふわふわした髪	fluffy hair
+髪	色	色付きの内なる髪	coloinner hair
+髪	色	赤毛の赤毛	mediumhair
 髪	前髪	オールバック,おでこを出す	hair slicked back
 髪	前髪	まっすぐな前髪	straight bangs
 髪	前髪	左右非対称な前髪	asymmetrical bangs
@@ -3665,6 +3485,7 @@
 髪	前髪	片側によった前髪,流した前髪	swept bangs
 髪	前髪	片目隠れ,アシメ	hair over one eye
 髪	前髪	片目隠れ2	one eye covered
+髪	装飾	星空は髪を飾ります	starry sky adorns hair
 髪	男性向けの髪型	コーンロー	cornrows
 髪	男性向けの髪型	スポーツ刈り	crew cut
 髪	男性向けの髪型	ドレッド	dreadlocks
@@ -3676,6 +3497,7 @@
 髪	男性向けの髪型	刈り上げ	nupe undercut
 髪	男性向けの髪型	七三	side parted
 髪	男性向けの髪型	坊ちゃん狩り	pudding bowl hair
+髪	動き	ダイナミックな髪	dynamic hair
 髪	髪のオプション	アホ毛	ahoge
 髪	髪のオプション	アホ毛2本以上	antenna hair
 髪	髪のオプション	大きなアホ毛	huge ahoge
@@ -3703,18 +3525,37 @@
 髪	髪型	ワンレン	one length haircut
 髪	髪型	横の刈り上げ	undercut
 髪	髪型	横編み込み	side braid
+髪	髪型	横編組	lateral braid
 髪	髪型	角みたいな髪	topknot
+髪	髪型	繊細で複雑な髪	intricate hair
+髪	髪型	長い波状の巻き毛	long wavy curly hair
+髪	髪型	長い波状の髪	long wavy hair
+髪	髪型	長い髪が吹き飛ばされました	long hair blown up
+髪	髪型	豚の尾	pig tails
+髪	髪型	髪の毛	fluttering hair
+髪	髪型	髪の毛を下ろします	lowing hair
+髪	髪型	髪の毛を奪いました	disreveled hair
+髪	髪型	髪は上向きに流れます	hair flows upwards
 髪	髪型	編み上げポニテ	braid ponytail
 髪	髪型	坊主,スキンヘッド,ハゲ	bald
+髪	髪型	乱れた髪	dishevelled hair
+髪	髪型	乱雑なヘアスタイル	messy hair style
+髪	髪型	乱雑な長い髪	messy long hair
+髪	髪型	乱雑な浮遊髪	messy floating hair
+髪	髪型	流れる髪	flowing hair
 髪	髪質	アフロ	afro hair
 髪	髪質	くせっ毛1	curly hair
 髪	髪質	くせっ毛2	kinky hair
 髪	髪質	ストレート	straight hair
 髪	髪質	ボサボサの髪	messy hair
+髪	髪質	ゆるい長い髪	loose long hair
 髪	髪質	ゆる巻き,ウェーブ	wavy hair
 髪	髪質	艶のある髪	shiny hair
 髪	髪質	艶やかな髪	glossy hair
+髪	髪質	絹のような髪	silky hair
 髪	髪質	増毛	big hair
+髪	髪質	濃い髪	thick hair
+髪	髪質	溶けた金属のような髪	hair like melted metal
 髪	髪色	2色髪	two-tone hair
 髪	髪色	azure髪	azure hair
 髪	髪色	オレンジ髪	orange hair
@@ -3723,6 +3564,8 @@
 髪	髪色	ブロンドの髪	blonde hair
 髪	髪色	メッシュ	streaked hair
 髪	髪色	黄髪	yellow hair
+髪	髪色	灰色の長い髪	light grey very long hair
+髪	髪色	灰色の髪の毛	grey hair
 髪	髪色	灰髪	gray hair
 髪	髪色	金髪	brond hair
 髪	髪色	銀髪	silver hair
@@ -3733,11 +3576,15 @@
 髪	髪色	朱髪	vermilion hair
 髪	髪色	青髪	blue hair
 髪	髪色	赤髪	red hair
+髪	髪色	多色の髪	multicolohair
 髪	髪色	多色髪	multicolored hair
 髪	髪色	茶髪	brown hair
+髪	髪色	長い暗いブロンドの髪	long dark blond hair
+髪	髪色	長い虹の髪	very long rainbow hair
 髪	髪色	銅髪	cooper hair
 髪	髪色	虹髪	rainbow hair
 髪	髪色	白髪	white hair
+髪	髪色	髪の濃い紫色	emerging dark purple across with hair
 髪	髪色	無髪	colorless hair
 髪	髪色	明るい紫髪	light purple hair
 髪	髪色	藍髪	indigo hair
@@ -3808,6 +3655,17 @@
 表情	性的な表情	恥ずかしそうに怯える	trembling
 表情	性的な表情	恥ずかしそうに警戒	scared
 表情	性的な表情	反抗的な視線	defiant look
+表情	表情	ぽかんとした顔	blank stare
+表情	表情	泣いている	crying
+表情	表情	泣く	cry
+表情	表情	狂気	insanity
+表情	表情	軽い笑顔	light smile
+表情	表情	軽い赤面	light blush
+表情	表情	笑顔をからかう	teasing smile
+表情	表情	怒った顔	angry face
+表情	表情	怒り	anger
+表情	表情	表現	expression
+表情	表情	無関心	indifference
 表情	不機嫌な表情	しかめっ面	frown
 表情	不機嫌な表情	しかめっ面2	furrowed brow
 表情	不機嫌な表情	しかめっ面3	wince
@@ -3847,6 +3705,7 @@
 品質	テキスト系	文章	text
 品質	テキスト系	融合指	fused digit
 品質	テキスト系	余分なdigt	extra digt
+品質	技術	レイトレーシング	ray tracing
 品質	高品質	粗いテクスチャ	rough texture
 品質	高品質用	！高品質セミセット	high quality,best,high resolution,best quality,award winning,highly detailed,hyper extreme detailed,masterpiece
 品質	高品質用	！高品質フルセット	official art,high quality,production art,novel illustration,best,high resolution,best quality,award winning,highly detailed,masterpiece,by famous artist,hyper extreme detailed
@@ -4114,9 +3973,16 @@
 品質	低品質腕部	余分な腕	extra arms
 品質	低品質腕部	腕が欠けています	missing arms
 品質	低品質腕部	腕が消える	disappearing arms
+品質	品質	世界の傑作	world masterpiece
+品質	品質	世界の傑作劇場	world masterpiece theater
 服装	SF	ヒーロー	super hero
 服装	SF	ヒーローロボット	justice hero
+服装	アウター	高い襟のコート	high collar coat
 服装	オプション	断面	cross section
+服装	スーツ	ボディスーツ	bodysuit
+服装	スカート	エッジのロイヤルブルースカート	royal skirt with edge
+服装	スカート	夏の長いスカート	summer long skirt
+服装	スカート	半透明のフラッタースカート	translucent fluttering skirt
 服装	トップス	ウェイトレスのエプロン	waist apron
 服装	トップス	お腹が見える服,上着のチャックを開ける	crop top
 服装	トップス	カーディガン	cardigan
@@ -4148,6 +4014,7 @@
 服装	トップス	童貞を殺す服,胸の谷間が見える衣装	cleavage cutout
 服装	トップス	被らないフード付きの上着	hood down
 服装	トップス	服の前を開けている	open clothes
+服装	ドレス	アングルセイラードレス	anglesailor dress
 服装	ドレス	ウェディングドレス	wedding dress
 服装	ドレス	エプロンドレス	pinafore dress
 服装	ドレス	オフショルダードレス	off shoulder dress
@@ -4161,9 +4028,13 @@
 服装	ドレス	パーティドレス	party dress
 服装	ドレス	フリルの付いたドレス	frilled dress
 服装	ドレス	ベリーダンスの衣装	belly dance
+服装	ドレス	ホルタードレス	halter dress
 服装	ドレス	レイヤードドレス	layered dress
 服装	ドレス	ローブ	robe
+服装	ドレス	ロングドレス	long dress
+服装	ドレス	長いドレスカバーフィート	very long dress cover feet
 服装	ドレス	白ワンピ	sundress
+服装	ドレス	葉のドレス	leaves dress
 服装	ボトムス	アシンメトリーなレッグウェア	asymmetrical legwear
 服装	ボトムス	おむつ	diapers
 服装	ボトムス	ジーンズ	jeans
@@ -4189,6 +4060,7 @@
 服装	ボトムス	透けてるスカート	tulle chiffon skirt covered by thin translucent skirt
 服装	ボトムス	柄の入ったおむつ	printed diapers
 服装	ボトムス	網タイツ	fishnet tights
+服装	レイヤード	ローブの下のシャツ	shirt under robe
 服装	一式	アーマー	armor
 服装	一式	アーマードレス	armor dress
 服装	一式	アイドルドレス	idol dress
@@ -4201,11 +4073,13 @@
 服装	一式	セーラー服	serafuku
 服装	一式	パジャマ	pajamas
 服装	一式	バスローブ	bathrobe
+服装	一式	フード付きケープ	hooded cape
 服装	一式	ボクシングのユニフォーム	boxing uniform
 服装	一式	ボタンが2つずつ並んだ服	double breasted
 服装	一式	ボンテージ	bdsm
 服装	一式	ボンデージ	sexual bondage
 服装	一式	ボンテージ2	bondage
+服装	一式	マント	cloak
 服装	一式	レディーススーツ	lady's suit
 服装	一式	ロボ兵装	machinery
 服装	一式	ロリータ	lolita (fashion style)
@@ -4234,6 +4108,7 @@
 服装	下着	パンティー,パンツ	panties
 服装	下着	ブラジャー	bra
 服装	下着	ベビードール	babydoll
+服装	下着	まとまったブルマー	wholebloomer
 服装	下着	下着	underwear
 服装	下着	股間の前の布	pelvic curtain
 服装	下着	股間の前の布2	loincloth
@@ -4243,6 +4118,7 @@
 服装	下着	柄の入ったおむつ	printed diapers
 服装	靴	ハイヒール	high heeled shoes
 服装	靴	厚底靴	platform footwear
+服装	靴	尖ったブーツ	pointed boots
 服装	靴	太ももブーツ	thigh boots
 服装	靴	編み上げブーツ	cross laced footwear
 服装	靴	編み上げブーツ2	lace up boots
@@ -4253,6 +4129,12 @@
 服装	靴下	ルーズソックス	loose socks
 服装	靴下	靴下	socks
 服装	靴下	白い靴下	white socks
+服装	靴下	膝の高さ	knee highs
+服装	形状	型の服	shaped clothes
+服装	高級服	シルクショール	silk shawl
+服装	材質	結晶化服	crystallized clothing
+服装	材質	作られた服	clothes made of silver
+服装	材質	絶妙な布	exquisite cloth
 服装	手袋	ウェディンググローブ	bridal gauntlets
 服装	手袋	ひじまで長い手袋	elbow gloves
 服装	手袋	黒手袋	black gloves
@@ -4261,11 +4143,19 @@
 服装	手袋	手袋	gloves
 服装	手袋	肉球グローブ	paw gloves
 服装	手袋	白手袋	white gloves
+服装	宗教服	カソック	cassock
+服装	色	暗いドレス	dark dress
+服装	色	金色のレース付きの服	clothes with lace
+服装	装飾	流れるレース	flowing lace
+服装	装飾付き	ドレスの頭蓋骨	skull on dress
 服装	袖	シースルー	see through
 服装	袖	シースルーの袖	see through sleeves
+服装	袖	トップスリーブ	top sleeves
+服装	袖	指を通り過ぎる袖	sleeves past fingers
 服装	袖	振袖	furisode
 服装	袖	袖あり	sleeves
 服装	袖	袖なし	sleeveless
+服装	袖	長い指の長い袖	long top sleeves past fingers
 服装	袖	長袖	long sleeves
 服装	袖	半袖	short sleeve
 服装	袖	萌え袖,ダボ袖	sleeves past wrists
@@ -4275,6 +4165,8 @@
 服装	特徴	ダメージ服	torn clothes
 服装	特徴	パッツンパッツン	skin tight
 服装	特徴	ピンと張ったシャツ	taut shirt
+服装	特徴	フリル	frills
+服装	特徴	フリンジ	fringes
 服装	特徴	ボタンが外れている	unbuttoned
 服装	特徴	ボタンが外れている2	button gap
 服装	特徴	肩開きのトップス	detached sleeves
@@ -4284,6 +4176,8 @@
 服装	特徴	揺れるスカート	skirt that sway
 服装	特徴	露出度の高い服	revealing clothes
 服装	特徴	露出度の低い	unexposed
+服装	服装	服	clothes
+服装	防具	機械的なボディアーマー	mechanical body armor
 服装	未分類	オフショルダージャケット	off shoulder jacket
 服装	未分類	ガーゼスカート	gauze skirt
 服装	未分類	ゴシック帝国のウエストドレス	gothic empire waist dress
@@ -4302,6 +4196,8 @@
 服装	裸	裸タオル	naked towel
 服装	裸	裸ネクタイ	naked necktie
 服装	裸	裸足	barefoot
+服装	露出度	ドレスを明らかにします	revealing dress
+服装	和装	オープンハカマ	ophakama
 服装	和装	さらし布	bleached cloth
 服装	和装	袴	hakama
 服装	和装	袴2	man's formal divided skirt
@@ -4311,6 +4207,110 @@
 服装	和装	浴衣(女性用)	girls yukata
 服装	和装	浴衣(男性用)	boys yukata
 服装	和装	和服	japanese clothes
+文章	文章	暗闇の表情は落ち込んでいます	gloom expression depressed
+文章	文章	衣服の下での劇核	ejacuculation under clothes
+文章	文章	影はありません	no shadow
+文章	文章	顔に焦点を合わせます	focus on face
+文章	文章	顔の特徴はありません	no facial features
+文章	文章	光のある夜,雲が豊かに重ねられた雲と雲のある月がに空になっています	night with lights whith richly layeclouds clouded moon in the sky
+文章	文章	洪水の足	flooding feet
+文章	文章	散在する光沢のある花びらがたくさんあります	there are many scatteluminous petals
+文章	文章	写真はキャンバスを埋めます	the picture fills the canvas
+文章	文章	草。目	the finest grass. eyes
+文章	文章	草は風に揺れます	the grass sways in the wind
+文章	文章	太陽は木々を通り抜けます	the sun shines through the trees
+文章	文章	男との性交	intercourse with man
+文章	文章	鳥が見えます	bird see
+文章	文章	内側から外側に壊れたをスパッタにしました	sputtebrokfrom inside to outside
+文章	文章	乳房の精液	cum in breasts
+文章	文章	背景が残っています	loong background
+文章	文章	髪の髪を摘み,染色します	pick dye hair in hair
+文章	文章	彼女は欲求不満で頭を下げた	she bowed her head in frustration
+文章	文章	服の下のペイズリ	paizuri under clothes
+文章	文章	流れる水の感覚	the sensation of water flowing
+文章	未分類	キャラクターはフレームの中央にあります	the character is in the center of the frame
+文章	未分類	きらめくアニメの目	sparkling anime eyes
+文章	未分類	サイドブラント前髪	side blunt bangs
+文章	未分類	サファイアフリル	sapphire frills
+文章	未分類	さまざまな金属の背景	various metals background
+文章	未分類	ジュリエットスリーブ	juliet sleeve
+文章	未分類	チュールスカート	tulle skirt
+文章	未分類	チュールレースのスカートの花と草の牧草地	tulle lace skirt flowers grass meadow
+文章	未分類	ツイストブレード	twist braid
+文章	未分類	ツートーンヘア：青と白	two tone hair:white
+文章	未分類	テクスチャースキン	texture skin
+文章	未分類	テクスチャウィング(材質指定とセット)	texture wings
+文章	未分類	テクスチャの花	texture flowers
+文章	未分類	テクスチャヘア	texture hair
+文章	未分類	テクスチャボディを結晶化します	crystallize texture body
+文章	未分類	どこにでも長い髪が浮かんでいます	long hair floating everywhere
+文章	未分類	ドラゴンが少女の後ろに立っています	dragon stands behind the girl
+文章	未分類	トリプルクラウンが黒曜石を象徴しています	triple crown inlaid with obsidian
+文章	未分類	フィリグリー	filigree
+文章	未分類	フローイング羽	floaing feathers
+文章	未分類	フローティングクラウド	floating cloud
+文章	未分類	フローティングとレインボーの髪	floating rainbow hair
+文章	未分類	フローティングフラグメント	floating fragments
+文章	未分類	フローティングホワイトシルク	floating silk
+文章	未分類	フローティングライトスポット	floating light spot
+文章	未分類	ぼんやりと見つめています	staring blankly
+文章	未分類	ミディアムフリルスカート	medium frilled skirt
+文章	未分類	メカニカルアーマーヘッドドレス	mechanical armor headdress
+文章	未分類	メカのカバレッジ	mechcoverage
+文章	未分類	メカの服	mechclothes
+文章	未分類	めちゃくちゃフリル	insanely frills
+文章	未分類	ように澄んだ手	hands as clear as jewels
+文章	未分類	より少ない星は円を形成します	less stars form circle
+文章	未分類	ラテンクロスは出芽しました	latin cross budded
+文章	未分類	ランダムに分散した雲	randomly distributed clouds
+文章	未分類	レースが流れて溶けます	lace flowing melt
+文章	未分類	レース付きの半透明の羽ばたきドレス	translucent fluttering dress with lace
+文章	未分類	ワインのひょうたんを持っています	holding wine gourd
+文章	未分類	下半身は魚類の人間の太ももです	the lower body is fishandno human thigh
+文章	未分類	華やかな縞模様のある金属クラウン	metal crown with ornate stripes
+文章	未分類	驚くべき素晴らしいとブラシストローク	amazing details brush strokes
+文章	未分類	型のテクスチャハンド	shaped texture hand
+文章	未分類	結晶紫色の宝石手袋	crystalline purple gemstone gloves
+文章	未分類	手はふくらんでいる袖に隠れています	hands hide in puffy sleeves
+文章	未分類	女の子は銀色のテクスチャーの服を着ています	girl wears clothes with texture
+文章	未分類	女の子は黒と白の道教のローブを着ています	girl wears clothes taoist robes
+文章	未分類	星が崩壊するように,私たちは日の目を吸収します	just like stars imploding we absorb the light of day
+文章	未分類	青と赤とオレンジとピンクの硬い光を変える	vary orange pink hard light
+文章	未分類	石に寄りかかっています	leaning on stone
+文章	未分類	装飾が施されたドレス	dress with decoration
+文章	未分類	装飾が施されたバイオレットドレス	violet dress with decoration
+文章	未分類	装飾のピンクのレースのドレス	dress with pink lace with decoration
+文章	未分類	多くの輝く粒子	glowing particles
+文章	未分類	多くの空飛ぶ水滴	many flying drops of water
+文章	未分類	多くの散らばった葉	many scatteleaves
+文章	未分類	中程度の胸	medium breast
+文章	未分類	中程度の胸部周囲	medium chest circumference
+文章	未分類	中程度の風	medium wind
+文章	未分類	独身の人間の女の子	single human girl
+文章	未分類	虹色とレインボーセーラードレス	iridescence rainbow sailor dress
+文章	未分類	虹色と虹のドレス	iridescence rainbow dress
+文章	未分類	虹色と虹の髪	iridescence rainbow hair
+文章	未分類	虹色と虹の目	iridescence rainbow eyes
+文章	未分類	虹色の宝石帽子	iridescent headwear
+文章	未分類	美しさの目	beauty eye
+文章	未分類	氷で作られた羽	feathers made of ice
+文章	未分類	氷と火が溶けます	ice fire melt
+文章	未分類	氷の結晶	ice crystal
+文章	未分類	浮かぶさくらに囲まれています	surrounded by floating sakura
+文章	未分類	浮遊砂の流れ	floating sflow
+文章	未分類	風で流れる長い髪	long hair flowing with the wind
+文章	未分類	風の中でひらひらと髪	hair fluttering in the wind
+文章	未分類	複雑なパターン	complex pattern
+文章	未分類	複雑な光	intricate light
+文章	未分類	複数の翼	multiple wings
+文章	未分類	覆われた胸	covebreasts
+文章	未分類	平らな胸	flat breasts
+文章	未分類	目の間の長い前髪	long bangs betweeyes
+未分類	未分類	見込み	prospect
+未分類	未分類	行き止まりのマシン	dead end machine
+未分類	未分類	残留軒のドゥアンビ	the residual eaves duanbi
+未分類	未分類	他の港アクア	other minato aqua
+未分類	未分類	多数の環境	number of environments
 模様	柄	アーガイル（菱形敷き詰め）	argyle
 模様	柄	アーガイル柄	argyle pattern
 模様	柄	イカット柄	ikat pattern
