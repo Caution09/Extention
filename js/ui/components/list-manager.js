@@ -75,8 +75,6 @@ class PromptListManager {
     const itemOptions = { ...options, listId, type };
 
     for (let i = 0; i < data.length; i++) {
-      console.log(`Creating item ${i}:`, data[i]);
-
       const $li = UIFactory.createListItem({
         id: config.sortable ? i : undefined,
         sortable: config.sortable,
@@ -115,7 +113,7 @@ class PromptListManager {
             AppState.data.archivesList[id].sort = baseIndex++;
           });
           await saveArchivesList();
-          console.log('Archive list order saved');
+          console.log("Archive list order saved");
         });
       }, 100);
     }
@@ -394,37 +392,39 @@ class PromptListManager {
       loadValue: item.prompt,
       copyValue: item.prompt,
       onDelete: async (event) => {
-        console.log('Delete button clicked for archive item:', item);
-        
+        console.log("Delete button clicked for archive item:", item);
+
         // ソート済みリストから削除する場合、元のデータでの正しいインデックスを見つける
         const itemToDelete = item;
         const originalIndex = AppState.data.archivesList.findIndex(
-          archive => archive.title === itemToDelete.title && archive.prompt === itemToDelete.prompt
+          (archive) =>
+            archive.title === itemToDelete.title &&
+            archive.prompt === itemToDelete.prompt
         );
-        
+
         if (originalIndex !== -1) {
           // 即座にDOM要素を削除（データ更新前に）
           const $deleteButton = $(event.target);
-          const $currentLi = $deleteButton.closest('li');
-          
-          console.log('Found li element:', $currentLi.length);
-          
-          $currentLi.addClass('deleting').fadeOut(300, function() {
+          const $currentLi = $deleteButton.closest("li");
+
+          console.log("Found li element:", $currentLi.length);
+
+          $currentLi.addClass("deleting").fadeOut(300, function () {
             $currentLi.remove();
-            console.log('DOM element removed');
+            console.log("DOM element removed");
           });
-          
+
           // データを更新
           AppState.data.archivesList.splice(originalIndex, 1);
-          
+
           // 残りのアイテムのソート順を再調整
           AppState.data.archivesList.forEach((archive, idx) => {
             archive.sort = idx;
           });
-          
+
           await saveArchivesList();
-          console.log('Data saved');
-          
+          console.log("Data saved");
+
           // 統計を更新
           if (window.app && window.app.tabs && window.app.tabs.dictionary) {
             window.app.tabs.dictionary.updateStats();
@@ -436,7 +436,7 @@ class PromptListManager {
     $li.append(buttons.load, buttons.copy, buttons.delete);
 
     // ソート可能な場合はドラッグハンドルを追加
-    if (options.type === 'archive') {
+    if (options.type === "archive") {
       $li.append(UIFactory.createDragIcon(index));
     }
   }
@@ -450,30 +450,30 @@ class PromptListManager {
         icon: "📝",
         title: "プロンプト辞書が空です",
         description: "プロンプトを保存すると、ここに表示されます。",
-        tip: "編集タブでプロンプトを作成し、「アーカイブ」ボタンで保存できます。"
+        tip: "編集タブでプロンプトを作成し、「アーカイブ」ボタンで保存できます。",
       },
       add: {
         icon: "📦",
-        title: "ローカル要素辞書が空です", 
+        title: "ローカル要素辞書が空です",
         description: "独自の要素を追加すると、ここに表示されます。",
-        tip: "上の「新しい要素を追加」フォームから要素を登録できます。"
+        tip: "上の「新しい要素を追加」フォームから要素を登録できます。",
       },
       master: {
         icon: "🌐",
         title: "マスター辞書が読み込まれていません",
         description: "マスター辞書の読み込みに時間がかかっています。",
-        tip: "しばらく待ってからページを再読み込みしてください。"
+        tip: "しばらく待ってからページを再読み込みしてください。",
       },
       search: {
         icon: "🔍",
         title: "検索結果が見つかりません",
         description: "別のキーワードで検索してみてください。",
-        tip: "大項目・中項目・小項目での絞り込み検索も試してください。"
-      }
+        tip: "大項目・中項目・小項目での絞り込み検索も試してください。",
+      },
     };
 
     const message = emptyMessages[type] || emptyMessages.search;
-    
+
     const $emptyState = $(`
       <li class="empty-state">
         <div class="empty-state-content">
@@ -484,7 +484,7 @@ class PromptListManager {
         </div>
       </li>
     `);
-    
+
     $(listId).append($emptyState);
   }
 

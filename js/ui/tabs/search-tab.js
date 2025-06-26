@@ -44,6 +44,9 @@
         // イベントリスナーを設定
         this.setupEventListeners();
 
+        // 要素追加機能の設定
+        this.setupElementRegistration();
+
         // カテゴリードロップダウンを初期化
         this.initializeCategoryDropdowns();
 
@@ -318,6 +321,147 @@
           await this.performSearch({ showLoading: false, forceRefresh: true });
         }
       }
+
+
+      /**
+       * 検索結果を表示し直す
+       */
+      async refreshSearchResults() {
+        // 現在の検索条件を確認
+        const keyword = this.getElement("#search")?.value || "";
+        const hasActiveSearch = keyword || 
+                               AppState.data.searchCategory?.[0] || 
+                               AppState.data.searchCategory?.[1];
+        
+        // 何らかの検索条件がある場合のみ再検索
+        if (hasActiveSearch) {
+          console.log("Refreshing search results after element addition");
+          console.log("Current search conditions:", {
+            keyword,
+            category0: AppState.data.searchCategory?.[0],
+            category1: AppState.data.searchCategory?.[1]
+          });
+          
+          // 現在の検索条件で再検索
+          await this.performSearch({ showLoading: false, forceRefresh: true });
+        } else {
+          console.log("No active search conditions, skipping refresh");
+        }
+      }
+
+      /**
+       * 要素登録の設定
+       */
+      setupElementRegistration() {
+        const resistButton = this.getElement("#resist");
+        if (resistButton) {
+          this.addEventListener(resistButton, "click", async () => {
+            await this.handleElementRegistration();
+          });
+        }
+
+        // Enterキーでも登録できるように
+        const promptInput = this.getElement("#prompt");
+        if (promptInput) {
+          this.addEventListener(promptInput, "keypress", async (e) => {
+            if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+              await this.handleElementRegistration();
+            }
+          });
+        }
+
+        // カテゴリー入力フィールドの設定
+        this.setupCategoryInputs();
+      }
+
+      /**
+       * カテゴリー入力フィールドの設定
+       */
+      setupCategoryInputs() {
+        const bigInput = this.getElement("#big");
+        const middleInput = this.getElement("#middle");
+        const smallInput = this.getElement("#small");
+
+        if (bigInput && middleInput) {
+          // 大項目と中項目のみ連動
+          EventHandlers.setupCategoryChain([bigInput, middleInput]);
+
+          // クリア動作を追加
+          EventHandlers.addInputClearBehavior(bigInput);
+          EventHandlers.addInputClearBehavior(middleInput);
+
+          // 小項目は単純な入力フィールドとして扱う
+          if (smallInput) {
+            EventHandlers.addInputClearBehavior(smallInput);
+          }
+        }
+      }
+
+      /**
+       * 要素の登録処理
+       */
+      async handleElementRegistration() {
+        const bigInput = this.getElement("#big");
+        const middleInput = this.getElement("#middle");
+        const smallInput = this.getElement("#small");
+        const promptInput = this.getElement("#prompt");
+
+        const data = {
+          big: bigInput ? bigInput.value : "",
+          middle: middleInput ? middleInput.value : "",
+          small: smallInput ? smallInput.value : "",
+          prompt: promptInput ? promptInput.value : "",
+        };
+
+        // バリデーション
+        const promptValidation = Validators.validatePrompt(data.prompt);
+        if (!promptValidation.isValid) {
+          ErrorHandler.notify(promptValidation.errors[0].message);
+          return;
+        }
+
+        const categoryValidation = Validators.validateCategories(data);
+        if (!categoryValidation.isValid) {
+          ErrorHandler.notify(categoryValidation.errors[0].message);
+          return;
+        }
+
+        // 登録
+        const success = Regist(data.big, data.middle, data.small, data.prompt);
+        if (success) {
+          // 入力フィールドをクリア
+          if (bigInput) bigInput.value = "";
+          if (middleInput) middleInput.value = "";
+          if (smallInput) smallInput.value = "";
+          if (promptInput) promptInput.value = "";
+
+          // 成功通知
+          ErrorHandler.notify("要素を追加しました", {
+            type: ErrorHandler.NotificationType.TOAST,
+            messageType: "success",
+            duration: 1500,
+          });
+
+          // プロンプト入力にフォーカスを戻す
+          if (promptInput) {
+            promptInput.focus();
+          }
+
+          // 新しい要素がカテゴリーに追加された場合のみドロップダウンを更新
+          if (data.big || data.middle) {
+            console.log("New category added, updating dropdowns:", { big: data.big, middle: data.middle });
+            // ドロップダウンの更新は自動的にsetCategoryListで選択値が保持される
+          } else {
+            console.log("No new categories, skipping dropdown update");
+          }
+
+          // 検索結果を更新（現在の検索条件で再検索）
+          setTimeout(async () => {
+            await this.refreshSearchResults();
+          }, 300);
+        }
+      }
+
 
       /**
        * キーボードショートカット設定（将来の拡張用）

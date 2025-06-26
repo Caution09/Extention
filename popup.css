@@ -1655,9 +1655,9 @@ input[type="text"].promptData {
 .dictionary-header {
   background: var(--bg-secondary);
   border: 1px solid var(--border-default);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
   box-shadow: var(--shadow-sm);
   position: relative;
   overflow: hidden;
@@ -1678,9 +1678,9 @@ input[type="text"].promptData {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
   color: var(--text-primary);
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 600;
 }
 
@@ -1696,8 +1696,8 @@ input[type="text"].promptData {
 .dictionary-section {
   background: var(--bg-secondary);
   border: 1px solid var(--border-default);
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
   overflow: hidden;
   transition: all var(--transition-fast);
   box-shadow: var(--shadow-sm);
@@ -1711,7 +1711,7 @@ input[type="text"].promptData {
 /* 辞書セクションヘッダー */
 .dictionary-section-header {
   background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
   cursor: pointer;
   user-select: none;
   border-bottom: 1px solid var(--border-default);
@@ -1803,7 +1803,7 @@ input[type="text"].promptData {
 }
 
 .dictionary-list-content {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   border-top: 1px solid var(--border-muted);
   max-height: none; /* 子要素の高さ制限を解除 */
 }
@@ -1902,17 +1902,17 @@ input[type="text"].promptData {
 /* 辞書統計 */
 .dictionary-stats {
   display: flex;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
   flex-wrap: wrap;
 }
 
 .stat-item {
   background: var(--bg-tertiary);
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border-default);
-  min-width: 80px;
+  min-width: 70px;
   text-align: center;
   transition: all var(--transition-fast);
 }
@@ -1948,13 +1948,340 @@ input[type="text"].promptData {
   color: var(--bg-primary);
 }
 
-/* 要素追加フォーム */
+/* 要素追加フォーム（3行レイアウト） */
+.element-form-simple {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.element-form-simple h3 {
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--text-primary);
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.element-form-simple .full-size {
+  margin: 0;
+  padding: 0;
+}
+
+/* 基本の3行レイアウト */
+.element-form-simple .full-size li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* 1行目: ヘッダー行 */
+.element-form-simple .full-size li:first-child {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* 2行目: 入力行 */
+.element-form-simple .full-size li:nth-child(2) {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ヘッダーと入力フィールドの幅比率 1:1:1:2 */
+.element-form-simple .header-input:nth-child(1),
+.element-form-simple .header-input:nth-child(2),
+.element-form-simple .header-input:nth-child(3),
+.element-form-simple .promptData:nth-child(1),
+.element-form-simple .promptData:nth-child(2),
+.element-form-simple .promptData:nth-child(3) {
+  flex: 1; /* 大項目・中項目・小項目 */
+  min-width: 0;
+}
+
+.element-form-simple .header-input:nth-child(4),
+.element-form-simple .promptData:nth-child(4) {
+  flex: 2; /* プロンプト項目（2倍幅） */
+  min-width: 0;
+}
+
+/* 3行目: 追加ボタン */
+.element-form-simple button {
+  width: 100%;
+  margin-top: var(--spacing-xs);
+}
+
+/* ヘッダーのスタイル */
+.element-form-simple .header-input {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 0.75em;
+  padding: var(--spacing-xs);
+  height: 24px;
+  min-width: 50px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-sm);
+}
+
+/* 入力フィールドのスタイル */
+.element-form-simple .promptData {
+  font-size: 0.8em;
+  padding: var(--spacing-xs);
+  height: 28px;
+  min-width: 50px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+
+.element-form-simple .promptData:focus {
+  border-color: var(--accent-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+}
+
+/* 3行目: ボタン行 */
+.element-form-simple button {
+  background: var(--accent-success);
+  color: var(--bg-primary);
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 0.8em;
+  height: 30px;
+  width: 100%;
+  margin-top: var(--spacing-xs);
+}
+
+.element-form-simple button:hover {
+  background: var(--accent-primary);
+  transform: translateY(-1px);
+}
+
+/* ヘッダー行のスペーサーを非表示 */
+.element-form-simple .header-spacer {
+  display: none;
+}
+
+/* キーワード検索フォーム */
+.search-form-box {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.search-form-box h3 {
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--text-primary);
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.search-input-container {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.search-input-container #search {
+  flex: 1;
+  font-size: 0.8em;
+  padding: var(--spacing-xs);
+  height: 28px;
+  box-sizing: border-box;
+}
+
+.search-input-container #searchButton {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 0.8em;
+  height: 28px;
+  flex: 0 0 auto;
+}
+
+.search-input-container #searchButton:hover {
+  background: var(--accent-success);
+  transform: translateY(-1px);
+}
+
+/* ドロップダウン検索フォーム */
+.dropdown-form-box {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.dropdown-form-box h3 {
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--text-primary);
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.dropdown-form-box .full-size {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-form-box .full-size li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* ドロップダウン検索の3行レイアウト */
+
+/* 1行目: ヘッダー行 */
+.dropdown-form-box .full-size li:first-child {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+}
+
+.dropdown-form-box .full-size li:first-child .header-input {
+  flex: 1; /* 大項目・中項目を1:1の比率 */
+  min-width: 0;
+  max-width: none;
+}
+
+/* 2行目: ドロップダウン選択行 */
+.dropdown-form-box .full-size li:nth-child(2) {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.dropdown-form-box .full-size li:nth-child(2) select {
+  flex: 1; /* 各ドロップダウンを1:1の比率 */
+  min-width: 0;
+  max-width: none;
+  font-size: 0.8em;
+  padding: var(--spacing-xs);
+  height: 28px;
+  box-sizing: border-box;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+}
+
+.dropdown-form-box .full-size li:nth-child(2) select:focus {
+  border-color: var(--accent-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+}
+
+/* 3行目: リセットボタン */
+.dropdown-form-box #search-cat-reset {
+  background: var(--accent-warning);
+  color: var(--bg-primary);
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 0.8em;
+  height: 30px;
+  width: 100%;
+  margin-top: var(--spacing-xs);
+}
+
+.dropdown-form-box #search-cat-reset:hover {
+  background: var(--accent-danger);
+  transform: translateY(-1px);
+}
+
+/* 中程度の幅（400px以上）: より余裕のあるレイアウト */
+@media (min-width: 400px) {
+  .element-form-simple {
+    padding: var(--spacing-md);
+  }
+  
+  .element-form-simple .full-size li:first-child,
+  .element-form-simple .full-size li:nth-child(2) {
+    gap: var(--spacing-sm);
+  }
+  
+  
+  .element-form-simple .header-input {
+    font-size: 0.8em;
+    height: 26px;
+  }
+  
+  .element-form-simple .promptData {
+    font-size: 0.85em;
+    height: 30px;
+  }
+  
+  .element-form-simple button {
+    font-size: 0.85em;
+    height: 32px;
+    width: 100%;
+  }
+}
+
+/* 広い幅（600px以上）: さらに余裕のあるレイアウト */
+@media (min-width: 600px) {
+  .element-form-simple h3 {
+    font-size: 1em;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .element-form-simple .full-size li:first-child,
+  .element-form-simple .full-size li:nth-child(2) {
+    gap: var(--spacing-md);
+  }
+  
+  
+  .element-form-simple .header-input {
+    font-size: 0.85em;
+    height: 28px;
+    padding: var(--spacing-sm);
+  }
+  
+  .element-form-simple .promptData {
+    font-size: 0.9em;
+    height: 32px;
+    padding: var(--spacing-sm);
+  }
+  
+  .element-form-simple button {
+    font-size: 0.9em;
+    height: 36px;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    width: 100%;
+  }
+}
+
+/* 従来の要素追加フォーム（辞書タブ用） */
 .element-form {
   background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
   border: 1px solid var(--border-default);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
   box-shadow: var(--shadow-sm);
   position: relative;
   overflow: hidden;
@@ -1974,10 +2301,10 @@ input[type="text"].promptData {
 .form-title {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
   color: var(--text-primary);
-  font-size: 1.1em;
+  font-size: 0.95em;
   font-weight: 600;
 }
 
@@ -1989,9 +2316,9 @@ input[type="text"].promptData {
 /* カテゴリー入力グリッド */
 .category-input-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
 }
 
 .input-group {
@@ -2001,7 +2328,7 @@ input[type="text"].promptData {
 }
 
 .input-label {
-  font-size: 0.9em;
+  font-size: 0.85em;
   font-weight: 600;
   color: var(--text-secondary);
   display: flex;
@@ -2038,8 +2365,8 @@ input[type="text"].promptData {
 
 /* プロンプト入力エリア */
 .prompt-input-area {
-  margin-top: var(--spacing-lg);
-  padding-top: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
   border-top: 1px solid var(--border-muted);
 }
 
@@ -2049,11 +2376,11 @@ input[type="text"].promptData {
 
 .enhanced-textarea {
   width: 100%;
-  min-height: 80px;
+  min-height: 60px;
   background: var(--bg-primary);
   border: 2px solid var(--border-default);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm);
   color: var(--text-primary);
   font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
   font-size: 0.9em;
@@ -2084,17 +2411,17 @@ input[type="text"].promptData {
   background: linear-gradient(135deg, var(--accent-success), var(--accent-primary));
   color: var(--bg-primary);
   border: none;
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
   font-weight: 600;
-  font-size: 1em;
+  font-size: 0.9em;
   cursor: pointer;
   transition: all var(--transition-fast);
   box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  margin-top: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
   align-self: flex-end;
 }
 

@@ -153,8 +153,11 @@ const categoryData = {
     // 中・小カテゴリーのdatalistを作成（既存のものを再利用）
     this.updateSubDatalistsBatch();
 
-    // 検索カテゴリーの初期化
-    setCategoryList("#search-cat0", 0);
+    // 検索カテゴリーの初期化（検索タブが存在し、まだ初期化されていない場合のみ）
+    const searchCat0 = document.querySelector("#search-cat0");
+    if (searchCat0 && searchCat0.options.length === 0) {
+      setCategoryList("#search-cat0", 0);
+    }
 
     if (window.PerformanceMonitor) {
       PerformanceMonitor.end("createDatalist");
@@ -394,6 +397,9 @@ function setCategoryList(selectorId, categoryLevel) {
   const selectElement = document.querySelector(selectorId);
   if (!selectElement) return;
 
+  // 現在の選択値を保存
+  const currentValue = selectElement.value;
+
   // 既存のオプションをクリア
   selectElement.innerHTML = "";
 
@@ -415,7 +421,11 @@ function setCategoryList(selectorId, categoryLevel) {
 
   selectElement.appendChild(fragment);
   selectElement.disabled = false;
-  selectElement.value = "";
+  
+  // 現在の値が新しいオプションに存在する場合は復元
+  if (currentValue && Array.from(selectElement.options).some(opt => opt.value === currentValue)) {
+    selectElement.value = currentValue;
+  }
 }
 
 /**

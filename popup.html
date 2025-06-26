@@ -80,37 +80,102 @@
       <div class="panel-group">
         <!-- 検索タブ -->
         <div class="panel is-show" id="searchTabBody">
-          <h2>キーワード検索</h2>
-          <input type="text" size="25" id="search" value="" />
-          <input type="button" id="searchButton" value="検索" />
-          <h2>ドロップダウン検索</h2>
-          <ul class="full-size">
-            <li>
-              <input
-                value="大項目"
-                type="text"
-                readonly=""
-                class="promptData header-input"
-              /><input
-                value="中項目"
-                type="text"
-                readonly=""
-                class="promptData header-input"
-              /><input
-                value="小項目"
-                type="text"
-                readonly=""
-                class="promptData header-input"
-              />
-            </li>
-            <li>
-              <div class="dropdown-container">
+          <!-- 要素追加フォーム -->
+          <div class="element-form-simple">
+            <h3>新しい要素を追加</h3>
+            <ul class="full-size">
+              <li>
+                <input
+                  value="大項目"
+                  type="text"
+                  readonly=""
+                  class="promptData header-input"
+                />
+                <input
+                  value="中項目"
+                  type="text"
+                  readonly=""
+                  class="promptData header-input"
+                />
+                <input
+                  value="小項目"
+                  type="text"
+                  readonly=""
+                  class="promptData header-input"
+                />
+                <input
+                  value="プロンプト"
+                  type="text"
+                  readonly=""
+                  class="promptData header-input"
+                />
+                <div class="header-spacer"></div>
+              </li>
+              <li>
+                <input
+                  type="text"
+                  id="big"
+                  class="promptData"
+                  placeholder="例: character"
+                />
+                <input
+                  type="text"
+                  id="middle"
+                  class="promptData"
+                  placeholder="例: girl"
+                />
+                <input
+                  type="text"
+                  id="small"
+                  class="promptData"
+                  placeholder="例: cute"
+                />
+                <input
+                  type="text"
+                  id="prompt"
+                  class="promptData"
+                  placeholder="プロンプトを入力..."
+                />
+              </li>
+              <button type="button" id="resist">追加</button>
+              <li></li>
+            </ul>
+          </div>
+
+          <!-- ドロップダウン検索フォーム -->
+          <div class="dropdown-form-box">
+            <h3>ドロップダウン検索</h3>
+            <ul class="full-size">
+              <li>
+                <input
+                  value="大項目"
+                  type="text"
+                  readonly=""
+                  class="promptData header-input"
+                /><input
+                  value="中項目"
+                  type="text"
+                  readonly=""
+                  class="promptData header-input"
+                />
+              </li>
+              <li>
                 <select id="search-cat0" disabled></select>
                 <select id="search-cat1" disabled></select>
-              </div>
-              <input type="button" id="search-cat-reset" value="リセット" />
-            </li>
-          </ul>
+              </li>
+              <button type="button" id="search-cat-reset">リセット</button>
+            </ul>
+          </div>
+
+          <!-- キーワード検索フォーム -->
+          <div class="search-form-box">
+            <h3>キーワード検索</h3>
+            <div class="search-input-container">
+              <input type="text" size="25" id="search" value="" />
+              <input type="button" id="searchButton" value="検索" />
+            </div>
+          </div>
+
           <hr />
           <p id="isSearch" class="full-size"></p>
           <ul class="full-size" id="promptList"></ul>
@@ -156,56 +221,6 @@
             </div>
           </div>
 
-          <!-- 要素追加フォーム -->
-          <div class="element-form">
-            <div class="form-title">
-              <span class="icon">➕</span>
-              <span>新しい要素を追加</span>
-            </div>
-            
-            <div class="category-input-grid">
-              <div class="input-group">
-                <label class="input-label">
-                  <span class="icon">🏷️</span>
-                  <span>大項目</span>
-                </label>
-                <input type="text" id="big" class="enhanced-input" placeholder="例: character" />
-              </div>
-              <div class="input-group">
-                <label class="input-label">
-                  <span class="icon">🏷️</span>
-                  <span>中項目</span>
-                </label>
-                <input type="text" id="middle" class="enhanced-input" placeholder="例: girl" />
-              </div>
-              <div class="input-group">
-                <label class="input-label">
-                  <span class="icon">🏷️</span>
-                  <span>小項目</span>
-                </label>
-                <input type="text" id="small" class="enhanced-input" placeholder="例: cute" />
-              </div>
-            </div>
-
-            <div class="prompt-input-area">
-              <div class="input-group">
-                <label class="input-label">
-                  <span class="icon">✏️</span>
-                  <span>プロンプト</span>
-                </label>
-                <div class="prompt-input-wrapper">
-                  <textarea id="prompt" class="enhanced-textarea" placeholder="プロンプトを入力してください..."></textarea>
-                  <div class="character-count" id="prompt-char-count">0文字</div>
-                </div>
-              </div>
-              
-              <button type="button" id="resist" class="add-button">
-                <span class="icon">💾</span>
-                <span>追加</span>
-              </button>
-            </div>
-          </div>
-
           <!-- 要素辞書（ローカル）セクション -->
           <div class="dictionary-section">
             <div class="dictionary-section-header" data-expanded="false">
@@ -239,10 +254,14 @@
           </div>
 
           <!-- 隠し要素（従来互換性のため） -->
-          <div style="display: none;">
+          <div style="display: none">
             <div id="promptDicText">▶プロンプト辞書　※ここをクリックで開閉</div>
-            <div id="elementDicText">▶要素辞書(ローカル)　※ここをクリックで開閉</div>
-            <div id="masterDicText">▶要素辞書(マスタ)　※ここをクリックで開閉</div>
+            <div id="elementDicText">
+              ▶要素辞書(ローカル)　※ここをクリックで開閉
+            </div>
+            <div id="masterDicText">
+              ▶要素辞書(マスタ)　※ここをクリックで開閉
+            </div>
           </div>
         </div>
 

@@ -53,9 +53,6 @@
         // 統計情報を更新
         this.updateStats();
 
-        // 文字数カウントを設定
-        this.setupCharacterCount();
-
         console.log("DictionaryTab initialized");
       }
 
@@ -80,10 +77,7 @@
         // 辞書の開閉
         this.setupDictionaryToggles();
 
-        // 要素の追加
-        this.setupElementRegistration();
-
-        // カテゴリー入力の連動
+        // カテゴリー入力の連動（既存の入力フィールド用）
         this.setupCategoryInputs();
       }
 
@@ -138,27 +132,6 @@
         }
       }
 
-      /**
-       * 要素登録の設定
-       */
-      setupElementRegistration() {
-        const resistButton = this.getElement("#resist");
-        if (resistButton) {
-          this.addEventListener(resistButton, "click", async () => {
-            await this.handleElementRegistration();
-          });
-        }
-
-        // Enterキーでも登録できるように
-        const promptInput = this.getElement("#prompt");
-        if (promptInput) {
-          this.addEventListener(promptInput, "keypress", async (e) => {
-            if (e.key === "Enter") {
-              await this.handleElementRegistration();
-            }
-          });
-        }
-      }
 
       /**
        * カテゴリー入力フィールドの設定
@@ -290,60 +263,6 @@
         this.updateStats();
       }
 
-      /**
-       * 要素の登録処理
-       */
-      async handleElementRegistration() {
-        const bigInput = this.getElement("#big");
-        const middleInput = this.getElement("#middle");
-        const smallInput = this.getElement("#small");
-        const promptInput = this.getElement("#prompt");
-
-        const data = {
-          big: bigInput ? bigInput.value : "",
-          middle: middleInput ? middleInput.value : "",
-          small: smallInput ? smallInput.value : "",
-          prompt: promptInput ? promptInput.value : "",
-        };
-
-        // バリデーション
-        const promptValidation = Validators.validatePrompt(data.prompt);
-        if (!promptValidation.isValid) {
-          ErrorHandler.notify(promptValidation.errors[0].message);
-          return;
-        }
-
-        const categoryValidation = Validators.validateCategories(data);
-        if (!categoryValidation.isValid) {
-          ErrorHandler.notify(categoryValidation.errors[0].message);
-          return;
-        }
-
-        // 登録
-        const success = Regist(data.big, data.middle, data.small, data.prompt);
-        if (success) {
-          // 入力フィールドをクリア
-          if (bigInput) bigInput.value = "";
-          if (middleInput) middleInput.value = "";
-          if (smallInput) smallInput.value = "";
-          if (promptInput) promptInput.value = "";
-
-          // リストを更新
-          await this.refreshAddList();
-
-          // 成功通知
-          ErrorHandler.notify("要素を追加しました", {
-            type: ErrorHandler.NotificationType.TOAST,
-            messageType: "success",
-            duration: 1500,
-          });
-
-          // プロンプト入力にフォーカスを戻す
-          if (promptInput) {
-            promptInput.focus();
-          }
-        }
-      }
 
       /**
        * アーカイブリストを更新
@@ -511,36 +430,6 @@
         console.log('Dictionary stats updated:', stats);
       }
 
-      /**
-       * 文字数カウントを設定
-       */
-      setupCharacterCount() {
-        const promptTextarea = document.getElementById('prompt');
-        const charCountEl = document.getElementById('prompt-char-count');
-        
-        if (promptTextarea && charCountEl) {
-          const updateCharCount = () => {
-            const count = promptTextarea.value.length;
-            charCountEl.textContent = `${count}文字`;
-            
-            // 文字数に応じて色を変更
-            if (count > 500) {
-              charCountEl.style.color = 'var(--accent-danger)';
-            } else if (count > 300) {
-              charCountEl.style.color = 'var(--accent-warning)';
-            } else {
-              charCountEl.style.color = 'var(--text-muted)';
-            }
-          };
-          
-          // 初期値を設定
-          updateCharCount();
-          
-          // リアルタイム更新
-          this.addEventListener(promptTextarea, 'input', updateCharCount);
-          this.addEventListener(promptTextarea, 'keyup', updateCharCount);
-        }
-      }
 
       /**
        * タブ表示時に統計情報を更新
@@ -565,68 +454,6 @@
         }
       }
 
-      /**
-       * 要素登録後の処理を拡張
-       */
-      async handleElementRegistration() {
-        const bigInput = this.getElement("#big");
-        const middleInput = this.getElement("#middle");
-        const smallInput = this.getElement("#small");
-        const promptInput = this.getElement("#prompt");
-
-        const data = {
-          big: bigInput ? bigInput.value : "",
-          middle: middleInput ? middleInput.value : "",
-          small: smallInput ? smallInput.value : "",
-          prompt: promptInput ? promptInput.value : "",
-        };
-
-        // バリデーション
-        const promptValidation = Validators.validatePrompt(data.prompt);
-        if (!promptValidation.isValid) {
-          ErrorHandler.notify(promptValidation.errors[0].message);
-          return;
-        }
-
-        const categoryValidation = Validators.validateCategories(data);
-        if (!categoryValidation.isValid) {
-          ErrorHandler.notify(categoryValidation.errors[0].message);
-          return;
-        }
-
-        // 登録
-        const success = Regist(data.big, data.middle, data.small, data.prompt);
-        if (success) {
-          // 入力フィールドをクリア
-          if (bigInput) bigInput.value = "";
-          if (middleInput) middleInput.value = "";
-          if (smallInput) smallInput.value = "";
-          if (promptInput) {
-            promptInput.value = "";
-            // 文字数カウントもリセット
-            const charCountEl = document.getElementById('prompt-char-count');
-            if (charCountEl) charCountEl.textContent = '0文字';
-          }
-
-          // リストを更新
-          await this.refreshAddList();
-
-          // 統計情報を更新
-          this.updateStats();
-
-          // 成功通知
-          ErrorHandler.notify("要素を追加しました", {
-            type: ErrorHandler.NotificationType.TOAST,
-            messageType: "success",
-            duration: 1500,
-          });
-
-          // プロンプト入力にフォーカスを戻す
-          if (promptInput) {
-            promptInput.focus();
-          }
-        }
-      }
 
       /**
        * デバッグ情報を出力（オーバーライド）
