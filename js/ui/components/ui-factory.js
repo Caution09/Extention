@@ -172,13 +172,14 @@ const UIFactory = {
     if (config.includeDelete) {
       buttons.delete = this.createButton({
         text: "X",
-        onClick: async () => {
+        onClick: async (event) => {
           const shouldDelete =
             !AppState.userSettings.optionData?.isDeleteCheck ||
             window.confirm("本当に削除しますか？");
 
           if (shouldDelete && config.onDelete) {
-            await config.onDelete();
+            // 削除処理にイベントオブジェクトを渡す
+            await config.onDelete(event);
           }
         },
       });
@@ -417,18 +418,80 @@ const EventHandlers = {
       $list.sortable("destroy");
     }
 
-    $list.sortable({
-      revert: 50,
-      distance: 5,
+    // 編集タブの場合はcontainmentを無効化
+    const isEditTab = listId === '#editList';
+    
+    const sortableOptions = {
+      revert: 100,
+      distance: 10,
       tolerance: "pointer",
-      cursor: "move",
-      // パフォーマンス改善：helper関数を最適化
-      helper: "clone",
+      cursor: "grabbing",
+      opacity: 0.8,
+      scroll: true,
+      scrollSensitivity: 20,
+      scrollSpeed: 20,
+      helper: 'clone',
+      // 辞書タブの場合のみcontainmentを設定
+      ...(isEditTab ? {} : { containment: listId }),
+      // ドラッグ開始時（座標修正版）
+      start: function(event, ui) {
+        console.log('Drag started, item:', ui.item[0], 'isEditTab:', isEditTab);
+        
+        // オリジナル要素のサイズを取得
+        const width = ui.item.outerWidth();
+        const height = ui.item.outerHeight();
+        
+        // ヘルパーのスタイルを設定（編集タブと辞書タブで異なる設定）
+        const helperStyle = {
+          'width': width,
+          'height': height,
+          'z-index': 99999,
+          'background': 'var(--bg-tertiary)',
+          'border': '2px solid var(--accent-primary)',
+          'border-radius': 'var(--radius-md)',
+          'box-shadow': '0 10px 30px rgba(0,0,0,0.5)',
+          'opacity': '0.9',
+          'transform': 'scale(1.02)',
+          'cursor': 'grabbing',
+          'pointer-events': 'none'
+        };
+        
+        // 編集タブの場合はfixed、辞書タブの場合はabsolute
+        if (isEditTab) {
+          helperStyle.position = 'fixed';
+        } else {
+          helperStyle.position = 'absolute';
+        }
+        
+        ui.helper.css(helperStyle);
+        
+        // プレースホルダーのスタイル
+        ui.placeholder.css({
+          'height': height + 'px',
+          'visibility': 'visible',
+          'background': 'var(--bg-accent)',
+          'border': '2px dashed var(--accent-primary)',
+          'border-radius': 'var(--radius-md)',
+          'margin': '4px 0',
+          'opacity': '0.7'
+        });
+        
+        // 元の要素を半透明に
+        ui.item.css('opacity', '0.5');
+      },
+      // ドラッグ終了時
+      stop: function(event, ui) {
+        console.log('Drag stopped');
+        ui.item.css('opacity', '1');
+      },
       update: function (event, ui) {
         const sortedIds = $list.sortable("toArray");
+        console.log('Sortable update, new order:', sortedIds);
         onUpdate(sortedIds);
       },
-    });
+    };
+
+    $list.sortable(sortableOptions);
   },
 
   /**

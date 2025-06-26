@@ -294,8 +294,29 @@ async function loadMasterPrompt() {
   try {
     const result = await Storage.get(["masterPrompts", "masterVersion"]);
 
-    if (result.masterPrompts) {
+    if (result.masterPrompts && result.masterPrompts.length > 0) {
       AppState.data.masterPrompts = result.masterPrompts;
+      console.log(`Loaded ${result.masterPrompts.length} master prompts from storage`);
+    } else {
+      // ストレージにデータがない場合、defaultMasterから初期化
+      console.log("No master prompts in storage, loading from defaultMaster");
+      if (typeof defaultMaster !== 'undefined' && defaultMaster.data) {
+        AppState.data.masterPrompts = [];
+        defaultMaster.data.forEach((data) => {
+          AppState.data.masterPrompts.push({
+            prompt: data[3],
+            data: { 0: data[0], 1: data[1], 2: data[2] },
+            url: data[4],
+          });
+        });
+        AppState.config.masterVersion = defaultMaster.version;
+        console.log(`Initialized ${AppState.data.masterPrompts.length} master prompts from defaultMaster`);
+        
+        // 初期化したデータを保存
+        await saveMasterPrompt();
+      } else {
+        console.warn("defaultMaster not available");
+      }
     }
 
     if (result.masterVersion != null) {
@@ -381,8 +402,28 @@ async function loadLocalList() {
 async function loadArchivesList() {
   try {
     const result = await Storage.get("archivesList");
-    if (result.archivesList) {
+    if (result.archivesList && result.archivesList.length > 0) {
       AppState.data.archivesList = result.archivesList;
+      console.log(`Loaded ${result.archivesList.length} archives from storage`);
+    } else {
+      // 初回起動時にサンプルデータを作成
+      console.log("No archives in storage, creating sample data");
+      AppState.data.archivesList = [
+        {
+          title: "サンプルプロンプト",
+          prompt: "beautiful girl, anime style, high quality, detailed",
+          sort: 0
+        },
+        {
+          title: "風景プロンプト",
+          prompt: "landscape, mountains, sunset, peaceful, nature",
+          sort: 1
+        }
+      ];
+      
+      // サンプルデータを保存
+      await saveArchivesList();
+      console.log(`Created ${AppState.data.archivesList.length} sample archives`);
     }
   } catch (error) {
     console.error("Failed to load archives list:", error);

@@ -53,6 +53,8 @@ body {
   transition: background-color var(--transition-normal),
     color var(--transition-normal);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  position: relative;
+  z-index: 0;
 }
 
 /* 入力フィールドの統一 */
@@ -1636,4 +1638,738 @@ input[type="text"].promptData {
 .category-filter-item .category-filter-label {
   margin-bottom: 0;
   min-width: 50px; /* ラベルの最小幅を確保 */
+}
+
+/* ===== 辞書タブ専用スタイリング ===== */
+
+/* 辞書タブのメインコンテナ */
+#addTabBody {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  min-height: 500px;
+  position: relative;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+/* 辞書タブのヘッダー */
+.dictionary-header {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.dictionary-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-success), var(--accent-warning));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.dictionary-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.dictionary-title .icon {
+  font-size: 1.5em;
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-success));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 辞書セクション */
+.dictionary-section {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-lg);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.dictionary-section:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* 辞書セクションヘッダー */
+.dictionary-section-header {
+  background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+  padding: var(--spacing-md) var(--spacing-lg);
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid var(--border-default);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dictionary-section-header:hover {
+  background: linear-gradient(135deg, var(--bg-accent), var(--bg-tertiary));
+  color: var(--accent-primary);
+}
+
+.dictionary-section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.dictionary-section-title .icon {
+  font-size: 1.2em;
+  transition: all var(--transition-fast);
+}
+
+.dictionary-section-header:hover .dictionary-section-title {
+  color: var(--accent-primary);
+}
+
+.dictionary-section-header:hover .icon {
+  transform: scale(1.1);
+}
+
+/* 辞書トグルアイコン */
+.dictionary-toggle-icon {
+  font-size: 1.2em;
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
+  transform-origin: center;
+}
+
+.dictionary-section-header[data-expanded="true"] .dictionary-toggle-icon {
+  transform: rotate(90deg);
+  color: var(--accent-primary);
+}
+
+/* 辞書リストコンテナ */
+.dictionary-list-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow) ease-out;
+  background: var(--bg-primary);
+  position: relative;
+  z-index: 1;
+}
+
+.dictionary-list-container.expanded {
+  max-height: 400px; /* 固定の最大高さを設定 */
+  transition: max-height var(--transition-slow) ease-in;
+  overflow-y: auto; /* 縦スクロールを有効化 */
+  z-index: 10;
+}
+
+/* ドラッグ中のヘルパー要素の位置修正（全リスト共通） */
+.ui-sortable-helper {
+  position: absolute !important;
+  z-index: 99999 !important;
+  transform: scale(1.02) !important; /* スケールは維持 */
+  pointer-events: none !important;
+}
+
+/* 編集タブ専用のヘルパー修正 */
+#editTabBody .ui-sortable-helper {
+  position: fixed !important; /* 編集タブは固定位置 */
+  z-index: 99999 !important;
+  transform: scale(1.02) !important;
+  pointer-events: none !important;
+}
+
+/* 辞書タブ専用のヘルパー修正 */
+.dictionary-list-container.expanded .ui-sortable-helper {
+  position: absolute !important;
+  z-index: 99999 !important;
+  transform: scale(1.02) !important;
+  pointer-events: none !important;
+}
+
+.dictionary-list-content {
+  padding: var(--spacing-lg);
+  border-top: 1px solid var(--border-muted);
+  max-height: none; /* 子要素の高さ制限を解除 */
+}
+
+/* 辞書リスト自体にもスクロール設定 */
+.dictionary-list-container ul {
+  max-height: none;
+  overflow: visible;
+}
+
+/* 辞書リストコンテナ専用のスクロールバー */
+.dictionary-list-container.expanded::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dictionary-list-container.expanded::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.dictionary-list-container.expanded::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: var(--radius-sm);
+  opacity: 0.7;
+}
+
+.dictionary-list-container.expanded::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-success);
+  opacity: 1;
+}
+
+/* スクロール位置インジケーター */
+.dictionary-list-container.expanded {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) var(--bg-secondary);
+}
+
+/* 空状態メッセージ */
+.empty-state {
+  list-style: none;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  margin: 0;
+  text-align: center;
+  border: none !important;
+}
+
+.empty-state-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+  border: 2px dashed var(--border-muted);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+}
+
+.empty-state-content:hover {
+  border-color: var(--accent-primary);
+  background: linear-gradient(135deg, var(--bg-accent), var(--bg-tertiary));
+}
+
+.empty-state-icon {
+  font-size: 3em;
+  opacity: 0.7;
+  margin-bottom: var(--spacing-sm);
+}
+
+.empty-state-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.empty-state-description {
+  font-size: 0.95em;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+}
+
+.empty-state-tip {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-muted);
+  max-width: 300px;
+  line-height: 1.3;
+}
+
+/* 辞書統計 */
+.dictionary-stats {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  background: var(--bg-tertiary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  min-width: 80px;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.stat-item:hover {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--accent-primary);
+  transition: color var(--transition-fast);
+}
+
+.stat-item:hover .stat-number {
+  color: var(--bg-primary);
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8em;
+  color: var(--text-secondary);
+  margin-top: var(--spacing-xs);
+  transition: color var(--transition-fast);
+}
+
+.stat-item:hover .stat-label {
+  color: var(--bg-primary);
+}
+
+/* 要素追加フォーム */
+.element-form {
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.element-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-success), var(--accent-primary));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.form-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.form-title .icon {
+  font-size: 1.3em;
+  color: var(--accent-success);
+}
+
+/* カテゴリー入力グリッド */
+.category-input-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.input-label {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.input-label .icon {
+  font-size: 1em;
+  color: var(--accent-primary);
+}
+
+.enhanced-input {
+  position: relative;
+  background: var(--bg-primary);
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+  font-size: 0.95em;
+}
+
+.enhanced-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
+  background: var(--bg-secondary);
+}
+
+.enhanced-input:hover:not(:focus) {
+  border-color: var(--accent-primary);
+  background: var(--bg-secondary);
+}
+
+/* プロンプト入力エリア */
+.prompt-input-area {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-muted);
+}
+
+.prompt-input-wrapper {
+  position: relative;
+}
+
+.enhanced-textarea {
+  width: 100%;
+  min-height: 80px;
+  background: var(--bg-primary);
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  color: var(--text-primary);
+  font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+  resize: vertical;
+  transition: all var(--transition-fast);
+}
+
+.enhanced-textarea:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
+  background: var(--bg-secondary);
+}
+
+.character-count {
+  position: absolute;
+  bottom: var(--spacing-xs);
+  right: var(--spacing-sm);
+  font-size: 0.8em;
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+/* 追加ボタン */
+.add-button {
+  background: linear-gradient(135deg, var(--accent-success), var(--accent-primary));
+  color: var(--bg-primary);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  align-self: flex-end;
+}
+
+.add-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  filter: brightness(1.1);
+}
+
+.add-button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.add-button .icon {
+  font-size: 1.2em;
+}
+
+/* リストアイテムの強化 */
+.dictionary-list-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  will-change: transform; /* GPU加速を有効化 */
+}
+
+.dictionary-list-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent-primary);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform var(--transition-fast);
+  will-change: transform;
+}
+
+.dictionary-list-item:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent-primary);
+  transform: translateX(2px); /* 軽量化：4px → 2px */
+}
+
+.dictionary-list-item:hover::before {
+  transform: scaleY(1);
+}
+
+/* ドラッグ中のアイテムには特別なスタイルを適用 */
+.dictionary-list-item.ui-sortable-helper,
+li.ui-sortable-helper {
+  background: var(--bg-tertiary) !important;
+  border: 2px solid var(--accent-primary) !important;
+  box-shadow: var(--shadow-xl) !important;
+  transform: scale(1.03) !important;
+  z-index: 10000 !important;
+  position: relative !important;
+  opacity: 0.95 !important;
+  transition: none !important;
+  border-radius: var(--radius-md) !important;
+  cursor: grabbing !important;
+}
+
+/* 削除中のアイテム */
+li.deleting {
+  background: var(--accent-danger) !important;
+  border-color: var(--accent-danger) !important;
+  color: var(--bg-primary) !important;
+  transform: scale(0.95) !important;
+}
+
+/* 辞書項目のカテゴリー表示 */
+.item-categories {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.category-tag {
+  background: var(--bg-accent);
+  color: var(--text-secondary);
+  padding: 2px 8px;
+  border-radius: var(--radius-md);
+  font-size: 0.8em;
+  font-weight: 500;
+  border: 1px solid var(--border-muted);
+}
+
+.category-tag.big {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+.category-tag.middle {
+  background: var(--accent-success);
+  color: var(--bg-primary);
+}
+
+.category-tag.small {
+  background: var(--accent-warning);
+  color: var(--bg-primary);
+}
+
+/* ソート可能リストの改善 */
+.sortable-list {
+  min-height: 50px;
+  border: 2px dashed transparent;
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.sortable-list.ui-sortable-helper {
+  background: var(--bg-tertiary) !important;
+  box-shadow: var(--shadow-lg) !important;
+  transform: scale(1.02) !important;
+  transition: none !important; /* ドラッグ中はトランジションを無効化 */
+  border: 2px solid var(--accent-primary) !important;
+  z-index: 9999 !important;
+  position: relative !important;
+  opacity: 0.9 !important;
+}
+
+.sortable-list.ui-sortable-placeholder {
+  background: var(--bg-accent) !important;
+  border-color: var(--accent-primary) !important;
+  opacity: 0.6 !important;
+  height: 40px !important; /* 固定高さでレイアウト崩れを防止 */
+  margin: 4px 0 !important;
+  transition: none !important;
+}
+
+/* ドラッグハンドル */
+.drag-handle {
+  color: var(--text-muted);
+  cursor: grab;
+  font-size: 1.2em;
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  margin-right: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.drag-handle:hover {
+  color: var(--accent-primary);
+  background: var(--bg-accent);
+  transform: scale(1.1);
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+  color: var(--accent-success);
+  transform: scale(1.05);
+}
+
+/* ドラッグ中のハンドル */
+.ui-sortable-helper .drag-handle {
+  cursor: grabbing !important;
+  color: var(--accent-primary) !important;
+  background: var(--bg-accent) !important;
+}
+
+/* アニメーション効果 */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.dictionary-section {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.element-form {
+  animation: slideInFromRight 0.3s ease-out;
+}
+
+/* リストアイテムのアニメーションを条件付きで適用（パフォーマンス向上） */
+.dictionary-list-item {
+  animation: none; /* デフォルトではアニメーション無し */
+}
+
+/* 10個以下のアイテムの場合のみアニメーションを適用 */
+.dictionary-list-content:has(.dictionary-list-item:nth-child(-n+10)) .dictionary-list-item {
+  animation: slideInFromLeft 0.2s ease-out;
+}
+
+.dictionary-list-content:has(.dictionary-list-item:nth-child(-n+10)) .dictionary-list-item:nth-child(even) {
+  animation-delay: 0.05s;
+}
+
+.dictionary-list-content:has(.dictionary-list-item:nth-child(-n+10)) .dictionary-list-item:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+/* ローディング状態 */
+.dictionary-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  color: var(--text-secondary);
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-default);
+  border-top: 2px solid var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: var(--spacing-sm);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+  .category-input-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dictionary-stats {
+    justify-content: center;
+  }
+  
+  .stat-item {
+    min-width: 60px;
+  }
+  
+  .element-form {
+    padding: var(--spacing-md);
+  }
+  
+  .dictionary-section-header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
 }

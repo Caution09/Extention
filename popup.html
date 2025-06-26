@@ -118,60 +118,132 @@
 
         <!-- 辞書タブ -->
         <div class="panel" id="addTabBody">
-          <br />
-          <div id="promptDicText">▶プロンプト辞書　※ここをクリックで開閉</div>
-          <ul class="full-size" id="archiveList"></ul>
-          <hr />
-          <h2>要素の追加</h2>
-          <ul class="full-size">
-            <li>
-              <input
-                value="大項目"
-                type="text"
-                readonly=""
-                class="promptData header-input"
-              /><input
-                value="中項目"
-                type="text"
-                readonly=""
-                class="promptData header-input"
-              /><input
-                value="小項目"
-                type="text"
-                readonly=""
-                class="promptData header-input"
-              /><input
-                value="Prompt"
-                type="text"
-                readonly=""
-                class="promptData header-input"
-              />
-            </li>
-            <li>
-              <input type="text" size="2" id="big" class="promptData" /><input
-                type="text"
-                size="2"
-                id="middle"
-                class="promptData"
-              /><input
-                type="text"
-                size="2"
-                id="small"
-                class="promptData"
-              /><input
-                type="text"
-                size="2"
-                id="prompt"
-                class="promptData"
-              /><input type="button" id="resist" value="追加" />
-            </li>
-          </ul>
-          <div id="elementDicText">
-            ▶要素辞書(ローカル)　※ここをクリックで開閉
+          <!-- 辞書タブヘッダー -->
+          <div class="dictionary-header">
+            <div class="dictionary-title">
+              <span class="icon">📚</span>
+              <span>プロンプト辞書管理</span>
+            </div>
+            <div class="dictionary-stats">
+              <div class="stat-item">
+                <span class="stat-number" id="archive-count">0</span>
+                <span class="stat-label">アーカイブ</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="local-count">0</span>
+                <span class="stat-label">ローカル</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="master-count">0</span>
+                <span class="stat-label">マスター</span>
+              </div>
+            </div>
           </div>
-          <ul class="full-size" id="addPromptList"></ul>
-          <div id="masterDicText">▶要素辞書(マスタ)　※ここをクリックで開閉</div>
-          <ul class="full-size" id="masterDicList"></ul>
+
+          <!-- プロンプト辞書セクション -->
+          <div class="dictionary-section">
+            <div class="dictionary-section-header" data-expanded="false">
+              <div class="dictionary-section-title">
+                <span class="icon">📖</span>
+                <span>プロンプト辞書</span>
+              </div>
+              <span class="dictionary-toggle-icon">▶</span>
+            </div>
+            <div class="dictionary-list-container" id="promptDicContainer">
+              <div class="dictionary-list-content">
+                <ul class="full-size sortable-list" id="archiveList"></ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 要素追加フォーム -->
+          <div class="element-form">
+            <div class="form-title">
+              <span class="icon">➕</span>
+              <span>新しい要素を追加</span>
+            </div>
+            
+            <div class="category-input-grid">
+              <div class="input-group">
+                <label class="input-label">
+                  <span class="icon">🏷️</span>
+                  <span>大項目</span>
+                </label>
+                <input type="text" id="big" class="enhanced-input" placeholder="例: character" />
+              </div>
+              <div class="input-group">
+                <label class="input-label">
+                  <span class="icon">🏷️</span>
+                  <span>中項目</span>
+                </label>
+                <input type="text" id="middle" class="enhanced-input" placeholder="例: girl" />
+              </div>
+              <div class="input-group">
+                <label class="input-label">
+                  <span class="icon">🏷️</span>
+                  <span>小項目</span>
+                </label>
+                <input type="text" id="small" class="enhanced-input" placeholder="例: cute" />
+              </div>
+            </div>
+
+            <div class="prompt-input-area">
+              <div class="input-group">
+                <label class="input-label">
+                  <span class="icon">✏️</span>
+                  <span>プロンプト</span>
+                </label>
+                <div class="prompt-input-wrapper">
+                  <textarea id="prompt" class="enhanced-textarea" placeholder="プロンプトを入力してください..."></textarea>
+                  <div class="character-count" id="prompt-char-count">0文字</div>
+                </div>
+              </div>
+              
+              <button type="button" id="resist" class="add-button">
+                <span class="icon">💾</span>
+                <span>追加</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 要素辞書（ローカル）セクション -->
+          <div class="dictionary-section">
+            <div class="dictionary-section-header" data-expanded="false">
+              <div class="dictionary-section-title">
+                <span class="icon">💻</span>
+                <span>要素辞書（ローカル）</span>
+              </div>
+              <span class="dictionary-toggle-icon">▶</span>
+            </div>
+            <div class="dictionary-list-container" id="elementDicContainer">
+              <div class="dictionary-list-content">
+                <ul class="full-size sortable-list" id="addPromptList"></ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 要素辞書（マスター）セクション -->
+          <div class="dictionary-section">
+            <div class="dictionary-section-header" data-expanded="false">
+              <div class="dictionary-section-title">
+                <span class="icon">🌐</span>
+                <span>要素辞書（マスター）</span>
+              </div>
+              <span class="dictionary-toggle-icon">▶</span>
+            </div>
+            <div class="dictionary-list-container" id="masterDicContainer">
+              <div class="dictionary-list-content">
+                <ul class="full-size sortable-list" id="masterDicList"></ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 隠し要素（従来互換性のため） -->
+          <div style="display: none;">
+            <div id="promptDicText">▶プロンプト辞書　※ここをクリックで開閉</div>
+            <div id="elementDicText">▶要素辞書(ローカル)　※ここをクリックで開閉</div>
+            <div id="masterDicText">▶要素辞書(マスタ)　※ここをクリックで開閉</div>
+          </div>
         </div>
 
         <!-- 編集タブ -->

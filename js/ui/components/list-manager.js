@@ -27,6 +27,7 @@ class PromptListManager {
         createItem: async ($li, item, index, options) =>
           await this.createArchiveItem($li, item, index, options),
         columnWidths: { 1: "150px" },
+        sortable: true,
       },
       edit: {
         headers: ["Prompt", "重み"],
@@ -64,6 +65,12 @@ class PromptListManager {
     ListBuilder.clearList(listId);
     ListBuilder.createHeaders(listId, config.headers);
 
+    // データが空の場合は空状態メッセージを表示
+    if (data.length === 0) {
+      this.createEmptyState(listId, type);
+      return;
+    }
+
     // optionsにlistIdを追加
     const itemOptions = { ...options, listId, type };
 
@@ -96,6 +103,21 @@ class PromptListManager {
           window.app.updatePromptDisplay();
         });
       }, 100); // DOMが完全に更新されるのを待つ
+    }
+
+    // アーカイブリスト用のソート機能
+    if (config.sortable && type === "archive") {
+      setTimeout(() => {
+        EventHandlers.setupSortableList(listId, async (sortedIds) => {
+          let baseIndex = 0;
+          sortedIds.forEach((id) => {
+            if (!id || !AppState.data.archivesList[id]) return;
+            AppState.data.archivesList[id].sort = baseIndex++;
+          });
+          await saveArchivesList();
+          console.log('Archive list order saved');
+        });
+      }, 100);
     }
 
     console.log(
@@ -371,14 +393,99 @@ class PromptListManager {
       includeDelete: true,
       loadValue: item.prompt,
       copyValue: item.prompt,
-      onDelete: async () => {
-        AppState.data.archivesList.splice(index, 1);
-        await saveArchivesList();
-        window.app.refreshArchiveList();
+      onDelete: async (event) => {
+        console.log('Delete button clicked for archive item:', item);
+        
+        // ソート済みリストから削除する場合、元のデータでの正しいインデックスを見つける
+        const itemToDelete = item;
+        const originalIndex = AppState.data.archivesList.findIndex(
+          archive => archive.title === itemToDelete.title && archive.prompt === itemToDelete.prompt
+        );
+        
+        if (originalIndex !== -1) {
+          // 即座にDOM要素を削除（データ更新前に）
+          const $deleteButton = $(event.target);
+          const $currentLi = $deleteButton.closest('li');
+          
+          console.log('Found li element:', $currentLi.length);
+          
+          $currentLi.addClass('deleting').fadeOut(300, function() {
+            $currentLi.remove();
+            console.log('DOM element removed');
+          });
+          
+          // データを更新
+          AppState.data.archivesList.splice(originalIndex, 1);
+          
+          // 残りのアイテムのソート順を再調整
+          AppState.data.archivesList.forEach((archive, idx) => {
+            archive.sort = idx;
+          });
+          
+          await saveArchivesList();
+          console.log('Data saved');
+          
+          // 統計を更新
+          if (window.app && window.app.tabs && window.app.tabs.dictionary) {
+            window.app.tabs.dictionary.updateStats();
+          }
+        }
       },
     });
 
     $li.append(buttons.load, buttons.copy, buttons.delete);
+
+    // ソート可能な場合はドラッグハンドルを追加
+    if (options.type === 'archive') {
+      $li.append(UIFactory.createDragIcon(index));
+    }
+  }
+
+  /**
+   * 空状態のメッセージを作成
+   */
+  createEmptyState(listId, type) {
+    const emptyMessages = {
+      archive: {
+        icon: "📝",
+        title: "プロンプト辞書が空です",
+        description: "プロンプトを保存すると、ここに表示されます。",
+        tip: "編集タブでプロンプトを作成し、「アーカイブ」ボタンで保存できます。"
+      },
+      add: {
+        icon: "📦",
+        title: "ローカル要素辞書が空です", 
+        description: "独自の要素を追加すると、ここに表示されます。",
+        tip: "上の「新しい要素を追加」フォームから要素を登録できます。"
+      },
+      master: {
+        icon: "🌐",
+        title: "マスター辞書が読み込まれていません",
+        description: "マスター辞書の読み込みに時間がかかっています。",
+        tip: "しばらく待ってからページを再読み込みしてください。"
+      },
+      search: {
+        icon: "🔍",
+        title: "検索結果が見つかりません",
+        description: "別のキーワードで検索してみてください。",
+        tip: "大項目・中項目・小項目での絞り込み検索も試してください。"
+      }
+    };
+
+    const message = emptyMessages[type] || emptyMessages.search;
+    
+    const $emptyState = $(`
+      <li class="empty-state">
+        <div class="empty-state-content">
+          <div class="empty-state-icon">${message.icon}</div>
+          <div class="empty-state-title">${message.title}</div>
+          <div class="empty-state-description">${message.description}</div>
+          <div class="empty-state-tip">${message.tip}</div>
+        </div>
+      </li>
+    `);
+    
+    $(listId).append($emptyState);
   }
 
   async createEditItem($li, item, index, options = {}) {
