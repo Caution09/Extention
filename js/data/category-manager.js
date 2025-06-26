@@ -153,10 +153,48 @@ const categoryData = {
     // 中・小カテゴリーのdatalistを作成（既存のものを再利用）
     this.updateSubDatalistsBatch();
 
-    // 検索カテゴリーの初期化（検索タブが存在し、まだ初期化されていない場合のみ）
+    // 検索カテゴリーの更新（常に選択値を保持）
     const searchCat0 = document.querySelector("#search-cat0");
-    if (searchCat0 && searchCat0.options.length === 0) {
-      setCategoryList("#search-cat0", 0);
+    if (searchCat0) {
+      // 現在の値またはAppStateから値を取得
+      const currentValue = searchCat0.value || (window.AppState?.data?.searchCategory?.[0] || "");
+      const currentOptionsCount = searchCat0.options.length - 1;
+      const newDataCount = this.data[0] ? this.data[0].length : 0;
+      
+      // 初期化されていないか、新しいカテゴリーが追加された場合のみ更新
+      if (currentOptionsCount === 0 || newDataCount !== currentOptionsCount) {
+        // AppStateから値を優先的に取得
+        const savedValue = window.AppState?.data?.searchCategory?.[0] || currentValue;
+        
+        // オプションを更新
+        setCategoryList("#search-cat0", 0);
+        
+        // 値を強制的に復元
+        if (savedValue) {
+          // 複数回試行して確実に復元
+          const restoreValue = () => {
+            const searchCat0After = document.querySelector("#search-cat0");
+            if (searchCat0After && Array.from(searchCat0After.options).some(opt => opt.value === savedValue)) {
+              searchCat0After.value = savedValue;
+              
+              // AppStateも更新
+              if (window.AppState?.data?.searchCategory) {
+                window.AppState.data.searchCategory[0] = savedValue;
+              }
+              
+              // 50ms後に再確認
+              setTimeout(() => {
+                const finalCheck = document.querySelector("#search-cat0");
+                if (finalCheck && finalCheck.value !== savedValue) {
+                  finalCheck.value = savedValue;
+                }
+              }, 50);
+            }
+          };
+          
+          setTimeout(restoreValue, 10);
+        }
+      }
     }
 
     if (window.PerformanceMonitor) {

@@ -222,14 +222,9 @@
         // キャッシュキーを生成
         const cacheKey = JSON.stringify({ keyword, categories });
 
-        // キャッシュをチェック
-        if (!options.forceRefresh && this.searchCache.has(cacheKey)) {
-          const cached = this.searchCache.get(cacheKey);
-          if (Date.now() - cached.timestamp < this.cacheTimeout) {
-            this.displaySearchResults(cached.results);
-            return;
-          }
-        }
+        // キャッシュは無効化（実装が不完全なため）
+        // TODO: 将来的にキャッシュを実装する場合は、
+        // SearchHandlerの結果を適切にキャッシュする必要がある
 
         AppState.data.searchCategory = categories;
         await saveCategory();
@@ -281,8 +276,8 @@
        * @param {Array} results - 検索結果
        */
       displaySearchResults(results) {
-        // 現在はSearchHandlerが処理しているが、
-        // 将来的にタブ内で完結させる場合用
+        // 現在は未実装
+        // 将来的にタブ内で検索結果を管理する場合に使用
       }
 
       /**
@@ -335,17 +330,8 @@
         
         // 何らかの検索条件がある場合のみ再検索
         if (hasActiveSearch) {
-          console.log("Refreshing search results after element addition");
-          console.log("Current search conditions:", {
-            keyword,
-            category0: AppState.data.searchCategory?.[0],
-            category1: AppState.data.searchCategory?.[1]
-          });
-          
           // 現在の検索条件で再検索
           await this.performSearch({ showLoading: false, forceRefresh: true });
-        } else {
-          console.log("No active search conditions, skipping refresh");
         }
       }
 
@@ -426,6 +412,12 @@
           return;
         }
 
+        // 現在のドロップダウン選択値を保存
+        const searchCat0 = this.getElement("#search-cat0");
+        const searchCat1 = this.getElement("#search-cat1");
+        const savedCat0Value = searchCat0 ? searchCat0.value : "";
+        const savedCat1Value = searchCat1 ? searchCat1.value : "";
+
         // 登録
         const success = Regist(data.big, data.middle, data.small, data.prompt);
         if (success) {
@@ -449,16 +441,31 @@
 
           // 新しい要素がカテゴリーに追加された場合のみドロップダウンを更新
           if (data.big || data.middle) {
-            console.log("New category added, updating dropdowns:", { big: data.big, middle: data.middle });
-            // ドロップダウンの更新は自動的にsetCategoryListで選択値が保持される
-          } else {
-            console.log("No new categories, skipping dropdown update");
+            // カテゴリー更新後にドロップダウン値を復元
+            setTimeout(() => {
+              const searchCat0After = this.getElement("#search-cat0");
+              const searchCat1After = this.getElement("#search-cat1");
+              
+              if (searchCat0After && savedCat0Value) {
+                searchCat0After.value = savedCat0Value;
+                
+                // 中項目も復元
+                if (savedCat0Value && savedCat1Value) {
+                  this.updateCategoryDropdown(1, savedCat0Value);
+                  setTimeout(() => {
+                    if (searchCat1After) {
+                      searchCat1After.value = savedCat1Value;
+                    }
+                  }, 50);
+                }
+              }
+            }, 600); // categoryData.update()の500ms + 余裕
           }
 
           // 検索結果を更新（現在の検索条件で再検索）
           setTimeout(async () => {
             await this.refreshSearchResults();
-          }, 300);
+          }, 700);
         }
       }
 
