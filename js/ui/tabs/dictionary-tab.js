@@ -349,18 +349,23 @@
        * アーカイブリストを更新
        */
       async refreshArchiveList() {
-        const archiveList = this.getElement("#archiveList");
-        if (archiveList && archiveList.children.length > 0) {
+        console.log('refreshArchiveList called, archives count:', AppState.data.archivesList.length);
+        
+        // プロンプト辞書が開いている場合のみ更新
+        if (this.dictionaryStates.prompt) {
           // ソート順でソート
           const sorted = [...AppState.data.archivesList].sort(
             (a, b) => (a.sort || 0) - (b.sort || 0)
           );
           
+          console.log('Updating archive list with', sorted.length, 'items');
           await this.listManager.createList(
             "archive",
             sorted,
             "#archiveList"
           );
+        } else {
+          console.log('Prompt dictionary is not open, skipping archive list refresh');
         }
       }
 
@@ -368,8 +373,10 @@
        * 追加リストを更新
        */
       async refreshAddList() {
-        const addPromptList = this.getElement("#addPromptList");
-        if (addPromptList && addPromptList.children.length > 0) {
+        console.log('refreshAddList called, local elements count:', AppState.data.localPromptList.length);
+        
+        // 要素辞書（ローカル）が開いている場合のみ更新
+        if (this.dictionaryStates.element) {
           // sortableを破棄
           if ($("#addPromptList").hasClass("ui-sortable")) {
             $("#addPromptList").sortable("destroy");
@@ -378,10 +385,14 @@
           const sorted = [...AppState.data.localPromptList].sort(
             (a, b) => (a.sort || 0) - (b.sort || 0)
           );
+          
+          console.log('Updating local elements list with', sorted.length, 'items');
           await this.listManager.createList("add", sorted, "#addPromptList");
 
           // sortableを再初期化
           this.setupSortableForAddList();
+        } else {
+          console.log('Element dictionary is not open, skipping local list refresh');
         }
       }
 
@@ -537,8 +548,13 @@
       async onShow() {
         console.log('Dictionary tab shown, updating stats...');
         
-        // 統計情報を更新
+        // 統計情報を更新（即座に）
         this.updateStats();
+        
+        // 少し遅延を入れてからデータを再確認して統計を更新
+        setTimeout(() => {
+          this.updateStats();
+        }, 200);
         
         // 必要に応じて辞書リストを更新
         if (this.dictionaryStates.prompt) {

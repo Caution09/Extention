@@ -772,10 +772,55 @@ class PromptGeneratorApp {
       return;
     }
 
-    AppState.data.archivesList.push({ title: "", prompt: prompt });
+    // 新しいアイテムにソート番号を設定
+    const newArchiveItem = { 
+      title: "", 
+      prompt: prompt,
+      sort: AppState.data.archivesList.length
+    };
+    AppState.data.archivesList.push(newArchiveItem);
     await saveArchivesList();
 
-    // リストが開いている場合は更新
+    // 辞書タブがアクティブな場合はリアルタイム更新
+    console.log('Checking for dictionary tab update...', {
+      hasDictionaryTab: !!this.tabs.dictionary,
+      currentTab: AppState.ui.currentTab,
+      isDictionaryActive: AppState.ui.currentTab === CONSTANTS.TABS.DICTIONARY,
+      promptDictionaryOpen: this.tabs.dictionary?.dictionaryStates?.prompt
+    });
+    
+    if (this.tabs.dictionary && AppState.ui.currentTab === CONSTANTS.TABS.DICTIONARY) {
+      console.log('Dictionary tab is active, updating...');
+      
+      // 統計情報を即座に更新
+      console.log('Updating dictionary stats...');
+      this.tabs.dictionary.updateStats();
+      
+      // プロンプト辞書が開いている場合はリストを更新
+      if (this.tabs.dictionary.dictionaryStates.prompt) {
+        console.log('Refreshing archive list...');
+        await this.tabs.dictionary.refreshArchiveList();
+      } else {
+        console.log('Prompt dictionary is closed, but stats updated');
+        // 辞書が閉じていても統計は即座に更新
+      }
+      
+      // 遅延を入れて再度更新（データの反映を確実にするため）
+      setTimeout(async () => {
+        console.log('Delayed update check...');
+        this.tabs.dictionary.updateStats();
+        // プロンプト辞書が開いている場合は再度リスト更新
+        if (this.tabs.dictionary.dictionaryStates.prompt) {
+          await this.tabs.dictionary.refreshArchiveList();
+        }
+      }, 200);
+      
+      console.log('Dictionary tab updated after archive save');
+    } else {
+      console.log('Dictionary tab not active or not available, skipping update');
+    }
+    
+    // 従来の更新処理も維持（他の場所で開いている場合のため）
     const archiveList = document.getElementById("archiveList");
     if (archiveList && archiveList.children.length > 0) {
       await this.listManager.createList(

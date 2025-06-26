@@ -436,7 +436,20 @@ async function loadArchivesList() {
 async function saveArchivesList() {
   try {
     await Storage.set({ archivesList: AppState.data.archivesList });
-    UpdatePromptList();
+    // バックグラウンドに通知（エラー処理付き）
+    if (typeof chrome !== 'undefined' && chrome.runtime) {
+      try {
+        chrome.runtime.sendMessage({ type: "UpdatePromptList" }, (response) => {
+          if (chrome.runtime.lastError) {
+            console.log("Background script not available:", chrome.runtime.lastError.message);
+          } else {
+            console.log("Background notified of archive update");
+          }
+        });
+      } catch (e) {
+        console.log("Could not notify background script:", e.message);
+      }
+    }
   } catch (error) {
     console.error("Failed to save archives list:", error);
     throw error;
@@ -583,6 +596,7 @@ function RegistItem(item, skipSave = false) {
     const newItem = {
       prompt: item.prompt,
       data: item.data,
+      sort: AppState.data.localPromptList.length
     };
 
     if (item.url) {
@@ -593,6 +607,39 @@ function RegistItem(item, skipSave = false) {
 
     if (!skipSave) {
       saveLocalList();
+    }
+
+    // 辞書タブがアクティブな場合はリアルタイム更新
+    if (typeof window !== 'undefined' && window.app && window.app.tabs && window.app.tabs.dictionary) {
+      console.log('Checking for local dictionary update...', {
+        currentTab: AppState.ui.currentTab,
+        isDictionaryActive: AppState.ui.currentTab === CONSTANTS.TABS.DICTIONARY,
+        elementDictionaryOpen: window.app.tabs.dictionary.dictionaryStates?.element
+      });
+      
+      if (AppState.ui.currentTab === CONSTANTS.TABS.DICTIONARY) {
+        console.log('Dictionary tab is active, updating local elements...');
+        
+        // 統計情報を即座に更新
+        window.app.tabs.dictionary.updateStats();
+        
+        // 要素辞書（ローカル）が開いている場合はリストを更新
+        if (window.app.tabs.dictionary.dictionaryStates.element) {
+          console.log('Element dictionary is open, refreshing list...');
+          setTimeout(async () => {
+            await window.app.tabs.dictionary.refreshAddList();
+            console.log('Local dictionary list updated after element registration');
+          }, 100);
+        } else {
+          console.log('Element dictionary is closed, but stats updated');
+        }
+        
+        // 少し遅延を入れて再度統計を更新
+        setTimeout(() => {
+          console.log('Delayed local stats update...');
+          window.app.tabs.dictionary.updateStats();
+        }, 200);
+      }
     }
 
     return true;

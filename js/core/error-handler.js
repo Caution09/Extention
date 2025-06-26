@@ -48,21 +48,17 @@ const ErrorHandler = {
 
       // エラーハンドラーを設定
       window.addEventListener("error", (event) => {
-        this.handle(event.error || event.message, "JavaScript Error", {
-          file: event.filename,
-          line: event.lineno,
-          column: event.colno,
-        });
+        this.log(event.error || event.message, "JavaScript Error", this.Level.ERROR);
       });
 
       window.addEventListener("unhandledrejection", (event) => {
-        this.handle(event.reason, "Unhandled Promise Rejection");
+        this.log(event.reason, "Unhandled Promise Rejection", this.Level.ERROR);
       });
 
       // Chrome拡張機能のエラーハンドラー
       if (chrome?.runtime?.onError) {
         chrome.runtime.onError.addListener((error) => {
-          this.handle(error, "Extension Error");
+          this.log(error, "Extension Error", this.Level.ERROR);
         });
       }
 
