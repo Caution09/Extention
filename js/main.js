@@ -567,7 +567,10 @@ class PromptGeneratorApp {
         const value = this.generateInput.val();
         console.log("Prompt changed:", value);
 
+        // promptEditorとeditPromptの両方を更新
+        promptEditor.init(value);
         editPrompt.init(value);
+
         this.updatePromptDisplay();
 
         // 現在のスロットに自動保存
@@ -575,6 +578,11 @@ class PromptGeneratorApp {
 
         // ドロップダウンも更新
         promptSlotManager.updateUI();
+
+        // 編集タブが表示されている場合は更新
+        if (this.tabs.edit?.isActive) {
+          await this.tabs.edit.refreshEditList();
+        }
       }, 100);
     };
 
@@ -583,7 +591,6 @@ class PromptGeneratorApp {
       promptInput.addEventListener("input", handlePromptChange);
     }
   }
-
   setupPromptSlotHandlers() {
     // スロットセレクター
     const slotSelector = document.getElementById("prompt-slot-selector");
