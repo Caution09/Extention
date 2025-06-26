@@ -677,6 +677,45 @@ class PromptSlotManager {
       return false;
     }
   }
+
+  /**
+   * スロットの順序を変更
+   * @param {Array<number>} newOrder - 新しい順序のスロットID配列
+   */
+  reorderSlots(newOrder) {
+    console.log("Reordering slots:", newOrder);
+
+    // 新しい順序でスロット配列を再構築
+    const reorderedSlots = [];
+
+    newOrder.forEach((slotId) => {
+      const slot = this.slots.find((s) => s.id === slotId);
+      if (slot) {
+        reorderedSlots.push(slot);
+      }
+    });
+
+    // 配列を置き換え
+    this.slots = reorderedSlots;
+
+    // 現在のスロットインデックスを更新
+    // 現在選択中のスロットの新しいインデックスを見つける
+    const currentSlotId = this.slots[this.currentSlot]?.id;
+    if (currentSlotId !== undefined) {
+      const newIndex = this.slots.findIndex((s) => s.id === currentSlotId);
+      if (newIndex !== -1) {
+        this.currentSlot = newIndex;
+      }
+    }
+
+    // UIを更新（ドロップダウンの表示を更新）
+    this.updateUI();
+
+    console.log(
+      "Slots reordered. New order:",
+      this.slots.map((s) => s.id)
+    );
+  }
 }
 
 // グローバルに公開

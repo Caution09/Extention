@@ -294,19 +294,19 @@
       isExtractionMode ? "block" : "none"
     };">
       <div class="category-filters">
-        <label class="category-filter-label">
-          大項目:
+        <div class="category-filter-item">
+          <label class="category-filter-label">大項目:</label>
           <select class="category-big-select" data-slot-id="${info.id}">
             <option value="">すべて</option>
           </select>
-        </label>
-        <label class="category-filter-label">
-          中項目:
+        </div>
+        <div class="category-filter-item">
+          <label class="category-filter-label">中項目:</label>
           <select class="category-middle-select" data-slot-id="${info.id}"
                   ${!slot?.category?.big ? "disabled" : ""}>
             <option value="">すべて</option>
           </select>
-        </label>
+        </div>
       </div>
       ${
         slot?.mode === "sequential"
@@ -460,20 +460,79 @@
           containment: "parent",
           cursor: "move",
           opacity: 0.7,
+          tolerance: "pointer",
+          placeholder: "slot-card-placeholder",
+
+          // ソート開始時
+          start: (event, ui) => {
+            this.isSorting = true;
+            // プレースホルダーの高さを設定
+            ui.placeholder.height(ui.item.height());
+          },
+
+          // ソート終了時
+          stop: (event, ui) => {
+            this.isSorting = false;
+          },
+
+          // 更新時
           update: async (event, ui) => {
             // 新しい順序を取得
             const newOrder = Array.from(container.children).map(
               (card) => parseInt(card.dataset.slotId) || 0
             );
 
+            console.log("New slot order:", newOrder);
+
             // スロットマネージャーの順序を更新
             this.slotManager.reorderSlots(newOrder);
+
+            // ストレージに保存
             await this.slotManager.saveToStorage();
 
-            // 表示を更新
-            this.updateDisplay();
+            // 番号表示を更新（カード全体を再作成せずに番号だけ更新）
+            this.updateSlotNumbers();
           },
         });
+      }
+
+      /**
+       * スロット番号のみを更新（新規メソッド）
+       */
+      updateSlotNumbers() {
+        const container = this.elements.container;
+        if (!container) return;
+
+        // 各カードの番号を更新
+        Array.from(container.children).forEach((card, index) => {
+          const numberSpan = card.querySelector(".slot-number");
+          if (numberSpan) {
+            const displayNumber = index + 1;
+            numberSpan.textContent = displayNumber;
+
+            // 現在のスロットかどうかチェック
+            const slotId = parseInt(card.dataset.slotId);
+            const isCurrentSlot =
+              this.slotManager.slots[this.slotManager.currentSlot]?.id ===
+              slotId;
+
+            if (isCurrentSlot) {
+              numberSpan.classList.add("slot-number-current");
+              card.classList.add("slot-card-current");
+            } else {
+              numberSpan.classList.remove("slot-number-current");
+              card.classList.remove("slot-card-current");
+            }
+          }
+        });
+
+        // 使用中スロット数も更新
+        const usedCount = this.slotManager.getUsedSlotsCount();
+        const totalCount = this.slotManager.slots.length;
+        const countSpan = document.getElementById("used-slots-count");
+        if (countSpan) {
+          countSpan.textContent = `${usedCount}/${totalCount}`;
+        }
       }
 
       /**

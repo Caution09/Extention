@@ -1542,3 +1542,98 @@ input[type="text"].promptData {
 .selector-actions button {
   flex: 1;
 }
+
+/* スロットカードのプレースホルダー */
+.slot-card-placeholder {
+  background: var(--bg-accent) !important;
+  border: 2px dashed var(--border-default) !important;
+  opacity: 0.5;
+}
+
+/* ドラッグ中のカード */
+.ui-sortable-helper.slot-card {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+}
+/* カテゴリードロップダウンの幅を固定 */
+.category-big-select,
+.category-middle-select {
+  width: 120px !important; /* 固定幅に設定 */
+  max-width: 120px;
+  min-width: 100px;
+  height: var(--input-height);
+  padding: var(--spacing-xs);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  cursor: pointer;
+
+  /* テキストが長い場合は省略 */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.category-big-select:hover:not(:disabled),
+.category-middle-select:hover:not(:disabled) {
+  border-color: var(--accent-primary);
+  background-color: var(--bg-secondary);
+}
+
+.category-big-select:focus,
+.category-middle-select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+}
+
+.category-big-select:disabled,
+.category-middle-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--bg-tertiary);
+}
+
+/* カテゴリーフィルターのラベルも調整 */
+.category-filter-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* カテゴリーフィルター全体のレイアウト調整 */
+.category-filters {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  margin: var(--spacing-sm) 0 var(--spacing-sm) 25px;
+  flex-wrap: wrap; /* 画面が狭い時は折り返し */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 400px) {
+  .category-big-select,
+  .category-middle-select {
+    width: 100px !important;
+  }
+
+  .category-filters {
+    gap: var(--spacing-sm);
+  }
+}
+
+/* カテゴリーフィルターアイテム */
+.category-filter-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.category-filter-item .category-filter-label {
+  margin-bottom: 0;
+  min-width: 50px; /* ラベルの最小幅を確保 */
+}
