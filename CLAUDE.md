@@ -72,6 +72,7 @@ The extension uses a master data system for prompt templates:
 2. **Data Generation**: 
    - `data-management/generate_master.py` converts TSV to JavaScript
    - Generates `assets/master/default-master.js` for the extension
+   - Also generates category reference files: `categories.json` and `categories.txt`
    - Automatic backup of existing files
    - Run via `generate_master.bat` (Windows) or `python3 generate_master.py`
 
@@ -82,9 +83,11 @@ The extension uses a master data system for prompt templates:
    - All tools located in `data-management/` folder
 
 4. **Workflow**:
-   - Edit `マスターデータ.tsv` → Run generation script → Updated `default-master.js`
+   - Edit `マスターデータ.tsv` → Run generation script → Updated files
+   - Generated files: `default-master.js`, `categories.json`, `categories.txt`
    - Character entries automatically split into reproduction and simplified versions
    - Manual mapping available for problematic character extractions
+   - Use `categories.txt` for quick category overview and data verification
 
 ### Current Development Focus
 

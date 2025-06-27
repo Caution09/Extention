@@ -7,6 +7,8 @@
 ### メインデータ
 - **マスターデータ.tsv** - メインのプロンプトデータファイル
 - **非整形マスター_*.tsv** - バックアップファイル
+- **categories.json** - カテゴリ一覧（JSON形式、プログラム用）
+- **categories.txt** - カテゴリ一覧（テキスト形式、人間用）
 
 ### スクリプト
 - **generate_master.py** - TSVからdefault-master.jsを生成するPythonスクリプト
@@ -25,7 +27,10 @@
 ### データ編集後の手順
 1. `マスターデータ.tsv` を編集
 2. `generate_master.py` または `generate_master.bat` を実行
-3. 生成された `assets/master/default-master.js` を確認
+3. 生成される以下のファイルを確認：
+   - `assets/master/default-master.js` - 拡張機能用データ
+   - `categories.json` - カテゴリ一覧（プログラム用）
+   - `categories.txt` - カテゴリ一覧（確認用）
 
 ## 注意事項
 - 編集前に必ずバックアップを作成してください
