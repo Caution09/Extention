@@ -60,6 +60,32 @@ The extension follows a modular architecture with clear separation of concerns:
 5. **File Operations**: Import/export via JSON and CSV formats
 6. **API Integration**: Supports NovelAI and local Stable Diffusion WebUI
 
+### Data Management
+
+The extension uses a master data system for prompt templates:
+
+1. **Master Data Source**: `data-management/マスターデータ.tsv`
+   - TSV format with columns: 大項目, 中項目, 小項目, Prompt
+   - Contains all prompt templates organized by category
+   - Character entries have both reproduction (full prompt) and simplified (character name only) versions
+
+2. **Data Generation**: 
+   - `data-management/generate_master.py` converts TSV to JavaScript
+   - Generates `assets/master/default-master.js` for the extension
+   - Automatic backup of existing files
+   - Run via `generate_master.bat` (Windows) or `python3 generate_master.py`
+
+3. **Data Management Tools**:
+   - `character_mapping.py`: Handles character name extraction and mapping
+   - `process_characters_clean.py`: Clean character data processing
+   - `analyze_characters.py`: Character data analysis
+   - All tools located in `data-management/` folder
+
+4. **Workflow**:
+   - Edit `マスターデータ.tsv` → Run generation script → Updated `default-master.js`
+   - Character entries automatically split into reproduction and simplified versions
+   - Manual mapping available for problematic character extractions
+
 ### Current Development Focus
 
 - Migrating away from jQuery to vanilla JavaScript
