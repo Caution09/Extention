@@ -1,5 +1,6 @@
 大項目	中項目	小項目	Prompt
 エフェクト	エフェクト	エフェクト	effect
+エフェクト	エフェクト	フラグメント	fragments
 エフェクト	エフェクト	メタルスクラッチ	metal scratch
 エフェクト	オブジェクト	吊り下げられた	suspended crystal
 エフェクト	オブジェクト	吊り下げられた無色の	suspended colorless crystal
@@ -21,6 +22,7 @@
 エフェクト	シンボル	宙に舞う羽	floating feathers
 エフェクト	シンボル	錨マーク	anchor symbol
 エフェクト	シンボル	薔薇,バラ,薔薇色	rose
+エフェクト	その他	スパッタ	spatter
 エフェクト	デザイン	古典的な装飾境界線	classic decorative border
 エフェクト	液体	すべてが流れて溶けます	everything flowing melt
 エフェクト	液体	液体	liquid body
@@ -70,14 +72,18 @@
 エフェクト	光	蛍光紫	fluorescent purple
 エフェクト	光	光の粒子	light particles
 エフェクト	光	光学現象	optical phenomena
+エフェクト	光	光沢	gloss
 エフェクト	光	波の輝く光	glistening light of waves
 エフェクト	光	発光	luminescence
 エフェクト	光	反射的	reflective
 エフェクト	光	粒子	particle
+エフェクト	光	粒子	particles
 エフェクト	光	輪郭の深化	contour deepening
 エフェクト	自然	花が疲れます	flowers tire
 エフェクト	自然	花びらが舞う	falling petals
 エフェクト	自然	飛ぶ花びら	flying petals
+エフェクト	状態	テクスチャ	texture
+エフェクト	状態	羽ばたき,ひらひら	fluttering
 エフェクト	状態	溶けた,溶け	melt
 エフェクト	状態	流れる透明な黒	flowing transparent black
 エフェクト	状態	流れる透明な白	flowing transparent white
@@ -88,6 +94,7 @@
 エフェクト	水系	水スプレー	water spray
 エフェクト	水系	水ブルーム	water bloom
 エフェクト	水系	水をはねかける	splashing water
+エフェクト	水系	水滴	drops of water
 エフェクト	水系	飛ぶスプラッシュ	flying splashes
 エフェクト	天体	アレイスター	array stars
 エフェクト	天体	ゴッドレイ	god ray
@@ -153,19 +160,24 @@
 オブジェクト	公共物	電線,電柱	power lines
 オブジェクト	公共物	電線,電柱2	utility pole
 オブジェクト	公共物	電線,電柱3	telephone pole
+オブジェクト	自然物	さくら	sakura
 オブジェクト	自然物	とげ	thorns
 オブジェクト	自然物	ブドウ	vines
 オブジェクト	自然物	ブランチ	branch
+オブジェクト	自然物	雲	clouds
+オブジェクト	自然物	花びら	petals
 オブジェクト	自然物	海藻	seaweed
 オブジェクト	自然物	貝殻	seashell
 オブジェクト	自然物	巻き貝	conch
 オブジェクト	自然物	逆さまの山	inverted mountain
+オブジェクト	自然物	洪水	flood
 オブジェクト	自然物	桜	cherry blossoms
 オブジェクト	自然物	桜の下	under cherry blossoms
 オブジェクト	自然物	桜の木	cherry trees
 オブジェクト	自然物	山	mountains
 オブジェクト	自然物	草	grass
 オブジェクト	自然物	太陽	sun
+オブジェクト	自然物	木々	trees
 オブジェクト	自然物	葉	leaves
 オブジェクト	小物	VRゴーグル	VR Goggles
 オブジェクト	小物	カーテン	curtains
@@ -177,6 +189,8 @@
 オブジェクト	小物	タンブラー	tumbler
 オブジェクト	小物	チェーン	chains
 オブジェクト	小物	パソコン	personal computer
+オブジェクト	小物	ひょうたん	gourd
+オブジェクト	小物	ブラシ	brush
 オブジェクト	小物	ランドセル	randoseru
 オブジェクト	小物	リュックサック	rucksack
 オブジェクト	小物	ロープ	rope
@@ -210,6 +224,9 @@
 オブジェクト	乗り物	戦艦	battle ship
 オブジェクト	乗り物	電車	train
 オブジェクト	電子機器	壊れた画面	brokscreen
+オブジェクト	動物	鳥	bird
+オブジェクト	日用品	キャンバス	canvas
+オブジェクト	日用品	写真	photo
 オブジェクト	日用品	長い糸	long yarn
 オブジェクト	日用品	鳥かご	birdcage
 オブジェクト	宝石	ダイヤモンド	diamonds
@@ -1104,6 +1121,9 @@
 キャラクター	ワンピース	ニコ・ロビン	{{{{nico robin (one piece)}}}}
 キャラクター	ワンピース	ボア・ハンコック	{{{{boa hancock (one piece)}}}}
 キャラクター	ワンピース	ヤマト	{{{{yamato (one piece)}}}}
+キャラクター	一般	メカ	mech
+キャラクター	一般	人間	human
+キャラクター	一般	独身	single
 キャラクター	宇崎ちゃんは遊びたい！	宇崎 花	{{{{uzaki_hana}}}}
 キャラクター	俺の妹がこんなに可愛いわけがない	五更瑠璃	gokou ruri, Gothic & Lolita, ore no imouto ga konna ni kawaii wake ga nai, best_quality,ultra-detailed,illustration,perfect_detailed,shiny,
 キャラクター	俺の妹がこんなに可愛いわけがない	高坂桐乃	masterpiece,best quality,looking up, ore no imouto ga konna ni kawaii wake ga nai,, kousaka_kirino ,crossed arms,orange hair|brown hair,long hair,floating hair,shiny hair,blue eyes|aqua eyes,(pink hairclip),badmood,white shirt,(gray sailor collar|blue sailor collar),red ascot,
@@ -1520,6 +1540,7 @@
 テイスト	テイスト	アウトラインの強調	thick outline
 テイスト	テイスト	クトゥルフ	cthulhu
 テイスト	テイスト	ゲームCG	game cg
+テイスト	テイスト	メカニカル	mechanical
 テイスト	テイスト	メタルスタイル	metal style
 テイスト	テイスト	モザイク	mosaic
 テイスト	テイスト	概要	outline
@@ -1700,6 +1721,7 @@
 テイスト	画風	イラスト	illustration
 テイスト	画風	コンセプトアート	concept art
 テイスト	画風	スケッチ	sketch
+テイスト	画風	ストローク	strokes
 テイスト	画風	セルシェーダー	cel shading
 テイスト	画風	トゥーン,アニメ長	toon
 テイスト	画風	ねんどろいど	nendroid
@@ -1744,6 +1766,9 @@
 テイスト	作品	アイドルマスター風	idolmaster million live!,{highres official art,},
 テイスト	作品	あずまんが大王風	style of azumanga daioh,official art,pupils,,
 テイスト	作品	アトリエシリーズ風	atelier (series)
+テイスト	作品	アニメのスクショ	anime screenshot
+テイスト	作品	アニメの顔	anime face
+テイスト	作品	アニメの顔と目	anime face eyes
 テイスト	作品	インフィニット・ストラトス風	infinite stratos, official art,
 テイスト	作品	うらら迷路帖風	{{urara meirochou}}
 テイスト	作品	うる星やつら風	urusei yatsura
@@ -1823,6 +1848,8 @@
 テイスト	世界観	SF	science fiction
 テイスト	世界観	サイバーパンク	cyberpunk
 テイスト	世界観	ファンタジー	fantasy girl illust
+テイスト	世界観	ラテン	latin
+テイスト	世界観	道教	taoist
 テイスト	特殊	コントラポスト	contraposto
 テイスト	特殊	ラフ	posing sketck
 テイスト	特殊	一点透視図法	vanishing point
@@ -1833,9 +1860,16 @@
 テイスト	年代	1980年代	80s
 テイスト	年代	1990年代	90s
 テイスト	年代	2000年代	00s
-テイスト	作品	アニメのスクショ	anime screenshot
-テイスト	作品	アニメの顔	anime face
-テイスト	作品	アニメの顔と目	anime face eyes
+ポーズ	動作	隠れ	hide
+ポーズ	動作	吸収	absorb
+ポーズ	動作	変える	vary
+ポーズ	動作	崩壊	imploding
+ライティング	ライティング	日の目	light of day
+位置・数量	位置	サイドブラント	side blunt
+位置・数量	位置	中央	center
+位置・数量	種類	ツートーン	two-tone
+位置・数量	配置	ランダム	randomly
+位置・数量	配置	分散	distributed
 画面効果	ふきだし	・・・	spoken elipsis
 画面効果	ふきだし	？	spoken question mark
 画面効果	ふきだし	♪	spoken musical note
@@ -1987,39 +2021,66 @@
 顔	肤	滑らかで輝く肌	smooth radiant skin
 顔	肤	滑らかな肌	smooth skin
 修飾語	形状	ひだのついた	corrugated
+修飾語	形状	平ら	flat
 修飾語	形容詞	エレガント	elegant
+修飾語	形容詞	きらめく	sparkling
 修飾語	形容詞	すばらしい,驚くべき	amazing
 修飾語	形容詞	スムーズ	smooth
 修飾語	形容詞	ノーブル	noble
+修飾語	形容詞	ぼんやり	blankly
+修飾語	形容詞	めちゃくちゃ	insanely
 修飾語	形容詞	暗い	dark
 修飾語	形容詞	恵み	grace
 修飾語	形容詞	主要	principal
 修飾語	形容詞	深い暗い	deep dark
+修飾語	形容詞	澄んだ	clear
 修飾語	形容詞	成熟	mature
 修飾語	形容詞	精神	spirit
 修飾語	形容詞	聖なる	holy
+修飾語	形容詞	素晴らしい	wonderful
+修飾語	形容詞	半透明	translucent
+修飾語	形容詞	複雑	complex
 修飾語	材質	金属の	metal details
 修飾語	材質	絹,シルク	silk
+修飾語	材質	硬い	hard
 修飾語	修飾語	クラシック	classic
 修飾語	修飾語	グランド	grand
+修飾語	修飾語	ジュリエット	juliet
+修飾語	修飾語	たくさん	many
+修飾語	修飾語	ツイスト	twist
 修飾語	修飾語	て美的	aesthetic
+修飾語	修飾語	トリプル	triple
 修飾語	修飾語	フロー	flow
 修飾語	修飾語	フローティング,浮かぶ,浮遊	floating
 修飾語	修飾語	円柱状の	columnar crystal
 修飾語	修飾語	屋内の	indoor
+修飾語	修飾語	下	under
+修飾語	修飾語	下げる	lower
+修飾語	修飾語	壊れる	broken
+修飾語	修飾語	外側	outside
 修飾語	修飾語	外側の	exterior
 修飾語	修飾語	割れた	brokglass
 修飾語	修飾語	完璧で手足	perfect limbs
 修飾語	修飾語	完璧な	perfect details
+修飾語	修飾語	感覚	sensation
+修飾語	修飾語	見える	visible
 修飾語	修飾語	厚いコーティング	thick coating
+修飾語	修飾語	合わせる	align
 修飾語	修飾語	最高品質;	quality;highly
 修飾語	修飾語	細かく	finely
+修飾語	修飾語	散在	scattered
 修飾語	修飾語	湿性	drenched
+修飾語	修飾語	焦点	focus
+修飾語	修飾語	染色	dye
 修飾語	修飾語	多くの	details
 修飾語	修飾語	丁寧	formal
 修飾語	修飾語	超素晴らしいイラスト	super illustration
+修飾語	修飾語	通り抜ける	pass through
+修飾語	修飾語	摘む	pluck
 修飾語	修飾語	塗装されています	beautifully painted
 修飾語	修飾語	透明な	transparent glass
+修飾語	修飾語	特徴	features
+修飾語	修飾語	内側	inside
 修飾語	修飾語	内側の	interior
 修飾語	修飾語	濡れている	wetting
 修飾語	修飾語	廃墟になった	ruined
@@ -2027,11 +2088,14 @@
 修飾語	修飾語	品質	the quality
 修飾語	修飾語	複雑なディテール	intricate detail
 修飾語	修飾語	変	strange
+修飾語	修飾語	豊か	rich
 修飾語	修飾語	本物の顔	authentic face
 修飾語	修飾語	本物の肌の質感	authentic skin texture
+修飾語	修飾語	埋める	fill
 修飾語	修飾語	野外の	outdoor
 修飾語	修飾語	野生の	wild
 修飾語	修飾語	役に立たない	unhelpless
+修飾語	修飾語	揺れる	sway
 修飾語	修飾語	流れる,フローイング,流れ	flowing
 修飾語	色	色	tint
 修飾語	色	色付きの	colocrystal
@@ -2071,6 +2135,7 @@
 照明	環境光	アンビエントライト	ambient light
 照明	光	ゴールデンアワー照明	golden hour lighting
 照明	光	シティライト	citylight
+照明	光	スポット	spot
 照明	光	スポットライト	spot light
 照明	光	ダイナミックライティング	dynamic lighting
 照明	光	バチバチ輝く	sparkle
@@ -2100,8 +2165,10 @@
 詳細	形状	ドクロ	skull
 詳細	形状	ドラゴン	dragon
 詳細	形状	ハート	heart
+詳細	形状	ふくらんで	puffy
 詳細	形状	球体	sphere
 詳細	形状	球体2,球体	spherical
+詳細	形状	形成	form
 詳細	形状	三日月	crescent
 詳細	形状	人参	carrot
 詳細	形状	星	star
@@ -2113,21 +2180,28 @@
 詳細	系統	かわいい	cute
 詳細	材質	ガラス	glassy
 詳細	材質	クリスタル,結晶	crystal
+詳細	材質	サファイア	sapphire
 詳細	材質	ダイアモンド	diamond
+詳細	材質	チュール	tulle
 詳細	材質	テカテカ	latex
 詳細	材質	デニム	denim
 詳細	材質	ルビー	ruby
 詳細	材質	レース	lace trim
+詳細	材質	金属	metal
 詳細	材質	金属	metallic
 詳細	材質	透けた,透明な	transparent
 詳細	材質	皮	leather
+詳細	材質	宝石	gemstone
 詳細	材質	毛皮	fur
 詳細	材質	毛皮のような,ケモノ	furry
 詳細	材質	木製	wooden
 詳細	時代	中世	midriff
+詳細	状態	カバレッジ	coverage
 詳細	状態	艶やか	shiny
 詳細	状態	輝いてる	glitter
 詳細	状態	屈折,反射	refractions
+詳細	状態	出芽	budded
+詳細	状態	装飾	decoration
 詳細	状態	濡れた	wet
 詳細	状態	燃焼	burning
 詳細	状態	発光している	luminous
@@ -2143,6 +2217,7 @@
 詳細	色	しろ,白,ホワイト	white
 詳細	色	ちゃいろ,茶	brown
 詳細	色	はいいろ,灰色	gray
+詳細	色	バイオレット	violet
 詳細	色	ピンク,桃色,ピンク	pink
 詳細	色	みどり,緑	green
 詳細	色	むらさき,紫,紫色	purple
@@ -2153,6 +2228,7 @@
 詳細	色	紺	navy
 詳細	色	朱色	vermilion
 詳細	色	銅,ブロンズ	cooper
+詳細	色	虹色	iridescent
 詳細	色	無色,透明	colorless
 詳細	色	明るい紫髪	light purple
 詳細	色	藍	indigo
@@ -2174,6 +2250,7 @@
 詳細	品質	非常にきめ細かい	extremely detailed
 詳細	品質	非常に美しくきめ細かい	extremely beautiful detailed
 詳細	品質	美しくきめ細かい	beautiful detailed
+詳細	品質	美しさ	beauty
 詳細	品質	良い	fine
 場所	屋外	アトランティス	atlantis
 場所	屋外	サイバーパンクな町	cyberpunk city
@@ -2246,6 +2323,7 @@
 場所	屋外	繁華街	downtown area
 場所	屋外	病院	hospital outdoors
 場所	屋外	墓地	graveyard
+場所	屋外	牧草地	meadow
 場所	屋外	霧に囲まれた山	mist encircles the mountains
 場所	屋外	木々のある雪の森	snow forest with trees
 場所	屋外	遊園地	amusement park
@@ -2365,6 +2443,7 @@
 食べ物	パン	ハンバーガー	hamburger
 食べ物	パン	ピザ	pizza
 食べ物	飲み物	タピオカミルクティー	Tapioca milk tea
+食べ物	飲み物	ワイン	wine
 食べ物	飲み物	牛乳,ミルク	milk
 食べ物	果物	??	??
 食べ物	果物	??	??
@@ -2427,6 +2506,7 @@
 身体	胸	大きなおっぱい	big tits
 身体	胸	大きな胸	large breasts
 身体	胸	大きな胸2	big breasts
+身体	胸	乳房	breasts
 身体	胸	爆乳	gigantic breasts
 身体	胸	普通の胸	medium breasts
 身体	胸	平らなお胸,貧乳,幼児	flat chest
@@ -2452,6 +2532,7 @@
 身体	身体	骨	bone
 身体	身体	体,ボディ	body
 身体	身体	大きな筋肉	big muscles
+身体	性別	彼女	she
 身体	足	素足	bare foot
 身体	足	足のネイル	toenail polish
 身体	足	二足	two legs
@@ -2483,6 +2564,7 @@
 身体	体形	小柄な体系	small build
 身体	体形	低身長	minigirl
 身体	体形	豊満ボディ	ample figure
+身体	頭	頭	head
 身体	頭部	額にマーク	forehead mark
 身体	胴	細い腰	slender waist
 身体	胴	裸のへそ	bare navel
@@ -2517,6 +2599,8 @@
 身体	腕	ロボットアーム	robot arm
 身体	腕	裸の腕	bare arms
 身体	鰱	人魚のスケール	scales on mermaid
+身体/顔	身体特徴	周囲	circumference
+身体/顔	身体部位	太もも	thigh
 人数	女性	1人の女	1girl
 人数	女性	2人の女	2girls
 人数	女性	3人の女	3girls
@@ -2644,7 +2728,7 @@
 成人向け	テンプレ	中出しエッチ	nsfw,{{{pussy}}},{{{vaginal}}},{{{sex}}},{{{1boy}}},penis,{{{{{sperma}}}}},cum in uterus,cream shoot,{{creampie}}
 成人向け	テンプレ	電車痴漢	nsfw,{{{{{on the train}}}}},{highres},looking at viewer,teasingsmile,sweatdrop,best quality,highly detaile,lying on person,ass,stretch legs,bare legs,from above,{{{{{shiny skin}}}}},{standing on one leg},{leg grab},{leg up},from side ~ nude,nipples,pussy,arched back,clothed sex,{{{{{1boy}}}}},{{{sex from behind}}},{{{standing doggy style}}},{{{standing sex}}},{{torso grab}},{{paizuri}},public indecency,love juice,undressing,{{{{{{{{{{bukkake}}}}}}}}}},{{{{{{{{{{excessive cum}}}}}}}}}},{{{{{{{{{{cum on breasts}}}}}}}}}},{{{{{{{{{{pojecile cum}}}}}}}}}},{{{{{{{{{{cum in pussy}}}}}}}}}},naked,manyboysis,{{{{{{{{{{head out of frame}}}}}}}}}}
 成人向け	テンプレ	頭を押さえつけてのイラマ	nsfw,headpat,{pov hands},surprised,fellatio,tearing up
-成人向け	テンプレ	放尿	"nsfw,1girl,squatting,{{{""pussy juice drip through clothes""}}}, {{peeing}}, ""yellow puddle"""
+成人向け	テンプレ	放尿	nsfw,1girl,squatting,{{{"pussy juice drip through clothes"}}}, {{peeing}}, "yellow puddle"
 成人向け	テンプレ	乱交テンプレ	nsfw, 1girl,{{{3boys}}}, {{promiscuous sex}},gang rape,vagina,cunt,sex, showing navel and{{light pink nipples}}, presenting{{wet pussy}},{pussy juice},anal focus,laugh,threesome, on bed, all fours,fellatio,cum in mouth,cum in pussy
 成人向け	テンプレ	輪姦後背位テンプレ	nsfw,{{intense angle}},{{fuck buddy}},{{{friend with benefits}}},leaning forward,{{{{doggy style}}}},{{{{{wet sweat}}}}},{{{{{sex}}}}},{{girl in heat}},4boys,cockslut,{{orgy}},open mouth,sperma,{{{{{creampie}}}}},{{girl in heat}},gang bang,sweatdrop,flying sweatdrops,holding hands
 成人向け	テンプレ	露出テンプレ	nsfw,nude,nipples,navel,pussy,vaginal,sweat,sex,outside,squatting,arm support
@@ -2729,8 +2813,8 @@
 成人向け	射精	拘束中出し	criempie drop
 成人向け	射精	射精1	cream shoot
 成人向け	射精	射精2	cumshot
-成人向け	射精	受精	fertilization
 成人向け	射精	射精3,劇核	ejaculation
+成人向け	射精	受精	fertilization
 成人向け	射精	精液ごっくん	gulp
 成人向け	射精	体にぶっかけ	cum on body
 成人向け	射精	大量射精	excessive cum
@@ -2774,6 +2858,7 @@
 成人向け	性器の状態	事後の膣	after vaginal
 成人向け	性器の状態	濡れた膣	wet vagina
 成人向け	性器の状態	膣から精子	cum inside pussy
+成人向け	性交	性交	intercourse
 成人向け	絶頂	オーガズム	orgasm
 成人向け	絶頂	絶頂,精液	cum
 成人向け	絶頂	絶頂の際の痙攣エフェクト	trembling motionline for orgasm
@@ -2969,6 +3054,7 @@
 装飾	武器	日本刀	japanese sword
 装飾	帽子	カチューシャ	horseshoe shaped hairband
 装飾	帽子	キャスケット	cabbie hat
+装飾	帽子	クラウン	crown
 装飾	帽子	サンバイザー	visor cap
 装飾	帽子	シルクハット	top hat
 装飾	帽子	セーラー帽	sailor hat
@@ -2978,6 +3064,7 @@
 装飾	帽子	ニット帽2	knitted hat
 装飾	帽子	バンダナ	bandana
 装飾	帽子	ふんわりとしたお嬢様っぽい帽子	bonnet
+装飾	帽子	ヘッドドレス	headdress
 装飾	帽子	ベレー帽	beret
 装飾	帽子	ミニ王冠	ascot
 装飾	帽子	ミニ帽子	mini hat
@@ -3497,6 +3584,7 @@
 髪	髪型	カーリーヘア	spiral curl
 髪	髪型	ぐるぐるヘアー	ringlets
 髪	髪型	ツインドリル	twin drills
+髪	髪型	ブレード	braid
 髪	髪型	ワンレン	one length haircut
 髪	髪型	横の刈り上げ	undercut
 髪	髪型	横編み込み	side braid
@@ -3639,6 +3727,7 @@
 表情	表情	怒り	anger
 表情	表情	表現	expression
 表情	表情	無関心	indifference
+表情	表情	欲求不満	frustrated
 表情	不機嫌な表情	しかめっ面	frown
 表情	不機嫌な表情	しかめっ面2	furrowed brow
 表情	不機嫌な表情	しかめっ面3	wince
@@ -3956,9 +4045,11 @@
 服装	スカート	夏の長いスカート	summer long skirt
 服装	スカート	半透明のフラッタースカート	translucent fluttering skirt
 服装	トップス	ウェイトレスのエプロン	waist apron
+服装	トップス	オフショルダージャケット	off shoulder jacket
 服装	トップス	お腹が見える服,上着のチャックを開ける	crop top
 服装	トップス	カーディガン	cardigan
 服装	トップス	サスペンダー	suspenders
+服装	トップス	ジャケット	jacket
 服装	トップス	ジャケットのチャックを開いた状態	open jacket
 服装	トップス	シャツ	shirt
 服装	トップス	スポーツシャツ	shirtless shirt
@@ -3968,6 +4059,7 @@
 服装	トップス	タートルネック2	turtleneck sweater
 服装	トップス	タンクトップ	tank top
 服装	トップス	トップス	tops
+服装	トップス	パーカー	hoodie
 服装	トップス	バックレス（背中丸見え）	backless outfit
 服装	トップス	ブラウス	blouse
 服装	トップス	ブレザー	blazer suit
@@ -3990,6 +4082,7 @@
 服装	ドレス	エプロンドレス	pinafore dress
 服装	ドレス	オフショルダードレス	off shoulder dress
 服装	ドレス	ゴシックドレス	gothic dress
+服装	ドレス	ゴシック帝国のウエストドレス	gothic empire waist dress
 服装	ドレス	ショートドレス	short dress
 服装	ドレス	ストラップレスドレス	strapless dress
 服装	ドレス	セータードレス	sweater dress
@@ -4008,8 +4101,10 @@
 服装	ドレス	葉のドレス	leaves dress
 服装	ボトムス	アシンメトリーなレッグウェア	asymmetrical legwear
 服装	ボトムス	おむつ	diapers
+服装	ボトムス	ガーゼスカート	gauze skirt
 服装	ボトムス	ジーンズ	jeans
 服装	ボトムス	ショーツ	shorts
+服装	ボトムス	しわのあるスカート	wrinkled skirt
 服装	ボトムス	スカート	skirt
 服装	ボトムス	スパッツ	bike shorts
 服装	ボトムス	スパッツみたいな安全半ズボン	safety knickers
@@ -4040,6 +4135,7 @@
 服装	一式	ゴスロリ	gothic lolita
 服装	一式	ジャージ	track suits
 服装	一式	スタイ	baby bib
+服装	一式	セーラー	sailor
 服装	一式	セーラー服	serafuku
 服装	一式	パジャマ	pajamas
 服装	一式	バスローブ	bathrobe
@@ -4051,6 +4147,7 @@
 服装	一式	ボンテージ2	bondage
 服装	一式	マント	cloak
 服装	一式	レディーススーツ	lady's suit
+服装	一式	ローブ	robes
 服装	一式	ロボ兵装	machinery
 服装	一式	ロリータ	lolita (fashion style)
 服装	一式	ロリータファッション	lolita fashion
@@ -4076,6 +4173,7 @@
 服装	下着	ネグリジェ2	negligee
 服装	下着	パンスト	pantyhose
 服装	下着	パンティー,パンツ	panties
+服装	下着	ビスチェ	bustier
 服装	下着	ブラジャー	bra
 服装	下着	ベビードール	babydoll
 服装	下着	まとまったブルマー	wholebloomer
@@ -4085,6 +4183,7 @@
 服装	下着	女性用下着	classic briefs
 服装	下着	男性用ブリーフ	boys briefs
 服装	下着	紐パン	side tie bikini bottom
+服装	靴	シューズ	shoes
 服装	靴	ハイヒール	high heeled shoes
 服装	靴	厚底靴	platform footwear
 服装	靴	尖ったブーツ	pointed boots
@@ -4119,6 +4218,7 @@
 服装	装飾付き	ドレスの頭蓋骨	skull on dress
 服装	袖	シースルー	see through
 服装	袖	シースルーの袖	see through sleeves
+服装	袖	スリーブ	sleeve
 服装	袖	トップスリーブ	top sleeves
 服装	袖	指を通り過ぎる袖	sleeves past fingers
 服装	袖	振袖	furisode
@@ -4138,6 +4238,8 @@
 服装	特徴	フリンジ	fringes
 服装	特徴	ボタンが外れている	unbuttoned
 服装	特徴	ボタンが外れている2	button gap
+服装	特徴	レース	lace
+服装	特徴	ロングストレート	long straight
 服装	特徴	肩開きのトップス	detached sleeves
 服装	特徴	濡れたシャツ	see through wet shirt
 服装	特徴	文字入り服	clothes writing
@@ -4147,15 +4249,6 @@
 服装	特徴	露出度の低い	unexposed
 服装	服装	服,衣服	clothes
 服装	防具	機械的なボディアーマー	mechanical body armor
-服装	トップス	オフショルダージャケット	off shoulder jacket
-服装	ボトムス	ガーゼスカート	gauze skirt
-服装	ドレス	ゴシック帝国のウエストドレス	gothic empire waist dress
-服装	トップス	ジャケット	jacket
-服装	靴	シューズ	shoes
-服装	ボトムス	しわのあるスカート	wrinkled skirt
-服装	トップス	パーカー	hoodie
-服装	下着	ビスチェ	bustier
-服装	特徴	ロングストレート	long straight
 服装	裸	下半身裸	bottomless
 服装	裸	完全にヌード	completely nude
 服装	裸	上裸	topless
@@ -4176,90 +4269,13 @@
 服装	和装	浴衣(女性用)	girls yukata
 服装	和装	浴衣(男性用)	boys yukata
 服装	和装	和服	japanese clothes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 模様	柄	アーガイル（菱形敷き詰め）	argyle
 模様	柄	アーガイル柄	argyle pattern
 模様	柄	イカット柄	ikat pattern
 模様	柄	オンブレ	ombre
 模様	柄	ギンガムチェック	gingham check
 模様	柄	グリークキー	Greek key
+模様	柄	クロス	cross
 模様	柄	サーバル柄	serval print
 模様	柄	シェブロンストライプ	chevron stripe
 模様	柄	スカラップ	scallop
@@ -4269,6 +4285,7 @@
 模様	柄	ドット柄	dot pattern
 模様	柄	トレリス	trellis
 模様	柄	ハーリキンチェック	harlequin check
+模様	柄	パターン	pattern
 模様	柄	バラ柄	rose pattern
 模様	柄	ヒナギク柄	daisy pattern
 模様	柄	ペイズリー	paisley
@@ -4285,6 +4302,7 @@
 模様	柄	虎柄	tiger print
 模様	柄	国旗柄	flag print
 模様	柄	三角形	triangles
+模様	柄	縞模様	stripes
 模様	柄	星柄	star print
 模様	柄	正方形	squares
 模様	柄	千鳥格子	houndstooth pattern
@@ -4294,99 +4312,4 @@
 模様	柄	無地	plain
 模様	柄	迷彩柄	camouflage
 模様	柄	網目	fishnets
-位置・数量	位置	中央	center
-修飾語	形容詞	きらめく	sparkling
-位置・数量	位置	サイドブラント	side blunt
-詳細	材質	サファイア	sapphire
-詳細	材質	金属	metal
-服装	袖	スリーブ	sleeve
-修飾語	修飾語	ジュリエット	juliet
-詳細	材質	チュール	tulle
-服装	特徴	レース	lace
-場所	屋外	牧草地	meadow
-髪	髪型	ブレード	braid
-修飾語	修飾語	ツイスト	twist
-位置・数量	種類	ツートーン	two-tone
-エフェクト	状態	テクスチャ	texture
-装飾	帽子	クラウン	crown
-修飾語	修飾語	トリプル	triple
-エフェクト	エフェクト	フラグメント	fragments
-照明	光	スポット	spot
-修飾語	形容詞	ぼんやり	blankly
-キャラクター	一般	メカ	mech
-装飾	帽子	ヘッドドレス	headdress
-テイスト	テイスト	メカニカル	mechanical
-詳細	状態	カバレッジ	coverage
-修飾語	形容詞	めちゃくちゃ	insanely
-修飾語	形容詞	澄んだ	clear
-詳細	形状	形成	form
-テイスト	世界観	ラテン	latin
-詳細	状態	出芽	budded
-模様	柄	クロス	cross
-位置・数量	配置	分散	distributed
-位置・数量	配置	ランダム	randomly
-エフェクト	状態	羽ばたき,ひらひら	fluttering
-修飾語	形容詞	半透明	translucent
-オブジェクト	小物	ひょうたん	gourd
-食べ物	飲み物	ワイン	wine
-キャラクター	一般	人間	human
-身体/顔	身体部位	太もも	thigh
-模様	柄	縞模様	stripes
-オブジェクト	小物	ブラシ	brush
-修飾語	形容詞	素晴らしい	wonderful
-テイスト	画風	ストローク	strokes
-詳細	材質	宝石	gemstone
-詳細	形状	ふくらんで	puffy
-ポーズ	動作	隠れ	hide
-服装	一式	ローブ	robes
-テイスト	世界観	道教	taoist
-ポーズ	動作	崩壊	imploding
-ポーズ	動作	吸収	absorb
-ライティング	ライティング	日の目	light of day
-ポーズ	動作	変える	vary
-修飾語	材質	硬い	hard
-詳細	状態	装飾	decoration
-詳細	色	バイオレット	violet
-エフェクト	光	粒子	particles
-エフェクト	水系	水滴	drops of water
-身体/顔	身体特徴	周囲	circumference
-キャラクター	一般	独身	single
-詳細	色	虹色	iridescent
-服装	一式	セーラー	sailor
-詳細	品質	美しさ	beauty
-オブジェクト	自然物	さくら	sakura
-修飾語	形容詞	複雑	complex
-模様	柄	パターン	pattern
-修飾語	形状	平ら	flat
-修飾語	修飾語	下	under
-修飾語	修飾語	焦点	focus
-修飾語	修飾語	合わせる	align
-修飾語	修飾語	特徴	features
-オブジェクト	自然物	雲	clouds
-修飾語	修飾語	豊か	rich
-オブジェクト	自然物	洪水	flood
-修飾語	修飾語	散在	scattered
-エフェクト	光	光沢	gloss
-オブジェクト	自然物	花びら	petals
-修飾語	修飾語	たくさん	many
-オブジェクト	日用品	写真	photo
-オブジェクト	日用品	キャンバス	canvas
-修飾語	修飾語	埋める	fill
-修飾語	修飾語	揺れる	sway
-オブジェクト	自然物	木々	trees
-修飾語	修飾語	通り抜ける	pass through
-成人向け	性交	性交	intercourse
-オブジェクト	動物	鳥	bird
-修飾語	修飾語	見える	visible
-修飾語	修飾語	内側	inside
-修飾語	修飾語	外側	outside
-修飾語	修飾語	壊れる	broken
-エフェクト	その他	スパッタ	spatter
-身体	胸	乳房	breasts
-修飾語	修飾語	摘む	pluck
-修飾語	修飾語	染色	dye
-身体	性別	彼女	she
-表情	表情	欲求不満	frustrated
-身体	頭	頭	head
-修飾語	修飾語	下げる	lower
-修飾語	修飾語	感覚	sensation
+			
