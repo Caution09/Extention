@@ -89,6 +89,54 @@ The extension uses a master data system for prompt templates:
    - Manual mapping available for problematic character extractions
    - Use `categories.txt` for quick category overview and data verification
 
+### Master Data Maintenance and Quality Assurance
+
+When the user requests "マスターデータ整理" or "マスターデータ更新", Claude should perform a comprehensive data quality analysis and cleanup following this workflow:
+
+#### Phase 1: Analysis and Editing (Auto-execute)
+
+1. **Create Backup**: Always backup `マスターデータ.tsv` before making changes
+2. **Comprehensive Analysis**: Analyze all non-character categories for:
+   - Duplicate categories (e.g., ライティング/照明, 身体/顔/身体)
+   - English prompt errors (typos like "bara"→"rose", "hanabi"→"fireworks", "gram"→"pentagram", "digt"→"digit")
+   - Misplaced subcategories (e.g., エフェクト>オブジェクト → オブジェクト>オブジェクト)
+   - Test/invalid entries (お気に, 大項目, etc.)
+   - Inconsistent naming patterns
+
+3. **Execute Fixes in Parallel**:
+   - Merge duplicate categories logically
+   - Fix English spelling/grammar errors
+   - Reorganize misplaced subcategories
+   - Remove or relocate test entries
+   - Standardize category naming conventions
+
+4. **Data Integrity Validation**:
+   - Verify no empty lines remain
+   - Check total entry count
+   - Confirm no error patterns remain
+   - Validate category distribution
+
+#### Phase 2: JavaScript Generation (User Permission Required)
+
+**IMPORTANT**: After completing Phase 1, Claude must:
+1. Present a summary of changes made
+2. Ask for explicit user permission before proceeding
+3. Only after user approval, run: `cd data-management && python3 generate_master.py`
+
+#### Common Issues to Address:
+
+- **Category Consolidation**: ライティング→照明, 身体/顔→身体
+- **English Fixes**: bara→rose, hanabi→fireworks, gram→pentagram, digt→digit/finger
+- **Logical Reorganization**: Move items to appropriate parent categories
+- **Quality Standards**: Remove test entries, fix inconsistencies
+
+#### Success Metrics:
+- Zero duplicate categories
+- Zero English spelling errors
+- Logical category hierarchy
+- Clean data structure
+- Successful JavaScript generation
+
 ### Current Development Focus
 
 - Migrating away from jQuery to vanilla JavaScript
