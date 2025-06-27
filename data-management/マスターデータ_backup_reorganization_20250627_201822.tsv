@@ -2828,7 +2828,7 @@
 テイスト	特殊	コントラポスト	contraposto
 テイスト	特殊	ラフ	posing sketck
 テイスト	特殊	一点透視図法	vanishing point
-テイスト	特殊	表情・感情集っぽい絵	expressions
+テイスト	特殊	表情集っぽい絵	expressions
 テイスト	年代	1920年代（スタイル）	1920s (style)
 テイスト	年代	1960年代	60s
 テイスト	年代	1970年代	70s
@@ -3244,7 +3244,7 @@
 場所	屋外	ライブ会場2	live concert
 場所	屋外	ラスベガス	Las Vegas
 場所	屋外	宇宙ポート	space port
-場所	学校（室外）	運動場	athletic field
+場所	屋外	運動場	athletic field
 場所	屋外	遠くの山と湖	mountains lakes in the distance
 場所	屋外	屋外	outdoors
 場所	屋外	屋敷	residence
@@ -3261,8 +3261,8 @@
 場所	屋外	海岸	coast
 場所	屋外	海中	in the sea
 場所	屋外	崖	cliff
-場所	街中	街	street
-場所	街中	街並み	cityscape
+場所	屋外	街	street
+場所	屋外	街並み	cityscape
 場所	屋外	学校	school outdoors
 場所	屋外	京都	kyoto
 場所	屋外	教会	church outdoors
@@ -3295,7 +3295,7 @@
 場所	屋外	廃墟	ruins
 場所	屋外	廃墟	ruins outdoor
 場所	屋外	発電所	power plant outdoor
-場所	街中	繁華街	downtown area
+場所	屋外	繁華街	downtown area
 場所	屋外	病院	hospital outdoors
 場所	屋外	墓地	graveyard
 場所	屋外	牧草地	meadow
@@ -3307,7 +3307,7 @@
 場所	屋内	あかちゃん部屋	baby room
 場所	屋内	ウエスタンスタイルの部屋	western style room
 場所	屋内	カジノ	casino
-場所	学校（室内）	きちんとした教室	tidy classroom
+場所	屋内	きちんとした教室	tidy classroom
 場所	屋内	コーナー	corner
 場所	屋内	コンサートホール	concert hall
 場所	屋内	シーリング	ceiling
@@ -3327,20 +3327,20 @@
 場所	屋内	屋敷	residence indoors
 場所	屋内	家	house
 場所	屋内	家	house indoors
-場所	学校（室内）	学校	school
-場所	学校（室内）	学校	school indoors
+場所	屋内	学校	school
+場所	屋内	学校	school indoors
 場所	屋内	教会	church
 場所	屋内	教会	church indoors
-場所	学校（室内）	教室	classrooms
+場所	屋内	教室	classrooms
 場所	屋内	工場	factory area indoor
 場所	屋内	更衣室	changing room
 場所	屋内	子供部屋	kidsroom
-場所	学校（室内）	小学校	primary school
-場所	学校（室内）	小学校２	elementary school
+場所	屋内	小学校	primary school
+場所	屋内	小学校２	elementary school
 場所	屋内	城	castle
 場所	屋内	城	castle indoor
 場所	屋内	畳	tatami
-場所	学校（室内）	図書館	library
+場所	屋内	図書館	library
 場所	屋内	水族館	aquarium
 場所	屋内	洗面所	rest room
 場所	屋内	脱衣場	dressing room
@@ -3349,7 +3349,7 @@
 場所	屋内	廃墟	ruins indoor
 場所	屋内	病院	hospital
 場所	屋内	病院	hospital indoors
-場所	家（室内）	風呂場	bathroom
+場所	屋内	風呂場	bathroom
 場所	屋内	本屋	bookstore
 場所	屋内	和式の部屋	japanese room
 場所	自然	ウォーターエッジの近く	near the water edge
@@ -4468,61 +4468,61 @@
 背景	柄	菱形敷き詰め	argyle background
 背景	柄	無地	plain background
 背景	歴史	第一次世界大戦	world war
-髪	女性向けの髪型	ヘアカット	haircut
-髪	女性向けの髪型	1房下ろす横髪	hair flaps
-髪	女性向けの髪型	くるくるカール	ringlets hair
-髪	女性向けの髪型	クルッとした1房下ろす横髪	hair intakes
-髪	女性向けの髪型	サイドを結んだ髪1	side swept hair
-髪	女性向けの髪型	編み込みの入った髪（横）	bridal hair side view
-髪	女性向けの髪型	エジプト系のボブカット	egyptian bob hair
-髪	女性向けの髪型	おさげ	low twintails
-髪	女性向けの髪型	おさげ2	pigtails
-髪	女性向けの髪型	お団子	bun hair
-髪	女性向けの髪型	お団子ヘア	space buns hair
-髪	女性向けの髪型	お団子ヘア（横）	side buns hair
-髪	女性向けの髪型	サイドテール	one side up
-髪	女性向けの髪型	サイドテール2	side ponytail
-髪	女性向けの髪型	ちっちゃいツインテ	short twintails
-髪	女性向けの髪型	ツインテ	twintails
-髪	女性向けの髪型	ツーサイドアップ	two side up
-髪	女性向けの髪型	ドリルヘアー	drill hair
-髪	女性向けの髪型	ハーフアップ	half up
-髪	女性向けの髪型	ハーフアップ2	half updo
-髪	女性向けの髪型	ピクシーヘア	pixie hair
-髪	女性向けの髪型	ポニーテール	half ponytail hair
-髪	女性向けの髪型	ポニーテール,ポニテ	ponytail
-髪	女性向けの髪型	ポニテもどき	folded ponytail
-髪	女性向けの髪型	ミディアムボブ	medium bob
-髪	女性向けの髪型	ロングポニーテール	long ponytail hair
-髪	女性向けの髪型	円錐状のお団子	cone hair bun
-髪	女性向けの髪型	更に短いポニテ	short pigtail hair
-髪	女性向けの髪型	高めのポニテ	high ponytail
-髪	女性向けの髪型	三つ編み	braid hair
-髪	女性向けの髪型	三つ編みおさげ	twin braids
-髪	女性向けの髪型	短いポニテ	pigtail hair
-髪	女性向けの髪型	頭の上の方で縛ったお団子	topknot hair
-髪	女性向けの髪型	編み込みの入った長髪	long braid hair
-髪	女性向けの髪型	編み込みの入った髪	knotless braid hair
-髪	女性向けの髪型	編み込みの入った髪（後ろ）	bridal hair back view
-髪	女性向けの髪型	編み込みの入った姫カット	long hime cut hair
-髪	女性向けの髪型	ふわふわした髪	fluffy hair
+髪	スタイル	ヘアカット	haircut
+髪	横髪	1房下ろす横髪	hair flaps
+髪	横髪	くるくるカール	ringlets hair
+髪	横髪	クルッとした1房下ろす横髪	hair intakes
+髪	横髪	サイドを結んだ髪1	side swept hair
+髪	横髪	編み込みの入った髪（横）	bridal hair side view
+髪	後髪	エジプト系のボブカット	egyptian bob hair
+髪	後髪	おさげ	low twintails
+髪	後髪	おさげ2	pigtails
+髪	後髪	お団子	bun hair
+髪	後髪	お団子ヘア	space buns hair
+髪	後髪	お団子ヘア（横）	side buns hair
+髪	後髪	サイドテール	one side up
+髪	後髪	サイドテール2	side ponytail
+髪	後髪	ちっちゃいツインテ	short twintails
+髪	後髪	ツインテ	twintails
+髪	後髪	ツーサイドアップ	two side up
+髪	後髪	ドリルヘアー	drill hair
+髪	後髪	ハーフアップ	half up
+髪	後髪	ハーフアップ2	half updo
+髪	後髪	ピクシーヘア	pixie hair
+髪	後髪	ポニーテール	half ponytail hair
+髪	後髪	ポニーテール,ポニテ	ponytail
+髪	後髪	ポニテもどき	folded ponytail
+髪	後髪	ミディアムボブ	medium bob
+髪	後髪	ロングポニーテール	long ponytail hair
+髪	後髪	円錐状のお団子	cone hair bun
+髪	後髪	更に短いポニテ	short pigtail hair
+髪	後髪	高めのポニテ	high ponytail
+髪	後髪	三つ編み	braid hair
+髪	後髪	三つ編みおさげ	twin braids
+髪	後髪	短いポニテ	pigtail hair
+髪	後髪	頭の上の方で縛ったお団子	topknot hair
+髪	後髪	編み込みの入った長髪	long braid hair
+髪	後髪	編み込みの入った髪	knotless braid hair
+髪	後髪	編み込みの入った髪（後ろ）	bridal hair back view
+髪	後髪	編み込みの入った姫カット	long hime cut hair
+髪	質感	ふわふわした髪	fluffy hair
 髪	色	色付きの内なる髪	coloinner hair
 髪	色	赤毛の赤毛	mediumhair
-髪	女性向けの髪型	オールバック,おでこを出す	hair slicked back
-髪	女性向けの髪型	まっすぐな前髪	straight bangs
-髪	女性向けの髪型	左右非対称な前髪	asymmetrical bangs
-髪	女性向けの髪型	先の丸まった前髪	blunt bangs
-髪	女性向けの髪型	前の分かれた前髪	parted bangs
-髪	女性向けの髪型	中分けヘア	middle parting hair
-髪	女性向けの髪型	長い横髪	sidelocks
-髪	女性向けの髪型	長い前髪	long bangs
-髪	女性向けの髪型	長い前髪2	pointy hair
-髪	女性向けの髪型	眉間の間に前髪	hair between eyes
-髪	女性向けの髪型	姫カット	hime cut
-髪	女性向けの髪型	片側によった前髪,流した前髪	swept bangs
-髪	女性向けの髪型	片目隠れ,アシメ	hair over one eye
-髪	女性向けの髪型	片目隠れ2	one eye covered
-髪	女性向けの髪型	星空は髪を飾ります	starry sky adorns hair
+髪	前髪	オールバック,おでこを出す	hair slicked back
+髪	前髪	まっすぐな前髪	straight bangs
+髪	前髪	左右非対称な前髪	asymmetrical bangs
+髪	前髪	先の丸まった前髪	blunt bangs
+髪	前髪	前の分かれた前髪	parted bangs
+髪	前髪	中分けヘア	middle parting hair
+髪	前髪	長い横髪	sidelocks
+髪	前髪	長い前髪	long bangs
+髪	前髪	長い前髪2	pointy hair
+髪	前髪	眉間の間に前髪	hair between eyes
+髪	前髪	姫カット	hime cut
+髪	前髪	片側によった前髪,流した前髪	swept bangs
+髪	前髪	片目隠れ,アシメ	hair over one eye
+髪	前髪	片目隠れ2	one eye covered
+髪	装飾	星空は髪を飾ります	starry sky adorns hair
 髪	男性向けの髪型	コーンロー	cornrows
 髪	男性向けの髪型	スポーツ刈り	crew cut
 髪	男性向けの髪型	ドレッド	dreadlocks
@@ -4551,36 +4551,36 @@
 髪	髪の長さ	肩あたり	shoulder length
 髪	髪の長さ	地面につくくらい長い髪	absurdly long hair
 髪	髪の長さ	普通の髪(肩にかかるくらい)	medium hair
-髪	髪	1つのお団子	single hair bun
-髪	髪	2つのお団子	double bun
-髪	髪	3つのお団子	braided bun
-髪	髪	アシメっぽい感じ	hair pulled back
-髪	髪	おかっぱ・ボブ	bob cut
-髪	髪	カーリーヘア	spiral curl
-髪	髪	ぐるぐるヘアー	ringlets
-髪	髪	ツインドリル	twin drills
-髪	髪	ブレード	braid
-髪	髪	ワンレン	one length haircut
-髪	髪	横の刈り上げ	undercut
-髪	髪	横編み込み	side braid
-髪	髪	横編組	lateral braid
-髪	髪	角みたいな髪	topknot
-髪	髪	繊細で複雑な髪	intricate hair
-髪	髪	長い波状の巻き毛	long wavy curly hair
-髪	髪	長い波状の髪	long wavy hair
-髪	髪	長い髪が吹き飛ばされました	long hair blown up
-髪	髪	豚の尾	pig tails
-髪	髪	髪の毛	fluttering hair
-髪	髪	髪の毛を下ろします	lowing hair
-髪	髪	髪の毛を奪いました	disreveled hair
-髪	髪	髪は上向きに流れます	hair flows upwards
-髪	髪	編み上げポニテ	braid ponytail
-髪	髪	坊主,スキンヘッド,ハゲ	bald
-髪	髪	乱れた髪	dishevelled hair
-髪	髪	乱雑なヘアスタイル	messy hair style
-髪	髪	乱雑な長い髪	messy long hair
-髪	髪	乱雑な浮遊髪	messy floating hair
-髪	髪	流れる髪	flowing hair
+髪	髪型	1つのお団子	single hair bun
+髪	髪型	2つのお団子	double bun
+髪	髪型	3つのお団子	braided bun
+髪	髪型	アシメっぽい感じ	hair pulled back
+髪	髪型	おかっぱ・ボブ	bob cut
+髪	髪型	カーリーヘア	spiral curl
+髪	髪型	ぐるぐるヘアー	ringlets
+髪	髪型	ツインドリル	twin drills
+髪	髪型	ブレード	braid
+髪	髪型	ワンレン	one length haircut
+髪	髪型	横の刈り上げ	undercut
+髪	髪型	横編み込み	side braid
+髪	髪型	横編組	lateral braid
+髪	髪型	角みたいな髪	topknot
+髪	髪型	繊細で複雑な髪	intricate hair
+髪	髪型	長い波状の巻き毛	long wavy curly hair
+髪	髪型	長い波状の髪	long wavy hair
+髪	髪型	長い髪が吹き飛ばされました	long hair blown up
+髪	髪型	豚の尾	pig tails
+髪	髪型	髪の毛	fluttering hair
+髪	髪型	髪の毛を下ろします	lowing hair
+髪	髪型	髪の毛を奪いました	disreveled hair
+髪	髪型	髪は上向きに流れます	hair flows upwards
+髪	髪型	編み上げポニテ	braid ponytail
+髪	髪型	坊主,スキンヘッド,ハゲ	bald
+髪	髪型	乱れた髪	dishevelled hair
+髪	髪型	乱雑なヘアスタイル	messy hair style
+髪	髪型	乱雑な長い髪	messy long hair
+髪	髪型	乱雑な浮遊髪	messy floating hair
+髪	髪型	流れる髪	flowing hair
 髪	髪質	アフロ	afro hair
 髪	髪質	くせっ毛1	curly hair
 髪	髪質	くせっ毛2	kinky hair
@@ -4627,106 +4627,106 @@
 髪	髪色	明るい紫髪	light purple hair
 髪	髪色	藍髪	indigo hair
 髪	髪色	緑髪	green hair
-表情・感情	その他	ドヤ顔	doyagao
-表情・感情	その他	なにか加えてる	waby mouth
-表情・感情	その他	口を開けて	open mouth
-表情・感情	その他	口を閉じる	close mouth
-表情・感情	その他	無expressionless
-表情・感情	リラックス	うす目	empty eyes
-表情・感情	リラックス	まどろむ	sleeping
-表情・感情	リラックス	リラックス	relaxed
-表情・感情	リラックス	澄まし顔	clear face
-表情・感情	リラックスした表情	優しく微笑む	kind smile
-表情・感情	暗い表情・感情	うつ,落ち込み	depressed
-表情・感情	暗い表情・感情	すすり泣く	sobbing
-表情・感情	暗い表情・感情	顔に大きく影がある表情・感情	shaded face
-表情・感情	暗い表情・感情	泣きそう	tear
-表情・感情	暗い表情・感情	号泣	crying with eyes open
-表情・感情	暗い表情・感情	絶望	despair
-表情・感情	暗い表情・感情	悲しい顔	sad
-表情・感情	暗い表情・感情	不幸な	unhappy
-表情・感情	暗い表情・感情	漫画的なびっくり表現	^^^
-表情・感情	暗い表情・感情	憂鬱	gloom expression
-表情・感情	顔文字	:	:
-表情・感情	顔文字	:<	:<
-表情・感情	顔文字	:3	:3
-表情・感情	顔文字	:C	:c
-表情・感情	顔文字	:D	:d
-表情・感情	顔文字	:I	:i
-表情・感情	顔文字	:o	:o
-表情・感情	顔文字	:p	:p
-表情・感情	顔文字	:q	:q
-表情・感情	顔文字	:X	:x
-表情・感情	困惑した表情・感情	ショックや絶望などでモノクロになること	color drain
-表情・感情	困惑した表情・感情	ビックリ,驚いた	surprised
-表情・感情	困惑した表情・感情	恐ろしい	horrified
-表情・感情	困惑した表情・感情	恐怖	fear face
-表情・感情	困惑した表情・感情	軽蔑	disdain
-表情・感情	困惑した表情・感情	慌てる	flustered
-表情・感情	困惑した表情・感情	青ざめる	turn pale
-表情・感情	困惑した表情・感情	動揺	upset
-表情・感情	困惑した表情・感情	波状の口	wavy mouth
-表情・感情	視線	カメラと関係なく向いてる方向を向く	looking ahead
-表情・感情	視線	スマホを見ている,手を見ている	looking at phone
-表情・感情	視線	遠くを見ている	looking afar
-表情・感情	視線	下を見る	looking down
-表情・感情	視線	何かを見ている	looking to the side
-表情・感情	視線	眼鏡をずらして見る	looking over eyewear
-表情・感情	視線	胸を見ている	looking at breasts
-表情・感情	視線	鏡を見ている	looking mirror
-表情・感情	視線	見上げる	looking up
-表情・感情	視線	振り返る	looking back
-表情・感情	視線	誰かを見ている	looking at another
-表情・感情	真剣な表情・感情	真剣な表情・感情	serious
-表情・感情	性的な表情・感情	あざけった顔	scornful
-表情・感情	性的な表情・感情	アヘ顔	ahegao
-表情・感情	性的な表情・感情	すごく恥ずかしい表情・感情	full-face blush
-表情・感情	性的な表情・感情	メスガキスマイル	evil smile
-表情・感情	性的な表情・感情	よだれが垂れてる	mouth drool
-表情・感情	性的な表情・感情	艶笑,誘惑顔	seductive smile
-表情・感情	性的な表情・感情	性的な恥じらい	sexually suggestive
-表情・感情	性的な表情・感情	性的な表情・感情,誘っている表情・感情,いたずら顔	naughty face
-表情・感情	性的な表情・感情	赤ら顔	blush
-表情・感情	性的な表情・感情	恥ずかしい	embarrassed
-表情・感情	性的な表情・感情	恥ずかしそうに怯える	trembling
-表情・感情	性的な表情・感情	恥ずかしそうに警戒	scared
-表情・感情	性的な表情・感情	反抗的な視線	defiant look
-表情・感情	表情・感情	ぽかんとした顔	blank stare
-表情・感情	表情・感情	泣いている	crying
-表情・感情	表情・感情	泣く	cry
-表情・感情	表情・感情	狂気	insanity
-表情・感情	表情・感情	軽い笑顔	light smile
-表情・感情	表情・感情	軽い赤面	light blush
-表情・感情	表情・感情	笑顔をからかう	teasing smile
-表情・感情	表情・感情	怒った顔	angry face
-表情・感情	表情・感情	怒り	anger
-表情・感情	表情・感情	表現	expression
-表情・感情	表情・感情	無関心	indifference
-表情・感情	表情・感情	欲求不満	frustrated
-表情・感情	不機嫌な表情・感情	しかめっ面	frown
-表情・感情	不機嫌な表情・感情	しかめっ面2	furrowed brow
-表情・感情	不機嫌な表情・感情	しかめっ面3	wince
-表情・感情	不機嫌な表情・感情	ニヤッ（悪）	smirk
-表情・感情	不機嫌な表情・感情	ふくれっ面	pout
-表情・感情	不機嫌な表情・感情	困り眉	troubled eyebrows
-表情・感情	不機嫌な表情・感情	挑発的な顔	smug
-表情・感情	不機嫌な表情・感情	怒った	angry
-表情・感情	不機嫌な表情・感情	怒りマーク	anger vein
-表情・感情	不機嫌な表情・感情	不穏	kubrick stare
-表情・感情	不機嫌な表情・感情	拗ねる	sulking
-表情・感情	不機嫌な表情・感情	睨み	glaring
-表情・感情	明るい表情・感情	デフォルメの頬染め	blush stickers
-表情・感情	明るい表情・感情	喜ばしい	joyful
-表情・感情	明るい表情・感情	幸せな	happy
-表情・感情	明るい表情・感情	指でスマイル	fingersmile
-表情・感情	明るい表情・感情	歯を見せて笑う,ニヤニヤ	grin
-表情・感情	明るい表情・感情	笑い	laughing
-表情・感情	明るい表情・感情	笑いを押しこらえる	giggling
-表情・感情	明るい表情・感情	笑う	laugh
-表情・感情	明るい表情・感情	笑顔	smile
-表情・感情	明るい表情・感情	素敵な笑顔	closed eyes,grin
-表情・感情	明るい表情・感情	無理やりさせられる笑顔	forced smile
-表情・感情	明るい表情・感情	愉快な	cheerful
+表情	その他	ドヤ顔	doyagao
+表情	その他	なにか加えてる	waby mouth
+表情	その他	口を開けて	open mouth
+表情	その他	口を閉じる	close mouth
+表情	その他	無表情	expressionless
+表情	リラックス	うす目	empty eyes
+表情	リラックス	まどろむ	sleeping
+表情	リラックス	リラックス	relaxed
+表情	リラックス	澄まし顔	clear face
+表情	リラックスした表情	優しく微笑む	kind smile
+表情	暗い表情	うつ,落ち込み	depressed
+表情	暗い表情	すすり泣く	sobbing
+表情	暗い表情	顔に大きく影がある表情	shaded face
+表情	暗い表情	泣きそう	tear
+表情	暗い表情	号泣	crying with eyes open
+表情	暗い表情	絶望	despair
+表情	暗い表情	悲しい顔	sad
+表情	暗い表情	不幸な	unhappy
+表情	暗い表情	漫画的なびっくり表現	^^^
+表情	暗い表情	憂鬱	gloom expression
+表情	顔文字	:	:
+表情	顔文字	:<	:<
+表情	顔文字	:3	:3
+表情	顔文字	:C	:c
+表情	顔文字	:D	:d
+表情	顔文字	:I	:i
+表情	顔文字	:o	:o
+表情	顔文字	:p	:p
+表情	顔文字	:q	:q
+表情	顔文字	:X	:x
+表情	困惑した表情	ショックや絶望などでモノクロになること	color drain
+表情	困惑した表情	ビックリ,驚いた	surprised
+表情	困惑した表情	恐ろしい	horrified
+表情	困惑した表情	恐怖	fear face
+表情	困惑した表情	軽蔑	disdain
+表情	困惑した表情	慌てる	flustered
+表情	困惑した表情	青ざめる	turn pale
+表情	困惑した表情	動揺	upset
+表情	困惑した表情	波状の口	wavy mouth
+表情	視線	カメラと関係なく向いてる方向を向く	looking ahead
+表情	視線	スマホを見ている,手を見ている	looking at phone
+表情	視線	遠くを見ている	looking afar
+表情	視線	下を見る	looking down
+表情	視線	何かを見ている	looking to the side
+表情	視線	眼鏡をずらして見る	looking over eyewear
+表情	視線	胸を見ている	looking at breasts
+表情	視線	鏡を見ている	looking mirror
+表情	視線	見上げる	looking up
+表情	視線	振り返る	looking back
+表情	視線	誰かを見ている	looking at another
+表情	真剣な表情	真剣な表情	serious
+表情	性的な表情	あざけった顔	scornful
+表情	性的な表情	アヘ顔	ahegao
+表情	性的な表情	すごく恥ずかしい表情	full-face blush
+表情	性的な表情	メスガキスマイル	evil smile
+表情	性的な表情	よだれが垂れてる	mouth drool
+表情	性的な表情	艶笑,誘惑顔	seductive smile
+表情	性的な表情	性的な恥じらい	sexually suggestive
+表情	性的な表情	性的な表情,誘っている表情,いたずら顔	naughty face
+表情	性的な表情	赤ら顔	blush
+表情	性的な表情	恥ずかしい	embarrassed
+表情	性的な表情	恥ずかしそうに怯える	trembling
+表情	性的な表情	恥ずかしそうに警戒	scared
+表情	性的な表情	反抗的な視線	defiant look
+表情	表情	ぽかんとした顔	blank stare
+表情	表情	泣いている	crying
+表情	表情	泣く	cry
+表情	表情	狂気	insanity
+表情	表情	軽い笑顔	light smile
+表情	表情	軽い赤面	light blush
+表情	表情	笑顔をからかう	teasing smile
+表情	表情	怒った顔	angry face
+表情	表情	怒り	anger
+表情	表情	表現	expression
+表情	表情	無関心	indifference
+表情	表情	欲求不満	frustrated
+表情	不機嫌な表情	しかめっ面	frown
+表情	不機嫌な表情	しかめっ面2	furrowed brow
+表情	不機嫌な表情	しかめっ面3	wince
+表情	不機嫌な表情	ニヤッ（悪）	smirk
+表情	不機嫌な表情	ふくれっ面	pout
+表情	不機嫌な表情	困り眉	troubled eyebrows
+表情	不機嫌な表情	挑発的な顔	smug
+表情	不機嫌な表情	怒った	angry
+表情	不機嫌な表情	怒りマーク	anger vein
+表情	不機嫌な表情	不穏	kubrick stare
+表情	不機嫌な表情	拗ねる	sulking
+表情	不機嫌な表情	睨み	glaring
+表情	明るい表情	デフォルメの頬染め	blush stickers
+表情	明るい表情	喜ばしい	joyful
+表情	明るい表情	幸せな	happy
+表情	明るい表情	指でスマイル	fingersmile
+表情	明るい表情	歯を見せて笑う,ニヤニヤ	grin
+表情	明るい表情	笑い	laughing
+表情	明るい表情	笑いを押しこらえる	giggling
+表情	明るい表情	笑う	laugh
+表情	明るい表情	笑顔	smile
+表情	明るい表情	素敵な笑顔	closed eyes,grin
+表情	明るい表情	無理やりさせられる笑顔	forced smile
+表情	明るい表情	愉快な	cheerful
 品質	テキスト系	QRコード	qr code
 品質	テキスト系	ui	ui
 品質	テキスト系	アーティスト名	artist name
@@ -5561,260 +5561,3 @@
 場所	駅	自転車置き場	bicycle parking area
 場所	駅	タクシー乗り場	taxi stand
 場所	駅	バス停	bus stop
-表情・感情	リラックスした表情	うす目の表情	empty eyes expression
-表情・感情	リラックスした表情	まどろむ表情	sleeping expression
-表情・感情	リラックスした表情	リラックスした表情	relaxed expression
-表情・感情	リラックスした表情	澄まし顔の表情	clear face expression
-表情・感情	リラックスした表情	優しく微笑む表情	kind smile expression
-表情・感情	暗い表情・感情	すすり泣く表情・感情	sobbing expression
-表情・感情	暗い表情・感情	泣きそうな表情・感情	tear expression
-表情・感情	暗い表情・感情	号泣する表情・感情	crying with eyes open expression
-表情・感情	暗い表情・感情	悲しい顔の表情・感情	sad expression
-表情・感情	暗い表情・感情	不幸な表情・感情	unhappy expression
-表情・感情	暗い表情・感情	うつ状態の表情・感情	depressed expression
-表情・感情	暗い表情・感情	絶望した表情・感情	despair expression
-表情・感情	困惑した表情・感情	ショックや絶望などでモノクロになる表情・感情	color drain expression
-表情・感情	困惑した表情・感情	恐ろしい表情・感情	horrified expression
-表情・感情	困惑した表情・感情	叫ぶ表情・感情	screaming expression
-表情・感情	困惑した表情・感情	青ざめる表情・感情	turn pale expression
-表情・感情	困惑した表情・感情	震える表情・感情	trembling expression
-表情・感情	困惑した表情・感情	波状の口の表情・感情	wavy mouth expression
-表情・感情	困惑した表情・感情	動揺した表情・感情	upset expression
-表情・感情	困惑した表情・感情	ビックリ、驚いた表情・感情	surprised expression
-表情・感情	困惑した表情・感情	恐怖に満ちた表情・感情	fear face expression
-表情・感情	困惑した表情・感情	軽蔑の表情・感情	disdain expression
-表情・感情	困惑した表情・感情	慌てる表情・感情	flustered expression
-表情・感情	不機嫌な表情・感情	しかめっ面の表情・感情	frown expression
-表情・感情	不機嫌な表情・感情	深くしわを寄せた額の表情・感情	furrowed brow expression
-表情・感情	不機嫌な表情・感情	顔をしかめる表情・感情	wince expression
-表情・感情	不機嫌な表情・感情	ニヤリとした表情・感情	smirk expression
-表情・感情	不機嫌な表情・感情	口をとがらせた表情・感情	pout expression
-表情・感情	不機嫌な表情・感情	困惑や不安を示す眉の表情・感情	troubled eyebrows expression
-表情・感情	不機嫌な表情・感情	得意げな表情・感情	smug expression
-表情・感情	不機嫌な表情・感情	怒った表情・感情	angry expression
-表情・感情	不機嫌な表情・感情	怒りで血管が浮き出た表情・感情	anger vein expression
-表情・感情	不機嫌な表情・感情	ふくれっ面の表情・感情	sulking expression
-表情・感情	不機嫌な表情・感情	にらみつける表情・感情	glaring expression
-表情・感情	明るい表情・感情	幸せな表情・感情	happy expression
-表情・感情	明るい表情・感情	笑いの表情・感情	laughing expression
-表情・感情	明るい表情・感情	笑う表情・感情	laugh expression
-表情・感情	明るい表情・感情	笑顔の表情・感情	smile expression
-表情・感情	明るい表情・感情	素敵な笑顔の表情・感情	closed eyes, grin expression
-表情・感情	明るい表情・感情	愉快な表情・感情	cheerful expression
-表情・感情	明るい表情・感情	喜ばしい表情・感情	joyful expression
-表情・感情	明るい表情・感情	歯を見せて笑う表情・感情	grin expression
-表情・感情	明るい表情・感情	笑いを押しこらえる表情・感情	giggling expression
-表情・感情	明るい表情・感情	無理やりさせられる笑顔の表情・感情	forced smile expression
-表情・感情	ポジティブな感情	幸福な表情・感情	happy expression
-表情・感情	ポジティブな感情	楽しい表情・感情	joyful expression
-表情・感情	ポジティブな感情	愉快な表情・感情	delightful expression
-表情・感情	ポジティブな感情	満足した表情・感情	satisfied expression
-表情・感情	ポジティブな感情	感激した表情・感情	excited expression
-表情・感情	ポジティブな感情	愛情深い表情・感情	loving expression
-表情・感情	ポジティブな感情	優しい表情・感情	kind expression
-表情・感情	ポジティブな感情	思いやりのある表情・感情	compassionate expression
-表情・感情	ポジティブな感情	尊敬する表情・感情	admiring expression
-表情・感情	ポジティブな感情	信頼できる表情・感情	trustworthy expression
-表情・感情	ポジティブな感情	安心した表情・感情	secure expression
-表情・感情	ポジティブな感情	感謝している表情・感情	grateful expression
-表情・感情	ポジティブな感情	驚いた表情・感情	surprised expression
-表情・感情	ポジティブな感情	感嘆した表情・感情	amazed expression
-表情・感情	ポジティブな感情	興奮した表情・感情	exhilarated expression
-表情・感情	ポジティブな感情	好奇心旺盛な表情・感情	curious expression
-表情・感情	ポジティブな感情	希望に満ちた表情・感情	hopeful expression
-表情・感情	ポジティブな感情	自信がある表情・感情	confident expression
-表情・感情	ポジティブな感情	楽観的な表情・感情	optimistic expression
-表情・感情	ポジティブな感情	陽気な表情・感情	gleeful expression
-表情・感情	ポジティブな感情	生き生きした表情・感情	lively expression
-表情・感情	ポジティブな感情	心温まる表情・感情	heartwarming expression
-表情・感情	ポジティブな感情	誠実な表情・感情	sincere expression
-表情・感情	ポジティブな感情	穏やかな表情・感情	calm expression
-表情・感情	ポジティブな感情	決意を持った表情・感情	determined expression
-表情・感情	ネガティブな感情	悲しい表情・感情	sad expression
-表情・感情	ネガティブな感情	落ち込んだ表情・感情	depressed expression
-表情・感情	ネガティブな感情	絶望的な表情・感情	despairing expression
-表情・感情	ネガティブな感情	孤独な表情・感情	lonely expression
-表情・感情	ネガティブな感情	怒っている表情・感情	angry expression
-表情・感情	ネガティブな感情	憤慨した表情・感情	indignant expression
-表情・感情	ネガティブな感情	怒り狂った表情・感情	enraged expression
-表情・感情	ネガティブな感情	イライラした表情・感情	irritated expression
-表情・感情	ネガティブな感情	恐れている表情・感情	afraid expression
-表情・感情	ネガティブな感情	不安な表情・感情	anxious expression
-表情・感情	ネガティブな感情	恐ろしい表情・感情	terrified expression
-表情・感情	ネガティブな感情	緊張している表情・感情	nervous expression
-表情・感情	ネガティブな感情	嫉妬深い表情・感情	jealous expression
-表情・感情	ネガティブな感情	羨ましい表情・感情	envious expression
-表情・感情	ネガティブな感情	嫌悪感を抱いた表情・感情	disgusted expression
-表情・感情	ネガティブな感情	軽蔑した表情・感情	disdainful expression
-表情・感情	ネガティブな感情	罪悪感を感じた表情・感情	guilty expression
-表情・感情	ネガティブな感情	恥ずかしい表情・感情	ashamed expression
-表情・感情	ネガティブな感情	後悔している表情・感情	regretful expression
-表情・感情	ネガティブな感情	疲れた表情・感情	tired expression
-表情・感情	ネガティブな感情	疲労困憊した表情・感情	exhausted expression
-表情・感情	ネガティブな感情	無気力な表情・感情	lethargic expression
-表情・感情	複雑な感情	相反する感情を抱いた表情・感情	ambivalent expression
-表情・感情	複雑な感情	混乱した表情・感情	confused expression
-表情・感情	複雑な感情	迷った表情・感情	bewildered expression
-表情・感情	複雑な感情	当惑した表情・感情	perplexed expression
-表情・感情	複雑な感情	疑わしい表情・感情	skeptical expression
-表情・感情	複雑な感情	疑念を抱いた表情・感情	doubtful expression
-表情・感情	複雑な感情	警戒した表情・感情	wary expression
-表情・感情	複雑な感情	決めかねている表情・感情	indecisive expression
-表情・感情	複雑な感情	不確かな表情・感情	uncertain expression
-表情・感情	緊張した表情・感情	緊張している表情・感情	tense expression
-表情・感情	緊張した表情・感情	神経質な表情・感情	nervous expression
-表情・感情	緊張した表情・感情	恐怖心を抱いた表情・感情	terrified expression
-表情・感情	緊張した表情・感情	心配な表情・感情	worried expression
-表情・感情	緊張した表情・感情	慌てている表情・感情	flustered expression
-表情・感情	緊張した表情・感情	パニック状態の表情・感情	panicked expression
-表情・感情	緊張した表情・感情	圧倒された表情・感情	overwhelmed expression
-表情・感情	緊張した表情・感情	自信がない表情・感情	insecure expression
-表情・感情	緊張した表情・感情	焦っている表情・感情	jittery expression
-表情・感情	緊張した表情・感情	気まずい表情・感情	awkward expression
-表情・感情	緊張した表情・感情	動揺している表情・感情	agitated expression
-表情・感情	緊張した表情・感情	居心地が悪い表情・感情	uneasy expression
-表情・感情	恥ずかしい表情・感情	恥ずかしい表情・感情	embarrassed expression
-表情・感情	恥ずかしい表情・感情	居心地が悪い表情・感情	uneasy expression
-表情・感情	恥ずかしい表情・感情	困惑した表情・感情	confused expression
-表情・感情	恥ずかしい表情・感情	当惑した表情・感情	perplexed expression
-表情・感情	恥ずかしい表情・感情	気まずい表情・感情	awkward expression
-表情・感情	恥ずかしい表情・感情	ばつが悪い表情・感情	sheepish expression
-表情・感情	恥ずかしい表情・感情	照れくさい表情・感情	shy expression
-表情・感情	恥ずかしい表情・感情	赤面した表情・感情	blushing expression
-表情・感情	恥ずかしい表情・感情	動揺した表情・感情	flustered expression
-色	青系	ライトブルー	light blue
-色	青系	ドジャーブルー	dodger blue
-色	青系	ロイヤルブルー	royal blue
-色	青系	スティールブルー	steel blue
-色	青系	ミディアムブルー	medium blue
-色	青系	ダークブルー	dark blue
-色	青系	コーンフラワーブルー	cornflower blue
-色	青系	ディープスカイブルー	deep sky blue
-色	青系	パウダーブルー	powder blue
-色	赤系	ライトコーラル	light coral
-色	赤系	サーモン	salmon
-色	赤系	ダークサーモン	dark salmon
-色	赤系	オレンジレッド	orange red
-色	赤系	ファイアブリック	firebrick
-色	赤系	ダークレッド	dark red
-色	赤系	クリムゾン	crimson
-色	赤系	インディアンレッド	indian red
-色	オレンジ系	ライトサーモン	light salmon
-色	オレンジ系	ダークオレンジ	dark orange
-色	オレンジ系	ゴールデンロッド	goldenrod
-色	オレンジ系	イエローオレンジ	yellow orange
-色	オレンジ系	ダークゴールデンロッド	dark goldenrod
-色	オレンジ系	オレンジレッド	orange red
-色	黄色系	ライトイエロー	light yellow
-色	黄色系	レモンシフォン	lemon chiffon
-色	黄色系	ライトゴールデンロッジイエロー	light goldenrod yellow
-色	黄色系	パパイヤウィップ	papaya whip
-色	黄色系	モカシン	moccasin
-色	黄色系	ピーチパフ	peach puff
-色	黄色系	ゴールド	gold
-色	黄色系	ダークゴールデンロッド	dark goldenrod
-色	黄色系	イエローグリーン	yellow green
-色	緑系	ライトグリーン	light green
-色	緑系	ペールグリーン	pale green
-色	緑系	ミディアムシーグリーン	medium sea green
-色	緑系	シーグリーン	sea green
-色	緑系	フォレストグリーン	forest green
-色	緑系	ダークグリーン	dark green
-色	緑系	ライム	lime
-色	緑系	ライムグリーン	lime green
-色	緑系	イエローグリーン	yellow green
-色	緑系	オリーブ	olive
-色	緑系	オリーブドラブ	olive drab
-色	緑系	ダークオリーブグリーン	dark olive green
-色	紫系	ラベンダー	lavender
-色	紫系	シスル	thistle
-色	紫系	オーキッド	orchid
-色	紫系	バイオレット	violet
-色	紫系	ダークバイオレット	dark violet
-色	紫系	ブルーバイオレット	blue violet
-色	紫系	ミディアムパープル	medium purple
-色	紫系	ダークオーキッド	dark orchid
-色	紫系	ダークマゼンタ	dark magenta
-色	茶色系	コーンシルク	corn silk
-色	茶色系	ブランチドアーモンド	blanched almond
-色	茶色系	ビスケット	bisque
-色	茶色系	ナバホホワイト	navajo white
-色	茶色系	ウィート	wheat
-色	茶色系	サンディブラウン	sandy brown
-色	茶色系	ペルー	peru
-色	茶色系	チョコレート	chocolate
-色	茶色系	サドルブラウン	saddle brown
-色	茶色系	シエナ	sienna
-色	茶色系	マルーン	maroon
-色	ピンク系	ライトピンク	light pink
-色	ピンク系	ホットピンク	hot pink
-色	ピンク系	ディープピンク	deep pink
-色	ピンク系	ミディアムバイオレットレッド	medium violet red
-色	ピンク系	ペールバイオレットレッド	pale violet red
-色	ピンク系	ライトコーラル	light coral
-色	白系	ハニーデュー	honeydew
-色	白系	ミントクリーム	mint cream
-色	白系	アリスブルー	alice blue
-色	白系	ゴーストホワイト	ghost white
-色	白系	ホワイトスモーク	white smoke
-色	白系	ベージュ	beige
-色	白系	オールドレース	old lace
-色	白系	フローラルホワイト	floral white
-色	白系	アイボリー	ivory
-色	黒系	ダークスレートグレー	dark slate gray
-色	黒系	ディムグレー	dim gray
-色	黒系	ライトスレートグレー	light slate gray
-色	黒系	スレートグレー	slate gray
-色	黒系	チャコール	charcoal
-色	黒系	ジェット	jet black
-色	混色（混ざり方の表現）	ツートンカラー	two-tone
-色	混色（混ざり方の表現）	多色使い	multicolored
-色	混色（混ざり方の表現）	ブレンド	blended
-色	混色（混ざり方の表現）	ミックス	mixed
-色	混色（混ざり方の表現）	斑点模様	speckled
-色	混色（混ざり方の表現）	斑入り	variegated
-色	混色（混ざり方の表現）	パッチワーク	patchwork
-色	混色（混ざり方の表現）	万華鏡模様	kaleidoscopic
-色	混色（混ざり方の表現）	まだら模様	mottled
-色	混色（混ざり方の表現）	タイダイ	tie-dye
-色	混色（混ざり方の表現）	斑点状	flecked
-色	混色（混ざり方の表現）	色洗い	colorwashed
-色	混色（混ざり方の表現）	虹色に輝く	iridescent
-色	混色（混ざり方の表現）	グラデーションの	gradiented
-髪	男性向けの髪型	ぱっつんヘア	crew cut, blunt bangs
-髪	男性向けの髪型	坊主	buzz cut
-髪	男性向けの髪型	ツーブロック	two-block cut
-髪	男性向けの髪型	ソフトモヒカン	soft mohawk
-髪	男性向けの髪型	モヒカン	mohawk
-髪	男性向けの髪型	オールバック	slicked-back hair
-髪	男性向けの髪型	七三分け	side-parted hair
-髪	男性向けの髪型	センターパート	center-parted hair
-髪	男性向けの髪型	ウルフカット	wolf cut
-髪	男性向けの髪型	ボブ	bob hair
-髪	男性向けの髪型	マッシュ	mushroom cut
-髪	男性向けの髪型	アイビーカット	ivy league cut
-髪	男性向けの髪型	フェードカット	fade cut
-髪	男性向けの髪型	テーパーフェード	taper fade
-髪	男性向けの髪型	スキンフェード	skin fade
-髪	男性向けの髪型	ポンパドール	pompadour
-髪	男性向けの髪型	リーゼント	rockabilly hair
-髪	男性向けの髪型	ダウンバング	down bang
-髪	男性向けの髪型	アップバング	up bang
-髪	男性向けの髪型	スパイラルパーマ	spiral perm
-髪	男性向けの髪型	ツイストパーマ	twist perm
-髪	男性向けの髪型	マンバン	man bun
-髪	男性向けの髪型	トップノット	top knot
-髪	男性向けの髪型	サイドバック	side-swept hair
-エフェクト	汚れ	泥だらけ	muddy
-エフェクト	汚れ	泥まみれ	covered in mud
-エフェクト	汚れ	汚れた	dirty
-エフェクト	汚れ	ホコリ	dusty
-エフェクト	汚れ	ホコリまみれ	dusty all over
-エフェクト	液体	汗で透ける	sweat see-through
-テイスト	絵柄	AIが生成したような絵柄	ai_generated
-食べ物	果物	メロン	melon
-食べ物	果物	スイカ	watermelon
-食べ物	果物	バナナ	banana
-食べ物	果物	パイナップル	pineapple
-食べ物	果物	リンゴ	apple
-食べ物	果物	サクランボ	cherry
