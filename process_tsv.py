@@ -55,19 +55,115 @@ def determine_gender(title, prompt):
     # デフォルトは無性
     return "無性"
 
-def extract_character_name(prompt):
+def extract_character_name(prompt, subtitle=""):
     """プロンプトからキャラクター名を抽出して簡略化"""
-    # {{{{}}}} で囲まれた部分を探す
-    match = re.search(r'\{\{+([^}]+)\}\}+', prompt)
-    if match:
-        # 括弧内の情報を削除
-        char_name = re.sub(r'\s*\([^)]+\)\s*', '', match.group(1))
-        return char_name.strip()
     
-    # なければ最初のカンマまでの部分
+    # 除外すべきパターンのリスト（身体的特徴、表情、作品名等）
+    exclude_patterns = [
+        # 目の形状・表情
+        r'^(tareme|tsurime|jitome|wide-eyed)$',
+        # 体型・髪型
+        r'^(slender|active|blur|messy|twintail)$',
+        # 色・素材
+        r'^(whitesmokehair|leopard|black\s+corset)$',
+        # 作品名
+        r'^(idolmaster|cinderella\s+girls|shiny\s+colors|million\s+live).*',
+        r'^(no\s+game\s+no\s+life|mahou\s+shoujo\s+madoka\s+magica).*',
+        r'^(styles\s+of\s+idolmaster|super\s+sailor).*',
+        # 色の名前
+        r'^(dark\s+blue\s+hair|green\s+hair|yellow\s+horn\s+hair).*',
+        # その他の特徴
+        r'^(yadokari|frizzy\s+long\s+hair|spiked\s+hair).*',
+        # 組み合わせパターン
+        r'.*v-shaped.*eyebrows.*',
+        r'.*bald\s+hair.*',
+        r'.*,.*2010s.*'
+    ]
+    
+    def is_excluded(text):
+        """テキストが除外パターンに該当するかチェック"""
+        for pattern in exclude_patterns:
+            if re.search(pattern, text.lower().strip()):
+                return True
+        return False
+    
+    # まず {{{}}} で囲まれた部分を抽出
+    matches = re.findall(r'\{\{+([^}]+)\}\}+', prompt)
+    
+    # {{{}}} がない場合、{} で囲まれた部分を確認
+    if not matches:
+        single_brace_matches = re.findall(r'\{([^}]+)\}', prompt)
+        if single_brace_matches:
+            character_candidates = []
+            
+            for brace_content in single_brace_matches:
+                elements = [elem.strip() for elem in brace_content.split(',')]
+                
+                for elem in elements:
+                    if not is_excluded(elem):
+                        # 作品名っぽいものを除外
+                        if not re.search(r'(hololive|live!|precure|fate|evangelion|gundam|touhou|kancolle|azur lane|fire emblem|final fantasy)', elem.lower()):
+                            # 色や身体的特徴を除外
+                            if not re.search(r'(hair|eyes|breasts|head|butterfly|short|small|green|red|blue|yellow|bun|purple|twintails|long|demon|tail|white|black|jacket|shorts|cap|navel)', elem.lower()):
+                                if ' ' in elem:
+                                    character_candidates.insert(0, elem)
+                                else:
+                                    character_candidates.append(elem)
+            
+            if character_candidates:
+                return character_candidates[0]
+    
+    if matches:
+        character_candidates = []
+        
+        for match in matches:
+            candidate = match.strip()
+            
+            # 除外パターンチェック
+            if is_excluded(candidate):
+                continue
+                
+            # スペースで区切られた括弧のみ削除（アンダースコア+括弧は保持）
+            if not re.search(r'_\([^)]+\)$', candidate):
+                candidate = re.sub(r'\s+\([^)]+\)', '', candidate)
+            candidate = candidate.strip()
+            
+            # 作品名っぽいものを除外
+            if not re.search(r'(hololive|live!|precure|fate|evangelion|gundam|touhou|kancolle|azur lane|fire emblem|final fantasy|idolmaster|cinderella|genshin|impact)', candidate.lower()):
+                # キャラクター名らしいパターンを優先
+                if re.search(r'^[a-zA-Z\s_]+$', candidate) and ' ' in candidate:
+                    # スペースを含む英語名（人名らしい）
+                    character_candidates.insert(0, candidate)
+                elif re.search(r'^[a-zA-Z_]+$', candidate) and '_' in candidate:
+                    # アンダースコア区切りの英語名
+                    character_candidates.insert(0, candidate)
+                elif not re.search(r'(hair|eyes|breasts|head|butterfly|short|small|green|red|blue|yellow|bun|purple|twintails|long|demon|tail|white|black|jacket|shorts|cap|navel)', candidate.lower()):
+                    character_candidates.append(candidate)
+        
+        if character_candidates:
+            return character_candidates[0]
+        
+        # フィルター後に候補がない場合、元のプロンプトからsubtitleを使用
+        if subtitle and not is_excluded(subtitle):
+            # subtitleからローマ字名を生成（簡易版）
+            subtitle_lower = subtitle.lower()
+            if any(char in subtitle_lower for char in 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん'):
+                # ひらがな・カタカナが含まれる場合は元のマッチから最も適切なものを選択
+                for match in matches:
+                    candidate = match.strip()
+                    if not is_excluded(candidate):
+                        if not re.search(r'_\([^)]+\)$', candidate):
+                            candidate = re.sub(r'\s+\([^)]+\)', '', candidate)
+                        return candidate.strip()
+    
+    # 波括弧がない場合、最初のカンマまでの部分
     parts = prompt.split(',')
     if parts:
-        return parts[0].strip()
+        first_part = parts[0].strip()
+        if not is_excluded(first_part):
+            if not re.search(r'_\([^)]+\)$', first_part):
+                first_part = re.sub(r'\s+\([^)]+\)', '', first_part)
+            return first_part.strip()
     
     return prompt
 
@@ -91,7 +187,7 @@ def process_tsv(input_file, output_file):
                     character_rows.append(['キャラクター再現', title, subtitle, prompt])
                     
                     # 通常版（簡略化）
-                    simplified_name = extract_character_name(prompt)
+                    simplified_name = extract_character_name(prompt, subtitle)
                     character_rows.append(['キャラクター', title, subtitle, simplified_name])
                 else:
                     # キャラクター以外はそのまま
