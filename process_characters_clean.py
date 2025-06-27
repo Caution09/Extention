@@ -4,7 +4,7 @@
 import csv
 import re
 
-# 手動でキャラクター名をマッピング
+# 手動マッピング - 問題のあるキャラクター名を修正
 character_name_mapping = {
     # アイドルマスター
     ('アイドルマスター', '三浦あずさ（ロングヘア）'): 'miura azusa',
@@ -34,6 +34,7 @@ character_name_mapping = {
     ('アイドルマスターシンデレラガールズ', '向井拓海'): 'mukai takumi',
     ('アイドルマスターシンデレラガールズ', '周防桃子'): 'suou momoko',
     ('アイドルマスターシンデレラガールズ', '新田美波'): 'nitta minami',
+    ('アイドルマスターシンデレラガールズ', '春日未来'): 'kasuga mirai',
     ('アイドルマスターシンデレラガールズ', '本田未央'): 'honda mio',
     ('アイドルマスターシンデレラガールズ', '的場梨沙'): 'matoba risa',
     ('アイドルマスターシンデレラガールズ', '神谷奈緒'): 'kamiya nao',
@@ -52,141 +53,78 @@ character_name_mapping = {
     ('ぼっち・ざ・ろっく！', '伊地知虹夏'): 'ijichi nijika',
     ('ぼっち・ざ・ろっく！', '後藤ひとり'): 'gotou hitori',
     
-    # VOICE BOX
-    ('VOICE BOX', 'ずんだもん'): 'zundamon',
-    
-    # ポケモン
-    ('ポケモン', 'ヒカリ'): 'hikari (pokemon)',
-    
-    # ラブライブ！サンシャイン！！
-    ('ラブライブ！サンシャイン！！', '鹿角理亞'): 'kazuno ria',
-    
-    # ラブライブ！スーパースター!!
-    ('ラブライブ！スーパースター!!', 'ウィーン・マルガレーテ'): 'wien margarete',
-    ('ラブライブ！スーパースター!!', '嵐 千砂都'): 'arashi chisato',
-    ('ラブライブ！スーパースター!!', '平安名 すみれ'): 'heanna sumire',
-    ('ラブライブ！スーパースター!!', '葉月 恋'): 'hazuki ren',
-    
-    # ラブライブ！虹ヶ咲学園スクールアイドル同好会
-    ('ラブライブ！虹ヶ咲学園スクールアイドル同好会', 'ショウ・ランジュ'): 'zhong lanzhu',
-    
-    # 中二病でも恋がしたい！
-    ('中二病でも恋がしたい！', '小鳥遊六花'): 'takanashi rikka',
-    
-    # 原神
-    ('原神', '胡桃'): 'hu tao',
-    
-    # 物語シリーズ
-    ('物語シリーズ', '忍野忍'): 'oshino shinobu',
-    
-    # 艦隊これくしょん
-    ('艦隊これくしょん', '望月'): 'mochizuki (kancolle)',
-    ('艦隊これくしょん', '霧島'): 'kirishima (kancolle)',
-    
-    # 魔法少女まどか☆マギカ
-    ('魔法少女まどか☆マギカ', '佐倉杏子'): 'sakura kyouko',
-    ('魔法少女まどか☆マギカ', '巴マミ'): 'tomoe mami',
-    ('魔法少女まどか☆マギカ', '暁美ほむら'): 'akemi homura',
-    ('魔法少女まどか☆マギカ', '美樹さやか'): 'miki sayaka',
-    
-    # セーラームーン
-    ('セーラームーン', 'ちびうさ'): 'chibiusa',
-    
-    # ゼロの使い魔
-    ('ゼロの使い魔', 'ルイズ'): 'louise francoise le blanc de la valliere',
-    
-    # ノーゲーム・ノーライフ
-    ('ノーゲーム・ノーライフ', 'ジブリール'): 'jibril',
-    ('ノーゲーム・ノーライフ', '白'): 'shiro',
-    
-    # ボーカロイド
-    ('ボーカロイド', '鏡音レン'): 'kagamine ren',
-    
-    # GTA V
-    ('GTA V', 'トレバー・フィリップス'): 'trevor philips',
-    
-    # けものフレンズ
-    ('けものフレンズ', 'フェネック'): 'fennec (kemono friends)',
-    ('けものフレンズ', 'コウテイペンギン'): 'emperor penguin (kemono friends)',
-    ('けものフレンズ', 'サーバル'): 'serval (kemono friends)',
-    ('けものフレンズ', 'かばん'): 'kaban (kemono friends)',
-    
-    # アカメが斬る！
-    ('アカメが斬る！', 'アカメ'): 'akame (akame ga kill!)',
-    
-    # ラブライブ！サンシャイン！！
-    ('ラブライブ！サンシャイン！！', '小原鞠莉'): 'ohara mari',
-    
     # この素晴らしい世界に祝福を
     ('この素晴らしい世界に祝福を', 'ウィズ'): 'wiz (konosuba)',
     ('この素晴らしい世界に祝福を', 'ダクネス'): 'darkness (konosuba)',
     
-    # Hololive (追加)
+    # Hololive
     ('Hololive', 'トワ様'): 'tokoyami towa',
     ('Hololive', 'るーちゃん'): 'uruha rushia',
+    
+    # けものフレンズ
+    ('けものフレンズ', 'フェネック'): 'fennec (kemono friends)',
+    ('けものフレンズ', 'コウテイペンギン'): 'emperor penguin (kemono friends)',
+    
+    # 原神
+    ('原神', '胡桃'): 'hu tao',
+    ('原神', '刻晴'): 'keqing (genshin impact)',
     
     # アトリエ
     ('アトリエ', 'ライザ'): 'reisalin stout',
     
-    # サノバウィッチ
-    ('サノバウィッチ', '因幡めぐる'): 'inaba meguru',
-    
-    # ダンガンロンパ
-    ('ダンガンロンパ', '朝日奈葵'): 'asahina aoi',
-    ('ダンガンロンパ', '朝日奈葵(水着)'): 'asahina aoi',
-    
-    # ラブライブ！虹ヶ咲学園スクールアイドル同好会
+    # その他
+    ('VOICE BOX', 'ずんだもん'): 'zundamon',
+    ('ポケモン', 'ヒカリ'): 'hikari (pokemon)',
+    ('ラブライブ！サンシャイン！！', '鹿角理亞'): 'kazuno ria',
+    ('ラブライブ！サンシャイン！！', '小原鞠莉'): 'ohara mari',
+    ('ラブライブ！スーパースター!!', 'ウィーン・マルガレーテ'): 'wien margarete',
+    ('ラブライブ！スーパースター!!', '嵐 千砂都'): 'arashi chisato',
+    ('ラブライブ！スーパースター!!', '平安名 すみれ'): 'heanna sumire',
+    ('ラブライブ！スーパースター!!', '葉月 恋'): 'hazuki ren',
+    ('ラブライブ！虹ヶ咲学園スクールアイドル同好会', 'ショウ・ランジュ'): 'zhong lanzhu',
     ('ラブライブ！虹ヶ咲学園スクールアイドル同好会', '中須かすみ'): 'nakasu kasumi',
-    
-    # 艦隊これくしょん (追加)
+    ('中二病でも恋がしたい！', '小鳥遊六花'): 'takanashi rikka',
+    ('物語シリーズ', '忍野忍'): 'oshino shinobu',
+    ('艦隊これくしょん', '望月'): 'mochizuki (kancolle)',
+    ('艦隊これくしょん', '霧島'): 'kirishima (kancolle)',
     ('艦隊これくしょん', '武蔵'): 'musashi (kancolle)',
-    
-    # 原神 (追加)
-    ('原神', '刻晴'): 'keqing (genshin impact)',
-    
-    # 俺の妹がこんなに可愛いわけがない
-    ('俺の妹がこんなに可愛いわけがない', '高坂桐乃'): 'kousaka kirino',
-    
-    # 艦隊これくしょん (追加分)
     ('艦隊これくしょん', 'z1 レーベレヒト・マース'): 'z1 leberecht maass (kancolle)',
     ('艦隊これくしょん', 'コンテ・ディ・カブール'): 'conte di cavour (kancolle)',
     ('艦隊これくしょん', '荒潮'): 'arashio (kancolle)',
     ('艦隊これくしょん', '初春'): 'hatsuharu (kancolle)',
     ('艦隊これくしょん', '雷'): 'ikazuchi (kancolle)',
-    
-    # 魔法少女まどか☆マギカ (追加)
-    ('魔法少女まどか☆マギカ', '環いろは'): 'tamaki iroha',
-    
-    # ゼルダの伝説シリーズ
-    ('ゼルダの伝説シリーズ', 'リンク'): 'link (zelda)',
-    
-    # マリオブラザーズ
-    ('マリオブラザーズ', 'ルイージ'): 'luigi',
-    
-    # メイドインアビス
-    ('メイドインアビス', 'リコ'): 'riko (made in abyss)',
-    ('メイドインアビス', 'レグ'): 'reg (made in abyss)',
-    
-    # わんだふるぷりきゅあ！
-    ('わんだふるぷりきゅあ！', '犬飼こむぎ（犬）'): 'inukai komugi',
-    ('わんだふるぷりきゅあ！', '猫屋敷ユキ（猫）'): 'nekoyashiki yuki',
-    
-    # 怪談
-    ('怪談', '八尺様風'): 'hachishaku-sama',
-    
-    # 艦隊これくしょん (さらに追加)
     ('艦隊これくしょん', '霞'): 'kasumi (kancolle)',
     ('艦隊これくしょん', '雪風'): 'yukikaze (kancolle)',
-    
-    # 東方
+    ('魔法少女まどか☆マギカ', '佐倉杏子'): 'sakura kyouko',
+    ('魔法少女まどか☆マギカ', '巴マミ'): 'tomoe mami',
+    ('魔法少女まどか☆マギカ', '暁美ほむら'): 'akemi homura',
+    ('魔法少女まどか☆マギカ', '美樹さやか'): 'miki sayaka',
+    ('魔法少女まどか☆マギカ', '環いろは'): 'tamaki iroha',
+    ('セーラームーン', 'ちびうさ'): 'chibiusa',
+    ('ゼロの使い魔', 'ルイズ'): 'louise francoise le blanc de la valliere',
+    ('ノーゲーム・ノーライフ', 'ジブリール'): 'jibril',
+    ('ノーゲーム・ノーライフ', '白'): 'shiro',
+    ('ボーカロイド', '鏡音レン'): 'kagamine ren',
+    ('GTA V', 'トレバー・フィリップス'): 'trevor philips',
+    ('アカメが斬る！', 'アカメ'): 'akame (akame ga kill!)',
+    ('ゼルダの伝説シリーズ', 'リンク'): 'link (zelda)',
+    ('マリオブラザーズ', 'ルイージ'): 'luigi',
+    ('メイドインアビス', 'リコ'): 'riko (made in abyss)',
+    ('メイドインアビス', 'レグ'): 'reg (made in abyss)',
+    ('わんだふるぷりきゅあ！', '犬飼こむぎ（犬）'): 'inukai komugi',
+    ('わんだふるぷりきゅあ！', '猫屋敷ユキ（猫）'): 'nekoyashiki yuki',
+    ('怪談', '八尺様風'): 'hachishaku-sama',
     ('東方', 'ルーミア'): 'rumia (touhou)',
     ('東方', '橙（チェン）'): 'chen (touhou)',
+    ('サノバウィッチ', '因幡めぐる'): 'inaba meguru',
+    ('ダンガンロンパ', '朝日奈葵'): 'asahina aoi',
+    ('ダンガンロンパ', '朝日奈葵(水着)'): 'asahina aoi',
+    ('俺の妹がこんなに可愛いわけがない', '高坂桐乃'): 'kousaka kirino',
 }
 
 def remove_emphasis(text):
     """強調表現を削除する"""
     # {{{}}}、{}、[]などの強調記号を削除
-    # ただし、作品名が括弧に含まれる場合は保持
     result = text
     
     # {{}} や {{{{}}}} を削除
@@ -203,27 +141,13 @@ def remove_emphasis(text):
     
     return result
 
-def get_character_name(title, subtitle, original_prompt):
-    """キャラクター名を取得（マッピングまたは元の抽出ロジック）"""
-    # マッピングを最初にチェック
-    key = (title, subtitle)
-    if key in character_name_mapping:
-        return character_name_mapping[key]
-    
-    # マッピングにない場合は元のロジックを使用
-    extracted = extract_character_name_fallback(original_prompt, subtitle)
-    
-    # 強調表現を削除
-    return remove_emphasis(extracted)
-
-def extract_character_name_fallback(prompt, subtitle=""):
-    """フォールバック用のキャラクター名抽出ロジック"""
+def extract_character_name(prompt, subtitle=""):
+    """プロンプトからキャラクター名を抽出"""
     # 最初に {} で囲まれた部分を探す（単一の波括弧）
     single_brace_match = re.search(r'^\{([^}]+)\}', prompt.strip())
     if single_brace_match:
         candidate = single_brace_match.group(1).strip()
         # 作品名が括弧で含まれている場合はそのまま保持
-        # 例: fennec (kemono friends) -> そのまま
         return candidate
     
     # {{{}}} で囲まれた最初の適切な候補を探す
@@ -235,23 +159,31 @@ def extract_character_name_fallback(prompt, subtitle=""):
             # 明らかにキャラクター名でない場合をスキップ
             if re.search(r'(tareme|tsurime|hair|eyes|breasts|idolmaster|cinderella|fate|series)', candidate.lower()):
                 continue
-            # アンダースコア+括弧の場合は保持、スペース+括弧の場合のみ削除
-            if not re.search(r'_\([^)]+\)$', candidate) and not re.search(r'\s+\([^)]+\)$', candidate):
-                candidate = re.sub(r'\s+\([^)]+\)', '', candidate)
-            return candidate.strip()
+            # アンダースコア+括弧、スペース+括弧の場合は保持
+            return candidate
     
     # 波括弧がない場合、最初のカンマまでの部分
     parts = prompt.split(',')
     if parts:
-        first_part = parts[0].strip()
-        if not re.search(r'_\([^)]+\)$', first_part) and not re.search(r'\s+\([^)]+\)$', first_part):
-            first_part = re.sub(r'\s+\([^)]+\)', '', first_part)
-        return first_part.strip()
+        return parts[0].strip()
     
     return prompt
 
-def process_tsv_with_mapping(input_file, output_file):
-    """TSVファイルをマッピング付きで処理"""
+def get_character_name(title, subtitle, original_prompt):
+    """キャラクター名を取得（マッピングまたは抽出）"""
+    # マッピングを最初にチェック
+    key = (title, subtitle)
+    if key in character_name_mapping:
+        return character_name_mapping[key]
+    
+    # マッピングにない場合は抽出ロジックを使用
+    extracted = extract_character_name(original_prompt, subtitle)
+    
+    # 強調表現を削除
+    return remove_emphasis(extracted)
+
+def process_tsv(input_file, output_file):
+    """TSVファイルを処理"""
     non_character_rows = []
     character_rows = []
     
@@ -268,15 +200,17 @@ def process_tsv_with_mapping(input_file, output_file):
                     # キャラクター再現版（オリジナル）
                     character_rows.append(['キャラクター再現', title, subtitle, prompt])
                     
-                    # 通常版（マッピングまたは抽出）
+                    # 通常版（簡略化）
                     simplified_name = get_character_name(title, subtitle, prompt)
                     character_rows.append(['キャラクター', title, subtitle, simplified_name])
                 else:
+                    # キャラクター以外はそのまま保持
                     non_character_rows.append(row)
             else:
+                # 4列未満の行もそのまま保持
                 non_character_rows.append(row)
     
-    # キャラクター行のみソート
+    # キャラクター行のみソート（再現版→通常版の順）
     def sort_key(row):
         category = row[0]
         order = 0 if category == 'キャラクター再現' else 1
@@ -296,5 +230,5 @@ if __name__ == '__main__':
     input_file = '/mnt/e/Project/Extension/Prompt/非整形マスター.tsv'
     output_file = '/mnt/e/Project/Extension/Prompt/非整形マスター_編集済み.tsv'
     
-    process_tsv_with_mapping(input_file, output_file)
+    process_tsv(input_file, output_file)
     print(f"処理完了: {output_file}")
