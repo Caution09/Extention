@@ -2,13 +2,6 @@ let defaultMaster = {
   version: 2,
   data: [
   {
-    "0": "大項目",
-    "1": "中項目",
-    "2": "小項目",
-    "3": "Prompt",
-    "4": ""
-  },
-  {
     "0": "エフェクト",
     "1": "エフェクト",
     "2": "エフェクト",
@@ -2315,7 +2308,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "among us",
     "2": "クルー",
-    "3": "crewmate (among us)",
+    "3": "crewmate",
     "4": ""
   },
   {
@@ -2343,7 +2336,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "Fate",
     "2": "イシュタル",
-    "3": "ishtar (fate)",
+    "3": "ishtar",
     "4": ""
   },
   {
@@ -2371,7 +2364,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "Fate",
     "2": "レオナルドダヴィンチ",
-    "3": "leonardo_da_vinci_(fate)",
+    "3": "leonardo_da_vinci_",
     "4": ""
   },
   {
@@ -2413,7 +2406,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "Fate",
     "2": "謎のヒロインXオルタ",
-    "3": "black jacket",
+    "3": "fate (series",
     "4": ""
   },
   {
@@ -2490,7 +2483,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "GTA V",
     "2": "トレバー・フィリップス",
-    "3": "trevor philips",
+    "3": "Trevor Philips bald hair",
     "4": ""
   },
   {
@@ -2518,7 +2511,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "トワ様",
-    "3": "tokoyami towa",
+    "3": "{hololive",
     "4": ""
   },
   {
@@ -2546,7 +2539,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "るーちゃん",
-    "3": "uruha rushia",
+    "3": "{hololive",
     "4": ""
   },
   {
@@ -2707,77 +2700,77 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "Kanon",
     "2": "月宮あゆ",
-    "3": "tsukimiya ayu (kanon)",
+    "3": "tsukimiya ayu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "NARUTO",
     "2": "春野サクラ",
-    "3": "haruno sakura (naruto (series))",
+    "3": "haruno sakura)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "NEW GAME!",
     "2": "阿波根 うみこ",
-    "3": "ahagon umiko (new game!)",
+    "3": "ahagon umiko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "NEW GAME!",
     "2": "遠山 りん",
-    "3": "toyama rin (new game!)",
+    "3": "toyama rin",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "NEW GAME!",
     "2": "桜ねね",
-    "3": "sakura nene (new game!)",
+    "3": "sakura nene",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "NEW GAME!",
     "2": "篠田 はじめ",
-    "3": "shinoda hajime (new game!)",
+    "3": "shinoda hajime",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "NEW GAME!",
     "2": "滝本 ひふみ",
-    "3": "takimoto hifumi (new game!)",
+    "3": "takimoto hifumi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "NEW GAME!",
     "2": "八神 コウ",
-    "3": "yagami kou (new game!)",
+    "3": "yagami kou",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "NEW GAME!",
     "2": "飯島 ゆん",
-    "3": "iijima yun (new game!)",
+    "3": "iijima yun",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "NEW GAME!",
     "2": "涼風 青葉",
-    "3": "suzukaze aoba (new game!)",
+    "3": "suzukaze aoba",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Re：ゼロから始める異世界生活",
     "2": "エキドナ",
-    "3": "echidna_(re:zero)",
+    "3": "echidna_",
     "4": ""
   },
   {
@@ -2791,14 +2784,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "Re：ゼロから始める異世界生活",
     "2": "ベアトリス",
-    "3": "beatrice (re:zero)",
+    "3": "beatrice",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Re：ゼロから始める異世界生活",
     "2": "ラム",
-    "3": "ram_(re:zero)",
+    "3": "ram_",
     "4": ""
   },
   {
@@ -2812,14 +2805,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "SPY×FAMILY（スパイファミリー）",
     "2": "アーニャ・フォージャー",
-    "3": "anya (spy x family)",
+    "3": "anya",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "SPY×FAMILY（スパイファミリー）",
     "2": "ボンド・フォージャー",
-    "3": "bond (spy x family)",
+    "3": "bond",
     "4": ""
   },
   {
@@ -2833,7 +2826,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "SPY×FAMILY（スパイファミリー）",
     "2": "ロイド・フォージャー",
-    "3": "twilight (spy x family)",
+    "3": "twilight",
     "4": ""
   },
   {
@@ -2889,7 +2882,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "VOICE BOX",
     "2": "ずんだもん",
-    "3": "zundamon",
+    "3": "green hair, short hair",
     "4": ""
   },
   {
@@ -2931,28 +2924,28 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "WORKING!!",
     "2": "伊波まひる",
-    "3": "inami_mahiru (working!!)",
+    "3": "inami_mahiru",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "WORKING!!",
     "2": "轟八千代",
-    "3": "todoroki_yachiyo (working!!)",
+    "3": "todoroki_yachiyo",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "WORKING!!",
     "2": "山田葵",
-    "3": "yamada_aoi (working!!)",
+    "3": "yamada_aoi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "WORKING!!",
     "2": "種島ぽぷら",
-    "3": "taneshima popura",
+    "3": "{taneshima popura}",
     "4": ""
   },
   {
@@ -3036,154 +3029,161 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "あぁ女神様！",
     "2": "ウルド",
-    "3": "urd (aa megami-sama)",
+    "3": "urd",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "あぁ女神様！",
     "2": "スクルド",
-    "3": "skuld (aa megami-sama)",
+    "3": "skuld",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "あぁ女神様！",
     "2": "ベルダンディー",
-    "3": "belldandy (aa megami-sama)",
+    "3": "belldandy",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツ！",
     "2": "一ノ瀬かえで",
-    "3": "ichinose kaede (aikatsu!)",
+    "3": "ichinose kaede",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツ！",
     "2": "紫吹蘭",
-    "3": "shibuki ran (aikatsu!)",
+    "3": "shibuki ran",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツ！",
     "2": "神崎美月",
-    "3": "kanzaki mizuki (aikatsu!)",
+    "3": "kanzaki mizuki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツ！",
     "2": "星宮いちご",
-    "3": "hoshimiya ichigo (aikatsu!)",
+    "3": "hoshimiya ichigo",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツ！",
     "2": "藤堂ユリカ",
-    "3": "todo yurika (aikatsu!)",
+    "3": "todo yurika",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "アイカツ！",
+    "2": "藤堂ユリカ",
+    "3": "todo yurika",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツ！",
     "2": "氷上スミレ",
-    "3": "hikami sumire(aikatsu!)",
+    "3": "hikami sumire",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツ！",
     "2": "北大路さくら",
-    "3": "hikami sumire(aikatsu!)",
+    "3": "hikami sumire",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツ！",
     "2": "霧矢あおい",
-    "3": "kiriya aoi (aikatsu!)",
+    "3": "kiriya aoi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツ！",
     "2": "有栖川おとめ",
-    "3": "arisugawa otome (aikatsu!)",
+    "3": "arisugawa otome",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツスターズ！",
     "2": "香澄夜空",
-    "3": "kasumi yozora (aikatsu stars!)",
+    "3": "kasumi yozora",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツスターズ！",
     "2": "桜庭ローラ",
-    "3": "sakuraba rola (aikatsu stars!)",
+    "3": "sakuraba rola",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツスターズ！",
     "2": "蝶野舞花",
-    "3": "chouno maika (aikatsu stars!)",
+    "3": "chouno maika",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツスターズ！",
     "2": "二階堂ゆず",
-    "3": "nikaidou yuzu (aikatsu stars!)",
+    "3": "nikaidou yuzu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツスターズ！",
     "2": "虹野ゆめ",
-    "3": "nijino yume (aikatsu stars!)",
+    "3": "nijino yume",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツスターズ！",
     "2": "如月ツバサ",
-    "3": "kisaragi tsubasa (aikatsu stars!)",
+    "3": "kisaragi tsubasa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツスターズ！",
     "2": "白鳥ひめ",
-    "3": "shiratori hime (aikatsu stars!)",
+    "3": "shiratori hime",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツスターズ！",
     "2": "白百合かぐや",
-    "3": "nikaidou yuzu (aikatsu stars!)",
+    "3": "nikaidou yuzu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツスターズ！",
     "2": "湊みお",
-    "3": "minato mio (aikatsu stars!)",
+    "3": "minato mio",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイカツスターズ！",
     "2": "友希あいね",
-    "3": "yuuki aine (aikatsu friends!)",
+    "3": "yuuki aine",
     "4": ""
   },
   {
@@ -3225,7 +3225,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "三浦あずさ（ロングヘア）",
-    "3": "miura azusa",
+    "3": "dark blue hair",
     "4": ""
   },
   {
@@ -3239,14 +3239,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "秋月律子",
-    "3": "akizuki ritsuko",
+    "3": "tareme",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "水瀬伊織",
-    "3": "minase iori",
+    "3": "tareme",
     "4": ""
   },
   {
@@ -3274,14 +3274,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "西城樹里",
-    "3": "saijou juri",
+    "3": "masterpiece",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "浅倉透",
-    "3": "asakura toru",
+    "3": "masterpiece",
     "4": ""
   },
   {
@@ -3309,7 +3309,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "八宮めぐる",
-    "3": "hachimiya meguru",
+    "3": "slender",
     "4": ""
   },
   {
@@ -3323,7 +3323,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "アナスタシア",
-    "3": "anastasia",
+    "3": "masterpiece",
     "4": ""
   },
   {
@@ -3344,7 +3344,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "伊吹翼",
-    "3": "ibuki tsubasa",
+    "3": "styles of idolmaster million live!,2010s",
     "4": ""
   },
   {
@@ -3379,7 +3379,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "向井拓海",
-    "3": "mukai takumi",
+    "3": "light black hair",
     "4": ""
   },
   {
@@ -3414,14 +3414,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "佐藤心",
-    "3": "satou shin",
+    "3": "twintail",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "鷺沢文香",
-    "3": "sagisawa fumika",
+    "3": "{sagisawa fumika}",
     "4": ""
   },
   {
@@ -3435,7 +3435,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "周防桃子",
-    "3": "suou momoko",
+    "3": "tareme",
     "4": ""
   },
   {
@@ -3449,7 +3449,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "春日未来",
-    "3": "kasuga mirai",
+    "3": "styles of idolmaster million live!,2010s",
     "4": ""
   },
   {
@@ -3491,6 +3491,13 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "新田美波",
+    "3": "black corset",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "アイドルマスターシンデレラガールズ",
+    "2": "新田美波",
     "3": "nitta minami",
     "4": ""
   },
@@ -3505,7 +3512,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "神谷奈緒",
-    "3": "kamiya nao",
+    "3": "short bangs",
     "4": ""
   },
   {
@@ -3596,7 +3603,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "福山舞",
-    "3": "fukuyama mai",
+    "3": "tareme",
     "4": ""
   },
   {
@@ -3659,49 +3666,49 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アカメが斬る！",
     "2": "アカメ",
-    "3": "akame (akame ga kill!)",
+    "3": "akame",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アクセルワールド",
     "2": "黒雪姫",
-    "3": "kuroyukihime (accel world)",
+    "3": "kuroyukihime",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アクセルワールド",
     "2": "上月由仁子",
-    "3": "kouzuki yuniko (accel world)",
+    "3": "kouzuki yuniko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アクセルワールド",
     "2": "倉嶋千百合",
-    "3": "kurashima chiyuri (accel world)",
+    "3": "kurashima chiyuri",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アサルトリリィ",
     "2": "一柳梨璃",
-    "3": "hitotsuyanagi riri (assault lily)",
+    "3": "hitotsuyanagi riri",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "meowfficer",
-    "3": "meowfficer_(azur_lane)",
+    "3": "meowfficer_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "Z23",
-    "3": "z23_(azur_lane)",
+    "3": "z23_",
     "4": ""
   },
   {
@@ -3715,91 +3722,91 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "アルジェリー",
-    "3": "algerie_(azur_lane)",
+    "3": "algerie_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "イラストリアス",
-    "3": "illustrious_(azur_lane)",
+    "3": "illustrious_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "エンタープライズ",
-    "3": "enterprise_(azur_lane)",
+    "3": "enterprise_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "ゴールデンハインド",
-    "3": "golden_hind_(azur_lane)",
+    "3": "golden_hind_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "ジャベリン",
-    "3": "javelin_(azur_lane)",
+    "3": "javelin_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "シリウス",
-    "3": "sirius_(azur_lane)",
+    "3": "sirius_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "ダイドー",
-    "3": "dido_(azur_lane)",
+    "3": "dido_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "チェシャー",
-    "3": "cheshire_(azur_lane)",
+    "3": "cheshire_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "ノースカロライナ",
-    "3": "north_carolina_(azur_lane)",
+    "3": "north_carolina_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "フォーミダブル",
-    "3": "formidable_(azur_lane)",
+    "3": "formidable_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "プリンツ・オイゲン",
-    "3": "prinz_eugen_(azur_lane)",
+    "3": "prinz_eugen_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "ブレマートン",
-    "3": "bremerton_(azur_lane))",
+    "3": "bremerton_)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "ベルちゃん（リトルベル）",
-    "3": "little_bel_(azur_lane)",
+    "3": "little_bel_",
     "4": ""
   },
   {
@@ -3820,105 +3827,112 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "ラフィー",
-    "3": "laffey_(azur_lane)",
+    "3": "laffey_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "ル・マラン",
-    "3": "le_malin_(azur_lane)",
+    "3": "le_malin_",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "アズールレーン",
+    "2": "ル・マラン",
+    "3": "le_malin__",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "綾波",
-    "3": "ayanami_(azur_lane)",
+    "3": "ayanami_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "樫野",
-    "3": "kashino_(azur_lane)",
+    "3": "kashino_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "高尾",
-    "3": "takao_(azur_lane)",
+    "3": "takao_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "赤城",
-    "3": "akagi_(azur_lane)",
+    "3": "akagi_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "大鳳",
-    "3": "taihou_(azur_lane)",
+    "3": "taihou_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "長門",
-    "3": "nagato_(azur_lane)",
+    "3": "nagato_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "能代",
-    "3": "noshiro_(azur_lane)",
+    "3": "noshiro_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "明石",
-    "3": "akashi_(azur_lane)",
+    "3": "akashi_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アスタロッテのおもちゃ!",
     "2": "アスタロッテ・ユグヴァール",
-    "3": "astarotte ygvar (astarotte no omocha!)",
+    "3": "astarotte ygvar",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アスタロッテのおもちゃ!",
     "2": "塔原明日葉",
-    "3": "touhara asuha (astarotte no omocha!)",
+    "3": "touhara asuha",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "あずまんが大王",
     "2": "春日歩（大阪さん）",
-    "3": "kasuga ayumu (azumanga daioh)",
+    "3": "kasuga ayumu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "あずまんが大王",
     "2": "美浜ちよ",
-    "3": "mihama chiyo (azumanga daioh)",
+    "3": "mihama chiyo",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アトリエ",
     "2": "ライザ",
-    "3": "reisalin stout",
+    "3": "red shorts",
     "4": ""
   },
   {
@@ -3995,7 +4009,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ヴァンパイア(格ゲー)",
     "2": "フェリシア",
-    "3": "felicia_(vampire)",
+    "3": "felicia_",
     "4": ""
   },
   {
@@ -4009,21 +4023,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "うたわれるもの",
     "2": "アルルゥ",
-    "3": "aruruw (utawarerumono)",
+    "3": "aruruw",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "うたわれるもの",
     "2": "エルルゥ",
-    "3": "eruruw (utawarerumono)",
+    "3": "eruruw",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "うたわれるもの",
     "2": "トウカ",
-    "3": "touka (utawarerumono)",
+    "3": "touka",
     "4": ""
   },
   {
@@ -4044,7 +4058,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "アドマイヤベガ",
-    "3": "admire_vega_(umamusume)",
+    "3": "admire_vega_ (umamusume)",
     "4": ""
   },
   {
@@ -4058,7 +4072,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "イナリワン",
-    "3": "inari_one_(umamusume)",
+    "3": "inari_one_",
     "4": ""
   },
   {
@@ -4079,14 +4093,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "エアグルーヴ",
-    "3": "air_groove_(umamusume)",
+    "3": "air_groove_ (umamusume)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "エアシャカール",
-    "3": "air_shakur_(umamusume)",
+    "3": "air_shakur_ (umamusume)",
     "4": ""
   },
   {
@@ -4114,7 +4128,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "カワカミプリンセス",
-    "3": "kawakami_princess_(umamusume)",
+    "3": "kawakami_princess_ (umamusume)",
     "4": ""
   },
   {
@@ -4142,7 +4156,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "ゴールドシティ",
-    "3": "gold_city_(umamusume)",
+    "3": "gold_city_ (umamusume)",
     "4": ""
   },
   {
@@ -4177,7 +4191,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "シュヴァルグラン",
-    "3": "cheval_grand_(umamusume)",
+    "3": "cheval_grand_ (umamusume)",
     "4": ""
   },
   {
@@ -4219,21 +4233,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "ゼンノロブロイ",
-    "3": "zenno_rob_roy_(umamusume)",
+    "3": "zenno_rob_roy_ (umamusume)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "ダイイチルビー",
-    "3": "daiichi_ruby_(umamusume)",
+    "3": "daiichi_ruby_ (umamusume)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "ダイタクヘリオス",
-    "3": "daitaku_helios_(umamusume)",
+    "3": "daitaku_helios_ (umamusume)",
     "4": ""
   },
   {
@@ -4261,7 +4275,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "ツルマルツヨシ",
-    "3": "tsurumaru_tsuyoshi_(umamusume)",
+    "3": "tsurumaru_tsuyoshi_ (umamusume)",
     "4": ""
   },
   {
@@ -4303,7 +4317,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "ナリタトップロード",
-    "3": "narita_top_road_(umamusume)",
+    "3": "narita_top_road_ (umamusume)",
     "4": ""
   },
   {
@@ -4324,7 +4338,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "ハッピーミーク",
-    "3": "happy_meek_(umamusume)",
+    "3": "happy_meek_ (umamusume)",
     "4": ""
   },
   {
@@ -4338,7 +4352,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "バンブーメモリー",
-    "3": "bamboo_memory_(umamusume)",
+    "3": "bamboo_memory_ (umamusume)",
     "4": ""
   },
   {
@@ -4359,7 +4373,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "ヒシミラクル",
-    "3": "hishi_miracle_(umamusume)",
+    "3": "hishi_miracle_ (umamusume)",
     "4": ""
   },
   {
@@ -4373,21 +4387,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "ファインモーション",
-    "3": "fine_motion_(umamusume)",
+    "3": "fine_motion_ (umamusume)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "フジキセキ",
-    "3": "fuji_kiseki_(umamusume)",
+    "3": "fuji_kiseki_ (umamusume)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "マーベラスサンデー",
-    "3": "marvelous_sunday_(umamusume)",
+    "3": "marvelous_sunday_",
     "4": ""
   },
   {
@@ -4415,7 +4429,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "マンハッタンカフェ",
-    "3": "manhattan cafe (umamusume)",
+    "3": "black",
     "4": ""
   },
   {
@@ -4471,14 +4485,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "ヤエノムテキ",
-    "3": "yaeno_muteki_(umamusume)",
+    "3": "yaeno_muteki_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ウマ娘",
     "2": "ユキノビジン",
-    "3": "yukino_bijin_(umamusume)",
+    "3": "yukino_bijin_",
     "4": ""
   },
   {
@@ -4506,42 +4520,42 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "エロマンガ先生",
     "2": "山田エルフ",
-    "3": "yamada elf (eromanga sensei)",
+    "3": "yamada elf",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "エロマンガ先生",
     "2": "和泉紗霧",
-    "3": "izumi sagiri (eromanga sensei)",
+    "3": "izumi sagiri",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "オーディンスフィア",
     "2": "グウェンドリン",
-    "3": "gwendolyn (odin sphere)",
+    "3": "gwendolyn",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "オーディンスフィア",
     "2": "ベルベット",
-    "3": "velvet (odin sphere)",
+    "3": "velvet",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "オーディンスフィア",
     "2": "メルセデス",
-    "3": "mercedes (odin sphere)",
+    "3": "mercedes",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "おしえて! ギャル子ちゃん",
     "2": "ギャル子",
-    "3": "galko (oshiete! galko-chan)",
+    "3": "galko",
     "4": ""
   },
   {
@@ -4555,77 +4569,77 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "おジャ魔女どれみ",
     "2": "瀬川おんぷ",
-    "3": "segawa onpu (ojamajo doremi)",
+    "3": "segawa onpu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "おジャ魔女どれみ",
     "2": "藤原はづき（NAI v3不安定）",
-    "3": "fujiwara_hazuki (ojamajo doremi)",
+    "3": "fujiwara_hazuki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "おジャ魔女どれみ",
     "2": "飛鳥ももこ",
-    "3": "asuka momoko (ojamajo doremi)",
+    "3": "asuka momoko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "おジャ魔女どれみ",
     "2": "妹尾あいこ",
-    "3": "senoo aiko (ojamajo doremi)",
+    "3": "senoo aiko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "お兄ちゃんはおしまい!",
     "2": "桜花あさひ",
-    "3": "oka asahi (onii-chan wa oshimai!)",
+    "3": "oka asahi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "お兄ちゃんはおしまい!",
     "2": "室崎みよ",
-    "3": "murosaki miyo (onii-chan wa oshimai!)",
+    "3": "murosaki miyo",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "お兄ちゃんはおしまい!",
     "2": "緒山まひろ",
-    "3": "oyama mahiro (onii-chan wa oshimai!)",
+    "3": "oyama mahiro",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "お兄ちゃんはおしまい!",
     "2": "緒山みはり",
-    "3": "oyama mihari (onii-chan wa oshimai!)",
+    "3": "oyama mihari",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "お兄ちゃんはおしまい!",
     "2": "天川なゆた",
-    "3": "tenkawa nayuta (onii-chan wa oshimai!)",
+    "3": "tenkawa nayuta",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "お兄ちゃんはおしまい!",
     "2": "穂月かえで",
-    "3": "hozuki kaede (onii-chan wa oshimai!)",
+    "3": "hozuki kaede",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "お兄ちゃんはおしまい!",
     "2": "穂月もみじ",
-    "3": "hozuki momiji (onii-chan wa oshimai!)",
+    "3": "hozuki momiji",
     "4": ""
   },
   {
@@ -4640,6 +4654,13 @@ let defaultMaster = {
     "1": "カードキャプターさくら",
     "2": "木之本桜",
     "3": "kinomoto sakura",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "カードキャプターさくら",
+    "2": "木之本桜",
+    "3": "zest_(lossol)",
     "4": ""
   },
   {
@@ -4674,7 +4695,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ガールズ＆パンツァー",
     "2": "角谷杏",
-    "3": "kadotani anzu",
+    "3": "girls und panzer",
     "4": ""
   },
   {
@@ -4730,7 +4751,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "かぐや様は告らせたい",
     "2": "藤原千花",
-    "3": "fujiwara chika",
+    "3": "{fujiwara chika}",
     "4": ""
   },
   {
@@ -4786,21 +4807,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ギャラクシーエンジェル",
     "2": "ヴァニラ・H",
-    "3": "vanilla h (galaxy angel)",
+    "3": "vanilla h",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ギャラクシーエンジェル",
     "2": "ミルフィーユ・桜葉",
-    "3": "milfeulle sakuraba (galaxy angel)",
+    "3": "milfeulle sakuraba",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ギャラクシーエンジェル",
     "2": "ミント・ブラマンシュ",
-    "3": "mint blancmanche (galaxy angel)",
+    "3": "mint blancmanche",
     "4": ""
   },
   {
@@ -4898,70 +4919,70 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ギルティギア",
     "2": "エルフェルト=ヴァレンタイン",
-    "3": "elphelt_valentine (guilty gear)",
+    "3": "elphelt_valentine",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ギルティギア",
     "2": "ディズィー",
-    "3": "dizzy (guilty gear)",
+    "3": "dizzy",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ギルティギア",
     "2": "ブリジット",
-    "3": "bridget_(guilty_gear)",
+    "3": "bridget_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ギルティギア",
     "2": "ミリア=レイジ",
-    "3": "millia_rage (guilty gear)",
+    "3": "millia_rage",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ギルティギア",
     "2": "メイ",
-    "3": "may (guilty gear)",
+    "3": "may",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ギルティギア",
     "2": "ラムレザル=ヴァレンタイン",
-    "3": "ramlethal_valentine (guilty gear)",
+    "3": "ramlethal_valentine",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "キルミーベイベー",
     "2": "ソーニャ",
-    "3": "sonya (kill me baby)",
+    "3": "sonya",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "キルミーベイベー",
     "2": "呉織 あぎり",
-    "3": "goshiki agiri (kill me baby)",
+    "3": "goshiki agiri",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "キルミーベイベー",
     "2": "折部 やすな",
-    "3": "oribe yasuna (kill me baby)",
+    "3": "oribe yasuna",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "きんいろモザイク",
     "2": "アリス・カータレット",
-    "3": "alice cartelet",
+    "3": "{alice cartelet}",
     "4": ""
   },
   {
@@ -4982,7 +5003,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "きんいろモザイク",
     "2": "大宮忍",
-    "3": "oomiya shinobu",
+    "3": "{oomiya shinobu}",
     "4": ""
   },
   {
@@ -5052,21 +5073,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "けものフレンズ",
     "2": "アライグマ",
-    "3": "common raccoon (kemono friends)",
+    "3": "common raccoon",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "けものフレンズ",
     "2": "かばん",
-    "3": "kaban (kemono friends)",
+    "3": "{kaban (kemono friends)}",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "けものフレンズ",
     "2": "キタキツネ",
-    "3": "red fox (kemono friends)",
+    "3": ",{{{orange blazer",
     "4": ""
   },
   {
@@ -5080,42 +5101,49 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "けものフレンズ",
     "2": "コウテイペンギン",
-    "3": "emperor penguin (kemono friends)",
+    "3": "{emperor penguin (kemono friends)}",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "けものフレンズ",
     "2": "サーバル",
-    "3": "serval (kemono friends)",
+    "3": "{serval (kemono friends)}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "けものフレンズ",
+    "2": "サーバル",
+    "3": "serval_(kemono_friends)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "けものフレンズ",
     "2": "トキ",
-    "3": "japanese crested ibis (kemono friends)",
+    "3": ",{{head wings",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "けものフレンズ",
     "2": "フェネック",
-    "3": "fennec (kemono friends)",
+    "3": "{fennec (kemono friends)}",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ごちうさ",
     "2": "ここあ",
-    "3": "hoto cocoa (gochiusa)",
+    "3": "hoto cocoa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ごちうさ",
     "2": "シャロ",
-    "3": "kirima_syaro (gochiusa)",
+    "3": "kirima_syaro",
     "4": ""
   },
   {
@@ -5136,7 +5164,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ごちうさ",
     "2": "天々座 理世",
-    "3": "tedeza_rize (gochiusa)",
+    "3": "tedeza_rize",
     "4": ""
   },
   {
@@ -5150,14 +5178,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "この素晴らしい世界に祝福を",
     "2": "ウィズ",
-    "3": "wiz (konosuba)",
+    "3": "purple long coat",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "この素晴らしい世界に祝福を",
     "2": "ダクネス",
-    "3": "darkness (konosuba)",
+    "3": "x",
     "4": ""
   },
   {
@@ -5178,91 +5206,91 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "サクラ大戦",
     "2": "アイリス",
-    "3": "iris (sakura taisen)",
+    "3": "iris",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "サクラ大戦",
     "2": "マリア・タチバナ v3 再現不可",
-    "3": "maria tachibana (sakura taisen)",
+    "3": "maria tachibana",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "サクラ大戦",
     "2": "桐島カンナ NAI v3 再現不可",
-    "3": "kirishima kanna (sakura taisen)",
+    "3": "kirishima kanna",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "サクラ大戦",
     "2": "真宮寺さくら",
-    "3": "shinguuji sakura (sakura taisen)",
+    "3": "shinguuji sakura",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "サクラ大戦",
     "2": "神崎すみれ",
-    "3": "kanzaki sumire (sakura taisen)",
+    "3": "kanzaki sumire",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "サクラ大戦",
     "2": "李紅蘭 NAI v3 再現不可",
-    "3": "li kouran (sakura taisen)",
+    "3": "li kouran",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "サクラ大戦3",
     "2": "エリカ・フォンティーヌ NAI v3 再現不可",
-    "3": "erika fontaine (sakura taisen)",
+    "3": "erika fontaine",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "サクラ大戦3",
     "2": "グリシーヌ・ブルーメール",
-    "3": "glycine bleumer (sakura taisen)",
+    "3": "glycine bleumer",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "サクラ大戦3",
     "2": "コクリコ・タルティーヌ",
-    "3": "coquelicot (sakura_taisen)",
+    "3": "coquelicot",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "サクラ大戦3",
     "2": "ジェミニ・サンライズ",
-    "3": "gemini sunrise (sakura taisen)",
+    "3": "gemini sunrise",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "サクラ大戦3",
     "2": "ハナビ・キタオウジ",
-    "3": "hanabi kitaooji (sakura taisen)",
+    "3": "hanabi kitaooji",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "サクラ大戦3",
     "2": "ロベリア・カルリーニ",
-    "3": "lobelia carlini (sakura taisen)",
+    "3": "lobelia carlini",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "サノバウィッチ",
     "2": "因幡めぐる",
-    "3": "inaba meguru",
+    "3": "oranged hair",
     "4": ""
   },
   {
@@ -5290,7 +5318,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "シュタインズゲート",
     "2": "牧瀬 紅莉栖",
-    "3": "makise kurisu",
+    "3": "{steins;gate}",
     "4": ""
   },
   {
@@ -5514,84 +5542,84 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "セーラーヴィーナス",
-    "3": "sailor_venus (bishoujo_senshi_sailor_moon)",
+    "3": "sailor_venus",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "セーラーサターン",
-    "3": "sailor_saturn (bishoujo_senshi_sailor_moon)",
+    "3": "sailor_saturn",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "セーラージュピター",
-    "3": "sailor_jupiter (bishoujo_senshi_sailor_moon)",
+    "3": "sailor_jupiter",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "セーラーちびムーン",
-    "3": "sailor_chibi_moon (bishoujo_senshi_sailor_moon)",
+    "3": "sailor_chibi_moon",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "セーラーネプチューン",
-    "3": "sailor_neptune (bishoujo_senshi_sailor_moon)",
+    "3": "sailor_neptune",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "セーラーマーキュリー",
-    "3": "sailor_mercury (bishoujo_senshi_sailor_moon)",
+    "3": "sailor_mercury",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "セーラーマーズ",
-    "3": "sailor_mars (bishoujo_senshi_sailor_moon)",
+    "3": "sailor_mars",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "セーラームーン",
-    "3": "sailor_moon (bishoujo_senshi_sailor_moon)",
+    "3": "sailor_moon",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "ちびうさ",
-    "3": "chibiusa",
+    "3": "super sailor chibi moon",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "愛野 美奈子",
-    "3": "aino_minako (bishoujo_senshi_sailor_moon)",
+    "3": "aino_minako",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "火野 レイ",
-    "3": "hino_rei (bishoujo_senshi_sailor_moon)",
+    "3": "hino_rei",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "海王みちる",
-    "3": "kaiou_michiru (bishoujo_senshi_sailor_moon)",
+    "3": "kaiou_michiru",
     "4": ""
   },
   {
@@ -5605,28 +5633,28 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "水野 亜美",
-    "3": "mizuno_ami (bishoujo_senshi_sailor_moon)",
+    "3": "mizuno_ami",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "天王 はるか",
-    "3": "ten'ou_haruka (bishoujo_senshi_sailor_moon)",
+    "3": "ten'ou_haruka",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "土萠 ほたる",
-    "3": "tomoe_hotaru (bishoujo_senshi_sailor_moon)",
+    "3": "tomoe_hotaru",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "セーラームーン",
     "2": "木野 まこと",
-    "3": "kino_makoto (bishoujo_senshi_sailor_moon)",
+    "3": "kino_makoto",
     "4": ""
   },
   {
@@ -5647,21 +5675,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ゼルダの伝説シリーズ",
     "2": "インパ",
-    "3": "impa (the_legend_of_zelda)",
+    "3": "impa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ゼルダの伝説シリーズ",
     "2": "ウルボサ",
-    "3": "urbosa (the_legend_of_zelda)",
+    "3": "urbosa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ゼルダの伝説シリーズ",
     "2": "コロク",
-    "3": "korok (the_legend_of_zelda)",
+    "3": "korok",
     "4": ""
   },
   {
@@ -5675,7 +5703,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ゼルダの伝説シリーズ",
     "2": "ダルク",
-    "3": "daruk (the_legend_of_zelda)",
+    "3": "daruk",
     "4": ""
   },
   {
@@ -5689,21 +5717,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ゼルダの伝説シリーズ",
     "2": "ミーファ",
-    "3": "mipha (the_legend_of_zelda)",
+    "3": "mipha",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ゼルダの伝説シリーズ",
     "2": "リーバル",
-    "3": "revali (the_legend_of_zelda)",
+    "3": "revali",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ゼルダの伝説シリーズ",
     "2": "リンク",
-    "3": "link (zelda)",
+    "3": "link",
     "4": ""
   },
   {
@@ -5724,28 +5752,28 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "アスナ(ALO)",
-    "3": "asuna_(sao-alo)",
+    "3": "asuna_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "キリト",
-    "3": "kirito (sao)",
+    "3": "kirito",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "キリト(GGO)",
-    "3": "kirito_(sao-ggo)",
+    "3": "kirito_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "シノン",
-    "3": "sinon (sao)",
+    "3": "sinon",
     "4": ""
   },
   {
@@ -5766,14 +5794,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "シリカ(ALO)",
-    "3": "silica_(sao-alo)",
+    "3": "silica_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "ユイ",
-    "3": "yui_(sao)",
+    "3": "yui_",
     "4": ""
   },
   {
@@ -5787,14 +5815,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "リーファ",
-    "3": "leafa (sao)",
+    "3": "leafa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "桐ヶ谷 直葉",
-    "3": "kirigaya_suguha(sao)",
+    "3": "kirigaya_suguha",
     "4": ""
   },
   {
@@ -5808,7 +5836,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "篠崎 里香",
-    "3": "lisbeth_(sao)",
+    "3": "lisbeth_",
     "4": ""
   },
   {
@@ -5829,14 +5857,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ダンガンロンパ",
     "2": "朝日奈葵",
-    "3": "asahina aoi",
+    "3": "dark skin",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ダンガンロンパ",
     "2": "朝日奈葵(水着)",
-    "3": "asahina aoi",
+    "3": "dark skin",
     "4": ""
   },
   {
@@ -5857,7 +5885,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "チェンソーマン",
     "2": "マキマ",
-    "3": "makima (chainsaw man)",
+    "3": "chainsaw man",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "チェンソーマン",
+    "2": "マキマ",
+    "3": "red hier",
     "4": ""
   },
   {
@@ -5927,14 +5962,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "とあるシリーズ",
     "2": "インデックス",
-    "3": "index_(toaru_majutsu_no_index)",
+    "3": "index_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "とあるシリーズ",
     "2": "ラストオーダー",
-    "3": "last_order_(toaru_majutsu_no_index)",
+    "3": "last_order_",
     "4": ""
   },
   {
@@ -5948,14 +5983,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "とあるシリーズ",
     "2": "初春飾利",
-    "3": "uiharu_kazari (toaru_majutsu_no_index)",
+    "3": "uiharu_kazari",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "とあるシリーズ",
     "2": "上条当麻",
-    "3": "kamijou_touma (toaru_majutsu_no_index)",
+    "3": "kamijou_touma",
     "4": ""
   },
   {
@@ -5990,112 +6025,112 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "トゥハート",
     "2": "セリオ",
-    "3": "serio (to heart)",
+    "3": "serio",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート",
     "2": "マルチ",
-    "3": "multi (to heart)",
+    "3": "multi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート",
     "2": "宮内レミィ",
-    "3": "miyauchi lemmy (to heart)",
+    "3": "miyauchi lemmy",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート",
     "2": "松原葵",
-    "3": "matsubara aoi (to heart)",
+    "3": "matsubara aoi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート",
     "2": "神岸あかり",
-    "3": "kamigishi akari (to heart)",
+    "3": "kamigishi akari",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート",
     "2": "保科智子",
-    "3": "hoshina tomoko (to heart)",
+    "3": "hoshina tomoko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート",
     "2": "来栖川綾香",
-    "3": "kurusugawa ayaka (to heart)",
+    "3": "kurusugawa ayaka",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート",
     "2": "来栖川芹香",
-    "3": "kurusugawa serika (to heart)",
+    "3": "kurusugawa serika",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート2",
     "2": "ルーシー・マリア・ミソラ",
-    "3": "lucy_maria_misora (to_heart_(series))",
+    "3": "lucy_maria_misora)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート2",
     "2": "向坂環",
-    "3": "kousaka_tamaki (to_heart_(series))",
+    "3": "kousaka_tamaki)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート2",
     "2": "笹森花梨",
-    "3": "sasamori_karin (to_heart_(series))",
+    "3": "sasamori_karin)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート2",
     "2": "十波由真",
-    "3": "tonami_yuma (to_heart_(series))",
+    "3": "tonami_yuma)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート2",
     "2": "小牧愛佳",
-    "3": "komaki_manaka (to_heart_(series))",
+    "3": "komaki_manaka)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート2",
     "2": "姫百合珊瑚",
-    "3": "himeyuri_sango (to_heart_(series))",
+    "3": "himeyuri_sango)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート2",
     "2": "姫百合瑠璃",
-    "3": "himeyuri_ruri (to_heart_(series))",
+    "3": "himeyuri_ruri)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "トゥハート2",
     "2": "柚原このみ",
-    "3": "yuzuhara_konomi (to_heart_(series))",
+    "3": "yuzuhara_konomi)",
     "4": ""
   },
   {
@@ -6242,14 +6277,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ナースウィッチ小麦ちゃんマジカルて",
     "2": "国分寺こより",
-    "3": "kokubunji koyori (nurse witch komugi-chanI)",
+    "3": "kokubunji koyori",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ナースウィッチ小麦ちゃんマジカルて",
     "2": "中原小麦",
-    "3": "nakahara komugi (nurse witch komugi-chanI)",
+    "3": "nakahara komugi",
     "4": ""
   },
   {
@@ -6284,21 +6319,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ノーゲーム・ノーライフ",
     "2": "ジブリール",
-    "3": "jibril",
+    "3": "no game no life,jibril",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ノーゲーム・ノーライフ",
     "2": "白",
-    "3": "shiro",
+    "3": "no game no life,shiro,white hair",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "のんのんびより",
     "2": "宮内れんげ",
-    "3": "miyauchi renge (non non biyori)",
+    "3": "miyauchi renge",
     "4": ""
   },
   {
@@ -6424,7 +6459,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ハヤテのごとく！",
     "2": "三千院ナギ",
-    "3": "hayate no gotoku!",
+    "3": "sanzen'in nagi",
     "4": ""
   },
   {
@@ -6522,42 +6557,42 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ひだまりスケッチ",
     "2": "なずな",
-    "3": "nazuna_(hidamari_sketch)",
+    "3": "nazuna_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ひだまりスケッチ",
     "2": "のり",
-    "3": "nori_(hidamari_sketch)",
+    "3": "nori_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ひだまりスケッチ",
     "2": "ヒロ",
-    "3": "hiro_(hidamari_sketch)",
+    "3": "hiro_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ひだまりスケッチ",
     "2": "ゆの",
-    "3": "yuno_(hidamari_sketch),hidamari_sketch",
+    "3": "{yuno_(hidamari_sketch)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ひだまりスケッチ",
     "2": "宮子",
-    "3": "miyako (hidamari_sketch)",
+    "3": "miyako",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ひだまりスケッチ",
     "2": "沙英",
-    "3": "sae_(hidamari_sketch)",
+    "3": "sae_",
     "4": ""
   },
   {
@@ -6739,21 +6774,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "アロナ(A.R.O.N.A)",
-    "3": "arona_(blue_archive)",
+    "3": "arona_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "サキ",
-    "3": "saki_(blue_archive)",
+    "3": "saki_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "プラナ",
-    "3": "plana_(blue_archive)",
+    "3": "plana_",
     "4": ""
   },
   {
@@ -6767,7 +6802,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "伊落マリー",
-    "3": "mari_(blue_archive)",
+    "3": "mari_",
     "4": ""
   },
   {
@@ -6781,84 +6816,84 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "角楯カリン",
-    "3": "karin_(blue_archive)",
+    "3": "karin_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "空崎ヒナ",
-    "3": "hina_(blue_archive)",
+    "3": "hina_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "砂狼シロコ",
-    "3": "shiroko_(blue_archive)",
+    "3": "shiroko_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "室笠アカネ",
-    "3": "akane_(blue_archive)",
+    "3": "akane_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "生塩ノア",
-    "3": "noa_(blue_archive)",
+    "3": "noa_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "聖園ミカ",
-    "3": "mika_(blue_archive)",
+    "3": "mika_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "早瀬ユウカ",
-    "3": "yuuka_(blue_archive)",
+    "3": "yuuka_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "天雨アコ",
-    "3": "ako_(blue_archive)",
+    "3": "ako_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "天童アリス",
-    "3": "aris_(blue_archive)",
+    "3": "aris_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "飛鳥馬トキ",
-    "3": "toki_(blue_archive)",
+    "3": "toki_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "尾刃カンナ",
-    "3": "kanna_(blue_archive)",
+    "3": "kanna_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
     "2": "竜華キサキ",
-    "3": "kisaki_(blue_archive)",
+    "3": "kisaki_",
     "4": ""
   },
   {
@@ -6928,7 +6963,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ボーカロイド",
     "2": "鏡音レン",
-    "3": "kagamine ren",
+    "3": "yellow horn hair,spiked hair",
     "4": ""
   },
   {
@@ -6949,14 +6984,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ポケモン",
     "2": "オカルトマニア(XY)",
-    "3": "hex maniac (pokemon),official art",
+    "3": "@ @",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ポケモン",
     "2": "カスミ",
-    "3": "misty (pokemon)",
+    "3": "misty",
     "4": ""
   },
   {
@@ -6984,35 +7019,35 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ポケモン",
     "2": "シロナ",
-    "3": "cynthia (pokemon)",
+    "3": "cynthia",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ポケモン",
     "2": "ソニア",
-    "3": "sonia (pokemon)",
+    "3": "sonia",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ポケモン",
     "2": "トウコ",
-    "3": "hilda (pokemon)",
+    "3": "hilda",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ポケモン",
     "2": "ヒカリ",
-    "3": "hikari (pokemon)",
+    "3": "dawn",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ポケモン",
     "2": "マオ",
-    "3": "mallow (pokemon)",
+    "3": "{mallow (pokemon)}",
     "4": ""
   },
   {
@@ -7025,15 +7060,22 @@ let defaultMaster = {
   {
     "0": "キャラクター",
     "1": "ポケモン",
+    "2": "マリィ",
+    "3": "Marnie_(pokemon)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "ポケモン",
     "2": "メイ",
-    "3": "rosa (pokemon)",
+    "3": "rosa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ポケモン",
     "2": "ユウリ",
-    "3": "gloria (pokemon)",
+    "3": "{gloria (pokemon)}",
     "4": ""
   },
   {
@@ -7047,7 +7089,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ポケモン",
     "2": "ルザミーネ",
-    "3": "lusamine_(pokemon)",
+    "3": "{lusamine_(pokemon)}",
     "4": ""
   },
   {
@@ -7061,7 +7103,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ぼっち・ざ・ろっく！",
     "2": "伊地知星夏",
-    "3": "ijichi_seika (bocchi the rock!)",
+    "3": "ijichi_seika",
     "4": ""
   },
   {
@@ -7096,7 +7138,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ぼっち・ざ・ろっく！",
     "2": "廣井きくり",
-    "3": "hiroi_kikuri (bocchi the rock!)",
+    "3": "hiroi_kikuri",
     "4": ""
   },
   {
@@ -7138,7 +7180,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "まちカドまぞく",
     "2": "シャミ子",
-    "3": "yoshida yuuko (machikado mazoku)",
+    "3": "yoshida yuuko",
     "4": ""
   },
   {
@@ -7173,14 +7215,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "マリオブラザーズ",
     "2": "ルイージ",
-    "3": "luigi",
+    "3": "male",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "メイドインアビス",
     "2": "オーゼン",
-    "3": "ozen (made_in_abyss)",
+    "3": "ozen",
     "4": ""
   },
   {
@@ -7194,14 +7236,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "メイドインアビス",
     "2": "ファプタ",
-    "3": "faputa (made_in_abyss)",
+    "3": "faputa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "メイドインアビス",
     "2": "プルシュカ",
-    "3": "prushka (made_in_abyss)",
+    "3": "prushka",
     "4": ""
   },
   {
@@ -7215,28 +7257,28 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "メイドインアビス",
     "2": "マルルク",
-    "3": "maruruk (made_in_abyss)",
+    "3": "maruruk",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "メイドインアビス",
     "2": "ミーティ(ナナチと混ざりがち)",
-    "3": "mitty_(made_in_abyss)",
+    "3": "mitty_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "メイドインアビス",
     "2": "リコ",
-    "3": "riko (made in abyss)",
+    "3": "rico",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "メイドインアビス",
     "2": "レグ",
-    "3": "reg (made in abyss)",
+    "3": "regu",
     "4": ""
   },
   {
@@ -7264,7 +7306,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ゆるゆり",
     "2": "歳納京子",
-    "3": "toshinou kyouko",
+    "3": "toshinou_kyouko",
     "4": ""
   },
   {
@@ -7278,7 +7320,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ゆるゆり",
     "2": "赤座あかり",
-    "3": "akaza akari",
+    "3": "yuru yuri",
     "4": ""
   },
   {
@@ -7292,21 +7334,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ゆるゆり",
     "2": "大室櫻子",
-    "3": "omuro sakurako",
+    "3": "yuru yuri",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "よつばと！",
     "2": "綾瀬風香",
-    "3": "ayase_fuuka (yotsubato!)",
+    "3": "ayase_fuuka",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "よつばと！",
     "2": "小岩井よつば",
-    "3": "koiwai_yotsuba (yotsubato!)",
+    "3": "koiwai_yotsuba",
     "4": ""
   },
   {
@@ -7320,7 +7362,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "らき☆すた",
     "2": "泉こなた",
-    "3": "izumi konata",
+    "3": "red skirt",
     "4": ""
   },
   {
@@ -7341,42 +7383,49 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "絢瀬絵里",
-    "3": "ayase eli",
+    "3": "love live! school idol project",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "園田海未",
-    "3": "sonoda umi",
+    "3": "love live! school idol project",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "高坂雪穂",
-    "3": "kousaka yukiho",
+    "3": "short hair",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "高坂穂乃果",
-    "3": "kousaka honoka",
+    "3": "love live! school idol project",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "小泉花陽",
-    "3": "koizumi hanayo",
+    "3": "love live! school idol project",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "星空凛",
-    "3": "hoshizora rin",
+    "3": "love live! school idol project",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "ラブライブ！",
+    "2": "西木野真姫",
+    "3": "love live! school idol project",
     "4": ""
   },
   {
@@ -7390,154 +7439,154 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "東條希",
-    "3": "toujou nozomi",
+    "3": "love live! school idol project",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "南ことり",
-    "3": "minami kotori",
+    "3": "love live! school idol project",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "矢澤にこ",
-    "3": "yazawa nico",
+    "3": "love live! school idol project",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "浦女夏服",
-    "3": "uranohoshi school uniform",
+    "3": "love live! sunshine!!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "浦女夏服ノースリーブ",
-    "3": "uranohoshi school uniform",
+    "3": "love live! sunshine!!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "浦女冬服",
-    "3": "uranohoshi school uniform",
+    "3": "Lovelive",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "高海千歌",
-    "3": "takami chika",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "国木田花丸",
-    "3": "kunikida hanamaru",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "黒澤ダイヤ",
-    "3": "kurosawa dia",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "黒澤ルビィ",
-    "3": "kurosawa ruby",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "桜内梨子",
-    "3": "sakurauchi riko",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "鹿角聖良",
-    "3": "kazuno sarah",
+    "3": "dark purple",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "鹿角理亞",
-    "3": "kazuno ria",
+    "3": "dark purple",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "小原鞠莉",
-    "3": "ohara mari",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "松浦果南",
-    "3": "matsuura kanan",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "津島善子",
-    "3": "tsushima yoshiko",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "渡辺曜",
-    "3": "watanabe you",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "ウィーン・マルガレーテ",
-    "3": "wien margarete",
+    "3": "takami chika",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "鬼塚 夏美",
-    "3": "onitsuka natsumi",
+    "3": "forehead",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "桜小路 きな子",
-    "3": "sakurakoji kinako",
+    "3": "kurosawar ruby",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "若菜 四季",
-    "3": "wakana shiki",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "平安名 すみれ",
-    "3": "heanna sumire",
+    "3": "masterpiece",
     "4": ""
   },
   {
@@ -7551,28 +7600,28 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "嵐 千砂都",
-    "3": "arashi chisato",
+    "3": "blunt bangs",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "澁谷かのん",
-    "3": "shibuya_kanon (love live! superstar!!)",
+    "3": "shibuya_kanon",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "エマ・ヴェルデ",
-    "3": "emma verde",
+    "3": "love live! nijigasaki high school idol club",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "ショウ・ランジュ",
-    "3": "zhong lanzhu",
+    "3": "tsurime",
     "4": ""
   },
   {
@@ -7586,21 +7635,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "近江 遥",
-    "3": "oomi haruka",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "近江彼方",
-    "3": "oomi kanata",
+    "3": "love live! school idol project",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "高咲侑",
-    "3": "takasaki yuu",
+    "3": "black hair",
     "4": ""
   },
   {
@@ -7614,42 +7663,42 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "三船 栞子",
-    "3": "mifune shioriko",
+    "3": "black hair",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "上原歩夢",
-    "3": "uehara ayumu",
+    "3": "lovelive",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "中須かすみ",
-    "3": "nakasu kasumi",
+    "3": "grey hair",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "朝香果林",
-    "3": "asaka karin",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "天王寺璃奈",
-    "3": "tennoji rina",
+    "3": "love live!",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "優木せつ菜",
-    "3": "yuuki setsuna",
+    "3": "love live! nijigasaki high school idol club",
     "4": ""
   },
   {
@@ -7663,7 +7712,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "リコリスリコイル",
     "2": "井ノ上 たきな",
-    "3": "inoue_takina (lycoris_recoil)",
+    "3": "inoue_takina",
     "4": ""
   },
   {
@@ -7677,7 +7726,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "リトルバスターズ!",
     "2": "能美クドリャフカ",
-    "3": "noumi kudryavka",
+    "3": "{noumi kudryavka}",
     "4": ""
   },
   {
@@ -7733,7 +7782,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "犬飼こむぎ（犬）",
-    "3": "inukai komugi",
+    "3": "1dog",
     "4": ""
   },
   {
@@ -7768,42 +7817,42 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "猫屋敷ユキ（猫）",
-    "3": "nekoyashiki yuki",
+    "3": "1cat",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ワンピース",
     "2": "ウタ",
-    "3": "uta (one piece)",
+    "3": "uta",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ワンピース",
     "2": "ナミ",
-    "3": "nami (one piece)",
+    "3": "nami",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ワンピース",
     "2": "ニコ・ロビン",
-    "3": "nico robin (one piece)",
+    "3": "nico robin",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ワンピース",
     "2": "ボア・ハンコック",
-    "3": "boa hancock (one piece)",
+    "3": "boa hancock",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ワンピース",
     "2": "ヤマト",
-    "3": "yamato (one piece)",
+    "3": "yamato",
     "4": ""
   },
   {
@@ -7824,7 +7873,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "俺の妹がこんなに可愛いわけがない",
     "2": "高坂桐乃",
-    "3": "kousaka kirino",
+    "3": "masterpiece",
     "4": ""
   },
   {
@@ -7838,14 +7887,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "怪談",
     "2": "八尺様風",
-    "3": "hachishaku-sama",
+    "3": "girl",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "z1 レーベレヒト・マース",
-    "3": "z1 leberecht maass (kancolle)",
+    "3": "masterpiece",
     "4": ""
   },
   {
@@ -7859,21 +7908,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "ガングート",
-    "3": "gangut (kancolle)",
+    "3": "gangut",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "コンテ・ディ・カブール",
-    "3": "conte di cavour (kancolle)",
+    "3": "solo",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "ヘレナ",
-    "3": "a girl_have_(helena (kancolle)",
+    "3": "helena",
     "4": ""
   },
   {
@@ -7901,14 +7950,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "霞",
-    "3": "kasumi (kancolle)",
+    "3": "nsfw",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "響",
-    "3": "hibiki (kancolle)",
+    "3": "hibiki",
     "4": ""
   },
   {
@@ -7922,7 +7971,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "荒潮",
-    "3": "arashio (kancolle)",
+    "3": "masterpiece",
     "4": ""
   },
   {
@@ -7943,28 +7992,28 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "鹿島",
-    "3": "kashima_(kancolle)",
+    "3": "{kashima_(kancolle)}",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "初春",
-    "3": "hatsuharu (kancolle)",
+    "3": "masterpiece",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "吹雪",
-    "3": "fubuki (kancolle)",
+    "3": "fubuki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "雪風",
-    "3": "yukikaze (kancolle)",
+    "3": "nsfw",
     "4": ""
   },
   {
@@ -8006,21 +8055,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "潮",
-    "3": "ushio_(kancolle)",
+    "3": "{ushio_(kancolle)}",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "鳥海",
-    "3": "choukai (kancolle)",
+    "3": "choukai",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "天津風",
-    "3": "amatsukaze (kancolle)",
+    "3": "{amatsukaze (kancolle)}",
     "4": ""
   },
   {
@@ -8041,28 +8090,28 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "敷波",
-    "3": "arashio (kancolle)",
+    "3": "arashio",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "武蔵",
-    "3": "musashi (kancolle)",
+    "3": "dark-skinned_female",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "鳳翔",
-    "3": "houshou_(kancolle)",
+    "3": "{houshou_(kancolle)}_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "望月",
-    "3": "mochizuki (kancolle)",
+    "3": "mochizuki, kancolle",
     "4": ""
   },
   {
@@ -8076,14 +8125,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "摩耶",
-    "3": "maya_(kancolle)",
+    "3": "maya_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "霧島",
-    "3": "kirishima (kancolle)",
+    "3": "kirishima",
     "4": ""
   },
   {
@@ -8104,14 +8153,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "陽炎",
-    "3": "kagerou (kancolle)",
+    "3": "nsfw",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "雷",
-    "3": "ikazuchi (kancolle)",
+    "3": "masterpiece",
     "4": ""
   },
   {
@@ -8125,14 +8174,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "龍驤",
-    "3": "ryuujou_(kancolle)",
+    "3": "{ryuujou_(kancolle)}",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "呂500",
-    "3": "ro-500 (kancolle)",
+    "3": "ro-500",
     "4": ""
   },
   {
@@ -8181,7 +8230,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "原神",
     "2": "クレー",
-    "3": "klee (genshin impact)",
+    "3": "klee",
     "4": ""
   },
   {
@@ -8209,14 +8258,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "原神",
     "2": "バーバラ",
-    "3": "barbara (genshin impact)",
+    "3": "frills",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "原神",
     "2": "モナ",
-    "3": "mona (genshin impact)",
+    "3": "genshin",
     "4": ""
   },
   {
@@ -8251,14 +8300,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "原神",
     "2": "胡桃",
-    "3": "hu tao",
+    "3": "hu tao genshin impact",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "原神",
     "2": "刻晴",
-    "3": "keqing (genshin impact)",
+    "3": "light purple hair",
     "4": ""
   },
   {
@@ -8272,7 +8321,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "原神",
     "2": "神里綾華",
-    "3": "kamisato ayaka",
+    "3": "{kamisato ayaka}}",
     "4": ""
   },
   {
@@ -8307,21 +8356,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "私に天使が舞い降りた！",
     "2": "星野ひなた",
-    "3": "hoshino hinata (watashi ni tenshi ga maiorita!)",
+    "3": "hoshino hinata",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "私に天使が舞い降りた！",
     "2": "白咲花",
-    "3": "shirosaki hana (watashi ni tenshi ga maiorita!)",
+    "3": "shirosaki hana",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "私に天使が舞い降りた！",
     "2": "姫坂乃愛",
-    "3": "himesaka noa (watashi ni tenshi ga maiorita!)",
+    "3": "himesaka noa",
     "4": ""
   },
   {
@@ -8377,7 +8426,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "新世紀エヴァンゲリオン",
     "2": "赤城リツコ",
-    "3": "akagi_ritsuko (neon_genesis_evangelion)",
+    "3": "akagi_ritsuko",
     "4": ""
   },
   {
@@ -8398,28 +8447,28 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "推しの子",
     "2": "黒川あかね",
-    "3": "kurokawa_akane (oshi no ko)",
+    "3": "kurokawa_akane",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "推しの子",
     "2": "星野アイ",
-    "3": "hoshino_ai (oshi no ko)",
+    "3": "hoshino_ai",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "推しの子",
     "2": "星野ルビー",
-    "3": "hoshino_ruby (oshi no ko)",
+    "3": "hoshino_ruby",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "推しの子",
     "2": "有馬かな",
-    "3": "arima_kana (oshi_no_ko)",
+    "3": "arima_kana",
     "4": ""
   },
   {
@@ -8440,21 +8489,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "青の祓魔師",
     "2": "杜山しえみ",
-    "3": "moriyama shiemi (ao no exorcist)",
+    "3": "moriyama shiemi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "蒼の彼方のフォーリズム",
     "2": "鳶沢みさき",
-    "3": "tobisawa misaki (ao no kanata no four rhythm)",
+    "3": "tobisawa misaki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "中二病でも恋がしたい！",
     "2": "五月七日くみん",
-    "3": "tsuyuri_kumin (chuunibyou_demo_koi_ga_shitai!)",
+    "3": "tsuyuri_kumin",
     "4": ""
   },
   {
@@ -8475,14 +8524,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "中二病でも恋がしたい！",
     "2": "凸守早苗",
-    "3": "dekomori_sanae (chuunibyou_demo_koi_ga_shitai!)",
+    "3": "dekomori_sanae",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "電波女と青春男",
     "2": "三船流子 (NAI v3 不安定)",
-    "3": "mifune_ryuuko (denpa_onna_to_seishun_otoko )",
+    "3": "mifune_ryuuko",
     "4": ""
   },
   {
@@ -8566,7 +8615,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "東方",
     "2": "メディスン・メランコリー",
-    "3": "Medicine_Melancholy_(touhou)",
+    "3": "Medicine_Melancholy_",
     "4": ""
   },
   {
@@ -8580,7 +8629,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "東方",
     "2": "ルーミア",
-    "3": "rumia (touhou)",
+    "3": "{loli}",
     "4": ""
   },
   {
@@ -8629,7 +8678,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "東方",
     "2": "犬走椛",
-    "3": "inubashiri momiji",
+    "3": "black skirt",
     "4": ""
   },
   {
@@ -8860,42 +8909,42 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "東方",
     "2": "橙（チェン）",
-    "3": "chen (touhou)",
+    "3": "chen",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "同級生シリーズ",
     "2": "桜木舞",
-    "3": "sakuragi_mai (doukyuusei)",
+    "3": "sakuragi_mai",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "同級生シリーズ",
     "2": "鳴沢唯",
-    "3": "narusawa_yui (doukyuusei_2)",
+    "3": "narusawa_yui",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "謎の彼女X",
     "2": "卜部 美琴",
-    "3": "urabe_mikoto (nazo_no_kanojo_x)",
+    "3": "urabe_mikoto",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "日常",
     "2": "はかせ",
-    "3": "hakase (nichijou)",
+    "3": "nichijou",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "日常",
     "2": "東雲なの",
-    "3": "shinonome nano (nichijou)",
+    "3": "shinonome nano",
     "4": ""
   },
   {
@@ -8909,7 +8958,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "物語シリーズ",
     "2": "阿良々木 火憐",
-    "3": "araragi_karen (monogatari_(series))",
+    "3": "araragi_karen)",
     "4": ""
   },
   {
@@ -8923,7 +8972,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "物語シリーズ",
     "2": "神原 駿河",
-    "3": "kanbaru_suruga (monogatari_(series))",
+    "3": "kanbaru_suruga)",
     "4": ""
   },
   {
@@ -8944,7 +8993,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "物語シリーズ",
     "2": "忍野 扇",
-    "3": "oshino_ougi (monogatari_(series))",
+    "3": "oshino_ougi)",
     "4": ""
   },
   {
@@ -9021,28 +9070,28 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "シャルロッテ",
-    "3": "charlotte_(madoka_magica)",
+    "3": "charlotte_",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "環いろは",
-    "3": "tamaki iroha",
+    "3": "masterpiece animated painting",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "暁美ほむら",
-    "3": "akemi homura",
+    "3": "mahou shoujo madoka magica",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "佐倉杏子",
-    "3": "sakura kyouko",
+    "3": "mahou shoujo madoka magica",
     "4": ""
   },
   {
@@ -9056,21 +9105,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "巴マミ",
-    "3": "tomoe mami",
+    "3": "mahou shoujo madoka magica",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "美樹さやか",
-    "3": "miki sayaka",
+    "3": "mahou shoujo madoka magica",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "百江なぎさ",
-    "3": "momoe_nagisa (madoka_magica)",
+    "3": "momoe_nagisa",
     "4": ""
   },
   {
@@ -9091,7 +9140,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "藍より青し",
     "2": "桜庭葵",
-    "3": "sakuraba aoi (ai yori aoshi)",
+    "3": "sakuraba aoi",
     "4": ""
   },
   {
@@ -9126,7 +9175,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "狼と香辛料",
     "2": "ホロ",
-    "3": "holo (spice and wolf)",
+    "3": "holo",
     "4": ""
   },
   {
@@ -27039,7 +27088,7 @@ let defaultMaster = {
     "0": "成人向け",
     "1": "体位",
     "2": "シックスナイン1",
-    "3": "69",
+    "3": 69,
     "4": ""
   },
   {
@@ -37031,10 +37080,5 @@ let defaultMaster = {
     "3": "fishnets",
     "4": ""
   }
-  ]
+]
 };
-
-// 互換性のためのエクスポート
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = defaultMaster;
-}
