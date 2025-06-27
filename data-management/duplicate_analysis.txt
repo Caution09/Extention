@@ -1,0 +1,207 @@
+=== Analysis of Duplicate Prompts in マスターデータ.tsv ===
+
+Top 20 Most Duplicated Prompts:
+
+=== Prompt: 'dim lighting' (appears 5 times) ===
+  場所 > ハッカーの部屋 > ダークな照明
+  場所 > 不気味な研究所 > 薄暗い照明
+  場所 > 商店街 > 薄暗い灯り
+  場所 > 工場 > 薄暗い照明
+  場所 > 貧民エリア > 薄暗い照明
+
+=== Prompt: 'stone walls' (appears 4 times) ===
+  場所 > お城（室内） > 石の壁
+  場所 > お城（室外） > 石垣
+  場所 > ダンジョン > 石造りの壁
+  場所 > 田舎 > 石垣
+
+=== Prompt: 'stone bridges' (appears 4 times) ===
+  場所 > お城（室外） > 石造りの橋
+  場所 > 中国 > 石造りの橋
+  場所 > 洞窟 > 石の橋
+  場所 > 田舎 > 石橋
+
+=== Prompt: 'bus stop' (appears 4 times) ===
+  場所 > 学校（室外） > バス停
+  場所 > 歩道 > バス停
+  場所 > 町 > バス停
+  場所 > 駅 > バス停
+
+=== Prompt: 'bench' (appears 4 times) ===
+  動作 > 動作 > ベンチ座り
+  場所 > 不気味な研究所 > ほこりっぽい実験台
+  場所 > 体育館の倉庫 > トレーニングベンチ
+  場所 > 公園 > ベンチ
+  場所 > 学校（室外） > ベンチ
+  場所 > 工場 > エンジンテストベンチ
+  場所 > 歩道 > ベンチ
+  場所 > 街中 > ベンチ
+  場所 > 車道 > ベンチ
+  場所 > 駅 > ベンチ
+
+=== Prompt: 'ventilation fan' (appears 3 times) ===
+  場所 > シャワールーム > 換気扇
+  場所 > 体育館 > 換気扇
+  場所 > 更衣室 > 換気扇
+
+=== Prompt: 'uranohoshi school uniform' (appears 3 times) ===
+  キャラクター > ラブライブ！サンシャイン！！ > 浦女冬服
+  キャラクター > ラブライブ！サンシャイン！！ > 浦女夏服
+  キャラクター > ラブライブ！サンシャイン！！ > 浦女夏服ノースリーブ
+
+=== Prompt: 'two-tone' (appears 3 times) ===
+  キャラクター再現 > ラブライブ！虹ヶ咲学園スクールアイドル同好会 > 高咲侑
+  コスチューム（一式） > その他 > サイバースーツ
+  位置・数量 > 種類 > ツートーン
+  色 > 混色（混ざり方の表現） > ツートンカラー
+  色 > 混色（混ざり方の表現） > ツートンカラー: 2色がはっきり分かれて並んでいる
+  髪 > 髪色 > 2色髪
+
+=== Prompt: 'trees' (appears 3 times) ===
+  オブジェクト > 自然物 > 木々
+  オブジェクト > 自然物 > 桜の木
+  場所 > お城（室外） > 紅葉する木
+  場所 > 公園 > 木
+  場所 > 天国 > 悟りの木
+  場所 > 学校（室外） > 木々
+  場所 > 屋外 > 木々のある雪の森
+  場所 > 街中 > 植栽された木
+
+=== Prompt: 'stairs' (appears 3 times) ===
+  動作 > 脚の動作 > 階段に座る
+  場所 > 商店街 > 裏口の階段
+  場所 > 学校（室内） > 階段
+  場所 > 学校（室外） > 階段
+  場所 > 駅 > 階段
+
+=== Prompt: 'sidewalk' (appears 3 times) ===
+  場所 > 学校（室外） > 歩道
+  場所 > 家（室外） > 歩道
+  場所 > 西部時代の村 > 木製の歩道
+  場所 > 車道 > 歩道
+
+=== Prompt: 'security guards' (appears 3 times) ===
+  場所 > カジノ > セキュリティガード
+  場所 > バスターミナル > 警備員
+  場所 > 刑務所 > 警備員
+
+=== Prompt: 'security cameras' (appears 3 times) ===
+  場所 > 会社 > セキュリティカメラ
+  場所 > 団地 > セキュリティカメラ
+  場所 > 工場 > セキュリティカメラ
+
+=== Prompt: 'scoreboard' (appears 3 times) ===
+  場所 > スタジアム > スコアボード
+  場所 > 体育館 > スコアボード
+  場所 > 学校（グラウンド） > スコアボード
+
+=== Prompt: 'rest area' (appears 3 times) ===
+  場所 > 商店街 > 休憩スペース
+  場所 > 水族館 > レストエリア
+  場所 > 遊園地 > 休憩所
+
+=== Prompt: 'protective net' (appears 3 times) ===
+  場所 > スタジアム > 防球ネット
+  場所 > 体育館 > 防球ネット
+  場所 > 学校（グラウンド） > 防球ネット
+
+=== Prompt: 'playground' (appears 3 times) ===
+  場所 > 公園 > 遊具
+  場所 > 団地 > プレイグラウンド
+  場所 > 学校（室外） > 遊具
+  場所 > 幼稚園/保育園 > 園庭
+  場所 > 町 > 遊び場/遊園地
+  場所 > 貧民エリア > 一時的に組み立てられた遊び場
+  連想セット（人） > 学生 > 学校の運動場
+
+=== Prompt: 'jahy-sama_wa_kujikenai!' (appears 3 times) ===
+  キャラクター > ジャヒー様はくじけない！ > ジャヒー（ロリ）
+  キャラクター > ジャヒー様はくじけない！ > ジャヒー（大人）（Tシャツ）
+  キャラクター > ジャヒー様はくじけない！ > ジャヒー（大人）（変身後の服）
+  キャラクター再現 > ジャヒー様はくじけない！ > ジャヒー（ロリ）
+  キャラクター再現 > ジャヒー様はくじけない！ > ジャヒー（大人）（Tシャツ）
+  キャラクター再現 > ジャヒー様はくじけない！ > ジャヒー（大人）（変身後の服）
+
+=== Prompt: 'iridescent' (appears 3 times) ===
+  色 > 混色（混ざり方の表現） > 虜色に輝く: 光の加減で色が変化する
+  色 > 混色（混ざり方の表現） > 虹色に輝く
+  詳細 > 色 > 虹色
+
+=== Prompt: 'hurdle' (appears 3 times) ===
+  場所 > 体育館 > ハードル
+  場所 > 体育館の倉庫 > ハードル
+  場所 > 学校（グラウンド） > ハードル
+=== Pattern Analysis ===
+
+Summary of duplicate patterns:
+1. Location-based duplicates (場所):
+   - dim lighting: Same lighting concept across different location types
+   - stone walls/bridges: Stone structures in castles, dungeons, countryside
+   - bus stop: Common urban furniture in multiple location types
+   - bench: Appears in many locations as seating
+   - ventilation fan: HVAC equipment in various indoor spaces
+   - security cameras/guards: Security elements in commercial/institutional spaces
+   - scoreboard: Sports equipment in stadiums and schools
+   - protective net: Sports safety equipment
+   - playground/hurdle: Sports/recreation equipment
+
+2. Character duplicates:
+   - uranohoshi school uniform: Same uniform in different seasonal variants
+   - jahy-sama_wa_kujikenai!: Character appears in both キャラクター and キャラクター再現
+
+3. Cross-category duplicates:
+   - two-tone: Appears in character reproduction, costume, position, color, hair categories
+   - trees: Natural objects appearing in various locations
+   - iridescent: Color effect appearing in different color subcategories
+
+4. Total analysis:
+   - Total entries: 7819
+   - Unique prompts: 7311
+   - Prompts with duplicates: 474
+   - Duplicate ratio: 6.00%
+=== RECOMMENDATIONS ===
+
+CONSOLIDATION RECOMMENDATIONS:
+
+1. SHOULD CONSOLIDATE (Redundant duplicates):
+   a) Character System Duplicates:
+      - jahy-sama_wa_kujikenai\!: キャラクター and キャラクター再現 have identical entries
+        → Keep only in キャラクター, remove from キャラクター再現
+
+   b) Location Equipment Duplicates:
+      - scoreboard: Same sports equipment across スタジアム/体育館/学校
+        → Create single 'scoreboard' entry in オブジェクト>スポーツ equipment
+      - protective net: Same safety equipment across sports venues
+        → Consolidate into オブジェクト>スポーツ>安全設備
+      - hurdle: Same training equipment across facilities
+        → Move to オブジェクト>スポーツ>器具
+
+   c) Generic Facility Duplicates:
+      - ventilation fan: HVAC equipment appearing in 3 locations
+        → Keep one generic entry in オブジェクト>設備
+      - security cameras: Same equipment across venues
+        → Consolidate to オブジェクト>セキュリティ
+
+2. SHOULD KEEP SEPARATE (Contextually different):
+
+   a) Location-Specific Elements:
+      - dim lighting: Different moods/contexts per location
+        → ハッカーの部屋 (tech), 不気味な研究所 (horror), 商店街 (urban)
+      - stone walls/bridges: Different architectural contexts
+        → お城 (medieval), ダンジョン (fantasy), 田舎 (rural), 中国 (cultural)
+      - bus stop: Different urban contexts matter for prompt generation
+        → Keep separate for location-specific atmosphere
+      - bench: Different types serve different narrative contexts
+        → 公園 (leisure), 駅 (transit), 体育館 (sports), etc.
+
+   b) Cross-Category Valid Uses:
+      - two-tone: Legitimately different uses across categories
+        → Color (two-tone color), Hair (two-tone hair), Costume (two-tone design)
+      - trees: Different species/contexts across locations
+        → 桜の木 (cherry), 悟りの木 (mystical), 紅葉する木 (autumn)
+      - iridescent: Valid color effect in multiple color contexts
+
+3. ESTIMATED IMPACT:
+   - Safe to consolidate: ~50 entries (sports equipment, character system duplicates)
+   - Reduction in master data: ~0.6% (minimal impact)
+   - Benefit: Cleaner categorization, reduced maintenance
