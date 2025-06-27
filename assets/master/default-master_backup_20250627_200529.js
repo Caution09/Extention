@@ -2,6 +2,13 @@ let defaultMaster = {
   version: 2,
   data: [
   {
+    "0": "大項目",
+    "1": "中項目",
+    "2": "小項目",
+    "3": "Prompt",
+    "4": ""
+  },
+  {
     "0": "エフェクト",
     "1": "エフェクト",
     "2": "エフェクト",
@@ -23,16 +30,16 @@ let defaultMaster = {
     "4": ""
   },
   {
-    "0": "オブジェクト",
+    "0": "エフェクト",
     "1": "オブジェクト",
-    "2": "吊り下げられたクリスタル",
+    "2": "吊り下げられた",
     "3": "suspended crystal",
     "4": ""
   },
   {
-    "0": "オブジェクト",
+    "0": "エフェクト",
     "1": "オブジェクト",
-    "2": "吊り下げられた無色のクリスタル",
+    "2": "吊り下げられた無色の",
     "3": "suspended colorless crystal",
     "4": ""
   },
@@ -96,7 +103,7 @@ let defaultMaster = {
     "0": "エフェクト",
     "1": "シンボル",
     "2": "バラ",
-    "3": "rose",
+    "3": "bara",
     "4": ""
   },
   {
@@ -123,7 +130,7 @@ let defaultMaster = {
   {
     "0": "エフェクト",
     "1": "シンボル",
-    "2": "五芳星",
+    "2": "五gram星",
     "3": "pentagram",
     "4": ""
   },
@@ -263,8 +270,8 @@ let defaultMaster = {
   {
     "0": "エフェクト",
     "1": "炎",
-    "2": "花火",
-    "3": "fireworks",
+    "2": "ハナビ",
+    "3": "hanabi",
     "4": ""
   },
   {
@@ -1843,8 +1850,8 @@ let defaultMaster = {
     "4": ""
   },
   {
-    "0": "服装",
-    "1": "トップス",
+    "0": "お気に",
+    "1": "お気に",
     "2": "むき出しの白シャツ",
     "3": "bare white shirt",
     "4": ""
@@ -19889,8 +19896,8 @@ let defaultMaster = {
     "4": ""
   },
   {
-    "0": "照明",
-    "1": "光",
+    "0": "ライティング",
+    "1": "ライティング",
     "2": "日の目",
     "3": "light of day",
     "4": ""
@@ -25034,15 +25041,15 @@ let defaultMaster = {
     "4": ""
   },
   {
-    "0": "身体",
-    "1": "特徴",
+    "0": "身体/顔",
+    "1": "身体特徴",
     "2": "周囲",
     "3": "circumference",
     "4": ""
   },
   {
-    "0": "身体",
-    "1": "部位",
+    "0": "身体/顔",
+    "1": "身体部位",
     "2": "太もも",
     "3": "thigh",
     "4": ""
@@ -33164,28 +33171,28 @@ let defaultMaster = {
     "0": "品質",
     "1": "テキスト系",
     "2": "悪い指",
-    "3": "bad finger",
+    "3": "bad digit",
     "4": ""
   },
   {
     "0": "品質",
     "1": "テキスト系",
     "2": "液体指",
-    "3": "liquid finger",
+    "3": "liquid digit",
     "4": ""
   },
   {
     "0": "品質",
     "1": "テキスト系",
     "2": "指がありません",
-    "3": "missing finger",
+    "3": "missing digit",
     "4": ""
   },
   {
     "0": "品質",
     "1": "テキスト系",
     "2": "複数指",
-    "3": "multiple fingers",
+    "3": "multiple digit",
     "4": ""
   },
   {
@@ -33199,14 +33206,14 @@ let defaultMaster = {
     "0": "品質",
     "1": "テキスト系",
     "2": "融合指",
-    "3": "fused fingers",
+    "3": "fused digit",
     "4": ""
   },
   {
     "0": "品質",
     "1": "テキスト系",
-    "2": "余分な指",
-    "3": "extra fingers",
+    "2": "余分なdigt",
+    "3": "extra digt",
     "4": ""
   },
   {
@@ -33381,14 +33388,14 @@ let defaultMaster = {
     "0": "品質",
     "1": "低品質テンプレ",
     "2": "!低品質テンプレ(低品質&指&テキスト系,余分なパーツ)",
-    "3": "qr code,ui,artist name,text error,text font ui,bar code,bad finger,liquid digit,missing digit,multiple digit,fused digit,extra fingers,extra digits,extra digit,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,poorly drawn,anatomical nonsense,five fingers,ugly,simple background,lowers,polar lowres,standard quality,bad feet hand finger leg eye,five fingers,one hand with more than 5 fingers,abnormal fingers,too many fingers,lose finger,multiple finger,mutated hands and fingers,fused fingers,fusion finger,incorrect limb,arthropod limbs,malformed limbs,boken limb,missing limbs,multiple limbs,missing limb,extra limbs,extra penises,extra calf,extra shoes,extra feet,extra thighs,extra knee,extra mouth,extra ears,extra animal ears,extra eyes,extra breasts,extra digit,extra fingers,extra hands,extra limbs,extra legs,extra arms",
+    "3": "qr code,ui,artist name,text error,text font ui,bar code,bad digit,liquid digit,missing digit,multiple digit,fused digit,extra digt,extra digits,extra digit,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,poorly drawn,anatomical nonsense,five fingers,ugly,simple background,lowers,polar lowres,standard quality,bad feet hand finger leg eye,five fingers,one hand with more than 5 fingers,abnormal fingers,too many fingers,lose finger,multiple finger,mutated hands and fingers,fused fingers,fusion finger,incorrect limb,arthropod limbs,malformed limbs,boken limb,missing limbs,multiple limbs,missing limb,extra limbs,extra penises,extra calf,extra shoes,extra feet,extra thighs,extra knee,extra mouth,extra ears,extra animal ears,extra eyes,extra breasts,extra digit,extra fingers,extra hands,extra limbs,extra legs,extra arms",
     "4": ""
   },
   {
     "0": "品質",
     "1": "低品質テンプレ",
     "2": "!低品質テンプレ(低品質回避&指&テキスト系)",
-    "3": "disfigured.bad anatomy disfigured,jpeg artifacts,error,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,anatomical nonsense,watermark,five fingers,worst quality,bad anatomy,ugly,cropped,simple background,normal quality,lowers,lowres,low quality,polar lowres,standard quality,poorly drawn hands,boken limb,missing limbs,malformed limbs,incorrect limb,fusion hand,bad finglegs,abnormal fingers,missing fingers,fewer digits,too many fingers,extra digit,lose finger,extra fingers,one hand with more than 5 digit,one hand with less than 5 digit,one hand with more than 5 fingers,one hand with less than 5 fingers,3d character,qr code,ui,artist name,signature,text error,text font ui,bar code,username,bad finger,liquid digit,missing digit,fewer digits,multiple digit,text,fused digit,extra fingers,extra digits,extra digit",
+    "3": "disfigured.bad anatomy disfigured,jpeg artifacts,error,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,anatomical nonsense,watermark,five fingers,worst quality,bad anatomy,ugly,cropped,simple background,normal quality,lowers,lowres,low quality,polar lowres,standard quality,poorly drawn hands,boken limb,missing limbs,malformed limbs,incorrect limb,fusion hand,bad finglegs,abnormal fingers,missing fingers,fewer digits,too many fingers,extra digit,lose finger,extra fingers,one hand with more than 5 digit,one hand with less than 5 digit,one hand with more than 5 fingers,one hand with less than 5 fingers,3d character,qr code,ui,artist name,signature,text error,text font ui,bar code,username,bad digit,liquid digit,missing digit,fewer digits,multiple digit,text,fused digit,extra digt,extra digits,extra digit",
     "4": ""
   },
   {
