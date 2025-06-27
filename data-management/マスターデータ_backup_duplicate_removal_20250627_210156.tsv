@@ -17,6 +17,7 @@
 エフェクト	シンボル	空中に浮かぶ羽	feathers floating in the air
 エフェクト	シンボル	五芳星	pentagram
 エフェクト	シンボル	紙吹雪	confetti
+エフェクト	シンボル	宙に舞う羽	feathers
 エフェクト	シンボル	宙に舞う羽	floating feathers
 エフェクト	シンボル	錨マーク	anchor symbol
 エフェクト	シンボル	薔薇,バラ,薔薇色	rose
@@ -34,6 +35,7 @@
 エフェクト	液体	飛沫2	splashing
 エフェクト	液体	油	oil
 エフェクト	炎	いい感じの炎	flame painter
+エフェクト	炎	花火	fireworks
 エフェクト	炎	ファイアバタフライ	fire butterflys
 エフェクト	炎	渦巻く炎	flame whirlpool
 エフェクト	炎	炎	flames
@@ -73,6 +75,7 @@
 エフェクト	光	波の輝く光	glistening light of waves
 エフェクト	光	発光	luminescence
 エフェクト	光	反射的	reflective
+エフェクト	光	粒子	particle
 エフェクト	光	粒子	particles
 エフェクト	光	輪郭の深化	contour deepening
 エフェクト	自然	花が疲れます	flowers tire
@@ -1414,6 +1417,7 @@
 キャラクター再現	アイカツ！	神崎美月	{{{{kanzaki mizuki (aikatsu!)}}}}
 キャラクター再現	アイカツ！	星宮いちご	{{{{hoshimiya ichigo (aikatsu!)}}}}
 キャラクター再現	アイカツ！	藤堂ユリカ	{{{{todo yurika (aikatsu!)}}}}
+キャラクター再現	アイカツ！	藤堂ユリカ	{{{{todo yurika (aikatsu!)}}}}
 キャラクター再現	アイカツ！	氷上スミレ	{{{{hikami sumire(aikatsu!)}}}}
 キャラクター再現	アイカツ！	北大路さくら	{{{{hikami sumire(aikatsu!)}}}}
 キャラクター再現	アイカツ！	霧矢あおい	{{{{kiriya aoi (aikatsu!)}}}}
@@ -1471,6 +1475,7 @@
 キャラクター再現	アイドルマスターシンデレラガールズ	城ヶ崎美嘉（ツインテール）	{{{{jougasaki mika}}}}, {{{{bright vivid messy pink hair}}}}, medium pig tail, yellow eyes, gyaru, tsurime, hair between eyes, medium breasts,
 キャラクター再現	アイドルマスターシンデレラガールズ	城ヶ崎美嘉（ポニーテール）	{{{{jougasaki mika}}}}, [[[[idolmaster cinderella girls]]]], ponytail, clothes around waist, sweater around waist, pink hair, bow, grin, hairbow, school uniform, yellow eyes, tsurime, medium breasts, colo, cowboy shot,
 キャラクター再現	アイドルマスターシンデレラガールズ	城ケ崎利嘉	{{jougasaki rika}}, [[[[idolmaster cinderella girls]]]], loli, yellow hair, long hair, wavy hair, yellow eyes, mini two side up, small breasts, hair ribbon, school uniform, plaid orange miniskirt, bracelet, short sleeves, sweater vest, solo, cowboy shot,
+キャラクター再現	アイドルマスターシンデレラガールズ	新田美波	{{{{nitta minami}}}},brown hair,brown eyes,long hair,parted bangs,
 キャラクター再現	アイドルマスターシンデレラガールズ	新田美波	idol master, cinderella girls, nitta minami straight hair,brown hair,medium breasts,frills, white shirt, {{black corset}}, {sleeveless}, [lolita fashion], pleated skirt, {{{{{blue skirt}}}, mini skirt, black thighhighs,garter belt,
 キャラクター再現	アイドルマスターシンデレラガールズ	神崎蘭子	{{kanzaki ranko}}, medium hair, gray hair, twin drills, red eyes, tareme, medium breasts, black ribbons, lolita fashion
 キャラクター再現	アイドルマスターシンデレラガールズ	神谷奈緒	kamiya nao, thick eyebrows, {{{{{{{{{{short bangs}}}}}}}}}}, blunt bangs, long hair, brown hair, wavy hair, {{{hair bun}}}, floating hair, red eyes, {{{dark-violet dress}}}, frilled dress, layered skirt, dark-violet gloves, shiny gloves, stage, {{dancing}}, spotlight, {{blush}}, {{{blur}}}
@@ -1519,6 +1524,7 @@
 キャラクター再現	アズールレーン	ベルファスト	belfast_(azur_lane)
 キャラクター再現	アズールレーン	ユニコーン	unicorn (azur lane)
 キャラクター再現	アズールレーン	ラフィー	{{{{laffey_(azur_lane)}}}}
+キャラクター再現	アズールレーン	ル・マラン	{{{{le_malin_(azur_lane)}}}}
 キャラクター再現	アズールレーン	ル・マラン	{{{{le_malin_(listless_lapin)_(azur_lane)}}}}
 キャラクター再現	アズールレーン	綾波	{{{{ayanami_(azur_lane)}}}}
 キャラクター再現	アズールレーン	樫野	{{{{kashino_(azur_lane)}}}}
@@ -1635,6 +1641,7 @@
 キャラクター再現	お兄ちゃんはおしまい!	穂月かえで	{{{{hozuki kaede (onii-chan wa oshimai!)}}}}
 キャラクター再現	お兄ちゃんはおしまい!	穂月もみじ	{{{{hozuki momiji (onii-chan wa oshimai!)}}}}
 キャラクター再現	カードキャプターさくら	大道寺 知世	{{{{daidouji_tomoyo}}},cardcaptor sakura
+キャラクター再現	カードキャプターさくら	木之本桜	kinomoto sakura, cardcaptor sakura, loli, child, green eyes, antenna hair, light brown hair, hair intakes, bangs,
 キャラクター再現	カードキャプターさくら	木之本桜	zest_(lossol), cardcaptor_sakura, kero, kinomoto_sakura, , blush, bow, brown_hair, card, closed_mouth, gloves, green_eyes, holding, holding_card, holding_wand, magical_girl, open_mouth, pink_headwear, red_bow, smile, star_(symbol), wand, white_gloves, wings
 キャラクター再現	カードキャプターさくら	木之本桜（マジカルフォーム）	{{{{kinomoto sakura}}}},cardcaptor sakura,magical girl,skirt,petticoat,hat
 キャラクター再現	カードキャプターさくら	李小狼	{{{{xiaolang}}},cardcaptor sakura,1boy,shota
@@ -1699,6 +1706,7 @@
 キャラクター再現	けものフレンズ	キタキツネ	{{{{,{{{orange blazer}}},{{{white skirt}}},{{{black gloves}}},{yellow necktie},{white bowtie}}}}}, {{ezo red fox (kemono friends)}},{[orange::0.5] hair},black hair,long hair,[:yellow:0.5] eyes,fox ears,fox tail,white underwear,medium breasts,white pantyhose,fox girl
 キャラクター再現	けものフレンズ	ギンギツネ	{{blue blazer}},black necktie,{{gray bowtie}},{gray skirt}}}, {{silver fox (kemono friends)}},{gray hair},black hair,long hair,yellow eyes,black animal ears,fox ears,fox tail,{black pantyhose},{black gloves},fox girl
 キャラクター再現	けものフレンズ	コウテイペンギン	{emperor penguin (kemono friends)},large breasts,long hair,black hair,white leotard,white thighhighs,hooded jacket,black jacket,highleg leotard,headphones,hair over one eye
+キャラクター再現	けものフレンズ	サーバル	{serval (kemono friends)},breasts,serval print,white shirt,print skirt,print gloves,short hair,
 キャラクター再現	けものフレンズ	サーバル	serval_(kemono_friends)
 キャラクター再現	けものフレンズ	トキ	{{{,{{head wings}},{red skirt},{white shirt},{red gloves},{red pantyhose}}}}, {{japanese crested ibis (kemono friends)}},{white hair},red hair,long hair,straight hair,small breasts,fur collar,red fur
 キャラクター再現	けものフレンズ	フェネック	{fennec (kemono friends)}, short hair,blonde hair,pink sweater, yellow ribbon, {white skirt}, white gloves
@@ -1809,6 +1817,7 @@
 キャラクター再現	ダンガンロンパ	朝日奈葵(水着)	asahina aoi, danganronpa: trigger happy havoc, danganronpa (series),blue eyes,brown hair,cleavage,dark-skinned female, {{dark skin}},blue competition swimsuit, ponytail,grin,
 キャラクター再現	ダンガンロンパ	霧切響子	kirigiri_kyouko, small breasts, black gloves ,black jacket
 キャラクター再現	チェンソーマン	パワー	Magical cock,mana light,girl,power (chainsaw man),straight red demon horns, blonde rong hair, red eyes,skin_fang,ring eyes,{survival blue jacket}, {black pants}, {white shirt},necktie, ,looking at viewer,{{{{chainsaw man }}}}, masterpiece,best quality,detailed CG unity 8k wallpaper,{{{{tie}}}}, {{{{ringed eyes}}}}, straight-on,{{Fujimoto Tatsuki}}
+キャラクター再現	チェンソーマン	マキマ	{{{{chainsaw man }}}}, {{makima}}, masterpiece,best quality,detailed CG unity 8k wallpaper,side braid, black {{{{skinny suit pants}}}}, black blazer,black {{{{tie}}}}, {{{{ringed eyes}}}}, straight-on,{{Fujimoto Tatsuki}},arms behind back,,dark, expressionless{{{{smile}}}}, red hair, brown eyes,blunt bangs, white{{suit}}, short hair
 キャラクター再現	チェンソーマン	マキマ	red hier, [pink hair], side hair short, very thin side hair, fine hair, hair is weist length, one curl hair, long thin single braid, , [evil smil], {teasing smile}, {expressionless}, bewitching, white shirt, black pants, tie, shirt in pants, she is thin, tall
 キャラクター再現	チェンソーマン	東山コベニ	[[chainsaw man]], black hair, black eyes, short hair, low ponytail, {{{single sidelock}}}, {troubled eyebrows}, suit, red hairclip, black necktie, collared shirt, pants, small breasts, white shirt, cowboy shot, looking at viewer, open mouth, anguish, [sweat]
 キャラクター再現	デリシャスパーティ♡プリキュア	キュアスパイシー	cure spicy, fuwa kokone, delicious party precure
@@ -5810,329 +5819,3 @@
 食べ物	果物	パイナップル	pineapple
 食べ物	果物	リンゴ	apple
 食べ物	果物	サクランボ	cherry
-服装・衣類	頭部	フード	hood up
-カメラワーク	構図	脇にフォーカス	armpit focus
-カメラワーク	構図	背中にフォーカス	back focus
-カメラワーク	構図	胸にフォーカス	breast focus
-カメラワーク	構図	目にフォーカス	eye focus
-カメラワーク	構図	手にフォーカス	hand focus
-カメラワーク	構図	腰にフォーカス	hip focus
-カメラワーク	構図	おへそにフォーカス	navel focus
-カメラワーク	構図	胸筋にフォーカス	pectoral focus
-カメラワーク	構図	太ももにフォーカス	thigh focus
-カメラワーク	フレーム	ライブストリーミング中	live streaming
-カメラワーク	フレーム	Youtubeの枠	youtube screen
-カメラワーク	フレーム	カレンダー風	calendar (medium)
-カメラワーク	フレーム	スクリーンショット風	fake screenshot
-動作	ポーズ	あおむけ（仰向け）	flat on your back
-動作	手・腕の動作	両手をあげてばんざいする	lift up both arms,open hands
-動作	脚の動作	脚で体をロックする	leg lock
-動作	脚の動作	足の裏を見せる(靴)	feet,soles,shoes
-動作	脚の動作	足の裏を見せる(裸足)	feet,soles,barefoot
-動作	脚の動作	足の裏を見せる(靴下)	feet,soles,socks
-動作	脚の動作	ガニ股（がにまた）	bow-legged
-動作	脚の動作	足をばたつかせる	kicking one's legs
-動作	動作	だいしゅきホールド	leg lock and hug
-動作（source / target）	動作	何かを両手で洗う	wash a ~ with both hands
-動作（source / target）	動作	何かを片手で洗う	wash a ~ with one hand
-動作（source / target）	動作	何かにシャワーをかける	spray a ~ with a shower
-動作（source / target）	動作	何かを抱きしめる	hugging ~
-動作（source / target）	動作	何かを変える	changing ~
-動作（source / target）	動作	何かを両手で掴む	grabbing a ~ with both hands
-動作（source / target）	動作	何かを片手で掴む	grabbing a ~ with one hand
-動作（source / target）	動作	何かを着替えさせる	dressing ~ with both hands
-動作（source / target）	動作	何かを脱がせる	undressing ~ with both hands
-動作（source / target）	動作	手で口を覆う	covering mouth with both hands
-動作（source / target）	動作	何かを蹴る	kicking ~
-装飾	その他	おしゃぶり	pacifier
-模様	柄（動物）	牛柄（ホルスタイン）	holstein pattern
-成人向け	前戯	フェラチオ(口に含む)	fellatio penis
-成人向け	体位	側位2	lie on sides,spooning,sex from behind
-成人向け	体位	Y字バランス	standing on one leg,leg up
-成人向け	体位	寝バック1	lying face down on bed
-成人向け	プレイ	下着におもらし	accidentally wetting their underwear with pee
-成人向け	プレイ	ブリーフにおもらし	accidentally wetting his briefs with pee
-成人向け	プレイ	パンティにおもらし	accidentally wetting her panties with pee
-成人向け	プレイ	ズボンにおもらし	accidentally wetting their pants with pee
-成人向け	プレイ	尻をガラスに押し付ける	against glass,butt press
-成人向け	プレイ	胸をガラスに押し付ける	against glass,chest press
-成人向け	プレイ	頬をガラスに押し付ける	against glass,cheek press
-成人向け	プレイ	拘束	restrained
-成人向け	プレイ	触手による拘束	restrained by many tentacle
-成人向け	プレイ	触手をフェラ	fellatio tentacles
-成人向け	射精	我慢汁・がまん汁・カウパー	pre-cum
-成人向け	性器	勃起していない小さなペニス	flaccid small penis
-成人向け	性器	勃起していないペニス	flaccid penis
-成人向け	性器	勃起したペニス	erect penis
-照明	方向	被写体の横からの光	sidelighting
-照明	方向	被写体の下からの光	underlighting
-場所	屋内	ふとん（布団）	fution
-場所	屋内	古民家	old farmhouse,indoor
-場所	駅	プラットフォーム	platform
-場所	駅	駅舎	station building
-場所	駅	切符売り場	ticket counter
-場所	駅	自動券売機	ticket vending machine
-場所	駅	ホーム	platform edge
-場所	駅	改札口	ticket gate
-場所	駅	駅前広場	station square
-場所	駅	エスカレーター/階段	escalator
-場所	駅	駅員室	stationmaster's office
-場所	一般的な家	リビングルーム	living room
-場所	一般的な家	ダイニングルーム	dining room
-場所	一般的な家	キッチン	kitchen
-場所	一般的な家	書斎	study room
-場所	一般的な家	ゲストルーム	guest room
-場所	一般的な家	ワークスペース	workspace
-場所	一般的な家	パントリー	pantry
-場所	一般的な家	ガレージ	garage
-場所	一般的な家	車庫	carport
-場所	一般的な家	玄関	entranceway
-場所	一般的な家	ベランダ	balcony
-場所	団地	団地1	apartment complex
-場所	団地	団地2	housing estate
-場所	団地	入口/エントランス	entrance
-場所	団地	ロビー	lobby
-場所	団地	エレベーター	elevator
-場所	団地	駐車場	parking lot
-場所	団地	プレイグラウンド	playground
-場所	団地	遊び場	recreation area
-場所	団地	公共の広場	public square
-場所	団地	芝生エリア	lawn area
-場所	団地	バルコニー	balcony
-場所	団地	ベランダ	veranda
-場所	団地	ゴミ置き場	garbage disposal area
-場所	団地	自転車置き場	bicycle parking area
-場所	団地	キッズルーム	kids playroom
-場所	団地	保育園	nursery
-場所	町	商店街	shopping street
-場所	町	郵便局	post office
-場所	町	銀行	bank
-場所	町	スーパーマーケット/コンビニ	supermarket/convenience store
-場所	町	レストラン/カフェ	restaurant/cafe
-場所	町	病院/診療所	hospital/clinic
-場所	町	市役所/町役場	city hall/town hall
-場所	町	バス停	bus stop
-場所	町	駅	train station
-場所	町	レジャー施設/エンターテイメント施設	leisure
-場所	町	スポーツセンター/体育館	sports center
-場所	町	公民館/コミュニティセンター	community center
-場所	町	遊び場/遊園地	playground
-場所	町	美術館/博物館	art museum
-場所	町	公共のトイレ	public restroom
-場所	田舎	田畑	fields
-場所	田舎	川岸	riverbank
-場所	田舎	菜園	vegetable garden
-場所	田舎	山丘	hills
-場所	田舎	田舎道	country road
-場所	田舎	古い神社	old shrine
-場所	田舎	田舎風の家屋	country-style houses
-場所	田舎	湖	lake
-場所	田舎	風光明媚な景色	scenic views
-場所	田舎	農場	farms
-場所	田舎	牧草地	pastures
-場所	田舎	森林浴の道	forest bathing trails
-場所	田舎	自然公園	nature parks
-場所	田舎	田舎の集落	rural settlements
-場所	田舎	谷間	valleys
-場所	田舎	石畳の道	cobblestone paths
-場所	田舎	田舎の温泉	rural hot springs
-場所	田舎	古い農具	old farm machinery
-場所	田舎	漁港	fishing ports
-場所	田舎	田舎の道端のお店	roadside shops in the countryside
-場所	田舎	古い城跡	ruins of an old castle
-場所	田舎	田園風景	rural landscapes
-場所	田舎	日本庭園	japanese gardens
-場所	田舎	寺院	temples
-場所	田舎	古民家	traditional japanese houses
-場所	田舎	果樹園	orchard
-場所	田舎	田んぼ	rice fields
-場所	田舎	湖畔	lakeside
-場所	田舎	鉄道路線	railway tracks
-場所	田舎	自然保護区	nature reserves
-場所	田舎	温泉地	hot spring resorts
-場所	田舎	農業体験施設	agricultural experience facilities
-場所	田舎	星空観察ポイント	stargazing spots
-場所	田舎	山道	mountain trails
-場所	田舎	田舎の喫茶店	countryside cafes
-場所	田舎	牧場	ranch
-場所	田舎	渓谷	canyon
-場所	田舎	古い橋	old bridges
-場所	工場	生産ライン	production line
-場所	工場	倉庫	warehouse
-場所	工場	作業場	workshop
-場所	工場	機械室	machine room
-場所	工場	設備室	equipment room
-場所	工場	検査ライン	inspection line
-場所	工場	包装エリア	packaging area
-場所	工場	出荷エリア	shipping area
-場所	工場	管理オフィス	management office
-場所	工場	休憩室	break room
-場所	工場	原料保管エリア	raw material storage area
-場所	工場	製品保管エリア	finished product storage area
-場所	工場	電気室	electrical room
-場所	工場	冷凍庫	freezer room
-場所	工場	塗装ブース	painting booth
-場所	工場	溶接エリア	welding area
-場所	工場	研磨工場	polishing workshop
-場所	工場	エンジンテストベンチ	engine testing bench
-場所	工場	環境制御室	environmental control room
-場所	工場	クリーンルーム	clean room
-場所	研究室	ラボラトリー	laboratory
-場所	研究室	デスクスペース	desk area
-場所	研究室	リサーチルーム	research room
-場所	研究室	計測室	measurement room
-場所	研究室	資料室	archive room
-場所	研究室	試験室	testing room
-場所	研究室	論文ラック	paper rack
-場所	研究室	カンファレンスルーム	conference room
-場所	研究室	サンプル保管庫	sample storage room
-場所	研究室	機器室	equipment room
-場所	幼稚園/保育園	園庭	playground
-場所	幼稚園/保育園	クラスルーム	classroom
-場所	幼稚園/保育園	給食室	lunchroom
-場所	幼稚園/保育園	おやつの時間スペース	snack time area
-場所	幼稚園/保育園	絵本コーナー	storybook corner
-場所	幼稚園/保育園	空きスペース	open space
-場所	幼稚園/保育園	遊び場	play area
-場所	幼稚園/保育園	お絵かきコーナー	drawing corner
-場所	幼稚園/保育園	サークル活動スペース	circle time area
-場所	幼稚園/保育園	お昼寝スペース	nap time area
-場所	学校	校庭	schoolyard
-場所	学校	体育館	gymnasium
-場所	学校	校舎	school building
-場所	学校	食堂	cafeteria
-場所	学校	管理室	administrative office
-場所	学校	校長室	principal's office
-場所	大学	講義室	lecture hall
-場所	大学	研究室	research laboratory
-場所	大学	学生寮	dormitory/residence hall
-場所	大学	キャンパス広場	campus plaza
-場所	大学	学食/食堂	cafeteria/dining hall
-場所	大学	スポーツ施設	sports facilities
-場所	大学	学生会館	student union building
-場所	大学	学生相談室	student counseling center
-場所	大学	オフィス/事務室	offices/administrative offices
-色	混色（混ざり方の表現）	ツートンカラー: 2色がはっきり分かれて並んでいる	two-tone
-色	混色（混ざり方の表現）	多色使い: 複数の色が無秩序に使われている	multicolored
-色	混色（混ざり方の表現）	ブレンド: 色が滑らかに混ざり合っている	blended
-色	混色（混ざり方の表現）	ミックス: 複数の色がバランスよく混ざっている	mixed
-色	混色（混ざり方の表現）	斑点模様: 小さな色の点が散らばっている	speckled
-色	混色（混ざり方の表現）	斑入り: 色が不規則に変わる模様	variegated
-色	混色（混ざり方の表現）	パッチワーク: 複数の異なる色や模様がつぎはぎに配置されている	patchwork
-色	混色（混ざり方の表現）	万華鏡模様: 多彩な色と形が複雑に組み合わさっている	kaleidoscopic
-色	混色（混ざり方の表現）	まだら模様: 色が不規則に混ざり合っている	mottled
-色	混色（混ざり方の表現）	タイダイ: ひねりを加えた染め方で色がランダムに広がる	tie-dye
-色	混色（混ざり方の表現）	斑点状: 小さな色の斑点がランダムに配置されている	flecked
-色	混色（混ざり方の表現）	色洗い: 柔らかい色が全体に広がっている	colorwashed
-色	混色（混ざり方の表現）	虜色に輝く: 光の加減で色が変化する	iridescent
-色	混色（混ざり方の表現）	グラデーションの: 色が順番に変化していく	gradiented
-色	青系	ライトブルー	light blue
-色	青系	ドジャーブルー	dodger blue
-色	青系	ロイヤルブルー	royal blue
-色	青系	スティールブルー	steel blue
-色	青系	ミディアムブルー	medium blue
-色	青系	ダークブルー	dark blue
-色	青系	コーンフラワーブルー	cornflower blue
-色	青系	ディープスカイブルー	deep sky blue
-色	青系	ミディアムスレートブルー	medium slate blue
-色	青系	パウダーブルー	powder blue
-色	赤系	ライトコーラル	light coral
-色	赤系	サーモン	salmon
-色	赤系	ダークサーモン	dark salmon
-色	赤系	オレンジレッド	orange red
-色	赤系	ファイアブリック	firebrick
-色	赤系	ダークレッド	dark red
-色	赤系	クリムゾン	crimson
-色	赤系	インディアンレッド	indian red
-色	赤系	ダークオレンジ	dark orange
-色	オレンジ系	ライトサーモン	light salmon
-色	オレンジ系	ダークオレンジ	dark orange
-色	オレンジ系	ゴールデンロッド	goldenrod
-色	オレンジ系	イエローオレンジ	yellow orange
-色	オレンジ系	ダークゴールデンロッド	dark goldenrod
-色	オレンジ系	オレンジレッド	orange red
-色	黄色系	ライトイエロー	light yellow
-色	黄色系	レモンシフォン	lemon chiffon
-色	黄色系	ライトゴールデンロッジイエロー	light goldenrod yellow
-色	黄色系	パパイヤウィップ	papaya whip
-色	黄色系	モカシン	moccasin
-色	黄色系	ピーチパフ	peach puff
-色	黄色系	ゴールド	gold
-色	黄色系	ダークゴールデンロッド	dark goldenrod
-色	黄色系	イエローグリーン	yellow green
-色	緑系	ライトグリーン	light green
-色	緑系	ペールグリーン	pale green
-色	緑系	ミディアムシーグリーン	medium sea green
-色	緑系	シーグリーン	sea green
-色	緑系	フォレストグリーン	forest green
-色	緑系	ダークグリーン	dark green
-色	緑系	ライム	lime
-色	緑系	ライムグリーン	lime green
-色	緑系	イエローグリーン	yellow green
-色	緑系	オリーブ	olive
-色	緑系	オリーブドラブ	olive drab
-色	緑系	ダークオリーブグリーン	dark olive green
-色	紫系	ラベンダー	lavender
-色	紫系	シスル	thisle
-色	紫系	オーキッド	orchid
-色	紫系	バイオレット	violet
-色	紫系	ダークバイオレット	dark violet
-色	紫系	ブルーバイオレット	blue violet
-色	紫系	ミディアムパープル	medium purple
-色	紫系	ダークオーキッド	dark orchid
-色	紫系	ダークマゼンタ	dark magenta
-色	茶色系	コーンシルク	corn silk
-色	茶色系	ブランチドアーモンド	blanched almond
-色	茶色系	ビスケット	bisque
-色	茶色系	ナバホホワイト	navajo white
-色	茶色系	ウィート	wheat
-色	茶色系	サンディブラウン	sandy brown
-色	茶色系	ペルー	peru
-色	茶色系	チョコレート	chocolate
-色	茶色系	サドルブラウン	saddle brown
-色	茶色系	シエナ	sienna
-色	茶色系	マルーン	maroon
-色	ピンク系	ライトピンク	light pink
-色	ピンク系	ホットピンク	hot pink
-色	ピンク系	ディープピンク	deep pink
-色	ピンク系	ミディアムバイオレットレッド	medium violet red
-色	ピンク系	ペールバイオレットレッド	pale violet red
-色	ピンク系	ライトコーラル	light coral
-色	白系	ハニーデュー	honeydew
-色	白系	ミントクリーム	mint cream
-色	白系	アリスブルー	alice blue
-色	白系	ゴーストホワイト	ghost white
-色	白系	ホワイトスモーク	white smoke
-色	白系	ベージュ	beige
-色	白系	オールドレース	old lace
-色	白系	フローラルホワイト	floral white
-色	白系	アイボリー	ivory
-色	黒系	ダークスレートグレー	dark slate gray
-色	黒系	ディムグレー	dim gray
-色	黒系	ライトスレートグレー	light slate gray
-色	黒系	スレートグレー	slate gray
-色	黒系	チャコール	charcoal
-色	黒系	ジェット	jet black
-エフェクト・効果	汚れ	泥だらけ	muddy
-エフェクト・効果	汚れ	泥まみれ	covered in mud
-エフェクト・効果	汚れ	汚れた	dirty
-エフェクト・効果	汚れ	ホコリ（埃）	dusty
-エフェクト・効果	汚れ	ホコリまみれ（埃まみれ）	dusty all over
-エフェクト・効果	液体	汗で透ける	sweat see-through
-オブジェクト	家具	便器（洋式）	toilet bowl
-オブジェクト	家具	便器（男性用）	urinal
-オブジェクト	家具	便器（和式）	squat toilet
-絵柄・画風・テイスト	絵柄	AIが生成したような絵柄	ai_generated
-食べ物	果物	🍈	🍈
-食べ物	果物	🍉	🍉
-食べ物	果物	🍌	🍌
-食べ物	果物	🍍	🍍
-食べ物	果物	🍎	🍎
-食べ物	果物	🍒	🍒
-品質	とりあえずこれ	品質向上タグ	{{{best quality,very aesthetic}}}
-品質	絵の品質	アメージングな品質	amazing quality
-品質	絵の品質	素晴らしい品質	great quality
-品質	絵の品質	悪い品質	bad quality
-品質	aesthetic	不快な	displeasing
-品質	aesthetic	とても不快な	very displeasing
-仮登録	未分類	ライト1ガール	light 1girl
