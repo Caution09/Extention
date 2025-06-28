@@ -649,8 +649,8 @@
 キャラクター	らき☆すた	柊つかさ	hiiragi tsukasa (lucky star)
 キャラクター	らき☆すた	泉こなた	izumi konata (lucky star)
 キャラクター	らき☆すた	高良みゆき	takara miyuki (lucky star)
-キャラクター	らんま1/2	早乙女らんま(女)	ranma-chan (ranma 1/2)
 キャラクター	らんま1/2	早乙女らんま(男)	saotome ranma (ranma 1/2)
+キャラクター	らんま1/2	早乙女らんま(女)	ranma-chan (ranma 1/2)
 キャラクター	わんだふるぷりきゅあ！	キュアニャミー	cure nyammy (wonderful precure)
 キャラクター	わんだふるぷりきゅあ！	キュアフレンディ	cure friendy (wonderful precure)
 キャラクター	わんだふるぷりきゅあ！	キュアリリアン	cure lillian (wonderful precure)
@@ -757,6 +757,7 @@
 キャラクター	アスタロッテのおもちゃ!	塔原明日葉	touhara asuha (astarotte no omocha!)
 キャラクター	アズールレーン	Z23	z23_(azur_lane)
 キャラクター	アズールレーン	meowfficer	meowfficer_(azur_lane)
+キャラクター	アズールレーン	アズールレーン	azur lane (azur lane)
 キャラクター	アズールレーン	アルジェリー	algerie_(azur_lane)
 キャラクター	アズールレーン	イラストリアス	illustrious_(azur_lane)
 キャラクター	アズールレーン	エンタープライズ	enterprise_(azur_lane)
@@ -767,13 +768,13 @@
 キャラクター	アズールレーン	チェシャー	cheshire_(azur_lane)
 キャラクター	アズールレーン	ノースカロライナ	north_carolina_(azur_lane)
 キャラクター	アズールレーン	フォーミダブル	formidable_(azur_lane)
-キャラクター	アズールレーン	ブレマートン	bremerton (azur lane)
+キャラクター	アズールレーン	ブレマートン	bremerton_(azur_lane)) (azur lane)
 キャラクター	アズールレーン	プリンツ・オイゲン	prinz_eugen_(azur_lane)
 キャラクター	アズールレーン	ベルちゃん（リトルベル）	little_bel_(azur_lane)
 キャラクター	アズールレーン	ベルファスト	belfast_(azur_lane)
 キャラクター	アズールレーン	ユニコーン	unicorn (azur lane)
 キャラクター	アズールレーン	ラフィー	laffey_(azur_lane)
-キャラクター	アズールレーン	ル・マラン	le malin (azur lane)
+キャラクター	アズールレーン	ル・マラン	le_malin_(listless_lapin)_(azur_lane)
 キャラクター	アズールレーン	大鳳	taihou_(azur_lane)
 キャラクター	アズールレーン	明石	akashi_(azur_lane)
 キャラクター	アズールレーン	樫野	kashino_(azur_lane)
@@ -827,6 +828,7 @@
 キャラクター	ウマ娘	ツルマルツヨシ	tsurumaru_tsuyoshi_(umamusume)
 キャラクター	ウマ娘	テイエムオペラオー	t.m. opera o (umamusume)
 キャラクター	ウマ娘	トウカイテイオー	tokai teio (umamusume)
+キャラクター	ウマ娘	トレセン制服	tracen school uniform (umamusume)
 キャラクター	ウマ娘	トーセンジョーダン	tosen jordan (umamusume)
 キャラクター	ウマ娘	ナイスネイチャ	nice nature (umamusume)
 キャラクター	ウマ娘	ナリタトップロード	narita_top_road_(umamusume)
@@ -996,12 +998,12 @@
 キャラクター	ソードアート・オンライン	キリト(GGO)	kirito_(sao-ggo)
 キャラクター	ソードアート・オンライン	シノン	sinon (sao)
 キャラクター	ソードアート・オンライン	シノン(GGO)	sinon (sword art online)
-キャラクター	ソードアート・オンライン	シリカ	silica (sword art online)
+キャラクター	ソードアート・オンライン	シリカ	style of sword_art_online (sword art online)
 キャラクター	ソードアート・オンライン	シリカ(ALO)	silica_(sao-alo)
 キャラクター	ソードアート・オンライン	ユイ	yui_(sao)
 キャラクター	ソードアート・オンライン	ユウキ	yuuki_\(sao\)
 キャラクター	ソードアート・オンライン	リーファ	leafa (sao)
-キャラクター	ソードアート・オンライン	朝田詩乃	asada shino (sword art online)
+キャラクター	ソードアート・オンライン	朝田詩乃	sword art online (sword art online)
 キャラクター	ソードアート・オンライン	桐ケ谷直葉	kirigaya suguha (sword art online)
 キャラクター	ソードアート・オンライン	桐ヶ谷 直葉	kirigaya_suguha(sao)
 キャラクター	ソードアート・オンライン	篠崎 里香	lisbeth_(sao)
@@ -1009,9 +1011,9 @@
 キャラクター	ダンガンロンパ	朝日奈葵(水着)	asahina aoi (danganronpa)
 キャラクター	ダンガンロンパ	赤松楓	akamatsu_kaede (danganronpa)
 キャラクター	ダンガンロンパ	霧切響子	kirigiri_kyouko (danganronpa)
-キャラクター	チェンソーマン	パワー	power (chainsaw man)
+キャラクター	チェンソーマン	パワー	Magical cock (chainsaw man)
 キャラクター	チェンソーマン	マキマ	makima (chainsaw man)
-キャラクター	チェンソーマン	東山コベニ	higashiyama kobeni (chainsaw man)
+キャラクター	チェンソーマン	東山コベニ	[[chainsaw man]] (chainsaw man)
 キャラクター	デリシャスパーティ♡プリキュア	キュアスパイシー	cure spicy (delicious party precure)
 キャラクター	デリシャスパーティ♡プリキュア	キュアフィナーレ	cure finale (delicious party precure)
 キャラクター	デリシャスパーティ♡プリキュア	キュアプレシャス	cure precious (delicious party precure)
@@ -1179,7 +1181,7 @@
 キャラクター	ラブライブ！サンシャイン！！	浦女夏服ノースリーブ	uranohoshi school uniform (love live! sunshine!!)
 キャラクター	ラブライブ！サンシャイン！！	渡辺曜	watanabe you (love live! sunshine!!)
 キャラクター	ラブライブ！サンシャイン！！	高海千歌	takami chika (love live! sunshine!!)
-キャラクター	ラブライブ！サンシャイン！！	鹿角理亞	kazuno ria (love live! sunshine!!)
+キャラクター	ラブライブ！サンシャイン！！	鹿角理亞	takami chika (love live! sunshine!!)
 キャラクター	ラブライブ！サンシャイン！！	鹿角聖良	kazuno sarah (love live! sunshine!!)
 キャラクター	ラブライブ！サンシャイン！！	黒澤ダイヤ	kurosawa dia (love live! sunshine!!)
 キャラクター	ラブライブ！サンシャイン！！	黒澤ルビィ	kurosawa ruby (love live! sunshine!!)
@@ -1203,7 +1205,7 @@
 キャラクター	ラブライブ！虹ヶ咲学園スクールアイドル同好会	桜坂しずく	ousaka shizuku (love live! nijigasaki)
 キャラクター	ラブライブ！虹ヶ咲学園スクールアイドル同好会	近江 遥	oomi haruka (love live! nijigasaki)
 キャラクター	ラブライブ！虹ヶ咲学園スクールアイドル同好会	近江彼方	oomi kanata (love live! nijigasaki)
-キャラクター	ラブライブ！虹ヶ咲学園スクールアイドル同好会	高咲侑	takasaki yuu (love live! nijigasaki)
+キャラクター	ラブライブ！虹ヶ咲学園スクールアイドル同好会	高咲侑	love live! nijigasaki high school idol club (love live! nijigasaki)
 キャラクター	リコリスリコイル	井ノ上 たきな	inoue_takina (lycoris_recoil)
 キャラクター	リコリスリコイル	錦木千束	nishikigi chisato
 キャラクター	リトルバスターズ!	能美クドリャフカ	noumi kudryavka
@@ -1271,7 +1273,7 @@
 キャラクター	東方	きもけーね	ex-keine (touhou)
 キャラクター	東方	だいちゃん	daiyousei (touhou)
 キャラクター	東方	ちやり服なし	tenkajin chiyari (touhou)
-キャラクター	東方	やちえ	yachie kicchou (touhou)
+キャラクター	東方	やちえ	touhou (touhou)
 キャラクター	東方	ゆうま	Yuma (touhou)
 キャラクター	東方	アリス	alice margatroid (touhou)
 キャラクター	東方	キスメ	kisume (touhou)
@@ -1424,7 +1426,7 @@
 キャラクター	魔法少女まどか☆マギカ	佐倉杏子	sakura kyouko (madoka magica)
 キャラクター	魔法少女まどか☆マギカ	巴マミ	tomoe mami (madoka magica)
 キャラクター	魔法少女まどか☆マギカ	暁美ほむら	akemi homura (madoka magica)
-キャラクター	魔法少女まどか☆マギカ	環いろは	tamaki iroha (madoka magica)
+キャラクター	魔法少女まどか☆マギカ	環いろは	masterpiece animated painting (madoka magica)
 キャラクター	魔法少女まどか☆マギカ	百江なぎさ	momoe_nagisa (madoka_magica)
 キャラクター	魔法少女まどか☆マギカ	美樹さやか	miki sayaka (madoka magica)
 キャラクター	魔法少女まどか☆マギカ	鹿目まどか	kaname madoka (madoka magica)
@@ -1957,6 +1959,7 @@
 コスチューム	ファンタジー	聖職者	cleric
 コスチューム	ファンタジー	聖騎士	paladin
 コスチューム	ファンタジー	踊り子	dancer
+コスチューム	ファンタジー	逆バニー1	fishnet bodysuit, reverse bunnysuit,heart pasties,rabbit ears,fake animal ears
 コスチューム	ファンタジー	雇われ兵	mercenary
 コスチューム	ファンタジー	騎兵	rider
 コスチューム	ファンタジー	騎士	knight
@@ -2214,6 +2217,7 @@
 シチュエーション	シチュ	水遊び	wading
 シチュエーション	シチュ	燃えている	burn oneself in flames
 シチュエーション	シチュ	男が女の前に立つ	boy standing in front of her
+シチュエーション	シチュ	盗撮風	viewfinder, battery_indicator, hidden_camera, recording
 シチュエーション	シチュ	相合傘	holding umbrella
 シチュエーション	シチュ	空に向けて手を広げる	open arms to sky
 シチュエーション	シチュ	空中（浮遊）	aerial
@@ -2708,7 +2712,6 @@
 位置・数量	種類	ツートーン	two-tone
 位置・数量	配置	ランダム	randomly
 位置・数量	配置	分散	distributed
-作品	作品名	アズールレーン	azur lane
 修飾語	修飾語	たくさん	many
 修飾語	修飾語	て美的	aesthetic
 修飾語	修飾語	クラシック	classic
@@ -5611,7 +5614,6 @@
 成人向け	オプション	風呂ラッキースケベ	nsfw, nude, in shower room, {{full-face blush}}, looking at viewer, {{surprised}}, embarrassed, scared, angry,  steam, sweat,  {{{{covering breasts}}}} by hands, covering crotch
 成人向け	オプション	黒い睾丸、ペニス	big testicles bouncing, big black penis
 成人向け	オプション	黒人セット	1boy,huge testicles,huge black penis,black man,veiny penis
-成人向け	コスプレ	逆バニー1	fishnet bodysuit, reverse bunnysuit,heart pasties,rabbit ears,fake animal ears
 成人向け	シチュ	NTR	cuckold
 成人向け	シチュ	ぬぎぬぎ	undressing
 成人向け	シチュ	ガラス越しの乳	breasts on glass
@@ -5642,7 +5644,6 @@
 成人向け	シチュ	輪姦	gang bang
 成人向け	シチュ	輪姦2	gang rape
 成人向け	シチュ	陰で	secret adultery
-成人向け	シチュエーション	盗撮風	viewfinder, battery_indicator, hidden_camera, recording
 成人向け	スカトロ	おしっこ	pee
 成人向け	スカトロ	おもらし	leaking pee
 成人向け	スカトロ	放尿	peeing
@@ -5769,12 +5770,6 @@
 成人向け	ポーズ	顔面騎乗	cunnilingus,sitting_on_face
 成人向け	ポーズ	騎乗位で手を後頭部に	straddling arms behind head
 成人向け	ポーズ	騎乗位で脚を広げる	straddling spread legs
-成人向け	下半身	ぷにまん	pussy line
-成人向け	下半身	亀頭	glans penis
-成人向け	下半身	勃起クリ	erect clitoris
-成人向け	下半身	服下勃起	erection under clothes
-成人向け	下半身	金玉	testicle
-成人向け	下着	ずらし（陰毛あり）	panties aside,pubic hair
 成人向け	体位		mating press
 成人向け	体位	2穴挿入	double penetration
 成人向け	体位	Y字バランス	standing on one leg,leg up
@@ -5860,9 +5855,6 @@
 成人向け	射精	飛び散る射精	pojecile cum
 成人向け	射精	髪にぶっかけ	cum on hair
 成人向け	射精	黄ばんだザーメン	yellowish cum
-成人向け	尻	ケツ毛	anal hair
-成人向け	尻	引き締まったアナル	puckered anus
-成人向け	尻	黒いアナル	dark anus
 成人向け	属性	ぽっちゃり	potbelly
 成人向け	属性	セフレ	friend with benefits
 成人向け	属性	セフレ2	fuck buddy
@@ -5962,16 +5954,10 @@
 成人向け	絶頂	潮吹き3	gushing
 成人向け	絶頂	絶頂,精液	cum
 成人向け	絶頂	絶頂の際の痙攣エフェクト	trembling motionline for orgasm
-成人向け	肌	エロテカ肌	gleaming skin
-成人向け	肌	エロテカ肌2	glistening skin
-成人向け	肌	キスマと歯形	hickey,lipstick mark , bite mark
-成人向け	胸	浮き乳首	coverd nipples
 成人向け	自慰	オナニー1	wank
 成人向け	自慰	オナニー2	masturbation
 成人向け	自慰	オナニー3	masturbate
 成人向け	自慰	ディルドを膣に挿入します	insert dildo to pussy
-成人向け	表情	アヘ顔事後	ahegao, open mouth, drivel, be breathless, blush, very humid, steam, perspired, fog, pink heart effect, semen, bukkake
-成人向け	表情	口開けエロ顔	open mouth, drivel, be breathless, blush, very humid, steam
 成人向け	装飾	乳首ピアス	nipple piercing
 成人向け	！必須	nsfw + girl	nwg
 成人向け	！必須	エロ画像	nsfw
@@ -5995,6 +5981,7 @@
 服装	オプション	完全に服を着た状態	fully clothed
 服装	オプション	断面	cross section
 服装	オプション	服のしわ強め	(taut shirt:1.2), shirt tucked in
+服装	オプション	浮き乳首	coverd nipples
 服装	オプション	肩紐が落ちる	strap slip
 服装	オプション	蝶ネクタイ2	detached_collar
 服装	オプション	部分的にボタンを外した	partially unbuttoned
@@ -6148,6 +6135,7 @@
 服装	一式	青い競泳水着	blue one-piece swimsuit,highleg competition swimsuit
 服装	下着	Tバック	g-string
 服装	下着	おっぱい隠す	{{{covered breasts}}}
+服装	下着	ずらし（陰毛あり）	panties aside,pubic hair
 服装	下着	ふんどし(褌)	white japanese loincloth
 服装	下着	まとまったブルマー	wholebloomer
 服装	下着	ガーターベルト	garter straps
@@ -6275,7 +6263,6 @@
 服装	靴下	靴下	socks
 服装	高級服	シルクショール	silk shawl
 服装・衣類	トップス	形の縫い目で色が分かれたTシャツ	raglan sleeve t-shirts
-服装・衣類	制服	トレセン制服	tracen school uniform
 服装・衣類	頭部	フード	hood up
 模様	柄	アーガイル柄	argyle pattern
 模様	柄	アーガイル（菱形敷き詰め）	argyle
@@ -7384,17 +7371,22 @@
 身体	ほくろ	艶ぼくろ	mole under mouth
 身体	上半身	翼,ウィング	wings
 身体	上半身	鎖骨	collarbone
+身体	下半身	ぷにまん	pussy line
 身体	下半身	むき出しの胃	bare stomach
 身体	下半身	スリムな脚	slim legs
 身体	下半身	ヒップ	hips
+身体	下半身	亀頭	glans penis
+身体	下半身	勃起クリ	erect clitoris
 身体	下半身	半ケツ	butt crack
 身体	下半身	太もも	thighs
 身体	下半身	巨大なお尻	huge asscheeks
 身体	下半身	恥骨	mons pubis
+身体	下半身	服下勃起	erection under clothes
 身体	下半身	美脚	beautiful legs
 身体	下半身	足	foot
 身体	下半身	足の裏	foot focus
 身体	下半身	足裏	soles
+身体	下半身	金玉	testicle
 身体	下半身	陰毛	pubic hair
 身体	体型	ずんぐりとした	heavyset
 身体	体型	ちび	short stature
@@ -7432,10 +7424,13 @@
 身体	体形	豊満ボディ	ample figure
 身体	体形	非常に低身長	very short stature
 身体	体形	高身長	tall person
+身体	尻	ケツ毛	anal hair
 身体	尻	大きなお尻	huge hip
 身体	尻	小さなおしり	mini hip
 身体	尻	小さな尻	small hip
+身体	尻	引き締まったアナル	puckered anus
 身体	尻	彼は彼女のお尻をつかんでいる	he is grabbing her butt
+身体	尻	黒いアナル	dark anus
 身体	性別	彼女	she
 身体	手	ネイル	nail polish
 身体	手	両手の平和サイン	peace sign on both hands
@@ -7463,6 +7458,9 @@
 身体	翼	ダーゴンウィングス	dargon wings
 身体	翼	天使の翼	angel wings
 身体	翼	金属翼	metal wings
+身体	肌	エロテカ肌	gleaming skin
+身体	肌	エロテカ肌2	glistening skin
+身体	肌	キスマと歯形	hickey,lipstick mark , bite mark
 身体	肌	人じゃない肌色	colored skin
 身体	肌	即時損失	instant loss
 身体	肌	日焼け肌	dark skin
@@ -7722,14 +7720,16 @@
 顔	口	お金咥える	{{{money_in_mouth}}}
 顔	口	てへぺろ	licking lips
 顔	口	よだれを垂らす	[mouth drool, drooling], :o, [open mouth], hunger
+顔	口	アヘ顔事後	ahegao, open mouth, drivel, be breathless, blush, very humid, steam, perspired, fog, pink heart effect, semen, bukkake
 顔	口	カラフルな舌	colorful tongue
 顔	口	キス待ち1	puckered lips
 顔	口	キス待ち2	thick lips
 顔	口	マウス　ヴェール	mouth veil
+顔	口	口	hand over own mouth
 顔	口	口の中の舌	tongue within mouth
 顔	口	口を大きく開ける	wide open mouth
-顔	口	口を覆う手	hand over own mouth
 顔	口	口先を尖らせる(キス口)	o3o
+顔	口	口開けエロ顔	open mouth, drivel, be breathless, blush, very humid, steam
 顔	口	大きい口	big mouth
 顔	口	少し開いた口	slightly opmouth
 顔	口	尖らせた唇	pursed lips

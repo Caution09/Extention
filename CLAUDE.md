@@ -96,6 +96,58 @@ The extension uses a master data system for prompt templates:
    - Manual mapping available for problematic character extractions
    - Use `categories.txt` for quick category overview and data verification
 
+5. **Character Data Classification Rules**:
+   - **キャラクター**: Character name only (e.g., "cirno", "remilia scarlet")
+   - **キャラクター再現**: Character with additional elements (e.g., "cirno, ice wings, blue dress")
+   - Prompt完全一致統合: When multiple entries have identical prompts, consolidate into single entry with combined 小項目 (e.g., "チルノ,⑨" for cirno entries)
+   - **Character Entry Auto-Generation Rule**: When adding character reproduction entries (キャラクター再現), automatically create corresponding character-only entries (キャラクター) if they don't exist
+     - Extract character name from the prompt (usually first element)
+     - Create both entries: full prompt in キャラクター再現 and name-only in キャラクター
+     - Example: 
+       - キャラクター再現: "{{klee (genshin impact)}}, blond hair, red eyes, cabbie hat..."
+       - キャラクター: "klee (genshin impact)"
+     - **CRITICAL WARNING**: Character name extraction must be done carefully and individually
+       - Do NOT assume the first element is always the character name - it could be a work name, description, or other element
+       - ALWAYS analyze each character reproduction entry individually to identify the actual character name
+       - Look for character names in these patterns:
+         - Within brackets: `{{{character_name}}}` or `{{character_name}}`
+         - After work names: `bocchi the rock!, {{{ijichi nijika}}}` → "ijichi nijika"
+         - Sometimes in the middle: `game cg, {{{character_name}}}, attributes...`
+       - Common misleading first elements: work names, "game cg", "hyper detailed", style descriptors
+       - When in doubt, manually check the context and surrounding elements
+       - Each entry requires individual analysis - no bulk assumptions
+   - **Duplicate Character Entry Resolution**: When multiple character entries exist for the same 大項目/中項目/小項目:
+     - Prioritize entries with more detailed information (e.g., with work/series name in parentheses)
+     - Remove simpler/shorter versions
+     - Example: Keep "tomori nao(Charlotte)" over "tomori nao"
+     - This ensures consistency and prevents confusion in character selection
+   - **Character Entry Bracket Removal**: Character entries (大項目: キャラクター) should not have curly brackets
+     - Remove all wrapping brackets from character names
+     - Example: "{{{tedeza_rize (gochiusa)}}}" → "tedeza_rize (gochiusa)"
+     - This rule applies ONLY to キャラクター entries, NOT to キャラクター再現
+     - Clean format improves readability and consistency
+   - **Series Name Addition for Character Disambiguation**: Add series/work names in parentheses to character entries
+     - Purpose: Prevent confusion when multiple characters share the same name across different works
+     - Format: "character_name (series_name)"
+     - Examples:
+       - "Flayn" → "Flayn (fire emblem)"
+       - "jeanne d'arc" → "jeanne d'arc (fate)"
+       - "sakura miko" → "sakura miko (hololive)"
+     - Apply to all character entries where the category represents a specific work/series
+     - This improves prompt accuracy and prevents AI from generating wrong characters
+
+6. **Data Correction Policy**:
+   - **Individual Processing**: All corrections must be handled individually unless explicitly stated otherwise
+   - **Element-by-Element**: Process each specified item separately, avoid bulk operations
+   - **User Specification**: When user wants bulk changes, they will specify at item level (not element level)
+   - **Explicit Instructions Only**: Only perform the exact corrections specified, no additional assumptions
+
+7. **Data Sorting and Cleaning**:
+   - **Sorting Script**: Use `data-management/sort_and_clean.sh` for all sorting operations
+   - **Script Functions**: Removes trailing commas, sorts data, removes duplicates, creates backups
+   - **Usage**: Always use this script instead of manual sort commands
+   - **Automatic Backup**: Script automatically creates timestamped backups before processing
+
 ### Master Data Maintenance and Quality Assurance
 
 When the user requests "マスターデータ整理" or "マスターデータ更新", Claude should perform a comprehensive data quality analysis and cleanup following this workflow:

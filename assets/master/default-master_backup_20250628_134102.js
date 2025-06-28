@@ -81,13 +81,6 @@ let defaultMaster = {
   {
     "0": "その他",
     "1": "その他",
-    "2": "体格差",
-    "3": "physical difference",
-    "4": ""
-  },
-  {
-    "0": "その他",
-    "1": "その他",
     "2": "注入",
     "3": "injection",
     "4": ""
@@ -125,13 +118,6 @@ let defaultMaster = {
     "1": "化学的",
     "2": "苛性",
     "3": "caustic",
-    "4": ""
-  },
-  {
-    "0": "その他",
-    "1": "技術的",
-    "2": "紐伸び",
-    "3": "strap gap",
     "4": ""
   },
   {
@@ -181,20 +167,6 @@ let defaultMaster = {
     "1": "エフェクト",
     "2": "メタルスクラッチ",
     "3": "metal scratch",
-    "4": ""
-  },
-  {
-    "0": "エフェクト",
-    "1": "エフェクト",
-    "2": "ライン",
-    "3": "speedlines",
-    "4": ""
-  },
-  {
-    "0": "エフェクト",
-    "1": "エフェクト",
-    "2": "録画フレーム",
-    "3": "recording frame",
     "4": ""
   },
   {
@@ -347,13 +319,6 @@ let defaultMaster = {
   {
     "0": "エフェクト",
     "1": "光",
-    "2": "ライト1ガール",
-    "3": "light 1girl",
-    "4": ""
-  },
-  {
-    "0": "エフェクト",
-    "1": "光",
     "2": "ライトシャフト",
     "3": "light shafts",
     "4": ""
@@ -419,13 +384,6 @@ let defaultMaster = {
     "1": "光",
     "2": "華麗な光",
     "3": "brilliant light",
-    "4": ""
-  },
-  {
-    "0": "エフェクト",
-    "1": "光",
-    "2": "薄暗い照明",
-    "3": "dim lighting",
     "4": ""
   },
   {
@@ -1096,13 +1054,6 @@ let defaultMaster = {
   {
     "0": "オブジェクト",
     "1": "オブジェクト",
-    "2": "ボトル※母乳除外にも",
-    "3": "bottle",
-    "4": ""
-  },
-  {
-    "0": "オブジェクト",
-    "1": "オブジェクト",
     "2": "吊り下げられたクリスタル",
     "3": "suspended crystal",
     "4": ""
@@ -1201,13 +1152,6 @@ let defaultMaster = {
   {
     "0": "オブジェクト",
     "1": "乗り物",
-    "2": "拘束された",
-    "3": "restrained",
-    "4": ""
-  },
-  {
-    "0": "オブジェクト",
-    "1": "乗り物",
     "2": "機関車",
     "3": "locomotive",
     "4": ""
@@ -1266,13 +1210,6 @@ let defaultMaster = {
     "1": "公共物",
     "2": "街灯",
     "3": "lamppost",
-    "4": ""
-  },
-  {
-    "0": "オブジェクト",
-    "1": "公共物",
-    "2": "電柱",
-    "3": "electric pole",
     "4": ""
   },
   {
@@ -1383,13 +1320,6 @@ let defaultMaster = {
   {
     "0": "オブジェクト",
     "1": "家具",
-    "2": "ランプ",
-    "3": "lamp",
-    "4": ""
-  },
-  {
-    "0": "オブジェクト",
-    "1": "家具",
     "2": "便器（和式）",
     "3": "squat toilet",
     "4": ""
@@ -1420,13 +1350,6 @@ let defaultMaster = {
     "1": "家具",
     "2": "壁掛時計",
     "3": "wall clock",
-    "4": ""
-  },
-  {
-    "0": "オブジェクト",
-    "1": "家具",
-    "2": "天蓋ベッド",
-    "3": "canopy bed",
     "4": ""
   },
   {
@@ -1658,13 +1581,6 @@ let defaultMaster = {
     "1": "建造物",
     "2": "ピラミッド",
     "3": "pyramid",
-    "4": ""
-  },
-  {
-    "0": "オブジェクト",
-    "1": "建造物",
-    "2": "建物の陰",
-    "3": "building shade",
     "4": ""
   },
   {
@@ -1929,13 +1845,6 @@ let defaultMaster = {
   {
     "0": "オブジェクト",
     "1": "電子機器",
-    "2": "スマホ撮影画面",
-    "3": "{cellphone photo},{bar censor}",
-    "4": ""
-  },
-  {
-    "0": "オブジェクト",
-    "1": "電子機器",
     "2": "壊れた画面",
     "3": "brokscreen",
     "4": ""
@@ -2090,13 +1999,6 @@ let defaultMaster = {
   {
     "0": "オプション",
     "1": "オプション",
-    "2": "破れた黒いレギンス",
-    "3": "black leggings, torn_legwear",
-    "4": ""
-  },
-  {
-    "0": "オプション",
-    "1": "オプション",
     "2": "絶対空域,絶対領域",
     "3": "thigh gap",
     "4": ""
@@ -2160,20 +2062,6 @@ let defaultMaster = {
   {
     "0": "オプション",
     "1": "液体",
-    "2": "よだれ",
-    "3": "saliva",
-    "4": ""
-  },
-  {
-    "0": "オプション",
-    "1": "液体",
-    "2": "よだれ垂れ",
-    "3": "drooling",
-    "4": ""
-  },
-  {
-    "0": "オプション",
-    "1": "液体",
     "2": "涙",
     "3": "tears",
     "4": ""
@@ -2187,23 +2075,9 @@ let defaultMaster = {
   },
   {
     "0": "カメラワーク",
-    "1": "その他",
-    "2": "目の精度を向上",
-    "3": "eye focus",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
     "1": "アングル",
     "2": "全身",
     "3": "whole body",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "フォーカス",
-    "2": "(i)ドアップ",
-    "3": "close-up,crotch focus",
     "4": ""
   },
   {
@@ -2237,20 +2111,6 @@ let defaultMaster = {
   {
     "0": "カメラワーク",
     "1": "フォーカス",
-    "2": "女の子フォーカス",
-    "3": "girl focus",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "フォーカス",
-    "2": "強めの集中線",
-    "3": "bold radiating focus lines dominating the entire screen",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "フォーカス",
     "2": "脚が手前で頭まで(セクシー)",
     "3": "feet out of frame",
     "4": ""
@@ -2267,13 +2127,6 @@ let defaultMaster = {
     "1": "フォーカス",
     "2": "顔にフォーカス,顔",
     "3": "face",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "フォーカス",
-    "2": "顔のアップ",
-    "3": "face focus",
     "4": ""
   },
   {
@@ -2377,29 +2230,8 @@ let defaultMaster = {
   {
     "0": "カメラワーク",
     "1": "構図",
-    "2": "グリッド表示",
-    "3": "grid view",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "構図",
-    "2": "コマ割り",
-    "3": "panel layout",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "構図",
     "2": "ダイナミックな画角",
     "3": "dynamic angle",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "構図",
-    "2": "テーブル越し",
-    "3": "pov across table",
     "4": ""
   },
   {
@@ -2442,20 +2274,6 @@ let defaultMaster = {
     "1": "構図",
     "2": "写真撮影",
     "3": "viewfinder",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "構図",
-    "2": "分割表示",
-    "3": "split view",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "構図",
-    "2": "前からの構図",
-    "3": "from front",
     "4": ""
   },
   {
@@ -2517,13 +2335,6 @@ let defaultMaster = {
   {
     "0": "カメラワーク",
     "1": "構図",
-    "2": "斜めに傾いたアングル",
-    "3": "slanted angle",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "構図",
     "2": "映画的なショット",
     "3": "cinematic shot",
     "4": ""
@@ -2538,29 +2349,8 @@ let defaultMaster = {
   {
     "0": "カメラワーク",
     "1": "構図",
-    "2": "画面外の目",
-    "3": "eyes out of frame",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "構図",
     "2": "目にフォーカス",
     "3": "eye focus",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "構図",
-    "2": "真上から見下ろす構図",
-    "3": "top-down view",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "構図",
-    "2": "股のぞき",
-    "3": "looking through legs",
     "4": ""
   },
   {
@@ -2596,13 +2386,6 @@ let defaultMaster = {
     "1": "構図",
     "2": "腰にフォーカス",
     "3": "hip focus",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "構図",
-    "2": "複数角度",
-    "3": "multipul angle",
     "4": ""
   },
   {
@@ -2652,13 +2435,6 @@ let defaultMaster = {
     "1": "画角",
     "2": "頭をフレーム外へ",
     "3": "head out of frame",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "複数画面",
-    "2": "画面2分割",
-    "3": "split screen",
     "4": ""
   },
   {
@@ -2741,13 +2517,6 @@ let defaultMaster = {
   {
     "0": "カメラワーク",
     "1": "視点",
-    "2": "主観(両手あり)",
-    "3": "pov both hands",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "視点",
     "2": "主観(魚眼レンズ)",
     "3": "pov, fisheye",
     "4": ""
@@ -2755,36 +2524,8 @@ let defaultMaster = {
   {
     "0": "カメラワーク",
     "1": "視点",
-    "2": "前を向く",
-    "3": "straight-on",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "視点",
     "2": "小人視点",
     "3": "foreshortening",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "視点",
-    "2": "斜め前",
-    "3": "three quarter view",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "視点",
-    "2": "横を向く",
-    "3": "facing to the side",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "視点",
-    "2": "真上から",
-    "3": "high angle",
     "4": ""
   },
   {
@@ -2881,36 +2622,15 @@ let defaultMaster = {
   {
     "0": "キャラクター",
     "1": "FE",
-    "2": "ヒルダ",
-    "3": "hilda valentine goneril (fire emblem)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "FE",
-    "2": "フレン",
-    "3": "Flayn (fire emblem)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "FE",
-    "2": "マリアンヌ",
-    "3": "marianne_von_edmund (fire emblem)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "FE",
     "2": "ミカヤ",
-    "3": "micaiah_(fire_emblem)",
+    "3": "a girlmicaiah fire emblem",
     "4": ""
   },
   {
     "0": "キャラクター",
-    "1": "FE",
-    "2": "リシテア",
-    "3": "Lysithea (fire emblem)",
+    "1": "Fate",
+    "2": "BB",
+    "3": "black skirt",
     "4": ""
   },
   {
@@ -2918,13 +2638,6 @@ let defaultMaster = {
     "1": "Fate",
     "2": "アストルフォ",
     "3": "astolfo (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
-    "2": "アビゲイル",
-    "3": "abigail williams (fate)",
     "4": ""
   },
   {
@@ -2938,63 +2651,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "Fate",
     "2": "イリヤスフィールアインツベルン",
-    "3": "illyasviel von einzbern (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
-    "2": "エリちゃん",
-    "3": "elizabeth bathory (fate)",
+    "3": "illyasviel von einzbern",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Fate",
     "2": "キャストリア",
-    "3": "artoria caster (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
-    "2": "ジャンヌ",
-    "3": "jeanne d'arc (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
-    "2": "ジャンヌオルタ",
-    "3": "jeanne d'arc alter (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
-    "2": "ニトクリス",
-    "3": "nitocris (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
-    "2": "ネロ・クラウディウス",
-    "3": "nero claudius (fate)",
+    "3": "artoria caster",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Fate",
     "2": "マシュ・キリエライト",
-    "3": "mash kyrielight (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
-    "2": "ラヴィニア",
-    "3": "Lavinia Whateley_(fgo)",
+    "3": "mash kyrielight",
     "4": ""
   },
   {
@@ -3002,20 +2673,6 @@ let defaultMaster = {
     "1": "Fate",
     "2": "レオナルドダヴィンチ",
     "3": "leonardo_da_vinci_(fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
-    "2": "三蔵法師",
-    "3": "xuangzang sanzang (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
-    "2": "刑部姫",
-    "3": "osakabe-hime (fate)",
     "4": ""
   },
   {
@@ -3042,27 +2699,6 @@ let defaultMaster = {
   {
     "0": "キャラクター",
     "1": "Fate",
-    "2": "源頼光",
-    "3": "minamoto no raikou (FGO)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
-    "2": "翻訳中",
-    "3": "bb (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
-    "2": "茨城童子",
-    "3": "ibaraki douji (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
     "2": "葛飾北斎",
     "3": "katsushika hokusai (fate)",
     "4": ""
@@ -3070,22 +2706,29 @@ let defaultMaster = {
   {
     "0": "キャラクター",
     "1": "Fate",
-    "2": "遠坂凛",
-    "3": "tohsaka_rin (fate)",
+    "2": "謎のヒロインXオルタ",
+    "3": "black jacket",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Fate",
-    "2": "酒呑童子",
-    "3": "shuten douji (fate)",
+    "2": "謎のヒロインXオルタ(フォーリナー)",
+    "3": "hyper detailed",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "Fate",
+    "2": "遠坂凛",
+    "3": "tohsaka_rin",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "GTA V",
     "2": "トレバー・フィリップス",
-    "3": "Trevor Philips bald hair (gta)",
+    "3": "trevor philips",
     "4": ""
   },
   {
@@ -3225,49 +2868,42 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "さくらみこ",
-    "3": "sakura miko (hololive)",
+    "3": "sakura miko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "すいちゃん",
-    "3": "hoshimachi suisei (hololive)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Hololive",
-    "2": "ちょこ先生",
-    "3": "yuzuki choco (hololive)",
+    "3": "hoshimachi suisei",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "るーちゃん",
-    "3": "uruha rushia (hololive)",
+    "3": "uruha rushia",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "トワ様",
-    "3": "tokoyami towa (hololive)",
+    "3": "tokoyami towa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "フブちゃん",
-    "3": "shirakami fubuki (hololive)",
+    "3": "shirakami fubuki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "マリン船長",
-    "3": "houshou marine (hololive)",
+    "3": "houshou marine",
     "4": ""
   },
   {
@@ -3281,7 +2917,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "兎田ぺこら",
-    "3": "usada pekora (hololive)",
+    "3": "usada pekora",
     "4": ""
   },
   {
@@ -3295,7 +2931,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "天音かなた",
-    "3": "amane kanata (hololive)",
+    "3": "amane kanata",
     "4": ""
   },
   {
@@ -3309,56 +2945,56 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "沙花叉クロヱ",
-    "3": "sakamata chloe (hololive)",
+    "3": "sakamata chloe",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "湊あくあ",
-    "3": "minato aqua (hololive)",
+    "3": "minato aqua",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "白銀ノエル",
-    "3": "shirogane_noel (hololive)",
+    "3": "shirogane_noel",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "百鬼あやめ",
-    "3": "nakiri ayame (hololive)",
+    "3": "nakiri ayame",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "紫咲シオン",
-    "3": "murasaki shion (hololive)",
+    "3": "murasaki shion",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "赤井はあと",
-    "3": "akai haato (hololive)",
+    "3": "akai haato",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "雪花ラミィ",
-    "3": "yukihana lamy (hololive)",
+    "3": "yukihana lamy",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "Hololive",
     "2": "風間いろは",
-    "3": "kazama iroha (hololive)",
+    "3": "kazama iroha",
     "4": ""
   },
   {
@@ -3372,7 +3008,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "NARUTO",
     "2": "春野サクラ",
-    "3": "haruno sakura (naruto (series)) (naruto)",
+    "3": "haruno sakura (naruto (series))",
     "4": ""
   },
   {
@@ -3498,56 +3134,56 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "To LOVEる -とらぶる",
     "2": "ティアーユ・ルナティーク",
-    "3": "teayu lunatique (to love-ru)",
+    "3": "teayu lunatique",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "To LOVEる -とらぶる",
     "2": "ララ・サタリン・デビルーク",
-    "3": "lala satalin deviluke (to love-ru)",
+    "3": "lala satalin deviluke",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "To LOVEる -とらぶる",
     "2": "天条院沙姫",
-    "3": "tenjouin saki (to love-ru)",
+    "3": "tenjouin saki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "To LOVEる -とらぶる",
     "2": "小手川唯",
-    "3": "kotegawa yui (to love-ru)",
+    "3": "kotegawa yui",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "To LOVEる -とらぶる",
     "2": "小手川唯\\",
-    "3": "kotegawa yui (to love-ru)",
+    "3": "kotegawa yui",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "To LOVEる -とらぶる",
     "2": "結城美柑",
-    "3": "yuuki_mikan (to love-ru)",
+    "3": "yuuki_mikan",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "To LOVEる -とらぶる",
     "2": "金色の闇（ヤミ）",
-    "3": "konjiki no yami (to love-ru)",
+    "3": "konjiki no yami",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "VOICE BOX",
     "2": "ずんだもん",
-    "3": "zundamon (voicevox)",
+    "3": "zundamon",
     "4": ""
   },
   {
@@ -3771,7 +3407,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "おしえて! ギャル子ちゃん",
     "2": "ギャル子",
-    "3": "galko  (oshiete! galko-chan)",
+    "3": "galko (oshiete! galko-chan)",
     "4": ""
   },
   {
@@ -3988,7 +3624,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "けものフレンズ",
     "2": "ギンギツネ",
-    "3": "silver_fox_(kemono_friends)",
+    "3": "blue blazer",
     "4": ""
   },
   {
@@ -4023,7 +3659,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "この素晴らしい世界に祝福を",
     "2": "めぐみん",
-    "3": "megumin (konosuba)",
+    "3": "megumin",
     "4": ""
   },
   {
@@ -4049,6 +3685,13 @@ let defaultMaster = {
   },
   {
     "0": "キャラクター",
+    "1": "こみっくパーティ",
+    "2": "高瀬瑞希",
+    "3": "takase mizuki, comic party",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
     "1": "ごちうさ",
     "2": "ここあ",
     "3": "hoto cocoa (gochiusa)",
@@ -4058,21 +3701,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ごちうさ",
     "2": "ちや",
-    "3": "ujimatsu chiya (gochiusa)",
+    "3": "ujimatsu chiya",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ごちうさ",
     "2": "シャロ",
-    "3": "kirima_syaro (gochiusa)} (gochiusa)",
+    "3": "kirima_syaro (gochiusa)",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ごちうさ",
     "2": "チノちゃん",
-    "3": "kafuu chino (gochiusa)",
+    "3": "kafuu chino",
     "4": ""
   },
   {
@@ -4087,13 +3730,6 @@ let defaultMaster = {
     "1": "すーぱーそに子",
     "2": "そに子",
     "3": "sonico",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "すーぱーそに子",
-    "2": "ぽちゃ子",
-    "3": "super pochaco",
     "4": ""
   },
   {
@@ -4247,7 +3883,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ひだまりスケッチ",
     "2": "ゆの",
-    "3": "yuno_(hidamari_sketch)",
+    "3": "yuno_(hidamari_sketch),hidamari_sketch",
     "4": ""
   },
   {
@@ -4415,21 +4051,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ぼっち・ざ・ろっく！",
     "2": "伊地知虹夏",
-    "3": "ijichi nijika (bocchi the rock!)",
+    "3": "ijichi nijika",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ぼっち・ざ・ろっく！",
     "2": "喜多郁代",
-    "3": "kita ikuyo (bocchi the rock!)",
+    "3": "kita ikuyo",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ぼっち・ざ・ろっく！",
     "2": "山田リョウ",
-    "3": "yamada ryo (bocchi the rock!)",
+    "3": "yamada ryo",
     "4": ""
   },
   {
@@ -4443,7 +4079,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ぼっち・ざ・ろっく！",
     "2": "後藤ひとり",
-    "3": "gotou hitori (bocchi the rock!)",
+    "3": "gotou hitori",
     "4": ""
   },
   {
@@ -4464,49 +4100,49 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ゆるゆり",
     "2": "古谷向日葵",
-    "3": "furutani himawari (yuru yuri)",
+    "3": "furutani himawari",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ゆるゆり",
     "2": "吉川ちなつ",
-    "3": "yoshikawa chinatsu (yuru yuri)",
+    "3": "yoshikawa chinatsu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ゆるゆり",
     "2": "大室櫻子",
-    "3": "omuro sakurako (yuru yuri)",
+    "3": "omuro sakurako",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ゆるゆり",
     "2": "杉浦綾乃",
-    "3": "sugiura ayano (yuru yuri)",
+    "3": "sugiura ayano",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ゆるゆり",
     "2": "歳納京子",
-    "3": "toshinou kyouko (yuru yuri)",
+    "3": "toshinou kyouko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ゆるゆり",
     "2": "船見結衣",
-    "3": "funami yui (yuru yuri)",
+    "3": "funami yui",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ゆるゆり",
     "2": "赤座あかり",
-    "3": "akaza akari (yuru yuri)",
+    "3": "akaza akari",
     "4": ""
   },
   {
@@ -4534,126 +4170,119 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "らき☆すた",
     "2": "柊かがみ",
-    "3": "hiiragi kagami (lucky star)",
+    "3": "hiiragi kagami",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "らき☆すた",
     "2": "柊つかさ",
-    "3": "hiiragi tsukasa (lucky star)",
+    "3": "hiiragi tsukasa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "らき☆すた",
     "2": "泉こなた",
-    "3": "izumi konata (lucky star)",
+    "3": "izumi konata",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "らき☆すた",
     "2": "高良みゆき",
-    "3": "takara miyuki (lucky star)",
+    "3": "takara miyuki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "らんま1/2",
-    "2": "早乙女らんま(女)",
-    "3": "ranma-chan (ranma 1/2)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "らんま1/2",
-    "2": "早乙女らんま(男)",
-    "3": "saotome ranma (ranma 1/2)",
+    "2": "早乙女らんま",
+    "3": "ranma-chan",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "キュアニャミー",
-    "3": "cure nyammy (wonderful precure)",
+    "3": "cure nyammy",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "キュアフレンディ",
-    "3": "cure friendy (wonderful precure)",
+    "3": "cure friendy",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "キュアリリアン",
-    "3": "cure lillian (wonderful precure)",
+    "3": "cure lillian",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "キュアワンダフル",
-    "3": "cure wonderful (wonderful precure)",
+    "3": "cure wonderful",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "兎山悟",
-    "3": "toyama satoru (wonderful precure)",
+    "3": "toyama satoru",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "大福",
-    "3": "1rabbit (wonderful precure)",
+    "3": "1rabbit",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "犬飼いろは",
-    "3": "inukai iroha (wonderful precure)",
+    "3": "inukai iroha",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "犬飼こむぎ",
-    "3": "inukai komugi (wonderful precure)",
+    "3": "inukai komugi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "犬飼こむぎ（犬）",
-    "3": "inukai komugi (wonderful precure)",
+    "3": "inukai komugi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "猫屋敷まゆ",
-    "3": "nekoyashiki mayu (wonderful precure)",
+    "3": "nekoyashiki mayu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "猫屋敷ユキ",
-    "3": "nekoyashiki yuki (wonderful precure)",
+    "3": "nekoyashiki yuki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "わんだふるぷりきゅあ！",
     "2": "猫屋敷ユキ（猫）",
-    "3": "nekoyashiki yuki (wonderful precure)",
+    "3": "nekoyashiki yuki",
     "4": ""
   },
   {
@@ -4792,463 +4421,470 @@ let defaultMaster = {
   {
     "0": "キャラクター",
     "1": "アイドルマスター",
-    "2": "三浦あずさ",
-    "3": "miura azusa (idolmaster)",
+    "2": "三浦あずさ（ショートカット）",
+    "3": "miura azusa",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "アイドルマスター",
+    "2": "三浦あずさ（ロングヘア）",
+    "3": "miura azusa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "四条貴音",
-    "3": "shijou takane (idolmaster)",
+    "3": "shijou takane",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "天海春香",
-    "3": "amami haruka (idolmaster)",
+    "3": "amami haruka",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "我那覇響",
-    "3": "ganaha hibiki (idolmaster)",
+    "3": "ganaha hibiki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "星井美希",
-    "3": "hoshii miki (idolmaster)",
+    "3": "hoshii miki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "水瀬伊織",
-    "3": "minase iori (idolmaster)",
+    "3": "minase iori",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "秋月律子",
-    "3": "akizuki ritsuko (idolmaster)",
+    "3": "akizuki ritsuko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "菊地真",
-    "3": "kikuchi makoto (idolmaster)",
+    "3": "kikuchi makoto",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "萩原雪歩",
-    "3": "hagiwara yukiho (idolmaster)",
+    "3": "hagiwara yukiho",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "音無小鳥",
-    "3": "otonashi kotori (idolmaster)",
+    "3": "otonashi kotori",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター",
     "2": "高槻やよい",
-    "3": "takatsuki yayoi (idolmaster)",
+    "3": "takatsuki yayoi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "八宮めぐる",
-    "3": "hachimiya meguru (idolmaster shiny colors)",
+    "3": "hachimiya meguru",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "樋口円香",
-    "3": "higuchi madoka (idolmaster shiny colors)",
+    "3": "higuchi madoka",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "浅倉透",
-    "3": "asakura toru (idolmaster shiny colors)",
+    "3": "asakura toru",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "田中摩美々",
-    "3": "tanaka mamimi (idolmaster shiny colors)",
+    "3": "tanaka mamimi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "白瀬咲耶",
-    "3": "shirase sakuya (idolmaster shiny colors)",
+    "3": "shirase sakuya",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "西城樹里",
-    "3": "saijou juri (idolmaster shiny colors)",
+    "3": "saijou juri",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "黛冬優子",
-    "3": "mayuzumi fuyuko (idolmaster shiny colors)",
+    "3": "mayuzumi fuyuko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "アナスタシア",
-    "3": "anastasia (idolmaster cinderella girls)",
+    "3": "anastasia",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "エミリー",
-    "3": "emily stewart (idolmaster cinderella girls)",
+    "3": "emily stewart",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "ナターリア",
-    "3": "natalia (idolmaster cinderella girls)",
+    "3": "natalia",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "一ノ瀬志希",
-    "3": "ichinose shiki (idolmaster cinderella girls)",
+    "3": "ichinose shiki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "三村かな子",
-    "3": "mimura kanako (idolmaster cinderella girls)",
+    "3": "mimura kanako",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "中谷育",
-    "3": "nakatani iku (idolmaster cinderella girls)",
+    "3": "nakatani iku",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "伊吹翼",
-    "3": "ibuki tsubasa (idolmaster cinderella girls)",
+    "3": "ibuki tsubasa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "佐々木千枝",
-    "3": "sasaki chie (idolmaster cinderella girls)",
+    "3": "sasaki chie",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "佐久間まゆ",
-    "3": "sakuma mayu (idolmaster cinderella girls)",
+    "3": "sakuma mayu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "佐城雪美",
-    "3": "sajo yukimi (idolmaster cinderella girls)",
+    "3": "sajo yukimi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "佐藤心",
-    "3": "Shin satou",
+    "3": "satou shin",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "前川みく",
-    "3": "maekawa miku (idolmaster cinderella girls)",
+    "3": "maekawa miku",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "北条加蓮",
-    "3": "houjou karen (idolmaster cinderella girls)",
+    "3": "houjou karen",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "千川ちひろ",
-    "3": "senkawa chihiro (idolmaster cinderella girls)",
+    "3": "senkawa chihiro",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "双葉杏",
-    "3": "futaba anzu (idolmaster cinderella girls)",
+    "3": "futaba anzu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "向井拓海",
-    "3": "mukai takumi (idolmaster cinderella girls)",
+    "3": "mukai takumi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "周防桃子",
-    "3": "suou momoko (idolmaster cinderella girls)",
+    "3": "suou momoko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "城ケ崎利嘉",
-    "3": "jougasaki rika (idolmaster cinderella girls)",
+    "3": "jougasaki rika",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
-    "2": "城ヶ崎美嘉",
-    "3": "jougasaki mika (idolmaster cinderella girls)",
+    "2": "城ヶ崎美嘉（ツインテール）",
+    "3": "jougasaki mika",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "アイドルマスターシンデレラガールズ",
+    "2": "城ヶ崎美嘉（ポニーテール）",
+    "3": "jougasaki mika",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "塩見周子",
-    "3": "shiomi syuko (idolmaster cinderella girls)",
+    "3": "shiomi syuko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "夢見りあむ",
-    "3": "yumemi riamu (idolmaster cinderella girls)",
+    "3": "yumemi riamu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "大槻唯",
-    "3": "ohtsuki yui (idolmaster cinderella girls)",
+    "3": "ohtsuki yui",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "宮本フレデリカ",
-    "3": "frederica miyamoto (idolmaster cinderella girls)",
+    "3": "frederica miyamoto",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "島村卯月",
-    "3": "shimamura uzuki (idolmaster cinderella girls)",
+    "3": "shimamura uzuki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "新田美波",
-    "3": "nitta minami (idolmaster cinderella girls)",
+    "3": "nitta minami",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "春日未来",
-    "3": "kasuga mirai (idolmaster cinderella girls)",
+    "3": "kasuga mirai",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "望月杏奈",
-    "3": "mochizuki anna (idolmaster cinderella girls)",
+    "3": "mochizuki anna",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "本田未央",
-    "3": "honda mio (idolmaster cinderella girls)",
+    "3": "honda mio",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "樋口円香",
-    "3": "higuchi madoka (idolmaster cinderella girls)",
+    "3": "higuchi madoka",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "橘ありす",
-    "3": "tachibana arisu (idolmaster cinderella girls)",
+    "3": "tachibana arisu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "櫻井桃華",
-    "3": "sakurai momoka (idolmaster cinderella girls)",
+    "3": "sakurai momoka",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "渋谷凛",
-    "3": "shibuya rin (idolmaster cinderella girls)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "片桐早苗",
-    "3": "katagiri sanae (idolmaster cinderella girls)",
+    "3": "shibuya rin",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "白坂小梅",
-    "3": "shirasaka koume (idolmaster cinderella girls)",
+    "3": "shirasaka koume",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "的場梨沙",
-    "3": "matoba risa (idolmaster cinderella girls)",
+    "3": "matoba risa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "神崎蘭子",
-    "3": "kanzaki ranko (idolmaster cinderella girls)",
+    "3": "kanzaki ranko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "神谷奈緒",
-    "3": "kamiya nao (idolmaster cinderella girls)",
+    "3": "kamiya nao",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "福山舞",
-    "3": "[[[[idolmaster cinderella girls]]]] (idolmaster cinderella girls)",
+    "3": "fukuyama mai",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "緒方智絵里",
-    "3": "ogata chieri (idolmaster cinderella girls)",
+    "3": "ogata chieri",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "藤居朋",
-    "3": "fujii tomo (idolmaster cinderella girls)",
+    "3": "fujii tomo",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "諸星きらり",
-    "3": "moroboshi kirari (idolmaster cinderella girls)",
+    "3": "moroboshi kirari",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "赤城みりあ",
-    "3": "akagi miria (idolmaster cinderella girls)",
+    "3": "akagi miria",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "輿水幸子",
-    "3": "koshimizu sachiko (idolmaster cinderella girls)",
+    "3": "koshimizu sachiko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "速水奏",
-    "3": "hayami kanade (idolmaster cinderella girls)",
+    "3": "hayami kanade",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "遊佐こずえ",
-    "3": "yusa kozue (idolmaster cinderella girls)",
+    "3": "yusa kozue",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "高垣楓",
-    "3": "takagaki kaede (idolmaster cinderella girls)",
+    "3": "takagaki kaede",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "鷺沢文香",
-    "3": "sagisawa fumika (idolmaster cinderella girls)",
+    "3": "sagisawa fumika",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "龍崎薫",
-    "3": "ryuzaki kaoru (idolmaster cinderella girls)",
+    "3": "ryuzaki kaoru",
     "4": ""
   },
   {
@@ -5312,6 +4948,13 @@ let defaultMaster = {
     "1": "アズールレーン",
     "2": "meowfficer",
     "3": "meowfficer_(azur_lane)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "アズールレーン",
+    "2": "アズールレーン",
+    "3": "azur lane",
     "4": ""
   },
   {
@@ -5388,7 +5031,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "ブレマートン",
-    "3": "bremerton (azur lane)",
+    "3": "bremerton_(azur_lane))",
     "4": ""
   },
   {
@@ -5430,7 +5073,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アズールレーン",
     "2": "ル・マラン",
-    "3": "le malin (azur lane)",
+    "3": "le_malin_(azur_lane)",
     "4": ""
   },
   {
@@ -5493,7 +5136,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "アトリエ",
     "2": "ライザ",
-    "3": "reisalin stout (atelier)",
+    "3": "reisalin stout",
     "4": ""
   },
   {
@@ -5597,13 +5240,6 @@ let defaultMaster = {
   {
     "0": "キャラクター",
     "1": "ウマ娘",
-    "2": "エイシンフラッシュ",
-    "3": "Eishin Flash (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "ウマ娘",
     "2": "エルコンドルパサー",
     "3": "el condor pasa (umamusume)",
     "4": ""
@@ -5634,13 +5270,6 @@ let defaultMaster = {
     "1": "ウマ娘",
     "2": "キタサンブラック",
     "3": "kitasan black (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "ウマ娘",
-    "2": "キングヘイロー",
-    "3": "king halo (umamusume)",
     "4": ""
   },
   {
@@ -5697,13 +5326,6 @@ let defaultMaster = {
     "1": "ウマ娘",
     "2": "シュヴァルグラン",
     "3": "cheval_grand_(umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "ウマ娘",
-    "2": "シリウスシンボリ",
-    "3": "Sirius Symboli (umamusume)",
     "4": ""
   },
   {
@@ -5807,6 +5429,13 @@ let defaultMaster = {
   {
     "0": "キャラクター",
     "1": "ウマ娘",
+    "2": "トレセン制服",
+    "3": "tracen school uniform",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "ウマ娘",
     "2": "トーセンジョーダン",
     "3": "tosen jordan (umamusume)",
     "4": ""
@@ -5837,13 +5466,6 @@ let defaultMaster = {
     "1": "ウマ娘",
     "2": "ニシノフラワー",
     "3": "nishino flower (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "ウマ娘",
-    "2": "ネイチャ勝負服",
-    "3": ":nice nature (umamusume)",
     "4": ""
   },
   {
@@ -5907,13 +5529,6 @@ let defaultMaster = {
     "1": "ウマ娘",
     "2": "フジキセキ",
     "3": "fuji_kiseki_(umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "ウマ娘",
-    "2": "ホッコータルマエ",
-    "3": "hokko_tarumae_(umamusume)",
     "4": ""
   },
   {
@@ -6003,20 +5618,6 @@ let defaultMaster = {
   {
     "0": "キャラクター",
     "1": "ウマ娘",
-    "2": "メジロラモーヌ",
-    "3": "Mejiro Ramonu (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "ウマ娘",
-    "2": "モンジュー",
-    "3": "montjeu_(umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "ウマ娘",
     "2": "ヤエノムテキ",
     "3": "yaeno_muteki_(umamusume)",
     "4": ""
@@ -6088,21 +5689,28 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "カードキャプターさくら",
     "2": "大道寺 知世",
-    "3": "daidouji_tomoyo (cardcaptor sakura)",
+    "3": "daidouji_tomoyo",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "カードキャプターさくら",
     "2": "木之本桜",
-    "3": "kinomoto sakura (cardcaptor sakura)",
+    "3": "kinomoto sakura",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "カードキャプターさくら",
+    "2": "木之本桜（マジカルフォーム）",
+    "3": "kinomoto sakura",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "カードキャプターさくら",
     "2": "李小狼",
-    "3": "xiaolang (cardcaptor sakura)",
+    "3": "xiaolang",
     "4": ""
   },
   {
@@ -6116,49 +5724,49 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ガールズ＆パンツァー",
     "2": "ダージリン",
-    "3": "darjeeling (girls und panzer)",
+    "3": "red jacket",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ガールズ＆パンツァー",
     "2": "武部沙織",
-    "3": "takebe saori (girls und panzer)",
+    "3": "takebe saori",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ガールズ＆パンツァー",
     "2": "秋山優花里",
-    "3": "akiyama yukari (girls und panzer)",
+    "3": "akiyama yukari",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ガールズ＆パンツァー",
     "2": "西住しほ",
-    "3": "nishizumi shiho (girls und panzer)",
+    "3": "nishizumi shiho",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ガールズ＆パンツァー",
     "2": "西住まほ",
-    "3": "nishizumi maho (girls und panzer)",
+    "3": "nishizumi maho",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ガールズ＆パンツァー",
     "2": "西住みほ",
-    "3": "nishizumi miho (girls und panzer)",
+    "3": "nishizumi miho",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ガールズ＆パンツァー",
     "2": "角谷杏",
-    "3": "kadotani anzu (girls und panzer)",
+    "3": "kadotani anzu",
     "4": ""
   },
   {
@@ -6382,28 +5990,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "グランブルーファンタジー",
     "2": "エルーン（グラブル）",
-    "3": "erune (granblue fantasy)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "グランブルーファンタジー",
-    "2": "サラーサ",
-    "3": "Threo (granblue fantasy)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "グランブルーファンタジー",
-    "2": "ドラフ（グラブル）",
-    "3": "anila (granblue fantasy)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "グランブルーファンタジー",
-    "2": "ナルメア",
-    "3": "narmaya (granblue fantasy)",
+    "3": "erune",
     "4": ""
   },
   {
@@ -6501,7 +6088,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "サノバウィッチ",
     "2": "因幡めぐる",
-    "3": "inaba meguru (sanoba witch)",
+    "3": "inaba meguru",
     "4": ""
   },
   {
@@ -6900,7 +6487,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ゼルダの伝説シリーズ",
     "2": "ゼルダ",
-    "3": "princess_zelda (zelda)",
+    "3": "princess_zelda",
     "4": ""
   },
   {
@@ -6914,7 +6501,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ゼルダの伝説シリーズ",
     "2": "トゥーンリンク",
-    "3": "toon_link (zelda)",
+    "3": "toon_link",
     "4": ""
   },
   {
@@ -6984,14 +6571,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "シノン(GGO)",
-    "3": "sinon (sword art online)",
+    "3": "sinon",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "シリカ",
-    "3": "silica (sword art online)",
+    "3": "style of sword_art_online",
     "4": ""
   },
   {
@@ -7026,14 +6613,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "朝田詩乃",
-    "3": "asada shino (sword art online)",
+    "3": "asada_shino,",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ソードアート・オンライン",
     "2": "桐ケ谷直葉",
-    "3": "kirigaya suguha (sword art online)",
+    "3": "kirigaya suguha",
     "4": ""
   },
   {
@@ -7054,35 +6641,35 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ダンガンロンパ",
     "2": "朝日奈葵",
-    "3": "asahina aoi (danganronpa)",
+    "3": "asahina aoi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ダンガンロンパ",
     "2": "朝日奈葵(水着)",
-    "3": "asahina aoi (danganronpa)",
+    "3": "asahina aoi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ダンガンロンパ",
     "2": "赤松楓",
-    "3": "akamatsu_kaede (danganronpa)",
+    "3": "pink vest",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ダンガンロンパ",
     "2": "霧切響子",
-    "3": "kirigiri_kyouko (danganronpa)",
+    "3": "kirigiri_kyouko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "チェンソーマン",
     "2": "パワー",
-    "3": "power (chainsaw man)",
+    "3": "chainsaw man",
     "4": ""
   },
   {
@@ -7096,35 +6683,35 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "チェンソーマン",
     "2": "東山コベニ",
-    "3": "higashiyama kobeni (chainsaw man)",
+    "3": "single sidelock",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "デリシャスパーティ♡プリキュア",
     "2": "キュアスパイシー",
-    "3": "cure spicy (delicious party precure)",
+    "3": "cure spicy",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "デリシャスパーティ♡プリキュア",
     "2": "キュアフィナーレ",
-    "3": "cure finale (delicious party precure)",
+    "3": "cure finale",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "デリシャスパーティ♡プリキュア",
     "2": "キュアプレシャス",
-    "3": "cure precious (delicious party precure)",
+    "3": "cure precious",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "デリシャスパーティ♡プリキュア",
     "2": "キュアヤムヤム",
-    "3": "cure yum-yum (delicious party precure)",
+    "3": "cure yum-yum",
     "4": ""
   },
   {
@@ -7697,20 +7284,6 @@ let defaultMaster = {
   {
     "0": "キャラクター",
     "1": "ブルーアーカイブ",
-    "2": "ノノミ",
-    "3": "nonomi_(blue_archive)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "ブルーアーカイブ",
-    "2": "ハナコ",
-    "3": "Hanako_(blue_archive)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "ブルーアーカイブ",
     "2": "プラナ",
     "3": "plana_(blue_archive)",
     "4": ""
@@ -7734,13 +7307,6 @@ let defaultMaster = {
     "1": "ブルーアーカイブ",
     "2": "伊落マリー",
     "3": "mari_(blue_archive)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "ブルーアーカイブ",
-    "2": "勇美カエデ",
-    "3": "kaede (blue archive)",
     "4": ""
   },
   {
@@ -7901,28 +7467,35 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ボーカロイド",
     "2": "初音ミク",
-    "3": "hatsune miku (vocaloid)",
+    "3": "hatsune miku",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ボーカロイド",
     "2": "鏡音リン",
-    "3": "kagamine rin (vocaloid)",
+    "3": "kagamine rin",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ボーカロイド",
     "2": "鏡音レン",
-    "3": "kagamine len (vocaloid)",
+    "3": "kagamine ren",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ポケモン",
     "2": "エリカ",
-    "3": "erika pokemon (pokemon)",
+    "3": "erika pokemon",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "ポケモン",
+    "2": "オカルトマニア(XY)",
+    "3": "hex maniac (pokemon),official art",
     "4": ""
   },
   {
@@ -7949,15 +7522,8 @@ let defaultMaster = {
   {
     "0": "キャラクター",
     "1": "ポケモン",
-    "2": "サトシママ",
-    "3": "Delia Ketchum(pokemon)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "ポケモン",
     "2": "サーナイト",
-    "3": "gardevoir (pokemon)",
+    "3": "gardevoir",
     "4": ""
   },
   {
@@ -8076,7 +7642,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "メイドインアビス",
     "2": "ナナチ",
-    "3": "nanachi (made in abyss)",
+    "3": "nanachi",
     "4": ""
   },
   {
@@ -8097,7 +7663,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "メイドインアビス",
     "2": "ボンドルド",
-    "3": "bondrewd (made in abyss)",
+    "3": "bondrewd",
     "4": ""
   },
   {
@@ -8132,196 +7698,196 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "南ことり",
-    "3": "minami kotori (love live!)",
+    "3": "minami kotori",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "園田海未",
-    "3": "sonoda umi (love live!)",
+    "3": "sonoda umi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "小泉花陽",
-    "3": "koizumi hanayo (love live!)",
+    "3": "koizumi hanayo",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "星空凛",
-    "3": "hoshizora rin (love live!)",
+    "3": "hoshizora rin",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "東條希",
-    "3": "toujou nozomi (love live!)",
+    "3": "toujou nozomi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "矢澤にこ",
-    "3": "yazawa nico (love live!)",
+    "3": "yazawa nico",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "絢瀬絵里",
-    "3": "ayase eli (love live!)",
+    "3": "ayase eli",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "西木野真姫",
-    "3": "nishikino maki (love live!)",
+    "3": "nishikino maki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "高坂穂乃果",
-    "3": "kousaka honoka (love live!)",
+    "3": "kousaka honoka",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！",
     "2": "高坂雪穂",
-    "3": "kousaka yukiho (love live!)",
+    "3": "kousaka yukiho",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "国木田花丸",
-    "3": "kunikida hanamaru (love live! sunshine!!)",
+    "3": "kunikida hanamaru",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "小原鞠莉",
-    "3": "ohara mari (love live! sunshine!!)",
+    "3": "ohara mari",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "松浦果南",
-    "3": "matsuura kanan (love live! sunshine!!)",
+    "3": "matsuura kanan",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "桜内梨子",
-    "3": "sakurauchi riko (love live! sunshine!!)",
+    "3": "sakurauchi riko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "津島善子",
-    "3": "tsushima yoshiko (love live! sunshine!!)",
+    "3": "tsushima yoshiko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "浦女冬服",
-    "3": "uranohoshi school uniform (love live! sunshine!!)",
+    "3": "uranohoshi school uniform",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "浦女夏服",
-    "3": "uranohoshi school uniform (love live! sunshine!!)",
+    "3": "uranohoshi school uniform",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "浦女夏服ノースリーブ",
-    "3": "uranohoshi school uniform (love live! sunshine!!)",
+    "3": "uranohoshi school uniform",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "渡辺曜",
-    "3": "watanabe you (love live! sunshine!!)",
+    "3": "watanabe you",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "高海千歌",
-    "3": "takami chika (love live! sunshine!!)",
+    "3": "takami chika",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "鹿角理亞",
-    "3": "kazuno ria (love live! sunshine!!)",
+    "3": "kazuno ria",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "鹿角聖良",
-    "3": "kazuno sarah (love live! sunshine!!)",
+    "3": "kazuno sarah",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "黒澤ダイヤ",
-    "3": "kurosawa dia (love live! sunshine!!)",
+    "3": "kurosawa dia",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！サンシャイン！！",
     "2": "黒澤ルビィ",
-    "3": "kurosawa ruby (love live! sunshine!!)",
+    "3": "kurosawa ruby",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "ウィーン・マルガレーテ",
-    "3": "wien margarete (love live! superstar!!)",
+    "3": "wien margarete",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "嵐 千砂都",
-    "3": "arashi chisato (love live! superstar!!)",
+    "3": "arashi chisato",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "平安名 すみれ",
-    "3": "heanna sumire (love live! superstar!!)",
+    "3": "heanna sumire",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "桜小路 きな子",
-    "3": "sakurakoji kinako (love live! superstar!!)",
+    "3": "sakurakoji kinako",
     "4": ""
   },
   {
@@ -8335,112 +7901,112 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "若菜 四季",
-    "3": "wakana shiki (love live! superstar!!)",
+    "3": "wakana shiki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "葉月 恋",
-    "3": "hazuki ren (love live! superstar!!)",
+    "3": "hazuki ren",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！スーパースター!!",
     "2": "鬼塚 夏美",
-    "3": "onitsuka natsumi (love live! superstar!!)",
+    "3": "onitsuka natsumi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "エマ・ヴェルデ",
-    "3": "emma verde (love live! nijigasaki)",
+    "3": "emma verde",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "ショウ・ランジュ",
-    "3": "zhong lanzhu (love live! nijigasaki)",
+    "3": "zhong lanzhu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "三船 栞子",
-    "3": "mifune shioriko (love live! nijigasaki)",
+    "3": "mifune shioriko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "上原歩夢",
-    "3": "uehara ayumu (love live! nijigasaki)",
+    "3": "uehara ayumu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "中須かすみ",
-    "3": "nakasu kasumi (love live! nijigasaki)",
+    "3": "nakasu kasumi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "優木せつ菜",
-    "3": "yuuki setsuna (love live! nijigasaki)",
+    "3": "yuuki setsuna",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "天王寺璃奈",
-    "3": "tennoji rina (love live! nijigasaki)",
+    "3": "tennoji rina",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "宮下愛",
-    "3": "miyashita ai (love live! nijigasaki)",
+    "3": "miyashita ai",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "朝香果林",
-    "3": "asaka karin (love live! nijigasaki)",
+    "3": "asaka karin",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "桜坂しずく",
-    "3": "ousaka shizuku (love live! nijigasaki)",
+    "3": "ousaka shizuku",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "近江 遥",
-    "3": "oomi haruka (love live! nijigasaki)",
+    "3": "oomi haruka",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "近江彼方",
-    "3": "oomi kanata (love live! nijigasaki)",
+    "3": "oomi kanata",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
     "2": "高咲侑",
-    "3": "takasaki yuu (love live! nijigasaki)",
+    "3": "takasaki yuu",
     "4": ""
   },
   {
@@ -8587,21 +8153,21 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "俺の妹がこんなに可愛いわけがない",
     "2": "五更瑠璃",
-    "3": "gokou ruri (oreimo)",
+    "3": "gokou ruri",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "俺の妹がこんなに可愛いわけがない",
     "2": "新垣あやせ",
-    "3": "aragaki_ayase (oreimo)",
+    "3": "aragaki_ayase",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "俺の妹がこんなに可愛いわけがない",
     "2": "高坂桐乃",
-    "3": "kousaka kirino (oreimo)",
+    "3": "kousaka kirino",
     "4": ""
   },
   {
@@ -8623,13 +8189,6 @@ let defaultMaster = {
     "1": "原神",
     "2": "サユ",
     "3": "sayu (genshin impact)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "原神",
-    "2": "ジン",
-    "3": "Jean(genshin impact)",
     "4": ""
   },
   {
@@ -8664,14 +8223,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "原神",
     "2": "八重巫女",
-    "3": "yae miko (genshin impact)",
+    "3": "yae miko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "原神",
-    "2": "凝光",
-    "3": "ningguang (genshin impact)",
+    "2": "凝光(顔以外不安定)",
+    "3": "black long glove",
     "4": ""
   },
   {
@@ -8679,13 +8238,6 @@ let defaultMaster = {
     "1": "原神",
     "2": "刻晴",
     "3": "keqing (genshin impact)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "原神",
-    "2": "夜蘭",
-    "3": "Yelan(genshin impact)",
     "4": ""
   },
   {
@@ -8713,14 +8265,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "原神",
     "2": "神里綾華",
-    "3": "kamisato ayaka (genshin impact)",
+    "3": "kamisato ayaka",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "原神",
     "2": "胡桃",
-    "3": "hu tao (genshin impact)",
+    "3": "hu tao",
     "4": ""
   },
   {
@@ -8734,7 +8286,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "原神",
     "2": "雷電将軍",
-    "3": "raiden shogun (genshin impact)",
+    "3": "raiden shogun",
     "4": ""
   },
   {
@@ -8776,7 +8328,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "怪談",
     "2": "八尺様風",
-    "3": "hachishaku-sama (kaidan)",
+    "3": "hachishaku-sama",
     "4": ""
   },
   {
@@ -8895,84 +8447,70 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "東方",
     "2": "きもけーね",
-    "3": "ex-keine (touhou)",
+    "3": "ex-keine",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "だいちゃん",
-    "3": "daiyousei (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "ちやり服なし",
-    "3": "tenkajin chiyari (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "やちえ",
-    "3": "yachie kicchou (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "ゆうま",
-    "3": "Yuma (touhou)",
+    "3": "daiyousei",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "アリス",
-    "3": "alice margatroid (touhou)",
+    "3": "alice margatroid",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "東方",
+    "2": "アリス・マーガトロイド",
+    "3": "touhou alice margatroid",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "キスメ",
-    "3": "kisume (touhou)",
+    "3": "kisume",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
-    "2": "チルノ,⑨",
-    "3": "cirno (touhou)",
+    "2": "チルノ",
+    "3": "cirno",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "ナズーリン",
-    "3": "nazrin (touhou)",
+    "3": "nazrin",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "パチュリー",
-    "3": "patchouli knowledge (touhou)",
+    "3": "patchouli knowledge",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "フランドール・スカーレット",
-    "3": "flandre scarlet (touhou)",
+    "3": "flandre scarlet",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "ミスティア・ローレライ",
-    "3": "mystia lorelei (touhou)",
+    "3": "mystia lorelei",
     "4": ""
   },
   {
@@ -8986,7 +8524,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "東方",
     "2": "リグル・ナイトバグ",
-    "3": "wriggle nightbug (touhou)",
+    "3": "wriggle nightbug",
     "4": ""
   },
   {
@@ -9000,189 +8538,133 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "東方",
     "2": "レミリア・スカーレット",
-    "3": "remilia scarlet (touhou)",
+    "3": "remilia scarlet",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "上白沢慧音",
-    "3": "kamishirasawa keine (touhou)",
+    "3": "kamishirasawa keine",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "八坂神奈子",
-    "3": "yasaka kanako (touhou)",
+    "3": "yasaka kanako",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "八意永琳",
-    "3": "yagokoro eirin (touhou)",
+    "3": "yagokoro eirin",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "八雲紫",
-    "3": "yakumo yukari (touhou)",
+    "3": "yakumo yukari",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "八雲藍",
-    "3": "yakumo ran (touhou)",
+    "3": "yakumo ran",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "十六夜咲夜",
-    "3": "izayoi sakuya (touhou)",
+    "3": "izayoi sakuya",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "博麗霊夢",
-    "3": "hakurei reimu (touhou)",
+    "3": "hakurei reimu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "古明地こいし",
-    "3": "komeiji koishi (touhou)",
+    "3": "komeiji koishi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "古明地さとり",
-    "3": "komeiji satori (touhou)",
+    "3": "komeiji satori",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "四季映姫・ヤマザナドゥ",
-    "3": "shiki eiki (touhou)",
+    "3": "shiki eiki",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "因幡てゐ",
-    "3": "inaba tewi (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "埴安神袿姫",
-    "3": "haniyasushin keiki (touhou)",
+    "3": "inaba tewi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "多々良小傘",
-    "3": "alternate eye color (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "大人ラルバ",
-    "3": "touhou (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "天火人ちやり",
-    "3": "tenkajin chiyari (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "宮出口瑞霊",
-    "3": "miyadeguchi mizuchi (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "宮出口瑞霊服なし",
-    "3": "miyadeguchi mizuchi (touhou)",
+    "3": "alternate eye color",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "封獣ぬえ",
-    "3": "houjuu nue (touhou)",
+    "3": "houjuu nue",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "射命丸文",
-    "3": "shameimaru aya (touhou)",
+    "3": "shameimaru aya",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "小野塚小町",
-    "3": "onozuka komachi (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "山城たかね",
-    "3": "yamashiro takane (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "摩多羅隠岐奈",
-    "3": "matara okina (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "日白残無",
-    "3": "nippaku zanmu (touhou)",
+    "3": "onozuka komachi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "星熊勇儀",
-    "3": "hoshiguma yuugi (touhou)",
+    "3": "hoshiguma yuugi",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "村紗水蜜",
-    "3": "murasa minamitsu (touhou)",
+    "3": "murasa minamitsu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "東風谷早苗",
-    "3": "kochiya sanae (touhou)",
+    "3": "kochiya sanae",
     "4": ""
   },
   {
@@ -9196,175 +8678,161 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "東方",
     "2": "水橋パルスィ",
-    "3": "mizuhashi parsee (touhou)",
+    "3": "mizuhashi parsee",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "河城にとり",
-    "3": "kawashiro nitori (touhou)",
+    "3": "kawashiro nitori",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "洩矢諏訪子",
-    "3": "moriya suwako (touhou)",
+    "3": "moriya suwako",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "火焔猫燐",
-    "3": "kaenbyou rin (touhou)",
+    "3": "kaenbyou rin",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "犬走椛",
-    "3": "inubashiri momiji (touhou)",
+    "3": "inubashiri momiji",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "秋穣子",
-    "3": "aki minoriko (touhou)",
+    "3": "aki minoriko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "秋静葉",
-    "3": "aki shizuha (touhou)",
+    "3": "aki shizuha",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "紅美鈴",
-    "3": "hong meiling (touhou)",
+    "3": "hong meiling",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "聖白蓮",
-    "3": "hijiri byakuren (touhou)",
+    "3": "hijiri byakuren",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "蓬莱山輝夜",
-    "3": "houraisan kaguya (touhou)",
+    "3": "houraisan kaguya",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "藤原妹紅",
-    "3": "fujiwara no mokou (touhou)",
+    "3": "fujiwara no mokou",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "西行寺幽々子",
-    "3": "touhou yuyuko (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "豫母都日狭美",
-    "3": "yomotsu hisami (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "豫母都日狭美服なし",
-    "3": "touhou (touhou)",
+    "3": "touhou yuyuko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "鈴仙・優曇華院（うどんげ）",
-    "3": "reisen udongein inaba (touhou)",
+    "3": "reisen udongein inaba",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "鍵山雛",
-    "3": "kagiyama hina (touhou)",
+    "3": "kagiyama hina",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "東方",
+    "2": "雲居一輪",
+    "3": "kumoi ichirin,unzan",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "霊烏路空",
-    "3": "reiuji utsuho (touhou)",
+    "3": "reiuji utsuho",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "霧雨魔理沙",
-    "3": "kirisame marisa (touhou)",
+    "3": "kirisame marisa",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "風見幽香",
-    "3": "kazami yuuka (touhou)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "東方",
-    "2": "驪駒早鬼",
-    "3": "kurokoma saki (touhou)",
+    "3": "kazami yuuka",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "魂魄妖夢",
-    "3": "konpaku youmu (touhou)",
+    "3": "konpaku youmu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "東方",
     "2": "黒谷ヤマメ",
-    "3": "kurodani yamame (touhou)",
+    "3": "kurodani yamame",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "涼宮ハルヒの憂鬱",
     "2": "朝倉涼子",
-    "3": "suzumiya haruhi no yuuutsu (haruhi)",
+    "3": "suzumiya haruhi no yuuutsu",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "涼宮ハルヒの憂鬱",
     "2": "朝比奈みくる",
-    "3": "asahina mikuru (haruhi)",
+    "3": "asahina mikuru",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "涼宮ハルヒの憂鬱",
     "2": "涼宮ハルヒ",
-    "3": "suzumiya haruhi (haruhi)",
+    "3": "suzumiya haruhi",
     "4": ""
   },
   {
@@ -9469,7 +8937,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "犬夜叉",
     "2": "犬夜叉",
-    "3": "inuyasha (inuyasha)",
+    "3": "inuyasha",
     "4": ""
   },
   {
@@ -9483,7 +8951,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "狼と香辛料",
     "2": "ホロ",
-    "3": "holo  (spice and wolf)",
+    "3": "holo (spice and wolf)",
     "4": ""
   },
   {
@@ -9538,13 +9006,6 @@ let defaultMaster = {
   {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
-    "2": "ビスマルク",
-    "3": "Bismarck (kancolle)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "艦隊これくしょん",
     "2": "ヘレナ",
     "3": "a girl_have_(helena (kancolle)",
     "4": ""
@@ -9553,7 +9014,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "ヲ級",
-    "3": "wo-class aircraft carrier (kancolle)",
+    "3": "wo-class aircraft carrier",
     "4": ""
   },
   {
@@ -9574,7 +9035,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "艦隊これくしょん",
     "2": "北方棲姫",
-    "3": "northern ocean princess (kancolle)",
+    "3": "northern ocean princess",
     "4": ""
   },
   {
@@ -9631,13 +9092,6 @@ let defaultMaster = {
     "1": "艦隊これくしょん",
     "2": "天津風",
     "3": "amatsukaze (kancolle)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "艦隊これくしょん",
-    "2": "妙高改二",
-    "3": "myoukou kai2 (kancolle)",
     "4": ""
   },
   {
@@ -9729,13 +9183,6 @@ let defaultMaster = {
     "1": "艦隊これくしょん",
     "2": "金剛",
     "3": "kongou (kancolle)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "艦隊これくしょん",
-    "2": "長波",
-    "3": "naganami_(kantai_collection)",
     "4": ""
   },
   {
@@ -9952,7 +9399,7 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "アルティメットまどか",
-    "3": "ultimate madoka (madoka magica)",
+    "3": "mahou shoujo madoka magica",
     "4": ""
   },
   {
@@ -9966,28 +9413,28 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "佐倉杏子",
-    "3": "sakura kyouko (madoka magica)",
+    "3": "sakura kyouko",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "巴マミ",
-    "3": "tomoe mami (madoka magica)",
+    "3": "tomoe mami",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "暁美ほむら",
-    "3": "akemi homura (madoka magica)",
+    "3": "akemi homura",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "環いろは",
-    "3": "tamaki iroha (madoka magica)",
+    "3": "tamaki iroha",
     "4": ""
   },
   {
@@ -10001,14 +9448,14 @@ let defaultMaster = {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "美樹さやか",
-    "3": "miki sayaka (madoka magica)",
+    "3": "miki sayaka",
     "4": ""
   },
   {
     "0": "キャラクター",
     "1": "魔法少女まどか☆マギカ",
     "2": "鹿目まどか",
-    "3": "kaname madoka (madoka magica)",
+    "3": "kaname madoka",
     "4": ""
   },
   {
@@ -10028,22 +9475,8 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "FE",
-    "2": "フレン",
-    "3": "Flayn,Fire Emblem",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "FE",
-    "2": "マリアンヌ",
-    "3": "marianne_von_edmund,Fire Emblem",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "FE",
-    "2": "リシテア",
-    "3": "Lysithea,Fire Emblem",
+    "2": "ミカヤ",
+    "3": "{{{{{{{{a girlmicaiah fire emblem}}}}}}}},{yellow eyes},{{{{red sleeveless dress}}}},side slit,belt,long fingerless gloves,hair ribbon,blue hair ribbon,long scarf,blue scarf,black gloves,black pantyhose,medium breasts,simple background,{half updo},orange bird on hand",
     "4": ""
   },
   {
@@ -10051,13 +9484,6 @@ let defaultMaster = {
     "1": "Fate",
     "2": "BB",
     "3": "bb (fate) ,fate/extra ccc, long hair,purple hair, purple eyes, {{ black skirt}}, high-waist skirt,black coat, white leotard, black thighhighs, burnt clothes, white gloves, red hair ribbon,red neck ribbon, large breasts, on back, looking at viewer",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "BB",
-    "3": "black skirt",
     "4": ""
   },
   {
@@ -10084,6 +9510,13 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "Fate",
+    "2": "レオナルドダヴィンチ",
+    "3": "{{{{leonardo_da_vinci_(fate)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "Fate",
     "2": "清姫",
     "3": "kiyohime (fate),{{bright Cyan kimono}}",
     "4": ""
@@ -10099,21 +9532,14 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "Fate",
     "2": "清少納言",
-    "3": "sei shounagon (fate)",
+    "3": "sei shounagon (fate),",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "Fate",
     "2": "葛飾北斎",
-    "3": "katsushika hokusai (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "謎のヒロインXオルタ",
-    "3": "black jacket",
+    "3": "katsushika hokusai (fate),",
     "4": ""
   },
   {
@@ -10127,14 +9553,21 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "Fate",
     "2": "謎のヒロインXオルタ(フォーリナー)",
-    "3": "game cg,{{{hyper detailed}}},fate/grand order,{{fate (series}}},{{artoria pendragon (fate)}},{{mysterious heroine x alter (fate)}},{{mysterious heroine x alter (second ascension) (fate)}},,ahoge,bangs,bike shorts,black jacket,black shorts,black thighhighs,blonde hair,blush,braid,breasts,choker,french braid,glasses,hair between eyes,hair bun,hood,hooded jacket,jacket,long hair,long sleeves,looking at viewer,medium breasts,shirt,shorts,sidelocks,single hair bun,white shirt,yellow eyes,character focus, blush, expressionless,loli",
+    "3": "game cg,{{{hyper detailed}}},fate/grand order,{{fate (series}}},{{artoria pendragon (fate)}},{{mysterious heroine x alter (fate)}},{{mysterious heroine x alter (second ascension) (fate)}},,ahoge,bangs,bike shorts,black jacket,black shorts,black thighhighs,blonde hair,blush,braid,breasts,choker,french braid,glasses,hair between eyes,hair bun,hood,hooded jacket,jacket,long hair,long sleeves,looking at viewer,medium breasts,shirt,shorts,sidelocks,single hair bun,white shirt,yellow eyes,character focus, blush, expressionless,loli,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "Fate",
-    "2": "謎のヒロインXオルタ(フォーリナー)",
-    "3": "hyper detailed",
+    "2": "遠坂凛",
+    "3": "{{{{tohsaka_rin}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "GTA V",
+    "2": "トレバー・フィリップス",
+    "3": "Trevor Philips bald hair",
     "4": ""
   },
   {
@@ -10149,13 +9582,6 @@ let defaultMaster = {
     "1": "Hololive",
     "2": "すいちゃん",
     "3": "{{{hoshimachi suisei}}, blue hair, side ponytail, star choker,, grey plaid jacket, grey plaid headwear, plaid dress, collared shirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "ちょこ先生",
-    "3": "yuzuki choco",
     "4": ""
   },
   {
@@ -10230,9 +9656,86 @@ let defaultMaster = {
   },
   {
     "0": "キャラクター再現",
+    "1": "Kanon",
+    "2": "月宮あゆ",
+    "3": "{{{{tsukimiya ayu (kanon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
     "1": "NARUTO",
-    "2": "サクラ",
-    "3": "naruto (series), {haruno sakura},pink hair, long hair,straight hair, green eyes,small breasts,red shirt,sleeveless,bike_shorts",
+    "2": "春野サクラ",
+    "3": "{{{{haruno sakura (naruto (series))}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "NEW GAME!",
+    "2": "八神 コウ",
+    "3": "{{{{yagami kou (new game!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "NEW GAME!",
+    "2": "桜ねね",
+    "3": "{{{{sakura nene (new game!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "NEW GAME!",
+    "2": "涼風 青葉",
+    "3": "{{{{suzukaze aoba (new game!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "NEW GAME!",
+    "2": "滝本 ひふみ",
+    "3": "{{{{takimoto hifumi (new game!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "NEW GAME!",
+    "2": "篠田 はじめ",
+    "3": "{{{{shinoda hajime (new game!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "NEW GAME!",
+    "2": "遠山 りん",
+    "3": "{{{{toyama rin (new game!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "NEW GAME!",
+    "2": "阿波根 うみこ",
+    "3": "{{{{ahagon umiko (new game!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "NEW GAME!",
+    "2": "飯島 ゆん",
+    "3": "{{{{iijima yun (new game!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "Re：ゼロから始める異世界生活",
+    "2": "エキドナ",
+    "3": "{{{{echidna_(re:zero)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "Re：ゼロから始める異世界生活",
+    "2": "ベアトリス",
+    "3": "{{{{beatrice (re:zero)}}}}",
     "4": ""
   },
   {
@@ -10246,7 +9749,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "SPY×FAMILY（スパイファミリー）",
     "2": "アーニャ・フォージャー",
-    "3": "{{anya (spy x family)}}, {{spy x family}}",
+    "3": "{{anya (spy x family)}}, {{spy x family}},",
     "4": ""
   },
   {
@@ -10260,7 +9763,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "SPY×FAMILY（スパイファミリー）",
     "2": "ヨル・フォージャー",
-    "3": "{{yor briar}}, {{spy x family}}",
+    "3": "{{yor briar}}, {{spy x family}},",
     "4": ""
   },
   {
@@ -10289,6 +9792,13 @@ let defaultMaster = {
     "1": "To LOVEる -とらぶる",
     "2": "天条院沙姫",
     "3": "{{{{tenjouin saki}}}}, [[[[to love-ru]]]], long blonde drill hair, wavy long hair, double buns, swept bangs, orange eyes, {{{tareme}}}, medium breasts",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "To LOVEる -とらぶる",
+    "2": "小手川唯",
+    "3": "{{{{kotegawa yui (to love-ru)}}}}",
     "4": ""
   },
   {
@@ -10329,8 +9839,29 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "WORKING!!",
+    "2": "伊波まひる",
+    "3": "{{{{inami_mahiru (working!!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "WORKING!!",
+    "2": "山田葵",
+    "3": "{{{{yamada_aoi (working!!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "WORKING!!",
     "2": "種島ぽぷら",
     "3": "{taneshima popura},light brown hair, brown eyes,hair between eyes, very long hair,ponytail,loli face and big boobs, waitress, short sleeves,apron,black skirt,bowtie, child,toddler,smile, official art",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "WORKING!!",
+    "2": "轟八千代",
+    "3": "{{{{todoroki_yachiyo (working!!)}}}}",
     "4": ""
   },
   {
@@ -10338,6 +9869,41 @@ let defaultMaster = {
     "1": "among us",
     "2": "クルー",
     "3": "no humans,{{{{crewmate (among us)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "あぁ女神様！",
+    "2": "ウルド",
+    "3": "{{{{urd (aa megami-sama)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "あぁ女神様！",
+    "2": "スクルド",
+    "3": "{{{{skuld (aa megami-sama)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "あぁ女神様！",
+    "2": "ベルダンディー",
+    "3": "{{{{belldandy (aa megami-sama)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "あずまんが大王",
+    "2": "春日歩（大阪さん）",
+    "3": "{{{{kasuga ayumu (azumanga daioh)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "あずまんが大王",
+    "2": "美浜ちよ",
+    "3": "{{{{mihama chiyo (azumanga daioh)}}}}",
     "4": ""
   },
   {
@@ -10356,6 +9922,34 @@ let defaultMaster = {
   },
   {
     "0": "キャラクター再現",
+    "1": "うたわれるもの",
+    "2": "アルルゥ",
+    "3": "{{{{aruruw (utawarerumono)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "うたわれるもの",
+    "2": "エルルゥ",
+    "3": "{{{{eruruw (utawarerumono)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "うたわれるもの",
+    "2": "トウカ",
+    "3": "{{{{touka (utawarerumono)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "おしえて! ギャル子ちゃん",
+    "2": "ギャル子",
+    "3": "{{{{galko  (oshiete! galko-chan)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
     "1": "おジャ魔女どれみ",
     "2": "妹尾あいこ",
     "3": "{{{{senoo aiko (ojamajo doremi)}}}},loli,blue hair",
@@ -10365,7 +9959,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "おジャ魔女どれみ",
     "2": "春風どれみ",
-    "3": "{{{{harukaze_doremi}}}},ojamajo_doremi,double bun hair,blunt bangs",
+    "3": "{{{{harukaze_doremi}}}},ojamajo_doremi,double bun hair,blunt bangs,",
     "4": ""
   },
   {
@@ -10380,6 +9974,62 @@ let defaultMaster = {
     "1": "おジャ魔女どれみ",
     "2": "藤原はづき（NAI v3不安定）",
     "3": "{{{{fujiwara_hazuki (ojamajo doremi)}}}},loli,glasses,ribbon,brown_hair",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "おジャ魔女どれみ",
+    "2": "飛鳥ももこ",
+    "3": "{{{{asuka momoko (ojamajo doremi)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "お兄ちゃんはおしまい!",
+    "2": "天川なゆた",
+    "3": "{{{{tenkawa nayuta (onii-chan wa oshimai!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "お兄ちゃんはおしまい!",
+    "2": "室崎みよ",
+    "3": "{{{{murosaki miyo (onii-chan wa oshimai!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "お兄ちゃんはおしまい!",
+    "2": "桜花あさひ",
+    "3": "{{{{oka asahi (onii-chan wa oshimai!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "お兄ちゃんはおしまい!",
+    "2": "穂月かえで",
+    "3": "{{{{hozuki kaede (onii-chan wa oshimai!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "お兄ちゃんはおしまい!",
+    "2": "穂月もみじ",
+    "3": "{{{{hozuki momiji (onii-chan wa oshimai!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "お兄ちゃんはおしまい!",
+    "2": "緒山まひろ",
+    "3": "{{{{oyama mahiro (onii-chan wa oshimai!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "お兄ちゃんはおしまい!",
+    "2": "緒山みはり",
+    "3": "{{{{oyama mihari (onii-chan wa oshimai!)}}}}",
     "4": ""
   },
   {
@@ -10428,7 +10078,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "きんいろモザイク",
     "2": "大宮忍",
-    "3": "{oomiya shinobu},in kin-iro_mosaic style, solo,dark green hair, blunt bangs, bob cut, red eyes, brown eyes, tareme, cowboy shot, lolita fashion,smile",
+    "3": "{oomiya shinobu},in kin-iro_mosaic style, solo,dark green hair, blunt bangs, bob cut, red eyes, brown eyes, tareme, cowboy shot, lolita fashion,smile,",
     "4": ""
   },
   {
@@ -10463,7 +10113,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "けいおん！",
     "2": "琴吹紬",
-    "3": "{{{{kotobuki tsumugi}}}}, [[[[k-on!]]]], blonde long hair, swept bangs, gray eyes, tareme, school uniform",
+    "3": "{{{{kotobuki tsumugi}}}}, [[[[k-on!]]]], blonde long hair, swept bangs, gray eyes, tareme, school uniform,",
     "4": ""
   },
   {
@@ -10484,7 +10134,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "けものフレンズ",
     "2": "かばん",
-    "3": "{kaban (kemono friends)},small breasts,red shirt,hat feather,grey shorts,black pantyhose,short hair,black gloves",
+    "3": "{kaban (kemono friends)},small breasts,red shirt,hat feather,grey shorts,black pantyhose,short hair,black gloves,",
     "4": ""
   },
   {
@@ -10513,6 +10163,13 @@ let defaultMaster = {
     "1": "けものフレンズ",
     "2": "コウテイペンギン",
     "3": "{emperor penguin (kemono friends)},large breasts,long hair,black hair,white leotard,white thighhighs,hooded jacket,black jacket,highleg leotard,headphones,hair over one eye",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "けものフレンズ",
+    "2": "サーバル",
+    "3": "serval_(kemono_friends)",
     "4": ""
   },
   {
@@ -10547,13 +10204,6 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "こみっくパーティ",
     "2": "高瀬瑞希",
-    "3": "takase mizuki, comic party",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "こみっくパーティ",
-    "2": "高瀬瑞希",
     "3": "{{{{takase mizuki, comic party}}}},red hair",
     "4": ""
   },
@@ -10573,9 +10223,51 @@ let defaultMaster = {
   },
   {
     "0": "キャラクター再現",
+    "1": "ごちうさ",
+    "2": "シャロ",
+    "3": "{{{{kirima_syaro (gochiusa)}}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ごちうさ",
+    "2": "天々座 理世",
+    "3": "{{{tedeza_rize (gochiusa)}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "とあるシリーズ",
+    "2": "インデックス",
+    "3": "{{{{index_(toaru_majutsu_no_index)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "とあるシリーズ",
+    "2": "ラストオーダー",
+    "3": "{{{{last_order_(toaru_majutsu_no_index)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
     "1": "とあるシリーズ",
     "2": "上条当麻",
     "3": "{{{{kamijou_touma (toaru_majutsu_no_index)}}}},boy",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "とあるシリーズ",
+    "2": "佐天涙子",
+    "3": "{{{{saten_ruiko}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "とあるシリーズ",
+    "2": "初春飾利",
+    "3": "{{{{uiharu_kazari (toaru_majutsu_no_index)}}}}",
     "4": ""
   },
   {
@@ -10658,8 +10350,15 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "ひだまりスケッチ",
-    "2": "ゆの",
-    "3": "yuno_(hidamari_sketch),hidamari_sketch",
+    "2": "なずな",
+    "3": "{{{{nazuna_(hidamari_sketch)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ひだまりスケッチ",
+    "2": "のり",
+    "3": "{{{{nori_(hidamari_sketch)}}}}",
     "4": ""
   },
   {
@@ -10667,6 +10366,27 @@ let defaultMaster = {
     "1": "ひだまりスケッチ",
     "2": "ゆの",
     "3": "{yuno_(hidamari_sketch),hidamari_sketch},[game cg],brown eyes, brown hair,frizzy hair, x hair ornament,school uniform, red pinafore dress,dress shirt, red skirt, loli face",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ひだまりスケッチ",
+    "2": "ヒロ",
+    "3": "{{{{hiro_(hidamari_sketch)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ひだまりスケッチ",
+    "2": "宮子",
+    "3": "{{{{miyako (hidamari_sketch)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ひだまりスケッチ",
+    "2": "沙英",
+    "3": "{{{{sae_(hidamari_sketch)}}}}",
     "4": ""
   },
   {
@@ -10735,6 +10455,13 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "ぼっち・ざ・ろっく！",
+    "2": "伊地知星夏",
+    "3": "{{{{ijichi_seika (bocchi the rock!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ぼっち・ざ・ろっく！",
     "2": "伊地知虹夏",
     "3": "bocchi the rock!,{{{ijichi nijika}}}, [bocchi the rock!], {{{blonde hair}}}, solo, , red eyes, ahoge, up side ponytail, long hair, cowboy shot, {{sidelocks}}, dress shirt, black skirt, red bowtie, {{{{{{tareme}}}}}}, [parted bangs], four bangs",
     "4": ""
@@ -10751,6 +10478,13 @@ let defaultMaster = {
     "1": "ぼっち・ざ・ろっく！",
     "2": "山田リョウ",
     "3": "bocchi the rock!,{{{yamada ryo}}}, [bocchi the rock!], {{{dark blue hair}}},girl, medium breasts,blue eyes,medium hair",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ぼっち・ざ・ろっく！",
+    "2": "廣井きくり",
+    "3": "{{{{hiroi_kikuri (bocchi the rock!)}}}}",
     "4": ""
   },
   {
@@ -10813,7 +10547,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "ゆるゆり",
     "2": "船見結衣",
-    "3": "yuru yuri,{{funami yui}},{game cg}, official art, black hair,very short hair, yallow eyes, brown eyes,solo,smile, {nanamori school uniform},sailor dress,short sleeve white jacket, short over long sleeves,layered sleeves, pleated skirt",
+    "3": "yuru yuri,{{funami yui}},{game cg}, official art, black hair,very short hair, yallow eyes, brown eyes,solo,smile, {nanamori school uniform},sailor dress,short sleeve white jacket, short over long sleeves,layered sleeves, pleated skirt,",
     "4": ""
   },
   {
@@ -10828,6 +10562,20 @@ let defaultMaster = {
     "1": "ゆるキャン",
     "2": "志摩リン",
     "3": "{{shima rin}}, blue hair, hair bun, purple eyes, gray scarf, brown boots, g-pants, dark green down jacket, {{light blue scooter}}, masterpiece, yurucamp",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "よつばと！",
+    "2": "小岩井よつば",
+    "3": "{{{{koiwai_yotsuba (yotsubato!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "よつばと！",
+    "2": "綾瀬風香",
+    "3": "{{{{ayase_fuuka (yotsubato!)}}}}",
     "4": ""
   },
   {
@@ -10897,7 +10645,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "わんだふるぷりきゅあ！",
     "2": "兎山悟",
-    "3": "{{{toyama satoru}}},wonderful precure!,precure",
+    "3": "{{{toyama satoru}}},wonderful precure!,precure,",
     "4": ""
   },
   {
@@ -10952,50 +10700,176 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "アイカツスターズ！",
+    "2": "二階堂ゆず",
+    "3": "{{{{nikaidou yuzu (aikatsu stars!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツスターズ！",
+    "2": "友希あいね",
+    "3": "{{{{yuuki aine (aikatsu friends!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツスターズ！",
+    "2": "如月ツバサ",
+    "3": "{{{{kisaragi tsubasa (aikatsu stars!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツスターズ！",
+    "2": "桜庭ローラ",
+    "3": "{{{{sakuraba rola (aikatsu stars!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツスターズ！",
+    "2": "湊みお",
+    "3": "{{{{minato mio (aikatsu stars!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツスターズ！",
+    "2": "白百合かぐや",
+    "3": "{{{{nikaidou yuzu (aikatsu stars!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツスターズ！",
+    "2": "白鳥ひめ",
+    "3": "{{{{shiratori hime (aikatsu stars!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツスターズ！",
+    "2": "虹野ゆめ",
+    "3": "{{{{nijino yume (aikatsu stars!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツスターズ！",
+    "2": "蝶野舞花",
+    "3": "{{{{chouno maika (aikatsu stars!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツスターズ！",
     "2": "香澄夜空",
     "3": "{{{{kasumi yozora (aikatsu stars!)}}}},reddish brown hair",
     "4": ""
   },
   {
     "0": "キャラクター再現",
+    "1": "アイカツ！",
+    "2": "一ノ瀬かえで",
+    "3": "{{{{ichinose kaede (aikatsu!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツ！",
+    "2": "北大路さくら",
+    "3": "{{{{hikami sumire(aikatsu!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツ！",
+    "2": "星宮いちご",
+    "3": "{{{{hoshimiya ichigo (aikatsu!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツ！",
+    "2": "有栖川おとめ",
+    "3": "{{{{arisugawa otome (aikatsu!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツ！",
+    "2": "氷上スミレ",
+    "3": "{{{{hikami sumire(aikatsu!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツ！",
+    "2": "神崎美月",
+    "3": "{{{{kanzaki mizuki (aikatsu!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツ！",
+    "2": "紫吹蘭",
+    "3": "{{{{shibuki ran (aikatsu!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツ！",
+    "2": "藤堂ユリカ",
+    "3": "{{{{todo yurika (aikatsu!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アイカツ！",
+    "2": "霧矢あおい",
+    "3": "{{{{kiriya aoi (aikatsu!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
     "1": "アイドルマスター",
     "2": "三浦あずさ（ショートカット）",
-    "3": "{{{{miura azusa}}}}, [[idolmaster]], blue short hair, forehead, red eyes, tareme, ahoge,wrist cuffs, skirt, navel, smile, idol dress",
+    "3": "{{{{miura azusa}}}}, [[idolmaster]], blue short hair, forehead, red eyes, tareme, ahoge,wrist cuffs, skirt, navel, smile, idol dress,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスター",
     "2": "三浦あずさ（ロングヘア）",
-    "3": "{{{{{dark blue hair}}}}},[idolmaster cinderella girls], official art, ,solo,mature,30 years old,{{long hair,hairline,hair_pulled_back,Jinx hair,ahoge}},{{{diagonal long_bangs,}}},{{{{tareme}}}},red_eyes,big breasts",
+    "3": "{{{{{dark blue hair}}}}},[idolmaster cinderella girls], official art, ,solo,mature,30 years old,{{long hair,hairline,hair_pulled_back,Jinx hair,ahoge}},{{{diagonal long_bangs,}}},{{{{tareme}}}},red_eyes,big breasts,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスター",
     "2": "四条貴音",
-    "3": "{{shijou takane}}, medium wavy silver hair, red eyes",
+    "3": "{{shijou takane}}, medium wavy silver hair, red eyes,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスター",
     "2": "天海春香",
-    "3": "{{{{amami haruka}}}}, [[[[idolmaster]]]], short hair, brown hair, green eyes, tareme, medium breasts, blunt bangs",
+    "3": "{{{{amami haruka}}}}, [[[[idolmaster]]]], short hair, brown hair, green eyes, tareme, medium breasts, blunt bangs,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスター",
     "2": "我那覇響",
-    "3": "{{{{ganaha hibiki}}}}, [[idolmaster]], fang, long hair, messy ponytail, dark blue hair, aqua eyes, {{{{{{tareme}}}}}}, medium breasts, swept bangs, [[[[antenna hair]]]], hair ribbon, smile, solo, cowboy shot",
+    "3": "{{{{ganaha hibiki}}}}, [[idolmaster]], fang, long hair, messy ponytail, dark blue hair, aqua eyes, {{{{{{tareme}}}}}}, medium breasts, swept bangs, [[[[antenna hair]]]], hair ribbon, smile, solo, cowboy shot,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスター",
     "2": "星井美希",
-    "3": "{{hoshii miki}}, medium wavy yellow hair, green eyes, ahoge",
+    "3": "{{hoshii miki}}, medium wavy yellow hair, green eyes, ahoge,",
     "4": ""
   },
   {
@@ -11009,21 +10883,14 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスター",
     "2": "秋月律子",
-    "3": "akizuki ritsuko, [[idolmaster]], [[antenna hair]], glasses, brown hair, ponytail, brown eyes, {{{{tareme}}}}, sidelocks, bangs, solo, cowboy shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "秋月律子（旧）",
-    "3": "akizuki ritsuko,[[idolmaster]],twin braids",
+    "3": "akizuki ritsuko, [[idolmaster]], [[antenna hair]], glasses, brown hair, ponytail, brown eyes, {{{{tareme}}}}, sidelocks, bangs, solo, cowboy shot,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスター",
     "2": "菊地真",
-    "3": "{{{{kikuchi makoto}}}}, [[[[idolmaster]]]], short hair, black hair, ahoge, forehead, black eyes, tareme, small breasts, smile, black gloves, smile",
+    "3": "{{{{kikuchi makoto}}}}, [[[[idolmaster]]]], short hair, black hair, ahoge, forehead, black eyes, tareme, small breasts, smile, black gloves, smile,",
     "4": ""
   },
   {
@@ -11037,7 +10904,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスター",
     "2": "音無小鳥",
-    "3": "{{{{otonashi kotori}}}}, [[[[idolmaster]]]], dark green hair, short hair, bangs, thin yellow hairband on top, orange eyes, tareme, medium breasts, pencil skirt, legwear, zettai ryouiki, vest, smile, solo, cowboy shot",
+    "3": "{{{{otonashi kotori}}}}, [[[[idolmaster]]]], dark green hair, short hair, bangs, thin yellow hairband on top, orange eyes, tareme, medium breasts, pencil skirt, legwear, zettai ryouiki, vest, smile, solo, cowboy shot,",
     "4": ""
   },
   {
@@ -11065,21 +10932,21 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "浅倉透",
-    "3": "{{masterpiece}}, {{best quality}}, {{{ultra-detailed}}}, {{best illustration}}, {{disheveled hair}}, {{beautiful detailed girl}}, {{{{{{asakura toru}}}}}}, {{idolmaster shiny colors}}, small breasts, {{{gradation hair}}}, detailed {{{{{short back}}}} [[[[[[[[[[[[[[[[dull purple]]]]]]]]]]]]]]]] hair, {{{{middle-parted bangs}}}}, {{{{{dull blue cowlick}}}}} ,[[[[ahoge]]]], {{{{{wide-eyed}}}}}, [[round]] {{{{{half-closed drooping}}}}} {{dull light blue}} eyes, [[[[[[[[[[light smile]]]]]]]]]], earrings, [black necktie], white shirt",
+    "3": "{{masterpiece}}, {{best quality}}, {{{ultra-detailed}}}, {{best illustration}}, {{disheveled hair}}, {{beautiful detailed girl}}, {{{{{{asakura toru}}}}}}, {{idolmaster shiny colors}}, small breasts, {{{gradation hair}}}, detailed {{{{{short back}}}} [[[[[[[[[[[[[[[[dull purple]]]]]]]]]]]]]]]] hair, {{{{middle-parted bangs}}}}, {{{{{dull blue cowlick}}}}} ,[[[[ahoge]]]], {{{{{wide-eyed}}}}}, [[round]] {{{{{half-closed drooping}}}}} {{dull light blue}} eyes, [[[[[[[[[[light smile]]]]]]]]]], earrings, [black necktie], white shirt,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "田中摩美々",
-    "3": "{{{{tanaka mamimi}}}}, [[[[idolmaster shiny colors]]]], diagonal bangs, messy pig tails, messy hair, deep purple hair, purple eyes, tsurime, expressionless, purple nail polish, medium breasts",
+    "3": "{{{{tanaka mamimi}}}}, [[[[idolmaster shiny colors]]]], diagonal bangs, messy pig tails, messy hair, deep purple hair, purple eyes, tsurime, expressionless, purple nail polish, medium breasts,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "白瀬咲耶",
-    "3": "{{{{shirase sakuya}}}}, [[[[idolmaster shiny colors]]]], black hair, high ponytail, medium breasts, long hair, bangs, yellow eyes, tsurime, school uniform",
+    "3": "{{{{shirase sakuya}}}}, [[[[idolmaster shiny colors]]]], black hair, high ponytail, medium breasts, long hair, bangs, yellow eyes, tsurime, school uniform,",
     "4": ""
   },
   {
@@ -11093,14 +10960,14 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスター シャイニーカラーズ",
     "2": "黛冬優子",
-    "3": "{{{{mayuzumi fuyuko}}}}, [[[[idolmaster shiny colors]]]], black hair, straight long hair {{{{long wavy sidelocks}}}}, mini two side up, yellow eyes, blunt bangs, {{{{tareme}}}}, medium breasts, black legwear, pink shirt, long sleeves, neck ribbon, zettai ryouiki, frills",
+    "3": "{{{{mayuzumi fuyuko}}}}, [[[[idolmaster shiny colors]]]], black hair, straight long hair {{{{long wavy sidelocks}}}}, mini two side up, yellow eyes, blunt bangs, {{{{tareme}}}}, medium breasts, black legwear, pink shirt, long sleeves, neck ribbon, zettai ryouiki, frills,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "アナスタシア",
-    "3": "{{{{masterpiece}}}},idol master, cinderella girls, anastasia (idolmaster) ,wolf cut,{{{whitesmokehair}}}, short hair,frills, white shirt, {{black corset}}, {sleeveless}, [lolita fashion], pleated skirt, {{{{{blue skirt}}}, mini skirt, black thighhighs,garter belt",
+    "3": "{{{{masterpiece}}}},idol master, cinderella girls, anastasia (idolmaster) ,wolf cut,{{{whitesmokehair}}}, short hair,frills, white shirt, {{black corset}}, {sleeveless}, [lolita fashion], pleated skirt, {{{{{blue skirt}}}, mini skirt, black thighhighs,garter belt,",
     "4": ""
   },
   {
@@ -11121,7 +10988,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "一ノ瀬志希",
-    "3": "{{{{ichinose shiki}}}}, [[[[idolmaster cinderella girls]]]], deep brown hair, wavy long messy hair, blue eyes, medium breasts, ahoge, smile",
+    "3": "{{{{ichinose shiki}}}}, [[[[idolmaster cinderella girls]]]], deep brown hair, wavy long messy hair, blue eyes, medium breasts, ahoge, smile,",
     "4": ""
   },
   {
@@ -11156,7 +11023,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "佐久間まゆ",
-    "3": "idolmaster cinderella girls, {{{sakuma mayu}}},, blue eyes, dark brown hair, medium hair, medium breasts, hairband, school uniform, green jacket, red ribbon tie",
+    "3": "idolmaster cinderella girls, {{{sakuma mayu}}},, blue eyes, dark brown hair, medium hair, medium breasts, hairband, school uniform, green jacket, red ribbon tie,",
     "4": ""
   },
   {
@@ -11177,7 +11044,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "前川みく",
-    "3": "{{{{maekawa miku}}}}, [[[[idolmaster cinderella girls]]]], red glasses, school uniform, brown hair, dark green eyes, short hair, swept bangs, small hair flower",
+    "3": "{{{{maekawa miku}}}}, [[[[idolmaster cinderella girls]]]], red glasses, school uniform, brown hair, dark green eyes, short hair, swept bangs, small hair flower,",
     "4": ""
   },
   {
@@ -11205,7 +11072,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "向井拓海",
-    "3": "{{{{light black hair}}}},idolmaster cinderella girls,official art, {{{{{mukai_takumi}}}}},solo,mature,30 years old,[[[exposed muscle]]],spirited,{{middle hair,hairline,hair_pulled_back,Jinx hair,diagonal long bangs}},{{sharp eyes}},yellow-green_eyes,big eyes,{{slender v-shaped_ slender eyebrows}},big breasts,teeth, cleavage,hand_on_hip ,type of Japanese school uniform for boys often stand-up collar with long jacket and loose trousers",
+    "3": "{{{{light black hair}}}},idolmaster cinderella girls,official art, {{{{{mukai_takumi}}}}},solo,mature,30 years old,[[[exposed muscle]]],spirited,{{middle hair,hairline,hair_pulled_back,Jinx hair,diagonal long bangs}},{{sharp eyes}},yellow-green_eyes,big eyes,{{slender v-shaped_ slender eyebrows}},big breasts,teeth, cleavage,hand_on_hip ,type of Japanese school uniform for boys often stand-up collar with long jacket and loose trousers,",
     "4": ""
   },
   {
@@ -11219,28 +11086,28 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "城ケ崎利嘉",
-    "3": "{{jougasaki rika}}, [[[[idolmaster cinderella girls]]]], loli, yellow hair, long hair, wavy hair, yellow eyes, mini two side up, small breasts, hair ribbon, school uniform, plaid orange miniskirt, bracelet, short sleeves, sweater vest, solo, cowboy shot",
+    "3": "{{jougasaki rika}}, [[[[idolmaster cinderella girls]]]], loli, yellow hair, long hair, wavy hair, yellow eyes, mini two side up, small breasts, hair ribbon, school uniform, plaid orange miniskirt, bracelet, short sleeves, sweater vest, solo, cowboy shot,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "城ヶ崎美嘉（ツインテール）",
-    "3": "{{{{jougasaki mika}}}}, {{{{bright vivid messy pink hair}}}}, medium pig tail, yellow eyes, gyaru, tsurime, hair between eyes, medium breasts",
+    "3": "{{{{jougasaki mika}}}}, {{{{bright vivid messy pink hair}}}}, medium pig tail, yellow eyes, gyaru, tsurime, hair between eyes, medium breasts,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "城ヶ崎美嘉（ポニーテール）",
-    "3": "{{{{jougasaki mika}}}}, [[[[idolmaster cinderella girls]]]], ponytail, clothes around waist, sweater around waist, pink hair, bow, grin, hairbow, school uniform, yellow eyes, tsurime, medium breasts, colo, cowboy shot",
+    "3": "{{{{jougasaki mika}}}}, [[[[idolmaster cinderella girls]]]], ponytail, clothes around waist, sweater around waist, pink hair, bow, grin, hairbow, school uniform, yellow eyes, tsurime, medium breasts, colo, cowboy shot,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "塩見周子",
-    "3": "{{{{shiomi syuko}}}}, short hair, light silver yellow hair, black eyes, medium breasts, hair between eyes",
+    "3": "{{{{shiomi syuko}}}}, short hair, light silver yellow hair, black eyes, medium breasts, hair between eyes,",
     "4": ""
   },
   {
@@ -11254,7 +11121,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "大槻唯",
-    "3": "{{{{ohtsuki yui}}}}, [[[[idolmaster cinderella girls]]]], blue eyes, yellow hair, long hair, wavy hair, medium breasts, ponytail",
+    "3": "{{{{ohtsuki yui}}}}, [[[[idolmaster cinderella girls]]]], blue eyes, yellow hair, long hair, wavy hair, medium breasts, ponytail,",
     "4": ""
   },
   {
@@ -11275,7 +11142,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "新田美波",
-    "3": "idol master, cinderella girls, nitta minami straight hair,brown hair,medium breasts,frills, white shirt, {{black corset}}, {sleeveless}, [lolita fashion], pleated skirt, {{{{{blue skirt}}}, mini skirt, black thighhighs,garter belt",
+    "3": "idol master, cinderella girls, nitta minami straight hair,brown hair,medium breasts,frills, white shirt, {{black corset}}, {sleeveless}, [lolita fashion], pleated skirt, {{{{{blue skirt}}}, mini skirt, black thighhighs,garter belt,",
     "4": ""
   },
   {
@@ -11317,14 +11184,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "渋谷凛",
-    "3": "{{shibuya rin}},green eyes,necklace, cardigan,necktie",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "片桐早苗",
-    "3": "katagiri sanae",
+    "3": "{{shibuya rin}},green eyes,necklace, cardigan,necktie,",
     "4": ""
   },
   {
@@ -11338,7 +11198,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "的場梨沙",
-    "3": "{{{{matoba risa}}}}, [[idolmaster cinderella girls]], loli, black hair, long twintails tied with {{leopard}} pattern hair ribbon sidelocks, yellow eyes, tsurime, flat chest",
+    "3": "{{{{matoba risa}}}}, [[idolmaster cinderella girls]], loli, black hair, long twintails tied with {{leopard}} pattern hair ribbon sidelocks, yellow eyes, tsurime, flat chest,",
     "4": ""
   },
   {
@@ -11359,7 +11219,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "福山舞",
-    "3": "[[[[idolmaster cinderella girls]]]], loli, child, gray eyes, black hair, wavy ponytail, red hair ribbon, {{tareme}}, bangs, smile, :D, cowboy shot",
+    "3": "[[[[idolmaster cinderella girls]]]], loli, child, gray eyes, black hair, wavy ponytail, red hair ribbon, {{tareme}}, bangs, smile, :D, cowboy shot,",
     "4": ""
   },
   {
@@ -11373,7 +11233,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "藤居朋",
-    "3": "fujii tomo, idolmaster cinderella girls, blunt bangs, ponytail, wavy hair, dark green hair, brown eyes, round eyes, white bow",
+    "3": "fujii tomo, idolmaster cinderella girls, blunt bangs, ponytail, wavy hair, dark green hair, brown eyes, round eyes, white bow,",
     "4": ""
   },
   {
@@ -11408,21 +11268,21 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "遊佐こずえ",
-    "3": "{{{{yusa kozue}}}}, minigirl, child, little girl, kid, tiny head, {{blonde hair}}, {{{{tareme}}}}, medium {{{{messy}}}} hair, wavy hair, thick low [[[[twintails]]]] {{{{2 side-flip}}}}, short ahoge, emotionless half closed dark green eyes, swept bangs, flat chest, 2 hair_scrunchie on tip of the hair",
+    "3": "{{{{yusa kozue}}}}, minigirl, child, little girl, kid, tiny head, {{blonde hair}}, {{{{tareme}}}}, medium {{{{messy}}}} hair, wavy hair, thick low [[[[twintails]]]] {{{{2 side-flip}}}}, short ahoge, emotionless half closed dark green eyes, swept bangs, flat chest, 2 hair_scrunchie on tip of the hair,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "高垣楓",
-    "3": "{{{{takagaki kaede}}}}, idolmaster cinderella girls, green hair, tsurime, blue eyes, swept bangs, medium breasts, cowboy shot",
+    "3": "{{{{takagaki kaede}}}}, idolmaster cinderella girls, green hair, tsurime, blue eyes, swept bangs, medium breasts, cowboy shot,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "アイドルマスターシンデレラガールズ",
     "2": "鷺沢文香",
-    "3": "{sagisawa fumika}, idolmaster cinderella girls, stage costumes, smile,shiny,hair_flower,jewelry,layered_skirt,necklace,tiara,puffy sleeves",
+    "3": "{sagisawa fumika}, idolmaster cinderella girls, stage costumes, smile,shiny,hair_flower,jewelry,layered_skirt,necklace,tiara,puffy sleeves,",
     "4": ""
   },
   {
@@ -11437,6 +11297,223 @@ let defaultMaster = {
     "1": "アカメが斬る！",
     "2": "アカメ",
     "3": "{{{{akame (akame ga kill!)}}}},black hair",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アクセルワールド",
+    "2": "上月由仁子",
+    "3": "{{{{kouzuki yuniko (accel world)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アクセルワールド",
+    "2": "倉嶋千百合",
+    "3": "{{{{kurashima chiyuri (accel world)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アクセルワールド",
+    "2": "黒雪姫",
+    "3": "{{{{kuroyukihime (accel world)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アサルトリリィ",
+    "2": "一柳梨璃",
+    "3": "{{{{hitotsuyanagi riri (assault lily)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アスタロッテのおもちゃ!",
+    "2": "アスタロッテ・ユグヴァール",
+    "3": "{{{{astarotte ygvar (astarotte no omocha!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アスタロッテのおもちゃ!",
+    "2": "塔原明日葉",
+    "3": "{{{{touhara asuha (astarotte no omocha!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "Z23",
+    "3": "{{{{z23_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "meowfficer",
+    "3": "{{{{meowfficer_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "アルジェリー",
+    "3": "{{{{algerie_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "イラストリアス",
+    "3": "{{{{illustrious_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "エンタープライズ",
+    "3": "{{{{enterprise_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "ゴールデンハインド",
+    "3": "{{{{golden_hind_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "シリウス",
+    "3": "{{{{sirius_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "ジャベリン",
+    "3": "{{{{javelin_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "ダイドー",
+    "3": "{{{{dido_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "チェシャー",
+    "3": "{{{{cheshire_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "ノースカロライナ",
+    "3": "{{{{north_carolina_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "フォーミダブル",
+    "3": "{{{{formidable_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "ブレマートン",
+    "3": "{{{{bremerton_(azur_lane))}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "プリンツ・オイゲン",
+    "3": "{{{{prinz_eugen_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "ベルちゃん（リトルベル）",
+    "3": "{{{{little_bel_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "ラフィー",
+    "3": "{{{{laffey_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "ル・マラン",
+    "3": "{{{{le_malin_(listless_lapin)_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "大鳳",
+    "3": "{{{{taihou_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "明石",
+    "3": "{{{{akashi_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "樫野",
+    "3": "{{{{kashino_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "綾波",
+    "3": "{{{{ayanami_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "能代",
+    "3": "{{{{noshiro_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "赤城",
+    "3": "{{{{akagi_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "長門",
+    "3": "{{{{nagato_(azur_lane)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "アズールレーン",
+    "2": "高尾",
+    "3": "{{{{takao_(azur_lane)}}}}",
     "4": ""
   },
   {
@@ -11471,77 +11548,182 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "イジらないで、長瀞さん",
     "2": "長瀞さん",
-    "3": "{{nagatoro_hayase}},ijiranaide_nagatoro-san",
+    "3": "{{nagatoro_hayase}},ijiranaide_nagatoro-san,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ウマ娘",
     "2": "アグネスタキオン",
-    "3": "agnes tachyon (umamusume)",
+    "3": "agnes tachyon (umamusume),",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ウマ娘",
     "2": "アグネスデジタル",
-    "3": "agnes digital (umamusume)",
+    "3": "agnes digital (umamusume),",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ウマ娘",
-    "2": "エアグル勝負服",
-    "3": "umamusume,air groove (umamusume),two-tone shirt, shoulder cutout, yellow sailor collar, bow, cape, blue skirt, cleavage",
+    "2": "アドマイヤベガ",
+    "3": "{{{{admire_vega_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "イナリワン",
+    "3": "{{{{inari_one_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "エアグルーヴ",
+    "3": "{{{{air_groove_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "エアシャカール",
+    "3": "{{{{air_shakur_(umamusume)}}}}",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ウマ娘",
     "2": "エルコンドルパサー",
-    "3": "el condor pasa (umamusume)",
+    "3": "el condor pasa (umamusume),",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ウマ娘",
     "2": "カレンチャン",
-    "3": "curren chan (umamusume)",
+    "3": "curren chan (umamusume),",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "カワカミプリンセス",
+    "3": "{{{{kawakami_princess_(umamusume)}}}}",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ウマ娘",
     "2": "グラスワンダー",
-    "3": "grass wonder (umamusume)",
+    "3": "grass wonder (umamusume),",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "ゴールドシティ",
+    "3": "{{{{gold_city_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "シュヴァルグラン",
+    "3": "{{{{cheval_grand_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "ゼンノロブロイ",
+    "3": "{{{{zenno_rob_roy_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "ダイイチルビー",
+    "3": "{{{{daiichi_ruby_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "ダイタクヘリオス",
+    "3": "{{{{daitaku_helios_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "ツルマルツヨシ",
+    "3": "{{{{tsurumaru_tsuyoshi_(umamusume)}}}}",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ウマ娘",
     "2": "テイエムオペラオー",
-    "3": "t.m. opera o (umamusume)",
+    "3": "t.m. opera o (umamusume),",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "ナリタトップロード",
+    "3": "{{{{narita_top_road_(umamusume)}}}}",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ウマ娘",
     "2": "ニシノフラワー",
-    "3": "nishino flower (umamusume)",
+    "3": "nishino flower (umamusume),",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ウマ娘",
-    "2": "ネイチャ勝負服",
-    "3": ":nice nature (umamusume), ear covers, green bowtie, diagonal-striped bowtie, striped puffy sleeves, puffy long sleeves, juliet sleeves, grey shirt, double-breasted, buttons, black dress, frilled dress, pinafore dress, thigh strap, o-ring, red socks, brown footwear, knee boots, cross-laced footwear, lace-up boots, kneehighs",
+    "2": "ハッピーミーク",
+    "3": "{{{{happy_meek_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "バンブーメモリー",
+    "3": "{{{{bamboo_memory_(umamusume)}}}}",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ウマ娘",
     "2": "ヒシアケボノ",
-    "3": "hishi akebono (umamusume)",
+    "3": "hishi akebono (umamusume),",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "ヒシミラクル",
+    "3": "{{{{hishi_miracle_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "ファインモーション",
+    "3": "{{{{fine_motion_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "フジキセキ",
+    "3": "{{{{fuji_kiseki_(umamusume)}}}}",
     "4": ""
   },
   {
@@ -11561,8 +11743,64 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "ウマ娘",
+    "2": "マーベラスサンデー",
+    "3": "{{{{marvelous_sunday_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
     "2": "メイショウドトウ",
-    "3": "meisho doto (umamusume)",
+    "3": "meisho doto (umamusume),",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "ヤエノムテキ",
+    "3": "{{{{yaeno_muteki_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ウマ娘",
+    "2": "ユキノビジン",
+    "3": "{{{{yukino_bijin_(umamusume)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "エロマンガ先生",
+    "2": "和泉紗霧",
+    "3": "{{{{izumi sagiri (eromanga sensei)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "エロマンガ先生",
+    "2": "山田エルフ",
+    "3": "{{{{yamada elf (eromanga sensei)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "オーディンスフィア",
+    "2": "グウェンドリン",
+    "3": "{{{{gwendolyn (odin sphere)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "オーディンスフィア",
+    "2": "ベルベット",
+    "3": "{{{{velvet (odin sphere)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "オーディンスフィア",
+    "2": "メルセデス",
+    "3": "{{{{mercedes (odin sphere)}}}}",
     "4": ""
   },
   {
@@ -11597,7 +11835,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "ガールズ＆パンツァー",
     "2": "カチューシャ",
-    "3": "katyusha_(girls_und_panzer),{girls und panzer},blonde hair, short hair, blue eyes,flat chest,little, ooarai school uniform,sleeves_past_wrists",
+    "3": "katyusha_(girls_und_panzer),{girls und panzer},blonde hair, short hair, blue eyes,flat chest,little, ooarai school uniform,sleeves_past_wrists,",
     "4": ""
   },
   {
@@ -11611,14 +11849,14 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "ガールズ＆パンツァー",
     "2": "武部沙織",
-    "3": "takebe saori, girls und panzer,orange hair,blunt bangs, orange eyes, wavy hair,medium hair,zettai ryouiki,black legwear,ooarai school uniform, serafuku, green skirt, black neckerchief,tareme,solo,smile",
+    "3": "takebe saori, girls und panzer,orange hair,blunt bangs, orange eyes, wavy hair,medium hair,zettai ryouiki,black legwear,ooarai school uniform, serafuku, green skirt, black neckerchief,tareme,solo,smile,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ガールズ＆パンツァー",
     "2": "秋山優花里",
-    "3": "akiyama yukari,,solo,{girls und panzer},ooarai school uniform,green skirt, black neckerchief,brown eyes,tareme,brown hair,short hair,small breasts",
+    "3": "akiyama yukari,,solo,{girls und panzer},ooarai school uniform,green skirt, black neckerchief,brown eyes,tareme,brown hair,short hair,small breasts,",
     "4": ""
   },
   {
@@ -11653,49 +11891,105 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "キボウノチカラ～オトナプリキュア‘23～",
     "2": "夏木りん（大人）",
-    "3": "{{{natsuki rin}}},kibou no chikara ~otona precure '23~, adult",
+    "3": "{{{natsuki rin}}},kibou no chikara ~otona precure '23~, adult,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "キボウノチカラ～オトナプリキュア‘23～",
     "2": "夢原のぞみ（大人）",
-    "3": "{{{yumehara nozomi}}},kibou no chikara ~otona precure '23~, adult",
+    "3": "{{{yumehara nozomi}}},kibou no chikara ~otona precure '23~, adult,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "キボウノチカラ～オトナプリキュア‘23～",
     "2": "春日野うらら（大人）",
-    "3": "{{{kasugano urara}}},kibou no chikara ~otona precure '23~, adult",
+    "3": "{{{kasugano urara}}},kibou no chikara ~otona precure '23~, adult,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "キボウノチカラ～オトナプリキュア‘23～",
     "2": "水無月かれん（大人）",
-    "3": "{{{minazuki karen}}},kibou no chikara ~otona precure '23~, adult",
+    "3": "{{{minazuki karen}}},kibou no chikara ~otona precure '23~, adult,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "キボウノチカラ～オトナプリキュア‘23～",
     "2": "秋元こまち（大人）",
-    "3": "{{{akimoto komachi}}},kibou no chikara ~otona precure '23~, adult",
+    "3": "{{{akimoto komachi}}},kibou no chikara ~otona precure '23~, adult,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "キボウノチカラ～オトナプリキュア‘23～",
     "2": "美々野くるみ（大人）",
-    "3": "{{{mimino kurumi}}},kibou no chikara ~otona precure '23~, adult",
+    "3": "{{{mimino kurumi}}},kibou no chikara ~otona precure '23~, adult,",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "キラッとプリ☆チャン",
+    "2": "桃山みらい",
+    "3": "{{{{momoyama_mirai}}}}",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "キラッとプリ☆チャン",
     "2": "萌黄えも",
-    "3": "{{{moegi emo}}}, {{{{{{{{kiratto pri chan}}}}}}}}, yellow hair, green cheerleader, lightblue eyes",
+    "3": "{{{moegi emo}}}, {{{{{{{{kiratto pri chan}}}}}}}}, yellow hair, green cheerleader, lightblue eyes,",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "キルミーベイベー",
+    "2": "ソーニャ",
+    "3": "{{{{sonya (kill me baby)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "キルミーベイベー",
+    "2": "呉織 あぎり",
+    "3": "{{{{goshiki agiri (kill me baby)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "キルミーベイベー",
+    "2": "折部 やすな",
+    "3": "{{{{oribe yasuna (kill me baby)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ギャラクシーエンジェル",
+    "2": "ミルフィーユ・桜葉",
+    "3": "{{{{milfeulle sakuraba (galaxy angel)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ギャラクシーエンジェル",
+    "2": "ミント・ブラマンシュ",
+    "3": "{{{{mint blancmanche (galaxy angel)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ギャラクシーエンジェル",
+    "2": "ヴァニラ・H",
+    "3": "{{{{vanilla h (galaxy angel)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ギルティギア",
+    "2": "エルフェルト=ヴァレンタイン",
+    "3": "{{{{elphelt_valentine (guilty gear)}}}}",
     "4": ""
   },
   {
@@ -11708,15 +12002,29 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "ギルティギア",
+    "2": "ブリジット",
+    "3": "{{{{bridget_(guilty_gear)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ギルティギア",
+    "2": "ミリア=レイジ",
+    "3": "{{{{millia_rage (guilty gear)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ギルティギア",
     "2": "メイ",
     "3": "{{{{may (guilty gear)}}}},[[[[[rem (re:zero)]]]]],,solo,loli,kawaii,white background,small breasts,bangs,black gloves,bike shorts,black shorts,boots,open mouth,fang,brown eyes,brown hair,cabbie hat,fingerless gloves,full body,pirate hat, smile,hood down,hoodie,leg up,long hair,looking at viewer,orange footwear,orange headwear,orange hoodie,shorts,skull and crossbones",
     "4": ""
   },
   {
     "0": "キャラクター再現",
-    "1": "グランブルーファンタジー",
-    "2": "ナルメア",
-    "3": "narmaya,granble fantasy",
+    "1": "ギルティギア",
+    "2": "ラムレザル=ヴァレンタイン",
+    "3": "{{{{ramlethal_valentine (guilty gear)}}}}",
     "4": ""
   },
   {
@@ -11736,8 +12044,43 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "サクラ大戦",
+    "2": "マリア・タチバナ v3 再現不可",
+    "3": "{{{{maria tachibana (sakura taisen)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "サクラ大戦",
     "2": "李紅蘭 NAI v3 再現不可",
     "3": "{{{{li kouran (sakura taisen)}}}},glasses",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "サクラ大戦",
+    "2": "桐島カンナ NAI v3 再現不可",
+    "3": "{{{{kirishima kanna (sakura taisen)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "サクラ大戦",
+    "2": "真宮寺さくら",
+    "3": "{{{{shinguuji sakura (sakura taisen)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "サクラ大戦",
+    "2": "神崎すみれ",
+    "3": "{{{{kanzaki sumire (sakura taisen)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "サクラ大戦3",
+    "2": "エリカ・フォンティーヌ NAI v3 再現不可",
+    "3": "{{{{erika fontaine (sakura taisen)}}}}",
     "4": ""
   },
   {
@@ -11757,8 +12100,22 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "サクラ大戦3",
+    "2": "ジェミニ・サンライズ",
+    "3": "{{{{gemini sunrise (sakura taisen)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "サクラ大戦3",
     "2": "ハナビ・キタオウジ",
     "3": "{{{{hanabi kitaooji (sakura taisen)}}}},black hair",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "サクラ大戦3",
+    "2": "ロベリア・カルリーニ",
+    "3": "{{{{lobelia carlini (sakura taisen)}}}}",
     "4": ""
   },
   {
@@ -11813,15 +12170,176 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "セーラームーン",
+    "2": "セーラーサターン",
+    "3": "{{{{sailor_saturn (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "セーラージュピター",
+    "3": "{{{{sailor_jupiter (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "セーラーネプチューン",
+    "3": "{{{{sailor_neptune (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "セーラーマーキュリー",
+    "3": "{{{{sailor_mercury (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "セーラーマーズ",
+    "3": "{{{{sailor_mars (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "セーラームーン",
+    "3": "{{{{sailor_moon (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "セーラーヴィーナス",
+    "3": "{{{{sailor_venus (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "土萠 ほたる",
+    "3": "{{{{tomoe_hotaru (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "天王 はるか",
+    "3": "{{{{ten'ou_haruka (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "愛野 美奈子",
+    "3": "{{{{aino_minako (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
     "2": "月野うさぎ",
     "3": "{{{{tsukino usagi}}}}, [[[[sailor moon]]]], blonde hair, very long twintails, double buns, blue eyes, sailor school uniform, sailor collar, brooch, crescent earrings, red heart choker, hairpin, forehead crescent",
     "4": ""
   },
   {
     "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "木野 まこと",
+    "3": "{{{{kino_makoto (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "水野 亜美",
+    "3": "{{{{mizuno_ami (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "海王みちる",
+    "3": "{{{{kaiou_michiru (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "セーラームーン",
+    "2": "火野 レイ",
+    "3": "{{{{hino_rei (bishoujo_senshi_sailor_moon)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ゼルダの伝説シリーズ",
+    "2": "インパ",
+    "3": "{{{{impa (the_legend_of_zelda)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ゼルダの伝説シリーズ",
+    "2": "ウルボサ",
+    "3": "{{{{urbosa (the_legend_of_zelda)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ゼルダの伝説シリーズ",
+    "2": "コロク",
+    "3": "{{{{korok (the_legend_of_zelda)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ゼルダの伝説シリーズ",
+    "2": "ゼルダ",
+    "3": "{{{{princess_zelda}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ゼルダの伝説シリーズ",
+    "2": "ダルク",
+    "3": "{{{{daruk (the_legend_of_zelda)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ゼルダの伝説シリーズ",
+    "2": "トゥーンリンク",
+    "3": "{{{{toon_link}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ゼルダの伝説シリーズ",
+    "2": "ミーファ",
+    "3": "{{{{mipha (the_legend_of_zelda)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ゼルダの伝説シリーズ",
+    "2": "リンク",
+    "3": "{{{{link}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ゼルダの伝説シリーズ",
+    "2": "リーバル",
+    "3": "{{{{revali (the_legend_of_zelda)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
     "1": "ゼロの使い魔",
     "2": "ルイズ",
-    "3": "{{{louise francoise le blanc de la valliere}}}, {zero no tsukaima}, [[[loli]]], [[pink eyes]], [[pink hair]], hair between eyes, very long hair, long hair, wavy hair, small breasts, slender",
+    "3": "{{{louise francoise le blanc de la valliere}}}, {zero no tsukaima}, [[[loli]]], [[pink eyes]], [[pink hair]], hair between eyes, very long hair, long hair, wavy hair, small breasts, slender,",
     "4": ""
   },
   {
@@ -11829,6 +12347,34 @@ let defaultMaster = {
     "1": "ソードアート・オンライン",
     "2": "アスナ",
     "3": "asuna_(sao), long hair, orange hair, orange eyes, floating hair, medium breasts, white legwear, red miniskirt, holding long sword handle",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ソードアート・オンライン",
+    "2": "アスナ(ALO)",
+    "3": "{{{{asuna_(sao-alo)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ソードアート・オンライン",
+    "2": "キリト",
+    "3": "{{{{kirito (sao)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ソードアート・オンライン",
+    "2": "キリト(GGO)",
+    "3": "{{{{kirito_(sao-ggo)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ソードアート・オンライン",
+    "2": "シノン",
+    "3": "{{{{sinon (sao)}}}}",
     "4": ""
   },
   {
@@ -11848,6 +12394,13 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "ソードアート・オンライン",
+    "2": "シリカ(ALO)",
+    "3": "{{{{silica_(sao-alo)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ソードアート・オンライン",
     "2": "ユイ",
     "3": "{{{{yui_(sao)}}}},hime_cut,black_hair,long_hair",
     "4": ""
@@ -11862,8 +12415,8 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "ソードアート・オンライン",
-    "2": "朝田詩乃",
-    "3": "asada_shino",
+    "2": "リーファ",
+    "3": "{{{{leafa (sao)}}}}",
     "4": ""
   },
   {
@@ -11882,16 +12435,30 @@ let defaultMaster = {
   },
   {
     "0": "キャラクター再現",
+    "1": "ソードアート・オンライン",
+    "2": "桐ヶ谷 直葉",
+    "3": "{{{{kirigaya_suguha(sao)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ソードアート・オンライン",
+    "2": "篠崎 里香",
+    "3": "{{{{lisbeth_(sao)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
     "1": "ダンガンロンパ",
     "2": "朝日奈葵",
-    "3": "asahina aoi, danganronpa: trigger happy havoc, danganronpa (series),blue eyes,brown hair,cleavage,dark-skinned female, {{dark skin}}, red jacket, open jacket, ponytail,grin",
+    "3": "asahina aoi, danganronpa: trigger happy havoc, danganronpa (series),blue eyes,brown hair,cleavage,dark-skinned female, {{dark skin}}, red jacket, open jacket, ponytail,grin,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ダンガンロンパ",
     "2": "朝日奈葵(水着)",
-    "3": "asahina aoi, danganronpa: trigger happy havoc, danganronpa (series),blue eyes,brown hair,cleavage,dark-skinned female, {{dark skin}},blue competition swimsuit, ponytail,grin",
+    "3": "asahina aoi, danganronpa: trigger happy havoc, danganronpa (series),blue eyes,brown hair,cleavage,dark-skinned female, {{dark skin}},blue competition swimsuit, ponytail,grin,",
     "4": ""
   },
   {
@@ -12003,7 +12570,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "トゥハート",
     "2": "保科智子",
-    "3": "{{{{hoshina tomoko (to heart)}}}, large breasts, grasses",
+    "3": "{{{{hoshina tomoko (to heart)}}}, large breasts, grasses,",
     "4": ""
   },
   {
@@ -12044,8 +12611,57 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "トゥハート2",
+    "2": "ルーシー・マリア・ミソラ",
+    "3": "{{{{lucy_maria_misora (to_heart_(series))}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "トゥハート2",
+    "2": "十波由真",
+    "3": "{{{{tonami_yuma (to_heart_(series))}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "トゥハート2",
+    "2": "向坂環",
+    "3": "{{{{kousaka_tamaki (to_heart_(series))}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "トゥハート2",
+    "2": "姫百合珊瑚",
+    "3": "{{{{himeyuri_sango (to_heart_(series))}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "トゥハート2",
+    "2": "姫百合瑠璃",
+    "3": "{{{{himeyuri_ruri (to_heart_(series))}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "トゥハート2",
+    "2": "小牧愛佳",
+    "3": "{{{{komaki_manaka (to_heart_(series))}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "トゥハート2",
     "2": "柚原このみ",
     "3": "{{{{yuzuhara_konomi (to_heart_(series))}}}},black hair",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "トゥハート2",
+    "2": "笹森花梨",
+    "3": "{{{{sasamori_karin (to_heart_(series))}}}}",
     "4": ""
   },
   {
@@ -12073,7 +12689,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "ノーゲーム・ノーライフ",
     "2": "白",
-    "3": "{{{{{no game no life,shiro (no game no life),white hair}}}}}",
+    "3": "{{{{{no game no life,shiro (no game no life),white hair}}}}},",
     "4": ""
   },
   {
@@ -12093,8 +12709,50 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "ブルーアーカイブ",
+    "2": "アロナ(A.R.O.N.A)",
+    "3": "{{{{arona_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "サキ",
+    "3": "{{{{saki_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "プラナ",
+    "3": "{{{{plana_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
     "2": "ユウカ",
-    "3": "yuuka_(blue_archive) , purple hair, two side up",
+    "3": "yuuka_(blue_archive) , purple hair, two side up,",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "伊落マリー",
+    "3": "{{{{mari_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "天童アリス",
+    "3": "{{{{aris_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "天雨アコ",
+    "3": "{{{{ako_(blue_archive)}}}}",
     "4": ""
   },
   {
@@ -12102,6 +12760,69 @@ let defaultMaster = {
     "1": "ブルーアーカイブ",
     "2": "室笠アカネ",
     "3": "{{{{akane_(blue_archive)}}}},glasses",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "尾刃カンナ",
+    "3": "{{{{kanna_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "早瀬ユウカ",
+    "3": "{{{{yuuka_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "生塩ノア",
+    "3": "{{{{noa_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "砂狼シロコ",
+    "3": "{{{{shiroko_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "空崎ヒナ",
+    "3": "{{{{hina_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "竜華キサキ",
+    "3": "{{{{kisaki_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "聖園ミカ",
+    "3": "{{{{mika_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "角楯カリン",
+    "3": "{{{{karin_(blue_archive)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ブルーアーカイブ",
+    "2": "飛鳥馬トキ",
+    "3": "{{{{toki_(blue_archive)}}}}",
     "4": ""
   },
   {
@@ -12141,6 +12862,41 @@ let defaultMaster = {
   },
   {
     "0": "キャラクター再現",
+    "1": "ホロライブ",
+    "2": "大神ミオ",
+    "3": "{{{{ookami_mio}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ホロライブ",
+    "2": "大空スバル",
+    "3": "{{{{oozora_subaru}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ホロライブ",
+    "2": "戌神ころね",
+    "3": "{{{{inugami_korone}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ホロライブ",
+    "2": "猫又 おかゆ",
+    "3": "{{{{nekomata_okayu}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ホロライブ",
+    "2": "白上フブキ",
+    "3": "{{{{shirakami fubuki}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
     "1": "ボーカロイド",
     "2": "鏡音リン",
     "3": "{{{kagamine rin}}}, black short pants,middriff,sailors,wide sleeves, black sleeves,bare shoulder,sleeveless,eye reflection, white sailors",
@@ -12158,13 +12914,6 @@ let defaultMaster = {
     "1": "ポケモン",
     "2": "エリカ",
     "3": "{{{{{erika pokemon}}}}},bangs,black hair,short hair,bob cut,straight hair,slender,midium breasts,{{{yellow kimono}}},yellow upper body,{{{red hairband}}},not wide hairband,red hakama,long sleeves,wide sleeves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "オカルトマニア(XY)",
-    "3": "hex maniac (pokemon),official art",
     "4": ""
   },
   {
@@ -12199,7 +12948,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "ポケモン",
     "2": "シロナ",
-    "3": "{{cynthia (pokemon)}} ,very long hair,{blonde hair},long hair,hair ornament,hair over one eye,slender,gray eyes,midium breasts,20 years old",
+    "3": "{{cynthia (pokemon)}} ,very long hair,{blonde hair},long hair,hair ornament,hair over one eye,slender,gray eyes,midium breasts,20 years old,",
     "4": ""
   },
   {
@@ -12282,8 +13031,29 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "メイドインアビス",
+    "2": "オーゼン",
+    "3": "{{{{ozen (made_in_abyss)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "メイドインアビス",
     "2": "ナナチ",
     "3": "made in abyss,{{{nanachi}}},dark skin,loli",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "メイドインアビス",
+    "2": "ファプタ",
+    "3": "{{{{faputa (made_in_abyss)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "メイドインアビス",
+    "2": "プルシュカ",
+    "3": "{{{{prushka (made_in_abyss)}}}}",
     "4": ""
   },
   {
@@ -12298,6 +13068,13 @@ let defaultMaster = {
     "1": "メイドインアビス",
     "2": "マルルク",
     "3": "{{{{maruruk (made_in_abyss)}}}},shota",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "メイドインアビス",
+    "2": "ミーティ(ナナチと混ざりがち)",
+    "3": "{{{{mitty_(made_in_abyss)}}}}",
     "4": ""
   },
   {
@@ -12395,14 +13172,14 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "ラブライブ！サンシャイン！！",
     "2": "小原鞠莉",
-    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{ohara mari}}}, yellow eyes, large breasts,crown braid",
+    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{ohara mari}}}, yellow eyes, large breasts,crown braid,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ラブライブ！サンシャイン！！",
     "2": "松浦果南",
-    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{matsuura kanan}}}, purple eyes,blue hair,ponytail",
+    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{matsuura kanan}}}, purple eyes,blue hair,ponytail,",
     "4": ""
   },
   {
@@ -12508,6 +13285,13 @@ let defaultMaster = {
     "1": "ラブライブ！スーパースター!!",
     "2": "桜小路 きな子",
     "3": "{{{kurosawar ruby}}}, {love live! sunshine!!}, medium breasts, {{{15 years old, young teen}}}, {{{french braid}}}, {{{{{blunt bangs}}}}}, forehead, {{{low twintails}}}, long hair, long hair, brown hair, mint eyes, tareme, big eyes",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ラブライブ！スーパースター!!",
+    "2": "澁谷かのん",
+    "3": "{{{{shibuya_kanon (love live! superstar!!)}}}}",
     "4": ""
   },
   {
@@ -12625,6 +13409,13 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "リコリスリコイル",
+    "2": "井ノ上 たきな",
+    "3": "{{{{inoue_takina (lycoris_recoil)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "リコリスリコイル",
     "2": "錦木千束",
     "3": "nishikigi chisato ,lycoris recoil,blonde hair,medium bob,red eyes,belt,red bowtie,breasts,hair ribbon,red ribbon ,pleated_skirt,red skirt, shiny hair,red shirt,smile",
     "4": ""
@@ -12638,16 +13429,65 @@ let defaultMaster = {
   },
   {
     "0": "キャラクター再現",
+    "1": "ワンピース",
+    "2": "ウタ",
+    "3": "{{{{uta (one piece)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ワンピース",
+    "2": "ナミ",
+    "3": "{{{{nami (one piece)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ワンピース",
+    "2": "ニコ・ロビン",
+    "3": "{{{{nico robin (one piece)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ワンピース",
+    "2": "ボア・ハンコック",
+    "3": "{{{{boa hancock (one piece)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ワンピース",
+    "2": "ヤマト",
+    "3": "{{{{yamato (one piece)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ヴァイオレット・エヴァーガーデン",
+    "2": "ヴァイオレット・エヴァーガーデン",
+    "3": "{{{{violet_evergarden}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
     "1": "ヴァンパイア",
     "2": "モリガン",
-    "3": "Morrigan Aensland (Vampire),capcom, large breasts",
+    "3": "Morrigan Aensland (Vampire),capcom, large breasts,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "ヴァンパイア",
     "2": "リリス",
-    "3": "Lilith (Vampire),capcom, small breasts,short hair,light purple hair",
+    "3": "Lilith (Vampire),capcom, small breasts,short hair,light purple hair,",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "ヴァンパイア(格ゲー)",
+    "2": "フェリシア",
+    "3": "{{{{felicia_(vampire)}}}}",
     "4": ""
   },
   {
@@ -12660,29 +13500,57 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "中二病でも恋がしたい！",
+    "2": "丹生谷森夏",
+    "3": "{{{{nibutani_shinka}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "中二病でも恋がしたい！",
+    "2": "五月七日くみん",
+    "3": "{{{{tsuyuri_kumin (chuunibyou_demo_koi_ga_shitai!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "中二病でも恋がしたい！",
+    "2": "凸守早苗",
+    "3": "{{{{dekomori_sanae (chuunibyou_demo_koi_ga_shitai!)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "中二病でも恋がしたい！",
     "2": "小鳥遊六花",
     "3": "{{{{takanashi rikka}}}}, chuunibyou demo koi ga shitai, loli, deep purple short hair, small breasts, blue eyes, white eyepatch covers one eye, tiny sidetail tied with yellow bow, {{{{tareme}}}}, ahoge, school uniform, miniskirt",
     "4": ""
   },
   {
     "0": "キャラクター再現",
+    "1": "侵略！イカ娘",
+    "2": "イカ娘",
+    "3": "{{{{ikamusume}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
     "1": "俺の妹がこんなに可愛いわけがない",
     "2": "五更瑠璃",
-    "3": "gokou ruri, Gothic & Lolita, ore no imouto ga konna ni kawaii wake ga nai, best_quality,ultra-detailed,illustration,perfect_detailed,shiny",
+    "3": "gokou ruri, Gothic & Lolita, ore no imouto ga konna ni kawaii wake ga nai, best_quality,ultra-detailed,illustration,perfect_detailed,shiny,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "俺の妹がこんなに可愛いわけがない",
     "2": "新垣あやせ",
-    "3": "{{{{{aragaki_ayase}}}}},ore_no_imouto_ga_konna_ni_kawaii_wake_ga_nai,Navy blue long straight hair,Navy blue eyes,16 years old,serafuku",
+    "3": "{{{{{aragaki_ayase}}}}},ore_no_imouto_ga_konna_ni_kawaii_wake_ga_nai,Navy blue long straight hair,Navy blue eyes,16 years old,serafuku,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "俺の妹がこんなに可愛いわけがない",
     "2": "高坂桐乃",
-    "3": "masterpiece,best quality,looking up, ore no imouto ga konna ni kawaii wake ga nai,, kousaka_kirino ,crossed arms,orange hair|brown hair,long hair,floating hair,shiny hair,blue eyes|aqua eyes,(pink hairclip),badmood,white shirt,(gray sailor collar|blue sailor collar),red ascot",
+    "3": "masterpiece,best quality,looking up, ore no imouto ga konna ni kawaii wake ga nai,, kousaka_kirino ,crossed arms,orange hair|brown hair,long hair,floating hair,shiny hair,blue eyes|aqua eyes,(pink hairclip),badmood,white shirt,(gray sailor collar|blue sailor collar),red ascot,",
     "4": ""
   },
   {
@@ -12690,13 +13558,6 @@ let defaultMaster = {
     "1": "原神",
     "2": "クレー",
     "3": "{{klee (genshin impact) }},blond hair, low twintail, red eyes, cabbie hat, white shorts, long sleeves, pointy ears, red dress, backpack, red headwear, {{brown gloves}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "ニィロウ素体",
-    "3": "{1girl, nilou (genshin impact)}, [[ame (uten cancel), yd (orange maru), muchi maro, shirabi, mery (yangmalgage)]], {{year 2023}}, highly detailed, green eyes, vermilion long hair, low twintails, navel,parted bangs,red hair",
     "4": ""
   },
   {
@@ -12711,13 +13572,6 @@ let defaultMaster = {
     "1": "原神",
     "2": "バーバラ",
     "3": "barbara (genshin impact) ,blonde short hair,twintails,wavy hair,white dress,ribbon,tube top,{{frills}},blue eyes,{{loli}},small breasts,cocktail hat,frill choker,chest riboon,long sleeves,smile",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "バーバラ素体",
-    "3": "{1girl, barbara_(genshin_impact)}, [[ame (uten cancel), yd (orange maru), muchi maro, shirabi, mery (yangmalgage)]], {{year 2023}}, highly detailed,blonde short hair,twintails,wavy hair, ribbon, blue eyes",
     "4": ""
   },
   {
@@ -12778,6 +13632,20 @@ let defaultMaster = {
   },
   {
     "0": "キャラクター再現",
+    "1": "同級生シリーズ",
+    "2": "桜木舞",
+    "3": "{{{{sakuragi_mai (doukyuusei)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "同級生シリーズ",
+    "2": "鳴沢唯",
+    "3": "{{{{narusawa_yui (doukyuusei_2)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
     "1": "咲",
     "2": "天江 衣",
     "3": "{{{{amae koromo}}}} ,  , long hair, {{{red rabbit ears }}}, blonde hair , blue eyes , bow , brown footwear ,, female child , frills,over-kneehighs,red bow,white thighhighs 1,{{red hairband }}",
@@ -12787,21 +13655,49 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "咲",
     "2": "新子 憧",
-    "3": "{{{saki achiga-hen}}}, {{{{{atarashi ako}}}}}, school uniform, {{{pink blazer}}}, crimson skirt, black socks, two side up, light brown hair, red eyes, small breasts. slender, smile, evening, classroom, money, holding money",
+    "3": "{{{saki achiga-hen}}}, {{{{{atarashi ako}}}}}, school uniform, {{{pink blazer}}}, crimson skirt, black socks, two side up, light brown hair, red eyes, small breasts. slender, smile, evening, classroom, money, holding money,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
-    "1": "咲",
-    "2": "新子憧",
-    "3": "{1girl,atarashi ako, saki}, [[ame (uten cancel), yd (orange maru), muchi maro, shirabi, mery (yangmalgage)]], {{year 2023}}, highly detailed",
+    "1": "宇崎ちゃんは遊びたい！",
+    "2": "宇崎 花",
+    "3": "{{{{uzaki_hana}}}}",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "怪談",
     "2": "八尺様風",
-    "3": "girl, tall, white dress, white hat, horror, dark, pale,medium breasts",
+    "3": "girl, tall, white dress, white hat, horror, dark, pale,medium breasts,",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "推しの子",
+    "2": "星野アイ",
+    "3": "{{{{hoshino_ai (oshi no ko)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "推しの子",
+    "2": "星野ルビー",
+    "3": "{{{{hoshino_ruby (oshi no ko)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "推しの子",
+    "2": "有馬かな",
+    "3": "{{{{arima_kana (oshi_no_ko)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "推しの子",
+    "2": "黒川あかね",
+    "3": "{{{{kurokawa_akane (oshi no ko)}}}}",
     "4": ""
   },
   {
@@ -12809,6 +13705,13 @@ let defaultMaster = {
     "1": "新世紀エヴァンゲリオン",
     "2": "渚カヲル",
     "3": "{{{{nagisa_kaworu}}}},boy",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "新世紀エヴァンゲリオン",
+    "2": "真希波・マリ・イラストリアス",
+    "3": "{{{{makinami_mari_illustrious}}}}",
     "4": ""
   },
   {
@@ -12827,9 +13730,23 @@ let defaultMaster = {
   },
   {
     "0": "キャラクター再現",
+    "1": "新世紀エヴァンゲリオン",
+    "2": "赤城リツコ",
+    "3": "{{{{akagi_ritsuko (neon_genesis_evangelion)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
     "1": "日常",
     "2": "はかせ",
     "3": "nichijou, loli, light orange hair , long hair, white labcoat, 6 years old, red tie,white shirt, tatami, shouji, window_shade, anime, pretty black cat, smile, infant",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "日常",
+    "2": "東雲なの",
+    "3": "{{{{shinonome nano (nichijou)}}}}",
     "4": ""
   },
   {
@@ -12857,7 +13774,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "東方",
     "2": "きもけーね",
-    "3": "{{{{{ex-keine}}}}},[[kamishirasawa keine]],fusion of [white hair] & {green hair},straight hair,horns,horn ornament,green dress",
+    "3": "{{{{{ex-keine}}}}},[[kamishirasawa keine]],fusion of [white hair] & {green hair},straight hair,horns,horn ornament,green dress,",
     "4": ""
   },
   {
@@ -12865,27 +13782,6 @@ let defaultMaster = {
     "1": "東方",
     "2": "だいちゃん",
     "3": "daiyousei, side ponytail, green hair, blue dress, white shirt, yellow ribbon, yellow ascot, fairy wings",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "ちやり",
-    "3": "{{{{tenkajin chiyari (touhou)}}}},tail,purple hair,{{{long hair}}},single horns",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "ちやり服なし",
-    "3": "tenkajin chiyari,single horn,purple horn,long hair,purple hair,pointy ears,red eyes,dragon tail,purple tail",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "やちえ",
-    "3": "touhou,kicchou yachie",
     "4": ""
   },
   {
@@ -12920,7 +13816,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "東方",
     "2": "ミスティア・ローレライ",
-    "3": "mystia lorelei,frilled skirt,frilled sleeves,long sleeves,hat",
+    "3": "mystia lorelei,frilled skirt,frilled sleeves,long sleeves,hat,",
     "4": ""
   },
   {
@@ -12941,7 +13837,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "東方",
     "2": "ルーミア",
-    "3": "{loli},rumia,red eyes ,blonde hair,short hair, black vest,collared shirt,red ascot,black skirt,red hair ribbon",
+    "3": "{loli},rumia,red eyes ,blonde hair,short hair, black vest,collared shirt,red ascot,black skirt,red hair ribbon,",
     "4": ""
   },
   {
@@ -12969,7 +13865,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "東方",
     "2": "八意永琳",
-    "3": "{{{{yagokoro eirin}}}, silver hair,fusion of red clothes & blue clothes, nurse cap",
+    "3": "{{{{yagokoro eirin}}}, silver hair,fusion of red clothes & blue clothes, nurse cap,",
     "4": ""
   },
   {
@@ -12982,6 +13878,13 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "東方",
+    "2": "四季映姫・ヤマザナドゥ",
+    "3": "{{{shiki eiki}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "東方",
     "2": "因幡てゐ",
     "3": "inaba tewi ,rabbit girl,black hair,short hair,pink clothes,long sleeves,carrot necklace",
     "4": ""
@@ -12989,43 +13892,8 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "東方",
-    "2": "埴安神袿姫",
-    "3": "haniyasushin keiki,head scarf, blue hair,long hair,red eyes,jewelry,magatama necklace,long puffy sleeves,  arm ribbon,single strap, yellow dress,green apron, pocket",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
     "2": "多々良小傘",
-    "3": "tatara kogasa,{{alternate eye color}},red eyes and blue eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "大人ラルバ",
-    "3": "touhou,eternity larva,butterfly wings,forest,{{{{long hair}}}},huge breasts,gleaming skin,thick thighs,half-closed eyes,house wife,undressing,30 years old",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "天火人ちやり",
-    "3": "tenkajin chiyari,single horn,purple horn, long hair,purple hair, pointy ears, red eyes,green shirt,short sleeves, green shorts,plaid shorts,dragon tail,purple tail",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "宮出口瑞霊",
-    "3": "miyadeguchi mizuchi,blue hair,long hair,hair between eyes,blue eyes,sanpaku, striped shirt,striped clothes,white skirt,striped skirt, skull hair ornament, long sleeves, striped skirt, ponytail, sidelocks, hair tube",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "宮出口瑞霊服なし",
-    "3": "miyadeguchi mizuchi,blue hair,long hair,hair between eyes,blue eyes,sanpaku,ponytail, sidelocks, hair tube,{{constricted pupils}},simple eyes",
+    "3": "tatara kogasa,{{alternate eye color}},red eyes and blue eyes,",
     "4": ""
   },
   {
@@ -13046,28 +13914,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "東方",
     "2": "小野塚小町",
-    "3": "{{{onozuka komachi}}}, red eyes,red hair,hair bobbles,blue & white sash,obi,blue skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "山城たかね",
-    "3": "yamashiro takane, green hair, hat, green eyes,,flat cap, medium hair,camouflage headwear, green dress, green skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "摩多羅隠岐奈",
-    "3": "matara okina, hat,long hair,blonde hair, yellow eyes, long sleeves,wide sleeves,detached sleeves, white shirt, tabard, green skirt,constellation print",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "日白残無",
-    "3": "nippaku zanmu,horns,yellow horns,green shirt, ribbon trim, wide sleeves,off shoulder, blue shorts, bare shoulders",
+    "3": "{{{onozuka komachi}}}, red eyes,red hair,hair bobbles,blue & white sash,obi,blue skirt,",
     "4": ""
   },
   {
@@ -13088,7 +13935,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "東方",
     "2": "橙（チェン）",
-    "3": "{{{{{chen}}}}},brown hair,cat girl,green cap,cat tail,two tails,red dress,red skirt,puffy sleeves,yellow neck ribbon, mandarin collar, white shirt, earrings",
+    "3": "{{{{{chen}}}}},brown hair,cat girl,green cap,cat tail,two tails,red dress,red skirt,puffy sleeves,yellow neck ribbon, mandarin collar, white shirt, earrings,",
     "4": ""
   },
   {
@@ -13101,15 +13948,8 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "東方",
-    "2": "汎用残無エロ",
-    "3": "{{{nippaku zanmu (touhou)}}},black hair,long hair,yellow horns,green shirt, blue shorts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
     "2": "河城にとり",
-    "3": "kawashiro nitori,hat,blue hair",
+    "3": "kawashiro nitori,hat,blue hair,",
     "4": ""
   },
   {
@@ -13123,35 +13963,21 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "東方",
     "2": "犬走椛",
-    "3": "{inubashiri momiji}, white hair, short hair, fusion of red {tokin} hat & pom pom (clothes), white animal ears, white shirt, midriff, fusion of bare shoulders & miko, {{{black skirt}}}",
+    "3": "{inubashiri momiji}, white hair, short hair, fusion of red {tokin} hat & pom pom (clothes), white animal ears, white shirt, midriff, fusion of bare shoulders & miko, {{{black skirt}}},",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "東方",
     "2": "秋穣子",
-    "3": "{{{{aki minoriko}}}},gold hair,yellow eyes,[wavy hair],short hair,{{red hat}},grape hat ornament,yellow shirt,red apron",
+    "3": "{{{{aki minoriko}}}},gold hair,yellow eyes,[wavy hair],short hair,{{red hat}},grape hat ornament,yellow shirt,red apron,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "東方",
     "2": "秋静葉",
-    "3": "{{{{{{aki shizuha}}}}}},gold hair,yellow eyes,[wavy hair],leaf hair ornament,red shirt,red skirt, collared shirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "豫母都日狭美",
-    "3": "yomotsu hisami, purple dress,hair flower",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "豫母都日狭美服なし",
-    "3": "touhou,yomotsu hisami",
+    "3": "{{{{{{aki shizuha}}}}}},gold hair,yellow eyes,[wavy hair],leaf hair ornament,red shirt,red skirt, collared shirt,",
     "4": ""
   },
   {
@@ -13165,28 +13991,14 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "東方",
     "2": "雲居一輪",
-    "3": "kumoi ichirin,unzan",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "雲居一輪",
-    "3": "{{{{{kumoi ichirin,unzan}}}}}, blue hair,middle hair,{{blown bangs}},blue eyes,blue hood,hoop,kesa,blue capelet,forehead,{{parted bangs}},white dress",
+    "3": "{{{{{kumoi ichirin,unzan}}}}}, blue hair,middle hair,{{blown bangs}},blue eyes,blue hood,hoop,kesa,blue capelet,forehead,{{parted bangs}},white dress,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "東方",
     "2": "風見幽香",
-    "3": "kazami yuuka,red plaid vest,red plaid skirt,yellow necktie",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "驪駒早鬼",
-    "3": "kurokoma saki,cowboy hat, horse tail, brown headwear, black wings, cowboy boots, cowboy western, feathered wings,bandana, brown skirt, blue shirt, plaid, short sleeves, scarf, bare shoulders, off-shoulder shirt",
+    "3": "kazami yuuka,red plaid vest,red plaid skirt,yellow necktie,",
     "4": ""
   },
   {
@@ -13214,14 +14026,14 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "涼宮ハルヒの憂鬱",
     "2": "長門有希",
-    "3": "masterpiece, beautiful detailed,{{{flat cheast}}}, {nagato_yuki} ,(expressionless:4),[jitome],[blank_stare],closed mouth,short cut ,blue gray hair, serafuku, {suzumiya haruhi no shoushitsu}, cardigan, sitting, school chair, reading book, black tights,look at away",
+    "3": "masterpiece, beautiful detailed,{{{flat cheast}}}, {nagato_yuki} ,(expressionless:4),[jitome],[blank_stare],closed mouth,short cut ,blue gray hair, serafuku, {suzumiya haruhi no shoushitsu}, cardigan, sitting, school chair, reading book, black tights,look at away,",
     "4": ""
   },
   {
     "0": "キャラクター再現",
     "1": "灼眼のシャナ",
     "2": "シャナ",
-    "3": "shana, shakugan no shana, red eyes, red hair,ahoge,loli",
+    "3": "shana, shakugan no shana, red eyes, red hair,ahoge,loli,",
     "4": ""
   },
   {
@@ -13229,6 +14041,27 @@ let defaultMaster = {
     "1": "無職転生",
     "2": "ロキシー",
     "3": "roxy migurdia, teenage, {loli}, blue eyes, blue hair, twin braids, crossed bangs, black ribbon, small breasts, brown cloak, white jacket, black skirt, short skirt, witch hat, black headwear, sketch, holding staff, ice crystal",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "物語シリーズ",
+    "2": "八九寺 真宵",
+    "3": "{{{{hachikuji_mayoi}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "物語シリーズ",
+    "2": "千石撫子",
+    "3": "{{{{sengoku_nadeko}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "物語シリーズ",
+    "2": "忍野 忍",
+    "3": "{{{{oshino_shinobu}}}}",
     "4": ""
   },
   {
@@ -13243,6 +14076,34 @@ let defaultMaster = {
     "1": "物語シリーズ",
     "2": "忍野忍",
     "3": "{{{{oshino shinobu}}}}, [[bakemonogatari]], loli, child, long hair, yellow hair, yellow eyes, {{tareme}}, flat chest, smile, blush stickers, fang, white dress",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "物語シリーズ",
+    "2": "戦場ヶ原ひたぎ",
+    "3": "{{{{senjougahara_hitagi}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "物語シリーズ",
+    "2": "神原 駿河",
+    "3": "{{{{kanbaru_suruga (monogatari_(series))}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "物語シリーズ",
+    "2": "羽川 翼",
+    "3": "{{{{hanekawa_tsubasa}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "物語シリーズ",
+    "2": "阿良々木 火憐",
+    "3": "{{{{araragi_karen (monogatari_(series))}}}}",
     "4": ""
   },
   {
@@ -13264,6 +14125,34 @@ let defaultMaster = {
     "1": "犬夜叉",
     "2": "神楽",
     "3": "kagura (inuyasha),white kimono,tsurime",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "狼と香辛料",
+    "2": "ホロ",
+    "3": "{{{{holo  (spice and wolf)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "私に天使が舞い降りた！",
+    "2": "姫坂乃愛",
+    "3": "{{{{himesaka noa (watashi ni tenshi ga maiorita!)}}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "私に天使が舞い降りた！",
+    "2": "星野ひなた",
+    "3": "{{{{hoshino hinata (watashi ni tenshi ga maiorita!)}}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "私に天使が舞い降りた！",
+    "2": "白咲花",
+    "3": "{{{{shirosaki hana (watashi ni tenshi ga maiorita!)}}}}}",
     "4": ""
   },
   {
@@ -13332,8 +14221,15 @@ let defaultMaster = {
   {
     "0": "キャラクター再現",
     "1": "艦隊これくしょん",
+    "2": "吹雪",
+    "3": "{{{fubuki (kancolle)}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "艦隊これくしょん",
     "2": "呂500",
-    "3": "{{{{ro-500 (kancolle)}}}}, school swimsuit,,{{{{{{{dark_skin}}}}},small breasts,long hair,{{{sailor_suit}}},sakura hair ornament,school swimsuit tan,darkblue eyes, platinum blonde hair",
+    "3": "{{{{ro-500 (kancolle)}}}}, school swimsuit,,{{{{{{{dark_skin}}}}},small breasts,long hair,{{{sailor_suit}}},sakura hair ornament,school swimsuit tan,darkblue eyes, platinum blonde hair,",
     "4": ""
   },
   {
@@ -13354,7 +14250,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "艦隊これくしょん",
     "2": "愛宕",
-    "3": "atago (kancolle), blonde hair, messy hair, blue eyes",
+    "3": "atago (kancolle), blonde hair, messy hair, blue eyes,",
     "4": ""
   },
   {
@@ -13368,7 +14264,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "艦隊これくしょん",
     "2": "敷波",
-    "3": "{{{arashio (kancolle)}}}, {{brown hair}}, {{{ponytail}}}, parted bangs, high ponytail, short ponytail, yellow eyes, black ribbon, {{sharp eyes}}, {{slanted eyes}}, small breasts, {{love live!}}, {{{nipple}}}, detailed eye, {{{{{{side burns}}}}}}}, angry, love live!",
+    "3": "{{{arashio (kancolle)}}}, {{brown hair}}, {{{ponytail}}}, parted bangs, high ponytail, short ponytail, yellow eyes, black ribbon, {{sharp eyes}}, {{slanted eyes}}, small breasts, {{love live!}}, {{{nipple}}}, detailed eye, {{{{{{side burns}}}}}}}, angry, love live!,",
     "4": ""
   },
   {
@@ -13466,7 +14362,7 @@ let defaultMaster = {
     "0": "キャラクター再現",
     "1": "艦隊これくしょん",
     "2": "高雄",
-    "3": "takao (kancolle), short hair, red eyes",
+    "3": "takao (kancolle), short hair, red eyes,",
     "4": ""
   },
   {
@@ -13527,9 +14423,51 @@ let defaultMaster = {
   },
   {
     "0": "キャラクター再現",
+    "1": "蒼の彼方のフォーリズム",
+    "2": "鳶沢みさき",
+    "3": "{{{{tobisawa misaki (ao no kanata no four rhythm)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "藍より青し",
+    "2": "桜庭葵",
+    "3": "{{{{sakuraba aoi (ai yori aoshi)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "謎の彼女X",
+    "2": "卜部 美琴",
+    "3": "{{{{urabe_mikoto (nazo_no_kanojo_x)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "電波女と青春男",
+    "2": "三船流子 (NAI v3 不安定)",
+    "3": "{{{{mifune_ryuuko (denpa_onna_to_seishun_otoko )}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "青の祓魔師",
+    "2": "杜山しえみ",
+    "3": "{{{{moriyama shiemi (ao no exorcist)}}}}",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
     "1": "魔法少女まどか☆マギカ",
     "2": "アルティメットまどか",
     "3": "mahou shoujo madoka magica,kaname madoka,{ultimate madoka},pink hair,yellow eyes , very long hair, long hair, white bows,white gloves,white dress",
+    "4": ""
+  },
+  {
+    "0": "キャラクター再現",
+    "1": "魔法少女まどか☆マギカ",
+    "2": "シャルロッテ",
+    "3": "{{{{charlotte_(madoka_magica)}}}}",
     "4": ""
   },
   {
@@ -13607,13 +14545,6 @@ let defaultMaster = {
     "1": "ファンタジー",
     "2": "バーバリアン",
     "3": "barbarian",
-    "4": ""
-  },
-  {
-    "0": "コスチューム",
-    "1": "ファンタジー",
-    "2": "修道女三点セット",
-    "3": "black head veil, black scapular, black tunic",
     "4": ""
   },
   {
@@ -13761,13 +14692,6 @@ let defaultMaster = {
     "1": "ファンタジー",
     "2": "龍騎士",
     "3": "dragoon",
-    "4": ""
-  },
-  {
-    "0": "コスチューム",
-    "1": "ユニフォーム",
-    "2": "アメスク",
-    "3": ",tied blouse,open blouse,cleavage,wearing school girl,bare navel,microskirt,white blouse",
     "4": ""
   },
   {
@@ -14095,13 +15019,6 @@ let defaultMaster = {
   {
     "0": "コスチューム",
     "1": "水着",
-    "2": "ハイレグ水着",
-    "3": "highleg swimsuit",
-    "4": ""
-  },
-  {
-    "0": "コスチューム",
-    "1": "水着",
     "2": "バンドゥビキニ",
     "3": "bandeau",
     "4": ""
@@ -14234,20 +15151,6 @@ let defaultMaster = {
   },
   {
     "0": "コスチューム",
-    "1": "水着",
-    "2": "青いワンピース水着",
-    "3": "blue one-piece swimsuit",
-    "4": ""
-  },
-  {
-    "0": "コスチューム",
-    "1": "水着",
-    "2": "青い差し色の入った白競泳水着",
-    "3": "{{white competition swimsuit}} {{{with blue accent color}}} ",
-    "4": ""
-  },
-  {
-    "0": "コスチューム",
     "1": "現代",
     "2": "アイドル",
     "3": "idol uniform",
@@ -14321,20 +15224,6 @@ let defaultMaster = {
     "1": "現代",
     "2": "バニーガール3",
     "3": "playboy bunny",
-    "4": ""
-  },
-  {
-    "0": "コスチューム",
-    "1": "現代",
-    "2": "バニーガールの服",
-    "3": "side-tie leotard",
-    "4": ""
-  },
-  {
-    "0": "コスチューム",
-    "1": "現代",
-    "2": "バニーガールの服(紐無し)",
-    "3": "highleg leotard",
     "4": ""
   },
   {
@@ -15209,7 +16098,7 @@ let defaultMaster = {
     "0": "コスチューム（一式）",
     "1": "職業",
     "2": "車掌",
-    "3": "peaked cap, necktie, train conductor uniform, pants",
+    "3": "peaked cap, necktie, train conductor uniform, pants,",
     "4": ""
   },
   {
@@ -15258,21 +16147,7 @@ let defaultMaster = {
     "0": "シチュエーション",
     "1": "シチュ",
     "2": "くすぐられる",
-    "3": "tickled, {laughing}, loud, [tears]",
-    "4": ""
-  },
-  {
-    "0": "シチュエーション",
-    "1": "シチュ",
-    "2": "やり手水",
-    "3": "1girl,pee,skirt lift,pussy line,nsfw,public urination,lifting person,1boy,spread legs,knees up,carrying,carrying person,public indecency,hetero,faceless boy,leaning back,holding thigh",
-    "4": ""
-  },
-  {
-    "0": "シチュエーション",
-    "1": "シチュ",
-    "2": "やり手水",
-    "3": "ri-net style,1girl,pee,skirt lift,pussy line,nsfw,public urination,lifting person,1boy,spread legs,knees up,carrying,carrying person,public indecency,hetero,faceless boy,leaning back,holding thigh",
+    "3": "tickled, {laughing}, loud, [tears],",
     "4": ""
   },
   {
@@ -15350,20 +16225,6 @@ let defaultMaster = {
     "1": "シチュ",
     "2": "メテオストライク",
     "3": "meteor strike",
-    "4": ""
-  },
-  {
-    "0": "シチュエーション",
-    "1": "シチュ",
-    "2": "リョナ（首絞め）",
-    "3": "{{{{{{{{{{{ryona}}}}}}}}}},{{{{{{{{{{guro}}}}}}}}}},{{{{{{{{{{snuff}}}}}}}}},{{{{{strangulation}}}}}, {{{{{{{{{suffocation}}}}}}}}}, {{{{{violence}}}}}, {{{{{dead}}}}}",
-    "4": ""
-  },
-  {
-    "0": "シチュエーション",
-    "1": "シチュ",
-    "2": "串焼き",
-    "3": "spit roast",
     "4": ""
   },
   {
@@ -15509,8 +16370,8 @@ let defaultMaster = {
   {
     "0": "シチュエーション",
     "1": "シチュ",
-    "2": "男が女の前に立つ",
-    "3": "boy standing in front of her",
+    "2": "盗撮風",
+    "3": "viewfinder, battery_indicator, hidden_camera, recording,",
     "4": ""
   },
   {
@@ -15581,13 +16442,6 @@ let defaultMaster = {
     "1": "シチュ",
     "2": "身長差",
     "3": "height difference",
-    "4": ""
-  },
-  {
-    "0": "シチュエーション",
-    "1": "シチュ",
-    "2": "追加視点パンチラ",
-    "3": "mtu_virus",
     "4": ""
   },
   {
@@ -15665,13 +16519,6 @@ let defaultMaster = {
     "1": "テイスト",
     "2": "アウトラインの強調",
     "3": "thick outline",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "テイスト",
-    "2": "アニメ調",
-    "3": "hi-vision anime",
     "4": ""
   },
   {
@@ -15777,13 +16624,6 @@ let defaultMaster = {
     "1": "テーマ",
     "2": "スケッチテーマ",
     "3": "sketch theme",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "テーマ",
-    "2": "ピンクテーマ",
-    "3": "pinkt heme",
     "4": ""
   },
   {
@@ -15950,13 +16790,6 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "デザイナー",
-    "2": "5t",
-    "3": "5t_0000",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
     "2": "A1",
     "3": "a1_(initial-g)",
     "4": ""
@@ -15985,20 +16818,6 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "デザイナー",
-    "2": "BUNBUN",
-    "3": "bunbun",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "Cho theg",
-    "3": "artist",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
     "2": "DD",
     "3": "dd_(ijigendd)",
     "4": ""
@@ -16013,64 +16832,8 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "デザイナー",
-    "2": "NULL",
-    "3": "illustrated by(null_(nyanpyoun))",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
     "2": "Tony Taka",
     "3": "tony_taka",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "abmayo",
-    "3": "abmayo",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "adoohay",
-    "3": "adoohay",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "amane",
-    "3": "amane hasuhito",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "asdkd123",
-    "3": "asdkd123",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "bulga",
-    "3": "artist",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "dolphin wave",
-    "3": "dolphin wave",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "fumihiko",
-    "3": "fumihiko (fu mihi ko)",
     "4": ""
   },
   {
@@ -16083,22 +16846,8 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "デザイナー",
-    "2": "nanashi",
-    "3": "nanashi(nlo)",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
     "2": "sy4",
     "3": "sy4",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "{intruder",
-    "3": "{intruder_(1391685345)",
     "4": ""
   },
   {
@@ -16146,13 +16895,6 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "デザイナー",
-    "2": "えいす",
-    "3": "eisu (eith)",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
     "2": "えびふりゃ",
     "3": "ebifurya",
     "4": ""
@@ -16190,13 +16932,6 @@ let defaultMaster = {
     "1": "デザイナー",
     "2": "かんざきひろ",
     "3": "ore_no_imouto_ga_konna_ni_kawaii_wake_ga_nai,eromanga_sensei,Kanzaki Hiro",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "がおう",
-    "3": "umaiyo_puyoman",
     "4": ""
   },
   {
@@ -16258,13 +16993,6 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "デザイナー",
-    "2": "しんたろー",
-    "3": "shintarou",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
     "2": "すみやお",
     "3": "sumiyao_(amam)",
     "4": ""
@@ -16300,22 +17028,8 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "デザイナー",
-    "2": "とらいし",
-    "3": "toraishi 666",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
     "2": "ながう",
     "3": "naga_u",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "ななし",
-    "3": "null (nyanpyoun)",
     "4": ""
   },
   {
@@ -16363,20 +17077,6 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "デザイナー",
-    "2": "へんりいだ模倣",
-    "3": "artist_henreader",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "べっかんこう",
-    "3": "bekkankou",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
     "2": "ほろすけ",
     "3": "horosuke",
     "4": ""
@@ -16414,13 +17114,6 @@ let defaultMaster = {
     "1": "デザイナー",
     "2": "みよ",
     "3": "miyo_(ranthath)",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "もつあき",
-    "3": "motsuaki",
     "4": ""
   },
   {
@@ -16510,20 +17203,6 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "デザイナー",
-    "2": "オノノ・イモコ",
-    "3": "onono imoko",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "オリバー",
-    "3": "oliver11020",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
     "2": "カントク",
     "3": "kantoku",
     "4": ""
@@ -16533,27 +17212,6 @@ let defaultMaster = {
     "1": "デザイナー",
     "2": "カーネリアン",
     "3": "carnelian",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "クール教",
-    "3": "Cool-kyou Shinja",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "ザンクロー",
-    "3": "zankuro",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "シドニー",
-    "3": "sidneyholic",
     "4": ""
   },
   {
@@ -16594,13 +17252,6 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "デザイナー",
-    "2": "ナナカグラ",
-    "3": "nana kagura",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
     "2": "ニャンチャ",
     "3": "nyantcha",
     "4": ""
@@ -16610,13 +17261,6 @@ let defaultMaster = {
     "1": "デザイナー",
     "2": "ネオコイル",
     "3": "neocoill",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "ハハギギ",
-    "3": "hahagigi",
     "4": ""
   },
   {
@@ -16645,13 +17289,6 @@ let defaultMaster = {
     "1": "デザイナー",
     "2": "ヒューズ",
     "3": "hews",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "ピロ水",
-    "3": "piromizu",
     "4": ""
   },
   {
@@ -16790,22 +17427,8 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "デザイナー",
-    "2": "寺田てら",
-    "3": "terada tera",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
     "2": "小山茂",
     "3": "koyama_shigeru",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "居酒屋よっちゃん",
-    "3": "enoshima_iki",
     "4": ""
   },
   {
@@ -16820,13 +17443,6 @@ let defaultMaster = {
     "1": "デザイナー",
     "2": "平つくね",
     "3": "taira tsukune",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "御敷",
-    "3": "Oshiki Hitoshi",
     "4": ""
   },
   {
@@ -16923,13 +17539,6 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "デザイナー",
-    "2": "聖シロー",
-    "3": "saintshiroo",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
     "2": "花飾",
     "3": "hana_kazari",
     "4": ""
@@ -16960,13 +17569,6 @@ let defaultMaster = {
     "1": "デザイナー",
     "2": "遠坂あさぎ",
     "3": "toosaka_asagi",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "デザイナー",
-    "2": "金一対",
-    "3": "jin_yi_dui",
     "4": ""
   },
   {
@@ -17148,42 +17750,42 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "FAIRY TAIL風",
-    "3": "{style of Fairy Tail},official art",
+    "3": "{style of Fairy Tail},official art,,",
     "4": ""
   },
   {
     "0": "テイスト",
     "1": "作品",
     "2": "HELLTAKER風",
-    "3": "helltaker",
+    "3": "helltaker,,",
     "4": ""
   },
   {
     "0": "テイスト",
     "1": "作品",
     "2": "NARUTO-ナルト-風",
-    "3": "naruto (series)",
+    "3": "naruto (series),",
     "4": ""
   },
   {
     "0": "テイスト",
     "1": "作品",
     "2": "SHIROBAKO風",
-    "3": "style of shirobako,,,official art",
+    "3": "style of shirobako,,,official art,",
     "4": ""
   },
   {
     "0": "テイスト",
     "1": "作品",
     "2": "TIGER ＆ BUNNY風",
-    "3": "{{style of tiger & bunny}}",
+    "3": "{{style of tiger & bunny}},",
     "4": ""
   },
   {
     "0": "テイスト",
     "1": "作品",
     "2": "あずまんが大王風",
-    "3": "style of azumanga daioh,official art,pupils",
+    "3": "style of azumanga daioh,official art,pupils,,",
     "4": ""
   },
   {
@@ -17204,7 +17806,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "かぐや様は告らせたい～天才たちの恋愛頭脳戦～風",
-    "3": "kaguya-sama wa kokurasetai ~tensai-tachi no renai zunousen~",
+    "3": "kaguya-sama wa kokurasetai ~tensai-tachi no renai zunousen~,",
     "4": ""
   },
   {
@@ -17246,7 +17848,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "たまこまーけっと",
-    "3": "tamako market",
+    "3": "tamako market,",
     "4": ""
   },
   {
@@ -17267,7 +17869,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "まちカドまぞく風",
-    "3": ", {{{{machikado mazoku}}}}",
+    "3": ", {{{{machikado mazoku}}}},",
     "4": ""
   },
   {
@@ -17309,28 +17911,28 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "りゅうおうのおしごと！風",
-    "3": "ryuuou no oshigoto!,official art",
+    "3": "ryuuou no oshigoto!,official art,",
     "4": ""
   },
   {
     "0": "テイスト",
     "1": "作品",
     "2": "アイカツ！風",
-    "3": "aikatsu!,hatsune miku",
+    "3": "aikatsu!,hatsune miku,",
     "4": ""
   },
   {
     "0": "テイスト",
     "1": "作品",
     "2": "アイドルマスターシンデレラガールズ風",
-    "3": "idolmaster cinderella girls,official art",
+    "3": "idolmaster cinderella girls,official art,,",
     "4": ""
   },
   {
     "0": "テイスト",
     "1": "作品",
     "2": "アイドルマスター風",
-    "3": "idolmaster million live!,{highres official art,}",
+    "3": "idolmaster million live!,{highres official art,},",
     "4": ""
   },
   {
@@ -17372,7 +17974,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "インフィニット・ストラトス風",
-    "3": "infinite stratos, official art",
+    "3": "infinite stratos, official art,",
     "4": ""
   },
   {
@@ -17393,7 +17995,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "ガンダムビルドファイターズ風",
-    "3": "{gundam build fighters}",
+    "3": "{gundam build fighters},",
     "4": ""
   },
   {
@@ -17421,7 +18023,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "グランブルーファンタジー風",
-    "3": "granblue fantasy, hatsunemiku, official art",
+    "3": "granblue fantasy, hatsunemiku, official art,",
     "4": ""
   },
   {
@@ -17463,7 +18065,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "ソードアート・オンライン風",
-    "3": "sword art online,official art",
+    "3": "sword art online,official art,",
     "4": ""
   },
   {
@@ -17505,7 +18107,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "ニセコイ風",
-    "3": "nisekoi",
+    "3": "nisekoi,,",
     "4": ""
   },
   {
@@ -17519,21 +18121,21 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "パズル&ドラゴンズ(パズドラ)風",
-    "3": "{{{puzzle & dragons}}}, official art",
+    "3": "{{{puzzle & dragons}}}, official art,",
     "4": ""
   },
   {
     "0": "テイスト",
     "1": "作品",
     "2": "パンティ&ストッキングwithガーターベルト風",
-    "3": "style of panty & stocking with garterbelt",
+    "3": "style of panty & stocking with garterbelt,",
     "4": ""
   },
   {
     "0": "テイスト",
     "1": "作品",
     "2": "ファイアーエムブレム 風花雪月風",
-    "3": "{fire emblem: three houses},,hatsune miku",
+    "3": "{fire emblem: three houses},,hatsune miku,",
     "4": ""
   },
   {
@@ -17547,7 +18149,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "ブリーチ風",
-    "3": "{bleach},official art",
+    "3": "{bleach},official art,,",
     "4": ""
   },
   {
@@ -17561,7 +18163,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "プリパラ風",
-    "3": "pripara,big eyes,hatsune miku",
+    "3": "pripara,big eyes,hatsune miku,,",
     "4": ""
   },
   {
@@ -17582,7 +18184,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "マクロスフロンティア風",
-    "3": "style of macross frontier,official art",
+    "3": "style of macross frontier,official art,,",
     "4": ""
   },
   {
@@ -17603,14 +18205,14 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "ワンピース風",
-    "3": "one piece",
+    "3": "one piece,",
     "4": ""
   },
   {
     "0": "テイスト",
     "1": "作品",
     "2": "一騎当千風",
-    "3": "ikkitousen,,hatsune miku,official art",
+    "3": "ikkitousen,,hatsune miku,official art,",
     "4": ""
   },
   {
@@ -17666,7 +18268,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "新世紀エヴァンゲリオン風",
-    "3": "neon genesis evangelion",
+    "3": "neon genesis evangelion,,",
     "4": ""
   },
   {
@@ -17686,13 +18288,6 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "作品",
-    "2": "東方Project",
-    "3": "touhou",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "作品",
     "2": "涼宮ハルヒの憂鬱",
     "3": "suzumiya haruhi no yuuutsu",
     "4": ""
@@ -17701,7 +18296,7 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "無彩限のファントム・ワールド風",
-    "3": "{musaigen no phantom world}",
+    "3": "{musaigen no phantom world},,",
     "4": ""
   },
   {
@@ -17722,14 +18317,14 @@ let defaultMaster = {
     "0": "テイスト",
     "1": "作品",
     "2": "響け! ユーフォニアム風",
-    "3": "hibike! euphonium",
+    "3": "hibike! euphonium,",
     "4": ""
   },
   {
     "0": "テイスト",
     "1": "作品",
     "2": "鬼滅の刃風",
-    "3": "kimetsu no yaiba",
+    "3": "kimetsu no yaiba,,",
     "4": ""
   },
   {
@@ -17987,13 +18582,6 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "画材",
-    "2": "エアブラシ",
-    "3": "airbrush",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "画材",
     "2": "マーカー",
     "3": "marker",
     "4": ""
@@ -18036,13 +18624,6 @@ let defaultMaster = {
   {
     "0": "テイスト",
     "1": "画風",
-    "2": "aiテイスト",
-    "3": "ai-generated",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "画風",
     "2": "ねんどろいど",
     "3": "nendroid",
     "4": ""
@@ -18066,20 +18647,6 @@ let defaultMaster = {
     "1": "画風",
     "2": "アニメのスクショ風",
     "3": "anime screencap",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "画風",
-    "2": "アメコミ調",
-    "3": "kittew",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "画風",
-    "2": "アレグロ",
-    "3": "black beat",
     "4": ""
   },
   {
@@ -18157,13 +18724,6 @@ let defaultMaster = {
     "1": "画風",
     "2": "ルネッサンス美術",
     "3": "renaissance",
-    "4": ""
-  },
-  {
-    "0": "テイスト",
-    "1": "画風",
-    "2": "レトロゲー",
-    "3": "pc-98 (style)",
     "4": ""
   },
   {
@@ -18757,13 +19317,6 @@ let defaultMaster = {
   {
     "0": "人数",
     "1": "女性",
-    "2": "1ロリ",
-    "3": "1loli",
-    "4": ""
-  },
-  {
-    "0": "人数",
-    "1": "女性",
     "2": "1人の女",
     "3": "1girl",
     "4": ""
@@ -18862,13 +19415,6 @@ let defaultMaster = {
   {
     "0": "人数",
     "1": "男女混合",
-    "2": "男女1名ずつ",
-    "3": "1 boy and 1 girl",
-    "4": ""
-  },
-  {
-    "0": "人数",
-    "1": "男女混合",
     "2": "男１＋女２",
     "3": "ffm threesome",
     "4": ""
@@ -18937,6 +19483,13 @@ let defaultMaster = {
     "4": ""
   },
   {
+    "0": "仮登録",
+    "1": "未分類",
+    "2": "ライト1ガール",
+    "3": "light 1girl",
+    "4": ""
+  },
+  {
     "0": "位置・数量",
     "1": "位置",
     "2": "サイドブラント",
@@ -18969,13 +19522,6 @@ let defaultMaster = {
     "1": "配置",
     "2": "分散",
     "3": "distributed",
-    "4": ""
-  },
-  {
-    "0": "作品",
-    "1": "作品名",
-    "2": "アズールレーン",
-    "3": "azur lane",
     "4": ""
   },
   {
@@ -19723,13 +20269,6 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "しぐさ",
-    "2": "頭傾け(30度)",
-    "3": "head tilt 30 degrees",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "しぐさ",
     "2": "顎に手をかざす",
     "3": "hand on own chin",
     "4": ""
@@ -19779,13 +20318,6 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "ポーズ",
-    "2": "お祈り",
-    "3": "praying hands",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
     "2": "がおーポーズ",
     "3": "claw pose",
     "4": ""
@@ -19795,27 +20327,6 @@ let defaultMaster = {
     "1": "ポーズ",
     "2": "しゃがみ込む",
     "3": "squat down",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
-    "2": "だぶるふぁっきゅー",
-    "3": "double middle finger",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
-    "2": "のけぞり",
-    "3": "Expressiveh, head back, leaning back, arm support",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
-    "2": "ふぁっきゅー",
-    "3": "middle finger",
     "4": ""
   },
   {
@@ -19870,13 +20381,6 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "ポーズ",
-    "2": "両手を股間へ",
-    "3": "hands on own crotch",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
     "2": "人差し指を立てる",
     "3": "index finger raised",
     "4": ""
@@ -19921,20 +20425,6 @@ let defaultMaster = {
     "1": "ポーズ",
     "2": "女の子がフェンスに手を寄せた",
     "3": "girl leaned her hands against the fence",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
-    "2": "崩した正座, ぺたん座り",
-    "3": "butterfly sitting position, wariza",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
-    "2": "後ろに反る",
-    "3": "arched back",
     "4": ""
   },
   {
@@ -19996,20 +20486,6 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "ポーズ",
-    "2": "横になる、寝転ぶ",
-    "3": "lie down",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
-    "2": "横向きに寝ている",
-    "3": "lying on side",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
     "2": "湖に横たわっています",
     "3": "lying on the lake",
     "4": ""
@@ -20045,20 +20521,6 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "ポーズ",
-    "2": "膝つき",
-    "3": "Kneeling pose",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
-    "2": "誘う",
-    "3": "invitation",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
     "2": "足組み",
     "3": "crossed legs",
     "4": ""
@@ -20075,27 +20537,6 @@ let defaultMaster = {
     "1": "ポーズ",
     "2": "開脚",
     "3": "open your legs wide",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
-    "2": "靴下を脱ぐ",
-    "3": "removing sock",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
-    "2": "頭を下に",
-    "3": "faceplant",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "ポーズ",
-    "2": "顔を見せない構図",
-    "3": "{{{{faceless}}}}, {{{{{{{{1faceless female}}}}}}}}",
     "4": ""
   },
   {
@@ -20131,20 +20572,6 @@ let defaultMaster = {
     "1": "動作",
     "2": "つかむ",
     "3": "grabbing",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "動作",
-    "2": "ねじれた胴体",
-    "3": "twisted torso",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "動作",
-    "2": "またがる",
-    "3": "straddle",
     "4": ""
   },
   {
@@ -20220,13 +20647,6 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "動作",
-    "2": "上体起こし",
-    "3": "sit up",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "動作",
     "2": "何かを持つ",
     "3": "holding",
     "4": ""
@@ -20243,27 +20663,6 @@ let defaultMaster = {
     "1": "動作",
     "2": "咲く",
     "3": "bloom",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "動作",
-    "2": "壁にもたれる",
-    "3": "against wall",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "動作",
-    "2": "女の子の後ろにいる男子",
-    "3": "boy behind girl",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "動作",
-    "2": "寄りかかる",
-    "3": "leaning in",
     "4": ""
   },
   {
@@ -20299,13 +20698,6 @@ let defaultMaster = {
     "1": "動作",
     "2": "椅子座り",
     "3": "sitting on chair",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "動作",
-    "2": "横に傾く",
-    "3": "leaning side to side",
     "4": ""
   },
   {
@@ -20353,13 +20745,6 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "動作",
-    "2": "股下から覗く",
-    "3": "looking through own legs",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "動作",
     "2": "脱衣",
     "3": "undressing",
     "4": ""
@@ -20369,13 +20754,6 @@ let defaultMaster = {
     "1": "動作",
     "2": "腕を前に出す",
     "3": "thrust arm forward",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "動作",
-    "2": "色仕掛け",
-    "3": "come hither",
     "4": ""
   },
   {
@@ -20430,13 +20808,6 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "動作",
-    "2": "顎を上げる",
-    "3": "chin up",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "動作",
     "2": "食べてる",
     "3": "eating",
     "4": ""
@@ -20446,13 +20817,6 @@ let defaultMaster = {
     "1": "動作",
     "2": "飲んでいる",
     "3": "drinking",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "動作",
-    "2": "首を傾ける",
-    "3": "head tilt",
     "4": ""
   },
   {
@@ -20541,27 +20905,6 @@ let defaultMaster = {
   },
   {
     "0": "動作",
-    "1": "手・腕の動作",
-    "2": "手を握る",
-    "3": "holding hand grip",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "手・腕の動作",
-    "2": "手を握ろうとする",
-    "3": "imminent hand holding",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "手・腕の動作",
-    "2": "赤ちゃんを抱く",
-    "3": "holding baby",
-    "4": ""
-  },
-  {
-    "0": "動作",
     "1": "指さし",
     "2": "指差し",
     "3": "pointing at viewer",
@@ -20625,13 +20968,6 @@ let defaultMaster = {
   },
   {
     "0": "動作",
-    "1": "指さし",
-    "2": "静かにする（ジェスチャー）",
-    "3": "holding her index finger to her lips, gesturing for silence",
-    "4": ""
-  },
-  {
-    "0": "動作",
     "1": "武器",
     "2": "剣で",
     "3": "with sword",
@@ -20656,13 +20992,6 @@ let defaultMaster = {
     "1": "目線",
     "2": "カメラ目線",
     "3": "looking at viewer",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "目線",
-    "2": "目をそらす",
-    "3": "averting eyes",
     "4": ""
   },
   {
@@ -20696,43 +21025,8 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "脚の動作",
-    "2": "かかとを付ける",
-    "3": "slav squatting",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "脚の動作",
-    "2": "くねらせる",
-    "3": "on side,sitting",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "脚の動作",
-    "2": "つま先立ち",
-    "3": "tiptoes",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "脚の動作",
-    "2": "ガニ股2",
-    "3": "thighs apart",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "脚の動作",
     "2": "ガニ股（がにまた）",
     "3": "bow-legged",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "脚の動作",
-    "2": "両足を広げて",
-    "3": "legs apart",
     "4": ""
   },
   {
@@ -20808,36 +21102,8 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "脚の動作",
-    "2": "片足を組む",
-    "3": "figure four sitting",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "脚の動作",
     "2": "脚で体をロックする",
     "3": "leg lock",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "脚の動作",
-    "2": "脚を広げて(sex)",
-    "3": "leg open",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "脚の動作",
-    "2": "脚を広げる",
-    "3": "spreading legs",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "脚の動作",
-    "2": "脚組み",
-    "3": "cross legs",
     "4": ""
   },
   {
@@ -20852,13 +21118,6 @@ let defaultMaster = {
     "1": "脚の動作",
     "2": "膝を立てて座る",
     "3": "knees up",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "脚の動作",
-    "2": "膝枕",
-    "3": "lap pillow",
     "4": ""
   },
   {
@@ -20920,13 +21179,6 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "腕の動作",
-    "2": "okサイン",
-    "3": "ok sign",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
     "2": "いいね",
     "3": "thumbs up",
     "4": ""
@@ -20934,36 +21186,8 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "腕の動作",
-    "2": "かける・塗る",
-    "3": "applying",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
     "2": "ちょっと手を挙げる",
     "3": "hand up",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "ギャルピース",
-    "3": "gyaru v",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "シーッ静かに",
-    "3": "shushing",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "ジッパーを動かしている状態",
-    "3": "unzipping",
     "4": ""
   },
   {
@@ -20990,13 +21214,6 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "腕の動作",
-    "2": "与える",
-    "3": "giving",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
     "2": "両手をちょっと上げる",
     "3": "hands up",
     "4": ""
@@ -21011,78 +21228,8 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "腕の動作",
-    "2": "両腕でWのようなポーズ",
-    "3": "w arms",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
     "2": "両腕を上げる,両脇が見える",
     "3": "arms up",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "両腕を広げて",
-    "3": "spread out arms aside",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "主観時の手のみ",
-    "3": "disembodied hands",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "内緒話風",
-    "3": "hand on mouth,open hand",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "分離した手",
-    "3": "disembodied hands",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "口に指",
-    "3": "finger on mouth",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "口の下でピース",
-    "3": "v over mouth",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "右手を股間に",
-    "3": "right hand in the crotch",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "囁く",
-    "3": "whisper",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "壁ドンされる",
-    "3": "kabedon on viewer",
     "4": ""
   },
   {
@@ -21109,34 +21256,6 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "腕の動作",
-    "2": "慰める",
-    "3": "comforting",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "手でハート",
-    "3": "heart in heart hands",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "手で口を隠す",
-    "3": "Hand over mouth, Mouth covered, hand covered mouth",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "手の平を合わせる",
-    "3": "palms together",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
     "2": "手をつく",
     "3": "arm support",
     "4": ""
@@ -21151,13 +21270,6 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "腕の動作",
-    "2": "手を下ろす",
-    "3": "lower hands",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
     "2": "手を伸ばす",
     "3": "reaching",
     "4": ""
@@ -21165,50 +21277,8 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "腕の動作",
-    "2": "手を合わせる",
-    "3": "palms_together",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
     "2": "手を振る",
     "3": "waving",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "手を握る",
-    "3": "holding hands, interlocked fingers",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "手を横に",
-    "3": "arms at sides",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "手を股間の前に置く",
-    "3": "hands on own crotch",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "手皿",
-    "3": "Scoop with hands",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "指と指を合わせる",
-    "3": "index fingers together",
     "4": ""
   },
   {
@@ -21228,113 +21298,8 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "腕の動作",
-    "2": "握りしめた手",
-    "3": "clenched hands",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "浮いている手",
-    "3": "disembodied limb",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "片手で自分の目を覆う",
-    "3": "covering own eyes by one hand",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "片方の胸を隠す",
-    "3": "covering one breasts",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "画面に向かってハグ",
-    "3": "incoming hug",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "目をこする",
-    "3": "rubbing eyes",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "相手の手首を掴む",
-    "3": "holding another's wrist",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "相手の髪を掴む",
-    "3": "grabbing another's hair",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "祈り",
-    "3": "prayer",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "祈り",
-    "3": "praying",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "第三者が胸を持ち上げる",
-    "3": "pov hands, (breast lift:1.2)",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "肩に手を置く",
-    "3": "put your hands on your shoulders",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "肩を掴む",
-    "3": "arms on shoulder",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "胸にタオルを巻く",
-    "3": "towel around breasts",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
     "2": "脇を見せる",
     "3": "armpits",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "脚の間の手",
-    "3": "hand between legs",
     "4": ""
   },
   {
@@ -21349,27 +21314,6 @@ let defaultMaster = {
     "1": "腕の動作",
     "2": "腕を上げる,脇が見える",
     "3": "arm up",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "腕を下ろす",
-    "3": "lower arms",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "腕を伸ばす2",
-    "3": "arms outstretched",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "腕を回す",
-    "3": "reach-around",
     "4": ""
   },
   {
@@ -21396,92 +21340,8 @@ let defaultMaster = {
   {
     "0": "動作",
     "1": "腕の動作",
-    "2": "腕組み2",
-    "3": "x arms",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "腰に腕を回す",
-    "3": "arm around waist",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "自分の手首を握る",
-    "3": "holding own wrist",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "自分の腕を組む",
-    "3": "cross arms under breasts",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "視聴者に手を伸ばす",
-    "3": "reaching towards viewer",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "頭の上で手を拘束",
-    "3": "restrained",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
     "2": "頭の後ろに腕を持ってく,すごく脇が見える",
     "3": "arms behind head",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "顎に手,ぶりっこ",
-    "3": "hands on own chin",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "顔を隠す",
-    "3": "peeking through fingers,covering own eyes",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "首に腕を回す",
-    "3": "arm around neck",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "髪をかきかげる",
-    "3": "hair tucking",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "髪を掴む",
-    "3": "own grabbing  hair",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "腕の動作",
-    "2": "髪を自分の指で巻く",
-    "3": "hair twirling",
     "4": ""
   },
   {
@@ -21872,20 +21732,6 @@ let defaultMaster = {
   {
     "0": "品質",
     "1": "低品質成人向け",
-    "2": "複数のペニス",
-    "3": "multiple_penises",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "低品質成人向け",
-    "2": "身体のないペニス",
-    "3": "disembodied_penis",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "低品質成人向け",
     "2": "黒いクリトリス",
     "3": "black clit",
     "4": ""
@@ -21993,13 +21839,6 @@ let defaultMaster = {
     "1": "低品質用",
     "2": "クソ",
     "3": "shit",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "低品質用",
-    "2": "コマ割り",
-    "3": "panel layout",
     "4": ""
   },
   {
@@ -23475,57 +23314,8 @@ let defaultMaster = {
   {
     "0": "品質",
     "1": "高品質",
-    "2": "4kアニメ",
-    "3": ",4k-anime",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質",
-    "2": "AI加筆",
-    "3": "ai-assisted",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質",
-    "2": "プロンプト",
-    "3": "score_9, score_8_up, score_7_up, BREAK source_anime, rating_explicit, best quality, masterpiece, uncensored, 1girl",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質",
-    "2": "リアル唇",
-    "3": "Faint lips,UC:realistic",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質",
-    "2": "完璧な解剖学",
-    "3": "perfect anatomy",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質",
     "2": "粗いテクスチャ",
     "3": "rough texture",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質",
-    "2": "非常に詳細なCG",
-    "3": "extremely detailed cg",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質",
-    "2": "非常に詳細な壁紙",
-    "3": "extremely detailed wallpaper",
     "4": ""
   },
   {
@@ -23566,13 +23356,6 @@ let defaultMaster = {
   {
     "0": "品質",
     "1": "高品質用",
-    "2": "全体的に詳細に",
-    "3": "overall detail",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質用",
     "2": "受賞レベル",
     "3": "award winning",
     "4": ""
@@ -23582,20 +23365,6 @@ let defaultMaster = {
     "1": "高品質用",
     "2": "名作",
     "3": "masterpiece",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質用",
-    "2": "完璧な解剖学",
-    "3": "official style",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質用",
-    "2": "完璧な解剖学",
-    "3": "perfect anatomy",
     "4": ""
   },
   {
@@ -23622,20 +23391,6 @@ let defaultMaster = {
   {
     "0": "品質",
     "1": "高品質用",
-    "2": "究極に細かい",
-    "3": "ultra-detailed",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質用",
-    "2": "素材感を強調",
-    "3": "textile shading",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質用",
     "2": "美しいきめ細かい目",
     "3": "beautiful detailed eyes",
     "4": ""
@@ -23652,13 +23407,6 @@ let defaultMaster = {
     "1": "高品質用",
     "2": "美しいきめ細かい膣",
     "3": "beautiful detailed small pussy",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "高品質用",
-    "2": "複雑",
-    "3": "intricate",
     "4": ""
   },
   {
@@ -30958,13 +30706,6 @@ let defaultMaster = {
   {
     "0": "場所",
     "1": "家（室内）",
-    "2": "ベッドで主観視点",
-    "3": "pov across bed",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "家（室内）",
     "2": "ペット",
     "3": "pet",
     "4": ""
@@ -31420,13 +31161,6 @@ let defaultMaster = {
   {
     "0": "場所",
     "1": "屋内",
-    "2": "ガラス張りの隅の風呂",
-    "3": "ensuite bathroom",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋内",
     "2": "コンサートホール",
     "3": "concert hall",
     "4": ""
@@ -31436,13 +31170,6 @@ let defaultMaster = {
     "1": "屋内",
     "2": "コーナー",
     "3": "corner",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋内",
-    "2": "シャワールーム",
-    "3": "shower room",
     "4": ""
   },
   {
@@ -31476,13 +31203,6 @@ let defaultMaster = {
   {
     "0": "場所",
     "1": "屋内",
-    "2": "トイレ（個室）",
-    "3": "toilet stall",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋内",
     "2": "バスタブ",
     "3": "bathtub",
     "4": ""
@@ -31511,36 +31231,8 @@ let defaultMaster = {
   {
     "0": "場所",
     "1": "屋内",
-    "2": "マットの上",
-    "3": "on mat",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋内",
     "2": "ライブハウス",
     "3": "live music club",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋内",
-    "2": "中世の酒場",
-    "3": "medieval tavern",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋内",
-    "2": "体育倉庫",
-    "3": "gym storeroom",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋内",
-    "2": "体育館倉庫",
-    "3": "sports hall storage,warehouse,stockroom,storeroom,vaulting horse",
     "4": ""
   },
   {
@@ -31644,13 +31336,6 @@ let defaultMaster = {
   {
     "0": "場所",
     "1": "屋内",
-    "2": "日本の廊下",
-    "3": "japanese house corridor",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋内",
     "2": "映画館",
     "3": "cinema",
     "4": ""
@@ -31721,29 +31406,8 @@ let defaultMaster = {
   {
     "0": "場所",
     "1": "屋内",
-    "2": "美術室",
-    "3": "art room",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋内",
     "2": "脱衣場",
     "3": "dressing room",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋内",
-    "2": "薄暗い照明の部屋",
-    "3": "room with dim lighting",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋内",
-    "2": "豪華なベルベットなカバー",
-    "3": "plush velvet bedspread",
     "4": ""
   },
   {
@@ -31758,13 +31422,6 @@ let defaultMaster = {
     "1": "屋内",
     "2": "電車内(背景用)",
     "3": "train interior",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋内",
-    "2": "高級バスルーム",
-    "3": "luxury bathroom",
     "4": ""
   },
   {
@@ -32213,13 +31870,6 @@ let defaultMaster = {
     "1": "屋外",
     "2": "荒野",
     "3": "desert",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "屋外",
-    "2": "街の通り",
-    "3": "urban street",
     "4": ""
   },
   {
@@ -35732,13 +35382,6 @@ let defaultMaster = {
   {
     "0": "場所",
     "1": "街中",
-    "2": "窓の外を指定",
-    "3": "windows with city views",
-    "4": ""
-  },
-  {
-    "0": "場所",
-    "1": "街中",
     "2": "繁華街",
     "3": "downtown area",
     "4": ""
@@ -37770,7 +37413,7 @@ let defaultMaster = {
     "0": "属性",
     "1": "種族",
     "2": "幼児２(loliよりもさらに年齢低め)",
-    "3": "toddler, child",
+    "3": "toddler, child,",
     "4": ""
   },
   {
@@ -37862,13 +37505,6 @@ let defaultMaster = {
     "1": "女性",
     "2": "熟女",
     "3": "milf",
-    "4": ""
-  },
-  {
-    "0": "年齢",
-    "1": "女性",
-    "2": "熟女系",
-    "3": "{{{{{milf}}}}}},{{{{mature female}}}}},{{{{{curvy}}}},{{{{ample figure}}}}},{{{{make up}}}}",
     "4": ""
   },
   {
@@ -38119,27 +37755,6 @@ let defaultMaster = {
   {
     "0": "年齢",
     "1": "男女共通",
-    "2": "日本語の擬音",
-    "3": "floating sound effect,japanese text,bold pink text",
-    "4": ""
-  },
-  {
-    "0": "年齢",
-    "1": "男女共通",
-    "2": "畳まれた",
-    "3": "folded",
-    "4": ""
-  },
-  {
-    "0": "年齢",
-    "1": "男女共通",
-    "2": "目隠しをおでこに",
-    "3": "blackblindfold _on_head",
-    "4": ""
-  },
-  {
-    "0": "年齢",
-    "1": "男女共通",
     "2": "若者",
     "3": "youth",
     "4": ""
@@ -38328,34 +37943,6 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "SM",
-    "2": "窒息",
-    "3": "asphyxiation",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "SM",
-    "2": "絞首刑系",
-    "3": "floating,execution,hanged,noose,rope_around_neck, imminent_death ,asphyxiation}}}}}},{{{rolling eyes,constricted pupils,tongue out",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "SM",
-    "2": "縛り系",
-    "3": "hanged,hanging,noose,execution, asphyxiation",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "アイテム",
-    "2": "オナホール",
-    "3": "artificial vagina",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "アイテム",
     "2": "ゲーミングちんぽ",
     "3": "glowing penis",
@@ -38406,29 +37993,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "アイテム",
-    "2": "ヤリ部屋",
-    "3": "messy room,too many dildos,condoms,vibrators,sex toys",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "アイテム",
-    "2": "使ったコンドーム",
-    "3": "used condom",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "アイテム",
     "2": "使用済みコンドーム",
     "3": "used condo",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "アイテム",
-    "2": "使用済みティッシュ",
-    "3": "used tissue",
     "4": ""
   },
   {
@@ -38455,43 +38021,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "アイテム",
-    "2": "未使用コンドーム",
-    "3": "condom wrapper",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "アイテム",
-    "2": "紐で吊るされたコイン",
-    "3": "coin on string",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "アイテム",
     "2": "触手",
     "3": "tentacle",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "エッチな構図",
-    "2": "だいしゅきホールド",
-    "3": "leg lock",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "エッチな構図",
-    "2": "三つ葉",
-    "3": "trefoil",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "エッチな構図",
-    "2": "中出し断面",
-    "3": "pussy cum,cum in pussy,cross-section,internal cumshot",
     "4": ""
   },
   {
@@ -38517,93 +38048,9 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "エッチな構図",
-    "2": "腹ボコ",
-    "3": "stomach_bulge",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "nsfwな～（形容詞化）",
-    "3": "nsfwal",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "おまんこに手",
-    "3": "hands on own crotch",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "お尻の波紋",
-    "3": "ass ripple",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "お尻を手でつかむ",
-    "3": "hand grabbing ass",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "きれいなすじ",
-    "3": "pussy line",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "くいしばる",
-    "3": "close eyes, troubled eyebrows, orgasm, close mouth, clench teeth",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "ちんこ掴み",
-    "3": "penis grab",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "ちんぺち",
-    "3": "Dick Slap Face",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "オプション",
     "2": "はだけた胸",
     "3": "open chest",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "ぱふぱふ",
-    "3": "breast smother",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "ぷにまんこ",
-    "3": "pussy line",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "アナル周辺まで開いたズボン",
-    "3": "pants {{open}} {{around anus}}",
     "4": ""
   },
   {
@@ -38616,85 +38063,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "オプション",
-    "2": "エロダンサー",
-    "3": "saliva,drivel,saliva trail,harem outfit,harem pants,see-through veil,mouth_veil,hip vent,see-through pants,see-through sleeves,see-through skirt,micro bikini",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "エロドレス",
-    "3": "backless dress,halter dress,plunging neckline,short dress,miniskirt, skirt lift,lifted by self",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "エロ蹲踞",
-    "3": "crouching, open legs",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "エロ黒下着",
-    "3": "highleg panties,black bra",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "ガマン汁",
-    "3": "precum",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "ガワだけブラ",
-    "3": "cupless bra",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
     "2": "コンドーム付きペニス",
     "3": "used condom on penis",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "デカ乳首",
-    "3": "{{{{{{large nipples,thick nipples,large areolae}}}}}",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "ドスケベ日焼けボディ",
-    "3": "thick thighs,(tanlines),sweat,sweatdrop,dark skin,shiny skin,(exposed clothes)",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "パイズリを誘う",
-    "3": "paizuri invitation",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "パンツたくし上げ",
-    "3": "skirt lift,panties",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "パンツをプレゼント",
-    "3": "presenting removed panties",
     "4": ""
   },
   {
@@ -38707,106 +38077,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "オプション",
-    "2": "ビクビク",
-    "3": "closed eyes,{{orgasm}},trembling motionline for orgasm",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "ビクン",
-    "3": "{{orgasm}},trembling motionline for orgasm,motion blur",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "プッシーピーク",
-    "3": "pussy peek",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "マンコにフォーカスする視点",
-    "3": "a perspective of a female pussy",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "乳もみ",
-    "3": "1girl,1man,nswf,grabbing from behind,lactation through clothes,trembling motionline ,troubled eyebrows",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "乳首が見えている",
-    "3": "show off nipples",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "乳首にペニスを押し付ける",
-    "3": "penis on nipple",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "乳首をつまむ",
-    "3": "nipple biting",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "乳首責め",
-    "3": "nipples tweak",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "他人による脱衣",
-    "3": "undressing,assisted exposure",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "伸びた精液",
-    "3": "cum string",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
     "2": "修正",
     "3": "censored",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "先走り汁",
-    "3": "excessive precum",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "先走り汁",
-    "3": "pre-cum",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "勃起乳首",
-    "3": "erectile nipples",
     "4": ""
   },
   {
@@ -38819,27 +38091,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "オプション",
-    "2": "変形した胸",
-    "3": "deformed breasts, unaligned breasts",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "大量の精液",
-    "3": "cum overflow",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "子宮内の精子兼",
-    "3": "sperm cum in uterus",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
     "2": "子宮口",
     "3": "os uteri",
     "4": ""
@@ -38847,50 +38098,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "オプション",
-    "2": "寄せ乳",
-    "3": "breasts squeezed together",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "射精フィニッシュ",
-    "3": "excessive cum,female ejaculation,{{{{trembling motionline for orgasm}}}}",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "尖った胸",
-    "3": "pointy breasts",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "巨乳化",
-    "3": "breast expansion",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "巨乳輪",
-    "3": "large areolae",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
     "2": "強調気味の乳首",
     "3": "perky breasts",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "彼女は彼のペニスを飲み込んでいる",
-    "3": "she is swallowing his penis",
     "4": ""
   },
   {
@@ -38917,106 +38126,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "オプション",
-    "2": "愛液の線",
-    "3": "pussy juice trail",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "手マン",
-    "3": "nsfw,1boy,1girl,fingering pussy",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "挿入ガイド",
-    "3": "1.2::guide to vaginal with hand for imminent penis penetration just the tip",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "文化祭ライブパンチラ",
-    "3": "sweat, steam, smile, school {{{festival}}}, on stage, bandstand, open air stage, {{idol}}, dancing, singing, holding handheld microphone, in motion, {{blue sky}},  school ground, {{Bunting}}, [audience], nsfw, panties, tuck up skirt, {confetti}, looking afar, yellow hair",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "断面イキ",
-    "3": "close eyes,troubled eyebrows,orgasm,close mouth,clench teeth,cross-section of uterus,fertilization,pussy cum",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "断面図",
-    "3": "1.5::cross section:: on female body",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "断面図",
-    "3": "cross-section of uterus,fertilization,pussy cum",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "断面図",
-    "3": "uterus at viewer penis inserted into pussy from cross section looking through,cum in uterus",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "断面図（体表）",
-    "3": "1.3::detailed cross section on female body,x-ray_view of a large penis inserted into a vagina::",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "歯磨きフェラ",
-    "3": "cheek bulge",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "汁あと",
-    "3": "pussy juice trail",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "浮き出る乳首",
-    "3": "nipple outline",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
     "2": "淫紋",
     "3": "womb tattoo",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "溢れる精液大量射精",
-    "3": "creampie,excessive cum",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "濁った精液",
-    "3": "cloudy sperm",
     "4": ""
   },
   {
@@ -39043,148 +38154,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "オプション",
-    "2": "睾丸、金玉",
-    "3": "testicles",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "破れたレオタード",
-    "3": "torn leotard",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "積乱雲",
-    "3": "cumulonimbus cloud",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
     "2": "精子,精液",
     "3": "sperma",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "絶頂テンプレ",
-    "3": "1.3::female ejaculation,trembling motionline for orgasm,arched back",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "翻訳中",
-    "3": "nipple_stimulation",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "翻訳中",
-    "3": "pussy girl",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "股間の空いたレオタード",
-    "3": "crotchless leotard",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "股間隠し",
-    "3": "pussy juice",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "胸に小人",
-    "3": "person between breasts",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "胸の下に腕",
-    "3": "arm under breasts",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "胸の影",
-    "3": "breasts shade",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "胸を揉む",
-    "3": "grabbing own breasts",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "胸セット",
-    "3": "(nipples,lactation,cleavage,erectile nipples:1.3)",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "胸出し",
-    "3": "breasts out",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "胸隠し",
-    "3": "arm covering breasts",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "脱いでブラ見せ",
-    "3": "open clothes,bra",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "腰掴み",
-    "3": "boy grab her waist",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "腹ボコ",
-    "3": "stomach_bulge",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "腹ボコ2",
-    "3": "stomach bulge by penis",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "膣がペニスを包む",
-    "3": "pussy fully covering black penis",
     "4": ""
   },
   {
@@ -39196,128 +38167,9 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "オプション",
-    "2": "舌を突き出す",
-    "3": "stick tongue out",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "裸の包帯",
-    "3": "naked bandage",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "谷間にお金",
-    "3": "{{{cleavage_folded cash}}},{{{huge wad of cash}}},{{between breasts}}",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "谷間ネクタイ",
-    "3": "necktie_between_breasts",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "逆バニー2",
-    "3": "see-through leotard,playboy bunny,see-through,transpbunny,rabbit ears,fake animal ears",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "透け乳首",
-    "3": "nipples visible through clothes",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "開いた谷間",
-    "3": "breasts_out",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "陥没乳首",
-    "3": "inverted nipples",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "離れ乳",
-    "3": "breasts apart",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "頬にペニスを強引にこすりつける",
-    "3": "forcefully rub penis on cheek",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "頬をつつく",
-    "3": "cheek poking",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "風呂ラッキースケベ",
-    "3": "nsfw, nude, in shower room, {{full-face blush}}, looking at viewer, {{surprised}}, embarrassed, scared, angry,  steam, sweat,  {{{{covering breasts}}}} by hands, covering crotch",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "黒い睾丸、ペニス",
-    "3": "big testicles bouncing, big black penis",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "オプション",
-    "2": "黒人セット",
-    "3": "1boy,huge testicles,huge black penis,black man,veiny penis",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "コスプレ",
-    "2": "逆バニー1",
-    "3": "fishnet bodysuit, reverse bunnysuit,heart pasties,rabbit ears,fake animal ears",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "シチュ",
     "2": "NTR",
     "3": "cuckold",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "シチュ",
-    "2": "ぬぎぬぎ",
-    "3": "undressing",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "シチュ",
-    "2": "ガラス越しの乳",
-    "3": "breasts on glass",
     "4": ""
   },
   {
@@ -39332,20 +38184,6 @@ let defaultMaster = {
     "1": "シチュ",
     "2": "ハーレム",
     "3": "harem",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "シチュ",
-    "2": "ボロボロ",
-    "3": "Tattered",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "シチュ",
-    "2": "ボロボロ",
-    "3": "sobbing,crying with eyes open,sad,despair,horrified",
     "4": ""
   },
   {
@@ -39386,13 +38224,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "シチュ",
-    "2": "処女喪失",
-    "3": "(defloration, bleeding from vagina:1.3)",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "シチュ",
     "2": "壁尻(尻のみ)",
     "3": "{{bend over}},pussy {{{buried in the wall}}},nsfw",
     "4": ""
@@ -39409,27 +38240,6 @@ let defaultMaster = {
     "1": "シチュ",
     "2": "拘束,亀甲縛り",
     "3": "the rope my crotch",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "シチュ",
-    "2": "日焼けエッチ◎",
-    "3": ",{{{{dark-skinned female}}}},{{{bikini tan}}}",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "シチュ",
-    "2": "服越しの母乳",
-    "3": "lactation through clothes",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "シチュ",
-    "2": "男女一人",
-    "3": "1girl,1boy",
     "4": ""
   },
   {
@@ -39470,22 +38280,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "シチュ",
-    "2": "背後からの乳揉み",
-    "3": "grabbing,grabbing another's breast,grabbing from behind",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "シチュ",
     "2": "見境のないセックス",
     "3": "promiscuous sex",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "シチュ",
-    "2": "触手による絞殺",
-    "3": "strangling by tentacles",
     "4": ""
   },
   {
@@ -39500,20 +38296,6 @@ let defaultMaster = {
     "1": "シチュ",
     "2": "輪姦2",
     "3": "gang rape",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "シチュ",
-    "2": "陰で",
-    "3": "secret adultery",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "シチュエーション",
-    "2": "盗撮風",
-    "3": "viewfinder, battery_indicator, hidden_camera, recording",
     "4": ""
   },
   {
@@ -39540,13 +38322,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "テンプレ",
-    "2": "だいしゅき座位",
-    "3": "nsfw, 1girl, nude, lovestruck expression, 1boy, having sex,fuck, leg lock, hug, sitting position, kissing,french kiss,faceless male",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
     "2": "ぶっかけテンプレ",
     "3": "cum in mouth,cum on tongue,facial,bukkake",
     "4": ""
@@ -39554,15 +38329,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "テンプレ",
-    "2": "エキ海老反り",
-    "3": "1girl, 1boy, sex, hetero, uneven eyes, clenched teeth, arched back, wide-eyed, female orgasm, missionary, pov, bed, lying, heavy breathing, heart \\(symbol\\), happy, dashed eyes, sheet grab, looking up, head back, blue eyes, blonde hair, medium breasts,arched back,head back",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
     "2": "カラオケエッチ",
-    "3": "nsfw,1boy,1girl,highly detailed,{{{{hetero,cowgirl position sex,girl on top}}}}, {{{{woman singing with a microphone in her hand while having sex}}}}, {{{{{{{woman holding a microphone with one hand}}}}}}, {{{{{{singing}}}}}}, {{panties aside}}, boy grab ass,cum, {{looking at viewer}}, grin, motion lines,evil smile,drop tears,heart,musical note in a speech bubble,{{{gasp out}}},{{saliva}},[[crying]],[embarrassed],blush face,{open mouse},{room with monitor in background}",
+    "3": "nsfw,1boy,1girl,highly detailed,{{{{hetero,cowgirl position sex,girl on top}}}}, {{{{woman singing with a microphone in her hand while having sex}}}}, {{{{{{{woman holding a microphone with one hand}}}}}}, {{{{{{singing}}}}}}, {{panties aside}}, boy grab ass,cum, {{looking at viewer}}, grin, motion lines,evil smile,drop tears,heart,musical note in a speech bubble,{{{gasp out}}},{{saliva}},[[crying]],[embarrassed],blush face,{open mouse},{room with monitor in background},",
     "4": ""
   },
   {
@@ -39575,22 +38343,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "テンプレ",
-    "2": "キス対面SEX",
-    "3": "sex,fuck, hug,kissing",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
     "2": "クパァ",
     "3": "nsfw,{{spread legs}},{{spread pussy}},{{{{open your own pussy}}}},{{spread pussy with fingers}},kupaa,pussy,looking at viewer,presenting,on bed,pussy juice,1girl,nude,{{{loli}}},{child},uc sex,mutated hands and fingers,open clothe",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
-    "2": "セクハラ尻揉み",
-    "3": "{{{{molestation}}}, from behind, {{{{the man behind the girl}}}, {{{the man grabbing the girl's ass}}}, {{{ass grab}}} by the man, aroused, embarrassed, scared, angry, steam sweat, panties",
     "4": ""
   },
   {
@@ -39617,13 +38371,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "テンプレ",
-    "2": "パンツ見えてる",
-    "3": "tuck up skirt, panties",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
     "2": "フェラテンプレ",
     "3": "1boy,nsfw,1girl,fellatio,oral,licking penis,large penis,solo focus",
     "4": ""
@@ -39645,20 +38392,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "テンプレ",
-    "2": "串刺し",
-    "3": "{{official art}},matsukai mao,nijisanji, 2 boys and 1 girl, {{spit roast, group sex, rape}},{1 girl,open clothes,arms at sides,lean against,choking,sad,empty eyes,tearful,collar,nipples,shiny hair,breasts},{1 boy,naked,macho,faceless male,she is swallowing his penis,licking penis,irrumatio,oral,{{veiny penis,testicles}},legs,he is grabbing her head},{1 boy,naked,macho,faceless male,she is doing doggystyle sex,he is grabbing her butt},{{excessive cum}}, {sweat, steam},on bed, from outside, girl focus,{{trembling effect motion lines with sexual climax}}, beautiful face, {{perfect anatomy}}, 4k, insanely detailed and intricate, pretty, ornate, hyper realistic, super detailed",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
-    "2": "主観メイド授乳",
-    "3": "masterpiece,best quality,amazing quality,absurdres,very aesthetic,newest,1girl,one breast out,lactation,grabbing own breasts,seductive smile,blush,from below,dynamic angle",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
     "2": "乱交テンプレ",
     "3": "nsfw, 1girl,{{{3boys}}}, {{promiscuous sex}},gang rape,vagina,cunt,sex, showing navel and{{light pink nipples}}, presenting{{wet pussy}},{pussy juice},anal focus,laugh,threesome, on bed, all fours,fellatio,cum in mouth,cum in pussy",
     "4": ""
@@ -39674,7 +38407,7 @@ let defaultMaster = {
     "0": "成人向け",
     "1": "テンプレ",
     "2": "寝取られ通話",
-    "3": "nsfw,1boy,{{{{phone in one hand}}}},doggy style,sex,{orgasm},{sweaty},fat man,nude,nipples, breasts,cum, hetero, pussy,vaginal,penis,on the bed",
+    "3": "nsfw,1boy,{{{{phone in one hand}}}},doggy style,sex,{orgasm},{sweaty},fat man,nude,nipples, breasts,cum, hetero, pussy,vaginal,penis,on the bed,",
     "4": ""
   },
   {
@@ -39682,13 +38415,6 @@ let defaultMaster = {
     "1": "テンプレ",
     "2": "床ディルドーオナニー",
     "3": "nsfw,1girl,squatting,dildo on floor,dildo in pussy,love juice",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
-    "2": "後ろ手正常位",
-    "3": "nsfw,1girl,1boy,insert vagina,missionary position,embarrassed,sad,arms behind head",
     "4": ""
   },
   {
@@ -39708,20 +38434,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "テンプレ",
-    "2": "挿入待機",
-    "3": "nsfw,2girls, clothing aside, panties aside, pussy juice, yuri, tribadism, mating press, skirt lift, looking at viewer, half-closed eyes, uncensored,pussy",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
-    "2": "搾乳機",
-    "3": "upperbody,{{{two transparent milking_machine are attached to the nipple}}}, {{{dairy plant milking machine connect to nipple, suctioned breast milk}}} ,breast_milk flow into transparent funnel tube,arms behind back, mechanical restraints, stationary restraints, french_braid,[[[[nsfw]]]]",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
     "2": "放尿",
     "3": "nsfw,1girl,squatting,{{{\"pussy juice drip through clothes\"}}}, {{peeing}}, \"yellow puddle\"",
     "4": ""
@@ -39736,15 +38448,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "テンプレ",
-    "2": "服の上ちん触る",
-    "3": "caressing his crotch, over the clothes,clothed man,pov,touch penis",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
     "2": "機械姦",
-    "3": "nsfw, {{{{{machine holding}}}}}, {{{spread arms}}}, locked arms, sex, cable in vagina, locked legs",
+    "3": "nsfw, {{{{{machine holding}}}}}, {{{spread arms}}}, locked arms, sex, cable in vagina, locked legs,",
     "4": ""
   },
   {
@@ -39759,34 +38464,6 @@ let defaultMaster = {
     "1": "テンプレ",
     "2": "正常位テンプレ2",
     "3": "missionary,lying,on bed",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
-    "2": "男撮影ハンド",
-    "3": "1boy have smartphone and photographing 1girl",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
-    "2": "競泳水着で放尿（見上げる視点）",
-    "3": "nfsw,large breasts ,female,1gir,pussy focus,from below,feet out of frame,very close to viewers,girls' front,hands behind one's back,standing, bowlegged,trembling motionline for orgasm,wet pussy,vaginal,wet vagina,{{hand in pussy,panties aside,pubic hair,peeing}},{{{background,big stone wall,deep shadows}}}, {{{stone pavement}}},day light,closed_mouth,looking away,strong light coming in,high resolution, best quality, blush,full-face blush,wet,ompetition swimsuit ,highleg swimsuit ,blue one-piece swimsuit ,long foot",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
-    "2": "脚を広げてマンコを見せる",
-    "3": "spread legs, two legs up, thighs,  leg open, wide spread legs open one's stance,  two legs up,  {two thighs up}, tuck up skirt, {{{pussy, beautiful detailed vagina,uncensored}}},pussy juice",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
-    "2": "膣から精液噴出テンプレ",
-    "3": "hips look, semen shot over shot from vagina, semen fall from vagina, semen beam from vagina, {{{look from behind,}}} {{{hips focus, hips close-up,}}} semen fall out effect, motion lines",
     "4": ""
   },
   {
@@ -39820,13 +38497,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "テンプレ",
-    "2": "電車痴漢２",
-    "3": "nsfw,{{{{{on the train}}}}},{highres},looking at viewer,teasingsmile,sweatdrop,best quality,highly detaile,lying on person,ass,stretch legs,bare legs,from above,{{{{{shiny skin}}}}},from side ~ nude,nipples,pussy,arched back,clothed sex,{{{{{1boy}}}}},{{{sex from behind}}},{{{standing doggy style}}},{{{standing sex}}},{{torso grab}},{{paizuri}},public indecency,love juice,undressing,{{{{{{{{{{bukkake}}}}}}}}}},{{{{{{{{{{excessive cum}}}}}}}}}},{{{{{{{{{{cum on breasts}}}}}}}}}},{{{{{{{{{{pojecile cum}}}}}}}}}},{{{{{{{{{{cum in pussy}}}}}}}}}},naked,manyboysis",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
     "2": "露出テンプレ",
     "3": "nsfw,nude,nipples,navel,pussy,vaginal,sweat,sex,outside,squatting,arm support",
     "4": ""
@@ -39841,22 +38511,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "テンプレ",
-    "2": "露出徘徊",
-    "3": "{{1girl,}}, {{masterpiece}},dramatic angle,{ultra-detailed}, {illustration}, [novel illustration], high resolution,{{an extremely delicate and beautiful}}, Accurate describe shapes, thorough and precise, dynamic pose,  dynamic angle, {{photorealistic}}, nsfw,  nipples out, exhibitionism, turn up coat, open coat,  {{{a flu mask}}}, {{{in night}}}, in alley, vending machine, traffic lights, night city,  {{sweat}}, steam",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
     "2": "頭を押さえつけてのイラマ",
     "3": "nsfw,headpat,{pov hands},surprised,fellatio,tearing up",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "テンプレ",
-    "2": "顔近正上位POV",
-    "3": "{nsfw}, sex, fuck, {{{{{orgasm}}}}}, missionary, {incoming kiss}, {imminent kiss}, lick, {saliva}, {saliva trail},  face, breasts,  thighs, spread legs, slouching, front, POV, {{looking at viewer}},  {{{reaching out 2arms}}},  {{{{{face focus}}}}}, steam, sweat, {cum}, {aroused}, excited",
     "4": ""
   },
   {
@@ -39981,13 +38637,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "プレイ",
-    "2": "人便",
-    "3": "human toilet",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "プレイ",
     "2": "他人が胸を掴む",
     "3": "breast grab",
     "4": ""
@@ -39997,13 +38646,6 @@ let defaultMaster = {
     "1": "プレイ",
     "2": "尻をガラスに押し付ける",
     "3": "against glass,butt press",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "プレイ",
-    "2": "尻コキ",
-    "3": "buttjob",
     "4": ""
   },
   {
@@ -40037,36 +38679,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "プレイ",
-    "2": "束縛",
-    "3": "basfd",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "プレイ",
     "2": "正面から胸を揉む",
     "3": "grabbing from front",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "プレイ",
-    "2": "獣姦",
-    "3": "bestiality",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "プレイ",
-    "2": "睡眠セックス",
-    "3": "sleep molestation",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "プレイ",
-    "2": "絞殺",
-    "3": "strangling",
     "4": ""
   },
   {
@@ -40120,20 +38734,6 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "プレイ",
-    "2": "首絞めックス",
-    "3": "{{situation(strangling, {{{{grab neck}}}}), {{man put hands on neck}})}}",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "ポーズ",
-    "2": "おまんこくぱぁ",
-    "3": "open vagina,spread pussy,pussy juice,hands on own crotch,legs apart",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "ポーズ",
     "2": "お尻をつかんでいるポーズ",
     "3": "ass grab",
@@ -40149,22 +38749,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "ポーズ",
-    "2": "のけぞり",
-    "3": "{{{{head back}}}}",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "ポーズ",
     "2": "またがり, M字開脚,馬乗り",
     "3": "straddling",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "ポーズ",
-    "2": "まんこに手",
-    "3": "hand on own crotch",
     "4": ""
   },
   {
@@ -40289,13 +38875,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "ポーズ",
-    "2": "対面位キスハメ",
-    "3": "1girl, 1boy,NSFW,{{{{SEX}}}},short hair, tareme ,fox_girl ,large breasts,thick thighs , white hair, blue eye ,school_uniform ,cum_in_pussy ,Kiss,profile ,cleavage,black bra,fat man ,faceless male",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "ポーズ",
     "2": "屈む,しゃがむ,スクワット体勢,しゃがむ",
     "3": "squatting",
     "4": ""
@@ -40305,20 +38884,6 @@ let defaultMaster = {
     "1": "ポーズ",
     "2": "後ろ手に目隠し",
     "3": "arms behind back }blindfold",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "ポーズ",
-    "2": "手コキのジェスチャー",
-    "3": "handjob gesture",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "ポーズ",
-    "2": "股を掴む",
-    "3": "crotch grab",
     "4": ""
   },
   {
@@ -40366,22 +38931,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "ポーズ",
-    "2": "長舌出し",
-    "3": "long tongue,tongue out",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "ポーズ",
     "2": "開脚",
     "3": "spread leg",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "ポーズ",
-    "2": "顔面騎乗",
-    "3": "cunnilingus,sitting_on_face",
     "4": ""
   },
   {
@@ -40396,55 +38947,6 @@ let defaultMaster = {
     "1": "ポーズ",
     "2": "騎乗位で脚を広げる",
     "3": "straddling spread legs",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "下半身",
-    "2": "ぷにまん",
-    "3": "pussy line",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "下半身",
-    "2": "亀頭",
-    "3": "glans penis",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "下半身",
-    "2": "勃起クリ",
-    "3": "erect clitoris",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "下半身",
-    "2": "服下勃起",
-    "3": "erection under clothes",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "下半身",
-    "2": "金玉",
-    "3": "testicle",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "下着",
-    "2": "ずらし（陰毛あり）",
-    "3": "panties aside,pubic hair",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
-    "2": "",
-    "3": "mating press",
     "4": ""
   },
   {
@@ -40471,20 +38973,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "体位",
-    "2": "しゃがみ騎乗位",
-    "3": "squatting cowgirl position",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
-    "2": "だいしゅきホールド",
-    "3": "kiss,face to face,hug,{{{{{girl lying face up on bed}}}}},leg lock,on bed, motion lines",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
     "2": "ちんぐり返し",
     "3": "folded",
     "4": ""
@@ -40494,13 +38982,6 @@ let defaultMaster = {
     "1": "体位",
     "2": "ちんぐり返し騎乗位",
     "3": "amazon position",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
-    "2": "まんぐり返し",
-    "3": "pile-driver",
     "4": ""
   },
   {
@@ -40527,13 +39008,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "体位",
-    "2": "バック股下視点",
-    "3": "vaginal penis, {{stepped on}}, {{from below}}",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
     "2": "パイズリフェラ",
     "3": "breasts blowjob",
     "4": ""
@@ -40543,13 +39017,6 @@ let defaultMaster = {
     "1": "体位",
     "2": "フェラ",
     "3": "licking penis",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
-    "2": "プレス",
-    "3": "mating press",
     "4": ""
   },
   {
@@ -40583,13 +39050,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "体位",
-    "2": "寝た状態の対面座位",
-    "3": "hetero, kiss,face to face,hug,{{{{{girl lying face up on yoga mat}}}}},leg lock",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
     "2": "寝バック",
     "3": "prone bone",
     "4": ""
@@ -40611,20 +39071,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "体位",
-    "2": "座位",
-    "3": "sitting position",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
-    "2": "後背位",
-    "3": "doggystyle",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
     "2": "後背位1",
     "3": "doggy style",
     "4": ""
@@ -40634,27 +39080,6 @@ let defaultMaster = {
     "1": "体位",
     "2": "正常位",
     "3": "missionary position",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
-    "2": "深い挿入",
-    "3": "deep penetration",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
-    "2": "深く挿入",
-    "3": "Deep Penetration",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
-    "2": "立位",
-    "3": "standing missionary",
     "4": ""
   },
   {
@@ -40690,13 +39115,6 @@ let defaultMaster = {
     "1": "体位",
     "2": "騎乗位",
     "3": "cowgirl position",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "体位",
-    "2": "Ｈバック",
-    "3": "sex from behind",
     "4": ""
   },
   {
@@ -40744,27 +39162,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "口淫",
-    "2": "バキューム",
-    "3": "(:>=,vacuum fellatio),hetero,solo focus,1boy,pov crotch,deepthroat,deep penetration,saliva,(:>=,vacuum fellatio),top-down bottom-up",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "口淫",
-    "2": "バキューム",
-    "3": "(|||EXPRESSION3|||=, vacuum fellatio),hetero,solo focus,1boy,pov crotch,deepthroat,deep penetration,saliva,top-down bottom-up",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "口淫",
-    "2": "バキュームフェラ",
-    "3": "vacuum fellatio",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "口淫",
     "2": "フェラ1",
     "3": "fellatio",
     "4": ""
@@ -40786,13 +39183,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "口淫",
-    "2": "フェラ（深め）",
-    "3": "fellatio,sucking,deepthroat",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "口淫",
     "2": "乳吸い",
     "3": "breasts sucking",
     "4": ""
@@ -40807,20 +39197,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "口淫",
-    "2": "抜け陰毛",
-    "3": "stray pubic hair",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "口淫",
-    "2": "抱きしめてフェラ",
-    "3": "hug and suck",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "口淫",
     "2": "授乳",
     "3": "lactation",
     "4": ""
@@ -40830,13 +39206,6 @@ let defaultMaster = {
     "1": "口淫",
     "2": "搾乳",
     "3": "milking",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "口淫",
-    "2": "暗示的なフェラ",
-    "3": "implied fellatio",
     "4": ""
   },
   {
@@ -40919,13 +39288,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "射精",
-    "2": "大量中出し射精",
-    "3": "massive creampie",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "射精",
     "2": "大量射精",
     "3": "excessive cum",
     "4": ""
@@ -40996,13 +39358,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "射精",
-    "2": "膣から精液噴出",
-    "3": "projectile cumdrip,cum overflow,cum splatter",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "射精",
     "2": "頬にぶっかけ",
     "3": "cum on cheeks",
     "4": ""
@@ -41030,41 +39385,6 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "射精",
-    "2": "黄ばんだザーメン",
-    "3": "yellowish cum",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "尻",
-    "2": "ケツ毛",
-    "3": "anal hair",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "尻",
-    "2": "引き締まったアナル",
-    "3": "puckered anus",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "尻",
-    "2": "黒いアナル",
-    "3": "dark anus",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "属性",
-    "2": "ぽっちゃり",
-    "3": "potbelly",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "属性",
     "2": "セフレ",
     "3": "friend with benefits",
@@ -41075,13 +39395,6 @@ let defaultMaster = {
     "1": "属性",
     "2": "セフレ2",
     "3": "fuck buddy",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "属性",
-    "2": "デカい乳輪",
-    "3": "large_areolae",
     "4": ""
   },
   {
@@ -41101,36 +39414,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "属性",
-    "2": "垂れる母乳",
-    "3": "breast milk",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "属性",
-    "2": "垂れ乳",
-    "3": "hanging breasts",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "属性",
     "2": "妊娠中,妊婦,ボテ腹",
     "3": "pregnant",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "属性",
-    "2": "服越しの母乳",
-    "3": "{{{lactation through clothes}}}",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "属性",
-    "2": "母乳",
-    "3": "lactation",
     "4": ""
   },
   {
@@ -41157,13 +39442,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "属性",
-    "2": "爆乳陥没乳首",
-    "3": ",large_areolae,{{{inverted_nipples}}}",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "属性",
     "2": "異性愛者",
     "3": "hetero",
     "4": ""
@@ -41184,55 +39462,6 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "属性",
-    "2": "超乳",
-    "3": "gigantic breasts,gleaming skin",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "属性",
-    "2": "陥没乳首",
-    "3": "inverted_nipples",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "属性",
-    "2": "黒ずんだ乳首",
-    "3": "dark_nipples",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性交",
-    "2": "セックス時の男追加（主観）",
-    "3": "1boy,male,penis,pov,sex",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性交",
-    "2": "ハメ撮り",
-    "3": "photographing or filming of sex,{through a smartphone}",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性交",
-    "2": "密着",
-    "3": "nsfw,1girl,1boy,sex,rape,cfnm,trembling motionline,troubled eyebrows,fatman,hug,hetero, mating press,missionary position, penis, pussy,vaginal,motion lines",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性交",
-    "2": "性交",
-    "3": "implied sex",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "性交",
     "2": "性交",
     "3": "intercourse",
@@ -41240,30 +39469,9 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "性交",
-    "2": "性的前戯",
-    "3": "sexual foreplay",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器",
-    "2": "1",
-    "3": "cleft of venus",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "性器",
     "2": "おっぱい",
     "3": "tits",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器",
-    "2": "すじまん",
-    "3": "cleft of venus",
     "4": ""
   },
   {
@@ -41285,13 +39493,6 @@ let defaultMaster = {
     "1": "性器",
     "2": "ふたなり",
     "3": "futanari",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器",
-    "2": "ぷにまん",
-    "3": "fat mons",
     "4": ""
   },
   {
@@ -41374,13 +39575,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "性器",
-    "2": "大きく脈打つペニス",
-    "3": "big veiny penis",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器",
     "2": "大きなペニス",
     "3": "big penis",
     "4": ""
@@ -41437,20 +39631,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "性器",
-    "2": "撮影者のペニス",
-    "3": "1viewer's penis",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器",
-    "2": "浮き乳首",
-    "3": "covered nipples",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器",
     "2": "淡いピンクの乳首",
     "3": "light pink nipples",
     "4": ""
@@ -41474,13 +39654,6 @@ let defaultMaster = {
     "1": "性器",
     "2": "精巣",
     "3": "testis",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器",
-    "2": "精液マンコ",
-    "3": "cum pussy",
     "4": ""
   },
   {
@@ -41520,30 +39693,9 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "性器",
-    "2": "黒いマンコ",
-    "3": "dark labia",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器の状態",
-    "2": "マン汁の染み",
-    "3": "pussy juice stain",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "性器の状態",
     "2": "事後の膣",
     "3": "after vaginal",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器の状態",
-    "2": "大量の汁",
-    "3": "excessive pussy juice",
     "4": ""
   },
   {
@@ -41556,36 +39708,8 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "性器の状態",
-    "2": "我慢汁",
-    "3": "precum",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器の状態",
-    "2": "母乳が染み出ている",
-    "3": "Mother's milk is seeping out.",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器の状態",
     "2": "濡れた膣",
     "3": "wet vagina",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器の状態",
-    "2": "腹ボコちんちん",
-    "3": "large insertion",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "性器の状態",
-    "2": "腹ボコまん",
-    "3": "stomach bulge",
     "4": ""
   },
   {
@@ -41611,58 +39735,9 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "手淫",
-    "2": "睾丸を愛撫する",
-    "3": "caressing testicles",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "挿入",
     "2": "女性器に挿入",
     "3": "insert vagina",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "挿入",
-    "2": "性的完全挿入",
-    "3": "screaming",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "挿入",
-    "2": "性的完全挿入",
-    "3": "sexual full penetration",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "挿入",
-    "2": "根元まで",
-    "3": "deep penetration",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "挿入",
-    "2": "深い挿入",
-    "3": "deep penetration",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "挿入",
-    "2": "深く挿入",
-    "3": "deep penetration",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "挿入",
-    "2": "種付けプレス",
-    "3": "mating_press",
     "4": ""
   },
   {
@@ -41691,27 +39766,6 @@ let defaultMaster = {
     "1": "絶頂",
     "2": "オーガズム",
     "3": "orgasm",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "絶頂",
-    "2": "ジュース溜まり",
-    "3": "pussy juice puddle",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "絶頂",
-    "2": "仰け反り絶頂",
-    "3": "female ejaculation,trembling motionline for orgasm,arched back, head_back",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "絶頂",
-    "2": "愛液だまり",
-    "3": "{{{pussy juice puddle}}}}",
     "4": ""
   },
   {
@@ -41751,34 +39805,6 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "肌",
-    "2": "エロテカ肌",
-    "3": "gleaming skin",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "肌",
-    "2": "エロテカ肌2",
-    "3": "glistening skin",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "肌",
-    "2": "キスマと歯形",
-    "3": "hickey,lipstick mark , bite mark",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "胸",
-    "2": "浮き乳首",
-    "3": "coverd nipples",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "自慰",
     "2": "オナニー1",
     "3": "wank",
@@ -41807,20 +39833,6 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "表情",
-    "2": "アヘ顔事後",
-    "3": "ahegao, open mouth, drivel, be breathless, blush, very humid, steam, perspired, fog, pink heart effect, semen, bukkake",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "表情",
-    "2": "口開けエロ顔",
-    "3": "open mouth, drivel, be breathless, blush, very humid, steam",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "装飾",
     "2": "乳首ピアス",
     "3": "nipple piercing",
@@ -41841,20 +39853,6 @@ let defaultMaster = {
     "4": ""
   },
   {
-    "0": "成人向け",
-    "1": "！必須",
-    "2": "スケベ顔",
-    "3": "fucked silly",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "！必須",
-    "2": "黒人セット",
-    "3": "(1boy,big testicles,big black penis,black man:1.1)",
-    "4": ""
-  },
-  {
     "0": "服装",
     "1": "SF",
     "2": "ヒーロー",
@@ -41871,20 +39869,6 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "アウター",
-    "2": "前空きコート",
-    "3": "open coat",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "アウター",
-    "2": "翻訳中",
-    "3": "black coat",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "アウター",
     "2": "高い襟のコート",
     "3": "high collar coat",
     "4": ""
@@ -41892,120 +39876,8 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "オプション",
-    "2": "",
-    "3": "cleavage no nipples",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "",
-    "3": "framed breasts",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "へそ出し",
-    "3": "navel exposed",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "オフショルダー",
-    "3": "off-shoulder",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "ガーリースタイル",
-    "3": "girly style",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "コルセットスカート",
-    "3": "(corset skirt:0.4)",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "シャツを入れる",
-    "3": "shirt tucked in",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "乳袋",
-    "3": "impossible clothes",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "制服のボタンを外す",
-    "3": ", partially unbutoned shirt",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "前垂れ",
-    "3": "pelvic_curtain",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "完全に服を着た状態",
-    "3": "fully clothed",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
     "2": "断面",
     "3": "cross section",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "服のしわ強め",
-    "3": "(taut shirt:1.2), shirt tucked in",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "肩紐が落ちる",
-    "3": "strap slip",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "蝶ネクタイ2",
-    "3": "detached_collar",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "部分的にボタンを外した",
-    "3": "partially unbuttoned",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "オプション",
-    "2": "～が見えている",
-    "3": "show off",
     "4": ""
   },
   {
@@ -42062,13 +39934,6 @@ let defaultMaster = {
     "1": "トップス",
     "2": "オフショルダージャケット",
     "3": "off shoulder jacket",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "トップス",
-    "2": "カッターシャツ",
-    "3": "white shirt, shirt formal",
     "4": ""
   },
   {
@@ -42152,13 +40017,6 @@ let defaultMaster = {
     "0": "服装",
     "1": "トップス",
     "2": "トップス",
-    "3": "tented shirt",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "トップス",
-    "2": "トップス",
     "3": "tops",
     "4": ""
   },
@@ -42228,36 +40086,8 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "トップス",
-    "2": "乳カーテン",
-    "3": "shirt overhang",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "トップス",
-    "2": "乳首周辺まで開いたブラ",
-    "3": "bra {{open}} {{around nipples}}",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "トップス",
     "2": "服の前を開けている",
     "3": "open clothes",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "トップス",
-    "2": "法被(はっぴ)",
-    "3": "happi coat",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "トップス",
-    "2": "白シャツオープン",
-    "3": "open white shirts",
     "4": ""
   },
   {
@@ -42571,13 +40401,6 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "ボトムス",
-    "2": "ヒップボーン・スカート",
-    "3": "hipbone skirt",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "ボトムス",
     "2": "プリーツスカート",
     "3": "pleated skirt",
     "4": ""
@@ -42676,13 +40499,6 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "一式",
-    "2": "アラビア服２",
-    "3": "harem outfit",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
     "2": "アーマー",
     "3": "armor",
     "4": ""
@@ -42697,29 +40513,8 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "一式",
-    "2": "ウェディングドレス一式",
-    "3": "wedding dress, bride, bridal veil, white dress, tiara, pearl necklace, elbow gloves, white gloves, garter straps",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
     "2": "エジプト風衣装",
     "3": "egyptian clothes",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
-    "2": "エナメル服",
-    "3": "enameled Clothes",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
-    "2": "エヴァの制服",
-    "3": "tokyo-3 middle school uniform",
     "4": ""
   },
   {
@@ -42746,13 +40541,6 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "一式",
-    "2": "サムライアーマー",
-    "3": "samurai armor,tabi",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
     "2": "ジャージ",
     "3": "track suits",
     "4": ""
@@ -42760,29 +40548,8 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "一式",
-    "2": "スク水",
-    "3": "school swimsuit",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
-    "2": "スケレオダード",
-    "3": "see-through leotard",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
     "2": "スタイ",
     "3": "baby bib",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
-    "2": "スモック",
-    "3": "child smock",
     "4": ""
   },
   {
@@ -42797,20 +40564,6 @@ let defaultMaster = {
     "1": "一式",
     "2": "セーラー服",
     "3": "serafuku",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
-    "2": "タートルネックレオタード",
-    "3": "turtleneck leotard",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
-    "2": "ハイレグ",
-    "3": "highleg leotard",
     "4": ""
   },
   {
@@ -42872,13 +40625,6 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "一式",
-    "2": "マイクロビキニセット",
-    "3": "micro bikini,  micro shorts, denim shorts, short shorts, cutoffs",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
     "2": "マント",
     "3": "cloak",
     "4": ""
@@ -42928,13 +40674,6 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "一式",
-    "2": "上がないレオタード",
-    "3": "strapless leotard",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
     "2": "体操服",
     "3": "gym uniform",
     "4": ""
@@ -42944,13 +40683,6 @@ let defaultMaster = {
     "1": "一式",
     "2": "体操着",
     "3": "gym clothes",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
-    "2": "偽メイド服",
-    "3": "enmaided",
     "4": ""
   },
   {
@@ -42991,13 +40723,6 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "一式",
-    "2": "横に紐が付いているレオタード",
-    "3": "side-tie leotard",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
     "2": "白衣",
     "3": "labcoat",
     "4": ""
@@ -43021,41 +40746,6 @@ let defaultMaster = {
     "1": "一式",
     "2": "金の装飾,華やか",
     "3": "ornate",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
-    "2": "青い競泳水着",
-    "3": "blue one-piece swimsuit,competition swimsuit",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "一式",
-    "2": "青い競泳水着",
-    "3": "blue one-piece swimsuit,highleg competition swimsuit",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "下着",
-    "2": "Tバック",
-    "3": "g-string",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "下着",
-    "2": "おっぱい隠す",
-    "3": "{{{covered breasts}}}",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "下着",
-    "2": "ふんどし(褌)",
-    "3": "white japanese loincloth",
     "4": ""
   },
   {
@@ -43131,29 +40821,8 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "下着",
-    "2": "パンストパンツ",
-    "3": "panties under pantyhose",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "下着",
-    "2": "パンスト越しのパンツ",
-    "3": "panties under pantyhose",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "下着",
     "2": "パンティー,パンツ",
     "3": "panties",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "下着",
-    "2": "ヒョウ柄ブラ",
-    "3": "leopard print, bra",
     "4": ""
   },
   {
@@ -43180,13 +40849,6 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "下着",
-    "2": "マイクロパンツ",
-    "3": "micro panties",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "下着",
     "2": "下着",
     "3": "underwear",
     "4": ""
@@ -43196,20 +40858,6 @@ let defaultMaster = {
     "1": "下着",
     "2": "女性用下着",
     "3": "classic briefs",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "下着",
-    "2": "水玉模様の子供パンツ",
-    "3": "polka dots cotton panties",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "下着",
-    "2": "片足パンツ",
-    "3": "panties around one leg",
     "4": ""
   },
   {
@@ -43238,27 +40886,6 @@ let defaultMaster = {
     "1": "下着",
     "2": "股間の前の布2",
     "3": "loincloth",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "下着",
-    "2": "迷彩柄のブラ",
-    "3": "green _camouflage_bra",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "下着",
-    "2": "頭の上のパンツ",
-    "3": "panties on head",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "下着",
-    "2": "鮮やか",
-    "3": "vibrant",
     "4": ""
   },
   {
@@ -43313,29 +40940,8 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "和装",
-    "2": "着物　浴衣　和服",
-    "3": "kimomo yukata wafuku",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "和装",
-    "2": "着物を脱がす",
-    "3": "oiran",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "和装",
     "2": "紫（東方）の服",
     "3": "tabard",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "和装",
-    "2": "花魁",
-    "3": "kimono, off shoulder",
     "4": ""
   },
   {
@@ -43378,13 +40984,6 @@ let defaultMaster = {
     "1": "手袋",
     "2": "ウェディンググローブ",
     "3": "bridal gauntlets",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "手袋",
-    "2": "フリルグローブ",
-    "3": "frilled gloves",
     "4": ""
   },
   {
@@ -43530,13 +41129,6 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "特徴",
-    "2": "ボタンの隙間",
-    "3": "ボタンの隙間",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "特徴",
     "2": "レース",
     "3": "lace",
     "4": ""
@@ -43546,20 +41138,6 @@ let defaultMaster = {
     "1": "特徴",
     "2": "ロングストレート",
     "3": "long straight",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "特徴",
-    "2": "乳見せ(nipples抜き)",
-    "3": "breasts out, turn up shirt, open shirt, open clothes",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "特徴",
-    "2": "小さめの服,小さい服",
-    "3": "undersized_clothes",
     "4": ""
   },
   {
@@ -43858,13 +41436,6 @@ let defaultMaster = {
   },
   {
     "0": "服装",
-    "1": "靴",
-    "2": "脱いだ靴",
-    "3": "unworn_boots",
-    "4": ""
-  },
-  {
-    "0": "服装",
     "1": "靴下",
     "2": "ストッキング",
     "3": "stockings",
@@ -43880,13 +41451,6 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "靴下",
-    "2": "ニーソ",
-    "3": "thighhighs",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "靴下",
     "2": "ボーダーの靴下",
     "3": "border knee socks",
     "4": ""
@@ -43896,13 +41460,6 @@ let defaultMaster = {
     "1": "靴下",
     "2": "ルーズソックス",
     "3": "loose socks",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "靴下",
-    "2": "太もも食込",
-    "3": "skindantation",
     "4": ""
   },
   {
@@ -43938,13 +41495,6 @@ let defaultMaster = {
     "1": "トップス",
     "2": "形の縫い目で色が分かれたTシャツ",
     "3": "raglan sleeve t-shirts",
-    "4": ""
-  },
-  {
-    "0": "服装・衣類",
-    "1": "制服",
-    "2": "トレセン制服",
-    "3": "tracen school uniform",
     "4": ""
   },
   {
@@ -44181,13 +41731,6 @@ let defaultMaster = {
   {
     "0": "模様",
     "1": "柄",
-    "2": "横線柄",
-    "3": "horizontal line",
-    "4": ""
-  },
-  {
-    "0": "模様",
-    "1": "柄",
     "2": "正方形",
     "3": "squares",
     "4": ""
@@ -44230,22 +41773,8 @@ let defaultMaster = {
   {
     "0": "模様",
     "1": "柄",
-    "2": "線柄･ストライプ",
-    "3": "Stripe",
-    "4": ""
-  },
-  {
-    "0": "模様",
-    "1": "柄",
     "2": "縞模様",
     "3": "stripes",
-    "4": ""
-  },
-  {
-    "0": "模様",
-    "1": "柄",
-    "2": "縦線柄",
-    "3": "vertical line",
     "4": ""
   },
   {
@@ -44323,13 +41852,6 @@ let defaultMaster = {
     "1": "光",
     "2": "ダイナミックライティング",
     "3": "dynamic lighting",
-    "4": ""
-  },
-  {
-    "0": "照明",
-    "1": "光",
-    "2": "トーチ",
-    "3": "torch",
     "4": ""
   },
   {
@@ -44440,13 +41962,6 @@ let defaultMaster = {
   {
     "0": "照明",
     "1": "光",
-    "2": "焚火",
-    "3": "bonfire",
-    "4": ""
-  },
-  {
-    "0": "照明",
-    "1": "光",
     "2": "綺麗に照らされた",
     "3": "beautifully lit",
     "4": ""
@@ -44456,13 +41971,6 @@ let defaultMaster = {
     "1": "光",
     "2": "繊細なリムライト",
     "3": "rim light",
-    "4": ""
-  },
-  {
-    "0": "照明",
-    "1": "光",
-    "2": "被写体の一部が照らされる",
-    "3": "Only part of the subject is illuminated.",
     "4": ""
   },
   {
@@ -44650,13 +42158,6 @@ let defaultMaster = {
   {
     "0": "状態",
     "1": "状態",
-    "2": "腋の下の汗染み",
-    "3": "Sweat stains under the armpits",
-    "4": ""
-  },
-  {
-    "0": "状態",
-    "1": "状態",
     "2": "蒸れ",
     "3": "steaming body",
     "4": ""
@@ -44666,13 +42167,6 @@ let defaultMaster = {
     "1": "状態",
     "2": "輝き",
     "3": "glow",
-    "4": ""
-  },
-  {
-    "0": "状態",
-    "1": "状態",
-    "2": "食い込み",
-    "3": "wedgie",
     "4": ""
   },
   {
@@ -45112,13 +42606,6 @@ let defaultMaster = {
   {
     "0": "画面効果",
     "1": "ふきだし",
-    "2": "黄色ギザギザ",
-    "3": "^^^, surprised",
-    "4": ""
-  },
-  {
-    "0": "画面効果",
-    "1": "ふきだし",
     "2": "？",
     "3": "spoken question mark",
     "4": ""
@@ -45196,13 +42683,6 @@ let defaultMaster = {
   {
     "0": "画面効果",
     "1": "画面効果",
-    "2": "シャープなライン",
-    "3": "sharp line",
-    "4": ""
-  },
-  {
-    "0": "画面効果",
-    "1": "画面効果",
     "2": "ピンボケ",
     "3": "bokeh",
     "4": ""
@@ -45254,20 +42734,6 @@ let defaultMaster = {
     "1": "画面効果",
     "2": "動きを表す線",
     "3": "motion lines",
-    "4": ""
-  },
-  {
-    "0": "画面効果",
-    "1": "画面効果",
-    "2": "女の子が震える効果線",
-    "3": "girl trembling motion line",
-    "4": ""
-  },
-  {
-    "0": "画面効果",
-    "1": "画面効果",
-    "2": "横から",
-    "3": ",looking to the side,facing to the side,{{{from side}}}",
     "4": ""
   },
   {
@@ -45728,29 +43194,8 @@ let defaultMaster = {
   {
     "0": "背景",
     "1": "背景",
-    "2": "バスルーム",
-    "3": "shower (place)",
-    "4": ""
-  },
-  {
-    "0": "背景",
-    "1": "背景",
-    "2": "ホテル",
-    "3": "hotel room",
-    "4": ""
-  },
-  {
-    "0": "背景",
-    "1": "背景",
     "2": "中世の町",
     "3": "medieval town",
-    "4": ""
-  },
-  {
-    "0": "背景",
-    "1": "背景",
-    "2": "公衆トイレ",
-    "3": "public toilet",
     "4": ""
   },
   {
@@ -45772,13 +43217,6 @@ let defaultMaster = {
     "1": "背景",
     "2": "建物",
     "3": "buildings",
-    "4": ""
-  },
-  {
-    "0": "背景",
-    "1": "背景",
-    "2": "放課後の教室",
-    "3": "classroom window shadow",
     "4": ""
   },
   {
@@ -47037,13 +44475,6 @@ let defaultMaster = {
   {
     "0": "表情・感情",
     "1": "ポジティブな感情",
-    "2": "ライトスマイル",
-    "3": "light smile",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "ポジティブな感情",
     "2": "信頼される表情",
     "3": "reliable expression",
     "4": ""
@@ -47340,13 +44771,6 @@ let defaultMaster = {
     "1": "ポジティブな感情",
     "2": "覚悟を決めた表情",
     "3": "resolute expression",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "ポジティブな感情",
-    "2": "誘惑顔",
-    "3": "seductive_smile",
     "4": ""
   },
   {
@@ -47688,13 +45112,6 @@ let defaultMaster = {
   {
     "0": "表情・感情",
     "1": "困惑した表情・感情",
-    "2": "心配",
-    "3": "worried",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "困惑した表情・感情",
     "2": "恐ろしい",
     "3": "horrified",
     "4": ""
@@ -47746,13 +45163,6 @@ let defaultMaster = {
     "1": "困惑した表情・感情",
     "2": "波状の口の表情・感情",
     "3": "wavy mouth expression",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "困惑した表情・感情",
-    "2": "苦痛",
-    "3": "pain",
     "4": ""
   },
   {
@@ -47954,27 +45364,6 @@ let defaultMaster = {
   {
     "0": "表情・感情",
     "1": "性的な表情",
-    "2": "V眉",
-    "3": "{{{v-shaped eyebrows}}}",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "v眉",
-    "3": "v-shaped eyebrows",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "v眉＋眉間皺",
-    "3": "v-shaped eyebrows,annoyed",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
     "2": "うっとりした目の表情",
     "3": "half-lidded expression",
     "4": ""
@@ -47989,29 +45378,8 @@ let defaultMaster = {
   {
     "0": "表情・感情",
     "1": "性的な表情",
-    "2": "えろえろ目",
-    "3": "{{{{cross-eyed}}}},{{{{upturned eyes}}}},{{{{{constricted pupils}}}}},{{{{sanpaku}}}},rolling eyes",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "からかう笑顔",
-    "3": "teasing smile",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
     "2": "せつなそうな表情",
     "3": "yearning expression",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "ちんちん目線",
-    "3": "looking at penis",
     "4": ""
   },
   {
@@ -48038,99 +45406,8 @@ let defaultMaster = {
   {
     "0": "表情・感情",
     "1": "性的な表情",
-    "2": "めかくれ",
-    "3": "{{{faceless female}}}",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "よだれ",
-    "3": "{{drooling}},saliva,drivel,saliva trail",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "イってる目",
-    "3": "constricted pupils",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "イキ目",
-    "3": "cross-eyed,upturned eyes,{{{constricted pupils}}},rolling eyes",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "エロイキ目",
-    "3": "rolling eyes,upturned eyes",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "オホ口◎",
-    "3": "{{{{{dot mouth}}}}},parted lips",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "オホ顔",
-    "3": "{{{fucked silly}}}",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "キス口",
-    "3": "parted lips",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "ボーっとした目",
-    "3": "drunken eyes",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "モブ顔",
-    "3": "shaded face,no eyes",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "下品なエロ",
-    "3": "vulgarity",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "不均一な目",
-    "3": "uneven_eyes",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
     "2": "乱れた表情",
     "3": "disheveled expression",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "事後",
-    "3": "afterglow",
     "4": ""
   },
   {
@@ -48157,29 +45434,8 @@ let defaultMaster = {
   {
     "0": "表情・感情",
     "1": "性的な表情",
-    "2": "半目",
-    "3": "half-closed eyes",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "半目",
-    "3": "half-closed_eyes",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
     "2": "口を開けた驚きや興奮の表情",
     "3": "open-mouthed expression",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "困り眉困惑",
-    "3": "troubled eyebrows,embarrassed",
     "4": ""
   },
   {
@@ -48201,20 +45457,6 @@ let defaultMaster = {
     "1": "性的な表情",
     "2": "官能的な表情",
     "3": "sensual expression",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "寄り目",
-    "3": "cross-eyed",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "小さい口",
-    "3": "dot mouth",
     "4": ""
   },
   {
@@ -48304,20 +45546,6 @@ let defaultMaster = {
   {
     "0": "表情・感情",
     "1": "性的な表情",
-    "2": "愛情のこもった目線",
-    "3": "loving gaze",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "懇願する目",
-    "3": "pleading eyes",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
     "2": "我を忘れた表情",
     "3": "lost-in-the-moment expression",
     "4": ""
@@ -48334,20 +45562,6 @@ let defaultMaster = {
     "1": "性的な表情",
     "2": "柔らかく微笑む表情",
     "3": "soft-smiling expression",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "栗口アへ◎",
-    "3": "chestnut mouth",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "横線が入った目",
-    "3": "dashed eye",
     "4": ""
   },
   {
@@ -48444,36 +45658,8 @@ let defaultMaster = {
   {
     "0": "表情・感情",
     "1": "性的な表情",
-    "2": "疲れ果てる",
-    "3": "exhausted",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "発情",
-    "3": "aroused",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "目の下のクマ",
-    "3": "bags under eyes",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
     "2": "目を細めた魅惑的な表情",
     "3": "sultry gaze expression",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "目を細める",
-    "3": "squinting",
     "4": ""
   },
   {
@@ -48488,13 +45674,6 @@ let defaultMaster = {
     "1": "性的な表情",
     "2": "目を閉じて感じている表情",
     "3": "eyes-closed expression",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "瞳小さく",
-    "3": "constricted pupils",
     "4": ""
   },
   {
@@ -48521,21 +45700,7 @@ let defaultMaster = {
   {
     "0": "表情・感情",
     "1": "性的な表情",
-    "2": "舌ペロ",
-    "3": "licking lips",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
     "2": "色っぽい表情",
-    "3": "seductive expression",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "性的な表情",
-    "2": "誘惑的な表情",
     "3": "seductive expression",
     "4": ""
   },
@@ -48815,22 +45980,8 @@ let defaultMaster = {
   {
     "0": "表情・感情",
     "1": "明るい表情・感情",
-    "2": "はにかむ",
-    "3": "shy smile",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "明るい表情・感情",
     "2": "デフォルメの頬染め",
     "3": "blush stickers",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "明るい表情・感情",
-    "2": "作り笑顔",
-    "3": "false smile",
     "4": ""
   },
   {
@@ -48880,13 +46031,6 @@ let defaultMaster = {
     "1": "明るい表情・感情",
     "2": "指でスマイル",
     "3": "fingersmile",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "明るい表情・感情",
-    "2": "楽しげな雰囲気を表すエモーション",
-    "3": "",
     "4": ""
   },
   {
@@ -49634,22 +46778,8 @@ let defaultMaster = {
   {
     "0": "表情・感情",
     "1": "視線",
-    "2": "寄り目",
-    "3": "cross-eyed",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "視線",
     "2": "寄り目（より目）",
     "3": "cross-eyed",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "視線",
-    "2": "意図的に視線を逸らす",
-    "3": "averting eyes",
     "4": ""
   },
   {
@@ -49664,20 +46794,6 @@ let defaultMaster = {
     "1": "視線",
     "2": "振り返る",
     "3": "looking back",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "視線",
-    "2": "横目に見る",
-    "3": "side glance, sideways glance, glancing sideways",
-    "4": ""
-  },
-  {
-    "0": "表情・感情",
-    "1": "視線",
-    "2": "目を逸らす(気まずさ)",
-    "3": "averting eyes",
     "4": ""
   },
   {
@@ -49793,59 +46909,10 @@ let defaultMaster = {
     "4": ""
   },
   {
-    "0": "表情・感情",
-    "1": "顔文字",
-    "2": "^_^",
-    "3": "^_^",
-    "4": ""
-  },
-  {
     "0": "装飾",
     "1": "その他",
     "2": "おしゃぶり",
     "3": "pacifier",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "その他",
-    "2": "その他",
-    "3": "ninja mask",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "その他",
-    "2": "ガスマスク",
-    "3": "gas mask",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "その他",
-    "2": "ガスマスク　要強",
-    "3": "oxygen mask",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "その他",
-    "2": "コンドーム散乱",
-    "3": "multiple_condoms",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "その他",
-    "2": "レスラーマスク",
-    "3": "luchador mask",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "その他",
-    "2": "仮面舞踏会",
-    "3": "masquerade mask",
     "4": ""
   },
   {
@@ -49857,37 +46924,9 @@ let defaultMaster = {
   },
   {
     "0": "装飾",
-    "1": "その他",
-    "2": "狐の面",
-    "3": "fox mask",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "その他",
-    "2": "能面",
-    "3": "noh mask",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "アクセサリー",
-    "2": "おしゃぶり",
-    "3": "pacifier",
-    "4": ""
-  },
-  {
-    "0": "装飾",
     "1": "アクセサリー",
     "2": "エンジェルハロー",
     "3": "angel halo",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "アクセサリー",
-    "2": "ガラガラ",
-    "3": "rattle",
     "4": ""
   },
   {
@@ -49937,13 +46976,6 @@ let defaultMaster = {
     "1": "メイク",
     "2": "チーク",
     "3": "cheek",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "メイク",
-    "2": "バーコードタトゥー",
-    "3": "barcode tatoo",
     "4": ""
   },
   {
@@ -50082,13 +47114,6 @@ let defaultMaster = {
   {
     "0": "装飾",
     "1": "下半身",
-    "2": "太ももストラップ",
-    "3": "thigh strap",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "下半身",
     "2": "帯",
     "3": "obi",
     "4": ""
@@ -50133,13 +47158,6 @@ let defaultMaster = {
     "1": "帽子",
     "2": "ふんわりとしたお嬢様っぽい帽子",
     "3": "bonnet",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "帽子",
-    "2": "カクテルハット",
-    "3": "cocktail hat",
     "4": ""
   },
   {
@@ -50308,13 +47326,6 @@ let defaultMaster = {
     "1": "帽子",
     "2": "花飾り",
     "3": "floral decoration",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "帽子",
-    "2": "軍の小さい帽",
-    "3": "garrison cap",
     "4": ""
   },
   {
@@ -50595,20 +47606,6 @@ let defaultMaster = {
     "1": "武器",
     "2": "銃",
     "3": "gun",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "武器",
-    "2": "銃を突きつけられる",
-    "3": "gunpoint",
-    "4": ""
-  },
-  {
-    "0": "装飾",
-    "1": "眼鏡",
-    "2": "ぐるぐる眼鏡",
-    "3": "coke-bottle glasses",
     "4": ""
   },
   {
@@ -51698,13 +48695,6 @@ let defaultMaster = {
   },
   {
     "0": "身体",
-    "1": "上半身",
-    "2": "鎖骨",
-    "3": "collarbone",
-    "4": ""
-  },
-  {
-    "0": "身体",
     "1": "下半身",
     "2": "むき出しの胃",
     "3": "bare stomach",
@@ -51736,20 +48726,6 @@ let defaultMaster = {
     "1": "下半身",
     "2": "太もも",
     "3": "thighs",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "下半身",
-    "2": "巨大なお尻",
-    "3": "huge asscheeks",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "下半身",
-    "2": "恥骨",
-    "3": "mons pubis",
     "4": ""
   },
   {
@@ -51853,13 +48829,6 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "体型",
-    "2": "不釣り合いな胸",
-    "3": "disproportionate breasts",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "体型",
     "2": "丸々とした",
     "3": "rotund",
     "4": ""
@@ -51883,20 +48852,6 @@ let defaultMaster = {
     "1": "体型",
     "2": "小柄",
     "3": "petite",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "体型",
-    "2": "幼児体型",
-    "3": "toddler body",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "体型",
-    "2": "幼児化",
-    "3": "aged down",
     "4": ""
   },
   {
@@ -51958,13 +48913,6 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "体形",
-    "2": "かわいいむちむち",
-    "3": "art by shikuta maru, art by momofuki rio, art by tedain, art by ikuchan kaoru, uncensored",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "体形",
     "2": "スタイルが良い",
     "3": "gradient",
     "4": ""
@@ -51993,20 +48941,6 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "体形",
-    "2": "ムチムチボディ",
-    "3": "{{gleaming skin}},{big breasts},sagging breasts,{wide hips},huge ass,puffy nipple,large areolae,thick thighs",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "体形",
-    "2": "ロリ巨乳",
-    "3": "loli face and big boobs",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "体形",
     "2": "低身長",
     "3": "minigirl",
     "4": ""
@@ -52028,22 +48962,8 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "体形",
-    "2": "非常に低身長",
-    "3": "very short stature",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "体形",
     "2": "高身長",
     "3": "tall person",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "尻",
-    "2": "大きなお尻",
-    "3": "huge hip",
     "4": ""
   },
   {
@@ -52058,13 +48978,6 @@ let defaultMaster = {
     "1": "尻",
     "2": "小さな尻",
     "3": "small hip",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "尻",
-    "2": "彼は彼女のお尻をつかんでいる",
-    "3": "he is grabbing her butt",
     "4": ""
   },
   {
@@ -52084,29 +48997,8 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "手",
-    "2": "両手の平和サイン",
-    "3": "peace sign on both hands",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "手",
     "2": "人間の手",
     "3": "human hands",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "手",
-    "2": "仁王立ち",
-    "3": ",hands on own hips",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "手",
-    "2": "手を開く",
-    "3": "spread fingers",
     "4": ""
   },
   {
@@ -52126,29 +49018,8 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "特徴",
-    "2": "くノ一セット",
-    "3": "fishnet bodysuit,ninja,kunoichi",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "特徴",
     "2": "周囲",
     "3": "circumference",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "特徴",
-    "2": "植物触手に包まれた体",
-    "3": "girl's body wrapped around plant tentacles",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "特徴",
-    "2": "詳細な体",
-    "3": "extremely detailed body",
     "4": ""
   },
   {
@@ -52266,113 +49137,8 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "肌",
-    "2": "即時損失",
-    "3": "instant loss",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
     "2": "日焼け肌",
     "3": "dark skin",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "濡れた肌",
-    "3": "wet skin",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "白肌",
-    "3": "white skin",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "繋ぎ目のある肌",
-    "3": "patchwork skin",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "翻訳中",
-    "3": "super detailed skin",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "肌に深くめり込む",
-    "3": "deep skin",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "肌の食い込み",
-    "3": "deep skin",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "褐色(明)女子",
-    "3": "girl is light dark skin",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "褐色(明るめ)",
-    "3": "light dark skin",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "褐色の女の子",
-    "3": "tan skin girl",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "褐色の女の子2",
-    "3": "dark skin girl",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "褐色肌",
-    "3": "[[[dark skin]]]",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "褐色肌",
-    "3": "brown skin",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "褐色肌",
-    "3": "tan skin",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "肌",
-    "2": "赤褐色肌",
-    "3": "reddish brown skin",
     "4": ""
   },
   {
@@ -52399,43 +49165,8 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "胸",
-    "2": "ぷっくり乳首",
-    "3": "puffy nipple",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
     "2": "ミディアムバスト",
     "3": "medium bust",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
-    "2": "ロケットおっぱい(中)",
-    "3": "perky medium breasts",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
-    "2": "ロケットおっぱい(大)",
-    "3": "perky big breasts",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
-    "2": "ロケットおっぱい(特大)",
-    "3": "perky large breasts",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
-    "2": "ロリ巨乳",
-    "3": "disproportionate breasts",
     "4": ""
   },
   {
@@ -52448,20 +49179,6 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "胸",
-    "2": "不揃いの胸",
-    "3": "unaligned breasts",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
-    "2": "不釣り合いな胸",
-    "3": "disproportionate breasts",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
     "2": "乳房",
     "3": "breasts",
     "4": ""
@@ -52469,29 +49186,8 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "胸",
-    "2": "乳首の横線",
-    "3": "nipple indents",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
     "2": "切断の露出",
     "3": "exposing cleavage",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
-    "2": "動きのある胸",
-    "3": "bouncing breasts",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
-    "2": "垂れ乳",
-    "3": "sagging breasts,huge breasts",
     "4": ""
   },
   {
@@ -52567,13 +49263,6 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "胸",
-    "2": "母乳噴射",
-    "3": "projectile lactation",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
     "2": "液体の胸",
     "3": "liquid breasts",
     "4": ""
@@ -52588,50 +49277,8 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "胸",
-    "2": "胸のリボン",
-    "3": "chest riboon",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
-    "2": "胸の上に手を当てる",
-    "3": "hand on own chest",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
     "2": "重い胸",
     "3": "heavy breasts",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
-    "2": "離れおっぱい",
-    "3": "breasts apart",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
-    "2": "離れおっぱい",
-    "3": "{{{{breasts apart}}}}",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "胸",
-    "2": "離れ乳",
-    "3": "breasts apart",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "脚",
-    "2": "でか尻　もも",
-    "3": "wide hips,thick thighs",
     "4": ""
   },
   {
@@ -52643,37 +49290,9 @@ let defaultMaster = {
   },
   {
     "0": "身体",
-    "1": "脚",
-    "2": "股に手をはさみ",
-    "3": "hand between legs",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "脚",
-    "2": "脚",
-    "3": "legs",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "脚",
-    "2": "開脚立ち膝",
-    "3": "squatting, open legs",
-    "4": ""
-  },
-  {
-    "0": "身体",
     "1": "腕",
     "2": "ロボットアーム",
     "3": "robot arm",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "腕",
-    "2": "後ろ腕を縛られる",
-    "3": "bound back arms",
     "4": ""
   },
   {
@@ -52770,13 +49389,6 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "足",
-    "2": "太ももが太い",
-    "3": "thick thighs",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "足",
     "2": "素足",
     "3": "bare foot",
     "4": ""
@@ -52793,20 +49405,6 @@ let defaultMaster = {
     "1": "足",
     "2": "足のネイル",
     "3": "toenail polish",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "足",
-    "2": "足首",
-    "3": "ankles",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "身体",
-    "2": "へそボコ",
-    "3": "outie navel",
     "4": ""
   },
   {
@@ -52828,13 +49426,6 @@ let defaultMaster = {
     "1": "身体",
     "2": "大きな筋肉",
     "3": "big muscles",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "身体",
-    "2": "艶肌",
-    "3": "shiny skin,gleaming skin",
     "4": ""
   },
   {
@@ -52987,13 +49578,6 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "部位",
-    "2": "脇",
-    "3": "armpit",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "部位",
     "2": "髪,ヘア",
     "3": "hair",
     "4": ""
@@ -53015,85 +49599,8 @@ let defaultMaster = {
   {
     "0": "身体",
     "1": "頭部",
-    "2": "そわそわする",
-    "3": "fidgeting",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "頭部",
-    "2": "ぼやけた前景",
-    "3": "blurry foreground",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "頭部",
-    "2": "不揃いな前髪",
-    "3": "choppy bangs",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "頭部",
-    "2": "体育館倉庫",
-    "3": "sports hall storage",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "頭部",
-    "2": "布越し",
-    "3": "through clothes",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "頭部",
-    "2": "手首カフス",
-    "3": "wrist cuffs",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "頭部",
-    "2": "物にもたれる",
-    "3": "leaning on object",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "頭部",
-    "2": "男の子が隣に",
-    "3": "boy next girl",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "頭部",
-    "2": "肩に腕を回す",
-    "3": "arm around shoulder",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "頭部",
     "2": "額にマーク",
     "3": "forehead mark",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "頭部",
-    "2": "顔が隠れる",
-    "3": "hide face",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "頭部",
-    "2": "高級な椅子の模様",
-    "3": "diamond quilting",
     "4": ""
   },
   {
@@ -54044,34 +50551,6 @@ let defaultMaster = {
   {
     "0": "顔",
     "1": "口",
-    "2": "お金を咥える",
-    "3": "money hold on mouth",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "口",
-    "2": "お金咥える",
-    "3": "{{{money_in_mouth}}}",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "口",
-    "2": "てへぺろ",
-    "3": "licking lips",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "口",
-    "2": "よだれを垂らす",
-    "3": "[mouth drool, drooling], :o, [open mouth], hunger",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "口",
     "2": "カラフルな舌",
     "3": "colorful tongue",
     "4": ""
@@ -54087,14 +50566,7 @@ let defaultMaster = {
     "0": "顔",
     "1": "口",
     "2": "キス待ち2",
-    "3": "thick lips",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "口",
-    "2": "マウス　ヴェール",
-    "3": "mouth veil",
+    "3": "thick lips,",
     "4": ""
   },
   {
@@ -54102,27 +50574,6 @@ let defaultMaster = {
     "1": "口",
     "2": "口の中の舌",
     "3": "tongue within mouth",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "口",
-    "2": "口を大きく開ける",
-    "3": "wide open mouth",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "口",
-    "2": "口を覆う手",
-    "3": "hand over own mouth",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "口",
-    "2": "口先を尖らせる(キス口)",
-    "3": "o3o",
     "4": ""
   },
   {
@@ -54137,20 +50588,6 @@ let defaultMaster = {
     "1": "口",
     "2": "少し開いた口",
     "3": "slightly opmouth",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "口",
-    "2": "尖らせた唇",
-    "3": "pursed lips",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "口",
-    "2": "栗みたいな口",
-    "3": "chestnut mouth",
     "4": ""
   },
   {
@@ -54172,13 +50609,6 @@ let defaultMaster = {
     "1": "口",
     "2": "複数の牙",
     "3": "fangs",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "口",
-    "2": "長方形の口",
-    "3": "rectangular mouth",
     "4": ""
   },
   {
@@ -54254,13 +50684,6 @@ let defaultMaster = {
   {
     "0": "顔",
     "1": "目",
-    "2": "半目",
-    "3": "half-closed eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目",
     "2": "垂直瞳",
     "3": "vertical pupil",
     "4": ""
@@ -54281,69 +50704,6 @@ let defaultMaster = {
   },
   {
     "0": "顔",
-    "1": "目",
-    "2": "目",
-    "3": "beautiful eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目",
-    "2": "目",
-    "3": "narrowed eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目",
-    "2": "目がきれいになる",
-    "3": "big eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目",
-    "2": "目のくま",
-    "3": "bags under eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目",
-    "2": "目線隠し",
-    "3": "cover one's eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目",
-    "2": "瞳",
-    "3": "gray eyes,eye focus,Character focus",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目",
-    "2": "見開いた眼",
-    "3": "{unusually open eyes}",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目",
-    "2": "顔逸らし",
-    "3": "averting eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "detailed eyes,",
-    "3": "細かい目",
-    "4": ""
-  },
-  {
-    "0": "顔",
     "1": "目の形",
     "2": "うんざりした目",
     "3": "disgusted eyes",
@@ -54354,13 +50714,6 @@ let defaultMaster = {
     "1": "目の形",
     "2": "なだらかな目",
     "3": "rolling eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "まつ毛",
-    "3": "eyelashes",
     "4": ""
   },
   {
@@ -54422,13 +50775,6 @@ let defaultMaster = {
   {
     "0": "顔",
     "1": "目の形",
-    "2": "ハートの瞳",
-    "3": "heart-shaped pupils",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
     "2": "ハート目",
     "3": "heart shaped pupils",
     "4": ""
@@ -54457,13 +50803,6 @@ let defaultMaster = {
   {
     "0": "顔",
     "1": "目の形",
-    "2": "丸い目",
-    "3": "round-eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
     "2": "半分閉じた目",
     "3": "half-closed eyes",
     "4": ""
@@ -54473,34 +50812,6 @@ let defaultMaster = {
     "1": "目の形",
     "2": "右目",
     "3": "right eye",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "完全に目を閉じる",
-    "3": "close eyes completely",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "小さな瞳",
-    "3": "little pupil",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "小さな瞳",
-    "3": "small pupil",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "小さな瞳2",
-    "3": "small pupil",
     "4": ""
   },
   {
@@ -54597,29 +50908,8 @@ let defaultMaster = {
   {
     "0": "顔",
     "1": "目の形",
-    "2": "目の虹彩",
-    "3": "the iris of the eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "目を細める",
-    "3": "narrow eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
     "2": "目を細める",
     "3": "squinting",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "目を細める",
-    "3": "squinting eyes",
     "4": ""
   },
   {
@@ -54632,13 +50922,6 @@ let defaultMaster = {
   {
     "0": "顔",
     "1": "目の形",
-    "2": "目を閉じる",
-    "3": "close eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
     "2": "瞳が何かの形になっている",
     "3": "symbol shaped pupils",
     "4": ""
@@ -54646,78 +50929,8 @@ let defaultMaster = {
   {
     "0": "顔",
     "1": "目の形",
-    "2": "瞳にキラキラ",
-    "3": "sparkling highlights in the eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "瞳の反射",
-    "3": "captivating eye reflections",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "瞳の虹彩に微妙な色の変化",
-    "3": "subtle color variations in the iris",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "瞳の血管",
-    "3": "realistic eye veins",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "瞳孔に奥行きと立体感",
-    "3": "depth and dimension in the pupils",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
     "2": "素敵な目",
     "3": "lovely eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "細かい目",
-    "3": "detailed eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "細目",
-    "3": "slender eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "綺麗な目",
-    "3": "detailed eyes",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "繊細なまつ毛の描写",
-    "3": "meticulous eyelash details",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "目の形",
-    "2": "繊細な虹彩の描写の瞳",
-    "3": "intricate iris details",
     "4": ""
   },
   {
@@ -54961,36 +51174,8 @@ let defaultMaster = {
   {
     "0": "顔",
     "1": "眉",
-    "2": "怒り眉",
-    "3": "v-shaped eyebrows",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "眉",
-    "2": "眉をひそめる",
-    "3": "wince",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "眉",
-    "2": "眉を上げる",
-    "3": "raised eyebrows",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "眉",
     "2": "短い眉毛",
     "3": "short eyebrows",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "眉",
-    "2": "細眉",
-    "3": "thin eyebrows",
     "4": ""
   },
   {
@@ -55115,20 +51300,6 @@ let defaultMaster = {
   {
     "0": "顔",
     "1": "輪郭",
-    "2": "はずかしい",
-    "3": "embarrassed,full-face blush",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "輪郭",
-    "2": "丸顔",
-    "3": "round face",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "輪郭",
     "2": "大きな顔",
     "3": "big face",
     "4": ""
@@ -55136,43 +51307,8 @@ let defaultMaster = {
   {
     "0": "顔",
     "1": "輪郭",
-    "2": "画面分割（斜め）",
-    "3": "screen split diagonally from top-left to bottom-right,the top-left showing a ass focus,the bottom-right showing face from side",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "輪郭",
-    "2": "繋ぎ目の顔",
-    "3": "stitched face",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "輪郭",
-    "2": "翻訳中",
-    "3": "fat faceless male man",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "輪郭",
-    "2": "自在アングル（ランダム）",
-    "3": "||front view|side view|profile|back view|rear view|three-quarter view|top-down view|bottom-up view|high angle|low angle|bird's eye view|worm's eye view|close-up|extreme close-up|wide shot|full body|upper body|portrait|face shot|bust shot|cowboy shot|from behind|over-the-shoulder|pov|first-person view||",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "輪郭",
     "2": "萌コンテンツ系の可愛い顔",
     "3": "kawaii face",
-    "4": ""
-  },
-  {
-    "0": "顔",
-    "1": "輪郭",
-    "2": "顔のない男性",
-    "3": "faceless male",
     "4": ""
   },
   {
@@ -55229,13 +51365,6 @@ let defaultMaster = {
     "1": "鼻",
     "2": "鼻のうえ（眼鏡をかけるところ）",
     "3": "nasal bridge",
-    "4": ""
-  },
-  {
-    "0": "食べ物",
-    "1": "お菓子",
-    "2": "わたあめ",
-    "3": "cotton_candy",
     "4": ""
   },
   {
@@ -55488,13 +51617,6 @@ let defaultMaster = {
     "1": "飲み物",
     "2": "ワイン",
     "3": "wine",
-    "4": ""
-  },
-  {
-    "0": "食べ物",
-    "1": "飲み物",
-    "2": "涙ぐんだ",
-    "3": "tearful",
     "4": ""
   },
   {
@@ -55905,13 +52027,6 @@ let defaultMaster = {
   },
   {
     "0": "髪",
-    "1": "女性向けの髪型",
-    "2": "黒髪ロングストレート",
-    "3": "black long straight hair",
-    "4": ""
-  },
-  {
-    "0": "髪",
     "1": "男性向けの髪型",
     "2": "ぱっつんヘア",
     "3": "crew cut, blunt bangs",
@@ -56171,20 +52286,6 @@ let defaultMaster = {
   },
   {
     "0": "髪",
-    "1": "色",
-    "2": "髪を下す",
-    "3": "hair down",
-    "4": ""
-  },
-  {
-    "0": "髪",
-    "1": "色",
-    "2": "髪を通して見える眼",
-    "3": "eyes visible through hair",
-    "4": ""
-  },
-  {
-    "0": "髪",
     "1": "髪",
     "2": "1つのお団子",
     "3": "single hair bun",
@@ -56284,20 +52385,6 @@ let defaultMaster = {
   {
     "0": "髪",
     "1": "髪",
-    "2": "分けた前髪に髪留め",
-    "3": "parted bangs,hairclip",
-    "4": ""
-  },
-  {
-    "0": "髪",
-    "1": "髪",
-    "2": "前髪で目が見えない",
-    "3": "hair over eyes",
-    "4": ""
-  },
-  {
-    "0": "髪",
-    "1": "髪",
     "2": "坊主,スキンヘッド,ハゲ",
     "3": "bald",
     "4": ""
@@ -56307,13 +52394,6 @@ let defaultMaster = {
     "1": "髪",
     "2": "横の刈り上げ",
     "3": "undercut",
-    "4": ""
-  },
-  {
-    "0": "髪",
-    "1": "髪",
-    "2": "横三つ編み",
-    "3": "crown braid hair",
     "4": ""
   },
   {
@@ -56363,13 +52443,6 @@ let defaultMaster = {
     "1": "髪",
     "2": "豚の尾",
     "3": "pig tails",
-    "4": ""
-  },
-  {
-    "0": "髪",
-    "1": "髪",
-    "2": "長いもみあげ",
-    "3": "long sideburns",
     "4": ""
   },
   {
@@ -56440,20 +52513,6 @@ let defaultMaster = {
     "1": "髪のオプション",
     "2": "大きなアホ毛",
     "3": "huge ahoge",
-    "4": ""
-  },
-  {
-    "0": "髪",
-    "1": "髪のオプション",
-    "2": "胸にかかった髪",
-    "3": "hair over breasts",
-    "4": ""
-  },
-  {
-    "0": "髪",
-    "1": "髪のオプション",
-    "2": "髪の触角",
-    "3": "hair intakes",
     "4": ""
   },
   {
@@ -56566,13 +52625,6 @@ let defaultMaster = {
     "1": "髪色",
     "2": "オレンジ髪",
     "3": "orange hair",
-    "4": ""
-  },
-  {
-    "0": "髪",
-    "1": "髪色",
-    "2": "ダークグレー",
-    "3": "dark gray hair",
     "4": ""
   },
   {
@@ -56732,13 +52784,6 @@ let defaultMaster = {
   {
     "0": "髪",
     "1": "髪色",
-    "2": "金髪(真)",
-    "3": "blond hair",
-    "4": ""
-  },
-  {
-    "0": "髪",
-    "1": "髪色",
     "2": "銀髪",
     "3": "silver hair",
     "4": ""
@@ -56853,13 +52898,6 @@ let defaultMaster = {
     "1": "髪質",
     "2": "溶けた金属のような髪",
     "3": "hair like melted metal",
-    "4": ""
-  },
-  {
-    "0": "髪",
-    "1": "髪質",
-    "2": "滑らかな(サラサラ)髪",
-    "3": "smooth hair",
     "4": ""
   },
   {
