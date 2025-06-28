@@ -422,13 +422,13 @@
 カメラワーク	距離	カメラの近く	close to viewers
 カメラワーク	距離	ロングショット	long shot
 カメラワーク	距離	人々のクローズアップ	close up of people
-キャラクター	その他	ホタル	firefly
-キャラクター	キボウノチカラ～オトナプリキュア‘23～	夏木りん（大人）	natsuki rin
-キャラクター	キボウノチカラ～オトナプリキュア‘23～	夢原のぞみ（大人）	yumehara nozomi
-キャラクター	キボウノチカラ～オトナプリキュア‘23～	春日野うらら（大人）	kasugano urara
-キャラクター	キボウノチカラ～オトナプリキュア‘23～	水無月かれん（大人）	minazuki karen
-キャラクター	キボウノチカラ～オトナプリキュア‘23～	秋元こまち（大人）	akimoto komachi
-キャラクター	キボウノチカラ～オトナプリキュア‘23～	美々野くるみ（大人）	mimino kurumi
+生物	動物	ホタル	firefly
+キャラクター(女性)	キボウノチカラ～オトナプリキュア‘23～	夏木りん（大人）	natsuki rin
+キャラクター(女性)	キボウノチカラ～オトナプリキュア‘23～	夢原のぞみ（大人）	yumehara nozomi
+キャラクター(女性)	キボウノチカラ～オトナプリキュア‘23～	春日野うらら（大人）	kasugano urara
+キャラクター(女性)	キボウノチカラ～オトナプリキュア‘23～	水無月かれん（大人）	minazuki karen
+キャラクター(女性)	キボウノチカラ～オトナプリキュア‘23～	秋元こまち（大人）	akimoto komachi
+キャラクター(女性)	キボウノチカラ～オトナプリキュア‘23～	美々野くるみ（大人）	mimino kurumi
 キャラクター(女性)	艦隊これくしょん	z1 レーベレヒト・マース	z1 leberecht maass (kancolle)
 キャラクター(女性)	艦隊これくしょん	z3 マックス・シュルツ	z3 max schultz (kancolle)
 キャラクター(女性)	艦隊これくしょん	ガングート	gangut (kancolle)
@@ -1388,7 +1388,7 @@
 キャラクター(女性)	メイドインアビス	オーゼン	ozen (made_in_abyss)
 キャラクター(女性)	メイドインアビス	ファプタ	faputa (made_in_abyss)
 キャラクター(女性)	メイドインアビス	プルシュカ	prushka (made_in_abyss)
-キャラクター(女性)	メイドインアビス	ボンドルド	bondrewd (made in abyss)
+キャラクター(男性)	メイドインアビス	ボンドルド	bondrewd (made in abyss)
 キャラクター(女性)	メイドインアビス	マルルク	maruruk (made_in_abyss)
 キャラクター(女性)	メイドインアビス	ミーティ(ナナチと混ざりがち)	mitty_(made_in_abyss)
 キャラクター(女性)	メイドインアビス	リコ	riko (made in abyss)
@@ -8662,3 +8662,44 @@
 髪	髪質	絹のような髪	silky hair
 髪	髪質	艶のある髪	shiny hair
 髪	髪質	艶やかな髪	glossy hair
+キャラクター(女性)	崩壊スターレイル	銀狼	silver wolf (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	カフカ	kafka (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	三月なのか	march 7th (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	星	stelle (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	ヒメコ	himeko (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	ブローニャ	bronya rand (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	ゼーレ	seele (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	クララ	clara (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	ナターシャ	natasha (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	ペラ	pela (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	セルバル	serval (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	アスタ	asta (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	ヘルタ	herta (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	白露	bailu (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	符玄	fu xuan (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	銀枝	yin zhi (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	停雲	tingyun (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	青雀	qingque (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	素裳	su shang (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	桂乃芬	guinaifen (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	トパーズ	topaz (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	ルアン・メェイ	ruan mei (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	花火	sparkle (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	ブラックスワン	black swan (honkai: star rail)
+キャラクター(女性)	崩壊スターレイル	アケロン	acheron (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	穹	caelus (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	ダン・ヘン	dan heng (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	ヴェルト	welt (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	サンポ	sampo (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	フック	hook (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	ゲパルト	gepard (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	アーラン	arlan (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	景元	jing yuan (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	刃	blade (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	ルカ	luka (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	羅刹	luocha (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	ダン・ヘン・飲月	dan heng imbibitor lunae (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	アベンチュリン	adventurine (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	ガラガー	gallagher (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	ブートヒル	boothill (honkai: star rail)
+キャラクター(男性)	崩壊スターレイル	日曜	sunday (honkai: star rail)
