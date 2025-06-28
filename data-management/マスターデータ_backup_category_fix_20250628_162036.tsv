@@ -1,32 +1,32 @@
-オブジェクト	デジタル	SNS	sns
+その他	その他	SNS	sns
 その他	その他	〇〇に入っている	in container
 その他	その他	イスキー	isky
-オブジェクト	デジタル	インスタグラム	instagram
+その他	その他	インスタグラム(IDと組み合わせる)	instagram
 その他	その他	ステート	steet
-オブジェクト	デジタル	ツイッター	twitter
+その他	その他	ツイッター	twitter
 その他	その他	バナ	bana
 その他	その他	ヒテン1	hit1
 その他	その他	ルン	loong
 その他	その他	一人の女の子	one girl
 その他	その他	不健全	morbid
-身体	体型	体格差	physical difference
-エフェクト	医療	注入	injection
+その他	その他	体格差	physical difference
+その他	その他	注入	injection
 その他	その他	粘着性	sticky
 その他	その他	薬物	drugs
 その他	その他	複製	duplicate
-品質	メタ	オリジナル	original
-エフェクト	化学的	苛性	caustic
-カメラワーク	技術的	紐伸び	strap gap
-カメラワーク	技術的	角度	angle
-エフェクト	音響	音量	volume
-身体	一般	女性	female
+その他	メタ	オリジナル	original
+その他	化学的	苛性	caustic
+その他	技術的	紐伸び	strap gap
+その他	技術的	角度	angle
+その他	技術的	音量	volume
+よく使うもの	一般	女性	female
 エフェクト	UI要素	吹き出し	japanese speech bubble
 エフェクト	その他	スパッタ	spatter
 エフェクト	エフェクト	エフェクト	effect
 エフェクト	エフェクト	フラグメント	fragments
 エフェクト	エフェクト	メタルスクラッチ	metal scratch
 エフェクト	エフェクト	ライン	speedlines
-エフェクト	メディア	記録框	recording frame
+エフェクト	エフェクト	録画フレーム	recording frame
 エフェクト	グロテスク	ブラッドミスト	blood mist
 エフェクト	グロテスク	絶妙な血	exquisite blood
 エフェクト	グロテスク	血の霧	blood fog
@@ -146,12 +146,12 @@
 エフェクト	魔法	マジックサークル	magic circle
 エフェクト	魔法	渦巻き	swirl
 エフェクト	魔法	衣服の結晶化	crystallization of clothes
-エフェクト	汚れ	ホコリまみれ（埃まみれ）	dusty all over
-エフェクト	汚れ	ホコリ（埃）	dusty
-エフェクト	汚れ	汚れた	dirty
-エフェクト	汚れ	泥だらけ	muddy
-エフェクト	汚れ	泥まみれ	covered in mud
-エフェクト	液体	汗で透ける	sweat see-through
+エフェクト・効果	汚れ	ホコリまみれ（埃まみれ）	dusty all over
+エフェクト・効果	汚れ	ホコリ（埃）	dusty
+エフェクト・効果	汚れ	汚れた	dirty
+エフェクト・効果	汚れ	泥だらけ	muddy
+エフェクト・効果	汚れ	泥まみれ	covered in mud
+エフェクト・効果	液体	汗で透ける	sweat see-through
 オブジェクト	オブジェクト	おしっこの水たまり	pee puddle
 オブジェクト	オブジェクト	オーナメント	ornament
 オブジェクト	オブジェクト	ダンボール箱	cardboard box
@@ -249,7 +249,7 @@
 オブジェクト	楽器	楽器全般	instrument
 オブジェクト	楽器	楽器全般演奏	playing instrument
 オブジェクト	機械	バネ	spring
-オブジェクト	機械	巨大時計装置	huge clock core above
+オブジェクト	機械	上記の巨大なクロックコア	huge clock core above
 オブジェクト	機械	時計	clock
 オブジェクト	自然物	さくら	sakura
 オブジェクト	自然物	とげ	thorns
@@ -287,7 +287,7 @@
 オプション	オプション	傷がついてる系	injury
 オプション	オプション	傷がついてる系2	scar on face
 オプション	オプション	匂い	smell
-状態	汚れ	土砂汚れ	trait connection
+オプション	オプション	土とか砂の汚れが付着	trait connection
 オプション	オプション	天使の輪	halo
 オプション	オプション	抱きまくら	dakimakura
 オプション	オプション	日焼け跡	tanlines
@@ -436,7 +436,7 @@
 キャラクター	Fate	清姫(水着)	kiyohime (fate)
 キャラクター	Fate	清少納言	sei shounagon (fate)
 キャラクター	Fate	源頼光	minamoto no raikou (FGO)
-キャラクター	Fate	BB	bb (fate)
+キャラクター	Fate	翻訳中	bb (fate)
 キャラクター	Fate	茨城童子	ibaraki douji (fate)
 キャラクター	Fate	葛飾北斎	katsushika hokusai (fate)
 キャラクター	Fate	遠坂凛	tohsaka_rin (fate)
@@ -2998,7 +2998,7 @@
 動作	指さし	指差し横	pointing to the side
 動作	指さし	指差し武器	pointing weapon
 動作	指さし	指差し自身	pointing at self
-動作	指さし	静かにジェスチャー	holding her index finger to her lips, gesturing for silence
+動作	指さし	静かにする（ジェスチャー）	holding her index finger to her lips, gesturing for silence
 動作	武器	剣で	with sword
 動作	武器	剣を持ってください	hold sword
 動作	目線	まっすぐに	straight on
@@ -3123,11 +3123,11 @@
 動作	腕の動作	（胸の前で）両手を握る	own hands together
 動作	衣服	タックを開けます	optuck
 動作	視線	空に向かって顔	face towards the sky
-動作	物体操作	シャワーをかける	spray a ~ with a shower
-動作	物体操作	両手で掴む	grabbing a ~ with both hands
-動作	物体操作	両手で洗う	wash a ~ with both hands
-動作	物体操作	変える	changing ~
-動作	物体操作	抱きしめる	hugging ~
+動作（source / target）	動作	何かにシャワーをかける	spray a ~ with a shower
+動作（source / target）	動作	何かを両手で掴む	grabbing a ~ with both hands
+動作（source / target）	動作	何かを両手で洗う	wash a ~ with both hands
+動作（source / target）	動作	何かを変える	changing ~
+動作（source / target）	動作	何かを抱きしめる	hugging ~
 動作（source / target）	動作	何かを片手で掴む	grabbing a ~ with one hand
 動作（source / target）	動作	何かを片手で洗う	wash a ~ with one hand
 動作（source / target）	動作	何かを着替えさせる	dressing ~ with both hands
@@ -3152,8 +3152,8 @@
 品質	テキスト系	液体指	liquid finger
 品質	テキスト系	融合指	fused fingers
 品質	テキスト系	複数指	multiple fingers
-品質	テンプレート	低品質回避テンプレート	qr code,ui,artist name,text error,text font ui,bar code,bad finger,liquid digit,missing digit,multiple digit,fused digit,extra fingers,extra digits,extra digit,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,poorly drawn,anatomical nonsense,five fingers,ugly,simple background,lowers,polar lowres,standard quality,bad feet hand finger leg eye,five fingers,one hand with more than 5 fingers,abnormal fingers,too many fingers,lose finger,multiple finger,mutated hands and fingers,fused fingers,fusion finger,incorrect limb,arthropod limbs,malformed limbs,boken limb,missing limbs,multiple limbs,missing limb,extra limbs,extra penises,extra calf,extra shoes,extra feet,extra thighs,extra knee,extra mouth,extra ears,extra animal ears,extra eyes,extra breasts,extra digit,extra fingers,extra hands,extra limbs,extra legs,extra arms
-品質	テンプレート	低品質回避シンプル	disfigured.bad anatomy disfigured,jpeg artifacts,error,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,anatomical nonsense,watermark,five fingers,worst quality,bad anatomy,ugly,cropped,simple background,normal quality,lowers,lowres,low quality,polar lowres,standard quality,poorly drawn hands,boken limb,missing limbs,malformed limbs,incorrect limb,fusion hand,bad finglegs,abnormal fingers,missing fingers,fewer digits,too many fingers,extra digit,lose finger,extra fingers,one hand with more than 5 digit,one hand with less than 5 digit,one hand with more than 5 fingers,one hand with less than 5 fingers,3d character,qr code,ui,artist name,signature,text error,text font ui,bar code,username,bad finger,liquid digit,missing digit,fewer digits,multiple digit,text,fused digit,extra fingers,extra digits,extra digit
+品質	低品質テンプレ	!低品質テンプレ(低品質&指&テキスト系,余分なパーツ)	qr code,ui,artist name,text error,text font ui,bar code,bad finger,liquid digit,missing digit,multiple digit,fused digit,extra fingers,extra digits,extra digit,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,poorly drawn,anatomical nonsense,five fingers,ugly,simple background,lowers,polar lowres,standard quality,bad feet hand finger leg eye,five fingers,one hand with more than 5 fingers,abnormal fingers,too many fingers,lose finger,multiple finger,mutated hands and fingers,fused fingers,fusion finger,incorrect limb,arthropod limbs,malformed limbs,boken limb,missing limbs,multiple limbs,missing limb,extra limbs,extra penises,extra calf,extra shoes,extra feet,extra thighs,extra knee,extra mouth,extra ears,extra animal ears,extra eyes,extra breasts,extra digit,extra fingers,extra hands,extra limbs,extra legs,extra arms
+品質	低品質テンプレ	!低品質テンプレ(低品質回避&指&テキスト系)	disfigured.bad anatomy disfigured,jpeg artifacts,error,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,anatomical nonsense,watermark,five fingers,worst quality,bad anatomy,ugly,cropped,simple background,normal quality,lowers,lowres,low quality,polar lowres,standard quality,poorly drawn hands,boken limb,missing limbs,malformed limbs,incorrect limb,fusion hand,bad finglegs,abnormal fingers,missing fingers,fewer digits,too many fingers,extra digit,lose finger,extra fingers,one hand with more than 5 digit,one hand with less than 5 digit,one hand with more than 5 fingers,one hand with less than 5 fingers,3d character,qr code,ui,artist name,signature,text error,text font ui,bar code,username,bad finger,liquid digit,missing digit,fewer digits,multiple digit,text,fused digit,extra fingers,extra digits,extra digit
 品質	低品質成人向け	カラフルなクリトリス	colorful clit
 品質	低品質成人向け	カラフルな乳首	colorful nipples
 品質	低品質成人向け	クリトリスがありません	missing clit
@@ -3438,8 +3438,8 @@
 品質	高品質用	高解像度	highres
 品質	高品質用	高解像度イラスト	high resolution
 品質	高品質用	高解像度イラストを参考	absurdres
-品質	テンプレート	高品質セミセット	high quality,best,high resolution,best quality,award winning,highly detailed,hyper extreme detailed,masterpiece
-品質	テンプレート	高品質フルセット	official art,high quality,production art,novel illustration,best,high resolution,best quality,award winning,highly detailed,masterpiece,by famous artist,hyper extreme detailed
+品質	高品質用	！高品質セミセット	high quality,best,high resolution,best quality,award winning,highly detailed,hyper extreme detailed,masterpiece
+品質	高品質用	！高品質フルセット	official art,high quality,production art,novel illustration,best,high resolution,best quality,award winning,highly detailed,masterpiece,by famous artist,hyper extreme detailed
 場所	お城（室内）	テープストリー	tapestries
 場所	お城（室内）	古い武器	ancient weapons
 場所	お城（室内）	古地図	antique maps
@@ -6008,14 +6008,14 @@
 成人向け	表情	アヘ顔事後	ahegao, open mouth, drivel, be breathless, blush, very humid, steam, perspired, fog, pink heart effect, semen, bukkake
 成人向け	表情	口開けエロ顔	open mouth, drivel, be breathless, blush, very humid, steam
 成人向け	装飾	乳首ピアス	nipple piercing
-成人向け	!必須タグ	nsfw + girl	nwg
-成人向け	!必須タグ	エロ画像	nsfw
-成人向け	表情	スケベ顔	fucked silly
-成人向け	人物設定	黒人セット	(1boy,big testicles,big black penis,black man:1.1)
+成人向け	！必須	nsfw + girl	nwg
+成人向け	！必須	エロ画像	nsfw
+成人向け	！必須	スケベ顔	fucked silly
+成人向け	！必須	黒人セット	(1boy,big testicles,big black penis,black man:1.1)
 服装	SF	ヒーロー	super hero
 服装	SF	ヒーローロボット	justice hero
 服装	アウター	前空きコート	open coat
-服装	アウター	黒コート	black coat
+服装	アウター	翻訳中	black coat
 服装	アウター	高い襟のコート	high collar coat
 服装	オプション		cleavage no nipples
 服装	オプション		framed breasts
@@ -6313,9 +6313,9 @@
 服装	靴下	膝の高さ	knee highs
 服装	靴下	靴下	socks
 服装	高級服	シルクショール	silk shawl
-服装	トップス	形の縫い目で色が分かれたTシャツ	raglan sleeve t-shirts
-服装	制服	トレセン制服	tracen school uniform
-服装	頭部	フード	hood up
+服装・衣類	トップス	形の縫い目で色が分かれたTシャツ	raglan sleeve t-shirts
+服装・衣類	制服	トレセン制服	tracen school uniform
+服装・衣類	頭部	フード	hood up
 模様	柄	アーガイル柄	argyle pattern
 模様	柄	アーガイル（菱形敷き詰め）	argyle
 模様	柄	イカット柄	ikat pattern
