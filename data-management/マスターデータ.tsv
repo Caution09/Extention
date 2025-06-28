@@ -422,41 +422,6 @@
 カメラワーク	距離	カメラの近く	close to viewers
 カメラワーク	距離	ロングショット	long shot
 カメラワーク	距離	人々のクローズアップ	close up of people
-キャラクター	Air	神尾観鈴	kamio misuzu
-キャラクター	Charlotte	友利奈緒	tomori nao(Charlotte)
-キャラクター	Fate	BB	bb (fate)
-キャラクター	Fate	アストルフォ	astolfo (fate)
-キャラクター	Fate	アビゲイル	abigail williams (fate)
-キャラクター	Fate	イシュタル	ishtar (fate)
-キャラクター	Fate	イリヤスフィールアインツベルン	illyasviel von einzbern (fate)
-キャラクター	Fate	エリちゃん	elizabeth bathory (fate)
-キャラクター	Fate	キャストリア	artoria caster (fate)
-キャラクター	Fate	ジャンヌ	jeanne d'arc (fate)
-キャラクター	Fate	ジャンヌオルタ	jeanne d'arc alter (fate)
-キャラクター	Fate	ニトクリス	nitocris (fate)
-キャラクター	Fate	ネロ・クラウディウス	nero claudius (fate)
-キャラクター	Fate	マシュ・キリエライト	mash kyrielight (fate)
-キャラクター	Fate	ラヴィニア	Lavinia Whateley_(fgo)
-キャラクター	Fate	レオナルドダヴィンチ	leonardo_da_vinci_(fate)
-キャラクター	Fate	三蔵法師	xuangzang sanzang (fate)
-キャラクター	Fate	刑部姫	osakabe-hime (fate)
-キャラクター	Fate	清姫	bright Cyan kimono
-キャラクター	Fate	清姫(水着)	kiyohime (fate)
-キャラクター	Fate	清少納言	sei shounagon (fate)
-キャラクター	Fate	源頼光	minamoto no raikou (FGO)
-キャラクター	Fate	茨城童子	ibaraki douji (fate)
-キャラクター	Fate	葛飾北斎	katsushika hokusai (fate)
-キャラクター	Fate	遠坂凛	tohsaka_rin (fate)
-キャラクター	Fate	酒呑童子	shuten douji (fate)
-キャラクター	GTA V	トレバー・フィリップス	Trevor Philips bald hair (gta)
-キャラクター	Go! プリンセスプリキュア	キュアスカーレット	cure scarlet (precure)
-キャラクター	Go! プリンセスプリキュア	キュアトゥインクル	cure twinkle (precure)
-キャラクター	Go! プリンセスプリキュア	キュアフローラ	cure flora (precure)
-キャラクター	Go! プリンセスプリキュア	キュアマーメイド	cure mermaid (precure)
-キャラクター	Go! プリンセスプリキュア	天ノ川きらら	amanogawa kirara (precure)
-キャラクター	Go! プリンセスプリキュア	春野はるか	haruno haruka (precure)
-キャラクター	Go! プリンセスプリキュア	海藤みなみ	kaido minami (precure)
-キャラクター	Go! プリンセスプリキュア	紅城トワ	akagi towa (precure)
 キャラクター	HUGっと! プリキュア	キュアアムール	cure amour (precure)
 キャラクター	HUGっと! プリキュア	キュアアンジュ	cure ange (precure)
 キャラクター	HUGっと! プリキュア	キュアエトワール	cure etoile (precure)
@@ -1436,6 +1401,8 @@
 キャラクター	魔法少女まどか☆マギカ	百江なぎさ	momoe_nagisa (madoka_magica)
 キャラクター	魔法少女まどか☆マギカ	美樹さやか	miki sayaka (madoka magica)
 キャラクター	魔法少女まどか☆マギカ	鹿目まどか	kaname madoka (madoka magica)
+キャラクター(女性)	Air	神尾観鈴	kamio misuzu
+キャラクター(女性)	Charlotte	友利奈緒	tomori nao(Charlotte)
 キャラクター(女性)	FE	アクア	azura (fire emblem)
 キャラクター(女性)	FE	エイリーク	eirika (fire emblem)
 キャラクター(女性)	FE	エーデルガルト	edelgard von hresvelg (fire emblem)
@@ -1496,6 +1463,14 @@
 キャラクター(女性)	Fate	遠坂凛	tohsaka_rin (fate)
 キャラクター(女性)	Fate	酒呑童子	shuten douji (fate)
 キャラクター(女性)	Fate	間桐桜	matou sakura (fate)
+キャラクター(女性)	Go! プリンセスプリキュア	キュアスカーレット	cure scarlet (precure)
+キャラクター(女性)	Go! プリンセスプリキュア	キュアトゥインクル	cure twinkle (precure)
+キャラクター(女性)	Go! プリンセスプリキュア	キュアフローラ	cure flora (precure)
+キャラクター(女性)	Go! プリンセスプリキュア	キュアマーメイド	cure mermaid (precure)
+キャラクター(女性)	Go! プリンセスプリキュア	天ノ川きらら	amanogawa kirara (precure)
+キャラクター(女性)	Go! プリンセスプリキュア	春野はるか	haruno haruka (precure)
+キャラクター(女性)	Go! プリンセスプリキュア	海藤みなみ	kaido minami (precure)
+キャラクター(女性)	Go! プリンセスプリキュア	紅城トワ	akagi towa (precure)
 キャラクター(女性)	原神	アンバー	amber (genshin impact)
 キャラクター(女性)	原神	イェラン	yelan (genshin impact)
 キャラクター(女性)	原神	エイミー	fischl (genshin impact)
@@ -1556,6 +1531,7 @@
 キャラクター(男性)	Fate	ギルガメッシュ	gilgamesh (fate)
 キャラクター(男性)	Fate	マーリン	merlin (fate)
 キャラクター(男性)	Fate	衛宮士郎	emiya shirou (fate)
+キャラクター(男性)	GTA V	トレバー・フィリップス	Trevor Philips bald hair (gta)
 キャラクター(男性)	原神	アルハイゼン	alhaitham (genshin impact)
 キャラクター(男性)	原神	アルベド	albedo (genshin impact)
 キャラクター(男性)	原神	ウェンティ	venti (genshin impact)
@@ -2199,7 +2175,7 @@
 コスチューム	水着	紐水着	side tie panties
 コスチューム	水着	紐水着	side-tie bikini bottom
 コスチューム	水着	青いワンピース水着	blue one-piece swimsuit
-コスチューム	水着	青い差し色の入った白競泳水着	{{white competition swimsuit}} {{{with blue accent color}}} 
+コスチューム	水着	青い差し色の入った白競泳水着	{{white competition swimsuit}} {{{with blue accent color}}}
 コスチューム	現代	アイドル	idol uniform
 コスチューム	現代	アイドルコスチューム	idol costume
 コスチューム	現代	ウェイター	waiter uniform
@@ -4714,7 +4690,7 @@
 場所	家（室外）	ポスト	mailbox
 場所	家（室外）	子供の遊具	children's play equipment
 場所	家（室外）	家具（屋外）	outdoor furniture
-場所	家（室外）	家具（屋外）- outdoor furniture	
+場所	家（室外）	家具（屋外）- outdoor furniture
 場所	家（室外）	屋根	roof
 場所	家（室外）	植物/花	plants/flowers
 場所	家（室外）	歩道	sidewalk
@@ -5468,7 +5444,7 @@
 場所	車道	歩道	sidewalk
 場所	車道	消防車	fire truck
 場所	車道	犬（散歩中のペット）	dog (walking pet)
-場所	車道	犬（散歩中のペット）- dog (walking pet)	
+場所	車道	犬（散歩中のペット）- dog (walking pet)
 場所	車道	緊急車両	emergency vehicles
 場所	車道	自転車専用レーン	bicycle lane
 場所	車道	警察車両	police car
@@ -7283,7 +7259,7 @@
 表情・感情	明るい表情・感情	愉快な	cheerful
 表情・感情	明るい表情・感情	愉快な表情・感情	cheerful expression
 表情・感情	明るい表情・感情	指でスマイル	fingersmile
-表情・感情	明るい表情・感情	楽しげな雰囲気を表すエモーション	
+表情・感情	明るい表情・感情	楽しげな雰囲気を表すエモーション
 表情・感情	明るい表情・感情	歯を見せて笑う,ニヤニヤ	grin
 表情・感情	明るい表情・感情	歯を見せて笑う表情・感情	grin expression
 表情・感情	明るい表情・感情	無理やりさせられる笑顔	forced smile
@@ -8436,5 +8412,7 @@
 髪	髪質	絹のような髪	silky hair
 髪	髪質	艶のある髪	shiny hair
 髪	髪質	艶やかな髪	glossy hair
-キャラクター(女性)	Air	神尾観鈴	kamio misuzu
-キャラクター(女性)	Charlotte	友利奈緒	tomori nao(Charlotte)
+キャラクター(男性)	FE	バアトル	bartre (fire emblem)
+キャラクター(男性)	FE	ドーガ	draug (fire emblem)
+キャラクター(男性)	FE	アーダン	arden (fire emblem)
+キャラクター(男性)	FE	ガルザス	gonzalez (fire emblem)
