@@ -283,6 +283,7 @@
 オブジェクト	花	花の花	flowery flowers
 オブジェクト	花	花弁	petal
 オブジェクト	花	血の桜	blood cherry blossom
+オブジェクト	電子機器	iPhone	iphone
 オブジェクト	電子機器	カメラ	camera
 オブジェクト	電子機器	スマホ撮影画面	{cellphone photo},{bar censor}
 オブジェクト	電子機器	壊れた画面	brokscreen
@@ -413,6 +414,7 @@
 カメラワーク	視点	隣からの視点	side view
 カメラワーク	視点	顔の正面	facing viewer
 カメラワーク	視点	顔の正面2	forhead
+カメラワーク	角度	俯瞰	bird's eye view
 カメラワーク	角度	前面から斜めに	diagonally from front
 カメラワーク	角度	女の子の正面	girls' front
 カメラワーク	距離	カメラとはほど遠い	far from viewer
@@ -2212,6 +2214,7 @@
 シチュエーション	イベント	デート	hang out
 シチュエーション	イベント	ハロウィン	halloween
 シチュエーション	イベント	バレンタイン	valentine
+シチュエーション	イベント	パーティー	party
 シチュエーション	グロテスク	血まみれのシーン	bloody scenes
 シチュエーション	シチュ	くすぐられる	tickled, {laughing}, loud, [tears]
 シチュエーション	シチュ	やり手水	1girl,pee,skirt lift,pussy line,nsfw,public urination,lifting person,1boy,spread legs,knees up,carrying,carrying person,public indecency,hetero,faceless boy,leaning back,holding thigh
@@ -2330,7 +2333,7 @@
 テイスト	デザイナー		illusted by(kunabishi)
 テイスト	デザイナー		mery (yangmalgage)]
 テイスト	デザイナー		muchi maro
-テイスト	デザイナー		pole (ppp1409) 
+テイスト	デザイナー		pole (ppp1409)
 テイスト	デザイナー		shirabi
 テイスト	デザイナー		yd (orange maru)
 テイスト	デザイナー	5t	5t_0000
@@ -2432,7 +2435,7 @@
 テイスト	デザイナー	オリバー	oliver11020
 テイスト	デザイナー	カントク	kantoku
 テイスト	デザイナー	カーネリアン	carnelian
-テイスト	デザイナー	クロカン	kurokan (kokkyou oudan) 
+テイスト	デザイナー	クロカン	kurokan (kokkyou oudan)
 テイスト	デザイナー	クール教	Cool-kyou Shinja
 テイスト	デザイナー	ザンクロー	zankuro
 テイスト	デザイナー	シドニー	sidneyholic
@@ -3025,6 +3028,7 @@
 動作	動作	髪をいじっている	adjusting hair
 動作	動作	髪をかきあげる？	hand on own face
 動作	動作	髪を結んでいる	tied hair
+動作	動作	タバコを吸える	smoking
 動作	座る	星に座っています	sitting on star
 動作	座る	玉座に座ってください	sit on the throne
 動作	手	手を隠す	hide hands
@@ -3037,7 +3041,14 @@
 動作	手・腕の動作	両手をあげてばんざいする	lift up both arms,open hands
 動作	手・腕の動作	手を握る	holding hand grip
 動作	手・腕の動作	手を握ろうとする	imminent hand holding
+動作	手・腕の動作	握手	handshake
+動作	手・腕の動作	腕をつかむ,腕を掴む	grab your arm
+動作	手・腕の動作	腕を上げる	put your arms up
+動作	手・腕の動作	腕を広げて、	spreading arms
+動作	手・腕の動作	腕を組む	cross your arms
 動作	手・腕の動作	赤ちゃんを抱く	holding baby
+動作	手・腕の動作	鞄を前に抱える	hold your bag in front of you
+動作	指さし	中指を立てる	raise the middle finger
 動作	指さし	指差し	pointing at viewer
 動作	指さし	指差し上	pointing up
 動作	指さし	指差し下	pointing down
@@ -6085,11 +6096,14 @@
 成人向け	肌	エロテカ肌2	glistening skin
 成人向け	肌	キスマと歯形	hickey,lipstick mark , bite mark
 成人向け	胸	ちちくらべ	compare breasts
+成人向け	胸	乳首が勃つ	nipples become erect
+成人向け	胸	巨大な乳輪	huge areolae
 成人向け	胸	浮き乳首	coverd nipples
 成人向け	自慰	オナニー1	wank
 成人向け	自慰	オナニー2	masturbation
 成人向け	自慰	オナニー3	masturbate
 成人向け	自慰	ディルドを膣に挿入します	insert dildo to pussy
+成人向け	表情	アヘ顔	ahegao
 成人向け	表情	アヘ顔事後	ahegao, open mouth, drivel, be breathless, blush, very humid, steam, perspired, fog, pink heart effect, semen, bukkake
 成人向け	表情	スケベ顔	fucked silly
 成人向け	表情	口開けエロ顔	open mouth, drivel, be breathless, blush, very humid, steam
@@ -6128,6 +6142,8 @@
 服装	トップス	オフショルダージャケット	off shoulder jacket
 服装	トップス	カッターシャツ	white shirt, shirt formal
 服装	トップス	カーディガン	cardigan
+服装	トップス	キャミ	camisole
+服装	トップス	コルセット	underbust
 服装	トップス	サスペンダー	suspenders
 服装	トップス	シャツ	shirt
 服装	トップス	ジャケット	jacket
@@ -6169,6 +6185,7 @@
 服装	ドレス	ウェディングドレス	wedding dress
 服装	ドレス	エプロンドレス	pinafore dress
 服装	ドレス	オフショルダードレス	off shoulder dress
+服装	ドレス	ガウン	gown
 服装	ドレス	ゴシックドレス	gothic dress
 服装	ドレス	ゴシック帝国のウエストドレス	gothic empire waist dress
 服装	ドレス	ショートドレス	short dress
@@ -6391,6 +6408,8 @@
 服装	袖	長袖	long sleeves
 服装	装飾	流れるレース	flowing lace
 服装	装飾付き	ドレスの頭蓋骨	skull on dress
+服装	裸	トップレス	topless
+服装	裸	ノーパン	no underwear
 服装	裸	上裸	topless
 服装	裸	下半身裸	bottomless
 服装	裸	完全にヌード	completely nude
@@ -6584,7 +6603,8 @@
 生物	動物	ライオン	lion furry
 生物	動物	兎,うさぎ	rabit
 生物	動物	子馬	pony
-生物	動物	昆虫	giant insect
+生物	動物	昆虫	insect
+生物	動物	人間大の昆虫	giant insect
 生物	動物	犬	dog
 生物	動物	猫	cat
 生物	恐竜	ティラノサウルス	tyrannosaurus
@@ -7884,6 +7904,7 @@
 顔	口	お金を咥える	money hold on mouth
 顔	口	お金咥える	{{{money_in_mouth}}}
 顔	口	てへぺろ	licking lips
+顔	口	のどちんこ	uvula
 顔	口	よだれを垂らす	[mouth drool, drooling], :o, [open mouth], hunger
 顔	口	カラフルな舌	colorful tongue
 顔	口	キス待ち1	puckered lips
@@ -7899,6 +7920,7 @@
 顔	口	栗みたいな口	chestnut mouth
 顔	口	液体舌	liquid tongue
 顔	口	舌	tongue
+顔	口	舌なめずり	licking one's lips
 顔	口	複数の牙	fangs
 顔	口	長方形の口	rectangular mouth
 顔	口	閉じた口	closed mouth
