@@ -100,12 +100,14 @@ The extension uses a master data system for prompt templates:
    - **キャラクター**: Character name only (e.g., "cirno", "remilia scarlet")
    - **キャラクター再現**: Character with additional elements (e.g., "cirno, ice wings, blue dress")
    - Prompt完全一致統合: When multiple entries have identical prompts, consolidate into single entry with combined 小項目 (e.g., "チルノ,⑨" for cirno entries)
-   - **Character Entry Auto-Generation Rule**: When adding character reproduction entries (キャラクター再現), automatically create corresponding character-only entries (キャラクター) if they don't exist
-     - Extract character name from the prompt (usually first element)
-     - Create both entries: full prompt in キャラクター再現 and name-only in キャラクター
+   - **Character Entry Auto-Generation Rule**: When processing complex character entries with multiple elements (styles, attributes, etc.), apply the dual-entry system:
+     - **Step 1**: Move complex entries to キャラクター再現 category
+     - **Step 2**: Create simplified キャラクター entry with character name only
+     - **Application**: All character entries with prompts containing multiple elements, style tags, or detailed descriptions
      - Example: 
-       - キャラクター再現: "{{klee (genshin impact)}}, blond hair, red eyes, cabbie hat..."
-       - キャラクター: "klee (genshin impact)"
+       - Original: キャラクター → アイカツ! → 大空あかり → "{1girl, oozora akari, aikatsu!}, styles, details..."
+       - Result: キャラクター再現 → アイカツ! → 大空あかり → "{1girl, oozora akari, aikatsu!}, styles, details..."
+       - Result: キャラクター → アイカツ! → 大空あかり → "oozora akari (aikatsu!)"
      - **CRITICAL WARNING**: Character name extraction must be done carefully and individually
        - Do NOT assume the first element is always the character name - it could be a work name, description, or other element
        - ALWAYS analyze each character reproduction entry individually to identify the actual character name
@@ -391,11 +393,17 @@ python3 generate_master.py
    - `Google翻訳` → 適切な既存カテゴリに再分類
    - `翻訳中` → 適切な既存カテゴリに再分類
 
-   **2.2 カテゴリ最適化**
-   ユーザー設定のカテゴリが有効であっても、より適切な既存カテゴリが存在する場合は自動で最適化：
-   - Promptの内容を分析し、既存のマスターデータから最も適切なカテゴリを特定
-   - 例：`服装・衣類 > 一般 > 帽子` → `服装・衣類 > 頭部 > 帽子` (既存カテゴリがより具体的な場合)
-   - 変更内容をユーザーに報告
+   **2.2 カテゴリ最適化・既存項目確認**
+   **重要**: 新規要素追加時は必ず既存の大項目・中項目を確認し、適切なものがあれば統合する
+   - **確認対象**: categories.txt を参照して既存の全大項目・中項目を確認
+   - **統合ルール**: 新規項目より適切な既存カテゴリが存在する場合は既存カテゴリを使用
+   - **例**: 
+     - `行動・ポーズ` → 既存の `動作` を使用
+     - `表現手法` → 既存の `テイスト` を使用
+     - `表情` → 既存の `表情・感情` を使用
+     - `服装・衣類` → 既存の `服装` を使用
+   - **プロセス**: Promptの内容を分析し、既存のマスターデータから最も適切なカテゴリを特定
+   - **報告**: 変更内容をユーザーに報告
 
    **2.3 空欄小項目の自動補完**
    小項目が空欄の場合、Promptの内容に基づいて適切な小項目名を自動設定
