@@ -12749,3611 +12749,6 @@ let defaultMaster = {
     "4": ""
   },
   {
-    "0": "キャラクター再現",
-    "1": "Air",
-    "2": "神尾観鈴",
-    "3": "{{kamio misuzu}},air,loli,key (company) ,ocean,very long hair,ponytail,blonde hair,blue eyes,white ribbon,feathers,open mouth,red tie,black school uniform,black long dress, {white shoulder},long sideburns,Large amount of hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Charlotte",
-    "2": "友利奈緒",
-    "3": "tomori nao(Charlotte), gray hair, two side up, wavy hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "FE",
-    "2": "フレン",
-    "3": "Flayn,Fire Emblem",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "FE",
-    "2": "マリアンヌ",
-    "3": "marianne_von_edmund,Fire Emblem",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "FE",
-    "2": "リシテア",
-    "3": "Lysithea,Fire Emblem",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "BB",
-    "3": "bb (fate) ,fate/extra ccc, long hair,purple hair, purple eyes, {{ black skirt}}, high-waist skirt,black coat, white leotard, black thighhighs, burnt clothes, white gloves, red hair ribbon,red neck ribbon, large breasts, on back, looking at viewer",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "BB",
-    "3": "black skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "アストルフォ",
-    "3": "astolfo (fate),flat chest, tomboy",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "イシュタル",
-    "3": "{{ishtar (fate) }},fate/grand order",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "マシュ・キリエライト",
-    "3": "mash kyrielight, pink hair, short hair, purple eyes, hair over one eye, black glasses, black dress, red tie, black pantyhose, miniskirt, white jacket, hooded jacket",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "清姫",
-    "3": "kiyohime (fate),{{bright Cyan kimono}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "清姫(水着)",
-    "3": "kiyohime (fate),{yellow bikini}, frilled bikini",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "清少納言",
-    "3": "sei shounagon (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "葛飾北斎",
-    "3": "katsushika hokusai (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "謎のヒロインXオルタ",
-    "3": "black jacket",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "謎のヒロインXオルタ",
-    "3": "fate/grand order,{{fate (series}}},{{artoria pendragon (fate)}},{{mysterious heroine x alter (fate)}},{{mysterious heroine x alter (second ascension) (fate)}},ahoge,bangs,bike shorts,{{{{{black jacket}}}}},black shorts,{{{{black}}}} thighhighs,blonde hair,blush,braid,breasts,choker,french braid,glasses,hair between eyes,hair bun,hood,hooded jacket,jacket,long hair,long sleeves,looking at viewer,medium breasts,shirt,shorts,sidelocks,single hair bun,white shirt,yellow eyes,character focus, blush, {{{{expressionless}}}},{{loli}},{{{{red scarf}}}},{{black hooded jacket}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "謎のヒロインXオルタ(フォーリナー)",
-    "3": "game cg,{{{hyper detailed}}},fate/grand order,{{fate (series}}},{{artoria pendragon (fate)}},{{mysterious heroine x alter (fate)}},{{mysterious heroine x alter (second ascension) (fate)}},,ahoge,bangs,bike shorts,black jacket,black shorts,black thighhighs,blonde hair,blush,braid,breasts,choker,french braid,glasses,hair between eyes,hair bun,hood,hooded jacket,jacket,long hair,long sleeves,looking at viewer,medium breasts,shirt,shorts,sidelocks,single hair bun,white shirt,yellow eyes,character focus, blush, expressionless,loli",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Fate",
-    "2": "謎のヒロインXオルタ(フォーリナー)",
-    "3": "hyper detailed",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "AZKi",
-    "3": "azki (hololive), black hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "すいちゃん",
-    "3": "{{{hoshimachi suisei}}, blue hair, side ponytail, star choker,, grey plaid jacket, grey plaid headwear, plaid dress, collared shirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "ちょこ先生",
-    "3": "yuzuki choco",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "るーちゃん",
-    "3": "{hololive,uruha rushia,green hair,bun head,butterfly,red eyes, short hair,small breasts}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "トワ様",
-    "3": "{hololive, tokoyami towa,purple hair, twintails, green eyes, long hair,demon tail}{whitejacket, black shorts, black cap,navel}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "フブちゃん",
-    "3": "{{{shirakami fubuki}}}, fox girl, white hair,braid, ahoge, animal ear fluff, aqua eyes, black ribbon, white shirt, off shoulder",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "マリン船長",
-    "3": "houshou marine, red hair,heterochromia",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "ラプラス・ダークネス",
-    "3": "la+ darknesss_ (hololive), demon horns",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "兎田ぺこら",
-    "3": "{{{{{usada pekora}}}}}, hololive, {{long hair}}, long twintail, red eyes, light Blue hair, White rabbit ears , small breastsnd, Round eyebrows, big braids,White highlights, playboy bunny, small breasts, black tights",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "博衣こより",
-    "3": "hakui_koyori_(hololive), fox ear",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "白銀ノエル",
-    "3": "shirogane_noel, large breasts, white hair,armor,black armor,belt ,black gloves,cleavage,cleavage cutout,medium hair,green eyes,french braid,black circlet ,hololive",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "百鬼あやめ",
-    "3": "nakiri ayame, oni horns, white hair, red eyes, black and red kimono, detached sleeves, double bun, streaked hair, hair bell",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Hololive",
-    "2": "風間いろは",
-    "3": "kazama iroha, ninja, katana, yellow hair, ponytail, bleached cloth",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "NARUTO",
-    "2": "サクラ",
-    "3": "naruto (series), {haruno sakura},pink hair, long hair,straight hair, green eyes,small breasts,red shirt,sleeveless,bike_shorts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "Re：ゼロから始める異世界生活",
-    "2": "ラム",
-    "3": "{{{{{ram_(re:zero)}}}}}, {re:zero kara hajimeru isekai seikatsu}, {{{{{roswaal mansion maid uniform}}}}},{x hair ornament}, ,{{pink hair}},{red eyes}, {hair over one eye},right eye, short hair, {bob cut},little girl,ribbon,bangs,white apron,white apron,cowboy shot,[[[extremely detailed CG unity 8k wallpaper]]],{painting},[[[ink]]],amazing,Depth of field,{{best quality}},{{masterpiece}},highres,dynamic angle,{{illustration}},cinematic lighting,{},[[extremely_detailed_eyes_and_face]],detailed shadow",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "SPY×FAMILY（スパイファミリー）",
-    "2": "アーニャ・フォージャー",
-    "3": "{{anya (spy x family)}}, {{spy x family}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "SPY×FAMILY（スパイファミリー）",
-    "2": "ボンド・フォージャー",
-    "3": "{{bond (spy x family)}}, {{spy x family}}, 1dog, nude, white far",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "SPY×FAMILY（スパイファミリー）",
-    "2": "ヨル・フォージャー",
-    "3": "{{yor briar}}, {{spy x family}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "SPY×FAMILY（スパイファミリー）",
-    "2": "ロイド・フォージャー",
-    "3": "{{twilight (spy x family)}}, {{spy x family}},1boy",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "To LOVEる -とらぶる",
-    "2": "ティアーユ・ルナティーク",
-    "3": "{{{{{teayu lunatique}}}}},{{{to love-ru}}},baby face,blonde hair, long hair,green eyes,{{{tareme}}}, glasses,{large breasts}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "To LOVEる -とらぶる",
-    "2": "ララ・サタリン・デビルーク",
-    "3": "{{{{lala satalin deviluke}}}}, {{to love-ru}}, long hair, pink wavy hair {{{{very long sidelocks}}}}, dark green eyes, {{{tareme}}}, ahoge, school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "To LOVEる -とらぶる",
-    "2": "天条院沙姫",
-    "3": "{{{{tenjouin saki}}}}, [[[[to love-ru]]]], long blonde drill hair, wavy long hair, double buns, swept bangs, orange eyes, {{{tareme}}}, medium breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "To LOVEる -とらぶる",
-    "2": "小手川唯\\",
-    "3": "{{{{kotegawa yui}}}}, to love-ru, medium hair, black straight hair {{{{very long sidelocks}}}}, light brown eyes, {{{tareme}}}, school uniform, [[[[angry]]]]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "To LOVEる -とらぶる",
-    "2": "結城美柑",
-    "3": "{{{{yuuki_mikan}}}},to_love-ru",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "To LOVEる -とらぶる",
-    "2": "金色の闇（ヤミ）",
-    "3": "{{{{konjiki no yami}}}}, to love-ru, loli, yellow hair, very long hair, small breasts, dark red eyes, school uniform, hair intakes side locks, {{{{tareme}}}}, miniskirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "VOCALOID",
-    "2": "鏡音リン",
-    "3": "{{{kagamine rin}}}, black short pants,middriff,sailors,wide sleeves, black sleeves,bare shoulder,sleeveless,eye reflection, white sailors",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "VOCALOID",
-    "2": "鏡音レン",
-    "3": "kagamine len,male,boy,solo,child,headphone,blonde hair, {{yellow horn hair,spiked hair}},black sailors,{{hair between eyes}},short sleeves,yellow necktie,small ponytail, hair pulled back, nape, very short side hair,{{low ponytail}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "VOICE BOX",
-    "2": "ずんだもん",
-    "3": "5 years old,loli,minigirl,flat chest,preschooler,{{{{green hair, short hair}}}},orange eyes, unusual pupils,v shaped eyebrows,skin fang,green horse ears,small breasts,white shirt,white suspenders,green shorts,short sleeve,green footwear,pink bow,kawaii,pink bow",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "VOICE ROID",
-    "2": "紲星あかり",
-    "3": "kizuna akari,silver hair,blue eyes,voice roid,long braid hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "WORKING!!",
-    "2": "種島ぽぷら",
-    "3": "{taneshima popura},light brown hair, brown eyes,hair between eyes, very long hair,ponytail,loli face and big boobs, waitress, short sleeves,apron,black skirt,bowtie, child,toddler,smile, official art",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "among us",
-    "2": "クルー",
-    "3": "no humans,{{{{crewmate (among us)}}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "あの日見た花の名前を僕達はまだ知らない。",
-    "2": "安城鳴子（あなる）",
-    "3": "{{anjou_naruko}}, {{ano hi mita hana no namae wo bokutachi wa mada shiranai.}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "あの日見た花の名前を僕達はまだ知らない。",
-    "2": "本間芽衣子（めんま）",
-    "3": "{{honma meiko)}}, {{ano hi mita hana no namae wo bokutachi wa mada shiranai.}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "おジャ魔女どれみ",
-    "2": "妹尾あいこ",
-    "3": "{{{{senoo aiko (ojamajo doremi)}}}},loli,blue hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "おジャ魔女どれみ",
-    "2": "春風どれみ",
-    "3": "{{{{harukaze_doremi}}}},ojamajo_doremi,double bun hair,blunt bangs",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "おジャ魔女どれみ",
-    "2": "瀬川おんぷ",
-    "3": "{{{{segawa onpu (ojamajo doremi)}}}},loli",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "おジャ魔女どれみ",
-    "2": "藤原はづき（NAI v3不安定）",
-    "3": "{{{{fujiwara_hazuki (ojamajo doremi)}}}},loli,glasses,ribbon,brown_hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "かぐや様は告らせたい",
-    "2": "四宮かぐや",
-    "3": "{{{shinomiya kaguya}}},{{{kaguya-sama wa kokurasetai ~tensai-tachi no renai zunousen~}}},folded ponytail,parted bangs,forehead,red eyes,black hair,hair ribbon,red ribbon,short hair,tsurime,skinny,small breast,shuuchiin academy school uniform, black dress,collared dress,neck ribbon,long sleeves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "かぐや様は告らせたい",
-    "2": "早坂愛",
-    "3": "{{hayasaka ai}}, blonde_hair, blue_eyes, hair_between_eyes, side_ponytail, school unifrom, {shuuchiin_academy_school_uniform}, cowboy_shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "かぐや様は告らせたい",
-    "2": "藤原千花",
-    "3": "{fujiwara chika},kaguya-sama wa kokurasetai ~tensai-tachi no renai zunousen~, pink hair, blue eyes, long hair,blunt bangs, tareme,large breasts,shuuchiin academy school uniform, black dress,collared dress,neck ribbon,long sleeves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "からかい上手の高木さん",
-    "2": "高木さん",
-    "3": "{{takagi san}}, , solo, forehead, light brown hair , long hair, school uniform, sailor uniform, {{{tareme}}}, brown eyes, {{{round eyes}}}, 13 years old,kind smile, round face, {{{ringed eyes}}}, one length, {{{flat chest}}}, {{{round face}}}, slender, classroom, {{{flat_chest}}}, {{{facial}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "きんいろモザイク",
-    "2": "アリス・カータレット",
-    "3": "{alice cartelet},{in kin-iro_mosaic style}, solo,blonde hair,high twintails,afro twintails,medium hair,bangs, blue eyes,tareme,pink cardigan,white shirt, striped bowtie, blue skirt,white thighhighs",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "きんいろモザイク",
-    "2": "九条カレン",
-    "3": "{{{kujou karen}}},in kin-iro_mosaic style, blonde hair,{single side bun},long hair,parted bangs, x hair ornament,hairpin, purple eyes,tsurime,dress shirt, {open hoodie},{blue hoodie},red striped bowtie,blue skirt, pleated skirt, open clothes,game cg",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "きんいろモザイク",
-    "2": "大宮忍",
-    "3": "{oomiya shinobu},in kin-iro_mosaic style, solo,dark green hair, blunt bangs, bob cut, red eyes, brown eyes, tareme, cowboy shot, lolita fashion,smile",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "きんいろモザイク",
-    "2": "小路綾",
-    "3": "{{komichi aya}},in kin-iro_mosaic style, dark blue hair,long hair,twintails,hair between eyes,blue eyes, tareme,school uniform,dark blue sweater,red striped bowtie,blue skirt,pantyhose",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "きんいろモザイク",
-    "2": "猪熊陽子",
-    "3": "{{inokuma youko}},in kin-iro_mosaic style, brown hair,[[red hair]],medium hair,hair spread out,brown eyes, tareme,fang, school uniform,blue pinafore dress,blouse, blue skirt, medium breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "けいおん！",
-    "2": "中野梓",
-    "3": "{{{nakano_azusa }}}},{loli},twintails,2010s,sketch,k-on,Sakuragaoka High School uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "けいおん！",
-    "2": "平沢唯",
-    "3": "{{{{hirasawa yui}}}}, brown hair, short hair, brown eyes, tareme, hairclip, open mouth, medium breasts, school uniform, cowboy shot,K-on！",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "けいおん！",
-    "2": "琴吹紬",
-    "3": "{{{{kotobuki tsumugi}}}}, [[[[k-on!]]]], blonde long hair, swept bangs, gray eyes, tareme, school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "けいおん！",
-    "2": "田井中律",
-    "3": "{{{{tainaka ritsu}}}}, [[[[k-on!]]]], brown hair, short hair, dark yellow eyes, tareme, yellow hairband, forehead, medium breasts, smile, school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "けいおん！",
-    "2": "秋山澪",
-    "3": "{{akiyama_mio}},{{long straight hair}},2010s,sketch,k-on,,Sakuragaoka High School uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "けものフレンズ",
-    "2": "かばん",
-    "3": "{kaban (kemono friends)},small breasts,red shirt,hat feather,grey shorts,black pantyhose,short hair,black gloves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "けものフレンズ",
-    "2": "アライグマ",
-    "3": "{{common raccoon (kemono friends)}},{{blue shirts}},{{black skirt}},{{grey pantyhose}},short hair,black hair,gray hair,{fur collar},black bowtie,large breasts,grey gloves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "けものフレンズ",
-    "2": "キタキツネ",
-    "3": "{{{{,{{{orange blazer}}},{{{white skirt}}},{{{black gloves}}},{yellow necktie},{white bowtie}}}}}, {{ezo red fox (kemono friends)}},{[orange::0.5] hair},black hair,long hair,[:yellow:0.5] eyes,fox ears,fox tail,white underwear,medium breasts,white pantyhose,fox girl",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "けものフレンズ",
-    "2": "ギンギツネ",
-    "3": "{{blue blazer}},black necktie,{{gray bowtie}},{gray skirt}}}, {{silver fox (kemono friends)}},{gray hair},black hair,long hair,yellow eyes,black animal ears,fox ears,fox tail,{black pantyhose},{black gloves},fox girl",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "けものフレンズ",
-    "2": "コウテイペンギン",
-    "3": "{emperor penguin (kemono friends)},large breasts,long hair,black hair,white leotard,white thighhighs,hooded jacket,black jacket,highleg leotard,headphones,hair over one eye",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "けものフレンズ",
-    "2": "トキ",
-    "3": "{{{,{{head wings}},{red skirt},{white shirt},{red gloves},{red pantyhose}}}}, {{japanese crested ibis (kemono friends)}},{white hair},red hair,long hair,straight hair,small breasts,fur collar,red fur",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "けものフレンズ",
-    "2": "フェネック",
-    "3": "{fennec (kemono friends)}, short hair,blonde hair,pink sweater, yellow ribbon, {white skirt}, white gloves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "この素晴らしい世界に祝福を",
-    "2": "ウィズ",
-    "3": "wiz (konosuba),brown hair,ahoge,hair over one eye,long hair,yellow eyes,{{purple long coat}},purple long skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "この素晴らしい世界に祝福を",
-    "2": "ダクネス",
-    "3": "darkness_([[[[[[konosuba]]]]]]), long hair, yellow hair, blue eyes, ponytail, medium breasts, {{x}} hair ornaments, black gloves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "こみっくパーティ",
-    "2": "高瀬瑞希",
-    "3": "takase mizuki, comic party",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "こみっくパーティ",
-    "2": "高瀬瑞希",
-    "3": "{{{{takase mizuki, comic party}}}},red hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ごちうさ",
-    "2": "ここあ",
-    "3": "{{{hoto cocoa (gochiusa)}}},hoto cocoa's school uniform,orange hair, hair ornament, pink vest, short hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ごちうさ",
-    "2": "ちや",
-    "3": "ujimatsu chiya ,gochuumon wa usagi desu ka?, black hair,long hair,blunt bangs,blown hair,shiny hair,flower ornament,green eyes,medium breasts,loli girl,japanese maid,long sleeve,on cafe",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "とあるシリーズ",
-    "2": "上条当麻",
-    "3": "{{{{kamijou_touma (toaru_majutsu_no_index)}}}},boy",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "とある科学の超電磁砲",
-    "2": "打ち止め",
-    "3": "{{{{last order}}}}, {{toaru majutsu no index}}, loli, child, infant, preteen, toddler, brown hair, short messy hair, ahoge, dark brown eyes, flat chest, smile, cyan polka dot dress",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "とある科学の超電磁砲",
-    "2": "白井黒子",
-    "3": "{{{{Shirai Kuroko}}}}, {{toaru majutsu no index}}, brown hair, curly twintails, dark brown eyes, small breasts, school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "とある科学の超電磁砲",
-    "2": "食蜂操祈",
-    "3": "{{{{shokuhou misaki}}}}, {{toaru majutsu no index}}, yellow hair, long messy hair, yellow eyes with shining pupils, white gloves, big breasts, school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "にじさんじ",
-    "2": "サロメ",
-    "3": "hyakumantenbara salome ,argyle legwear,light purple hair ,red dress ,drill hair ,purple eyes,black hairband ,black ribbon",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "にじさんじ",
-    "2": "静凛",
-    "3": "{{shizuka rin}}, {navy hair},yellow eyes,blazer suit,short hair, {{{purple}}} bow,pleated skirt,stockings,sweater",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "のんのんびより",
-    "2": "宮内れんげ",
-    "3": "{{{{miyauchi renge (non non biyori)}}}},loli",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひぐらしのなく頃に",
-    "2": "北条沙都子",
-    "3": "hojo satoko,higurashi no naku koro ni",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひぐらしのなく頃に",
-    "2": "古手梨花",
-    "3": "furude rika,higurashi no naku koro ni",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひぐらしのなく頃に",
-    "2": "園崎詩音",
-    "3": "sonozaki shion,higurashi no naku koro ni",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひぐらしのなく頃に",
-    "2": "園崎魅音",
-    "3": "sonozaki mion,higurashi no naku koro ni",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひぐらしのなく頃に",
-    "2": "竜宮レナ",
-    "3": "ryuugu rena,higurashi no naku koro ni",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひだまりスケッチ",
-    "2": "ゆの",
-    "3": "yuno_(hidamari_sketch),hidamari_sketch",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひだまりスケッチ",
-    "2": "ゆの",
-    "3": "{yuno_(hidamari_sketch),hidamari_sketch},[game cg],brown eyes, brown hair,frizzy hair, x hair ornament,school uniform, red pinafore dress,dress shirt, red skirt, loli face",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひろがるスカイ！プリキュア",
-    "2": "キュアウィング",
-    "3": "{{{cure_wing}}},{{{{yuunagi_tsubasa}}}},precure,{{{boy}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひろがるスカイ！プリキュア",
-    "2": "キュアスカイ",
-    "3": "{{{cure_sky}}},{{{{sora_harewataru}}}},precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひろがるスカイ！プリキュア",
-    "2": "キュアバタフライ",
-    "3": "{{{cure_butterfly}}},{{{{hijiri_ageha}}}},precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひろがるスカイ！プリキュア",
-    "2": "キュアプリズム",
-    "3": "{{{cure_butterfly}}},{{{{nijigaoka_mashiro}}}},precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひろがるスカイ！プリキュア",
-    "2": "ソラ・ハレワタール",
-    "3": "{{{{sora_harewataru}}}},precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひろがるスカイ！プリキュア",
-    "2": "夕凪つばさ",
-    "3": "{{{{yuunagi_tsubasa}}}},precure,{{{boy}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひろがるスカイ！プリキュア",
-    "2": "聖あげは",
-    "3": "{{{{hijiri_ageha}}}},precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ひろがるスカイ！プリキュア",
-    "2": "虹ヶ丘ましろ",
-    "3": "{{{{nijigaoka_mashiro}}}},precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ふしぎの海のナディア",
-    "2": "ナディア",
-    "3": "nadia_la_arwall,fushigi_no_umi_no_nadia,,solo,light dark skin,++(dark indigo hair bob_cut:1.2)++,++(black eyes):(dark green eyes):0.7++,100-layer,masterpiece,highest,best,amazing,great,detail,stylish,illustration, neck_ring,necklace,red pelvic_curtain,pendant,white cropped_vest,cross-laced_sandals, hair_ornament,hairclip,hoop_earrings,jewelry,kneeling,red loincloth,open mouth,(death note:0.2),(yurucamp:0.9),(yuruyur:1),(gochuumon wa usagi desu ka?:0.9),(Yoshiyuki Sadamoto:1)100-layer,masterpiece,highest,best,amazing,great,detail,stylish,illustration",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ぼっち・ざ・ろっく！",
-    "2": "伊地知虹夏",
-    "3": "bocchi the rock!,{{{ijichi nijika}}}, [bocchi the rock!], {{{blonde hair}}}, solo, , red eyes, ahoge, up side ponytail, long hair, cowboy shot, {{sidelocks}}, dress shirt, black skirt, red bowtie, {{{{{{tareme}}}}}}, [parted bangs], four bangs",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ぼっち・ざ・ろっく！",
-    "2": "喜多郁代",
-    "3": "bocchi the rock!, {{{{{{{kita ikuyo}}}}}}},red hair, yellow eyes, one side up, bangs, semi long hair, small breasts, long legs, disheveled hair, standing, cowboy shot, smile, open mouth, neckerchief, red bowtie, beige school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ぼっち・ざ・ろっく！",
-    "2": "山田リョウ",
-    "3": "bocchi the rock!,{{{yamada ryo}}}, [bocchi the rock!], {{{dark blue hair}}},girl, medium breasts,blue eyes,medium hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ぼっち・ざ・ろっく！",
-    "2": "後藤ひとり",
-    "3": "bocchi the rock!, solo, , {{{{{{gotou hitori}}}}}}, {{pink hair}}, {{{long hair}}}, blue eyes, bangs, crossed bangs, side locks, {{medium breasts}}, {{{hair between eyes}}}, sweat, {{{{pink track jacket}}}}, {{{pink track pants}}}, {{{{{{{tareme}}}}}}}, cowboy shot, {{{blue and yellow cube hair ornament, one side up}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "まちカドまぞく",
-    "2": "シャミ子",
-    "3": "{{yoshida yuuko (machikado mazoku)}}, red hair, long hair smile, sidelocks, demon horns, ahoge, t-shirt, {{layered skirt}} , fulldody, {{{black leggings}}}, demon tail,{{{loli}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "まちカドまぞく",
-    "2": "千代田桃",
-    "3": "{{madhikado mazoku}}, {{chiyoda momo}}, , solo, pink hair, hairclip, hair ornament, green eyes, medium hair, hair ornament, small breasts, school uniform, yellow hoodie over school uniform, plaid skirt , blue skirt, red ribbon, pink hair clip, bob cut",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ゆるゆり",
-    "2": "古谷向日葵",
-    "3": "{yuru yuri,game cg},{{furutani himawari}},{nanamori school uniform,sailor_dress,short over long sleeves,layered sleeves}, dark blue hair, brown eyes, hairband,{low low twintails,twin braids},large breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ゆるゆり",
-    "2": "吉川ちなつ",
-    "3": "{yuru yuri},{{yoshikawa chinatsu}},{{game cg}},{official art}, pink hair, blunt bangs, green eyes, hair bobbles,short hair,{{{huge afro twintails}}},big puffs,{nanamori school uniform,sailor_dress,short sleeve white jacket,short over long sleeves,layered sleeves,pleated skirt}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ゆるゆり",
-    "2": "大室櫻子",
-    "3": "{{{yuru yuri}}}, {{{oomuro sakurako}}}, [fang], blonde hair, wavy hair, medium hair, blunt bangs, brown eyes,flat chest,{game cg},nanamori school uniform,sailor_dress,short over long sleeves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ゆるゆり",
-    "2": "杉浦綾乃",
-    "3": "{yuru yuri}, {{{sugiura ayano}}},{high ponytail}, purple hair,long hair, [[ahoge]], brown eyes,{game cg},nanamori school uniform,sailor dress,short over long sleeves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ゆるゆり",
-    "2": "歳納京子",
-    "3": "{yuru yuri},{{toshinou_kyouko}},{game cg},official art, blonde hair,blue eyes,long hair,{bow hairband},solo,v-shaped eyebrows,smile,{nanamori school uniform,sailor dress,short sleeve white jacket, short over long sleeves,layered sleeves, pleated skirt}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ゆるゆり",
-    "2": "船見結衣",
-    "3": "yuru yuri,{{funami yui}},{game cg}, official art, black hair,very short hair, yallow eyes, brown eyes,solo,smile, {nanamori school uniform},sailor dress,short sleeve white jacket, short over long sleeves,layered sleeves, pleated skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ゆるゆり",
-    "2": "赤座あかり",
-    "3": "yuru yuri,{akaza akari}, double bun, red hair,bob cut, short hair, purple eyes,tareme,{nanamori school uniform},sailor dress,short sleeve white jacket, short over long sleeves,layered sleeves, pleated skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ゆるキャン",
-    "2": "志摩リン",
-    "3": "{{shima rin}}, blue hair, hair bun, purple eyes, gray scarf, brown boots, g-pants, dark green down jacket, {{light blue scooter}}, masterpiece, yurucamp",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "らき☆すた",
-    "2": "柊かがみ",
-    "3": "lucky star,{{{hiiragi kagami}}},purple hair, twintails,long hair, dark blue eyes, tsurime, brown ribbon,white serafuku,red sailor collar,red skirt,pink neckerchief,{{game cg}},[[angry]]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "らき☆すた",
-    "2": "柊つかさ",
-    "3": "ucky star,{{{hiiragi tsukasa}}},purple hair, short hair, dark blue eyes, tareme,yellow bow hairband ,yellow hairband, small breasts,big eyes,white serafuku,red sailor collar,red skirt,{{{game cg}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "らき☆すた",
-    "2": "泉こなた",
-    "3": "{izumi konata}, blue hair, green eyes, long hair, ahoge, [[[mole under eye]]], bangs, school uniform, serafuku, skirt, neckerchief, pink neckerchief, sailor collar, {{red skirt}}, long sleeves, pleated skirt, [ryouou school uniform], white shirt, [[lucky star]]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "らき☆すた",
-    "2": "高良みゆき",
-    "3": "lucky star,{{{takara miyuki}}},pink hair,long hair, hair between eyes,bangs,purple eyes,big eyes, tareme,large breasts,white serafuku,red sailor collar,red pleated skirt,long sleeves,{{{game cg}}}, {{{round eyewear}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "らんま1/2",
-    "2": "早乙女らんま",
-    "3": "saotome ranma, {{ranma-chan}}, ranma 1/2, long hair, braid, braided ponytail, sketch, colored pencil (medium), chinese clothes, jacket",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "わんだふるぷりきゅあ！",
-    "2": "キュアニャミー",
-    "3": "{{{cure nyammy}}},{{{nekoyashiki yuki}}},precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "わんだふるぷりきゅあ！",
-    "2": "キュアフレンディ",
-    "3": "{{{cure friendy}}},{{{inukai iroha}}},precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "わんだふるぷりきゅあ！",
-    "2": "キュアリリアン",
-    "3": "{{{cure lillian}}},{{{nekoyashiki mayu}}},precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "わんだふるぷりきゅあ！",
-    "2": "キュアワンダフル",
-    "3": "{{{cure wonderful}}},{{{inukai komugi}}},precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "わんだふるぷりきゅあ！",
-    "2": "兎山悟",
-    "3": "{{{toyama satoru}}},wonderful precure!,precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "わんだふるぷりきゅあ！",
-    "2": "大福",
-    "3": "1rabbit,daifuku (precure)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "わんだふるぷりきゅあ！",
-    "2": "犬飼いろは",
-    "3": "{{{inukai iroha}}},wonderful precure!,precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "わんだふるぷりきゅあ！",
-    "2": "犬飼こむぎ",
-    "3": "{{{inukai komugi}}},wonderful precure!,precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "わんだふるぷりきゅあ！",
-    "2": "犬飼こむぎ（犬）",
-    "3": "1dog,inukai komugi (dog)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "わんだふるぷりきゅあ！",
-    "2": "猫屋敷まゆ",
-    "3": "{{{nekoyashiki mayu}}},wonderful precure!,precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "わんだふるぷりきゅあ！",
-    "2": "猫屋敷ユキ",
-    "3": "{{{nekoyashiki yuki}}},wonderful precure!,precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "わんだふるぷりきゅあ！",
-    "2": "猫屋敷ユキ（猫）",
-    "3": "1cat,nekoyashiki yuki (cat)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイカツ!",
-    "2": "大空あかり",
-    "3": "{1girl, oozora akari, aikatsu!}, [[idolmaster shiny colors]]}, [[ame (uten cancel), yd (orange maru), muchi maro, shirabi, mery (yangmalgage)]], {{year 2023}}, highly detailed, blue school uniform, white skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイカツスターズ！",
-    "2": "香澄夜空",
-    "3": "{{{{kasumi yozora (aikatsu stars!)}}}},reddish brown hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "三浦あずさ（ショートカット）",
-    "3": "{{{{miura azusa}}}}, [[idolmaster]], blue short hair, forehead, red eyes, tareme, ahoge,wrist cuffs, skirt, navel, smile, idol dress",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "三浦あずさ（ロングヘア）",
-    "3": "{{{{{dark blue hair}}}}},[idolmaster cinderella girls], official art, ,solo,mature,30 years old,{{long hair,hairline,hair_pulled_back,Jinx hair,ahoge}},{{{diagonal long_bangs,}}},{{{{tareme}}}},red_eyes,big breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "四条貴音",
-    "3": "{{shijou takane}}, medium wavy silver hair, red eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "天海春香",
-    "3": "{{{{amami haruka}}}}, [[[[idolmaster]]]], short hair, brown hair, green eyes, tareme, medium breasts, blunt bangs",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "我那覇響",
-    "3": "{{{{ganaha hibiki}}}}, [[idolmaster]], fang, long hair, messy ponytail, dark blue hair, aqua eyes, {{{{{{tareme}}}}}}, medium breasts, swept bangs, [[[[antenna hair]]]], hair ribbon, smile, solo, cowboy shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "星井美希",
-    "3": "{{hoshii miki}}, medium wavy yellow hair, green eyes, ahoge",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "水瀬伊織",
-    "3": "minase iori, [[[[idolmaster]]]], loli, brown hair, long hair, hairband, hairbow, orange eyes, {{{{tareme}}}}, parted bangs, forehead, small breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "秋月律子",
-    "3": "akizuki ritsuko, [[idolmaster]], [[antenna hair]], glasses, brown hair, ponytail, brown eyes, {{{{tareme}}}}, sidelocks, bangs, solo, cowboy shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "秋月律子（旧）",
-    "3": "akizuki ritsuko,[[idolmaster]],twin braids",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "菊地真",
-    "3": "{{{{kikuchi makoto}}}}, [[[[idolmaster]]]], short hair, black hair, ahoge, forehead, black eyes, tareme, small breasts, smile, black gloves, smile",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "萩原雪歩",
-    "3": "{{{{hagiwara yukiho}}}}, [[idolmaster]], light brown hair, brown eyes, {{{{tareme}}}}, medium breasts, swept bangs, short hair, smile, solo, cowboy shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "音無小鳥",
-    "3": "{{{{otonashi kotori}}}}, [[[[idolmaster]]]], dark green hair, short hair, bangs, thin yellow hairband on top, orange eyes, tareme, medium breasts, pencil skirt, legwear, zettai ryouiki, vest, smile, solo, cowboy shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター",
-    "2": "高槻やよい",
-    "3": "{{{{takatsuki yayoi}}}}, [[[[idolmaster]]]], loli, twintails, dark orange hair, aqua eyes, locks, tareme, smile, :d, hoodie, skirt, yellow legwear, bag",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター シャイニーカラーズ",
-    "2": "八宮めぐる",
-    "3": "hachimiya meguru,idolmaster shiny colors,{{{{slender}}}},{big eyes},blonde hair,{{{hair down}}},{low twintails},[ahoge],ringed eyes,small head,small face,[[[long hair]]],[parted bangs],blue eyes,large breasts,school uniform, hairclip,black polo shirt, blue shirt plaid skirt, pleated skirt, miniskirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター シャイニーカラーズ",
-    "2": "樋口円香",
-    "3": "{{{{higuchi madoka}}}}, [[[[idolmaster shiny colors]]]], brown hair, short hair, [[[[wavy]]]] hair, bangs, purple eyes, {{tareme}}, [[hairclip]], expressionless, medium breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター シャイニーカラーズ",
-    "2": "浅倉透",
-    "3": "{{masterpiece}}, {{best quality}}, {{{ultra-detailed}}}, {{best illustration}}, {{disheveled hair}}, {{beautiful detailed girl}}, {{{{{{asakura toru}}}}}}, {{idolmaster shiny colors}}, small breasts, {{{gradation hair}}}, detailed {{{{{short back}}}} [[[[[[[[[[[[[[[[dull purple]]]]]]]]]]]]]]]] hair, {{{{middle-parted bangs}}}}, {{{{{dull blue cowlick}}}}} ,[[[[ahoge]]]], {{{{{wide-eyed}}}}}, [[round]] {{{{{half-closed drooping}}}}} {{dull light blue}} eyes, [[[[[[[[[[light smile]]]]]]]]]], earrings, [black necktie], white shirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター シャイニーカラーズ",
-    "2": "田中摩美々",
-    "3": "{{{{tanaka mamimi}}}}, [[[[idolmaster shiny colors]]]], diagonal bangs, messy pig tails, messy hair, deep purple hair, purple eyes, tsurime, expressionless, purple nail polish, medium breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター シャイニーカラーズ",
-    "2": "白瀬咲耶",
-    "3": "{{{{shirase sakuya}}}}, [[[[idolmaster shiny colors]]]], black hair, high ponytail, medium breasts, long hair, bangs, yellow eyes, tsurime, school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター シャイニーカラーズ",
-    "2": "西城樹里",
-    "3": "{{{masterpiece}}}, {{{best quality}}}, {{ultra-detailed}}, {{{{{idolmaster shiny colors}}}}}, [hair between eyes], {{pixie cut}}, {{short hair}}, {blonde hair}, {anime colored}, {{{{tsurime}}}}, eyeliner, pink eyes, {teenage}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスター シャイニーカラーズ",
-    "2": "黛冬優子",
-    "3": "{{{{mayuzumi fuyuko}}}}, [[[[idolmaster shiny colors]]]], black hair, straight long hair {{{{long wavy sidelocks}}}}, mini two side up, yellow eyes, blunt bangs, {{{{tareme}}}}, medium breasts, black legwear, pink shirt, long sleeves, neck ribbon, zettai ryouiki, frills",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "アナスタシア",
-    "3": "{{{{masterpiece}}}},idol master, cinderella girls, anastasia (idolmaster) ,wolf cut,{{{whitesmokehair}}}, short hair,frills, white shirt, {{black corset}}, {sleeveless}, [lolita fashion], pleated skirt, {{{{{blue skirt}}}, mini skirt, black thighhighs,garter belt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "エミリー",
-    "3": "{{emily stewart}}, [[idolmaster million live!]], yellow hair, long hair, high twintails, black hairband, purple eyes, {{{{tareme}}}}, parted bangs, smile, solo, cowboy shot, [[official art]]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "ナターリア",
-    "3": "{{{{{natalia (idolmaster)}}}}}, {{{dark skin}}}, medium hair, {{dark green hair}}, solo focus, hair between eyes, {shiny skin}, 14 years old, purple eyes, {{medium breasts}}, cleavage, well-detailed breasts, anime colored, {{{{sideburns}}}}, {{sidelocks}},{{{:D}}}, {{{open eyes}}}, [[[eyelashes]]], {{{active}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "一ノ瀬志希",
-    "3": "{{{{ichinose shiki}}}}, [[[[idolmaster cinderella girls]]]], deep brown hair, wavy long messy hair, blue eyes, medium breasts, ahoge, smile",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "三村かな子",
-    "3": "idolmaster cinderella girls,{{{mimura kanako}}}, brown eyes, brown hair, short hair, hair ornament,plump,smile,game cg, cowboy shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "中谷育",
-    "3": "{{nakatani iku}}, [[idolmaster million live!]], loli, infant, black hair, brown eyes, {{tareme}}, short hair, hair bow, blunt bangs, mini side [[ponytail]], smile, yellow cloths, solo, cowboy shot, official art",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "伊吹翼",
-    "3": "{{{styles of idolmaster million live!,2010s}}},[loli],{ibuki tsubasa},short hair,ahoge,breasts,blonde hair,,solo,exquisite,shirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "佐々木千枝",
-    "3": "{{{{sasaki chie}}}}, [[[[idolmaster cinderella girls]]]], loli, child, black hair, bunny hairclip, flower hairclip, short medium hair, gray eyes, tareme, swept bangs",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "佐久間まゆ",
-    "3": "idolmaster cinderella girls, {{{sakuma mayu}}},, blue eyes, dark brown hair, medium hair, medium breasts, hairband, school uniform, green jacket, red ribbon tie",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "佐城雪美",
-    "3": "{{{{sajo yukimi}}}}, [[[[idolmaster cinderella girls]]]], loli, child, long hair, red eyes, blue hair, blunt bangs, {{{{horizontal eyelid}}}}, {{{{jitome}}}}, expressionless",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "佐藤心",
-    "3": "Shin satou,solo,light smile,white skin,shiny skin,beautiful detailed eyes,green eyes,tareme,golden brown hair, pink blonde hair,hime cut, {{{twintail}}},loose fluffy bob cut,medium breasts,tracksuit,pink ribbon,duck mouth,grin, (((masterpiece))),(((best quality))), ((ultra-detailed)), (illustration),((an extremely delicate and beautiful))",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "前川みく",
-    "3": "{{{{maekawa miku}}}}, [[[[idolmaster cinderella girls]]]], red glasses, school uniform, brown hair, dark green eyes, short hair, swept bangs, small hair flower",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "北条加蓮",
-    "3": "{{{{houjou karen}}}}, [[[[idolmaster cinderella girls]]]], jewelry, elbow gloves, blue dress, swept bangs, brown eyes, {{{{tareme}}}}, tiara, earrings, orange hair, medium hair, [[[[wavy]]]] hair, necklace, bare shoulders, bracelet, choker, medium breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "千川ちひろ",
-    "3": "{{{{senkawa chihiro}}}}, [[[[idolmaster cinderella girls]]]], red hair scrunchie, hair over shoulder, brown hair, vivid green jacket, single braid lock, orange eyes, black pencil skirt, {{{{tareme}}}}, swept bangs, short hair, buisiness suit, medium breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "双葉杏",
-    "3": "{{{{futaba anzu}}}}, [[idolmaster cinderella girls]], loli, blonde hair, very long low twintails, dark brown eyes, {{tareme}}, flat chest",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "向井拓海",
-    "3": "{{{{light black hair}}}},idolmaster cinderella girls,official art, {{{{{mukai_takumi}}}}},solo,mature,30 years old,[[[exposed muscle]]],spirited,{{middle hair,hairline,hair_pulled_back,Jinx hair,diagonal long bangs}},{{sharp eyes}},yellow-green_eyes,big eyes,{{slender v-shaped_ slender eyebrows}},big breasts,teeth, cleavage,hand_on_hip ,type of Japanese school uniform for boys often stand-up collar with long jacket and loose trousers",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "周防桃子",
-    "3": "{{suou momoko}, [[idolmaster million live!]], loli, infant, blue eyes, brown hair, {{tareme}}, short wavy hair, white flower hairclips, swept blunt bangs, smile, solo, cowboy shot, [[official art]]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "城ケ崎利嘉",
-    "3": "{{jougasaki rika}}, [[[[idolmaster cinderella girls]]]], loli, yellow hair, long hair, wavy hair, yellow eyes, mini two side up, small breasts, hair ribbon, school uniform, plaid orange miniskirt, bracelet, short sleeves, sweater vest, solo, cowboy shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "城ヶ崎美嘉（ツインテール）",
-    "3": "{{{{jougasaki mika}}}}, {{{{bright vivid messy pink hair}}}}, medium pig tail, yellow eyes, gyaru, tsurime, hair between eyes, medium breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "城ヶ崎美嘉（ポニーテール）",
-    "3": "{{{{jougasaki mika}}}}, [[[[idolmaster cinderella girls]]]], ponytail, clothes around waist, sweater around waist, pink hair, bow, grin, hairbow, school uniform, yellow eyes, tsurime, medium breasts, colo, cowboy shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "塩見周子",
-    "3": "{{{{shiomi syuko}}}}, short hair, light silver yellow hair, black eyes, medium breasts, hair between eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "夢見りあむ",
-    "3": "{{yumemi riamu}}, short pink wavy hair, fang, red eyes, large breasts, collar, ahoge, pill earrings, earrings, hair intakes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "大槻唯",
-    "3": "{{{{ohtsuki yui}}}}, [[[[idolmaster cinderella girls]]]], blue eyes, yellow hair, long hair, wavy hair, medium breasts, ponytail",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "宮本フレデリカ",
-    "3": "{{{{frederica miyamoto}}}}, [[idolmaster cinderella girls]], short yellow hair, dark green eyes, cirlcular eyes, tareme, medium breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "島村卯月",
-    "3": "{{shimamura uzuki}}, new generations (idolmaster),long hair,brown hair,school uniform,one side up,bowtie",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "新田美波",
-    "3": "idol master, cinderella girls, nitta minami straight hair,brown hair,medium breasts,frills, white shirt, {{black corset}}, {sleeveless}, [lolita fashion], pleated skirt, {{{{{blue skirt}}}, mini skirt, black thighhighs,garter belt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "春日未来",
-    "3": "{{{styles of idolmaster million live!,2010s}}},{{amami haruka,fujimaru ritsuka (female),tareme}},side ponytail,brown hair,brown eyes,teenage,small breasts,,solo,exquisite,white shirt,fusion of pink sweater and pink school uniform,hair bobbles,light smile,[[open mouth]]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "望月杏奈",
-    "3": "{{mochizuki anna}}, [[idolmaster million live!]], loli, long hair, purple hair, straight hair, aqua eyes, tareme, hair between eyes, [[[[ahoge]]]], smile, one eye closed, solo, cowboy shot, official art",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "本田未央",
-    "3": "{{{{honda mio}}}}, [[[[idolmaster cinderella girls]]]], light brown hair, yellow eyes, short hair, flipped hair, bangs, {{{{swept bangs}}}}, {{tareme}}, medium breasts, pink jacket, high school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "橘ありす",
-    "3": "{{tachibana arisu}}, idolmaster Cinderella Girls, , solo, 12 years old, little girl, light blue one piece, blue big hair bow, long hair, full body",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "櫻井桃華",
-    "3": "kid, {{{{sakurai momoka}}}}, blonde hair, wavy hair, short hair, small breasts, [lolita fashion], dark-red headdress, [dark-red dress:white dress:0.8], frilled dress, long sleeves, black bow tie, rose petals",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "渋谷凛",
-    "3": "{{shibuya rin}},green eyes,necklace, cardigan,necktie",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "片桐早苗",
-    "3": "katagiri sanae",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "白坂小梅",
-    "3": "{{{{shirasaka koume}}}}, loli, blonde straight short hair, hair covers one eye, brown eyes, flat chest",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "的場梨沙",
-    "3": "{{{{matoba risa}}}}, [[idolmaster cinderella girls]], loli, black hair, long twintails tied with {{leopard}} pattern hair ribbon sidelocks, yellow eyes, tsurime, flat chest",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "神崎蘭子",
-    "3": "{{kanzaki ranko}}, medium hair, gray hair, twin drills, red eyes, tareme, medium breasts, black ribbons, lolita fashion",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "神谷奈緒",
-    "3": "kamiya nao, thick eyebrows, {{{{{{{{{{short bangs}}}}}}}}}}, blunt bangs, long hair, brown hair, wavy hair, {{{hair bun}}}, floating hair, red eyes, {{{dark-violet dress}}}, frilled dress, layered skirt, dark-violet gloves, shiny gloves, stage, {{dancing}}, spotlight, {{blush}}, {{{blur}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "福山舞",
-    "3": "[[[[idolmaster cinderella girls]]]], loli, child, gray eyes, black hair, wavy ponytail, red hair ribbon, {{tareme}}, bangs, smile, :D, cowboy shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "緒方智絵里",
-    "3": "{{{{ogata chieri}}}}, [[[[idolmaster cinderella girls]]]], loli, mini twintails with locks, brown hair, brown eyes, bracelet, jewelry, hair scrunchie, collarbone, blunt bangs, green frilled dress",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "藤居朋",
-    "3": "fujii tomo, idolmaster cinderella girls, blunt bangs, ponytail, wavy hair, dark green hair, brown eyes, round eyes, white bow",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "諸星きらり",
-    "3": "{{{{moroboshi kirari}}}}, [[[[idolmaster cinderella girls]]]], star hair ornaments, necklace, brown eyes, orange medium [[[[wavy]]]] hair, :3, large breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "赤城みりあ",
-    "3": "{{{{akagi miria}}}}, [[[[idolmaster cinderella girls]]]], loli, child, brown eyes, mini two side up, black hair, flat chest",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "輿水幸子",
-    "3": "idolmaster cinderella girls, {{{koshimizu sachiko}}},purple hair, brown eyes, short hair,bangs,{{{tareme,small eyes}}},kind smile, cowboy shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "速水奏",
-    "3": "{{{{hayami kanade}}}}, [[[[idolmaster cinderella girls]]]], dark blue messy short hair, yellow eyes, tsurime, earrings, parted bangs",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "遊佐こずえ",
-    "3": "{{{{yusa kozue}}}}, minigirl, child, little girl, kid, tiny head, {{blonde hair}}, {{{{tareme}}}}, medium {{{{messy}}}} hair, wavy hair, thick low [[[[twintails]]]] {{{{2 side-flip}}}}, short ahoge, emotionless half closed dark green eyes, swept bangs, flat chest, 2 hair_scrunchie on tip of the hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "高垣楓",
-    "3": "{{{{takagaki kaede}}}}, idolmaster cinderella girls, green hair, tsurime, blue eyes, swept bangs, medium breasts, cowboy shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "鷺沢文香",
-    "3": "{sagisawa fumika}, idolmaster cinderella girls, stage costumes, smile,shiny,hair_flower,jewelry,layered_skirt,necklace,tiara,puffy sleeves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アイドルマスターシンデレラガールズ",
-    "2": "龍崎薫",
-    "3": "{{{{ryuzaki kaoru}}}}, [[[[idolmaster cinderella girls]]]], loli, child, hairclip, yellow eyes, short hair, orange hair, {{{{tareme}}}}, forehead",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アカメが斬る！",
-    "2": "アカメ",
-    "3": "{{{{akame (akame ga kill!)}}}},black hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アトリエ",
-    "2": "ライザ",
-    "3": "atelier ryza,{{{red shorts}}}, short hair,white hat,black bow, necklace, thigh boots, brown boots, strapless shirt, white shirt,brown belt,large calf",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アトリエシリーズ",
-    "2": "トトリ",
-    "3": "{{{{atelier_totori}}}},[[atelier_(series)]]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アトリエシリーズ",
-    "2": "メルル",
-    "3": "{{{{atelier_meruru}}}},[[atelier_(series)]],grey_hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "アトリエシリーズ",
-    "2": "ロロナ",
-    "3": "{{{{atelier_rorona}}}},[[atelier_(series)]]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "イジらないで、長瀞さん",
-    "2": "長瀞さん",
-    "3": "{{nagatoro_hayase}},ijiranaide_nagatoro-san",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "アグネスタキオン",
-    "3": "agnes tachyon (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "アグネスデジタル",
-    "3": "agnes digital (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "エアグル勝負服",
-    "3": "umamusume,air groove (umamusume),two-tone shirt, shoulder cutout, yellow sailor collar, bow, cape, blue skirt, cleavage",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "エルコンドルパサー",
-    "3": "el condor pasa (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "カレンチャン",
-    "3": "curren chan (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "グラスワンダー",
-    "3": "grass wonder (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "テイエムオペラオー",
-    "3": "t.m. opera o (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "ニシノフラワー",
-    "3": "nishino flower (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "ネイチャ勝負服",
-    "3": ":nice nature (umamusume), ear covers, green bowtie, diagonal-striped bowtie, striped puffy sleeves, puffy long sleeves, juliet sleeves, grey shirt, double-breasted, buttons, black dress, frilled dress, pinafore dress, thigh strap, o-ring, red socks, brown footwear, knee boots, cross-laced footwear, lace-up boots, kneehighs",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "ヒシアケボノ",
-    "3": "hishi akebono (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "マヤノトップガン",
-    "3": "mayano top gun (umamusume), orange hair, two side up, kinky hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "マンハッタンカフェ",
-    "3": "umamusume, {{{{black}}}}long straight hair,{{{{black hair}}}},yellow eyes,black cloth,yellow necktie,very long hair between eyes,black coat,black pleated skirt,black collared shirt,{{luminows eyes}},flat chest",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ウマ娘",
-    "2": "メイショウドトウ",
-    "3": "meisho doto (umamusume)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "カードキャプターさくら",
-    "2": "大道寺 知世",
-    "3": "{{{{daidouji_tomoyo}}},cardcaptor sakura",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "カードキャプターさくら",
-    "2": "木之本桜",
-    "3": "zest_(lossol), cardcaptor_sakura, kero, kinomoto_sakura, , blush, bow, brown_hair, card, closed_mouth, gloves, green_eyes, holding, holding_card, holding_wand, magical_girl, open_mouth, pink_headwear, red_bow, smile, star_(symbol), wand, white_gloves, wings",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "カードキャプターさくら",
-    "2": "木之本桜（マジカルフォーム）",
-    "3": "{{{{kinomoto sakura}}}},cardcaptor sakura,magical girl,skirt,petticoat,hat",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "カードキャプターさくら",
-    "2": "李小狼",
-    "3": "{{{{xiaolang}}},cardcaptor sakura,1boy,shota",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ガールズ＆パンツァー",
-    "2": "カチューシャ",
-    "3": "katyusha_(girls_und_panzer),{girls und panzer},blonde hair, short hair, blue eyes,flat chest,little, ooarai school uniform,sleeves_past_wrists",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ガールズ＆パンツァー",
-    "2": "ダージリン",
-    "3": "darjeeling (girls und panzer), short hair, twin braids, bangs, blonde hair, blue eyes, {{red jacket}}, long sleeves, [[[epaulettes]]], {{black skirt}}, pleated skirt, miniskirt, black boots, medium breasts, {{thighhighs}}, potbelly, {{{{{masterpiece}}}}}, {{{{{highly detailed}}}}}, {{{{{Enhance}}}}}, [[[[[anime coloring]]]]], sitting on couch, indoors, [[[[[evil smile]]]]], closed mouse",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ガールズ＆パンツァー",
-    "2": "武部沙織",
-    "3": "takebe saori, girls und panzer,orange hair,blunt bangs, orange eyes, wavy hair,medium hair,zettai ryouiki,black legwear,ooarai school uniform, serafuku, green skirt, black neckerchief,tareme,solo,smile",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ガールズ＆パンツァー",
-    "2": "秋山優花里",
-    "3": "akiyama yukari,,solo,{girls und panzer},ooarai school uniform,green skirt, black neckerchief,brown eyes,tareme,brown hair,short hair,small breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ガールズ＆パンツァー",
-    "2": "西住しほ",
-    "3": "{{nishizumi shiho}},blunt bangs,dark brown hair,brown eyes,long hair,large breasts,half-closed eyes,annoyed,naked towel",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ガールズ＆パンツァー",
-    "2": "西住まほ",
-    "3": "{{nishizumi maho}},blunt bangs,brown eyes,short hair,small breasts, kuromorimine military uniform, half-closed eyes,hat",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ガールズ＆パンツァー",
-    "2": "西住みほ",
-    "3": "{{nishizumi miho}},ooarai school uniform,girls und panzer,[masterpiece]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ガールズ＆パンツァー",
-    "2": "角谷杏",
-    "3": "{kadotani anzu},{{girls und panzer}},ooarai school uniform,white uniform,[black ribbon],[green skirt],short twintails,red hair,[brown hair],[forehead],brown eyes, flat chest,twintails,hair ornament,black ornament,[collarbone],smile,,solo,[[masterpiece]]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "キボウノチカラ～オトナプリキュア‘23～",
-    "2": "夏木りん（大人）",
-    "3": "{{{natsuki rin}}},kibou no chikara ~otona precure '23~, adult",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "キボウノチカラ～オトナプリキュア‘23～",
-    "2": "夢原のぞみ（大人）",
-    "3": "{{{yumehara nozomi}}},kibou no chikara ~otona precure '23~, adult",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "キボウノチカラ～オトナプリキュア‘23～",
-    "2": "春日野うらら（大人）",
-    "3": "{{{kasugano urara}}},kibou no chikara ~otona precure '23~, adult",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "キボウノチカラ～オトナプリキュア‘23～",
-    "2": "水無月かれん（大人）",
-    "3": "{{{minazuki karen}}},kibou no chikara ~otona precure '23~, adult",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "キボウノチカラ～オトナプリキュア‘23～",
-    "2": "秋元こまち（大人）",
-    "3": "{{{akimoto komachi}}},kibou no chikara ~otona precure '23~, adult",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "キボウノチカラ～オトナプリキュア‘23～",
-    "2": "美々野くるみ（大人）",
-    "3": "{{{mimino kurumi}}},kibou no chikara ~otona precure '23~, adult",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "キラッとプリ☆チャン",
-    "2": "萌黄えも",
-    "3": "{{{moegi emo}}}, {{{{{{{{kiratto pri chan}}}}}}}}, yellow hair, green cheerleader, lightblue eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ギルティギア",
-    "2": "ディズィー",
-    "3": "{{{{dizzy (guilty gear)}}}},yellow ribbon, off shoulder, belt,white sleeves,open jacket, midriff, underboob, Cleavage, black jacket, cute,long jacket",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ギルティギア",
-    "2": "メイ",
-    "3": "{{{{may (guilty gear)}}}},[[[[[rem (re:zero)]]]]],,solo,loli,kawaii,white background,small breasts,bangs,black gloves,bike shorts,black shorts,boots,open mouth,fang,brown eyes,brown hair,cabbie hat,fingerless gloves,full body,pirate hat, smile,hood down,hoodie,leg up,long hair,looking at viewer,orange footwear,orange headwear,orange hoodie,shorts,skull and crossbones",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "グランブルーファンタジー",
-    "2": "ナルメア",
-    "3": "narmaya,granble fantasy",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ゲゲゲの鬼太郎",
-    "2": "猫娘",
-    "3": "gegege no kitarou, nekomusume",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "コードギアス",
-    "2": "C.C.",
-    "3": "{1girl, c.c., code_geass}, [[ame (uten cancel), yd (orange maru), muchi maro, shirabi, mery (yangmalgage)]], {{year 2023}}, highly detailed",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "コードギアス",
-    "2": "紅月カレン",
-    "3": "{1girl, kallen stadtfeld, code_geass}, [[ame (uten cancel), yd (orange maru), muchi maro, shirabi, mery (yangmalgage)]], {{year 2023}}, highly detailed,{{red suit}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "サクラ大戦",
-    "2": "アイリス",
-    "3": "{{{{iris (sakura taisen)}}}},blond hair,loli",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "サクラ大戦",
-    "2": "李紅蘭",
-    "3": "{{{{li kouran (sakura taisen)}}}},glasses",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "サクラ大戦3",
-    "2": "グリシーヌ・ブルーメール",
-    "3": "{{{{glycine bleumer (sakura taisen)}}}},blonde hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "サクラ大戦3",
-    "2": "コクリコ・タルティーヌ",
-    "3": "{{{{coquelicot (sakura_taisen)}}}},loli,dark skin,twin tail",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "サクラ大戦3",
-    "2": "ハナビ・キタオウジ",
-    "3": "{{{{hanabi kitaooji (sakura taisen)}}}},black hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "サノバウィッチ",
-    "2": "因幡めぐる",
-    "3": "{{oranged hair}}, chouchou, {{middle wavy hair}}, other side up, hair between eyes, red eyes, yellow scarf, {{pink letterman jacket}}, {serafuku}, sleeves past wrists, blue bowtie",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "シャニマス",
-    "2": "大崎甘奈",
-    "3": "{1girls, [[osaki]] {{amana}}, [[idolmaster shiny colors]] }, [[ame (uten cancel), yd (orange maru), muchi maro, shirabi, mery (yangmalgage)]], {{year 2023}}, highly detailed,red brown hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "シュタインズゲート",
-    "2": "牧瀬 紅莉栖",
-    "3": "{steins;gate},{makise kurisu},,small breasts,red long hair,white shirt tucked in,+black shorts+,short shorts,+red necktie+,pantyhose,+brown jacket+,{jacket on shoulders},+white belt+",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ジャヒー様はくじけない！",
-    "2": "ジャヒー（ロリ）",
-    "3": "{{jahy-sama_wa_kujikenai!}},{{jahy}},dark purple hair,flat chest,toddler,t-shirts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ジャヒー様はくじけない！",
-    "2": "ジャヒー（大人）（Tシャツ）",
-    "3": "{{jahy-sama_wa_kujikenai!}},{{jahy}},dark purple hair,middle breasts,tall girl,t-shirts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ジャヒー様はくじけない！",
-    "2": "ジャヒー（大人）（変身後の服）",
-    "3": "{{jahy-sama_wa_kujikenai!}},{{jahy}},dark purple hair,middle breasts,tall girl,bare shoulders,bare legs,shorts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "セーラームーン",
-    "2": "ちびうさ",
-    "3": "{{{super sailor chibi moon}}},{{{{{sailor moon}}}}},{{{loli,5 years old,short body,flat chest}}},parted bangs ,{{{short twintails}}}, pink hair,big pink eyes,red_ribbon,{{{white sailor suit,light pink sailor collar,mini skirt}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "セーラームーン",
-    "2": "セーラーちびムーン",
-    "3": "{{{{sailor_chibi_moon　(bishoujo_senshi_sailor_moon)}}}},loli",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "セーラームーン",
-    "2": "月野うさぎ",
-    "3": "{{{{tsukino usagi}}}}, [[[[sailor moon]]]], blonde hair, very long twintails, double buns, blue eyes, sailor school uniform, sailor collar, brooch, crescent earrings, red heart choker, hairpin, forehead crescent",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ゼロの使い魔",
-    "2": "ルイズ",
-    "3": "{{{louise francoise le blanc de la valliere}}}, {zero no tsukaima}, [[[loli]]], [[pink eyes]], [[pink hair]], hair between eyes, very long hair, long hair, wavy hair, small breasts, slender",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ソードアート・オンライン",
-    "2": "アスナ",
-    "3": "asuna_(sao), long hair, orange hair, orange eyes, floating hair, medium breasts, white legwear, red miniskirt, holding long sword handle",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ソードアート・オンライン",
-    "2": "シノン(GGO)",
-    "3": "{{{{{{sinon}}}}}},{{{{{{{{{{{{{Wear Square hair ornaments(black) {{{{{{{{{{{next to}}}}}}}}}}} both eyes.}}}}}}}}}}}}},{{{{{{{{{{{{black suqare ornaments.}}}}}}}}}}}},{{{{{{{{{{{{{{White scarf}}}}}}}}}}}}}} with {{{{{{{line pattern}}}}}}}., {{{{{{{{{{{{{green eye}}}}}}}}}}}}},short hair,{{{{{{{{{{green cropped jacket}}}}}}}}}}} , {{{{{aqua short hair}}}}},cropped jacket , open jacket,{{{{ {{{{{White}}}}} and black innerwear}}}},arm under breasts , clothing cutout ,black shorts,fingerless gloves , leptosomatic habit ,one person, long sleeves,tiny breasts,small breasts,slender legs,{{skinny}},{{{{{sword art online}}}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ソードアート・オンライン",
-    "2": "シリカ",
-    "3": "style of sword_art_online,silica,loli,light brown hair,red eyes,{short twintails},red Thin ribbon,offical art,,fantasy clothes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ソードアート・オンライン",
-    "2": "ユイ",
-    "3": "{{{{yui_(sao)}}}},hime_cut,black_hair,long_hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ソードアート・オンライン",
-    "2": "ユウキ",
-    "3": "yuuki_\\(sao\\), sword art online, purple hair, red hairband, ahoge, purple armor, purple detached_sleeves, long hair, bare shoulder",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ソードアート・オンライン",
-    "2": "朝田詩乃",
-    "3": "asada_shino",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ソードアート・オンライン",
-    "2": "朝田詩乃",
-    "3": "sword art online, {{{{{asada_shino, }}}}}, , {{black hair}}, brown eyes, glasses, short hair with long locks, school uniform, black scarf, [sinon]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ソードアート・オンライン",
-    "2": "桐ケ谷直葉",
-    "3": "kirigaya suguha, sword art online, black hair, school uniform,gray collared_shirt, navy blue skirt, dark green eyes, yellow-green neck ribbon, large breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ダンガンロンパ",
-    "2": "朝日奈葵",
-    "3": "asahina aoi, danganronpa: trigger happy havoc, danganronpa (series),blue eyes,brown hair,cleavage,dark-skinned female, {{dark skin}}, red jacket, open jacket, ponytail,grin",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ダンガンロンパ",
-    "2": "朝日奈葵(水着)",
-    "3": "asahina aoi, danganronpa: trigger happy havoc, danganronpa (series),blue eyes,brown hair,cleavage,dark-skinned female, {{dark skin}},blue competition swimsuit, ponytail,grin",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ダンガンロンパ",
-    "2": "赤松楓",
-    "3": "akamatsu_kaede, danganronpa (series),danganronpa v3: killing harmony, ahoge,blonde hair ,brown skirt, collared shirt,long hair,musical note hair ornament,pink eyes ,{{{{{pink vest}}}}},red necktie",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ダンガンロンパ",
-    "2": "霧切響子",
-    "3": "kirigiri_kyouko, small breasts, black gloves ,black jacket",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "チェンソーマン",
-    "2": "パワー",
-    "3": "Magical cock,mana light,girl,power (chainsaw man),straight red demon horns, blonde rong hair, red eyes,skin_fang,ring eyes,{survival blue jacket}, {black pants}, {white shirt},necktie, ,looking at viewer,{{{{chainsaw man }}}}, masterpiece,best quality,detailed CG unity 8k wallpaper,{{{{tie}}}}, {{{{ringed eyes}}}}, straight-on,{{Fujimoto Tatsuki}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "チェンソーマン",
-    "2": "マキマ",
-    "3": "red hier, [pink hair], side hair short, very thin side hair, fine hair, hair is weist length, one curl hair, long thin single braid, , [evil smil], {teasing smile}, {expressionless}, bewitching, white shirt, black pants, tie, shirt in pants, she is thin, tall",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "チェンソーマン",
-    "2": "東山コベニ",
-    "3": "[[chainsaw man]], black hair, black eyes, short hair, low ponytail, {{{single sidelock}}}, {troubled eyebrows}, suit, red hairclip, black necktie, collared shirt, pants, small breasts, white shirt, cowboy shot, looking at viewer, open mouth, anguish, [sweat]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "デリシャスパーティ♡プリキュア",
-    "2": "キュアスパイシー",
-    "3": "cure spicy, fuwa kokone, delicious party precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "デリシャスパーティ♡プリキュア",
-    "2": "キュアフィナーレ",
-    "3": "cure finale, kasai amane, delicious party precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "デリシャスパーティ♡プリキュア",
-    "2": "キュアプレシャス",
-    "3": "cure precious, nagomi yui,delicious party precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "デリシャスパーティ♡プリキュア",
-    "2": "キュアヤムヤム",
-    "3": "cure yum-yum, hanamichi ran, delicious party precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "デリシャスパーティ♡プリキュア",
-    "2": "和実ゆい",
-    "3": "nagomi yui (precure),delicious party precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "デリシャスパーティ♡プリキュア",
-    "2": "芙羽ここね",
-    "3": "fuwa kokone (precure),delicious party precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "デリシャスパーティ♡プリキュア",
-    "2": "菓彩あまね",
-    "3": "kasai amane (precure),delicious party precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "デリシャスパーティ♡プリキュア",
-    "2": "華満らん",
-    "3": "hanamichi ran (precure),delicious party precure",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "トゥハート",
-    "2": "セリオ",
-    "3": "{{{{serio (to heart)}}}, large breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "トゥハート",
-    "2": "マルチ",
-    "3": "{{{{multi (to heart)}}},hmx-12,green hair,short hair,loli,flat chest,school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "トゥハート",
-    "2": "保科智子",
-    "3": "{{{{hoshina tomoko (to heart)}}}, large breasts, grasses",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "トゥハート",
-    "2": "宮内レミィ",
-    "3": "{{{{miyauchi lemmy (to heart)}}},long hair,large breasts,school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "トゥハート",
-    "2": "来栖川綾香",
-    "3": "{{{{kurusugawa ayaka (to heart)}}},long hair,large breasts,school uniform,tsurime",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "トゥハート",
-    "2": "来栖川芹香",
-    "3": "{{{{kurusugawa serika (to heart)}}},long hair,large breasts,school uniform,magic hat,tareme,ear",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "トゥハート",
-    "2": "松原葵",
-    "3": "{{{{matsubara aoi (to heart)}}},short hair,small breasts,school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "トゥハート",
-    "2": "神岸あかり",
-    "3": "{{{{kamigishi akari (to heart)}}},medium hair, small breasts,school uniform,tareme",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "トゥハート2",
-    "2": "柚原このみ",
-    "3": "{{{{yuzuhara_konomi (to_heart_(series))}}}},black hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ナースウィッチ小麦ちゃんマジカルて",
-    "2": "中原小麦",
-    "3": "{{{{nakahara komugi (nurse witch komugi-chanI)}}}},loli",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ナースウィッチ小麦ちゃんマジカルて",
-    "2": "国分寺こより",
-    "3": "{{{{kokubunji koyori (nurse witch komugi-chanI)}}}},loli",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ノーゲーム・ノーライフ",
-    "2": "ジブリール",
-    "3": "{{{{{no game no life,jibril (no game no life)}}}}},white china dress,elbow gloves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ノーゲーム・ノーライフ",
-    "2": "白",
-    "3": "{{{{{no game no life,shiro (no game no life),white hair}}}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ハヤテのごとく！",
-    "2": "三千院ナギ",
-    "3": "{hayate no gotoku!}, {{sanzen'in nagi}},gold hair,green eyes,twintails,hoodie,t-shirt, hotpants, open clothes, palace",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ハヤテのごとく！",
-    "2": "桂ヒナギク",
-    "3": "{{{{katsura hinagiku}}}}, hayate no gotoku!, pink long hair, diagonal bangs, yellow eyes, tareme, small breasts, school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ブルーアーカイブ",
-    "2": "ユウカ",
-    "3": "yuuka_(blue_archive) , purple hair, two side up",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ブルーアーカイブ",
-    "2": "室笠アカネ",
-    "3": "{{{{akane_(blue_archive)}}}},glasses",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "プリコネ",
-    "2": "キャル",
-    "3": "karyl_(princess_connect!), cat ear, black hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "プリコネ",
-    "2": "コッコロ",
-    "3": "kokkoro_(princess_connect!), silver hair, red purple eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "プリコネ",
-    "2": "ペコリーヌ",
-    "3": "pecorine_(princess_connect!), tiara",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "プリコネ",
-    "2": "ミソラ（打率低い）",
-    "3": "misora_(princess connect!), purple hair, hair bow, gloves, hairclip,blue eyes, medium hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "プリコネ",
-    "2": "ユイ（打率低い）",
-    "3": "yui_(princess_connect!), pink hair, short hair, hair band, blue eyes, large breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "エリカ",
-    "3": "{{{{{erika pokemon}}}}},bangs,black hair,short hair,bob cut,straight hair,slender,midium breasts,{{{yellow kimono}}},yellow upper body,{{{red hairband}}},not wide hairband,red hakama,long sleeves,wide sleeves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "オカルトマニア(XY)",
-    "3": "hex maniac (pokemon),official art",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "オカルトマニア(XY)",
-    "3": "{hex maniac (pokemon),official art},ahoge,{{@ @}},dark purple eyes,hair between eyes,large breasts,black dress,purple hairband,very long hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "カスミ",
-    "3": "{{{misty (pokemon)}}}, masterpiece, denim shorts, short hair, orange hair, yellow shirt, red suspenders, green eyes, side pony, navel baring,small chest,little girl",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "サイトウ",
-    "3": "bea_(pokemon),dark-skinned female,black hairband, blonde hair,print shirt ,print shorts ,bodysuit under clothes,bare arms, short hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "サーナイト",
-    "3": "{{{{gardevoir}}}}, [[[[pokemon]]]], green arms, white dress",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "シロナ",
-    "3": "{{cynthia (pokemon)}} ,very long hair,{blonde hair},long hair,hair ornament,hair over one eye,slender,gray eyes,midium breasts,20 years old",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "ソニア",
-    "3": "{{{{sonia (pokemon)}}}},heart hair ornament, eyelashes, side ponytail, wavy hair, orange hair, green eyes, sparkling eyes, eyewear on head",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "トウコ",
-    "3": "{{{{hilda (pokemon)}}}}, dark brown hair, bow ponytail, pokemon cap, aquablue eyes, standing",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "ヒカリ",
-    "3": "{{{{dawn}}}} [[(pokemon)]], white pokemon knit cap, dark blue hair, medium hair, pink scarf, blue eyes, {{tareme}}, black tops, bare shoulders, pink miniskir",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "マオ",
-    "3": "{mallow (pokemon)},green eyes,dark skin,green hair,green headband,long hair,twintails,hair ornament,large breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "マリィ",
-    "3": "Marnie_(pokemon),medium breasts,black jacket off shoulder,pink chemise,silver choker",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "メイ",
-    "3": "{{{{rosa (pokemon)}}}}, dark brown hair, long twintails with sidelocks, double bun topknot, sun visor, aquablue eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "ユウリ",
-    "3": "{gloria (pokemon)},brown eyes,short hair,brown hair,bob cut,small breasts,grey cardigan,{red skirt},green headwear,cable knit",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "ルザミーネ",
-    "3": "{lusamine_(pokemon)},blonde hair, green eyes,fullbody,[highly detailed],[masterpiece]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ポケモン",
-    "2": "ルリナ",
-    "3": "nessa (pokemon),dark skinned female",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "マリオブラザーズ",
-    "2": "マリオ",
-    "3": "mario, male",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "マリオブラザーズ",
-    "2": "ルイージ",
-    "3": "luigi, {{male}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "メイドインアビス",
-    "2": "ナナチ",
-    "3": "made in abyss,{{{nanachi}}},dark skin,loli",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "メイドインアビス",
-    "2": "ボンドルド",
-    "3": "made in abyss,{{{bondrewd}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "メイドインアビス",
-    "2": "マルルク",
-    "3": "{{{{maruruk (made_in_abyss)}}}},shota",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "メイドインアビス",
-    "2": "リコ",
-    "3": "made in abyss,{{{rico}}},blond hair,glasses, ponytail,loli",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "メイドインアビス",
-    "2": "レグ",
-    "3": "made in abyss,{{{regu}}},dark skin,boy",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！",
-    "2": "南ことり",
-    "3": "{{{love live! school idol project}}}, {{{love live!}}}, {{{minami kotori}}}, yellow eyes, light brown hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！",
-    "2": "園田海未",
-    "3": "{{{love live! school idol project}}}, {{{love live!}}}, {{{sonoda umi}}}, yellow eyes, small breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！",
-    "2": "小泉花陽",
-    "3": "{{{love live! school idol project}}}, {{{love live!}}}, {{{koizumi hanayo}}}, purple eyes, brown hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！",
-    "2": "星空凛",
-    "3": "{{{love live! school idol project}}}, {{{love live!}}}, {{{hoshizora rin}}}, yellow eyes, small breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！",
-    "2": "東條希",
-    "3": "{{{love live! school idol project}}}, {{{love live!}}}, {{{toujou nozomi}}}, purple hair, green eyes, large breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！",
-    "2": "矢澤にこ",
-    "3": "{{{love live! school idol project}}}, {{{love live!}}}, {{{yazawa nico}}}, red eyes, small breasts, short twintails",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！",
-    "2": "絢瀬絵里",
-    "3": "{{{love live! school idol project}}}, {{{love live!}}}, {{{{ayase eli}}}}, blonde hair, blue eyes, ponytail",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！",
-    "2": "西木野真姫",
-    "3": "{{{love live! school idol project}}}, {{{love live!}}}, {{{nishikino maki}}}, purple eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！",
-    "2": "高坂穂乃果",
-    "3": "{{{love live! school idol project}}},{{{love live!}}}, {{{kousaka honoka}}},blue eyes,side ponytail",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！",
-    "2": "高坂雪穂",
-    "3": "{love live!}, brown hair, red hair, aqua eyes, {{{short hair}}}, {{{hime cut}}}, blunt_bangs, small breasts, white shirt, short shorts, red-framed_eyewear, glasses",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "国木田花丸",
-    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{kunikida hanamaru}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "小原鞠莉",
-    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{ohara mari}}}, yellow eyes, large breasts,crown braid",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "松浦果南",
-    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{matsuura kanan}}}, purple eyes,blue hair,ponytail",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "桜内梨子",
-    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{sakurauchi riko}}}, yellow eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "津島善子",
-    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{tsushima yoshiko}}}, single side bun,pink eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "浦女冬服",
-    "3": "Lovelive ,grey school uniform, grey sailor collar, gray skirt, beige shirt, green tie, long sleeve",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "浦女夏服",
-    "3": "love live! sunshine!!, gray skirt, white shirt, {yellow} sailor scarf, gray sailor collar, [[[[[[[[[[[sleeve]]]]]]]]]],streching,arms in front breast",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "浦女夏服ノースリーブ",
-    "3": "love live! sunshine!!, gray skirt, white shirt, yellow sailor scarf, gray sailor collar, sleeveless",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "渡辺曜",
-    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{watanabe you}}},blue eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "高海千歌",
-    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{takami chika}}},[[[ahoge]]], {side braid}, red eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "鹿角理亞",
-    "3": "takami chika, {short twintails}, two side up, {{{dark purple}}} hair, red eyes, {{{{{{tsurime}}}}}}, medium hair, [[short hair]], [[[[[[forehead]]]]]], white hair ribbon, black serafuku, white shirt, small breasts, ear, [[[angry]]], , solo, white background, love live!",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "鹿角聖良",
-    "3": "takami chika, side ponytail, {{{dark purple}}} hair, [black hair], {{sidelocks}}, short hair, red eyes, [[[[forehead]]]], hair ribbon, [[[smirk]]], serafuku, white shirt, {{lady}}, , solo, white background, love live!",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "黒澤ダイヤ",
-    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{kurosawa dia}}},green eyes,hime cut,black hair,long hair,tsurime",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！サンシャイン！！",
-    "2": "黒澤ルビィ",
-    "3": "{{{love live!}}}, {{{love live! sunshine!!}}}, {{{kurosawa ruby}}}, green eyes,red hair, two side up,flat chest",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！スーパースター!!",
-    "2": "ウィーン・マルガレーテ",
-    "3": "[[sketch]] , {{{takami chika}}}, love live! sunshine!!, small breasts, {{{{blunt bangs}}}}, crown braid, {{{wavy hair}}}, {{{{long hair}}}}, {{{light purple hair}}}, aqua eyes, {{{tsurime}}}, [[angry]]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！スーパースター!!",
-    "2": "嵐 千砂都",
-    "3": "arashi chisato, love live! superstar!!, white hair, {{blunt bangs}}, {{double bun}}, {{pigtails}}, {{{{{right sideburn}}}}}, {{forehead}}, red eyes, big eyes, {{tareme}}, flat chest",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！スーパースター!!",
-    "2": "平安名 すみれ",
-    "3": "{{masterpiece}}, {{{best quality}}}, {{ultra-detailed}}, {{illustration}},masterpiece, best quality,heanna sumire, {{love live!}}, {{tareme}}, blonde hair, bangs, blunt bangs, long hair, {{{hime cut}}}, green eyes, medium breasts,white kimono,red hakama,shrine, cowboy shot, red hard plastic headband",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！スーパースター!!",
-    "2": "桜小路 きな子",
-    "3": "{{{kurosawar ruby}}}, {love live! sunshine!!}, medium breasts, {{{15 years old, young teen}}}, {{{french braid}}}, {{{{{blunt bangs}}}}}, forehead, {{{low twintails}}}, long hair, long hair, brown hair, mint eyes, tareme, big eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！スーパースター!!",
-    "2": "若菜 四季",
-    "3": "{{{love live!}}},red eyes,short hair,{{{LightCyan hair}}},crossed bangs,medium breasts,expressionless,black playboy_bunny leotard fake_animal_ears,cowboy shot,cameltoe",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！スーパースター!!",
-    "2": "葉月 恋",
-    "3": "love live!,love live! sunshine!!,{{{hazuki ren}}},{{{tareme}}},yellow eyes,black hair,ponytail,white ribbon,{{medium breasts}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！スーパースター!!",
-    "2": "鬼塚 夏美",
-    "3": "tsushima yoshiko, parted bangs, {{forehead}}, bangs, gradation hair, {{{{twin gradation braids}}}}, blonde hair, pink hair, medium hair, red eyes, {{{tareme}}}, {{{white flower hair ornament}}}, {{{{{grey}} pinafore dress}}}, {white collared shirt}, red neck ribbon, short sleeve, [[[[thick eyebrows]]]], , solo, white background, love live!",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "エマ・ヴェルデ",
-    "3": "{{{love live! nijigasaki high school idol club}}}, {{{emma verde}}}, green eyes,,Medium Length Braid hair,pigtails hair,twin tail,dark red hair,breasts,cow pattern bikini,cow's ear,whole body",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "ショウ・ランジュ",
-    "3": "{love live! nijigasaki high school idol club}, zhong lanzhu, pink hair, [light brown hair], long hair, parted bangs, [[[forehead]]], [ahoge], {{{{{{{{{tsurime}}}}}}}}}, blue eyes, black shirt, grey skirt, checkered skirt, red neck ribbon, front-opened red cardigan, , solo, {{white background}}, [[[[[[[two side up]]]]]]], hair rings",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "三船 栞子",
-    "3": "love live!, love live! nijigasaki high school idol club, green hair, {{black hair}},medium breasts, orange eyes, red eyes,{{{turime}}}, bob hair, medium hair, fang",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "上原歩夢",
-    "3": "lovelive, amber eyes, swept bangs, red plum hair, blunt bangs,medium hair, right side cone hair bun,left half up hair, hairclips, summer uniform, short sleeves,blue shirt,pink neckribbon, yellow sweater vest, collared shirt, pleated skirt, Indigo plaid skirt, standing posture",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "中須かすみ",
-    "3": "grey hair, [[light brown hair]], medium hair, [[short hair]], swept bangs, bob cut, [[[[[[parted bangs]]]]]], [[[[[[blunt bangs]]]]]], [[[bangs]]], sidelocks, red eyes, {?? hair ornament}, white shirt, [[[[blue shirt]]]], short sleeve, knitted vest, white vest, [[beige vest]], yellow neck ribbon, [[[navy]]] skirt, checkered skirt, small breasts, , solo, white background, love live",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "優木せつ菜",
-    "3": "{one side up}, [[ump45 (girls' frontline)]], yuuki setsuna, {{love live! nijigasaki high school idol club}}, {{{{black hair}}}}, long hair, straight hair, grey eyes, white shirt, , solo, white background, [[small breasts]]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "天王寺璃奈",
-    "3": "{{love live!}} , pink hair, disheveled hair, unkempt hair, blunt bangs, ahoge, yellow eyes, medium long hair, expressionless, blue hoodie, sleeves past wrists, sleeves past fingers",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "宮下愛",
-    "3": "{{{miyashita ai}}}, high ponytail , short ponytail, sidelocks, bangs , medium hair,blonde hair , orange eyes, pleated skirt, collared_shirt, clothes around waist,sweater around waist, breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "朝香果林",
-    "3": "love live!, love live! sunshine!!, love live! nijigasaki high school idol club, blue hair, black hair, medium breasts, breasts, blue eyes, wolf cut hair, turime, evil eyes, sexy, blunt bangs",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "桜坂しずく",
-    "3": "{{{{{ousaka shizuku}}}}},love live! nijigasaki high school idol club, ,blue eyes,{brown hair},long hair,ponytail,hair between eyes,red bow,bow,[[small breasts]], medium breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "近江 遥",
-    "3": "{{love live!}}, love live! nijigasaki high school idol club, blue eyes, tareme, [brown hair], {{red hair}}, {small breasts}, {{}}, solo, [[[twintails]]], big eyes, short hair, , ~, open mouth, white nurse uniform, cowboy shot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "近江彼方",
-    "3": "{{{love live! school idol project}}} ,{{{love live!}}} ,{{{konoe kanata}}},purple eyes,orange brown hair,medium long hair, wavy hair,splash curl hair, {{school uniform}} ,{{dress shirts}}､{{light yellow cardigan}},{{white check skirt}},classroom",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
-    "2": "高咲侑",
-    "3": "love live! nijigasaki high school idol club, takasaki yuu, {{black hair}}, green hair, gradient hair, multicolored hair, {{two-tone hair}}, twintails, short hair, short twintails, bangs, green eyes, {small breasts}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "リコリスリコイル",
-    "2": "錦木千束",
-    "3": "nishikigi chisato ,lycoris recoil,blonde hair,medium bob,red eyes,belt,red bowtie,breasts,hair ribbon,red ribbon ,pleated_skirt,red skirt, shiny hair,red shirt,smile",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "リトルバスターズ!",
-    "2": "能美クドリャフカ",
-    "3": "{noumi kudryavka}, {little busters!}, long hair,grey hair, blue eyes,white beret,white cape,blouse, white thighhighs, pleated skirt,smile,loli",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ヴァンパイア",
-    "2": "モリガン",
-    "3": "Morrigan Aensland (Vampire),capcom, large breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ヴァンパイア",
-    "2": "リリス",
-    "3": "Lilith (Vampire),capcom, small breasts,short hair,light purple hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "ヴァンパイア(格ゲー)",
-    "2": "レイレイ",
-    "3": "{{{{lei_lei}}}},capcom",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "三國無双",
-    "2": "シン甄姫",
-    "3": "{{zhen_ji_(shin_sangoku_musou) }},mole_under_eye,eyeshadow,make up, high_ponytail,mature female,black hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "中二病でも恋がしたい！",
-    "2": "小鳥遊六花",
-    "3": "{{{{takanashi rikka}}}}, chuunibyou demo koi ga shitai, loli, deep purple short hair, small breasts, blue eyes, white eyepatch covers one eye, tiny sidetail tied with yellow bow, {{{{tareme}}}}, ahoge, school uniform, miniskirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "俺の妹がこんなに可愛いわけがない",
-    "2": "五更瑠璃",
-    "3": "gokou ruri, Gothic & Lolita, ore no imouto ga konna ni kawaii wake ga nai, best_quality,ultra-detailed,illustration,perfect_detailed,shiny",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "俺の妹がこんなに可愛いわけがない",
-    "2": "新垣あやせ",
-    "3": "{{{{{aragaki_ayase}}}}},ore_no_imouto_ga_konna_ni_kawaii_wake_ga_nai,Navy blue long straight hair,Navy blue eyes,16 years old,serafuku",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "俺の妹がこんなに可愛いわけがない",
-    "2": "高坂桐乃",
-    "3": "masterpiece,best quality,looking up, ore no imouto ga konna ni kawaii wake ga nai,, kousaka_kirino ,crossed arms,orange hair|brown hair,long hair,floating hair,shiny hair,blue eyes|aqua eyes,(pink hairclip),badmood,white shirt,(gray sailor collar|blue sailor collar),red ascot",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "クレー",
-    "3": "{{klee (genshin impact) }},blond hair, low twintail, red eyes, cabbie hat, white shorts, long sleeves, pointy ears, red dress, backpack, red headwear, {{brown gloves}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "ニィロウ素体",
-    "3": "{1girl, nilou (genshin impact)}, [[ame (uten cancel), yd (orange maru), muchi maro, shirabi, mery (yangmalgage)]], {{year 2023}}, highly detailed, green eyes, vermilion long hair, low twintails, navel,parted bangs,red hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "ノエル",
-    "3": "noelle (genshin impact) ,Silver short hair,Green eyes,red rose,white cloth,white armor dress,kawaii and cute,red skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "バーバラ",
-    "3": "barbara (genshin impact) ,blonde short hair,twintails,wavy hair,white dress,ribbon,tube top,{{frills}},blue eyes,{{loli}},small breasts,cocktail hat,frill choker,chest riboon,long sleeves,smile",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "バーバラ素体",
-    "3": "{1girl, barbara_(genshin_impact)}, [[ame (uten cancel), yd (orange maru), muchi maro, shirabi, mery (yangmalgage)]], {{year 2023}}, highly detailed,blonde short hair,twintails,wavy hair, ribbon, blue eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "モナ",
-    "3": "genshin, mona (genshin impact),black hair,green eyes,light twin tail,black tights,{small breasts},{short girl},blue clothes,witch hat,straight bangs",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "八重巫女",
-    "3": "yae miko, purple eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "凝光(顔以外不安定)",
-    "3": "ningguang (genshin impact), white hair,white and yellow cloth,red eyes,{{black long glove}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "刻晴",
-    "3": "light purple hair,cone hair bun,keqing (genshin impact),brown tights,light purple eyes,deep purple gloves,twintails",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "神里綾華",
-    "3": "{kamisato ayaka}},genshin impact,blue eyes,ponytail,white hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "胡桃",
-    "3": "{{{{hu tao genshin impact}}}},an extremely delicate and beautiful girl,twintails,{black hair},red eyes eyes,shorts,black jacket,leather shoes,white short socks,flower shaped pupils",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "蛍(原神)",
-    "3": "lumine (genshin impact),armpits,blonde hair ,brown eyes,hair flower,long sleeves,white dress,short hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "原神",
-    "2": "雷電将軍",
-    "3": "raiden shogun,genshin impact, purple eyes, purple hair, bangs, long hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "咲",
-    "2": "天江 衣",
-    "3": "{{{{amae koromo}}}} ,  , long hair, {{{red rabbit ears }}}, blonde hair , blue eyes , bow , brown footwear ,, female child , frills,over-kneehighs,red bow,white thighhighs 1,{{red hairband }}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "咲",
-    "2": "新子 憧",
-    "3": "{{{saki achiga-hen}}}, {{{{{atarashi ako}}}}}, school uniform, {{{pink blazer}}}, crimson skirt, black socks, two side up, light brown hair, red eyes, small breasts. slender, smile, evening, classroom, money, holding money",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "咲",
-    "2": "新子憧",
-    "3": "{1girl,atarashi ako, saki}, [[ame (uten cancel), yd (orange maru), muchi maro, shirabi, mery (yangmalgage)]], {{year 2023}}, highly detailed",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "怪談",
-    "2": "八尺様風",
-    "3": "girl, tall, white dress, white hat, horror, dark, pale,medium breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "新世紀エヴァンゲリオン",
-    "2": "渚カヲル",
-    "3": "{{{{nagisa_kaworu}}}},boy",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "新世紀エヴァンゲリオン",
-    "2": "碇シンジ",
-    "3": "{{{{ikari_shinji}}}},boy",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "新世紀エヴァンゲリオン",
-    "2": "葛城ミサト",
-    "3": "katsuragi misato, dark purple hair, brown eyes, long hair, large breasts, neon genesis evangelion",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "日常",
-    "2": "はかせ",
-    "3": "nichijou, loli, light orange hair , long hair, white labcoat, 6 years old, red tie,white shirt, tatami, shouji, window_shade, anime, pretty black cat, smile, infant",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "星のカービィ",
-    "2": "カービィ",
-    "3": "Kirby's Dream Land,Kirby",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "星のカービィ",
-    "2": "デデデ大王",
-    "3": "king dedede,fur trim red royal robe ,blue skin,fat",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "月姫",
-    "2": "アルクェイド・ブリュンスタッド",
-    "3": "{{{{arcueid brunestud}}}},bangs,hair between eyes,white ribbed sweater, skirt,pantyhose,antenna hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "きもけーね",
-    "3": "{{{{{ex-keine}}}}},[[kamishirasawa keine]],fusion of [white hair] & {green hair},straight hair,horns,horn ornament,green dress",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "だいちゃん",
-    "3": "daiyousei, side ponytail, green hair, blue dress, white shirt, yellow ribbon, yellow ascot, fairy wings",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "ちやり",
-    "3": "{{{{tenkajin chiyari (touhou)}}}},tail,purple hair,{{{long hair}}},single horns",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "ちやり服なし",
-    "3": "tenkajin chiyari,single horn,purple horn,long hair,purple hair,pointy ears,red eyes,dragon tail,purple tail",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "やちえ",
-    "3": "touhou,kicchou yachie",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "キスメ",
-    "3": "{{{{{{kisume}}}}}},green hair,green eyes,{{white kimono,white clothes}},torn clothes, hair bobbles,two side up, girl in bucket",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "チルノ",
-    "3": "{{{cirno}}},light blue hair,blue ribbon,blue clothes,red ascot,{{light blue icy wing}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "ナズーリン",
-    "3": "nazrin,capelet",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "フランドール・スカーレット",
-    "3": "flandre scarlet, zun hat",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "ミスティア・ローレライ",
-    "3": "mystia lorelei,frilled skirt,frilled sleeves,long sleeves,hat",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "メディスン・メランコリー",
-    "3": "{{{{Medicine_Melancholy_(touhou)}}}}, blonde short hair, blue eyes, black dress, {{{red long puffy skirt}}}, {{red ribbon on head}}, {{frills}}, puffy short sleeves, {{petit}}, red shoesl, {statue}, {{doll}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "リグル・ナイトバグ",
-    "3": "{{wriggle nightbug}},antennae, green eyes,green hair,bob cut,white shirt,black and red cape,two sided cape, black shorts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "ルーミア",
-    "3": "{loli},rumia,red eyes ,blonde hair,short hair, black vest,collared shirt,red ascot,black skirt,red hair ribbon",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "レミリア・スカーレット",
-    "3": "remilia scarlet, pink cap,dress",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "上白沢慧音",
-    "3": "kamishirasawa keine, blue headwear",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "八坂神奈子",
-    "3": "yasaka kanako,purple hair,red eye,shimenawa,white sleeves,red clothes,hair ornament",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "八意永琳",
-    "3": "{{{{yagokoro eirin}}}, silver hair,fusion of red clothes & blue clothes, nurse cap",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "八雲藍",
-    "3": "yakumo ran, tabard, fox girl, cap",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "因幡てゐ",
-    "3": "inaba tewi ,rabbit girl,black hair,short hair,pink clothes,long sleeves,carrot necklace",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "埴安神袿姫",
-    "3": "haniyasushin keiki,head scarf, blue hair,long hair,red eyes,jewelry,magatama necklace,long puffy sleeves,  arm ribbon,single strap, yellow dress,green apron, pocket",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "多々良小傘",
-    "3": "tatara kogasa,{{alternate eye color}},red eyes and blue eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "大人ラルバ",
-    "3": "touhou,eternity larva,butterfly wings,forest,{{{{long hair}}}},huge breasts,gleaming skin,thick thighs,half-closed eyes,house wife,undressing,30 years old",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "天火人ちやり",
-    "3": "tenkajin chiyari,single horn,purple horn, long hair,purple hair, pointy ears, red eyes,green shirt,short sleeves, green shorts,plaid shorts,dragon tail,purple tail",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "宮出口瑞霊",
-    "3": "miyadeguchi mizuchi,blue hair,long hair,hair between eyes,blue eyes,sanpaku, striped shirt,striped clothes,white skirt,striped skirt, skull hair ornament, long sleeves, striped skirt, ponytail, sidelocks, hair tube",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "宮出口瑞霊服なし",
-    "3": "miyadeguchi mizuchi,blue hair,long hair,hair between eyes,blue eyes,sanpaku,ponytail, sidelocks, hair tube,{{constricted pupils}},simple eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "封獣ぬえ",
-    "3": "houjuu nue, black clothes,wings",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "射命丸文",
-    "3": "{{shameimaru aya}}, black hair,short hair, pointy ears, white collared shirt,black skirt,{{black wing}}, fusion of cap & pom pom (clothes)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "小野塚小町",
-    "3": "{{{onozuka komachi}}}, red eyes,red hair,hair bobbles,blue & white sash,obi,blue skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "山城たかね",
-    "3": "yamashiro takane, green hair, hat, green eyes,,flat cap, medium hair,camouflage headwear, green dress, green skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "摩多羅隠岐奈",
-    "3": "matara okina, hat,long hair,blonde hair, yellow eyes, long sleeves,wide sleeves,detached sleeves, white shirt, tabard, green skirt,constellation print",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "日白残無",
-    "3": "nippaku zanmu,horns,yellow horns,green shirt, ribbon trim, wide sleeves,off shoulder, blue shorts, bare shoulders",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "村紗水蜜",
-    "3": "{{{{murasa minamitsu}}}}, fushion of black & green hair,short hair,messy hair,parted bangs,hair between eyes,green eyes,red neckerchief, white sailor dress, white sailor cap,pants",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "東風谷早苗",
-    "3": "{{kochiya sanae}}, frog hair ornament, sleeveless, detached sleeves, skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "橙（チェン）",
-    "3": "{{{{{chen}}}}},brown hair,cat girl,green cap,cat tail,two tails,red dress,red skirt,puffy sleeves,yellow neck ribbon, mandarin collar, white shirt, earrings",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "水橋パルスィ",
-    "3": "mizuhashi parsee, green eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "汎用残無エロ",
-    "3": "{{{nippaku zanmu (touhou)}}},black hair,long hair,yellow horns,green shirt, blue shorts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "河城にとり",
-    "3": "kawashiro nitori,hat,blue hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "火焔猫燐",
-    "3": "kaenbyou rin, cat girl,red hair,twin braids,cat ears,two tails,green clothes,green frilled skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "犬走椛",
-    "3": "{inubashiri momiji}, white hair, short hair, fusion of red {tokin} hat & pom pom (clothes), white animal ears, white shirt, midriff, fusion of bare shoulders & miko, {{{black skirt}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "秋穣子",
-    "3": "{{{{aki minoriko}}}},gold hair,yellow eyes,[wavy hair],short hair,{{red hat}},grape hat ornament,yellow shirt,red apron",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "秋静葉",
-    "3": "{{{{{{aki shizuha}}}}}},gold hair,yellow eyes,[wavy hair],leaf hair ornament,red shirt,red skirt, collared shirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "豫母都日狭美",
-    "3": "yomotsu hisami, purple dress,hair flower",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "豫母都日狭美服なし",
-    "3": "touhou,yomotsu hisami",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "鍵山雛",
-    "3": "{{{{{{kagiyama hina}}}}}},green hair,green eyes,red dress,long hair,long skirt,puffy short sleeves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "雲居一輪",
-    "3": "kumoi ichirin,unzan",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "雲居一輪",
-    "3": "{{{{{kumoi ichirin,unzan}}}}}, blue hair,middle hair,{{blown bangs}},blue eyes,blue hood,hoop,kesa,blue capelet,forehead,{{parted bangs}},white dress",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "風見幽香",
-    "3": "kazami yuuka,red plaid vest,red plaid skirt,yellow necktie",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "驪駒早鬼",
-    "3": "kurokoma saki,cowboy hat, horse tail, brown headwear, black wings, cowboy boots, cowboy western, feathered wings,bandana, brown skirt, blue shirt, plaid, short sleeves, scarf, bare shoulders, off-shoulder shirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "東方",
-    "2": "黒谷ヤマメ",
-    "3": "{{{{{{kurodani yamame}}}}}},gold hair,ponytail,short hair,hair bow,brown clothes,brown long skirt,{{{brown vest,black shirt}},black long sleeves",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "涼宮ハルヒの憂鬱",
-    "2": "朝倉涼子",
-    "3": "suzumiya haruhi no yuuutsu,{asakura ryouko}, half updo, blue hair, blue eyes, long hair,{tareme},eyebrows, parted bangs, kita high school uniform,blue sailor collar,serafuku , blue skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "涼宮ハルヒの憂鬱",
-    "2": "朝比奈みくる",
-    "3": "{{{{asahina mikuru}}}}, [[[[suzumiya haruhi no yuuutsu]]]], orange long hair sidelocks, swept bangs, tareme, big breasts, school uniform, blue sailor collar, own hands together, blue miniskirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "涼宮ハルヒの憂鬱",
-    "2": "長門有希",
-    "3": "masterpiece, beautiful detailed,{{{flat cheast}}}, {nagato_yuki} ,(expressionless:4),[jitome],[blank_stare],closed mouth,short cut ,blue gray hair, serafuku, {suzumiya haruhi no shoushitsu}, cardigan, sitting, school chair, reading book, black tights,look at away",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "灼眼のシャナ",
-    "2": "シャナ",
-    "3": "shana, shakugan no shana, red eyes, red hair,ahoge,loli",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "無職転生",
-    "2": "ロキシー",
-    "3": "roxy migurdia, teenage, {loli}, blue eyes, blue hair, twin braids, crossed bangs, black ribbon, small breasts, brown cloak, white jacket, black skirt, short skirt, witch hat, black headwear, sketch, holding staff, ice crystal",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "物語シリーズ",
-    "2": "忍野 扇",
-    "3": "{{{{oshino_ougi (monogatari_(series))}}}},short hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "物語シリーズ",
-    "2": "忍野忍",
-    "3": "{{{{oshino shinobu}}}}, [[bakemonogatari]], loli, child, long hair, yellow hair, yellow eyes, {{tareme}}, flat chest, smile, blush stickers, fang, white dress",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "犬夜叉",
-    "2": "かごめ",
-    "3": "kagome (inuyasha),school uniform",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "犬夜叉",
-    "2": "桔梗",
-    "3": "kikyou (inuyasha),miko",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "犬夜叉",
-    "2": "神楽",
-    "3": "kagura (inuyasha),white kimono,tsurime",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "z1 レーベレヒト・マース",
-    "3": "masterpiece,high quality,high detailed,{ z1 leberecht maass (kancolle)}, silver short hair, light blue eyes,small breasts,loli,dark blue clothes,long sleeve sailor micro dress,tight clothes,jet black Plain socks,dark blue beret",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "z3 マックス・シュルツ",
-    "3": "z3 max schultz (kancolle),dark red short hair,sidelocks,blunt bangs,yellow eyes,tsurime,small breasts,loli,dark blue clothes,long sleeve sailor micro dress,tight clothes,jet black Plain socks,navy blue,slender,bottomless,jet black Plain socks,dark blue beret,slender",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "ガングート",
-    "3": "{{{gangut (kancolle)}}}, long hair, hair between eyes, orange eyes, medium breasts, red dress shirts, short sleeves, {{{black skirt}}}, {{{tights}}}, hairpin, [[smirk]]",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "コンテ・ディ・カブール",
-    "3": "{{solo}}, kantai collection, kanmusu, a girl, {conte di cavour nuovo (kancolle)}, {{look 11-years-old}}, {{{short stature}}}, {{baby face}}, {{{oppai loli}}}, {{{disproportionate breasts}}}, {{gigantic breasts}}, {{silver hair}}, {{two side up}}, super long hair, asymmetrical bangs, {{dark silver eyes}}, googly eyes, {{white frilled sleeveless shirt}}, cleavage, {{light gray corset}}, {{white skirt}}, {{frilled white globe}}, {innocent smile_(open mouth)}, {{{beautiful detailed eyes}}}, {{anime}}, {{ultra-detailed}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "ヘレナ",
-    "3": "{a girl_have_({{helena (kancolle)}}, {{loli-faced}}, {{medium breasts}}, {{rust red hair}}, straight super-long hair, jagged blunt bangs, droopy eyes, {{{{white}}_long-sleeved blouse with_{{puffed-up sleeves}}}}, {{armored corset}}, {mini skirt with_{{side slit}}}, white tights, {{metal long boots}}, {{thin lips}}, Apply pale coloured lipstick, contented smile, open mouth)}, {{in navy base}}, {{game-cg}}, {{perfect detailed}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "ヲ級",
-    "3": "{{{{wo-class aircraft carrier}}}}, [[[[kantai collection]]]], gray hair, wavy long hair, pale skin, blue eyes, black cape, black gloves, medium breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "初春",
-    "3": "{{{masterpiece}}},{{{high quality}}},{{{high detailed}}},{{{ hatsuharu (kancolle)}}},{{ purple short sthick eyebrows}},{{{small breasts}}}, slender,{{loli}}, tsurime,{{{parted bangs}}}, hair pulled back,very long hair,{{ high ponytail}},{{{{{{hair up}}}}}}, {{purple hair}}, beautiful detailed hair, small breasts, zettai ryouiki, purple eyes, {{{white sailor micro dress}}}, {{jet black plain thighhighs}}, {{jet black plain footwear}}, {skindentation},{jet black long gloves} ,white Clothes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "北方棲姫",
-    "3": "{{northern ocean princess}}, loli, child, toddler, white hair, long messy hair, [[black horns]], white dress, white skin, ahoge, red eyes, tareme",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "叢雲",
-    "3": "murakumo (kancolle), silver hair, long hair, orange eye",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "呂500",
-    "3": "{{{{ro-500 (kancolle)}}}}, school swimsuit,,{{{{{{{dark_skin}}}}},small breasts,long hair,{{{sailor_suit}}},sakura hair ornament,school swimsuit tan,darkblue eyes, platinum blonde hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "夕雲",
-    "3": "large eyes, love live!, {{{single braid}}}, {{{very long braid}}}, , white background, {{nsfw}}, {{masterpiece}}, {{highly detailed}}, ahoge, green hair, green eyes, blunt bangs, large breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "天津風",
-    "3": "{amatsukaze (kancolle)},two side up",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "愛宕",
-    "3": "atago (kancolle), blonde hair, messy hair, blue eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "摩耶",
-    "3": "{{{maya_(kancolle)}}},brown hair,blue eyes, short hair, hair between eyes, x hair ornament, tsurime, sleeveless, beret,cleavage,green shirt,navel,pleated skirt, white skirt, kneehighs, black legwear",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "敷波",
-    "3": "{{{arashio (kancolle)}}}, {{brown hair}}, {{{ponytail}}}, parted bangs, high ponytail, short ponytail, yellow eyes, black ribbon, {{sharp eyes}}, {{slanted eyes}}, small breasts, {{love live!}}, {{{nipple}}}, detailed eye, {{{{{{side burns}}}}}}}, angry, love live!",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "望月",
-    "3": "hyper extreme detailed, high definition,masterpiece, best quality, Amazing,beautiful detailed eyes,finely detail,Depth of field,extremely detailed CG unity 8k wallpaper, masterpiece, full body, soro, {{{{{{mochizuki(kancolle), kancolle}}}}}}, {{{{yadokari, frizzy long hair}}}}, {{{brown long hair, blown long hair, tired long hair, messy long hair, floating long hair, flipped long hair, wavy long hair, sideburns, long locks}}}, {{sleepy eyes}}, brown eyes, tareme, {{anguish, trouble}}, {{under rim red square glasses}}, {{{white tie of neck, navel slip, zettai ryouiki}}}, child, small breasts, black serafuku, long sleeves, black schoolgirl uniform, black pleated skirt, thighhighs, hair over shoulder",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "朝潮",
-    "3": "asashio (kancolle), aqua blue eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "村雨",
-    "3": "murasame (kancolle), heterochromia, red eyes, yellow eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "武蔵",
-    "3": "musashi (kancolle), twintails, long hair, {{dark-skinned_female}}, {dark_skin}, silver hair,{glasses}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "浜風",
-    "3": "hamakaze (kancolle), silver hair,blue eyes, short hair,hair over one eye,tsurime, hairclip,serafuku,pantyhose,yellow neckwear,white gloves,gray skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "潮",
-    "3": "{ushio_(kancolle)},breasts,black_hair,serafuku,long_hair,sailor_collar,white_shirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "荒潮",
-    "3": "{{masterpiece}}, {{highly detailed}},white background, brown hair, side swept bangs, messy bangs, arashio (kancolle), small breasts, yellow eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "陽炎",
-    "3": "{kagerou (kancolle)}, {kagerou kai ni (kancolle)}, {{nsfw}}, {{masterpiece}}, {{highly detailed}}, medium breasts, white background, white ribbon, gray eyes, straight hair, {{{long side-locks hair}}}, long twintails, {{{orange hair}}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "雪風",
-    "3": "{{nsfw}}, {{masterpiece}}, {{highly detailed}}, {{yukikaze (kancolle)}}, {yukikaze kai ni (kancolle)}, {yellow eyes}, {brown hair}, short hair, bangs between eyes, shaggy hair, bob cut, white background, small breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "雷",
-    "3": "masterpiece,high quality,high detailed,ikazuchi (kancolle),strong smile,skin fang,loli, brown hair, flat chest, school uniform, miniskirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "霞",
-    "3": "{{nsfw}}, {{masterpiece}}, {highly detailed}, {{kasumi (kancolle)}}, {{blue gray hair}}, {side ponytail}, {{blunt bangs}}, yellow eyes, green ribbon, small breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "霧島",
-    "3": "{{{{kirishima (kancolle)}}}},black hair,short hair, bob cut, black eyes,{{tareme}},green frame glasses, {{large breasts}},red japanese miko clothes, black skirt, pantyhose",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "響",
-    "3": "{{{{hibiki (kancolle)}}}}, loli, child, long hair, silver hair, dark blue eyes, tsurime, expressionless, flat chest, school uniform, cowboy shot, beret",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "高雄",
-    "3": "takao (kancolle), short hair, red eyes",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "鳥海",
-    "3": "{{{{{{choukai (kancolle)}}}}}},black hair, long hair, straight hair,blunt bangs,{{{darkred eyes}}}, glasses, {{{{emeraldgreen jacket}}}},{{white skir}}, large breasts",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "鳳翔",
-    "3": "{houshou_(kancolle)}_,breasts,black_hair,pink_kimono,long_hair,hair_ribbon,ponytail",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "鹿島",
-    "3": "{kashima_(kancolle)},breasts,grey_hair,white_jacket,black_skirt,red_neckerchief,beret",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "艦隊これくしょん",
-    "2": "龍驤",
-    "3": "{ryuujou_(kancolle)},brown_hair,flat_chest,kariginu,black_skirt",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "苺ましまろ",
-    "2": "アナ・コッポラ",
-    "3": "{{{{ana_coppola}}}}, {{ichigo_mashimaro}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "苺ましまろ",
-    "2": "伊藤千佳",
-    "3": "{{{{sakuragi matsuri}}}}, {{ichigo_mashimaro}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "苺ましまろ",
-    "2": "松岡美羽",
-    "3": "{{{{matsuoka_miu}}}}, {{ichigo_mashimaro}}",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "苺ましまろ",
-    "2": "桜木茉莉",
-    "3": "{{{{sakuragi_matsuri}}}}, {{ichigo_mashimaro}},medium hair, forehead, asymmetrical bangs,glasses",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "魔法少女まどか☆マギカ",
-    "2": "アルティメットまどか",
-    "3": "mahou shoujo madoka magica,kaname madoka,{ultimate madoka},pink hair,yellow eyes , very long hair, long hair, white bows,white gloves,white dress",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "魔法少女まどか☆マギカ",
-    "2": "佐倉杏子",
-    "3": "mahou shoujo madoka magica,sakura kyouko,red hair,red eyes,magical girl, long hair, holding weapon",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "魔法少女まどか☆マギカ",
-    "2": "巴マミ",
-    "3": "mahou shoujo madoka magica,tomoe mami, blonde hair, yellow eyes,drill hair,short twintails,magical girl,corset,beret,magical musket",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "魔法少女まどか☆マギカ",
-    "2": "暁美ほむら",
-    "3": "mahou shoujo madoka magica,akemi homura,black hair,black eyes,magical girl, long hair",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "魔法少女まどか☆マギカ",
-    "2": "環いろは",
-    "3": "masterpiece animated painting,highest detail illustlation,a girl,(ideal ratio body propotions:1.1),(manga face:1.1),masterpiece, best quality, (tamaki iroha:1.1),magia record: mahou shoujo madoka magica gaiden ,pink hair,blunt bangs ,pink eyes,long hair,(side_braid:0.9),small breast,14 years old,low ponytail ,colored pencil style, black gloves , (white cloak:1.3),hood, (hood up:1.2),(bodystocking:1.3) ,(pink skirt:1.2), black footwear,belt ,black bodystocking,(show through:1.1)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "魔法少女まどか☆マギカ",
-    "2": "百江なぎさ",
-    "3": "{{{{momoe_nagisa (madoka_magica)}}}},loli",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "魔法少女まどか☆マギカ",
-    "2": "美樹さやか",
-    "3": "mahou shoujo madoka magica,miki sayaka,blue hair,blue eyes,magical girl,holding sword",
-    "4": ""
-  },
-  {
-    "0": "キャラクター再現",
-    "1": "魔法少女まどか☆マギカ",
-    "2": "鹿目まどか",
-    "3": "{{{{{kaname madoka}}}}}, {{mahou shoujo madoka magica}}",
-    "4": ""
-  },
-  {
     "0": "コスチューム",
     "1": "SF",
     "2": "格闘家",
@@ -60934,6 +57329,412 @@ let defaultMaster = {
     "1": "崩壊スターレイル",
     "2": "日曜",
     "3": "sunday (honkai: star rail)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "Fate",
+    "2": "清姫",
+    "3": "清姫 (fate)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "Fate",
+    "2": "清姫(水着)",
+    "3": "清姫(水着)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "Fate",
+    "2": "謎のヒロインXオルタ",
+    "3": "謎のヒロインxオルタ (fate)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "Fate",
+    "2": "謎のヒロインXオルタ",
+    "3": "謎のヒロインxオルタ (fate)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "Hololive",
+    "2": "すいちゃん",
+    "3": "すいちゃん (hololive)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "Hololive",
+    "2": "ちょこ先生",
+    "3": "ちょこ先生 (hololive)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "Hololive",
+    "2": "るーちゃん",
+    "3": "るーちゃん (hololive)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "Hololive",
+    "2": "トワ様",
+    "3": "トワ様 (hololive)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "Hololive",
+    "2": "フブちゃん",
+    "3": "フブちゃん (hololive)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "Hololive",
+    "2": "マリン船長",
+    "3": "マリン船長 (hololive)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "NARUTO",
+    "2": "サクラ",
+    "3": "サクラ (naruto)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "To LOVEる -とらぶる",
+    "2": "小手川唯\\",
+    "3": "小手川唯\\ (to_loveる_-とらぶる)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "こみっくパーティ",
+    "2": "高瀬瑞希",
+    "3": "高瀬瑞希 (こみっくパーティ)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "こみっくパーティ",
+    "2": "高瀬瑞希",
+    "3": "高瀬瑞希 (こみっくパーティ)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "とある科学の超電磁砲",
+    "2": "打ち止め",
+    "3": "打ち止め (とある科学の超電磁砲)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "とある科学の超電磁砲",
+    "2": "白井黒子",
+    "3": "白井黒子 (とある科学の超電磁砲)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "とある科学の超電磁砲",
+    "2": "食蜂操祈",
+    "3": "食蜂操祈 (とある科学の超電磁砲)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "らんま1/2",
+    "2": "早乙女らんま",
+    "3": "早乙女らんま (らんま1/2)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "わんだふるぷりきゅあ！",
+    "2": "犬飼こむぎ",
+    "3": "犬飼こむぎ (わんだふるぷりきゅあ)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "わんだふるぷりきゅあ！",
+    "2": "犬飼こむぎ（犬）",
+    "3": "犬飼こむぎ（犬） (わんだふるぷりきゅあ)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "わんだふるぷりきゅあ！",
+    "2": "猫屋敷ユキ（猫）",
+    "3": "猫屋敷ユキ（猫） (わんだふるぷりきゅあ)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "アイドルマスター",
+    "2": "三浦あずさ（ショートカット）",
+    "3": "三浦あずさ（ショートカット） (アイドルマスター)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "アイドルマスター",
+    "2": "三浦あずさ（ロングヘア）",
+    "3": "三浦あずさ（ロングヘア） (アイドルマスター)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "アイドルマスター",
+    "2": "秋月律子（旧）",
+    "3": "秋月律子（旧） (アイドルマスター)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "アイドルマスターシンデレラガールズ",
+    "2": "城ヶ崎美嘉（ツインテール）",
+    "3": "城ヶ崎美嘉（ツインテール） (アイドルマスターシンデレラガールズ)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "アイドルマスターシンデレラガールズ",
+    "2": "城ヶ崎美嘉（ポニーテール）",
+    "3": "城ヶ崎美嘉（ポニーテール） (アイドルマスターシンデレラガールズ)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "アトリエ",
+    "2": "ライザ",
+    "3": "ライザ (アトリエ)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "ウマ娘",
+    "2": "エアグル勝負服",
+    "3": "エアグル勝負服 (ウマ娘)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "カードキャプターさくら",
+    "2": "木之本桜（マジカルフォーム）",
+    "3": "木之本桜（マジカルフォーム） (カードキャプターさくら)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "ジャヒー様はくじけない！",
+    "2": "ジャヒー（ロリ）",
+    "3": "ジャヒー（ロリ） (ジャヒー様はくじけない)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "ジャヒー様はくじけない！",
+    "2": "ジャヒー（大人）（Tシャツ）",
+    "3": "ジャヒー（大人）（tシャツ） (ジャヒー様はくじけない)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "ジャヒー様はくじけない！",
+    "2": "ジャヒー（大人）（変身後の服）",
+    "3": "ジャヒー（大人）（変身後の服） (ジャヒー様はくじけない)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "ダンガンロンパ",
+    "2": "朝日奈葵(水着)",
+    "3": "朝日奈葵(水着)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "ブルーアーカイブ",
+    "2": "ユウカ",
+    "3": "ユウカ (ブルーアーカイブ)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "プリコネ",
+    "2": "ミソラ（打率低い）",
+    "3": "ミソラ（打率低い） (プリコネ)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "プリコネ",
+    "2": "ユイ（打率低い）",
+    "3": "ユイ（打率低い） (プリコネ)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "ポケモン",
+    "2": "オカルトマニア(XY)",
+    "3": "オカルトマニア(xy)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "ポケモン",
+    "2": "オカルトマニア(XY)",
+    "3": "オカルトマニア(xy)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "ラブライブ！サンシャイン！！",
+    "2": "浦女冬服",
+    "3": "浦女冬服 (ラブライブサンシャイン)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "ラブライブ！サンシャイン！！",
+    "2": "浦女夏服",
+    "3": "浦女夏服 (ラブライブサンシャイン)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "ラブライブ！サンシャイン！！",
+    "2": "浦女夏服ノースリーブ",
+    "3": "浦女夏服ノースリーブ (ラブライブサンシャイン)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "三國無双",
+    "2": "シン甄姫",
+    "3": "シン甄姫 (三國無双)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "原神",
+    "2": "ニィロウ素体",
+    "3": "ニィロウ素体 (原神)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "原神",
+    "2": "バーバラ素体",
+    "3": "バーバラ素体 (原神)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "原神",
+    "2": "八重巫女",
+    "3": "八重巫女 (原神)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "原神",
+    "2": "凝光(顔以外不安定)",
+    "3": "凝光(顔以外不安定)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "原神",
+    "2": "神里綾華",
+    "3": "神里綾華 (原神)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "原神",
+    "2": "胡桃",
+    "3": "胡桃 (原神)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "原神",
+    "2": "蛍(原神)",
+    "3": "蛍(原神)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "原神",
+    "2": "雷電将軍",
+    "3": "雷電将軍 (原神)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "咲",
+    "2": "新子憧",
+    "3": "新子憧 (咲)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "東方",
+    "2": "ちやり",
+    "3": "ちやり (東方)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "東方",
+    "2": "ちやり服なし",
+    "3": "ちやり服なし (東方)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "東方",
+    "2": "チルノ",
+    "3": "チルノ (東方)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "東方",
+    "2": "宮出口瑞霊服なし",
+    "3": "宮出口瑞霊服なし (東方)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "東方",
+    "2": "汎用残無エロ",
+    "3": "汎用残無エロ (東方)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "東方",
+    "2": "雲居一輪",
+    "3": "雲居一輪 (東方)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター(女性)",
+    "1": "東方",
+    "2": "雲居一輪",
+    "3": "雲居一輪 (東方)",
     "4": ""
   }
   ]
