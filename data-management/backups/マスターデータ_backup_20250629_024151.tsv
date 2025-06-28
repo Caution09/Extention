@@ -562,8 +562,7 @@
 キャラクター(女性)	Fate	巴御前	tomoe gozen (fate)
 キャラクター(女性)	Fate	楊貴妃	yang guifei (fate)
 キャラクター(女性)	Fate	沖田総司	okita souji (fate)
-キャラクター(女性)	Fate	清姫	kiyohime (fate)
-キャラクター(女性)	Fate	清姫(水着)	kiyohime (fate)
+キャラクター(女性)	Fate	清姫,清姫(水着)	kiyohime (fate)
 キャラクター(女性)	Fate	清少納言	sei shounagon (fate)
 キャラクター(女性)	Fate	源頼光	minamoto no raikou (FGO)
 キャラクター(女性)	Fate	茨城童子	ibaraki douji (fate)
@@ -652,9 +651,8 @@
 キャラクター(女性)	To LOVEる -とらぶる	ララ・サタリン・デビルーク	lala satalin deviluke (to love-ru)
 キャラクター(女性)	To LOVEる -とらぶる	ルン・エルシ・ジュエリア	run elsie jewelria (to love-ru)
 キャラクター(女性)	To LOVEる -とらぶる	レン	ren elsie jewelria (to love-ru)
-キャラクター(女性)	To LOVEる -とらぶる	古手川唯	kotegawa yui (to love-ru)
+キャラクター(女性)	To LOVEる -とらぶる	古手川唯,小手川唯,小手川唯\	kotegawa yui (to love-ru)
 キャラクター(女性)	To LOVEる -とらぶる	天条院沙姫	tenjouin saki (to love-ru)
-キャラクター(女性)	To LOVEる -とらぶる	小手川唯,小手川唯\	kotegawa yui (to love-ru)
 キャラクター(女性)	To LOVEる -とらぶる	村雨静	murasame shizuka (to love-ru)
 キャラクター(女性)	To LOVEる -とらぶる	結城美柑	yuuki_mikan (to love-ru)
 キャラクター(女性)	To LOVEる -とらぶる	西連寺春菜	sairenji haruna (to love-ru)
@@ -1774,7 +1772,6 @@
 キャラクター(男性)	原神	レザー	razor (genshin impact)
 キャラクター(男性)	原神	ワンダラー	wanderer (genshin impact)
 キャラクター(男性)	原神	楓原万葉	kaedehara kazuha (genshin impact)
-キャラクター(男性)	原神	白朮	baizhu (genshin impact)
 キャラクター(男性)	原神	荒瀧一斗	arataki itto (genshin impact)
 キャラクター(男性)	原神	行秋	xingqiu (genshin impact)
 キャラクター(男性)	原神	重雲	chongyun (genshin impact)
@@ -4921,7 +4918,6 @@
 場所	家（室外）	ポスト	mailbox
 場所	家（室外）	子供の遊具	children's play equipment
 場所	家（室外）	家具（屋外）	outdoor furniture
-場所	家（室外）	家具（屋外）- outdoor furniture
 場所	家（室外）	屋根	roof
 場所	家（室外）	植物/花	plants/flowers
 場所	家（室外）	歩道	sidewalk
@@ -5675,7 +5671,6 @@
 場所	車道	歩道	sidewalk
 場所	車道	消防車	fire truck
 場所	車道	犬（散歩中のペット）	dog (walking pet)
-場所	車道	犬（散歩中のペット）- dog (walking pet)
 場所	車道	緊急車両	emergency vehicles
 場所	車道	自転車専用レーン	bicycle lane
 場所	車道	警察車両	police car
@@ -7490,7 +7485,6 @@
 表情・感情	明るい表情・感情	愉快な	cheerful
 表情・感情	明るい表情・感情	愉快な表情・感情	cheerful expression
 表情・感情	明るい表情・感情	指でスマイル	fingersmile
-表情・感情	明るい表情・感情	楽しげな雰囲気を表すエモーション
 表情・感情	明るい表情・感情	歯を見せて笑う,ニヤニヤ	grin
 表情・感情	明るい表情・感情	歯を見せて笑う表情・感情	grin expression
 表情・感情	明るい表情・感情	無理やりさせられる笑顔	forced smile
