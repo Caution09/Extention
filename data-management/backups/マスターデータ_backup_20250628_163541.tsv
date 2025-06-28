@@ -9,6 +9,8 @@
 その他	その他	粘着性	sticky
 その他	その他	薬物	drugs
 その他	その他	複製	duplicate
+エフェクト	デザイン	吹き出し	japanese speech bubble
+エフェクト	液体	スパッタ	spatter
 エフェクト	エフェクト	エフェクト	effect
 エフェクト	エフェクト	フラグメント	fragments
 エフェクト	エフェクト	メタルスクラッチ	metal scratch
@@ -30,7 +32,6 @@
 エフェクト	シンボル	錨マーク	anchor symbol
 エフェクト	シンボル	音符	musical note
 エフェクト	デザイン	古典的な装飾境界線	classic decorative border
-エフェクト	デザイン	吹き出し	japanese speech bubble
 エフェクト	デザイン	記録框	recording frame
 エフェクト	光	ティンダル効果	tyndall effect
 エフェクト	光	フレア	flare
@@ -54,13 +55,12 @@
 エフェクト	光	輪郭の深化	contour deepening
 エフェクト	凍結	凍った羽	frozfeathers
 エフェクト	凍結	氷	ice
-エフェクト	凍結	雪の結晶	snowflake
-エフェクト	化学的	溶解	dissolving
-エフェクト	化学的	腐食	corrosive
 エフェクト	化学的	苛性	caustic
 エフェクト	化学的	酸性	acidic
-エフェクト	医療	包帯	bandage
+エフェクト	化学的	腐食	corrosive
+エフェクト	化学的	溶解	dissolving
 エフェクト	医療	注入	injection
+エフェクト	医療	包帯	bandage
 エフェクト	医療	薬品	medicine
 エフェクト	医療	輸血	transfusion
 エフェクト	天体	より透明な星	more transparent stars
@@ -80,13 +80,14 @@
 エフェクト	水系	水滴	drops of water
 エフェクト	水系	花の泡	flowery bubbles
 エフェクト	水系	飛ぶスプラッシュ	flying splashes
+エフェクト	凍結	雪の結晶	snowflake
 エフェクト	汚れ	ホコリ,ホコリ（埃）	dusty
 エフェクト	汚れ	ホコリまみれ,ホコリまみれ（埃まみれ）	dusty all over
 エフェクト	汚れ	汚れた	dirty
 エフェクト	汚れ	泥だらけ	muddy
 エフェクト	汚れ	泥まみれ	covered in mud
+エフェクト	状態	フローフロー	floating flow
 エフェクト	液体	すべてが流れて溶けます	everything flowing melt
-エフェクト	液体	スパッタ	spatter
 エフェクト	液体	唾液腺,唾液ブリッジ	saliva trail
 エフェクト	液体	多くの汗	many sweat
 エフェクト	液体	汗	sweat
@@ -119,7 +120,6 @@
 エフェクト	煙	煙	smoke
 エフェクト	煙	蒸気	steam
 エフェクト	状態	テクスチャ	texture
-エフェクト	状態	フローフロー	floating flow
 エフェクト	状態	流れる透明な白	flowing transparent white
 エフェクト	状態	流れる透明な黒	flowing transparent black
 エフェクト	状態	溶けた,溶け	melt
@@ -140,11 +140,11 @@
 エフェクト	電気	稲妻チェーン	lightning chain
 エフェクト	電気	稲妻効果	lightning effect
 エフェクト	電気	電気	electric
-エフェクト	音響	エコー	echo
-エフェクト	音響	ノイズ	noise
-エフェクト	音響	残響	reverb
-エフェクト	音響	無音	silence
 エフェクト	音響	音量	volume
+エフェクト	音響	エコー	echo
+エフェクト	音響	残響	reverb
+エフェクト	音響	ノイズ	noise
+エフェクト	音響	無音	silence
 エフェクト	魔法	マジックサークル	magic circle
 エフェクト	魔法	渦巻き	swirl
 エフェクト	魔法	衣服の結晶化	crystallization of clothes
@@ -185,6 +185,7 @@
 オブジェクト	公共物	電線,電柱	power lines
 オブジェクト	公共物	電線,電柱2	utility pole
 オブジェクト	公共物	電線,電柱3	telephone pole
+生物	鳥	鳥	bird
 オブジェクト	宝石	ダイヤモンド	diamonds
 オブジェクト	宝石	パール	pearl
 オブジェクト	家具	オーブン	oven
@@ -239,7 +240,6 @@
 オブジェクト	建造物	建物の陰	building shade
 オブジェクト	日用品	キャンバス	canvas
 オブジェクト	日用品	写真	photo
-オブジェクト	日用品	金属製の彫刻	metal carving
 オブジェクト	日用品	長い糸	long yarn
 オブジェクト	日用品	鳥かご	birdcage
 オブジェクト	楽器	スピーカーアンプ	speaker amplifier
@@ -274,6 +274,7 @@
 オブジェクト	花	花の花	flowery flowers
 オブジェクト	花	花弁	petal
 オブジェクト	花	血の桜	blood cherry blossom
+オブジェクト	日用品	金属製の彫刻	metal carving
 オブジェクト	電子機器	スマホ撮影画面	{cellphone photo},{bar censor}
 オブジェクト	電子機器	壊れた画面	brokscreen
 オプション	オプション	まゆ毛が前髪で隠れている	eyebrows hidden by hair
@@ -311,11 +312,11 @@
 オプション	液体	涙	tears
 カメラワーク	その他	焦点がはっきりする	sharp focus
 カメラワーク	その他	目の精度を向上	eye focus
+カメラワーク	フォーカス	全身	whole body
 カメラワーク	フォーカス	(i)ドアップ	close-up,crotch focus
 カメラワーク	フォーカス	ももから上	cowboy shot
 カメラワーク	フォーカス	バストアップ	upper body
 カメラワーク	フォーカス	下半身,机の下から覗いてるみたいな感じ,下半身	lower body
-カメラワーク	フォーカス	全身	whole body
 カメラワーク	フォーカス	全身撮影	full body
 カメラワーク	フォーカス	女の子フォーカス	girl focus
 カメラワーク	フォーカス	強めの集中線	bold radiating focus lines dominating the entire screen
@@ -2602,10 +2603,10 @@
 テイスト	年代	1980年代	80s
 テイスト	年代	1990年代	90s
 テイスト	年代	2000年代	00s
-テイスト	性転換	中性的	androgynous
 テイスト	性転換	女体化	genderswap (mtf)
-テイスト	性転換	性別反転	gender swap
 テイスト	性転換	男性化	genderswap (ftm)
+テイスト	性転換	性別反転	gender swap
+テイスト	性転換	中性的	androgynous
 テイスト	技法	インパスト	impasto
 テイスト	技法	ペインティング	painting
 テイスト	技法	壁紙	wallpaper
@@ -2613,9 +2614,9 @@
 テイスト	技法	水彩媒体	watercolor medium
 テイスト	技法	油絵	oil painting
 テイスト	比較	サイズ差	size difference
-テイスト	比較	対比	contrast
 テイスト	比較	年齢差	age difference
 テイスト	比較	身長差	height difference
+テイスト	比較	対比	contrast
 テイスト	特殊	コントラポスト	contraposto
 テイスト	特殊	ラフ	posing sketck
 テイスト	特殊	一点透視図法	vanishing point
@@ -3143,8 +3144,8 @@
 品質	aesthetic	不快な	displeasing
 品質	とりあえずこれ	品質向上タグ	{{{best quality,very aesthetic}}}
 品質	とりあえずこれ	標準品質	best quality
-品質	とりあえずこれ	超高品質	ultra quality
 品質	とりあえずこれ	高品質	masterpiece
+品質	とりあえずこれ	超高品質	ultra quality
 品質	テキスト系	QRコード	qr code
 品質	テキスト系	ui	ui
 品質	テキスト系	アーティスト名	artist name
@@ -6046,6 +6047,7 @@
 服装	スカート	エッジのロイヤルブルースカート	royal skirt with edge
 服装	スカート	半透明のフラッタースカート	translucent fluttering skirt
 服装	スカート	夏の長いスカート	summer long skirt
+服装	一式	ボディスーツ	bodysuit
 服装	トップス	お腹が見える服,上着のチャックを開ける	crop top
 服装	トップス	むき出しの白シャツ	bare white shirt
 服装	トップス	ウェイトレスのエプロン	waist apron
@@ -6136,6 +6138,7 @@
 服装	ボトムス	腰布	loin cloth
 服装	ボトムス	透けてるスカート	tulle chiffon skirt covered by thin translucent skirt
 服装	ボトムス	靴なし靴下などあり	no shoes
+服装	特徴	ローブの下のシャツ	shirt under robe
 服装	一式	アイドルドレス	idol dress
 服装	一式	アラビア服２	harem outfit
 服装	一式	アーマー	armor
@@ -6145,7 +6148,6 @@
 服装	一式	エナメル服	enameled Clothes
 服装	一式	エヴァの制服	tokyo-3 middle school uniform
 服装	一式	オーガンディドレス	organdie dress
-服装	一式	カソック	cassock
 服装	一式	ケープフード	cape hood
 服装	一式	ゴスロリ	gothic lolita
 服装	一式	サムライアーマー	samurai armor,tabi
@@ -6163,7 +6165,6 @@
 服装	一式	フード付きケープ	hooded cape
 服装	一式	ボクシングのユニフォーム	boxing uniform
 服装	一式	ボタンが2つずつ並んだ服	double breasted
-服装	一式	ボディスーツ	bodysuit
 服装	一式	ボンテージ	bdsm
 服装	一式	ボンテージ2	bondage
 服装	一式	ボンデージ	sexual bondage
@@ -6191,7 +6192,6 @@
 服装	一式	金の装飾,華やか	ornate
 服装	一式	青い競泳水着	blue one-piece swimsuit,competition swimsuit
 服装	一式	青い競泳水着	blue one-piece swimsuit,highleg competition swimsuit
-服装	一般	服,衣服	clothes
 服装	下着	Tバック	g-string
 服装	下着	おっぱい隠す	{{{covered breasts}}}
 服装	下着	ふんどし(褌)	white japanese loincloth
@@ -6238,6 +6238,8 @@
 服装	和装	花魁	kimono, off shoulder
 服装	和装	袴	hakama
 服装	和装	袴2	man's formal divided skirt
+服装	一式	カソック	cassock
+服装	特徴	型の服	shaped clothes
 服装	手袋	ひじまで長い手袋	elbow gloves
 服装	手袋	ウェディンググローブ	bridal gauntlets
 服装	手袋	フリルグローブ	frilled gloves
@@ -6247,6 +6249,7 @@
 服装	手袋	白手袋	white gloves
 服装	手袋	肉球グローブ	paw gloves
 服装	手袋	黒手袋	black gloves
+服装	一般	服,衣服	clothes
 服装	材質	作られた服	clothes made of silver
 服装	材質	結晶化服	crystallized clothing
 服装	材質	絶妙な布	exquisite cloth
@@ -6270,9 +6273,7 @@
 服装	特徴	ボタンの隙間	ボタンの隙間
 服装	特徴	レース	lace
 服装	特徴	ロングストレート	long straight
-服装	特徴	ローブの下のシャツ	shirt under robe
 服装	特徴	乳見せ(nipples抜き)	breasts out, turn up shirt, open shirt, open clothes
-服装	特徴	型の服	shaped clothes
 服装	特徴	小さめの服,小さい服	undersized_clothes
 服装	特徴	揺れるスカート	skirt that sway
 服装	特徴	文字入り服	clothes writing
@@ -6375,10 +6376,10 @@
 模様	柄	虎柄	tiger print
 模様	柄	迷彩柄	camouflage
 模様	柄（動物）	牛柄（ホルスタイン）	holstein pattern
-照明	一般	人工光	artificial light
-照明	一般	明るい	bright
 照明	一般	照明	lighting
 照明	一般	自然光	natural light
+照明	一般	人工光	artificial light
+照明	一般	明るい	bright
 照明	光	ゴールデンアワー照明	golden hour lighting
 照明	光	シティライト	citylight
 照明	光	スポット	spot
@@ -6411,15 +6412,15 @@
 照明	方向	被写体の下からの光	underlighting
 照明	方向	被写体の横からの光	sidelighting
 照明	環境光	アンビエントライト	ambient light
-照明	環境光	拡散光	diffused light
 照明	環境光	柔らかい光	soft light
 照明	環境光	空気光	air light
+照明	環境光	拡散光	diffused light
 照明	神聖	聖なる光	holy light
 照明	神聖	聖なる照明	holy lighting
-照明	粒子	光の粉	light dust
-照明	粒子	光の粒子	light particles
 照明	粒子	照明粒子	lighting particle
+照明	粒子	光の粒子	light particles
 照明	粒子	発光粒子	luminous particles
+照明	粒子	光の粉	light dust
 照明	装飾光	イルミネーション	illumination
 照明	陰影	劇的な影	dramatic shadows
 照明	陰影	影の多い,影	shadow
@@ -6495,7 +6496,6 @@
 生物	魚	魚類	fishes
 生物	鳥	平和の鳩	dove of peace
 生物	鳥	海鳥	seabirds
-生物	鳥	鳥	bird
 生物	鳥	鳥	birds
 生物	鳥類	カラス	crow
 画面効果	ふきだし	♪	spoken musical note
