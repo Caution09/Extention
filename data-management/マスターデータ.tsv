@@ -483,11 +483,22 @@
 キャラクター(女性)	VOICE ROID	琴葉葵	kotonoha aoi
 キャラクター(女性)	VOICE ROID	紲星あかり	kizuna akari
 キャラクター(女性)	VOICE ROID	結月ゆかり	yuzuki yukari
-キャラクター	VTuber	しぐれうい	shigure ui
-キャラクター	WORKING!!	伊波まひる	inami_mahiru (working!!)
-キャラクター	WORKING!!	山田葵	yamada_aoi (working!!)
-キャラクター	WORKING!!	種島ぽぷら	taneshima popura
-キャラクター	WORKING!!	轟八千代	todoroki_yachiyo (working!!)
+キャラクター(女性)	VTuber	しぐれうい	shigure ui
+キャラクター(女性)	VTuber	犬山たまき	inuyama tamaki
+キャラクター(女性)	VTuber	輝夜月	kaguya luna
+キャラクター(女性)	VTuber	ねこます	nekomasu
+キャラクター(女性)	VTuber	月ノ美兎	tsukino mito
+キャラクター(女性)	VTuber	電脳少女シロ	dennou shoujo siro
+キャラクター(女性)	VTuber	ミライアカリ	mirai akari
+キャラクター(女性)	VTuber	富士葵	fuji aoi
+キャラクター(女性)	VTuber	田中ヒメ	tanaka hime
+キャラクター(女性)	VTuber	鈴木ヒナ	suzuki hina
+キャラクター(男性)	VTuber	ばあちゃる	virtual grandma
+キャラクター(女性)	VTuber	おめがシスターズ	omega sisters
+キャラクター(女性)	WORKING!!	伊波まひる	inami_mahiru (working!!)
+キャラクター(女性)	WORKING!!	山田葵	yamada_aoi (working!!)
+キャラクター(女性)	WORKING!!	種島ぽぷら	taneshima popura
+キャラクター(女性)	WORKING!!	轟八千代	todoroki_yachiyo (working!!)
 キャラクター(女性)	Yes! プリキュア5	キュアアクア	cure aqua (precure)
 キャラクター(女性)	Yes! プリキュア5	キュアドリーム	cure dream (precure)
 キャラクター(女性)	Yes! プリキュア5	キュアミント	cure mint (precure)
@@ -499,44 +510,46 @@
 キャラクター(女性)	Yes! プリキュア5	水無月かれん	minazuki karen (precure)
 キャラクター(女性)	Yes! プリキュア5	秋元こまち	akimoto komachi (precure)
 キャラクター(女性)	Yes! プリキュア5GoGo!	ミルキィローズ	milky rose (precure)
-キャラクター	among us	クルー	crewmate (among us)
-キャラクター	あぁ女神様！	ウルド	urd (aa megami-sama)
-キャラクター	あぁ女神様！	スクルド	skuld (aa megami-sama)
-キャラクター	あぁ女神様！	ベルダンディー	belldandy (aa megami-sama)
-キャラクター	あずまんが大王	春日歩（大阪さん）	kasuga ayumu (azumanga daioh)
-キャラクター	あずまんが大王	美浜ちよ	mihama chiyo (azumanga daioh)
-キャラクター	あの日見た花の名前を僕達はまだ知らない。	安城鳴子（あなる）	anjou_naruko
-キャラクター	あの日見た花の名前を僕達はまだ知らない。	本間芽衣子（めんま）	honma meiko)
-キャラクター	うたわれるもの	アルルゥ	aruruw (utawarerumono)
-キャラクター	うたわれるもの	エルルゥ	eruruw (utawarerumono)
-キャラクター	うたわれるもの	トウカ	touka (utawarerumono)
-キャラクター	おしえて! ギャル子ちゃん	ギャル子	galko  (oshiete! galko-chan)
-キャラクター	おジャ魔女どれみ	妹尾あいこ	senoo aiko (ojamajo doremi)
-キャラクター	おジャ魔女どれみ	春風どれみ	harukaze_doremi
-キャラクター	おジャ魔女どれみ	瀬川おんぷ	segawa onpu (ojamajo doremi)
-キャラクター	おジャ魔女どれみ	藤原はづき（NAI v3不安定）	fujiwara_hazuki (ojamajo doremi)
-キャラクター	おジャ魔女どれみ	飛鳥ももこ	asuka momoko (ojamajo doremi)
-キャラクター	お兄ちゃんはおしまい!	天川なゆた	tenkawa nayuta (onii-chan wa oshimai!)
-キャラクター	お兄ちゃんはおしまい!	室崎みよ	murosaki miyo (onii-chan wa oshimai!)
-キャラクター	お兄ちゃんはおしまい!	桜花あさひ	oka asahi (onii-chan wa oshimai!)
-キャラクター	お兄ちゃんはおしまい!	穂月かえで	hozuki kaede (onii-chan wa oshimai!)
-キャラクター	お兄ちゃんはおしまい!	穂月もみじ	hozuki momiji (onii-chan wa oshimai!)
-キャラクター	お兄ちゃんはおしまい!	緒山まひろ	oyama mahiro (onii-chan wa oshimai!)
-キャラクター	お兄ちゃんはおしまい!	緒山みはり	oyama mihari (onii-chan wa oshimai!)
-キャラクター	かぐや様は告らせたい	四宮かぐや	shinomiya kaguya
-キャラクター	かぐや様は告らせたい	早坂愛	hayasaka ai
-キャラクター	かぐや様は告らせたい	藤原千花	fujiwara chika
-キャラクター	からかい上手の高木さん	高木さん	takagi san
-キャラクター	きんいろモザイク	アリス・カータレット	alice cartelet
-キャラクター	きんいろモザイク	九条カレン	kujou karen
-キャラクター	きんいろモザイク	大宮忍	oomiya shinobu
-キャラクター	きんいろモザイク	小路綾	komichi aya
-キャラクター	きんいろモザイク	猪熊陽子	inokuma youko
-キャラクター	けいおん！	中野梓	nakano_azusa
-キャラクター	けいおん！	平沢唯	hirasawa yui
-キャラクター	けいおん！	琴吹紬	kotobuki tsumugi
-キャラクター	けいおん！	田井中律	tainaka ritsu
-キャラクター	けいおん！	秋山澪	akiyama_mio
+キャラクター(男性)	among us	クルー	crewmate (among us)
+キャラクター(女性)	あぁ女神様！	ウルド	urd (aa megami-sama)
+キャラクター(女性)	あぁ女神様！	スクルド	skuld (aa megami-sama)
+キャラクター(女性)	あぁ女神様！	ベルダンディー	belldandy (aa megami-sama)
+キャラクター(女性)	あずまんが大王	春日歩（大阪さん）	kasuga ayumu (azumanga daioh)
+キャラクター(女性)	あずまんが大王	美浜ちよ	mihama chiyo (azumanga daioh)
+キャラクター(女性)	あの日見た花の名前を僕達はまだ知らない。	安城鳴子（あなる）	anjou_naruko
+キャラクター(女性)	あの日見た花の名前を僕達はまだ知らない。	本間芽衣子（めんま）	honma meiko)
+キャラクター(女性)	うたわれるもの	アルルゥ	aruruw (utawarerumono)
+キャラクター(女性)	うたわれるもの	エルルゥ	eruruw (utawarerumono)
+キャラクター(女性)	うたわれるもの	トウカ	touka (utawarerumono)
+キャラクター(男性)	うたわれるもの	ハクオロ	hakuoro (utawarerumono)
+キャラクター(女性)	おしえて! ギャル子ちゃん	ギャル子	galko  (oshiete! galko-chan)
+キャラクター(女性)	おジャ魔女どれみ	妹尾あいこ	senoo aiko (ojamajo doremi)
+キャラクター(女性)	おジャ魔女どれみ	春風どれみ	harukaze_doremi
+キャラクター(女性)	おジャ魔女どれみ	瀬川おんぷ	segawa onpu (ojamajo doremi)
+キャラクター(女性)	おジャ魔女どれみ	藤原はづき（NAI v3不安定）	fujiwara_hazuki (ojamajo doremi)
+キャラクター(女性)	おジャ魔女どれみ	飛鳥ももこ	asuka momoko (ojamajo doremi)
+キャラクター(女性)	お兄ちゃんはおしまい!	天川なゆた	tenkawa nayuta (onii-chan wa oshimai!)
+キャラクター(女性)	お兄ちゃんはおしまい!	室崎みよ	murosaki miyo (onii-chan wa oshimai!)
+キャラクター(女性)	お兄ちゃんはおしまい!	桜花あさひ	oka asahi (onii-chan wa oshimai!)
+キャラクター(女性)	お兄ちゃんはおしまい!	穂月かえで	hozuki kaede (onii-chan wa oshimai!)
+キャラクター(女性)	お兄ちゃんはおしまい!	穂月もみじ	hozuki momiji (onii-chan wa oshimai!)
+キャラクター(女性)	お兄ちゃんはおしまい!	緒山まひろ	oyama mahiro (onii-chan wa oshimai!)
+キャラクター(女性)	お兄ちゃんはおしまい!	緒山みはり	oyama mihari (onii-chan wa oshimai!)
+キャラクター(女性)	かぐや様は告らせたい	四宮かぐや	shinomiya kaguya
+キャラクター(女性)	かぐや様は告らせたい	早坂愛	hayasaka ai
+キャラクター(女性)	かぐや様は告らせたい	藤原千花	fujiwara chika
+キャラクター(男性)	かぐや様は告らせたい	白銀御行	shirogane miyuki (kaguya-sama)
+キャラクター(女性)	からかい上手の高木さん	高木さん	takagi san
+キャラクター(女性)	きんいろモザイク	アリス・カータレット	alice cartelet
+キャラクター(女性)	きんいろモザイク	九条カレン	kujou karen
+キャラクター(女性)	きんいろモザイク	大宮忍	oomiya shinobu
+キャラクター(女性)	きんいろモザイク	小路綾	komichi aya
+キャラクター(女性)	きんいろモザイク	猪熊陽子	inokuma youko
+キャラクター(女性)	けいおん！	中野梓	nakano_azusa
+キャラクター(女性)	けいおん！	平沢唯	hirasawa yui
+キャラクター(女性)	けいおん！	琴吹紬	kotobuki tsumugi
+キャラクター(女性)	けいおん！	田井中律	tainaka ritsu
+キャラクター(女性)	けいおん！	秋山澪	akiyama_mio
 キャラクター	けものの★	ロロ	lolo_(kemonono)
 キャラクター	けものフレンズ	かばん	kaban (kemono friends)
 キャラクター	けものフレンズ	アライグマ	common raccoon (kemono friends)
