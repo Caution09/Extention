@@ -1016,6 +1016,7 @@
 キャラクター	ダンガンロンパ	赤松楓	akamatsu_kaede (danganronpa)
 キャラクター	ダンガンロンパ	霧切響子	kirigiri_kyouko (danganronpa)
 キャラクター	チェンソーマン	パワー	power (chainsaw man)
+キャラクター	チェンソーマン	ポチタ	pochita (chainsaw man)
 キャラクター	チェンソーマン	マキマ	makima (chainsaw man)
 キャラクター	チェンソーマン	東山コベニ	higashiyama kobeni (chainsaw man)
 キャラクター	ディノクライシス	レジーナ	Regina(DINO CRISIS)
@@ -1255,6 +1256,10 @@
 キャラクター	原神	雷電将軍	raiden shogun (genshin impact)
 キャラクター	同級生シリーズ	桜木舞	sakuragi_mai (doukyuusei)
 キャラクター	同級生シリーズ	鳴沢唯	narusawa_yui (doukyuusei_2)
+キャラクター	呪術廻戦	五条悟	gojo satoru (jujutsu kaisen)
+キャラクター	呪術廻戦	伏黒恵	fushiguro megumi (jujutsu kaisen)
+キャラクター	呪術廻戦	虎杖悠仁	itadori yuji (jujutsu kaisen)
+キャラクター	呪術廻戦	釘崎野薔薇	kugisaki nobara (jujutsu kaisen)
 キャラクター	咲	天江 衣	amae koromo
 キャラクター	咲	新子 憧	saki achiga-hen
 キャラクター	宇崎ちゃんは遊びたい！	宇崎 花	uzaki_hana
@@ -1421,6 +1426,11 @@
 キャラクター	電波女と青春男	三船流子 (NAI v3 不安定)	mifune_ryuuko (denpa_onna_to_seishun_otoko )
 キャラクター	電波女と青春男	藤和エリオ	touwa erio
 キャラクター	青の祓魔師	杜山しえみ	moriyama shiemi (ao no exorcist)
+キャラクター	鬼滅の刃	嘴平伊之助	hashibira inosuke (kimetsu no yaiba)
+キャラクター	鬼滅の刃	我妻善逸	agatsuma zenitsu (kimetsu no yaiba)
+キャラクター	鬼滅の刃	竈門炭治郎	kamado tanjiro (kimetsu no yaiba)
+キャラクター	鬼滅の刃	竈門禰豆子	kamado nezuko (kimetsu no yaiba)
+キャラクター	鬼滅の刃	胡蝶しのぶ	kochou shinobu (kimetsu no yaiba)
 キャラクター	魔法つかいプリキュア!	キュアフェリーチェ	cure felice (precure)
 キャラクター	魔法つかいプリキュア!	キュアマジカル	cure magical (precure)
 キャラクター	魔法つかいプリキュア!	キュアミラクル	cure miracle (precure)
@@ -2245,6 +2255,18 @@
 シチュエーション	シチュ	食べさせる	feeding
 シチュエーション	バトル	戦争	war
 シチュエーション	バトル	戦闘	battleing
+シチュエーション	ロマンチック	デート	date
+シチュエーション	ロマンチック	プロポーズ	proposal
+シチュエーション	ロマンチック	告白	confession
+シチュエーション	学校	体育館	gymnasium
+シチュエーション	学校	図書館	library
+シチュエーション	学校	屋上	rooftop
+シチュエーション	学校	教室	classroom
+シチュエーション	日常	お風呂	bathing
+シチュエーション	日常	勉強中	studying
+シチュエーション	日常	掃除中	cleaning
+シチュエーション	日常	料理中	cooking
+シチュエーション	日常	買い物	shopping
 シチュエーション	終末	終末のシーン	doomsday scenes
 シチュエーション	隠れ	花に隠されています	hiddin the light flowers
 テイスト	テイスト	SCIFI	scifi
@@ -3017,29 +3039,34 @@
 動作	目線	見詰める	stare
 動作	移動	空から落ちる	falling from the sky
 動作	移動	空飛ぶ	flying
+動作	脚の動作	M字開脚	m-legs
 動作	脚の動作	あぐら	indian style
 動作	脚の動作	かかとを付ける	slav squatting
 動作	脚の動作	くねらせる	on side,sitting
 動作	脚の動作	つま先立ち	tiptoes
 動作	脚の動作	ガニ股2	thighs apart
 動作	脚の動作	ガニ股（がにまた）	bow-legged
+動作	脚の動作	バレリーナポーズ	ballet pose
 動作	脚の動作	両足を広げて	legs apart
 動作	脚の動作	両足一緒に	legs together
 動作	脚の動作	体育座り(ももを持つ)	sit flat, legs bent backwards
 動作	脚の動作	体育座り(膝を持つ)	hugging own legs
 動作	脚の動作	内股	pigeon toed
+動作	脚の動作	壁に寄りかかる	leaning against wall
 動作	脚の動作	女の子座り,ぺたんこ座り	wariza
 動作	脚の動作	座っている	sitting
+動作	脚の動作	横たわる	lying down
 動作	脚の動作	横座り	yokozuwari
 動作	脚の動作	正座,たまに女の子座り	seiza
 動作	脚の動作	片膝立ち	one knee
 動作	脚の動作	片足を上げます	leg up
 動作	脚の動作	片足を組む	figure four sitting
+動作	脚の動作	片足上げ,腿上げ	leg lift
+動作	脚の動作	立膝	standing on one knee
 動作	脚の動作	脚で体をロックする	leg lock
 動作	脚の動作	脚を広げて(sex)	leg open
 動作	脚の動作	脚を広げる	spreading legs
 動作	脚の動作	脚組み	cross legs
-動作	脚の動作	腿上げ	leg lift
 動作	脚の動作	膝を立てて座る	knees up
 動作	脚の動作	膝枕	lap pillow
 動作	脚の動作	膝立ち	kneeling
@@ -3054,12 +3081,15 @@
 動作	腕の動作	いいね	thumbs up
 動作	腕の動作	かける・塗る	applying
 動作	腕の動作	ちょっと手を挙げる	hand up
+動作	腕の動作	アイドルポーズ	idol pose
+動作	腕の動作	ウィンク	winking
 動作	腕の動作	ギャルピース	gyaru v
 動作	腕の動作	シーッ静かに	shushing
 動作	腕の動作	ジッパーを動かしている状態	unzipping
 動作	腕の動作	ダブルピース	double peace,peace sign on both hands
 動作	腕の動作	パンチ	punching
 動作	腕の動作	ピース	peace sign
+動作	腕の動作	ポーズを決める	striking a pose
 動作	腕の動作	与える	giving
 動作	腕の動作	両手をちょっと上げる	hands up
 動作	腕の動作	両手を広げる	outstretched arms
@@ -3090,13 +3120,16 @@
 動作	腕の動作	手を横に	arms at sides
 動作	腕の動作	手を股間の前に置く	hands on own crotch
 動作	腕の動作	手皿	Scoop with hands
+動作	腕の動作	投げキッス	blowing kiss
 動作	腕の動作	指と指を合わせる	index fingers together
+動作	腕の動作	指ハート	finger heart
 動作	腕の動作	揉む,触れる	massage
 動作	腕の動作	握りこぶし	clenched hand
 動作	腕の動作	握りしめた手	clenched hands
 動作	腕の動作	浮いている手	disembodied limb
 動作	腕の動作	片手で自分の目を覆う	covering own eyes by one hand
 動作	腕の動作	片方の胸を隠す	covering one breasts
+動作	腕の動作	猫のポーズ	cat pose
 動作	腕の動作	画面に向かってハグ	incoming hug
 動作	腕の動作	目をこする	rubbing eyes
 動作	腕の動作	相手の手首を掴む	holding another's wrist
@@ -3561,6 +3594,9 @@
 場所	カジノ	排煙システム	smoke extraction systems
 場所	カジノ	景品交換所	prize counters
 場所	カジノ	空気清浄機	air purifiers
+場所	カフェ	カフェテラス	cafe terrace
+場所	カフェ	ケーキ屋	bakery
+場所	カフェ	コーヒーショップ	coffee shop
 場所	ゲリラの拠点	偵察用ドローン	reconnaissance drones
 場所	ゲリラの拠点	医療キット	medical kits
 場所	ゲリラの拠点	双眼鏡	binoculars
@@ -5129,6 +5165,12 @@
 場所	空港	食品販売エリア	food courts
 場所	空港	駐車場	parking lots
 場所	自然	ウォーターエッジの近く	near the water edge
+場所	自然	山	mountain
+場所	自然	桜並木	cherry blossom path
+場所	自然	森	forest
+場所	自然	海	ocean
+場所	自然	湖	lake
+場所	自然	草原	meadow
 場所	街中	ATM	atms
 場所	街中	アート作品	public art
 場所	街中	オフィスビル	office buildings
@@ -6046,9 +6088,10 @@
 服装	スカート	エッジのロイヤルブルースカート	royal skirt with edge
 服装	スカート	半透明のフラッタースカート	translucent fluttering skirt
 服装	スカート	夏の長いスカート	summer long skirt
-服装	トップス	お腹が見える服,上着のチャックを開ける	crop top
+服装	トップス	お腹が見える服,上着のチャックを開ける,クロップトップ	crop top
 服装	トップス	むき出しの白シャツ	bare white shirt
 服装	トップス	ウェイトレスのエプロン	waist apron
+服装	トップス	オフショルダー,肩まで脱いでる上着	off shoulder
 服装	トップス	オフショルダージャケット	off shoulder jacket
 服装	トップス	カッターシャツ	white shirt, shirt formal
 服装	トップス	カーディガン	cardigan
@@ -6071,7 +6114,9 @@
 服装	トップス	ベスト(服)	vest
 服装	トップス	ホルターネック	halterneck
 服装	トップス	ボタン付きの服	buttons
+服装	トップス	ボディコン	body con
 服装	トップス	ラグランスリーブ（ベースボールシャツ）	raglan sleeves
+服装	トップス	レーストップ	lace top
 服装	トップス	ロングコート	long coat
 服装	トップス	乳カーテン	shirt overhang
 服装	トップス	乳首周辺まで開いたブラ	bra {{open}} {{around nipples}}
@@ -6081,7 +6126,6 @@
 服装	トップス	白シャツオープン	open white shirts
 服装	トップス	童貞を殺す服	virgin killer sweater
 服装	トップス	童貞を殺す服,胸の谷間が見える衣装	cleavage cutout
-服装	トップス	肩まで脱いでる上着	off shoulder
 服装	トップス	肩紐なし,肌が出てる上着	strapless
 服装	トップス	被らないフード付きの上着	hood down
 服装	トップス	襟付きのシャツ,ワイシャツ	collared shirt
@@ -6122,11 +6166,15 @@
 服装	ボトムス	タイトスカート	pencil skirt
 服装	ボトムス	チェックミニスカート	plaid miniskirt
 服装	ボトムス	デニムショーツ	denim shorts
+服装	ボトムス	ハイウエスト	high waist
 服装	ボトムス	ハイウエストスカート	high waist skirt
 服装	ボトムス	ヒップボーン・スカート	hipbone skirt
+服装	ボトムス	フレアスカート	flared skirt
 服装	ボトムス	プリーツスカート	pleated skirt
 服装	ボトムス	プリーツミニスカート	pleated miniskirt
+服装	ボトムス	ホットパンツ	hot pants
 服装	ボトムス	マイクロミニスカート	micro mini skirt
+服装	ボトムス	レギンス	leggings
 服装	ボトムス	ロングスカート	long skirt
 服装	ボトムス	太ももから下が肌	bare legs
 服装	ボトムス	柄の入ったおむつ	printed diapers
@@ -6223,8 +6271,15 @@
 服装	下着	迷彩柄のブラ	green _camouflage_bra
 服装	下着	頭の上のパンツ	panties on head
 服装	下着	鮮やか	vibrant
+服装	制服	CA制服	flight attendant
+服装	制服	ウェイトレス	waitress uniform
 服装	制服	トレセン制服	tracen school uniform
+服装	制服	ナース服	nurse outfit
+服装	制服	ポリス	police uniform
+服装	制服	メイド服	maid outfit
+服装	制服	巫女服	miko outfit
 服装	制服	浦女制服	uranohoshi school uniform (love live! sunshine!!)
+服装	制服	魔法少女	magical girl outfit
 服装	和装	さらし布	bleached cloth
 服装	和装	オープンハカマ	ophakama
 服装	和装	和服	japanese clothes
@@ -6855,6 +6910,11 @@
 表情・感情	不機嫌な表情・感情	顔をしかめる表情・感情	wince expression
 表情・感情	全体	嫌な顔	disgust
 表情・感情	口	あえぎ	gasping
+表情・感情	可愛い表情	きょとん	confused
+表情・感情	可愛い表情	はにかみ	shy smile
+表情・感情	可愛い表情	ツンデレ	tsundere
+表情・感情	可愛い表情	上目遣い	upturned eyes
+表情・感情	可愛い表情	頬を膨らませる	pout
 表情・感情	困惑した表情・感情	ショックや絶望などでモノクロになること	color drain
 表情・感情	困惑した表情・感情	ショックや絶望などでモノクロになる表情・感情	color drain expression
 表情・感情	困惑した表情・感情	ビックリ,驚いた	surprised
@@ -7065,6 +7125,9 @@
 表情・感情	暗い表情・感情	絶望	despair
 表情・感情	暗い表情・感情	絶望した表情・感情	despair expression
 表情・感情	暗い表情・感情	顔に大きく影がある表情・感情	shaded face
+表情・感情	楽しい表情	にっこり	cheerful
+表情・感情	楽しい表情	ニヤリ	smirk
+表情・感情	楽しい表情	大笑い	laughing
 表情・感情	欲望的な表情	冒険的な期待の表情	adventurous expression
 表情・感情	欲望的な表情	切望する表情	longing expression
 表情・感情	欲望的な表情	刺激を求める表情	craving expression
@@ -7286,7 +7349,16 @@
 装飾	耳	イヤリング	earrings
 装飾	耳	イヤーマフ	earmuffs
 装飾	耳	フープイヤリング	hoop earrings
+装飾	装身具	アンクレット	anklet
+装飾	装身具	チョーカー	choker
+装飾	装身具	ネックレス	necklace
+装飾	装身具	ピアス	earrings
+装飾	装身具	ブレスレット	bracelet
+装飾	装身具	ヘアピン	hairpin
+装飾	装身具	リボン	ribbon
+装飾	装身具	指輪	ring
 装飾	装身具	涎掛け	bib
+装飾	装身具	髪飾り	hair ornament
 装飾	装飾	ジュエリー	jewelry
 装飾	装飾	タオル	towel
 装飾	装飾	ピアス	piercing
