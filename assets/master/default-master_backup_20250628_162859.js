@@ -2,6 +2,13 @@ let defaultMaster = {
   version: 2,
   data: [
   {
+    "0": "オブジェクト",
+    "1": "デジタル",
+    "2": "SNS",
+    "3": "sns",
+    "4": ""
+  },
+  {
     "0": "その他",
     "1": "その他",
     "2": "〇〇に入っている",
@@ -16,10 +23,24 @@ let defaultMaster = {
     "4": ""
   },
   {
+    "0": "オブジェクト",
+    "1": "デジタル",
+    "2": "インスタグラム",
+    "3": "instagram",
+    "4": ""
+  },
+  {
     "0": "その他",
     "1": "その他",
     "2": "ステート",
     "3": "steet",
+    "4": ""
+  },
+  {
+    "0": "オブジェクト",
+    "1": "デジタル",
+    "2": "ツイッター",
+    "3": "twitter",
     "4": ""
   },
   {
@@ -58,6 +79,20 @@ let defaultMaster = {
     "4": ""
   },
   {
+    "0": "身体",
+    "1": "体型",
+    "2": "体格差",
+    "3": "physical difference",
+    "4": ""
+  },
+  {
+    "0": "エフェクト",
+    "1": "医療",
+    "2": "注入",
+    "3": "injection",
+    "4": ""
+  },
+  {
     "0": "その他",
     "1": "その他",
     "2": "粘着性",
@@ -76,6 +111,48 @@ let defaultMaster = {
     "1": "その他",
     "2": "複製",
     "3": "duplicate",
+    "4": ""
+  },
+  {
+    "0": "品質",
+    "1": "メタ",
+    "2": "オリジナル",
+    "3": "original",
+    "4": ""
+  },
+  {
+    "0": "エフェクト",
+    "1": "化学的",
+    "2": "苛性",
+    "3": "caustic",
+    "4": ""
+  },
+  {
+    "0": "カメラワーク",
+    "1": "技術的",
+    "2": "紐伸び",
+    "3": "strap gap",
+    "4": ""
+  },
+  {
+    "0": "カメラワーク",
+    "1": "技術的",
+    "2": "角度",
+    "3": "angle",
+    "4": ""
+  },
+  {
+    "0": "エフェクト",
+    "1": "音響",
+    "2": "音量",
+    "3": "volume",
+    "4": ""
+  },
+  {
+    "0": "身体",
+    "1": "一般",
+    "2": "女性",
+    "3": "female",
     "4": ""
   },
   {
@@ -118,6 +195,13 @@ let defaultMaster = {
     "1": "エフェクト",
     "2": "ライン",
     "3": "speedlines",
+    "4": ""
+  },
+  {
+    "0": "エフェクト",
+    "1": "メディア",
+    "2": "記録框",
+    "3": "recording frame",
     "4": ""
   },
   {
@@ -237,13 +321,6 @@ let defaultMaster = {
     "1": "デザイン",
     "2": "古典的な装飾境界線",
     "3": "classic decorative border",
-    "4": ""
-  },
-  {
-    "0": "エフェクト",
-    "1": "メディア",
-    "2": "記録框",
-    "3": "recording frame",
     "4": ""
   },
   {
@@ -402,20 +479,6 @@ let defaultMaster = {
   },
   {
     "0": "エフェクト",
-    "1": "化学的",
-    "2": "苛性",
-    "3": "caustic",
-    "4": ""
-  },
-  {
-    "0": "エフェクト",
-    "1": "医療",
-    "2": "注入",
-    "3": "injection",
-    "4": ""
-  },
-  {
-    "0": "エフェクト",
     "1": "天体",
     "2": "より透明な星",
     "3": "more transparent stars",
@@ -543,14 +606,14 @@ let defaultMaster = {
   {
     "0": "エフェクト",
     "1": "汚れ",
-    "2": "ホコリ,ホコリ（埃）",
+    "2": "ホコリ",
     "3": "dusty",
     "4": ""
   },
   {
     "0": "エフェクト",
     "1": "汚れ",
-    "2": "ホコリまみれ,ホコリまみれ（埃まみれ）",
+    "2": "ホコリまみれ",
     "3": "dusty all over",
     "4": ""
   },
@@ -955,13 +1018,6 @@ let defaultMaster = {
   },
   {
     "0": "エフェクト",
-    "1": "音響",
-    "2": "音量",
-    "3": "volume",
-    "4": ""
-  },
-  {
-    "0": "エフェクト",
     "1": "魔法",
     "2": "マジックサークル",
     "3": "magic circle",
@@ -979,6 +1035,48 @@ let defaultMaster = {
     "1": "魔法",
     "2": "衣服の結晶化",
     "3": "crystallization of clothes",
+    "4": ""
+  },
+  {
+    "0": "エフェクト",
+    "1": "汚れ",
+    "2": "ホコリまみれ（埃まみれ）",
+    "3": "dusty all over",
+    "4": ""
+  },
+  {
+    "0": "エフェクト",
+    "1": "汚れ",
+    "2": "ホコリ（埃）",
+    "3": "dusty",
+    "4": ""
+  },
+  {
+    "0": "エフェクト",
+    "1": "汚れ",
+    "2": "汚れた",
+    "3": "dirty",
+    "4": ""
+  },
+  {
+    "0": "エフェクト",
+    "1": "汚れ",
+    "2": "泥だらけ",
+    "3": "muddy",
+    "4": ""
+  },
+  {
+    "0": "エフェクト",
+    "1": "汚れ",
+    "2": "泥まみれ",
+    "3": "covered in mud",
+    "4": ""
+  },
+  {
+    "0": "エフェクト",
+    "1": "液体",
+    "2": "汗で透ける",
+    "3": "sweat see-through",
     "4": ""
   },
   {
@@ -1056,27 +1154,6 @@ let defaultMaster = {
     "1": "オブジェクト",
     "2": "金網",
     "3": "chain link fence",
-    "4": ""
-  },
-  {
-    "0": "オブジェクト",
-    "1": "デジタル",
-    "2": "SNS",
-    "3": "sns",
-    "4": ""
-  },
-  {
-    "0": "オブジェクト",
-    "1": "デジタル",
-    "2": "インスタグラム",
-    "3": "instagram",
-    "4": ""
-  },
-  {
-    "0": "オブジェクト",
-    "1": "デジタル",
-    "2": "ツイッター",
-    "3": "twitter",
     "4": ""
   },
   {
@@ -1948,6 +2025,13 @@ let defaultMaster = {
     "4": ""
   },
   {
+    "0": "状態",
+    "1": "汚れ",
+    "2": "土砂汚れ",
+    "3": "trait connection",
+    "4": ""
+  },
+  {
     "0": "オプション",
     "1": "オプション",
     "2": "天使の輪",
@@ -2281,20 +2365,6 @@ let defaultMaster = {
     "1": "効果",
     "2": "露出曝露",
     "3": "overexposure",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "技術的",
-    "2": "紐伸び",
-    "3": "strap gap",
-    "4": ""
-  },
-  {
-    "0": "カメラワーク",
-    "1": "技術的",
-    "2": "角度",
-    "3": "angle",
     "4": ""
   },
   {
@@ -2867,13 +2937,6 @@ let defaultMaster = {
   {
     "0": "キャラクター",
     "1": "Fate",
-    "2": "BB",
-    "3": "bb (fate)",
-    "4": ""
-  },
-  {
-    "0": "キャラクター",
-    "1": "Fate",
     "2": "アストルフォ",
     "3": "astolfo (fate)",
     "4": ""
@@ -3002,6 +3065,13 @@ let defaultMaster = {
     "1": "Fate",
     "2": "源頼光",
     "3": "minamoto no raikou (FGO)",
+    "4": ""
+  },
+  {
+    "0": "キャラクター",
+    "1": "Fate",
+    "2": "BB",
+    "3": "bb (fate)",
     "4": ""
   },
   {
@@ -20954,41 +21024,6 @@ let defaultMaster = {
   },
   {
     "0": "動作",
-    "1": "物体操作",
-    "2": "シャワーをかける",
-    "3": "spray a ~ with a shower",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "物体操作",
-    "2": "両手で掴む",
-    "3": "grabbing a ~ with both hands",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "物体操作",
-    "2": "両手で洗う",
-    "3": "wash a ~ with both hands",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "物体操作",
-    "2": "変える",
-    "3": "changing ~",
-    "4": ""
-  },
-  {
-    "0": "動作",
-    "1": "物体操作",
-    "2": "抱きしめる",
-    "3": "hugging ~",
-    "4": ""
-  },
-  {
-    "0": "動作",
     "1": "目線",
     "2": "まっすぐに",
     "3": "straight on",
@@ -21842,6 +21877,41 @@ let defaultMaster = {
     "4": ""
   },
   {
+    "0": "動作",
+    "1": "物体操作",
+    "2": "シャワーをかける",
+    "3": "spray a ~ with a shower",
+    "4": ""
+  },
+  {
+    "0": "動作",
+    "1": "物体操作",
+    "2": "両手で掴む",
+    "3": "grabbing a ~ with both hands",
+    "4": ""
+  },
+  {
+    "0": "動作",
+    "1": "物体操作",
+    "2": "両手で洗う",
+    "3": "wash a ~ with both hands",
+    "4": ""
+  },
+  {
+    "0": "動作",
+    "1": "物体操作",
+    "2": "変える",
+    "3": "changing ~",
+    "4": ""
+  },
+  {
+    "0": "動作",
+    "1": "物体操作",
+    "2": "抱きしめる",
+    "3": "hugging ~",
+    "4": ""
+  },
+  {
     "0": "動作（source / target）",
     "1": "動作",
     "2": "何かを片手で掴む",
@@ -22012,13 +22082,6 @@ let defaultMaster = {
   {
     "0": "品質",
     "1": "テンプレート",
-    "2": "低品質回避シンプル",
-    "3": "disfigured.bad anatomy disfigured,jpeg artifacts,error,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,anatomical nonsense,watermark,five fingers,worst quality,bad anatomy,ugly,cropped,simple background,normal quality,lowers,lowres,low quality,polar lowres,standard quality,poorly drawn hands,boken limb,missing limbs,malformed limbs,incorrect limb,fusion hand,bad finglegs,abnormal fingers,missing fingers,fewer digits,too many fingers,extra digit,lose finger,extra fingers,one hand with more than 5 digit,one hand with less than 5 digit,one hand with more than 5 fingers,one hand with less than 5 fingers,3d character,qr code,ui,artist name,signature,text error,text font ui,bar code,username,bad finger,liquid digit,missing digit,fewer digits,multiple digit,text,fused digit,extra fingers,extra digits,extra digit",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "テンプレート",
     "2": "低品質回避テンプレート",
     "3": "qr code,ui,artist name,text error,text font ui,bar code,bad finger,liquid digit,missing digit,multiple digit,fused digit,extra fingers,extra digits,extra digit,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,poorly drawn,anatomical nonsense,five fingers,ugly,simple background,lowers,polar lowres,standard quality,bad feet hand finger leg eye,five fingers,one hand with more than 5 fingers,abnormal fingers,too many fingers,lose finger,multiple finger,mutated hands and fingers,fused fingers,fusion finger,incorrect limb,arthropod limbs,malformed limbs,boken limb,missing limbs,multiple limbs,missing limb,extra limbs,extra penises,extra calf,extra shoes,extra feet,extra thighs,extra knee,extra mouth,extra ears,extra animal ears,extra eyes,extra breasts,extra digit,extra fingers,extra hands,extra limbs,extra legs,extra arms",
     "4": ""
@@ -22026,22 +22089,8 @@ let defaultMaster = {
   {
     "0": "品質",
     "1": "テンプレート",
-    "2": "高品質セミセット",
-    "3": "high quality,best,high resolution,best quality,award winning,highly detailed,hyper extreme detailed,masterpiece",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "テンプレート",
-    "2": "高品質フルセット",
-    "3": "official art,high quality,production art,novel illustration,best,high resolution,best quality,award winning,highly detailed,masterpiece,by famous artist,hyper extreme detailed",
-    "4": ""
-  },
-  {
-    "0": "品質",
-    "1": "メタ",
-    "2": "オリジナル",
-    "3": "original",
+    "2": "低品質回避シンプル",
+    "3": "disfigured.bad anatomy disfigured,jpeg artifacts,error,gross,shit,bad,bad proportions,bad shadow,bad anatomy disfigured,bad shoes,bad gloves,bad animal ears,anatomical nonsense,watermark,five fingers,worst quality,bad anatomy,ugly,cropped,simple background,normal quality,lowers,lowres,low quality,polar lowres,standard quality,poorly drawn hands,boken limb,missing limbs,malformed limbs,incorrect limb,fusion hand,bad finglegs,abnormal fingers,missing fingers,fewer digits,too many fingers,extra digit,lose finger,extra fingers,one hand with more than 5 digit,one hand with less than 5 digit,one hand with more than 5 fingers,one hand with less than 5 fingers,3d character,qr code,ui,artist name,signature,text error,text font ui,bar code,username,bad finger,liquid digit,missing digit,fewer digits,multiple digit,text,fused digit,extra fingers,extra digits,extra digit",
     "4": ""
   },
   {
@@ -24030,6 +24079,20 @@ let defaultMaster = {
     "1": "高品質用",
     "2": "高解像度イラストを参考",
     "3": "absurdres",
+    "4": ""
+  },
+  {
+    "0": "品質",
+    "1": "テンプレート",
+    "2": "高品質セミセット",
+    "3": "high quality,best,high resolution,best quality,award winning,highly detailed,hyper extreme detailed,masterpiece",
+    "4": ""
+  },
+  {
+    "0": "品質",
+    "1": "テンプレート",
+    "2": "高品質フルセット",
+    "3": "official art,high quality,production art,novel illustration,best,high resolution,best quality,award winning,highly detailed,masterpiece,by famous artist,hyper extreme detailed",
     "4": ""
   },
   {
@@ -38545,20 +38608,6 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "!必須タグ",
-    "2": "nsfw + girl",
-    "3": "nwg",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "!必須タグ",
-    "2": "エロ画像",
-    "3": "nsfw",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "SM",
     "2": "お尻たたき",
     "3": "spanking",
@@ -40659,13 +40708,6 @@ let defaultMaster = {
   },
   {
     "0": "成人向け",
-    "1": "人物設定",
-    "2": "黒人セット",
-    "3": "(1boy,big testicles,big black penis,black man:1.1)",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
     "1": "体位",
     "2": ",プレス",
     "3": "mating press",
@@ -42018,13 +42060,6 @@ let defaultMaster = {
   {
     "0": "成人向け",
     "1": "表情",
-    "2": "スケベ顔",
-    "3": "fucked silly",
-    "4": ""
-  },
-  {
-    "0": "成人向け",
-    "1": "表情",
     "2": "口開けエロ顔",
     "3": "open mouth, drivel, be breathless, blush, very humid, steam",
     "4": ""
@@ -42034,6 +42069,34 @@ let defaultMaster = {
     "1": "装飾",
     "2": "乳首ピアス",
     "3": "nipple piercing",
+    "4": ""
+  },
+  {
+    "0": "成人向け",
+    "1": "!必須タグ",
+    "2": "nsfw + girl",
+    "3": "nwg",
+    "4": ""
+  },
+  {
+    "0": "成人向け",
+    "1": "!必須タグ",
+    "2": "エロ画像",
+    "3": "nsfw",
+    "4": ""
+  },
+  {
+    "0": "成人向け",
+    "1": "表情",
+    "2": "スケベ顔",
+    "3": "fucked silly",
+    "4": ""
+  },
+  {
+    "0": "成人向け",
+    "1": "人物設定",
+    "2": "黒人セット",
+    "3": "(1boy,big testicles,big black penis,black man:1.1)",
     "4": ""
   },
   {
@@ -42060,15 +42123,15 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "アウター",
-    "2": "高い襟のコート",
-    "3": "high collar coat",
+    "2": "黒コート",
+    "3": "black coat",
     "4": ""
   },
   {
     "0": "服装",
     "1": "アウター",
-    "2": "黒コート",
-    "3": "black coat",
+    "2": "高い襟のコート",
+    "3": "high collar coat",
     "4": ""
   },
   {
@@ -42419,13 +42482,6 @@ let defaultMaster = {
     "1": "トップス",
     "2": "乳首周辺まで開いたブラ",
     "3": "bra {{open}} {{around nipples}}",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "トップス",
-    "2": "形の縫い目で色が分かれたTシャツ",
-    "3": "raglan sleeve t-shirts",
     "4": ""
   },
   {
@@ -43446,13 +43502,6 @@ let defaultMaster = {
   {
     "0": "服装",
     "1": "制服",
-    "2": "トレセン制服",
-    "3": "tracen school uniform",
-    "4": ""
-  },
-  {
-    "0": "服装",
-    "1": "制服",
     "2": "浦女制服",
     "3": "uranohoshi school uniform (love live! sunshine!!)",
     "4": ""
@@ -44152,16 +44201,30 @@ let defaultMaster = {
   },
   {
     "0": "服装",
-    "1": "頭部",
-    "2": "フード",
-    "3": "hood up",
+    "1": "高級服",
+    "2": "シルクショール",
+    "3": "silk shawl",
     "4": ""
   },
   {
     "0": "服装",
-    "1": "高級服",
-    "2": "シルクショール",
-    "3": "silk shawl",
+    "1": "トップス",
+    "2": "形の縫い目で色が分かれたTシャツ",
+    "3": "raglan sleeve t-shirts",
+    "4": ""
+  },
+  {
+    "0": "服装",
+    "1": "制服",
+    "2": "トレセン制服",
+    "3": "tracen school uniform",
+    "4": ""
+  },
+  {
+    "0": "服装",
+    "1": "頭部",
+    "2": "フード",
+    "3": "hood up",
     "4": ""
   },
   {
@@ -44792,13 +44855,6 @@ let defaultMaster = {
     "1": "劣化",
     "2": "カビ",
     "3": "mouldy",
-    "4": ""
-  },
-  {
-    "0": "状態",
-    "1": "汚れ",
-    "2": "土砂汚れ",
-    "3": "trait connection",
     "4": ""
   },
   {
@@ -51824,13 +51880,6 @@ let defaultMaster = {
   },
   {
     "0": "身体",
-    "1": "一般",
-    "2": "女性",
-    "3": "female",
-    "4": ""
-  },
-  {
-    "0": "身体",
     "1": "上半身",
     "2": "翼,ウィング",
     "3": "wings",
@@ -52016,13 +52065,6 @@ let defaultMaster = {
     "1": "体型",
     "2": "低身長（男）",
     "3": "miniboy",
-    "4": ""
-  },
-  {
-    "0": "身体",
-    "1": "体型",
-    "2": "体格差",
-    "3": "physical difference",
     "4": ""
   },
   {
