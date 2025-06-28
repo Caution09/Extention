@@ -17,7 +17,9 @@
       "Bash(bash:*)",
       "Bash(dos2unix:*)",
       "Bash(./sort_and_clean.sh)",
-      "Bash(diff:*)"
+      "Bash(diff:*)",
+      "Bash(chmod:*)",
+      "Bash(./remove_male_genshin.sh:*)"
     ],
     "deny": []
   }
