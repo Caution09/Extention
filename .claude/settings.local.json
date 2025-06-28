@@ -16,7 +16,8 @@
       "Bash(echo:*)",
       "Bash(bash:*)",
       "Bash(dos2unix:*)",
-      "Bash(./sort_and_clean.sh)"
+      "Bash(./sort_and_clean.sh)",
+      "Bash(diff:*)"
     ],
     "deny": []
   }

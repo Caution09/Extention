@@ -99,7 +99,7 @@ The extension uses a master data system for prompt templates:
 5. **Character Data Classification Rules**:
    - **キャラクター**: Character name only (e.g., "cirno", "remilia scarlet")
    - **キャラクター再現**: Character with additional elements (e.g., "cirno, ice wings, blue dress")
-   - Prompt完全一致統合: When multiple entries have identical prompts, consolidate into single entry with combined 小項目 (e.g., "チルノ,⑨" for cirno entries)
+   - **Prompt完全一致統合**: When multiple entries have identical 大項目・中項目・Prompt, consolidate into single entry with combined 小項目 (e.g., "チルノ,⑨" for cirno entries). This is automatically handled by `sort_and_clean.sh`
    - **Character Entry Auto-Generation Rule**: When processing complex character entries with multiple elements (styles, attributes, etc.), apply the dual-entry system:
      - **Step 1**: Move complex entries to キャラクター再現 category
      - **Step 2**: Create simplified キャラクター entry with character name only
@@ -152,219 +152,133 @@ The extension uses a master data system for prompt templates:
 
 ### Master Data Maintenance and Quality Assurance
 
-When the user requests "マスターデータ整理" or "マスターデータ更新", Claude should perform a comprehensive data quality analysis and cleanup following this workflow:
+#### 概要・適用トリガー
 
-#### Phase 1: Analysis and Editing (Auto-execute)
+以下のユーザー要求時に自動適用：
+- 「マスターデータ整理」「マスターデータ更新」
+- 「マスターデータに○○を追加して」
+- 「新しいプロンプトカテゴリを追加したい」  
+- 「データを整理・更新して」
+- 大量のプロンプト候補データの提供
 
-1. **Create Backup**: Always backup `マスターデータ.tsv` before making changes
-2. **Comprehensive Analysis**: Analyze all non-character categories for:
-
-   - Duplicate categories (e.g., ライティング/照明, 身体/顔/身体)
-   - English prompt errors (typos like "bara"→"rose", "hanabi"→"fireworks", "gram"→"pentagram", "digt"→"digit")
-   - Misplaced subcategories (e.g., エフェクト>オブジェクト → オブジェクト>オブジェクト)
-   - Test/invalid entries (お気に, 大項目, etc.)
-   - Inconsistent naming patterns
-
-3. **Execute Fixes in Parallel**:
-
-   - Merge duplicate categories logically
-   - Fix English spelling/grammar errors
-   - Reorganize misplaced subcategories
-   - Remove or relocate test entries
-   - Standardize category naming conventions
-
-4. **Data Integrity Validation**:
-   - Verify no empty lines remain
-   - Check total entry count
-   - Confirm no error patterns remain
-   - Validate category distribution
-
-#### Phase 2: JavaScript Generation (User Permission Required)
-
-**IMPORTANT**: After completing Phase 1, Claude must:
-
-1. Present a summary of changes made
-2. Ask for explicit user permission before proceeding
-3. Only after user approval, run: `cd data-management && python3 generate_master.py`
-
-#### Common Issues to Address:
-
-- **Category Consolidation**: ライティング → 照明, 身体/顔 → 身体
-- **English Fixes**: bara→rose, hanabi→fireworks, gram→pentagram, digt→digit/finger
-- **Logical Reorganization**: Move items to appropriate parent categories
-- **Quality Standards**: Remove test entries, fix inconsistencies
-
-#### Success Metrics:
-
-- Zero duplicate categories
-- Zero English spelling errors
-- Logical category hierarchy
-- Clean data structure
-- Successful JavaScript generation
-
-## マスターデータ追加・管理標準プロセス
-
-### プロセス概要
-
-新規プロンプトデータの追加や既存データの大規模更新を行う際の標準作業手順です。
-
-### 作業フロー
+#### 標準作業フロー
 
 ```
 事前分析 → 品質改善 → 段階的追加 → 既存データ再編成 → 最終調整 → 生成・検証
 ```
 
-### 1. 事前分析フェーズ
+#### Phase 1: 事前分析・品質改善 (自動実行)
 
-**目的**: 現状把握と作業計画策定
+**1.1 バックアップ作成**
+- `マスターデータ.tsv`の自動バックアップ
+- タイムスタンプ付きファイル作成
 
-**実行手順**:
+**1.2 品質分析項目**
+- 重複カテゴリ検出 (例: ライティング/照明, 身体/顔/身体)
+- 英語誤字検出 (例: "bara"→"rose", "hanabi"→"fireworks", "gram"→"pentagram", "digt"→"digit")
+- 誤配置サブカテゴリ検出 (例: エフェクト>オブジェクト → オブジェクト>オブジェクト)
+- 無効エントリ検出 (お気に, 大項目, etc.)
+- 命名不統一パターン検出
 
-- マスターデータ.tsv、categories.txt、categories.json の確認
-- 総データ行数・大項目数・中項目数の把握
-- 重複データ・誤字・不適切な分類の特定
+**1.3 データクリーニング実行**
+- 重複カテゴリの論理的統合
+- 英語スペル・文法エラー修正
+- サブカテゴリの適切な再配置
+- テストエントリの削除・移動
+- カテゴリ命名規則の統一
 
-**確認項目**:
+**1.4 既存カテゴリ統合チェック**
+- `categories.txt`を参照して既存の全大項目・中項目を確認
+- 新規項目より適切な既存カテゴリが存在する場合は既存カテゴリを使用
+- 統合例: `行動・ポーズ`→`動作`, `表現手法`→`テイスト`, `表情`→`表情・感情`, `服装・衣類`→`服装`
 
-- [ ] データ品質状況の把握
-- [ ] 重複・エラーパターンの特定
-- [ ] 作業範囲の明確化
+**1.5 データ整合性検証**
+- 空行の除去確認
+- 総エントリ数チェック
+- エラーパターン残存確認
+- カテゴリ分布検証
 
-### 2. 品質改善フェーズ
+#### Phase 2: JavaScript生成 (要ユーザー許可)
 
-**目的**: 既存データの品質向上
+**重要**: Phase 1完了後、必須手順：
 
-**実行項目**:
+1. **変更内容サマリー提示**
+2. **ユーザー明示許可の取得**
+3. **許可後のみ実行**: `python3 generate_master.py`
 
-- 英語・日本語の誤字修正
-- 重複エントリ・空行の削除
-- 不適切な分類の修正
-- カテゴリ命名の統一
+#### 品質保証基準
 
-### 3. 段階的追加フェーズ
+**成功指標**:
+- 重複カテゴリ: 0件
+- 英語スペルエラー: 0件
+- 論理的カテゴリ階層
+- クリーンなデータ構造
+- JavaScript生成成功
 
-**目的**: 新規データの体系的追加
+**共通問題と対処法**:
+- **カテゴリ統合**: ライティング → 照明, 身体/顔 → 身体
+- **英語修正**: bara→rose, hanabi→fireworks, gram→pentagram, digt→digit/finger
+- **論理的再編成**: 適切な親カテゴリへの移動
+- **品質基準**: テストエントリ削除、不整合修正
 
-#### 作業分割原則
+## マスターデータ新規追加の標準プロセス
 
-- **1 段階あたり 50-80 アイテム**を目安
-- **論理的関連性**でグループ化
-- **重要度順**で段階設定
+### 段階的追加の作業原則
 
-#### 標準段階構成
+**作業分割ガイドライン**:
+- 1段階あたり50-80アイテムを目安
+- 論理的関連性でグループ化
+- 重要度順で段階設定
 
+**標準段階構成**:
 ```
 第1段階: 基本分類（場所、オブジェクトなど）
-第2段階: 詳細表現（表情、感情など）
+第2段階: 詳細表現（表情、感情など）  
 第3段階: 属性系（色、材質など）
 第4段階: 特殊・専門項目
 ```
 
-#### 各段階の実行手順
-
+**各段階の実行手順**:
 1. データ追加実行
 2. 追加件数確認
 3. 品質チェック
 4. 次段階への移行判断
 
-### 4. 既存データ再編成フェーズ
-
-**目的**: 新カテゴリとの整合性確保
-
-**実行項目**:
-
-- 重複カテゴリの統合
-- 既存項目の適切なカテゴリへの移動
-- カテゴリ階層の論理性改善
-
-### 5. 最終調整フェーズ
-
-**目的**: ユーザー要求への対応
-
-**調整例**:
-
-- 性別・年齢別分類
-- 詳細度レベルの調整
-- 使用頻度による優先度調整
-
-### 6. 生成・検証フェーズ
-
-**目的**: 最終成果物の生成と品質確認
-
-#### 生成前チェック
-
-- データ整合性確認
-- バックアップファイル確認
-- 重複削除とソート処理の実行
-
-#### 重複削除・ソート処理（必須）
-
-**目的**: データ品質の統一と順序の一貫性確保
-
-**実行コマンド**:
-```bash
-sort "マスターデータ.tsv" | uniq > "マスターデータ_temp.tsv" && mv "マスターデータ_temp.tsv" "マスターデータ.tsv"
-```
-
-**効果**:
-- 完全重複行の削除（大項目、中項目、小項目、Promptの4列すべてが一致）
-- データ順序の統一（アルファベット順ソート）
-- 毎回実行により、順序の一貫性を保証
-
-#### 生成実行（要ユーザー許可）
-
-```bash
-python3 generate_master.py
-```
-
-#### 生成後検証
-
-- データ行数・カテゴリ数の確認
-- 各生成ファイルの更新確認
-- バックアップ作成確認
-
-### ToDo 管理テンプレート
+### ToDo管理テンプレート
 
 ```json
 [
   { "id": "analysis", "content": "事前分析完了", "priority": "high" },
   { "id": "quality", "content": "品質改善完了", "priority": "high" },
   { "id": "stage-N", "content": "第N段階追加完了", "priority": "medium" },
-  {
-    "id": "reorganize",
-    "content": "既存データ再編成完了",
-    "priority": "medium"
-  },
+  { "id": "reorganize", "content": "既存データ再編成完了", "priority": "medium" },
   { "id": "adjustment", "content": "最終調整完了", "priority": "low" },
-  {
-    "id": "generation",
-    "content": "JavaScript生成（要許可）",
-    "priority": "high"
-  }
+  { "id": "generation", "content": "JavaScript生成（要許可）", "priority": "high" }
 ]
 ```
 
-### 品質保証原則
+### データソート・クリーニング（必須処理）
 
-- **必須**: 作業前の自動バックアップ
-- **推奨**: 段階的実行によるリスク分散
-- **禁止**: ユーザー許可なしの JavaScript 生成
+**目的**: データ品質の統一と順序の一貫性確保
 
-### 成果物定義
+**実行方法**: 
+```bash
+./sort_and_clean.sh
+```
 
-1. **default-master.js** - メイン JavaScript ファイル
+**処理内容**:
+- 完全重複行の削除（4列すべてが一致）
+- データ順序の統一（アルファベット順ソート）
+- 末尾カンマ削除
+- **同一プロンプト項目の統合**: 大項目・中項目・Promptが同じ場合、小項目をカンマ区切りで統合
+- 自動バックアップ作成
+
+### 最終成果物
+
+1. **default-master.js** - メインJavaScriptファイル
 2. **categories.json** - カテゴリ構造データ
 3. **categories.txt** - 人間可読カテゴリ一覧
-4. **backup files** - 作業前状態の保存
-
-### 適用トリガー
-
-ユーザーが以下のような要求をした場合、この標準プロセスを自動適用：
-
-- 「マスターデータに ○○ を追加して」
-- 「新しいプロンプトカテゴリを追加したい」
-- 「データを整理・更新して」
-- 大量のプロンプト候補データの提供
+4. **backup files** - 作業前状態の自動保存
 
 ### マスターデータ追加の効率的な運用方法
 

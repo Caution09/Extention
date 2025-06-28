@@ -13,9 +13,9 @@
 ### スクリプト
 - **generate_master.py** - TSVからdefault-master.jsを生成するPythonスクリプト
 - **generate_master.bat** - Windows用バッチファイル（ダブルクリックで実行）
+- **sort_and_clean.sh** - データソート・クリーニング用シェルスクリプト
 - **character_mapping.py** - キャラクター名マッピング付きTSV処理スクリプト
 - **process_characters_clean.py** - キャラクター整理用スクリプト
-- **process_tsv.py** - 基本的なTSV処理スクリプト
 - **analyze_characters.py** - キャラクターデータ分析スクリプト
 
 ## 使用方法
