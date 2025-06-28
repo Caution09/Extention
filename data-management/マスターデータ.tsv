@@ -127,9 +127,12 @@
 エフェクト	粒子	ほこり	dust
 エフェクト	粒子	発光粒子	luminous particles
 エフェクト	粒子	軽い粒子	light particle
+エフェクト	自然	ビーチチェアー	beach chairs
 エフェクト	自然	花が疲れます	flowers tire
 エフェクト	自然	花びらが舞う	falling petals
+エフェクト	自然	階段を上る	climbing the stairs
 エフェクト	自然	飛ぶ花びら	flying petals
+エフェクト	自然	飛行機雲	contrail
 エフェクト	金属	チェーンストーム	chain storm
 エフェクト	金属	流れる鉄	flowing iron
 エフェクト	金属	溶融鉄のスパッタ	sputter molten iron
@@ -185,6 +188,9 @@
 オブジェクト	公共物	電線,電柱	power lines
 オブジェクト	公共物	電線,電柱2	utility pole
 オブジェクト	公共物	電線,電柱3	telephone pole
+オブジェクト	公共物	電車のシート	train seat
+オブジェクト	公共物	電車の椅子	train seats
+オブジェクト	医療	聴診器	stethoscope
 オブジェクト	宝石	ダイヤモンド	diamonds
 オブジェクト	宝石	パール	pearl
 オブジェクト	家具	オーブン	oven
@@ -204,6 +210,7 @@
 オブジェクト	家具	壁掛時計	wall clock
 オブジェクト	家具	天蓋ベッド	canopy bed
 オブジェクト	家具	布団	futon
+オブジェクト	家具	抱き枕	body pillow
 オブジェクト	家具	椅子	chair
 オブジェクト	家具	電子レンジ	microwave oven
 オブジェクト	小物	VRゴーグル	VR Goggles
@@ -238,6 +245,7 @@
 オブジェクト	建造物	ピラミッド	pyramid
 オブジェクト	建造物	建物の陰	building shade
 オブジェクト	日用品	キャンバス	canvas
+オブジェクト	日用品	便器	toilet
 オブジェクト	日用品	写真	photo
 オブジェクト	日用品	金属製の彫刻	metal carving
 オブジェクト	日用品	長い糸	long yarn
@@ -245,6 +253,7 @@
 オブジェクト	楽器	スピーカーアンプ	speaker amplifier
 オブジェクト	楽器	ドラム	drums
 オブジェクト	楽器	マイク	mic
+オブジェクト	楽器	マイクスタンド	microphone stand
 オブジェクト	楽器	楽器全般	instrument
 オブジェクト	楽器	楽器全般演奏	playing instrument
 オブジェクト	機械	バネ	spring
@@ -274,6 +283,7 @@
 オブジェクト	花	花の花	flowery flowers
 オブジェクト	花	花弁	petal
 オブジェクト	花	血の桜	blood cherry blossom
+オブジェクト	電子機器	カメラ	camera
 オブジェクト	電子機器	スマホ撮影画面	{cellphone photo},{bar censor}
 オブジェクト	電子機器	壊れた画面	brokscreen
 オプション	オプション	まゆ毛が前髪で隠れている	eyebrows hidden by hair
@@ -333,6 +343,7 @@
 カメラワーク	効果	ロングフォーカス	long focus
 カメラワーク	効果	過剰抽出	overexplosure
 カメラワーク	効果	露出曝露	overexposure
+カメラワーク	技術的	X線	x-ray
 カメラワーク	技術的	紐伸び	strap gap
 カメラワーク	技術的	角度	angle
 カメラワーク	構図	おしりにフォーカス	anal focus
@@ -584,6 +595,7 @@
 キャラクター	ごちうさ	天々座 理世	tedeza_rize (gochiusa)
 キャラクター	すーぱーそに子	そに子	sonico
 キャラクター	すーぱーそに子	ぽちゃ子	super pochaco
+キャラクター	その他	ホタル	firefly
 キャラクター	とあるシリーズ	インデックス	index_(toaru_majutsu_no_index)
 キャラクター	とあるシリーズ	ラストオーダー	last_order_(toaru_majutsu_no_index)
 キャラクター	とあるシリーズ	上条当麻	kamijou_touma (toaru_majutsu_no_index)
@@ -2195,6 +2207,7 @@
 コスチューム（一式）	職業	警察	blue police cap, dark blue or black uniform shirt, badge on the chest, fitted pants with a utility belt, radio and handcuffs attached to the belt, leather gloves, polished black boots, whistle, flashlight, and walkie-talkie
 コスチューム（一式）	職業	車掌	peaked cap, necktie, train conductor uniform, pants
 シチュエーション	イベント	ウェディング	wedding
+シチュエーション	イベント	キャンプ	camp
 シチュエーション	イベント	クリスマス	christmas
 シチュエーション	イベント	デート	hang out
 シチュエーション	イベント	ハロウィン	halloween
@@ -2227,6 +2240,7 @@
 シチュエーション	シチュ	壁ドン	pov hands,wall
 シチュエーション	シチュ	女の子サンド	girl sandwich
 シチュエーション	シチュ	寝る(起きてる)	zzz
+シチュエーション	シチュ	悪堕ち	fallen into evil
 シチュエーション	シチュ	押し倒される	{{{background room ceiling}}},{{{shadows on the face}}},{{open arms for viewer}},leaning forward,{{hug}},open mouth,girl on top,straddling,pov,overlook
 シチュエーション	シチュ	押し倒される(背景なし)	{{open arms for viewer}},leaning forward,{{hug}},open mouth,girl on top,straddling,pov,overlook
 シチュエーション	シチュ	押し倒し	dakimakura (medium), arms up, only upper body
@@ -2263,6 +2277,7 @@
 シチュエーション	学校	屋上	rooftop
 シチュエーション	学校	教室	classroom
 シチュエーション	日常	お風呂	bathing
+シチュエーション	日常	お風呂に浸かる	take a bath
 シチュエーション	日常	勉強中	studying
 シチュエーション	日常	掃除中	cleaning
 シチュエーション	日常	料理中	cooking
@@ -2862,6 +2877,7 @@
 修飾語	形容詞	複雑	complex
 修飾語	形状	ひだのついた	corrugated
 修飾語	形状	平ら	flat
+修飾語	材質	コンクリート	concrete
 修飾語	材質	硬い	hard
 修飾語	材質	絹,シルク	silk
 修飾語	材質	金属の	metal details
@@ -2887,6 +2903,7 @@
 動作	しぐさ	歯むき出し	round teeth
 動作	しぐさ	歯を噛みしめる	slenched teeth
 動作	しぐさ	歯を食いしばる2	clenched teeth
+動作	しぐさ	祈る	pray
 動作	しぐさ	胸を押さえる,支える	breast hold
 動作	しぐさ	胸囲が欲しい	breasts envy
 動作	しぐさ	腕まくり	sleeves rolled up
@@ -2896,7 +2913,10 @@
 動作	しぐさ	頭傾け(30度)	head tilt 30 degrees
 動作	しぐさ	顎に手をかざす	hand on own chin
 動作	しぐさ	顔を抑える	facepalm
+動作	しぐさ	食い	eat
 動作	しぐさ	首かしげ	head tilt
+動作	しぐさ	髪の毛かき	hair combing
+動作	しぐさ	髪をいじる	playing with hair
 動作	しぐさ	髪をつかむ	holding hair
 動作	ポーズ	I字ポーズ	standing split
 動作	ポーズ	あおむけ（仰向け）	flat on your back
@@ -2911,6 +2931,7 @@
 動作	ポーズ	ストレッチ	stretch
 動作	ポーズ	ストレッチポーズ	stretching
 動作	ポーズ	ダイナミックなポーズ	dynamic pose
+動作	ポーズ	ツイスタ	twister
 動作	ポーズ	ファイティングポーズ	fighting stance
 動作	ポーズ	ポッケに手を突っ込む	hand in pocket
 動作	ポーズ	ポーズ	posing
@@ -2949,6 +2970,7 @@
 動作	ポーズ	顔を見せない構図	{{{{faceless}}}}, {{{{{{{{1faceless female}}}}}}}}
 動作	ポーズ	黄ケージに横たまり	yokozuwari in the cage
 動作	一般	な動き	movement
+動作	一般	ドアを開ける	opening the door
 動作	乗り物	乗馬モーター	riding motor
 動作	位置	ガラスくっつき	against glass
 動作	体位	宣教師	missionary
@@ -3066,6 +3088,7 @@
 動作	脚の動作	脚で体をロックする	leg lock
 動作	脚の動作	脚を広げて(sex)	leg open
 動作	脚の動作	脚を広げる	spreading legs
+動作	脚の動作	脚を開く	spread legs
 動作	脚の動作	脚組み	cross legs
 動作	脚の動作	膝を立てて座る	knees up
 動作	脚の動作	膝枕	lap pillow
@@ -3165,7 +3188,9 @@
 動作	腕の動作	髪を自分の指で巻く	hair twirling
 動作	腕の動作	（胸の前で）両手を握る	own hands together
 動作	衣服	タックを開けます	optuck
+動作	衣服	ブラをはずす	remove your bra
 動作	視線	空に向かって顔	face towards the sky
+動作	視線	胸　チラ見せ	chest flashing
 動作（source / target）	動作	何かを片手で掴む	grabbing a ~ with one hand
 動作（source / target）	動作	何かを片手で洗う	wash a ~ with one hand
 動作（source / target）	動作	何かを着替えさせる	dressing ~ with both hands
@@ -4446,6 +4471,7 @@
 場所	学校（室外）	体育館	gymnasium
 場所	学校（室外）	噴水	fountain
 場所	学校（室外）	壁	wall
+場所	学校（室外）	学校のプール	school swimming pool
 場所	学校（室外）	学校の看板	school signboard
 場所	学校（室外）	屋上	rooftop
 場所	学校（室外）	教室の窓	classroom windows
@@ -4605,6 +4631,7 @@
 場所	屋内	医務室	infirmary
 場所	屋内	古民家	old farmhouse,indoor
 場所	屋内	和式の部屋	japanese room
+場所	屋内	喫茶店	coffee shop
 場所	屋内	城	castle
 場所	屋内	城	castle indoor
 場所	屋内	子供部屋	kidsroom
@@ -5168,7 +5195,10 @@
 場所	自然	山	mountain
 場所	自然	桜並木	cherry blossom path
 場所	自然	森	forest
+場所	自然	水辺	waterfront
+場所	自然	洞窟	cave
 場所	自然	海	ocean
+場所	自然	海辺	seaside
 場所	自然	湖	lake
 場所	自然	草原	meadow
 場所	街中	ATM	atms
@@ -6054,6 +6084,7 @@
 成人向け	肌	エロテカ肌	gleaming skin
 成人向け	肌	エロテカ肌2	glistening skin
 成人向け	肌	キスマと歯形	hickey,lipstick mark , bite mark
+成人向け	胸	ちちくらべ	compare breasts
 成人向け	胸	浮き乳首	coverd nipples
 成人向け	自慰	オナニー1	wank
 成人向け	自慰	オナニー2	masturbation
@@ -6071,6 +6102,7 @@
 服装	オプション		cleavage no nipples
 服装	オプション		framed breasts
 服装	オプション	へそ出し	navel exposed
+服装	オプション	エプロン,前掛,前掛け	apron
 服装	オプション	オフショルダー	off-shoulder
 服装	オプション	ガーリースタイル	girly style
 服装	オプション	コルセットスカート	(corset skirt:0.4)
@@ -6088,6 +6120,7 @@
 服装	スカート	エッジのロイヤルブルースカート	royal skirt with edge
 服装	スカート	半透明のフラッタースカート	translucent fluttering skirt
 服装	スカート	夏の長いスカート	summer long skirt
+服装	トップス	Yシャツ	dress shirt
 服装	トップス	お腹が見える服,上着のチャックを開ける,クロップトップ	crop top
 服装	トップス	むき出しの白シャツ	bare white shirt
 服装	トップス	ウェイトレスのエプロン	waist apron
@@ -6116,6 +6149,7 @@
 服装	トップス	ボタン付きの服	buttons
 服装	トップス	ボディコン	body con
 服装	トップス	ラグランスリーブ（ベースボールシャツ）	raglan sleeves
+服装	トップス	ランニングシャツ	running shirt
 服装	トップス	レーストップ	lace top
 服装	トップス	ロングコート	long coat
 服装	トップス	乳カーテン	shirt overhang
@@ -6140,6 +6174,8 @@
 服装	ドレス	ショートドレス	short dress
 服装	ドレス	ストラップレスドレス	strapless dress
 服装	ドレス	セータードレス	sweater dress
+服装	ドレス	チャイナドレス	chinese dress
+服装	ドレス	チーパオ	qipao
 服装	ドレス	ドレス	dress
 服装	ドレス	ナイトドレス	nightdress
 服装	ドレス	ノースリーブドレス	sleeveless dress
@@ -6147,6 +6183,7 @@
 服装	ドレス	フリルの付いたドレス	frilled dress
 服装	ドレス	ベリーダンスの衣装	belly dance
 服装	ドレス	ホルタードレス	halter dress
+服装	ドレス	ボディコン	bodycon
 服装	ドレス	レイヤードドレス	layered dress
 服装	ドレス	ロングドレス	long dress
 服装	ドレス	ローブ	robe
@@ -6204,6 +6241,7 @@
 服装	一式	スモック	child smock
 服装	一式	セーラー	sailor
 服装	一式	セーラー服	serafuku
+服装	一式	タキシード	tuxedo
 服装	一式	タートルネックレオタード	turtleneck leotard
 服装	一式	ハイレグ	highleg leotard
 服装	一式	バスローブ	bathrobe
@@ -6217,6 +6255,7 @@
 服装	一式	ボンデージ	sexual bondage
 服装	一式	マイクロビキニセット	micro bikini,  micro shorts, denim shorts, short shorts, cutoffs
 服装	一式	マント	cloak
+服装	一式	ミリタリーロリィタ,ミリタリーロリータ	military lolita
 服装	一式	レディーススーツ	lady's suit
 服装	一式	ロボ兵装	machinery
 服装	一式	ロリータ	lolita (fashion style)
@@ -6531,6 +6570,9 @@
 生物	動物	ウシ	cow furry
 生物	動物	オオカミ	wolf furry
 生物	動物	カイジュウ	kaijuu
+生物	動物	ガニ	crab
+生物	動物	クジラ	whales
+生物	動物	クマ	bear
 生物	動物	シカ	deer furry
 生物	動物	タコ,たこ,蛸	octopus
 生物	動物	トラ	tiger furry
@@ -6542,6 +6584,7 @@
 生物	動物	ライオン	lion furry
 生物	動物	兎,うさぎ	rabit
 生物	動物	子馬	pony
+生物	動物	昆虫	giant insect
 生物	動物	犬	dog
 生物	動物	猫	cat
 生物	恐竜	ティラノサウルス	tyrannosaurus
@@ -7256,10 +7299,13 @@
 装飾	上半身	ボディハーネス2	chest harness
 装飾	上半身	リュック	backpack
 装飾	上半身	上腕の装飾	armlet
+装飾	上半身	名札	name tag
 装飾	上半身	小さなマント	capelet
 装飾	上半身	肩章	epaulettes
 装飾	上半身	胸当て	breastplate
 装飾	上半身	蝙蝠の翼	bat wings
+装飾	下半身	へそピアス	belly button piercing
+装飾	下半身	ガータベルト	garter belt
 装飾	下半身	ベルト	belt
 装飾	下半身	ベルト2	buckle
 装飾	下半身	ベルト3	belt buckle
@@ -7314,6 +7360,7 @@
 装飾	手	手枷,足枷	shackles
 装飾	手	手首にカフスだけ付いてるやつ	wrist cuffs
 装飾	手	機械式アームアーマー	mechanical arm armor
+装飾	手	結婚指輪	wedding rings
 装飾	手	腕時計	wristwatch
 装飾	手	黒曜石のブレスレット	obsidian bracelet
 装飾	手袋	指輪	ring
@@ -7346,8 +7393,10 @@
 装飾	眼鏡	モノクル	monocle
 装飾	眼鏡	丸メガネ	round eyewear
 装飾	眼鏡	眼鏡	glasses
+装飾	耳	うさみみ	bunny ears
 装飾	耳	イヤリング	earrings
 装飾	耳	イヤーマフ	earmuffs
+装飾	耳	ケモミミ	kemomimi
 装飾	耳	フープイヤリング	hoop earrings
 装飾	装身具	アンクレット	anklet
 装飾	装身具	チョーカー	choker
@@ -7495,6 +7544,7 @@
 詳細	色	金,ゴールド	blond
 詳細	色	銀,シルバー,銀色	silver
 詳細	色	銅,ブロンズ	copper
+身体	しっぽ	1本の尻尾	one tail
 身体	しっぽ	テールフィン	tailfin
 身体	しっぽ	ドラゴンウィング	dragonwings
 身体	しっぽ	フィッシュテール	highly fishtail
@@ -7505,6 +7555,7 @@
 身体	ほくろ	涙ボクロ	mole under eye
 身体	ほくろ	艶ぼくろ	mole under mouth
 身体	一般	女性	female
+身体	一般	脂肪	fat
 身体	上半身	翼,ウィング	wings
 身体	上半身	鎖骨	collarbone
 身体	下半身	むき出しの胃	bare stomach
