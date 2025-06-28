@@ -1,4 +1,3 @@
-
 その他	その他	SNS	sns
 その他	その他	〇〇に入っている	in container
 その他	その他	イスキー	isky
@@ -36,13 +35,12 @@
 エフェクト	グロテスク	血液滴	blood drop
 エフェクト	グロテスク	血液雨	blood rain
 エフェクト	グロテスク	血痕	bloodstain
-エフェクト	シンボル	バラ	rose
+エフェクト	シンボル	バラ,薔薇,バラ,薔薇色	rose
 エフェクト	シンボル	バラ2	not rose
 エフェクト	シンボル	五芳星	pentagram
 エフェクト	シンボル	宙に舞う羽	floating feathers
 エフェクト	シンボル	空中に浮かぶ羽	feathers floating in the air
 エフェクト	シンボル	紙吹雪	confetti
-エフェクト	シンボル	薔薇,バラ,薔薇色	rose
 エフェクト	シンボル	錨マーク	anchor symbol
 エフェクト	シンボル	音符	musical note
 エフェクト	デザイン	古典的な装飾境界線	classic decorative border
@@ -505,8 +503,7 @@
 キャラクター	To LOVEる -とらぶる	ティアーユ・ルナティーク	teayu lunatique (to love-ru)
 キャラクター	To LOVEる -とらぶる	ララ・サタリン・デビルーク	lala satalin deviluke (to love-ru)
 キャラクター	To LOVEる -とらぶる	天条院沙姫	tenjouin saki (to love-ru)
-キャラクター	To LOVEる -とらぶる	小手川唯	kotegawa yui (to love-ru)
-キャラクター	To LOVEる -とらぶる	小手川唯\	kotegawa yui (to love-ru)
+キャラクター	To LOVEる -とらぶる	小手川唯,小手川唯\	kotegawa yui (to love-ru)
 キャラクター	To LOVEる -とらぶる	結城美柑	yuuki_mikan (to love-ru)
 キャラクター	To LOVEる -とらぶる	金色の闇（ヤミ）	konjiki no yami (to love-ru)
 キャラクター	VOICE BOX	ずんだもん	zundamon (voicevox)
@@ -615,8 +612,8 @@
 キャラクター	ひだまりスケッチ	沙英	sae_(hidamari_sketch)
 キャラクター	ひろがるスカイ！プリキュア	キュアウィング	cure_wing
 キャラクター	ひろがるスカイ！プリキュア	キュアスカイ	cure_sky
-キャラクター	ひろがるスカイ！プリキュア	キュアバタフライ	cure_butterfly
-キャラクター	ひろがるスカイ！プリキュア	キュアプリズム	cure_butterfly
+キャラクター	ひろがるスカイ！プリキュア	キュアバタフライ	cure butterfly (precure)
+キャラクター	ひろがるスカイ！プリキュア	キュアプリズム	cure prism (precure)
 キャラクター	ひろがるスカイ！プリキュア	ソラ・ハレワタール	sora_harewataru
 キャラクター	ひろがるスカイ！プリキュア	夕凪つばさ	yuunagi_tsubasa
 キャラクター	ひろがるスカイ！プリキュア	聖あげは	hijiri_ageha
@@ -663,27 +660,25 @@
 キャラクター	わんだふるぷりきゅあ！	兎山悟	toyama satoru (wonderful precure)
 キャラクター	わんだふるぷりきゅあ！	大福	1rabbit (wonderful precure)
 キャラクター	わんだふるぷりきゅあ！	犬飼いろは	inukai iroha (wonderful precure)
-キャラクター	わんだふるぷりきゅあ！	犬飼こむぎ	inukai komugi (wonderful precure)
-キャラクター	わんだふるぷりきゅあ！	犬飼こむぎ（犬）	inukai komugi (wonderful precure)
+キャラクター	わんだふるぷりきゅあ！	犬飼こむぎ,犬飼こむぎ（犬）	inukai komugi (wonderful precure)
 キャラクター	わんだふるぷりきゅあ！	猫屋敷まゆ	nekoyashiki mayu (wonderful precure)
 キャラクター	わんだふるぷりきゅあ！	猫屋敷ユキ	nekoyashiki yuki (wonderful precure)
-キャラクター	わんだふるぷりきゅあ！	猫屋敷ユキ（猫）	nekoyashiki yuki (wonderful precure)
 キャラクター	アイカツ!	大空あかり	oozora akari (aikatsu!)
 キャラクター	アイカツスターズ！	二階堂ゆず	nikaidou yuzu (aikatsu stars!)
 キャラクター	アイカツスターズ！	友希あいね	yuuki aine (aikatsu friends!)
 キャラクター	アイカツスターズ！	如月ツバサ	kisaragi tsubasa (aikatsu stars!)
 キャラクター	アイカツスターズ！	桜庭ローラ	sakuraba rola (aikatsu stars!)
 キャラクター	アイカツスターズ！	湊みお	minato mio (aikatsu stars!)
-キャラクター	アイカツスターズ！	白百合かぐや	nikaidou yuzu (aikatsu stars!)
+キャラクター	アイカツスターズ！	白百合かぐや	shirayuri kaguya (aikatsu stars!)
 キャラクター	アイカツスターズ！	白鳥ひめ	shiratori hime (aikatsu stars!)
 キャラクター	アイカツスターズ！	虹野ゆめ	nijino yume (aikatsu stars!)
 キャラクター	アイカツスターズ！	蝶野舞花	chouno maika (aikatsu stars!)
 キャラクター	アイカツスターズ！	香澄夜空	kasumi yozora (aikatsu stars!)
 キャラクター	アイカツ！	一ノ瀬かえで	ichinose kaede (aikatsu!)
-キャラクター	アイカツ！	北大路さくら	hikami sumire(aikatsu!)
+キャラクター	アイカツ！	北大路さくら	kitaoji sakura (aikatsu!)
 キャラクター	アイカツ！	星宮いちご	hoshimiya ichigo (aikatsu!)
 キャラクター	アイカツ！	有栖川おとめ	arisugawa otome (aikatsu!)
-キャラクター	アイカツ！	氷上スミレ	hikami sumire(aikatsu!)
+キャラクター	アイカツ！	氷上スミレ	hikami sumire (aikatsu!)
 キャラクター	アイカツ！	神崎美月	kanzaki mizuki (aikatsu!)
 キャラクター	アイカツ！	紫吹蘭	shibuki ran (aikatsu!)
 キャラクター	アイカツ！	藤堂ユリカ	todo yurika (aikatsu!)
@@ -942,9 +937,7 @@
 キャラクター	サノバウィッチ	因幡めぐる	inaba meguru (sanoba witch)
 キャラクター	シャニマス	大崎甘奈	osaki amana (idolmaster)
 キャラクター	シュタインズゲート	牧瀬 紅莉栖	makise kurisu
-キャラクター	ジャヒー様はくじけない！	ジャヒー（ロリ）	jahy-sama_wa_kujikenai!
-キャラクター	ジャヒー様はくじけない！	ジャヒー（大人）（Tシャツ）	jahy-sama_wa_kujikenai!
-キャラクター	ジャヒー様はくじけない！	ジャヒー（大人）（変身後の服）	jahy-sama_wa_kujikenai!
+キャラクター	ジャヒー様はくじけない！	ジャヒー	jahy-sama_wa_kujikenai!
 キャラクター	スイートプリキュア♪	キュアビート	cure beat (precure)
 キャラクター	スイートプリキュア♪	キュアミューズ	cure muse (precure)
 キャラクター	スイートプリキュア♪	キュアメロディ	cure melody (precure)
@@ -1021,7 +1014,6 @@
 キャラクター	ソードアート・オンライン	桐ヶ谷 直葉	kirigaya_suguha(sao)
 キャラクター	ソードアート・オンライン	篠崎 里香	lisbeth_(sao)
 キャラクター	ダンガンロンパ	朝日奈葵	asahina aoi (danganronpa)
-キャラクター	ダンガンロンパ	朝日奈葵(水着)	asahina aoi (danganronpa)
 キャラクター	ダンガンロンパ	赤松楓	akamatsu_kaede (danganronpa)
 キャラクター	ダンガンロンパ	霧切響子	kirigiri_kyouko (danganronpa)
 キャラクター	チェンソーマン	パワー	power (chainsaw man)
@@ -1117,7 +1109,7 @@
 キャラクター	ブルーアーカイブ	ノノミ	nonomi_(blue_archive)
 キャラクター	ブルーアーカイブ	ハナコ	Hanako_(blue_archive)
 キャラクター	ブルーアーカイブ	プラナ	plana_(blue_archive)
-キャラクター	ブルーアーカイブ	ユウカ	yuuka_(blue_archive)
+キャラクター	ブルーアーカイブ	ユウカ,早瀬ユウカ	yuuka_(blue_archive)
 キャラクター	ブルーアーカイブ	下江コハル	koharu_(blue_archive)
 キャラクター	ブルーアーカイブ	伊落マリー	mari_(blue_archive)
 キャラクター	ブルーアーカイブ	勇美カエデ	kaede (blue archive)
@@ -1125,7 +1117,6 @@
 キャラクター	ブルーアーカイブ	天雨アコ	ako_(blue_archive)
 キャラクター	ブルーアーカイブ	室笠アカネ	akane_(blue_archive)
 キャラクター	ブルーアーカイブ	尾刃カンナ	kanna_(blue_archive)
-キャラクター	ブルーアーカイブ	早瀬ユウカ	yuuka_(blue_archive)
 キャラクター	ブルーアーカイブ	生塩ノア	noa_(blue_archive)
 キャラクター	ブルーアーカイブ	砂狼シロコ	shiroko_(blue_archive)
 キャラクター	ブルーアーカイブ	空崎ヒナ	hina_(blue_archive)
@@ -1193,9 +1184,6 @@
 キャラクター	ラブライブ！サンシャイン！！	松浦果南	matsuura kanan (love live! sunshine!!)
 キャラクター	ラブライブ！サンシャイン！！	桜内梨子	sakurauchi riko (love live! sunshine!!)
 キャラクター	ラブライブ！サンシャイン！！	津島善子	tsushima yoshiko (love live! sunshine!!)
-キャラクター	ラブライブ！サンシャイン！！	浦女冬服	uranohoshi school uniform (love live! sunshine!!)
-キャラクター	ラブライブ！サンシャイン！！	浦女夏服	uranohoshi school uniform (love live! sunshine!!)
-キャラクター	ラブライブ！サンシャイン！！	浦女夏服ノースリーブ	uranohoshi school uniform (love live! sunshine!!)
 キャラクター	ラブライブ！サンシャイン！！	渡辺曜	watanabe you (love live! sunshine!!)
 キャラクター	ラブライブ！サンシャイン！！	高海千歌	takami chika (love live! sunshine!!)
 キャラクター	ラブライブ！サンシャイン！！	鹿角理亞	kazuno ria (love live! sunshine!!)
@@ -1293,7 +1281,6 @@
 キャラクター	月姫	アルクェイド・ブリュンスタッド	arcueid brunestud
 キャラクター	東方	きもけーね	ex-keine (touhou)
 キャラクター	東方	だいちゃん	daiyousei (touhou)
-キャラクター	東方	ちやり服なし	tenkajin chiyari (touhou)
 キャラクター	東方	やちえ	yachie kicchou (touhou)
 キャラクター	東方	ゆうま	Yuma (touhou)
 キャラクター	東方	アリス	alice margatroid (touhou)
@@ -1320,10 +1307,9 @@
 キャラクター	東方	因幡てゐ	inaba tewi (touhou)
 キャラクター	東方	埴安神袿姫	haniyasushin keiki (touhou)
 キャラクター	東方	多々良小傘	alternate eye color (touhou)
-キャラクター	東方	大人ラルバ	touhou (touhou)
+キャラクター	東方	大人ラルバ	eternity larva (touhou)
 キャラクター	東方	天火人ちやり	tenkajin chiyari (touhou)
 キャラクター	東方	宮出口瑞霊	miyadeguchi mizuchi (touhou)
-キャラクター	東方	宮出口瑞霊服なし	miyadeguchi mizuchi (touhou)
 キャラクター	東方	封獣ぬえ	houjuu nue (touhou)
 キャラクター	東方	射命丸文	shameimaru aya (touhou)
 キャラクター	東方	小野塚小町	onozuka komachi (touhou)
@@ -1347,7 +1333,7 @@
 キャラクター	東方	藤原妹紅	fujiwara no mokou (touhou)
 キャラクター	東方	西行寺幽々子	touhou yuyuko (touhou)
 キャラクター	東方	豫母都日狭美	yomotsu hisami (touhou)
-キャラクター	東方	豫母都日狭美服なし	touhou (touhou)
+キャラクター	東方	豫母都日狭美服なし	toyosatomimi no miko (touhou)
 キャラクター	東方	鈴仙・優曇華院（うどんげ）	reisen udongein inaba (touhou)
 キャラクター	東方	鍵山雛	kagiyama hina (touhou)
 キャラクター	東方	霊烏路空	reiuji utsuho (touhou)
@@ -1400,7 +1386,7 @@
 キャラクター	艦隊これくしょん	妙高改二	myoukou kai2 (kancolle)
 キャラクター	艦隊これくしょん	愛宕	atago (kancolle)
 キャラクター	艦隊これくしょん	摩耶	maya_(kancolle)
-キャラクター	艦隊これくしょん	敷波	arashio (kancolle)
+キャラクター	艦隊これくしょん	敷波	shikinami (kancolle)
 キャラクター	艦隊これくしょん	時雨	shigure (kancolle)
 キャラクター	艦隊これくしょん	望月	mochizuki (kancolle)
 キャラクター	艦隊これくしょん	朝潮	asashio (kancolle)
@@ -2317,7 +2303,7 @@
 テイスト	デザイナー	BB	bb_(baalbuddy)
 テイスト	デザイナー	BKUB	bkub
 テイスト	デザイナー	BUNBUN	bunbun
-テイスト	デザイナー	Cho theg	artist
+テイスト	デザイナー	Cho theg	cho theg
 テイスト	デザイナー	DD	dd_(ijigendd)
 テイスト	デザイナー	MだSたろう	m-da_s-tarou
 テイスト	デザイナー	NULL	illustrated by(null_(nyanpyoun))
@@ -2326,10 +2312,10 @@
 テイスト	デザイナー	adoohay	adoohay
 テイスト	デザイナー	amane	amane hasuhito
 テイスト	デザイナー	asdkd123	asdkd123
-テイスト	デザイナー	bulga	artist
+テイスト	デザイナー	bulga	bulga
 テイスト	デザイナー	dolphin wave	dolphin wave
 テイスト	デザイナー	fumihiko	fumihiko (fu mihi ko)
-テイスト	デザイナー	ixy	ixy
+テイスト	デザイナー	ixy,イクシー	ixy
 テイスト	デザイナー	nanashi	nanashi(nlo)
 テイスト	デザイナー	sy4	sy4
 テイスト	デザイナー	{intruder	{intruder_(1391685345)
@@ -2402,7 +2388,6 @@
 テイスト	デザイナー	アマニア	amania
 テイスト	デザイナー	アール・デコ	art deco
 テイスト	デザイナー	アール・ヌーヴォー	art nouveau
-テイスト	デザイナー	イクシー	ixy
 テイスト	デザイナー	イリヤ・レーピン	ilya repin
 テイスト	デザイナー	ウミガラス	umigarasu_(kitsune1963)
 テイスト	デザイナー	エレレ（アーティスト）	erere
@@ -3071,9 +3056,8 @@
 動作	腕の動作	両腕でWのようなポーズ	w arms
 動作	腕の動作	両腕を上げる,両脇が見える	arms up
 動作	腕の動作	両腕を広げて	spread out arms aside
-動作	腕の動作	主観時の手のみ	disembodied hands
+動作	腕の動作	主観時の手のみ,分離した手	disembodied hands
 動作	腕の動作	内緒話風	hand on mouth,open hand
-動作	腕の動作	分離した手	disembodied hands
 動作	腕の動作	口に指	finger on mouth
 動作	腕の動作	口の下でピース	v over mouth
 動作	腕の動作	右手を股間に	right hand in the crotch
@@ -5211,48 +5195,38 @@
 場所	西部時代の村	馬	horses
 場所	西部時代の村	馬小屋	stable
 場所	西部時代の村	馬車	stagecoaches
-場所	貧民エリア	がれき	rubble
+場所	貧民エリア	がれき,瓦礫	rubble
 場所	貧民エリア	コミュニティを支える地元のリーダー	local leaders supporting the community
 場所	貧民エリア	一時的に組み立てられた遊び場	makeshift playgrounds
 場所	貧民エリア	不衛生な環境	unsanitary conditions
 場所	貧民エリア	乱雑に積み重ねられた住居	haphazardly stacked dwellings
 場所	貧民エリア	仮設の水道	makeshift water supply
-場所	貧民エリア	使い古された家具	used furniture
+場所	貧民エリア	使い古された家具,使用済みの家具	used furniture
 場所	貧民エリア	使い古された布	worn-out clothes
 場所	貧民エリア	使い古された靴	used shoes
-場所	貧民エリア	使用済みの家具	used furniture
-場所	貧民エリア	地面に捨てられたゴミ	litter on the ground
-場所	貧民エリア	地面に散乱するゴミ	litter on the ground
+場所	貧民エリア	地面に捨てられたゴミ,地面に散乱するゴミ	litter on the ground
 場所	貧民エリア	壊れた道具	broken tools
-場所	貧民エリア	小さな自給自足の庭	small subsistence gardens
-場所	貧民エリア	屋外での料理	outdoor cooking
+場所	貧民エリア	小さな自給自足の庭,自給自足の小さな畑	small subsistence gardens
+場所	貧民エリア	屋外での料理,野外での料理	outdoor cooking
 場所	貧民エリア	廃材で作られた家具	furniture made from scrap materials
-場所	貧民エリア	手仕事で作られた玩具	handmade toys
-場所	貧民エリア	手作りのおもちゃ	handmade toys
-場所	貧民エリア	手作りの修理工具	handmade repair tools
-場所	貧民エリア	手作りの修理道具	handmade repair tools
-場所	貧民エリア	手作りの屋台	homemade street stalls
+場所	貧民エリア	手仕事で作られた玩具,手作りのおもちゃ	handmade toys
+場所	貧民エリア	手作りの修理工具,手作りの修理道具	handmade repair tools
+場所	貧民エリア	手作りの屋台,自家製の露店	homemade street stalls
 場所	貧民エリア	手作りの道具	handmade tools
 場所	貧民エリア	手織りの衣類	handwoven clothes
 場所	貧民エリア	独自の伝統と文化を持つコミュニティ	communities with unique traditions and cultures
 場所	貧民エリア	狭い通路	narrow alleys
-場所	貧民エリア	瓦礫	rubble
 場所	貧民エリア	生活用水を運ぶための容器	containers for carrying living water
 場所	貧民エリア	簡易トイレ	makeshift latrines
 場所	貧民エリア	簡易的なシェルター	makeshift shelters
-場所	貧民エリア	自家製の露店	homemade street stalls
-場所	貧民エリア	自給自足の小さな畑	small subsistence gardens
 場所	貧民エリア	自給自足の農地	self-sustaining farms
 場所	貧民エリア	薄暗い照明	dim lighting
 場所	貧民エリア	薄汚れた壁	grimy walls
 場所	貧民エリア	行き場のない子供たち	children with nowhere to go
-場所	貧民エリア	補修された住居	patched-up homes
-場所	貧民エリア	補修された家	patched-up homes
+場所	貧民エリア	補修された住居,補修された家	patched-up homes
 場所	貧民エリア	親しみやすい地域のペット	familiar neighborhood pets
-場所	貧民エリア	話をするために集まる人々	people gathering to talk
-場所	貧民エリア	野外での料理	outdoor cooking
+場所	貧民エリア	話をするために集まる人々,集まって話す人々	people gathering to talk
 場所	貧民エリア	限られた公共施設	limited public facilities
-場所	貧民エリア	集まって話す人々	people gathering to talk
 場所	貧民エリア	集まりの場所	communal gathering spots
 場所	車道	ガードレール	guardrail
 場所	車道	ゴミ収集車	garbage truck
@@ -5328,17 +5302,15 @@
 場所	酒場	酒棚	liquor shelves
 場所	酒場	音楽機器	music equipment
 場所	酒場	飲み水	drinking water
-場所	駅	エスカレーター	escalator
-場所	駅	エスカレーター/階段	escalator
+場所	駅	エスカレーター,エスカレーター/階段	escalator
 場所	駅	エレベーター	elevator
 場所	駅	コインロッカー	coin locker
 場所	駅	コンコース	concourse
 場所	駅	タクシー乗り場	taxi stand
 場所	駅	バス停	bus stop
-場所	駅	プラットフォーム	platform
+場所	駅	プラットフォーム,ホーム	platform
 場所	駅	プラットフォームドア	platform door
 場所	駅	ベンチ	bench
-場所	駅	ホーム	platform
 場所	駅	ホーム	platform edge
 場所	駅	乗り換え案内	transfer guide
 場所	駅	乗客	passengers
@@ -5574,13 +5546,12 @@
 成人向け	オプション	おまんこに手	hands on own crotch
 成人向け	オプション	お尻の波紋	ass ripple
 成人向け	オプション	お尻を手でつかむ	hand grabbing ass
-成人向け	オプション	きれいなすじ	pussy line
+成人向け	オプション	きれいなすじ,ぷにまんこ	pussy line
 成人向け	オプション	くいしばる	close eyes, troubled eyebrows, orgasm, close mouth, clench teeth
 成人向け	オプション	ちんこ掴み	penis grab
 成人向け	オプション	ちんぺち	Dick Slap Face
 成人向け	オプション	はだけた胸	open chest
 成人向け	オプション	ぱふぱふ	breast smother
-成人向け	オプション	ぷにまんこ	pussy line
 成人向け	オプション	アナル周辺まで開いたズボン	pants {{open}} {{around anus}}
 成人向け	オプション	イキそう	be almost there
 成人向け	オプション	エロダンサー	saliva,drivel,saliva trail,harem outfit,harem pants,see-through veil,mouth_veil,hip vent,see-through pants,see-through sleeves,see-through skirt,micro bikini
@@ -5625,8 +5596,8 @@
 成人向け	オプション	彼女は彼のペニスを飲み込んでいる	she is swallowing his penis
 成人向け	オプション	性的表現のある日本のアニメやマンガ	hentai
 成人向け	オプション	息切れ	breathless
-成人向け	オプション	愛液	pussy juice
-成人向け	オプション	愛液の線	pussy juice trail
+成人向け	オプション	愛液,股間隠し	pussy juice
+成人向け	オプション	愛液の線,汁あと	pussy juice trail
 成人向け	オプション	手マン	nsfw,1boy,1girl,fingering pussy
 成人向け	オプション	挿入ガイド	1.2::guide to vaginal with hand for imminent penis penetration just the tip
 成人向け	オプション	文化祭ライブパンチラ	sweat, steam, smile, school {{{festival}}}, on stage, bandstand, open air stage, {{idol}}, dancing, singing, holding handheld microphone, in motion, {{blue sky}},  school ground, {{Bunting}}, [audience], nsfw, panties, tuck up skirt, {confetti}, looking afar, yellow hair
@@ -5636,7 +5607,6 @@
 成人向け	オプション	断面図	uterus at viewer penis inserted into pussy from cross section looking through,cum in uterus
 成人向け	オプション	断面図（体表）	1.3::detailed cross section on female body,x-ray_view of a large penis inserted into a vagina::
 成人向け	オプション	歯磨きフェラ	cheek bulge
-成人向け	オプション	汁あと	pussy juice trail
 成人向け	オプション	浮き出る乳首	nipple outline
 成人向け	オプション	淫紋	womb tattoo
 成人向け	オプション	溢れる精液大量射精	creampie,excessive cum
@@ -5652,7 +5622,6 @@
 成人向け	オプション	翻訳中	nipple_stimulation
 成人向け	オプション	翻訳中	pussy girl
 成人向け	オプション	股間の空いたレオタード	crotchless leotard
-成人向け	オプション	股間隠し	pussy juice
 成人向け	オプション	胸に小人	person between breasts
 成人向け	オプション	胸の下に腕	arm under breasts
 成人向け	オプション	胸の影	breasts shade
@@ -5844,7 +5813,7 @@
 成人向け	下半身	服下勃起	erection under clothes
 成人向け	下半身	金玉	testicle
 成人向け	下着	ずらし（陰毛あり）	panties aside,pubic hair
-成人向け	体位		mating press
+成人向け	体位	,プレス	mating press
 成人向け	体位	2穴挿入	double penetration
 成人向け	体位	Y字バランス	standing on one leg,leg up
 成人向け	体位	お尻を突き出す	top-down bottom-up
@@ -5859,7 +5828,6 @@
 成人向け	体位	バック股下視点	vaginal penis, {{stepped on}}, {{from below}}
 成人向け	体位	パイズリフェラ	breasts blowjob
 成人向け	体位	フェラ	licking penis
-成人向け	体位	プレス	mating press
 成人向け	体位	交差位	tribadism
 成人向け	体位	側位	spooning
 成人向け	体位	側位2	lie on sides,spooning,sex from behind
@@ -5959,9 +5927,8 @@
 成人向け	性交	性交	implied sex
 成人向け	性交	性交	intercourse
 成人向け	性交	性的前戯	sexual foreplay
-成人向け	性器	1	cleft of venus
+成人向け	性器	1,すじまん	cleft of venus
 成人向け	性器	おっぱい	tits
-成人向け	性器	すじまん	cleft of venus
 成人向け	性器	とても美しい女性器	excellent beautiful pussy
 成人向け	性器	ふくらんでいる乳首	puffy nipples
 成人向け	性器	ふたなり	futanari
@@ -6016,9 +5983,7 @@
 成人向け	挿入	女性器に挿入	insert vagina
 成人向け	挿入	性的完全挿入	screaming
 成人向け	挿入	性的完全挿入	sexual full penetration
-成人向け	挿入	根元まで	deep penetration
-成人向け	挿入	深い挿入	deep penetration
-成人向け	挿入	深く挿入	deep penetration
+成人向け	挿入	根元まで,深い挿入,深く挿入	deep penetration
 成人向け	挿入	種付けプレス	mating_press
 成人向け	挿入	触手がファック	tentacles fucks
 成人向け	挿入	触手肛門挿入	tentacles anal fuck
@@ -6229,8 +6194,7 @@
 服装	下着	ネグリジェ	nightgown
 服装	下着	ネグリジェ2	negligee
 服装	下着	パンスト	pantyhose
-服装	下着	パンストパンツ	panties under pantyhose
-服装	下着	パンスト越しのパンツ	panties under pantyhose
+服装	下着	パンストパンツ,パンスト越しのパンツ	panties under pantyhose
 服装	下着	パンティー,パンツ	panties
 服装	下着	ヒョウ柄ブラ	leopard print, bra
 服装	下着	ビスチェ	bustier
@@ -6248,6 +6212,7 @@
 服装	下着	迷彩柄のブラ	green _camouflage_bra
 服装	下着	頭の上のパンツ	panties on head
 服装	下着	鮮やか	vibrant
+服装	制服	浦女制服	uranohoshi school uniform (love live! sunshine!!)
 服装	和装	さらし布	bleached cloth
 服装	和装	オープンハカマ	ophakama
 服装	和装	和服	japanese clothes
@@ -6653,34 +6618,20 @@
 色	ピンク系	ミディアムバイオレットレッド	medium violet red
 色	ピンク系	ライトコーラル	light coral
 色	ピンク系	ライトピンク	light pink
-色	混色（混ざり方の表現）	まだら模様	mottled
-色	混色（混ざり方の表現）	まだら模様: 色が不規則に混ざり合っている	mottled
-色	混色（混ざり方の表現）	グラデーションの	gradiented
-色	混色（混ざり方の表現）	グラデーションの: 色が順番に変化していく	gradiented
-色	混色（混ざり方の表現）	タイダイ	tie-dye
-色	混色（混ざり方の表現）	タイダイ: ひねりを加えた染め方で色がランダムに広がる	tie-dye
-色	混色（混ざり方の表現）	ツートンカラー	two-tone
-色	混色（混ざり方の表現）	ツートンカラー: 2色がはっきり分かれて並んでいる	two-tone
-色	混色（混ざり方の表現）	パッチワーク	patchwork
-色	混色（混ざり方の表現）	パッチワーク: 複数の異なる色や模様がつぎはぎに配置されている	patchwork
-色	混色（混ざり方の表現）	ブレンド	blended
-色	混色（混ざり方の表現）	ブレンド: 色が滑らかに混ざり合っている	blended
-色	混色（混ざり方の表現）	ミックス	mixed
-色	混色（混ざり方の表現）	ミックス: 複数の色がバランスよく混ざっている	mixed
-色	混色（混ざり方の表現）	万華鏡模様	kaleidoscopic
-色	混色（混ざり方の表現）	万華鏡模様: 多彩な色と形が複雑に組み合わさっている	kaleidoscopic
-色	混色（混ざり方の表現）	多色使い	multicolored
-色	混色（混ざり方の表現）	多色使い: 複数の色が無秩序に使われている	multicolored
-色	混色（混ざり方の表現）	斑入り	variegated
-色	混色（混ざり方の表現）	斑入り: 色が不規則に変わる模様	variegated
-色	混色（混ざり方の表現）	斑点模様	speckled
-色	混色（混ざり方の表現）	斑点模様: 小さな色の点が散らばっている	speckled
-色	混色（混ざり方の表現）	斑点状	flecked
-色	混色（混ざり方の表現）	斑点状: 小さな色の斑点がランダムに配置されている	flecked
-色	混色（混ざり方の表現）	色洗い	colorwashed
-色	混色（混ざり方の表現）	色洗い: 柔らかい色が全体に広がっている	colorwashed
-色	混色（混ざり方の表現）	虜色に輝く: 光の加減で色が変化する	iridescent
-色	混色（混ざり方の表現）	虹色に輝く	iridescent
+色	混色（混ざり方の表現）	まだら模様,まだら模様: 色が不規則に混ざり合っている	mottled
+色	混色（混ざり方の表現）	グラデーションの,グラデーションの: 色が順番に変化していく	gradiented
+色	混色（混ざり方の表現）	タイダイ,タイダイ: ひねりを加えた染め方で色がランダムに広がる	tie-dye
+色	混色（混ざり方の表現）	ツートンカラー,ツートンカラー: 2色がはっきり分かれて並んでいる	two-tone
+色	混色（混ざり方の表現）	パッチワーク,パッチワーク: 複数の異なる色や模様がつぎはぎに配置されている	patchwork
+色	混色（混ざり方の表現）	ブレンド,ブレンド: 色が滑らかに混ざり合っている	blended
+色	混色（混ざり方の表現）	ミックス,ミックス: 複数の色がバランスよく混ざっている	mixed
+色	混色（混ざり方の表現）	万華鏡模様,万華鏡模様: 多彩な色と形が複雑に組み合わさっている	kaleidoscopic
+色	混色（混ざり方の表現）	多色使い,多色使い: 複数の色が無秩序に使われている	multicolored
+色	混色（混ざり方の表現）	斑入り,斑入り: 色が不規則に変わる模様	variegated
+色	混色（混ざり方の表現）	斑点模様,斑点模様: 小さな色の点が散らばっている	speckled
+色	混色（混ざり方の表現）	斑点状,斑点状: 小さな色の斑点がランダムに配置されている	flecked
+色	混色（混ざり方の表現）	色洗い,色洗い: 柔らかい色が全体に広がっている	colorwashed
+色	混色（混ざり方の表現）	虜色に輝く: 光の加減で色が変化する,虹色に輝く	iridescent
 色	白系	アイボリー	ivory
 色	白系	アリスブルー	alice blue
 色	白系	オールドレース	old lace
@@ -6940,7 +6891,7 @@
 表情・感情	性的な表情	まどろむような表情	languid expression
 表情・感情	性的な表情	めかくれ	{{{faceless female}}}
 表情・感情	性的な表情	よだれ	{{drooling}},saliva,drivel,saliva trail
-表情・感情	性的な表情	イってる目	constricted pupils
+表情・感情	性的な表情	イってる目,瞳小さく	constricted pupils
 表情・感情	性的な表情	イキ目	cross-eyed,upturned eyes,{{{constricted pupils}}},rolling eyes
 表情・感情	性的な表情	エロイキ目	rolling eyes,upturned eyes
 表情・感情	性的な表情	オホ口◎	{{{{{dot mouth}}}}},parted lips
@@ -7003,13 +6954,11 @@
 表情・感情	性的な表情	目を細める	squinting
 表情・感情	性的な表情	目を見開いた熱狂的な表情	wild-eyed expression
 表情・感情	性的な表情	目を閉じて感じている表情	eyes-closed expression
-表情・感情	性的な表情	瞳小さく	constricted pupils
 表情・感情	性的な表情	絶頂を迎えたときの表情	climaxed expression
 表情・感情	性的な表情	耽美的な表情	sensuous expression
 表情・感情	性的な表情	肉感的な表情	voluptuous expression
 表情・感情	性的な表情	舌ペロ	licking lips
-表情・感情	性的な表情	色っぽい表情	seductive expression
-表情・感情	性的な表情	誘惑的な表情	seductive expression
+表情・感情	性的な表情	色っぽい表情,誘惑的な表情	seductive expression
 表情・感情	性的な表情	陶然とした表情	entranced expression
 表情・感情	性的な表情	陶酔しきった表情	inebriated expression
 表情・感情	性的な表情	陶酔した表情	blissful expression
@@ -7167,13 +7116,11 @@
 表情・感情	視線	下を見る	looking down
 表情・感情	視線	何かを見ている	looking to the side
 表情・感情	視線	外を向いた斜視	wall-eyed
-表情・感情	視線	寄り目	cross-eyed
-表情・感情	視線	寄り目（より目）	cross-eyed
-表情・感情	視線	意図的に視線を逸らす	averting eyes
+表情・感情	視線	寄り目,寄り目（より目）	cross-eyed
+表情・感情	視線	意図的に視線を逸らす,目を逸らす(気まずさ)	averting eyes
 表情・感情	視線	手を見ている	looking at hand
 表情・感情	視線	振り返る	looking back
 表情・感情	視線	横目に見る	side glance, sideways glance, glancing sideways
-表情・感情	視線	目を逸らす(気まずさ)	averting eyes
 表情・感情	視線	眼鏡をずらして見る	looking over eyewear
 表情・感情	視線	胸を見ている	looking at breasts
 表情・感情	視線	見上げる	looking up
@@ -7550,8 +7497,7 @@
 身体	肌	白肌	white skin
 身体	肌	繋ぎ目のある肌	patchwork skin
 身体	肌	翻訳中	super detailed skin
-身体	肌	肌に深くめり込む	deep skin
-身体	肌	肌の食い込み	deep skin
+身体	肌	肌に深くめり込む,肌の食い込み	deep skin
 身体	肌	褐色(明)女子	girl is light dark skin
 身体	肌	褐色(明るめ)	light dark skin
 身体	肌	褐色の女の子	tan skin girl
@@ -7568,10 +7514,9 @@
 身体	胸	ロケットおっぱい(中)	perky medium breasts
 身体	胸	ロケットおっぱい(大)	perky big breasts
 身体	胸	ロケットおっぱい(特大)	perky large breasts
-身体	胸	ロリ巨乳	disproportionate breasts
+身体	胸	ロリ巨乳,不釣り合いな胸	disproportionate breasts
 身体	胸	下乳,へそ出しルック	underboob
 身体	胸	不揃いの胸	unaligned breasts
-身体	胸	不釣り合いな胸	disproportionate breasts
 身体	胸	乳房	breasts
 身体	胸	乳輪ちら	areola slip
 身体	胸	乳首の横線	nipple indents
@@ -7594,9 +7539,8 @@
 身体	胸	胸のリボン	chest riboon
 身体	胸	胸の上に手を当てる	hand on own chest
 身体	胸	重い胸	heavy breasts
-身体	胸	離れおっぱい	breasts apart
 身体	胸	離れおっぱい	{{{{breasts apart}}}}
-身体	胸	離れ乳	breasts apart
+身体	胸	離れおっぱい,離れ乳	breasts apart
 身体	脚	でか尻　もも	wide hips,thick thighs
 身体	脚	ソール	sole
 身体	脚	股に手をはさみ	hand between legs
@@ -7694,7 +7638,7 @@
 連想セット（人）	アイドル	特製グッズ	special merchandise
 連想セット（人）	アイドル	笑顔のアイドル	smiling idols
 連想セット（人）	アイドル	輝くステージ	shining stage
-連想セット（人）	学生	とび箱をする子供	children vaulting
+連想セット（人）	学生	とび箱をする子供,跳び箱をする子供たち	children vaulting
 連想セット（人）	学生	プールで泳ぐ子供	children swimming in the pool
 連想セット（人）	学生	休憩時間	break time
 連想セット（人）	学生	休憩時間の子供たち	children during break time
@@ -7704,48 +7648,37 @@
 連想セット（人）	学生	先生に質問する子供	children asking questions to teachers
 連想セット（人）	学生	先生に質問する子供たち	children asking teachers
 連想セット（人）	学生	制服を着た子供	children in uniforms
-連想セット（人）	学生	友達と遊ぶ子供	children playing with friends
-連想セット（人）	学生	友達と遊ぶ子供たち	children playing with friends
+連想セット（人）	学生	友達と遊ぶ子供,友達と遊ぶ子供たち	children playing with friends
 連想セット（人）	学生	図工の時間	arts and crafts time
 連想セット（人）	学生	図書室を使う子供	children using the library
 連想セット（人）	学生	地域との交流活動	community interaction activities
-連想セット（人）	学生	学校のイベント	school events
+連想セット（人）	学生	学校のイベント,学校行事	school events
 連想セット（人）	学生	学校の制服	school uniforms
 連想セット（人）	学生	学校の図書室	school library
 連想セット（人）	学生	学校の通学路	school routes
 連想セット（人）	学生	学校の運動場	school playgrounds
-連想セット（人）	学生	学校行事	school events
-連想セット（人）	学生	学芸会の練習	cultural festival rehearsals
-連想セット（人）	学生	宿題をする子供	children doing homework
-連想セット（人）	学生	宿題をする子供たち	children doing homework
-連想セット（人）	学生	手を挙げる子供	children raising their hands
-連想セット（人）	学生	手を挙げる子供たち	children raising their hands
+連想セット（人）	学生	学芸会の練習,文化祭のリハーサル	cultural festival rehearsals
+連想セット（人）	学生	宿題をする子供,宿題をする子供たち	children doing homework
+連想セット（人）	学生	手を挙げる子供,手を挙げる子供たち	children raising their hands
 連想セット（人）	学生	掃除の時間	cleaning time
 連想セット（人）	学生	授業中の子供たち	children during class
 連想セット（人）	学生	教室での授業	classroom lessons
 連想セット（人）	学生	教室内	inside classrooms
 連想セット（人）	学生	教科書とノート	textbooks and notebooks
-連想セット（人）	学生	文化祭のリハーサル	cultural festival rehearsals
 連想セット（人）	学生	校内放送をする子供	children doing school broadcasts
-連想セット（人）	学生	校庭でのボール遊び	ball games in the schoolyard
-連想セット（人）	学生	校庭での球技	ball games in the schoolyard
+連想セット（人）	学生	校庭でのボール遊び,校庭での球技	ball games in the schoolyard
 連想セット（人）	学生	植物を育てる子供	children growing plants
-連想セット（人）	学生	歌を歌う子供	children singing
-連想セット（人）	学生	歌を歌う子供たち	children singing
+連想セット（人）	学生	歌を歌う子供,歌を歌う子供たち	children singing
 連想セット（人）	学生	発表会の練習	practice for a presentation
 連想セット（人）	学生	登下校の様子	scenes of going to and from school
 連想セット（人）	学生	科学実験をする子供	children conducting science experiments
 連想セット（人）	学生	笑顔の子供たち	smiling children
 連想セット（人）	学生	笑顔の小学生	smiling elementary school students
-連想セット（人）	学生	給食の時間	lunchtime
-連想セット（人）	学生	給食時間	lunchtime
-連想セット（人）	学生	絵を描く子供	children drawing
-連想セット（人）	学生	絵を描く子供たち	children drawing
-連想セット（人）	学生	縄跳びをする子供	children skipping rope
-連想セット（人）	学生	縄跳びをする子供たち	children skipping rope
+連想セット（人）	学生	給食の時間,給食時間	lunchtime
+連想セット（人）	学生	絵を描く子供,絵を描く子供たち	children drawing
+連想セット（人）	学生	縄跳びをする子供,縄跳びをする子供たち	children skipping rope
 連想セット（人）	学生	英語の歌を歌う子供	children singing English songs
 連想セット（人）	学生	読書を楽しむ子供	children enjoying reading
-連想セット（人）	学生	跳び箱をする子供たち	children vaulting
 連想セット（人）	学生	運動会の様子	sports day activities
 連想セット（人）	学生	遠足の様子	scenes of school excursions
 連想セット（人）	学生	集合写真	group photos
@@ -7864,8 +7797,7 @@
 顔	目の形	右目	right eye
 顔	目の形	完全に目を閉じる	close eyes completely
 顔	目の形	小さな瞳	little pupil
-顔	目の形	小さな瞳	small pupil
-顔	目の形	小さな瞳2	small pupil
+顔	目の形	小さな瞳,小さな瞳2	small pupil
 顔	目の形	左目	left eye
 顔	目の形	感情のない目	emotionless eyes
 顔	目の形	挑発的な目	provocative eyes
@@ -7892,9 +7824,8 @@
 顔	目の形	瞳の血管	realistic eye veins
 顔	目の形	瞳孔に奥行きと立体感	depth and dimension in the pupils
 顔	目の形	素敵な目	lovely eyes
-顔	目の形	細かい目	detailed eyes
+顔	目の形	細かい目,綺麗な目	detailed eyes
 顔	目の形	細目	slender eyes
-顔	目の形	綺麗な目	detailed eyes
 顔	目の形	繊細なまつ毛の描写	meticulous eyelash details
 顔	目の形	繊細な虹彩の描写の瞳	intricate iris details
 顔	目の形	虚空の目	hollow eyes
@@ -7923,7 +7854,7 @@
 顔	目の色	藍色の目	indigo eyes
 顔	目の色	虹色の目	rainbow eyes
 顔	目の色	赤色の目	red eyes
-顔	目の色	金色の目	brown eyes
+顔	目の色	金色の目	gold eyes
 顔	目の色	銀色の目	silver eyes
 顔	目の色	銅色の目	copper eyes
 顔	目の色	青い目	blue eyes
@@ -8164,7 +8095,7 @@
 髪	髪色	ダークグレー	dark gray hair
 髪	髪色	バラ髪	rose hair
 髪	髪色	ピンク髪	pink hair
-髪	髪色	ブロンドの髪	blonde hair
+髪	髪色	ブロンドの髪,金髪	blonde hair
 髪	髪色	メッシュ	streaked hair
 髪	髪色	多色の髪	multicolohair
 髪	髪色	多色髪	multicolored hair
@@ -8183,7 +8114,6 @@
 髪	髪色	藍髪	indigo hair
 髪	髪色	虹髪	rainbow hair
 髪	髪色	赤髪	red hair
-髪	髪色	金髪	brown hair
 髪	髪色	金髪(真)	blond hair
 髪	髪色	銀髪	silver hair
 髪	髪色	銅髪	copper hair
